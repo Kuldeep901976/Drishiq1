@@ -1,0 +1,33 @@
+File Checks Summary:
+
+MIGRATION FILES:
+- database/migrations/20251110_add_instruction_sets_and_ai_call_v2.sql: NOT FOUND
+- database/migrations/*instruction_sets*.sql: NOT FOUND
+
+API ROUTES:
+- app/api/ai/call-v2/route.ts: NOT FOUND
+- app/api/ai/call/route.ts: EXISTS (but uses /v1/chat/completions, not Responses API)
+- app/api/ai/replay/route.ts: EXISTS
+
+DB ADAPTERS:
+- lib/ddsa/db-adapters.*: NOT FOUND
+- lib/ddsa/*db*: NOT FOUND (only feedback-final.ts found, not a DB adapter)
+
+PIPELINE FILES:
+- lib/ddsa/pipeline-executor.ts: EXISTS
+- lib/ddsa/stage-router.ts: EXISTS
+
+ADMIN UI:
+- app/admin/stage-module/page.tsx: EXISTS
+- app/api/admin/stages/route.ts: EXISTS (does NOT accept instruction_set_id in POST body)
+
+ENVIRONMENT VARIABLES:
+- OPENAI_RESPONSES_KEY: NOT FOUND in code (only in documentation)
+- OPENAI_RESPONSES_MODEL: NOT FOUND in code (only in documentation)
+- DRISHIQ_AI_MODE: NOT FOUND in code (only in documentation)
+
+STREAMING:
+- No EventSource usage found in app/
+- No text/event-stream endpoints found
+- No streaming implementation found
+

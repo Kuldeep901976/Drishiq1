@@ -1,0 +1,39 @@
+--- a/lib/ddsa/stages/commit-stage.ts
++++ b/lib/ddsa/stages/commit-stage.ts
+@@ -145,7 +145,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+       if (audit && typeof audit.log === 'function') {
+         await audit.log('ACTION_PACKET_UPSERTED', {
+           threadId,
+           userId,
+           intent: ddsState.intent?.label,
+           actionsCount: actionPacket.actions.length,
+           problemSummary: problemSummary.substring(0, 100),
+           problemId: upsertResult.problemId,
+           actionsUpserted: upsertResult.actionsUpserted,
+           stage: 'commit_stage'
+-        });
++        }, input.tenantId);
+       }
+@@ -181,7 +181,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+       if (audit && typeof audit.log === 'function') {
+         await audit.log('ACTION_PACKET_UPSERT_FAILED', {
+           threadId,
+           userId,
+           error: String(upsertError),
+           intent: ddsState.intent?.label,
+           stage: 'commit_stage'
+-        });
++        }, input.tenantId);
+       }
+@@ -209,7 +209,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+     if (audit && typeof audit.log === 'function') {
+       await audit.log('COMMIT.FAILED', {
+         threadId,
+         userId,
+         error: error.message
+-      });
++      }, input.tenantId);
+     }
+ 
+     return {
+

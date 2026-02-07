@@ -1,0 +1,38 @@
+Here is my analysis:
+
+<BLOCK id="action_plan">
+ACTION_PACKET:
+{
+  "problem": {
+    "summary": "User wants to reduce monthly spending by 20%",
+    "domain_of_life": "financial",
+    "severity": 7
+  },
+  "actions": [
+    {
+      "event_name": "Review monthly expenses",
+      "start_date": "2025-11-01",
+      "duration_days": 30,
+      "metric": {
+        "type": "expense_reduction",
+        "target": 20
+      },
+      "owner": "user"
+    },
+    {
+      "event_name": "Cancel unused subscriptions",
+      "start_date": "2025-11-05",
+      "duration_days": 7,
+      "metric": {
+        "type": "cost_savings",
+        "target": 50
+      },
+      "owner": "user"
+    }
+  ]
+}
+END_ACTION_PACKET
+</BLOCK>
+
+---END---
+MACHINE_OK

@@ -1,0 +1,23 @@
+{
+  "name": "@drishiq/contracts",
+  "version": "1.0.0",
+  "description": "Shared types and contracts for DrishiQ ChatModule",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["drishiq", "chat", "types", "contracts"],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
+
+
+

@@ -1,0 +1,266 @@
+{
+  "title": "Invitation",
+  "invitation": {
+    "title": "Request Invitation",
+    "subtitle": "Join DrishiQ's exclusive community",
+    "description": "Get early access to our platform and be part of the intelligence revolution.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company/Organization",
+      "role": "Role/Position",
+      "interest": "Area of Interest",
+      "message": "Why do you want to join DrishiQ?",
+      "submit": "Request Invitation",
+      "success": "Invitation request submitted successfully!",
+      "error": "Failed to submit invitation request. Please try again."
+    }
+  },
+  "status": {
+    "pending": "Invitation Pending",
+    "approved": "Invitation Approved",
+    "rejected": "Invitation Rejected",
+    "expired": "Invitation Expired"
+  },
+  "email": {
+    "subject": "DrishiQ Invitation Request",
+    "confirmation": "Thank you for your interest in DrishiQ. We'll review your request and get back to you soon.",
+    "approval": "Congratulations! Your DrishiQ invitation has been approved.",
+    "rejection": "Thank you for your interest. Unfortunately, we cannot approve your invitation at this time."
+  },
+  "hero": {
+    "trialAccess": {
+      "title": "Request DrishiQ Access",
+      "subtitle": "Apply for trial access, available quota may allow you to experience DrishiQ for free"
+    },
+    "sponsorSupport": {
+      "title": "Request Sponsor Support",
+      "subtitle": "Request sponsor support to access DrishiQ and explore your path forward"
+    },
+    "default": {
+      "title": "Request DrishiQ Access",
+      "subtitle": "Apply for trial access, available quota may allow you to experience DrishiQ for free"
+    }
+  },
+  "tabs": {
+    "trialAccess": {
+      "label": "🎯 Trial Access",
+      "unavailable": "(Unavailable)",
+      "title": "Switch to Trial Access",
+      "description": "Trial Access: For users who want to try DrishiQ but cannot afford it. Access will be provided based on current available quota."
+    },
+    "sponsorSupport": {
+      "label": "💚 Sponsor Support",
+      "unavailable": "(Unavailable)",
+      "title": "Switch to Sponsor Support",
+      "description": "Sponsor Support: For users seeking financial support/sponsorship to access DrishiQ. Please provide details about your challenge so we can match you with appropriate sponsors."
+    }
+  },
+  "form": {
+    "sections": {
+      "personalInfo": {
+        "title": "👤 Personal Information",
+        "fields": {
+          "firstName": {
+            "label": "First Name",
+            "placeholder": "Enter your first name",
+            "required": "*"
+          },
+          "lastName": {
+            "label": "Last Name",
+            "placeholder": "Enter your last name",
+            "required": "*"
+          },
+          "email": {
+            "label": "Email",
+            "placeholder": "your.email@example.com",
+            "required": "*"
+          },
+          "phone": {
+            "label": "Phone",
+            "placeholder": "Enter phone number",
+            "required": "*"
+          },
+          "country": {
+            "label": "Country",
+            "placeholder": "Select Country",
+            "required": "*"
+          },
+          "location": {
+            "label": "Location (City)",
+            "placeholder": "Enter your city",
+            "required": "*"
+          }
+        }
+      },
+      "comments": {
+        "title": "💬 Additional Comments",
+        "placeholder": "Please share any additional information...",
+        "required": "*"
+      },
+      "phoneVerification": {
+        "title": "📱 Phone Verification",
+        "description": "Please verify your phone number to submit your request. We'll send you a verification code via SMS.",
+        "info": "Your phone number will be verified before your request can be submitted. This helps us ensure the security and authenticity of requests.",
+        "button": "Verify Phone First",
+        "required": "*"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "submitTrial": "📧 Submit Trial Request",
+      "submitSponsor": "💚 Submit Sponsor Request",
+      "submitting": "Submitting...",
+      "submittingWithIcon": "⏳ Submitting..."
+    }
+  },
+  "phoneVerification": {
+    "frozen": {
+      "title": "📱 Confirm Phone Number",
+      "subtitle": "Please confirm your phone number to receive the verification code",
+      "phoneLabel": "Phone Number",
+      "info": "ℹ️ Verify this phone number to continue with your request.",
+      "sendOtp": "Send OTP",
+      "sendingOtp": "Sending OTP...",
+      "backToForm": "Back to Form",
+      "bypassDev": "⚠️ Continue Without Verification (Dev Only)"
+    },
+    "otp": {
+      "title": "🔐 Enter Verification Code",
+      "subtitle": "Enter the OTP code sent to your phone",
+      "label": "Enter OTP Code",
+      "placeholder": "000000",
+      "sentTo": "Sent to {phone}",
+      "verify": "Verify & Submit",
+      "verifying": "Verifying...",
+      "resend": "🔄 Resend OTP (Click Here)",
+      "resendCountdown": "Resend OTP ({countdown}s)",
+      "back": "Back"
+    },
+    "errors": {
+      "billing": {
+        "title": "Phone verification requires Firebase billing to be enabled.",
+        "message": "Please enable billing in Firebase Console or contact support@drishiq.com for assistance.",
+        "steps": {
+          "title": "To enable Firebase Phone Authentication:",
+          "step1": "Go to Firebase Console → Your Project",
+          "step2": "Navigate to Settings → Usage and billing",
+          "step3": "Enable billing (Blaze plan required for phone auth)",
+          "step4": "Wait a few minutes for activation"
+        },
+        "contact": "Or contact {email} for assistance."
+      }
+    }
+  },
+  "errors": {
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Valid email is required",
+      "phoneRequired": "Phone number is required",
+      "countryRequired": "Country is required",
+      "locationRequired": "Location (City) is required",
+      "commentsRequired": "Comments are required",
+      "phoneNotVerified": "Please verify your phone number first",
+      "phoneNotVerifiedDetails": "Please verify your phone number first by clicking the \"Verify Phone First\" button in the Phone Verification section below.",
+      "invalidOtp": "Please enter a valid 6-digit OTP",
+      "otpExpired": "OTP session expired. Please request a new code."
+    },
+    "userExists": {
+      "email": "This email is already registered. Please sign in or use a different email.",
+      "phone": "This phone number is already registered. Please sign in or use a different phone number.",
+      "signInLink": "Sign in instead →",
+      "message": "Please sign in or use different credentials."
+    },
+    "otp": {
+      "invalidCode": "Invalid OTP code. Please check and try again.",
+      "expired": "OTP code expired. Please request a new one.",
+      "invalid": "Invalid verification code"
+    },
+    "submission": {
+      "failed": "Failed to submit request. Please try again.",
+      "phoneCheckFailed": "Failed to verify credentials. Please try again.",
+      "sendOtpFailed": "Failed to send verification code",
+      "invalidPhone": "Invalid phone number format",
+      "tooManyRequests": "Too many requests. Please try again later.",
+      "quotaExceeded": "SMS quota exceeded. Please try again later."
+    }
+  },
+  "success": {
+    "title": {
+      "trial": "🎯 Request Received!",
+      "sponsor": "💚 Request Received!"
+    },
+    "phoneVerified": "Phone Number Verified ✅",
+    "message": {
+      "trial": "We've received your trial access request and will review it based on available quota.",
+      "sponsor": "We've received your sponsor support request and will review it to match with sponsor interests."
+    },
+    "whatHappensNext": {
+      "title": "📧 What happens next?",
+      "trial": {
+        "item1": "We have received your trial access request",
+        "item2": "We will review your request based on current available quota",
+        "item3": "Please check your email for the registration link",
+        "item4": "You'll receive 1 free credit upon successful registration",
+        "item5": "Upon matching we will send you the link to email id to explore DrishiQ"
+      },
+      "sponsor": {
+        "item1": "We have received your sponsor support request",
+        "item2": "We will review your request and match it with sponsor interests",
+        "item3": "Please check your email for the registration link",
+        "item4": "Upon approval, you'll receive access to DrishiQ with sponsor support",
+        "item5": "Upon matching we will send you the link to email id to explore DrishiQ"
+      }
+    },
+    "youtube": {
+      "title": "Watch DrishiQ in Action"
+    },
+    "buttons": {
+      "returnHome": "Return to Homepage",
+      "learnMore": "Learn More About DrishiQ"
+    }
+  },
+  "thankYou": {
+    "trialAccess": {
+      "title": "🎯 Trial Access Request Received!",
+      "subtitle": "Thank you for your interest in DrishiQ",
+      "message": "We've received your trial access request and will review it based on available quota.",
+      "whatHappensNext": {
+        "title": "📧 What happens next?",
+        "item1": "We have received your trial access request",
+        "item2": "We will review your request based on current available quota",
+        "item3": "If we find a match, we will send you a registration link to complete your registration",
+        "item4": "Please check your email for the registration link",
+        "item5": "You'll receive 1 free credit upon successful registration"
+      }
+    },
+    "sponsorSupport": {
+      "title": "💚 Sponsor Support Request Received!",
+      "subtitle": "Thank you for reaching out for sponsor support",
+      "message": "We've received your sponsor support request and will review it to match with sponsor interests.",
+      "whatHappensNext": {
+        "title": "📧 What happens next?",
+        "item1": "We have received your sponsor support request",
+        "item2": "We will review your request and match it with sponsor interests",
+        "item3": "If we find a match with sponsors, we will send you a registration link to your email",
+        "item4": "Please check your email for the registration link",
+        "item5": "Upon approval, you'll receive access to DrishiQ with sponsor support"
+      }
+    },
+    "requestId": {
+      "label": "Request ID:",
+      "info": "Please keep this ID for reference when contacting support."
+    },
+    "buttons": {
+      "returnHome": "Return to Homepage",
+      "learnMore": "Learn More About DrishiQ"
+    },
+    "support": {
+      "title": "Need help?",
+      "message": "Contact our support team at",
+      "email": "support@drishiq.com"
+    }
+  }
+}

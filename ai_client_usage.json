@@ -1,0 +1,86 @@
+[
+  {
+    "file": "lib/ddsa/intent-classifier.ts",
+    "line": 8,
+    "snippet": "import { createTenantResponsesClient } from '@/lib/ai/tenant-client';",
+    "tenantAware": "YES",
+    "recommended_fix": "OK - Already using tenant-aware client"
+  },
+  {
+    "file": "lib/ddsa/responses-helper.ts",
+    "line": 9,
+    "snippet": "import { createResponse, normalizeResponse } from '../responses/responsesClient';",
+    "tenantAware": "PARTIAL",
+    "recommended_fix": "Ensure all createResponse calls pass tenantId parameter"
+  },
+  {
+    "file": "lib/ddsa/responses-helper.ts",
+    "line": 230-241,
+    "snippet": "response = await createResponse({ model, input: inputArray, ... }, undefined); const apiKey = process.env.OPENAI_RESPONSES_KEY || process.env.OPENAI_API_KEY;",
+    "tenantAware": "NO",
+    "recommended_fix": "Route through lib/ai/tenant-client.ts or pass tenantId to createResponse"
+  },
+  {
+    "file": "lib/ddsa/responses-helper.ts",
+    "line": 444-460,
+    "snippet": "const response = await createResponse({ model, input: inputArray, ... }, undefined); const apiKey = process.env.OPENAI_RESPONSES_KEY || process.env.OPENAI_API_KEY;",
+    "tenantAware": "NO",
+    "recommended_fix": "Route through lib/ai/tenant-client.ts or pass tenantId to createResponse"
+  },
+  {
+    "file": "lib/ddsa/greeting-handler.ts",
+    "line": 7,
+    "snippet": "import { createResponse, normalizeResponse } from '../responses/responsesClient';",
+    "tenantAware": "PARTIAL",
+    "recommended_fix": "Ensure all createResponse calls pass tenantId parameter"
+  },
+  {
+    "file": "lib/ddsa/greeting-handler.ts",
+    "line": 736-786,
+    "snippet": "response = await createResponse({ model, input: inputArray, ... }, undefined); apiKey = process.env.OPENAI_RESPONSES_KEY || process.env.OPENAI_API_KEY;",
+    "tenantAware": "NO",
+    "recommended_fix": "Route through lib/ai/tenant-client.ts or pass tenantId to createResponse"
+  },
+  {
+    "file": "lib/responses/responsesClient.ts",
+    "line": 26",
+    "snippet": "const RESPONSES_KEY = process.env.RESPONSES_API_KEY || process.env.OPENAI_RESPONSES_KEY || process.env.OPENAI_API_KEY;",
+    "tenantAware": "PARTIAL",
+    "recommended_fix": "OK - Function supports tenantId, but ensure all callers pass it"
+  },
+  {
+    "file": "lib/responses/responsesClient.ts",
+    "line": 157-194",
+    "snippet": "export async function createResponse(req: ResponsesRequest, tenantId?: string): Promise<ResponsesResponse> { ... if (tenantId) { const tenantConfig = await getTenantConfig(tenantId); if (tenantConfig.ai?.keyAlias) { const tenantKey = await resolveApiKeyAliasCached(tenantConfig.ai.keyAlias); if (tenantKey) { apiKey = tenantKey; } } }",
+    "tenantAware": "YES",
+    "recommended_fix": "OK - Function is tenant-aware, but ensure all callers pass tenantId"
+  },
+  {
+    "file": "lib/ai/tenant-client.ts",
+    "line": 45-95",
+    "snippet": "export function createTenantResponsesClient(tenantConfig?: TenantConfig) { return { async respond(opts: {...}): Promise<string> { ... const apiKey = await resolveApiKey(tenantConfig?.ai?.keyAlias); const response = await createResponse(responsesRequest, tenantConfig?.id);",
+    "tenantAware": "YES",
+    "recommended_fix": "OK - This is the recommended approach"
+  },
+  {
+    "file": "lib/ai/client.ts",
+    "line": 15-18",
+    "snippet": "const apiKey = process.env.OPENAI_API_KEY; if (!apiKey) { throw new Error('OPENAI_API_KEY environment variable is not set'); }",
+    "tenantAware": "NO",
+    "recommended_fix": "BLOCKER: Replace with createTenantResponsesClient or pass tenantId to createResponse"
+  },
+  {
+    "file": "lib/ddsa/message-exchange-layer.ts",
+    "line": 16-19",
+    "snippet": "const apiKey = process.env.OPENAI_API_KEY; if (!apiKey) { throw new Error('OPENAI_API_KEY environment variable is not set'); }",
+    "tenantAware": "NO",
+    "recommended_fix": "BLOCKER: Replace with createTenantResponsesClient or pass tenantId to createResponse"
+  },
+  {
+    "file": "lib/ddsa/rapid-triage.ts",
+    "line": 7",
+    "snippet": "import { respondWithTenantConfig } from '@/lib/ai/tenant-client';",
+    "tenantAware": "YES",
+    "recommended_fix": "OK - Already using tenant-aware client"
+  }
+]

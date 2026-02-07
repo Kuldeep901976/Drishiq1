@@ -1,0 +1,136 @@
+{
+  "notFound": {
+    "title": "404",
+    "heading": "ページが見つかりません",
+    "description": "お探しのページは削除されたか、名前が変更されたか、一時的に利用できない可能性があります。",
+    "loading": "読み込み中...",
+    "logo": {
+      "alt": "ドリシークロゴ",
+      "tagline": "課題を見る"
+    },
+    "banner": {
+      "top": {
+        "title": "ドリシーク革命に参加しよう",
+        "subtitle": "AI駆動の洞察で課題を明確さに変える",
+        "signUp": "サインアップ"
+      },
+      "bottom": {
+        "title": "課題を変革する準備はできていますか？",
+        "description": "AI駆動の洞察を通じて明確さを見出した何千人もの仲間に加わりましょう",
+        "getStarted": "始める"
+      }
+    },
+    "solutions": {
+      "title": "正しい道に戻る",
+      "goHome": {
+        "title": "ホームへ",
+        "description": "ホームページに戻る",
+        "button": "ホーム"
+      },
+      "tryAgain": {
+        "title": "もう一度試す",
+        "description": "前のページに戻る",
+        "button": "戻る"
+      },
+      "getHelp": {
+        "title": "ヘルプを取得",
+        "description": "サポートチームに連絡する",
+        "button": "お問い合わせ"
+      }
+    },
+    "status": {
+      "operational": "すべてのシステムが正常に動作しています"
+    }
+  },
+  "error": {
+    "title": "問題が発生しました！",
+    "description": "エラーが発生しました。ページを更新してください。",
+    "unexpected": "予期しないエラーが発生しました",
+    "tryAgain": "もう一度試す",
+    "refresh": "ページを更新"
+  },
+  "globalError": {
+    "title": "問題が発生しました！",
+    "description": "予期しないエラーが発生しました",
+    "tryAgain": "もう一度試す"
+  },
+  "userNotFound": {
+    "title": "ユーザーが見つかりません",
+    "description": "お探しのユーザープロフィールは存在しません。",
+    "goHome": "ホームへ",
+    "back": "戻る"
+  },
+  "loading": {
+    "default": "読み込み中...",
+    "page": "ページを読み込み中...",
+    "content": "コンテンツを読み込み中...",
+    "profile": "プロフィールを読み込み中...",
+    "data": "データを読み込み中...",
+    "pleaseWait": "お待ちください..."
+  },
+  "network": {
+    "offline": "現在オフラインです",
+    "online": "接続が復元されました",
+    "slow": "遅い接続が検出されました",
+    "timeout": "リクエストがタイムアウトしました。もう一度お試しください。",
+    "failed": "ネットワークリクエストが失敗しました"
+  },
+  "validation": {
+    "required": "このフィールドは必須です",
+    "invalid": "無効な入力",
+    "tooShort": "入力が短すぎます",
+    "tooLong": "入力が長すぎます",
+    "invalidEmail": "有効なメールアドレスを入力してください",
+    "invalidPhone": "有効な電話番号を入力してください",
+    "passwordMismatch": "パスワードが一致しません",
+    "weakPassword": "パスワードが弱すぎます"
+  },
+  "unauthorized": {
+    "title": "アクセス拒否",
+    "description": "このページにアクセスする権限がありません。",
+    "loginRequired": "続行するにはログインしてください",
+    "goToLogin": "ログインへ",
+    "goHome": "ホームへ"
+  },
+  "forbidden": {
+    "title": "禁止",
+    "description": "このリソースにアクセスする権限がありません。",
+    "contactSupport": "サポートに連絡",
+    "goHome": "ホームへ"
+  },
+  "serverError": {
+    "title": "サーバーエラー",
+    "description": "サーバー側で問題が発生しました。修正に取り組んでいます。",
+    "tryAgain": "もう一度試す",
+    "contactSupport": "サポートに連絡",
+    "goHome": "ホームへ"
+  },
+  "maintenance": {
+    "title": "メンテナンス中",
+    "description": "現在、定期メンテナンスを実施しています。後ほどご確認ください。",
+    "estimatedTime": "予定時間: {time}",
+    "contact": "緊急の場合は、サポートにお問い合わせください"
+  },
+  "sessionExpired": {
+    "title": "セッション期限切れ",
+    "description": "セッションの期限が切れました。再度ログインしてください。",
+    "login": "ログイン",
+    "goHome": "ホームへ"
+  },
+  "paymentError": {
+    "title": "支払いエラー",
+    "description": "お支払いの処理中にエラーが発生しました。",
+    "tryAgain": "もう一度試す",
+    "contactSupport": "サポートに連絡",
+    "backToPlans": "プランに戻る"
+  },
+  "generic": {
+    "somethingWentWrong": "問題が発生しました",
+    "pleaseTryAgain": "もう一度お試しください",
+    "contactSupport": "サポートに連絡",
+    "goHome": "ホームへ",
+    "refresh": "更新",
+    "cancel": "キャンセル",
+    "ok": "OK"
+  }
+}

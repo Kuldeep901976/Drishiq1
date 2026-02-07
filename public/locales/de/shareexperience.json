@@ -1,0 +1,407 @@
+{
+  "hero": {
+    "authenticated": {
+      "badge": "Teilen Sie Ihre Referenz",
+      "title": "Ihre Referenz zählt.",
+      "subtitle": "Helfen Sie anderen, DrishiQ zu entdecken.",
+      "description": "Teilen Sie Ihre echte Erfahrung mit DrishiQ. Ihre Referenz hilft anderen zu entdecken, wie wir ihr Leben verändern können."
+    },
+    "guest": {
+      "badge": "Teilen Sie Ihre einzigartige Herausforderung",
+      "title": "Teilen Sie Ihre einzigartige Herausforderung.",
+      "subtitle": "Wenn sie wirklich einzigartig ist, werden wir ein Angebot machen.",
+      "description": "Erzählen Sie uns von Ihrer einzigartigen Herausforderung. Wenn sie wirklich einzigartig ist, werden wir Ihnen eine personalisierte Lösung anbieten, um sie zu bewältigen."
+    }
+  },
+  "form": {
+    "title": {
+      "authenticated": "Teilen Sie Ihre Referenz",
+      "guest": "Teilen Sie Ihre einzigartige Herausforderung"
+    },
+    "subtitle": {
+      "authenticated": "Helfen Sie anderen zu entdecken, wie DrishiQ ihr Leben verändern kann, indem Sie Ihre echte Erfahrung teilen.",
+      "guest": "Erzählen Sie uns von Ihrer einzigartigen Herausforderung. Wenn sie wirklich einzigartig ist, werden wir Ihnen eine personalisierte Lösung anbieten."
+    },
+    "personal_info": {
+      "title": "Ihre Informationen",
+      "fields": {
+        "name": {
+          "label": "Vollständiger Name *",
+          "placeholder": "Geben Sie Ihren vollständigen Namen ein"
+        },
+        "email": {
+          "label": "E-Mail-Adresse *",
+          "placeholder": "your.email@example.com"
+        },
+        "phone": {
+          "label": "Telefonnummer *",
+          "placeholder": "Telefonnummer eingeben"
+        },
+        "profession": {
+          "label": "Beruf / Rolle",
+          "placeholder": "z.B. Software-Ingenieur, Student, Unternehmer"
+        },
+        "preferred_language": {
+          "label": "Bevorzugte Sprache *",
+          "placeholder": "Wählen Sie Ihre bevorzugte Sprache"
+        }
+      }
+    },
+    "story_section": {
+      "title": {
+        "authenticated": "Ihre Referenz",
+        "guest": "Ihre einzigartige Herausforderung"
+      },
+      "rating": {
+        "label": "Bewertung *",
+        "excellent": "⭐ Ausgezeichnet",
+        "very_good": "👍 Sehr gut",
+        "good": "👍 Gut",
+        "fair": "👌 In Ordnung",
+        "poor": "👌 Schlecht"
+      },
+      "role": {
+        "label": "Ihre Rolle *",
+        "placeholder": "z.B. Software-Ingenieur, Student, Unternehmer, usw."
+      },
+      "story": {
+        "placeholder": {
+          "authenticated": "Teilen Sie Ihre echte Erfahrung mit DrishiQ. Wie hat es Ihnen geholfen? Welche Herausforderungen hat es Ihnen geholfen zu überwinden? Was würden Sie anderen über Ihre Reise erzählen?",
+          "guest": "Beschreiben Sie Ihre einzigartige Herausforderung im Detail. Was macht sie einzigartig? Was haben Sie bisher versucht? Welche spezifische Hilfe suchen Sie?"
+        },
+        "hint": {
+          "authenticated": "Mindestens 100 Zeichen. Seien Sie so detailliert wie möglich, um anderen zu helfen.",
+          "guest": "Mindestens 100 Zeichen. Seien Sie konkret über das, was Ihre Herausforderung einzigartig macht."
+        },
+        "character_count": "{count}/1000"
+      },
+      "image_upload": {
+        "label": "Klicken Sie, um Foto hochzuladen",
+        "hint": "JPG, PNG maximal 5MB",
+        "change": "Ändern"
+      }
+    },
+    "phone_verification": {
+      "title": "Telefonverifizierung erforderlich",
+      "description": {
+        "frozen": "Bitte bestätigen Sie Ihre Telefonnummer, um einen Verifizierungscode zu erhalten",
+        "otp": "Geben Sie den an Ihr Telefon gesendeten OTP-Code ein"
+      },
+      "phone_label": "Telefonnummer",
+      "phone_locked_hint": "Diese Nummer ist zur Verifizierung gesperrt. Kontaktieren Sie den Support, wenn Sie sie ändern müssen.",
+      "phone_verify_hint": "Verifizieren Sie diese Telefonnummer, um Ihre Geschichte einzureichen.",
+      "otp_label": "Geben Sie den 6-stelligen Code ein",
+      "otp_placeholder": "000000",
+      "otp_sent_to": "OTP an {phone} gesendet",
+      "buttons": {
+        "send_otp": "Verifizierungscode senden",
+        "sending": "OTP wird gesendet...",
+        "verify_submit": "Verifizieren und Geschichte einreichen",
+        "verifying": "Wird verifiziert...",
+        "resend": "🔄 OTP erneut senden (hier klicken)",
+        "resend_countdown": "OTP erneut senden ({count}s)",
+        "back_to_form": "← Zurück zum Formular"
+      },
+      "errors": {
+        "phone_required": "Bitte geben Sie Ihre Telefonnummer ein und wählen Sie den Ländercode",
+        "otp_invalid": "Bitte geben Sie einen gültigen 6-stelligen OTP ein",
+        "otp_expired": "OTP-Sitzung abgelaufen. Bitte fordern Sie einen neuen Code an.",
+        "otp_wrong": "Ungültiger OTP-Code. Bitte überprüfen und erneut versuchen.",
+        "otp_expired_code": "OTP-Code ist abgelaufen. Bitte fordern Sie einen neuen an.",
+        "verification_failed": "OTP-Versand fehlgeschlagen. Bitte erneut versuchen.",
+        "system_not_ready": "Verifizierungssystem nicht bereit. Bitte aktualisieren und erneut versuchen."
+      }
+    },
+    "info_note": {
+      "title": "Was kommt als Nächstes?",
+      "description": "Da Sie nicht angemeldet sind, werden wir Ihre Telefonnummer verifizieren, um die Authentizität sicherzustellen. Nach der Verifizierung wird Ihre Herausforderung von unserem Team überprüft. Wenn sie wirklich einzigartig ist, werden wir Ihnen eine personalisierte Lösung anbieten."
+    },
+    "guidelines": {
+      "title": "Story-Richtlinien",
+      "subtitle": "Tipps zum Teilen Ihrer Erfahrung",
+      "tips": [
+        "Seien Sie konkret über die Herausforderung, der Sie gegenüberstanden",
+        "Beschreiben Sie, wie DrishiQ Ihnen geholfen hat, Klarheit zu finden",
+        "Teilen Sie die positiven Veränderungen, die Sie erlebt haben",
+        "Verwenden Sie Ihre eigenen Worte und Ihre echte Stimme",
+        "Überlegen Sie, wie Ihre Geschichte anderen helfen kann"
+      ]
+    },
+    "impact_stats": {
+      "title": "Ihre Geschichte zählt",
+      "description": "Geschichten wie Ihre haben Tausenden geholfen, ihren ersten Schritt zu machen",
+      "stories_shared": "Geteilte Geschichten",
+      "people_inspired": "Inspirierte Menschen"
+    },
+    "buttons": {
+      "back_to_stories": "Zurück zu den Geschichten",
+      "submit_testimonial": "Referenz einreichen",
+      "share_challenge": "Meine Herausforderung teilen",
+      "submitting": "Wird eingereicht..."
+    },
+    "validation": {
+      "image_size": "Bildgröße muss unter 5MB sein. Bitte wählen Sie ein kleineres Bild.",
+      "image_type": "Bitte laden Sie eine gültige Bilddatei hoch (JPG, PNG oder WEBP).",
+      "story_min": "Bitte schreiben Sie mindestens 100 Zeichen",
+      "required": "Dieses Feld ist erforderlich"
+    },
+    "errors": {
+      "submission_failed": "Fehler beim Einreichen Ihrer Erfahrung. Bitte erneut versuchen.",
+      "user_not_found": "Benutzer in der Benutzertabelle nicht gefunden",
+      "api_error": "Ihre Geschichte konnte nicht eingereicht werden. Bitte erneut versuchen oder den Support kontaktieren."
+    },
+    "success_alert": {
+      "authenticated": "Vielen Dank fürs Teilen Ihrer Referenz! Wir werden sie überprüfen und uns bald bei Ihnen melden."
+    }
+  },
+  "thank_you": {
+    "title": "Vielen Dank! 🙏",
+    "subtitle": "Ihre Geschichte wurde erfolgreich eingereicht",
+    "description": {
+      "main": "Wir haben Ihre einzigartige Herausforderung erhalten und unser Team wird sie sorgfältig überprüfen.",
+      "sub": "Wenn Ihre Herausforderung wirklich einzigartig ist, werden wir uns mit einer personalisierten Lösung bei Ihnen melden, um Ihnen bei der Bewältigung zu helfen."
+    },
+    "what_happens_next": {
+      "title": "Was kommt als Nächstes?",
+      "steps": {
+        "review": {
+          "number": "1️⃣",
+          "title": "Überprüfungsprozess",
+          "description": "Unser Team wird Ihre Einreichung sorgfältig überprüfen"
+        },
+        "evaluation": {
+          "number": "2️⃣",
+          "title": "Bewertung",
+          "description": "Wir werden bewerten, ob Ihre Herausforderung einzigartig ist und unseren speziellen Ansatz erfordert"
+        },
+        "contact": {
+          "number": "3️⃣",
+          "title": "Kontakt",
+          "description": "Wenn genehmigt, werden wir Sie per E-Mail mit den nächsten Schritten kontaktieren"
+        }
+      }
+    },
+    "video": {
+      "title": "Sehen Sie sich unser neuestes Video an",
+      "playlist_link": "Vollständige Playlist ansehen →"
+    },
+    "buttons": {
+      "go_home": "🏠 Zur Startseite",
+      "read_blogs": "📖 Blogs lesen und teilen"
+    }
+  },
+testimonial_form: {
+  "title": {
+    "label": "Geschichtstitel",
+    "placeholder": "Gib deiner Geschichte einen aussagekräftigen Titel (optional)...",
+    "hint": "Ein Titel hilft anderen, deine Geschichte zu finden und zu verstehen"
+  },
+  "content": {
+    "label": "Deine Geschichte *",
+    "placeholder": "Teile deine Erfahrung mit Drishiq. Welche Herausforderungen hast du erlebt? Wie hat Drishiq geholfen? Welche Veränderungen gab es in deinem Leben?"
+  },
+  "rating": {
+    "label": "Bewertung *",
+    "excellent": "Ausgezeichnet",
+    "very_good": "Sehr gut",
+    "good": "Gut",
+    "fair": "Befriedigend",
+    "poor": "Schlecht"
+  },
+  "category": {
+    "label": "Kategorie",
+    "placeholder": "Wähle eine Kategorie (optional)",
+    "custom": {
+      "label": "Gib deine Kategorie an *",
+      "placeholder": "Gib deine spezifische Kategorie ein (z. B. Gesundheit & Wohlbefinden, Finanzplanung, usw.)",
+      "hint": "Bitte gib eine spezifische Kategorie an, die deine Erfahrung am besten beschreibt"
+    }
+    },
+    "anonymous": {
+      "label": "Anonym einreichen",
+      "user_info": {
+        "title": "Ihre Referenz wird eingereicht als:",
+        "name": "Name:",
+        "email": "E-Mail:"
+      },
+      "fields": {
+        "display_name": {
+          "label": "Anzeigename",
+          "placeholder": "z.B. John D."
+        },
+        "role": {
+          "label": "Rolle/Beruf",
+          "placeholder": "z.B. Software-Ingenieur"
+        },
+        "location": {
+          "label": "Standort",
+          "placeholder": "z.B. New York, USA"
+        }
+      }
+    },
+    "profile_image": {
+      "label": "Profilbild",
+      "upload": {
+        "label": "Ihr Bild hochladen",
+        "remove": "Entfernen"
+      },
+      "avatar": {
+        "label": "Oder wählen Sie aus unseren Avataren",
+        "placeholder": "Avatar auswählen (optional)",
+        "selected": "✓ Avatar ausgewählt",
+        "change": "Ändern"
+      }
+    },
+    "buttons": {
+      "cancel": "Abbrechen",
+      "submit": "Referenz einreichen",
+      "submitting": "Wird eingereicht..."
+    },
+    "errors": {
+      "login_required": "Bitte melden Sie sich an, um eine Referenz einzureichen, oder aktivieren Sie \"Anonym einreichen\", um ohne Anmeldung einzureichen.",
+      "submission_failed": "Referenz konnte nicht eingereicht werden"
+    },
+    "success": {
+      "title": "Vielen Dank!",
+      "message": "Ihre Referenz wurde erfolgreich eingereicht und wartet auf Genehmigung. Sie werden in Kürze zur Referenzseite weitergeleitet."
+    }
+  },
+  "testimonial_success": {
+    "title": "🎉 Vielen Dank fürs Teilen Ihrer Geschichte!",
+    "message": "Ihre Referenz wurde erfolgreich eingereicht und wartet auf Überprüfung. Wir sind dankbar, dass Sie sich die Zeit genommen haben, Ihre Erfahrung mit unserer Community zu teilen.",
+    "what_happens_next": {
+      "title": "Was kommt als Nächstes?",
+      "review": {
+        "title": "Überprüfungsprozess",
+        "description": "Unser Team wird Ihre Einreichung innerhalb von 24-48 Stunden überprüfen"
+      },
+      "featured": {
+        "title": "Hervorgehobene Geschichten",
+        "description": "Außergewöhnliche Geschichten können auf unserer Startseite präsentiert werden"
+      },
+      "community": {
+        "title": "Community-Einfluss",
+        "description": "Ihre Geschichte kann andere inspirieren, die Klarheit suchen"
+      }
+    },
+    "buttons": {
+      "go_home": "🏠 Zur Startseite",
+      "submit_another": "📝 Eine weitere Geschichte einreichen"
+    },
+    "community_feedback": {
+      "title": "💭 Helfen Sie uns, eine bessere Community aufzubauen",
+      "vision_title": "🌟 Schließen Sie sich unserer Vision an: Eine Gemeinschaft geteilter Erfahrungen",
+      "vision_description": "Wir bauen etwas auf, das weit über eine Plattform hinausgeht. Es ist das Fundament einer Gemeinschaft, in der Menschen, die Ihren Schmerz, Ihre Freude, Ihre Misserfolge und Erfolge teilen, sich verbinden, unterstützen und gemeinsam wachsen können. Ihr Feedback prägt diese wichtige Mission.",
+      "pipeline_vision": "Unsere Pipeline-Vision: Ein Ort, an dem Ihre Geschichte zur Hoffnung eines anderen wird, wo geteilte Kämpfe kollektive Stärke schaffen und wo jede Erfahrung zum Aufbau einer Gemeinschaft beiträgt, die wirklich versteht.",
+      "buttons": {
+        "share_vision": "💬 Ihre Vision teilen",
+        "join_movement": "🌱 Der Bewegung beitreten"
+      }
+    },
+    "bottom_cta": {
+      "title": "Bereit für Ihre nächste Klarheitssitzung?",
+      "description": "Setzen Sie Ihre Reise der Selbstfindung mit DrishiQ fort",
+      "buttons": {
+        "start_session": "💬 Neue Sitzung starten",
+        "return_home": "🏠 Zurück zur Startseite"
+      }
+    }
+  },
+  "submit": {
+    "title": "Teilen Sie Ihre Referenz",
+    "subtitle": "Ihre Erfahrung kann andere inspirieren. Erzählen Sie uns, wie DrishiQ Ihr Leben beeinflusst hat.",
+    "success_page": {
+      "title": "🎉 Vielen Dank fürs Teilen Ihrer Geschichte!",
+      "message": "Ihre Referenz wurde erfolgreich eingereicht und wartet auf Überprüfung. Wir sind dankbar, dass Sie sich die Zeit genommen haben, Ihre Erfahrung mit unserer Community zu teilen.",
+      "go_home": "🏠 Zur Startseite"
+    }
+  },
+  "success_page": {
+    "what_happens_next": {
+      "title": "Was kommt als Nächstes?"
+    },
+    "review_process": "Überprüfungsprozess",
+    "review_description": "Unser Team wird Ihre Einreichung innerhalb von 24-48 Stunden überprüfen",
+    "featured_stories": "Hervorgehobene Geschichten",
+    "featured_description": "Außergewöhnliche Geschichten können auf unserer Startseite präsentiert werden",
+    "community_impact": "Community-Einfluss",
+    "community_description": "Ihre Geschichte kann andere inspirieren, die Klarheit suchen",
+    "submit_another": "📝 Eine weitere Geschichte einreichen",
+    "help_community": "💭 Helfen Sie uns, eine bessere Community aufzubauen",
+    "join_vision": "🌟 Schließen Sie sich unserer Vision an: Eine Gemeinschaft geteilter Erfahrungen",
+    "vision_description": "Wir bauen etwas auf, das weit über eine Plattform hinausgeht. Es ist das Fundament einer Gemeinschaft, in der Menschen, die Ihren Schmerz, Ihre Freude, Ihre Misserfolge und Erfolge teilen, sich verbinden, unterstützen und gemeinsam wachsen können. Ihr Feedback prägt diese wichtige Mission.",
+    "pipeline_vision": "Unsere Pipeline-Vision: Ein Ort, an dem Ihre Geschichte zur Hoffnung eines anderen wird, wo geteilte Kämpfe kollektive Stärke schaffen und wo jede Erfahrung zum Aufbau einer Gemeinschaft beiträgt, die wirklich versteht.",
+    "share_vision": "💬 Ihre Vision teilen",
+    "join_movement": "🌱 Der Bewegung beitreten",
+    "next_clarity": "Bereit für Ihre nächste Klarheitssitzung?",
+    "continue_journey": "Setzen Sie Ihre Reise der Selbstfindung mit DrishiQ fort",
+    "start_session": "💬 Neue Sitzung starten",
+    "return_home": "🏠 Zurück zur Startseite"
+  },
+  "ui_elements": {
+    "hero": {
+      "title": "Echte Geschichten von echten Menschen",
+      "subtitle": "Entdecken Sie, wie DrishiQ Leben verändert hat. Jede Geschichte ist einzigartig.",
+      "cta_button": "✨ Teilen Sie Ihre Geschichte"
+    },
+    "filters": {
+      "search_placeholder": "Referenzen suchen...",
+      "category_label": "Alle Kategorien",
+      "rating_label": "Alle Bewertungen",
+      "featured_label": "Nur hervorgehobene",
+      "sort_label": "Sortieren nach:",
+      "sort_options": {
+        "date": "Datum",
+        "rating": "Bewertung",
+        "likes": "Likes",
+        "comments": "Kommentare"
+      }
+    },
+    "badges": {
+      "featured_story": "🌟 Hervorgehobene Geschichte",
+      "user_story": "✨ Benutzergeschichte"
+    },
+    "messages": {
+      "loading": "Referenzen werden geladen...",
+      "no_results": "Keine Referenzen gefunden. Teilen Sie zuerst Ihre Geschichte!",
+      "error": "Fehler beim Abrufen der Referenzen"
+    },
+    "pagination": {
+      "previous": "Vorherige",
+      "next": "Nächste"
+    }
+  },
+  "loading": "Wird geladen...",
+  "categories": {
+    "career_development": "Karriereentwicklung",
+    "life_coaching": "Life-Coaching",
+    "business_consulting": "Unternehmensberatung",
+    "educational_consulting": "Bildungsberatung",
+    "content_marketing": "Content-Marketing",
+    "change_management": "Change Management",
+    "management_consulting": "Managementberatung",
+    "marketing_consulting": "Marketingberatung",
+    "customer_service": "Kundenservice",
+    "customer_support": "Kundensupport",
+    "life_path_choices": "Lebensweg und Entscheidungen",
+    "confidence_presence": "Selbstvertrauen und Präsenz",
+    "growth_capability": "Wachstum und Kompetenzaufbau",
+    "relationship_social": "Beziehungen und soziale Balance",
+    "clarity_mental": "Klarheit und mentale Resilienz",
+    "others": "Sonstige"
+  },
+  "languages": {
+    "english": "English",
+    "hindi": "हिन्दी",
+    "arabic": "العربية",
+    "german": "Deutsch",
+    "spanish": "Español",
+    "french": "Français",
+    "chinese": "中文",
+    "japanese": "日本語",
+    "russian": "Русский",
+    "portugese": "Português",
+    "bangla": "বাংলা",
+    "tamil": "தமிழ்"
+  }
+}

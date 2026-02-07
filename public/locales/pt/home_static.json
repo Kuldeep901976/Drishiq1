@@ -1,0 +1,150 @@
+{
+  "about": {
+    "heading": "Sobre o DrishiQ",
+    "description1": "O DrishiQ é uma plataforma que ajuda você a enfrentar os desafios da vida com clareza e confiança.",
+    "description2": "Oferecemos orientação pessoal, apoio e recursos para que você tome decisões informadas e cresça.",
+    "description3": {
+      "prefix": "Pronto para começar sua jornada?"
+    },
+    "join_button": "Junte-se agora",
+    "tagline": "Refletir. Decidir. Crescer."
+  },
+  "hero": {
+    "message1": {
+      "title": "Algo parece fora do lugar — mas você não consegue nomear",
+      "subtitle": "Descubra com o DrishiQ os espaços que ainda permanecem inexplorados",
+      "button": "🔍 Olhar mais de perto"
+    },
+    "message2": {
+      "title": "O problema é claro, o caminho não",
+      "subtitle": "Identifique as partes nebulosas. O DrishiQ caminha com você",
+      "button": "Experimentar"
+    },
+    "message3": {
+      "title": "Você está cansado de fingir que está tudo bem",
+      "subtitle": "Você não precisa carregar o peso sozinho. O DrishiQ encontra você onde estiver",
+      "button": "👤 Conheça a si mesmo"
+    },
+    "message4": {
+      "title": "Você não precisa de conserto — apenas de um momento que realmente o veja",
+      "subtitle": "Trabalhe com o DrishiQ para ser visto — sem consertos, sem julgamentos",
+      "button": "💪 Fique firme"
+    },
+    "message5": {
+      "title": "Vamos começar — suavemente",
+      "subtitle": "Não é um grande salto. Apenas um passo tranquilo — quando você estiver pronto",
+      "button": "🚀 Vamos começar"
+    },
+    "message6": {
+      "title": "Você está tentando, mas não está convencido",
+      "subtitle": "Às vezes é um obstáculo. Às vezes é falta de habilidade. Às vezes apenas um apoio.",
+      "button": "🤝 O DrishiQ pode ajudar"
+    }
+  },
+  "choose_path": {
+    "title": "Escolha o seu caminho",
+    "description": "Passe pela porta que parecer certa — construa, explore, presenteie ou apoie. Cada porta se abre para a esperança.",
+    "cards": {
+      "build": {
+        "title": "Construa conosco",
+        "subtitle": "Cocriação / colaboração",
+        "hover_message": "Suas ideias e energia podem ajudar a moldar o DrishiQ para todos."
+      },
+      "early_access": {
+        "title": "Acesso antecipado",
+        "subtitle": "Experimente primeiro / explore novas ferramentas",
+        "hover_message": "Seja um dos primeiros a experimentar o que estamos construindo."
+      },
+      "support": {
+        "title": "Apoie outros",
+        "subtitle": "Apoio comunitário",
+        "hover_message": "Ajude a patrocinar sessões para pessoas que não podem pagar por elas."
+      },
+      "gift": {
+        "title": "Presenteie clareza",
+        "subtitle": "Para alguém de quem você gosta",
+        "hover_message": "Dê clareza a alguém em quem você acredita."
+      }
+    }
+  },
+  "features": {
+    "heading_features": {
+      "title": "Recursos",
+      "line1": "O DrishiQ não é apenas uma ferramenta — é um companheiro. Cada recurso foi projetado para silenciar o ruído, inspirar reflexão e guiá-lo de volta ao que importa."
+    },
+
+
+    "card1": {
+  "title": "🧠 Sem Julgamentos",
+  "bullet1": "Diálogo reflexivo e inteligente que encontra você onde estiver",
+  "bullet2": "Um espaço seguro para clareza mental — não conselhos prontos",
+  "quote": "💬 \"Finalmente, algo que ouve sem tirar conclusões apressadas.\""
+},
+"card2": {
+  "title": "🌍 Nativo Global",
+  "bullet1": "Suporte multilíngue completo",
+  "bullet2": "Projetado para pessoas reais, cobrindo 85% da população mundial na fase 1",
+  "quote": "🌐 \"Parece que foi feito para mim — no meu idioma, do meu jeito.\""
+},
+"card3": {
+  "title": "🗣️ Aplicativo Conveniente",
+  "bullet1": "Fale naturalmente — o DrishiQ ouve profundamente",
+  "bullet2": "Transforma sua confusão em um mapa visual de clareza",
+  "quote": "🎧 \"Ele entendeu o que eu nem conseguia explicar em palavras.\""
+},
+"card4": {
+  "title": "🤝 Design Inclusivo",
+  "bullet1": "Patrocine uma sessão, peça uma ou pague adiante",
+  "bullet2": "Um círculo compartilhado de buscadores e apoiadores",
+  "quote": "❤️ \"Mesmo quando eu não pude pagar, alguém me apoiou.\""
+},
+
+    "try_now": {
+      "button": "Experimente agora"
+    },
+    "heading_bridge": "Conexão humana",
+    "description": "A esperança é a primeira coisa que perdemos na dor — e o maior presente que podemos dar. O DrishiQ é a ponte que impede qualquer pessoa de se sentir vazia.",
+    "giver_card": {
+      "title": "🎁 Se você pode dar",
+      "text_lines": [
+        "Seu apoio transforma hesitação em esperança.",
+        "Uma sessão patrocinada por você pode ser um salva-vidas para outra pessoa.",
+        "Não é caridade, é conexão.",
+        "Não é esmola, é uma mão firme."
+      ],
+      "button": "🎁 Patrocine uma sessão"
+    },
+    "needy_card": {
+      "title": "🌱 Se você precisa de ajuda",
+      "text_lines": [
+        "Pedir é força, não fraqueza.",
+        "Se o custo for um obstáculo, conte-nos sua história. Tentaremos conectá-lo a um provedor solidário.",
+        "Garantiremos que você tenha espaço para encontrar clareza,",
+        "e coragem para dar o próximo passo."
+      ],
+      "button": "✍️ Compartilhe seu desafio"
+    },
+    "footer_text": "Um mundo melhor começa quando dar e receber compartilham o mesmo espaço."
+  },
+  "grow_with_us": {
+    "title": "Cresça conosco",
+    "subtitle": "Junte-se à nossa missão de tornar o crescimento pessoal acessível para todos",
+    "roles": {
+      "investor": { "title": "Investidor", "description": "Apoie financeiramente nossa missão", "icon": "💰" },
+      "promoter": { "title": "Promotor", "description": "Espalhe nossa mensagem", "icon": "📣" },
+      "ambassador": { "title": "Embaixador", "description": "Represente-nos em sua comunidade", "icon": "🌍" },
+      "creator": { "title": "Criador", "description": "Crie e colabore", "icon": "✨" },
+      "affiliate": { "title": "Afiliado", "description": "Participe do nosso programa de afiliados", "icon": "🌱" },
+      "referral": { "title": "Parceiro de referência", "description": "Compartilhe e indique outros", "icon": "🔗" }
+    },
+    "cards_cta": "Cada papel importa. Escolha o caminho que parecer certo — e vamos construir clareza juntos.",
+    "join_button": "🎁 Junte-se ao nosso movimento",
+    "learn_more": "Saiba mais"
+  },
+  "mental_fog": {
+    "title": "Pronto para dissipar a névoa mental?",
+    "description": "Inicie uma sessão com o DrishiQ e experimente clareza através da reflexão inteligente.",
+    "button": "🚀 Iniciar sessão"
+  },
+  "tagline": "Refletir. Decidir. Crescer."
+}

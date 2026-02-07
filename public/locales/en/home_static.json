@@ -1,0 +1,151 @@
+{
+  "about": {
+    "heading": "About Drishiq",
+    "description1": "Drishiq is a platform that helps you face life's challenges with clarity and confidence.",
+    "description2": "We provide personalized guidance, support, and resources so you can make thoughtful decisions and move forward.",
+    "description3": {
+      "prefix": "Are you ready to start your journey?"
+    },
+    "join_button": "Join Now",
+    "tagline": "Think. Decide. Move Forward."
+  },
+  "hero": {
+    "message1": {
+      "title": "Something doesn't feel right — but you can't name it",
+      "subtitle": "Discover with Drishiq the places that have remained unseen until now",
+      "button": "🔍 Look Deeper"
+    },
+    "message2": {
+      "title": "The problem is clear, the path is not",
+      "subtitle": "Identify the blurry parts. Drishiq walks with you",
+      "button": "Experience It"
+    },
+    "message3": {
+      "title": "You're tired of pretending everything is fine",
+      "subtitle": "You don't need to carry this burden alone. Drishiq meets you where you are",
+      "button": "👤 Meet Yourself"
+    },
+    "message4": {
+      "title": "You don't need fixing — just a moment that sees you",
+      "subtitle": "Work with Drishiq so you can feel yourself — no fixing needed, no judgment",
+      "button": "💪 Stand Strong"
+    },
+    "message5": {
+      "title": "Let's begin — gently",
+      "subtitle": "This isn't a leap. Just a quiet step — when you're ready",
+      "button": "🚀 Let's Start"
+    },
+    "message6": {
+      "title": "You're trying, but not confident",
+      "subtitle": "Sometimes it's a blockage. Sometimes a skill gap. Sometimes just a little support.",
+      "button": "🤝 Drishiq Can Help"
+    }
+  },
+  "choose_path": {
+    "title": "Choose Your Path",
+    "description": "Walk through the door that feels right — build, explore, gift, or support. Every door opens to hope.",
+    "click_to_know_more": "Click to know more",
+    "cards": {
+      "build": {
+        "title": "Build With Us",
+        "subtitle": "Co-creation / Collaboration",
+        "hover_message": "Your ideas can help shape DrihiQ"
+      },
+      "early_access": {
+        "title": "Early Access",
+        "subtitle": "Try First / Discover New Tools",
+        "hover_message": "Be the first to try what we're building."
+      },
+      "support": {
+        "title": "Support Others",
+        "subtitle": "Community Support",
+        "hover_message": "Sponsor sessions for those who cannot afford it."
+      },
+      "gift": {
+        "title": "Gift Clarity",
+        "subtitle": "For a Loved One",
+        "hover_message": "Give clarity to someone you believe in."
+      }
+    }
+  },
+  "features": {
+    "heading_features": {
+      "title": "Features",
+      "line1": "Drishiq isn't just a tool—it's your companion. Every feature is designed to quiet the noise, spark reflection, and guide you back to what matters."
+    },
+    "card1": {
+      "title": "🧠 Without Judgment",
+      "bullet1": "Reflective, intelligent dialogue that understands you in your situation",
+      "bullet2": "Safe space for mental clarity — not rote suggestions",
+      "quote": "💬 \"Finally, something that listens without jumping to conclusions.\""
+    },
+    "card2": {
+      "title": "🌍 Global Roots",
+      "bullet1": "Complete multilingual support",
+      "bullet2": "Built for real humans, covering 85% of the world's population in phase-1",
+      "quote": "🌐 \"It feels like it was made for me — in my language, my way.\""
+    },
+    "card3": {
+      "title": "🗣️ Convenient App",
+      "bullet1": "Speak naturally — DrishiQ listens deeply",
+      "bullet2": "Transforms your confusion into a visual clarity map",
+      "quote": "🎧 \"It understood what I couldn't even put into words.\""
+    },
+    "card4": {
+      "title": "🤝 Inclusive Design",
+      "bullet1": "Sponsor a session, request one, or pay it forward",
+      "bullet2": "Shared space for seekers and supporters",
+      "quote": "❤️ \"When I couldn't pay, someone was still there for me.\""
+    },
+    "cta": {
+      "description": "Drishiq is here so you can pause, think, and move forward — whoever you are and wherever you're from."
+    },
+    "try_now": {
+      "button": "Try Now"
+    },
+    "heading_bridge": "Human Connection",
+    "description": "In pain, we lose hope first — and that's the greatest gift we can give. Drishiq is the bridge that prevents anyone from feeling empty.",
+    "giver_card": {
+      "title": "🎁 If You Can Give",
+      "text_lines": [
+        "Your support turns hesitation into hope.",
+        "The session you sponsor could be someone else's lifeline.",
+        "It's not charity, it's connection.",
+        "It's not giving, it's support."
+      ],
+      "button": "🎁 Sponsor a Session"
+    },
+    "needy_card": {
+      "title": "🌱 If You Need Help",
+      "text_lines": [
+        "Asking isn't weakness, it's strength.",
+        "If cost is in your way, tell us your story. We'll try to connect you with a supporting provider.",
+        "We'll ensure you have a place to find clarity,",
+        "and the courage to take the next step."
+      ],
+      "button": "✍️ Share Your Challenge"
+    },
+    "footer_text": "A better world begins when giving and receiving share the same space."
+  },
+  "grow_with_us": {
+    "title": "Grow With Us",
+    "subtitle": "Join our mission — to make personal growth accessible to everyone",
+    "roles": {
+      "investor": { "title": "Investor", "description": "Provide financial support to our mission", "icon": "💰" },
+      "promoter": { "title": "Promoter", "description": "Spread our message", "icon": "📣" },
+      "ambassador": { "title": "Ambassador", "description": "Represent us in your community", "icon": "🌍" },
+      "creator": { "title": "Creator", "description": "Create and collaborate", "icon": "✨" },
+      "affiliate": { "title": "Affiliate", "description": "Join our affiliate program", "icon": "🌱" },
+      "referral": { "title": "Referral Partner", "description": "Connect others and share", "icon": "🔗" }
+    },
+    "cards_cta": "Every role matters. Choose the path that feels right — and let's build clarity together.",
+    "join_button": "🎁 Join Our Movement",
+    "learn_more": "Learn More"
+  },
+  "mental_fog": {
+    "title": "Ready to Clear the Mental Fog?",
+    "description": "Start a session with Drishiq and experience clarity through intelligent reflection.",
+    "button": "🚀 Start Session"
+  },
+  "tagline": "Think. Decide. Move Forward."
+}

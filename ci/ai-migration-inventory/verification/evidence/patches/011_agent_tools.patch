@@ -1,0 +1,448 @@
+--- /dev/null
++++ b/lib/agent/tools/index.ts
+@@ -0,0 +1,400 @@
++/**
++ * Agent Tools - Functions exposed to agent runtime
++ * 
++ * Tools that the agent can call during execution
++ */
++
++import { createServiceClient } from '../../supabase';
++import { getRecentMessages, insertAiResponse } from '../../ddsa/db-adapters';
++import { loadSession, saveSession } from '../memory';
++
++export interface Stakeholder {
++  id?: string;
++  name?: string;
++  role?: string;
++  frequency?: string;
++  contribution?: string;
++  classification: 'Key' | 'CloselyCoupled' | 'LooselyCoupled' | 'Systemic' | 'Dynamic';
++  domains: {
++    emotional: number;
++    financial: number;
++    health: number;
++    operational: number;
++    social: number;
++  };
++  metadata?: Record<string, any>;
++}
++
++export interface PropagationReport {
++  stakeholder: Stakeholder;
++  impactedStakeholders: Array<{
++    stakeholderId: string;
++    impactScore: number;
++    domainImpacts: {
++      emotional: number;
++      financial: number;
++      health: number;
++      operational: number;
++      social: number;
++    };
++    consequences: string[];
++    recommendedPlanUpdates: string[];
++  }>;
++  aggregateImpact: {
++    emotional: number;
++    financial: number;
++    health: number;
++    operational: number;
++    social: number;
++  };
++  confidence: number;
++}
++
++/**
++ * Tool: Discover stakeholders from issue summary and thread context
++ */
++export async function discoverStakeholders(
++  issue_summary: string,
++  thread_id: string
++): Promise<Stakeholder[]> {
++  try {
++    const supabase = createServiceClient();
++    
++    // Get recent messages for context
++    const recentMessages = await getRecentMessages(thread_id, 10);
++    
++    // Combine issue summary with message history
++    const fullContext = [
++      issue_summary,
++      ...recentMessages.map(m => `${m.role}: ${m.content}`)
++    ].join('\n\n');
++    
++    // Lightweight NER/cue parsing
++    // Look for common stakeholder indicators
++    const stakeholderPatterns = [
++      /(?:my|our|the)\s+(?:partner|spouse|wife|husband|boyfriend|girlfriend)/gi,
++      /(?:my|our|the)\s+(?:parent|mother|father|mom|dad)/gi,
++      /(?:my|our|the)\s+(?:child|children|son|daughter|kid)/gi,
++      /(?:my|our|the)\s+(?:manager|boss|supervisor|employer)/gi,
++      /(?:my|our|the)\s+(?:team|colleague|co-worker)/gi,
++      /(?:my|our|the)\s+(?:doctor|physician|therapist)/gi,
++      /(?:my|our|the)\s+(?:friend|buddy)/gi,
++      /(?:my|our|the)\s+(?:client|customer|stakeholder)/gi
++    ];
++    
++    const foundStakeholders: Stakeholder[] = [];
++    const seenNames = new Set<string>();
++    
++    // Extract potential stakeholders from context
++    for (const pattern of stakeholderPatterns) {
++      const matches = fullContext.match(pattern);
++      if (matches) {
++        for (const match of matches) {
++          const name = match.replace(/(?:my|our|the)\s+/i, '').trim();
++          if (!seenNames.has(name.toLowerCase())) {
++            seenNames.add(name.toLowerCase());
++            
++            // Classify based on context
++            let classification: Stakeholder['classification'] = 'LooselyCoupled';
++            if (name.match(/(?:partner|spouse|parent|child)/i)) {
++              classification = 'Key';
++            } else if (name.match(/(?:manager|boss|doctor)/i)) {
++              classification = 'CloselyCoupled';
++            }
++            
++            foundStakeholders.push({
++              name,
++              role: inferRole(name),
++              classification,
++              domains: inferDomains(name, fullContext),
++              frequency: inferFrequency(name, fullContext),
++              contribution: inferContribution(name, fullContext)
++            });
++          }
++        }
++      }
++    }
++    
++    // Also check ddsa_stakeholders table if it exists
++    try {
++      const { data: existingStakeholders } = await supabase
++        .from('ddsa_stakeholders')
++        .select('*')
++        .eq('thread_id', thread_id);
++      
++      if (existingStakeholders && existingStakeholders.length > 0) {
++        for (const existing of existingStakeholders) {
++          if (!foundStakeholders.find(s => s.name === existing.name)) {
++            foundStakeholders.push({
++              id: existing.id,
++              name: existing.name,
++              role: existing.role,
++              classification: mapClassification(existing.classification),
++              domains: existing.domains || {
++                emotional: 0.5,
++                financial: 0.5,
++                health: 0.5,
++                operational: 0.5,
++                social: 0.5
++              },
++              frequency: existing.frequency,
++              contribution: existing.contribution
++            });
++          }
++        }
++      }
++    } catch (dbError) {
++      // Table might not exist, continue
++      console.warn('⚠️ Could not query ddsa_stakeholders:', dbError);
++    }
++    
++    // If no stakeholders found, return at least one generic one
++    if (foundStakeholders.length === 0) {
++      foundStakeholders.push({
++        name: 'User',
++        role: 'Primary stakeholder',
++        classification: 'Key',
++        domains: {
++          emotional: 1.0,
++          financial: 1.0,
++          health: 1.0,
++          operational: 1.0,
++          social: 1.0
++        }
++      });
++    }
++    
++    return foundStakeholders;
++    
++  } catch (error: any) {
++    console.error('❌ Error in discoverStakeholders:', error.message);
++    // Return minimal stakeholder on error
++    return [{
++      name: 'User',
++      role: 'Primary stakeholder',
++      classification: 'Key',
++      domains: {
++        emotional: 1.0,
++        financial: 1.0,
++        health: 1.0,
++        operational: 1.0,
++        social: 1.0
++      }
++    }];
++  }
++}
++
++/**
++ * Tool: Propagate new stakeholder impact across existing stakeholders
++ */
++export async function propagateNewStakeholder(
++  stakeholder: Stakeholder,
++  sessionId: string
++): Promise<PropagationReport> {
++  try {
++    // Load session to get existing stakeholders
++    const session = await loadSession(sessionId);
++    const existingStakeholders = session?.stakeholders || [];
++    
++    if (existingStakeholders.length === 0) {
++      // No existing stakeholders, return minimal report
++      return {
++        stakeholder,
++        impactedStakeholders: [],
++        aggregateImpact: {
++          emotional: stakeholder.domains.emotional,
++          financial: stakeholder.domains.financial,
++          health: stakeholder.domains.health,
++          operational: stakeholder.domains.operational,
++          social: stakeholder.domains.social
++        },
++        confidence: 0.8
++      };
++    }
++    
++    // Calculate impact for each existing stakeholder
++    const impactedStakeholders = existingStakeholders.map((existing: Stakeholder) => {
++      // Calculate impact score based on classification and domains
++      const impactScore = calculateImpactScore(stakeholder, existing);
++      const domainImpacts = calculateDomainImpacts(stakeholder, existing);
++      const consequences = inferConsequences(stakeholder, existing);
++      const recommendedPlanUpdates = inferPlanUpdates(stakeholder, existing);
++      
++      return {
++        stakeholderId: existing.id || existing.name || 'unknown',
++        impactScore,
++        domainImpacts,
++        consequences,
++        recommendedPlanUpdates
++      };
++    });
++    
++    // Aggregate impacts
++    const aggregateImpact = {
++      emotional: Math.max(...impactedStakeholders.map(i => i.domainImpacts.emotional), stakeholder.domains.emotional),
++      financial: Math.max(...impactedStakeholders.map(i => i.domainImpacts.financial), stakeholder.domains.financial),
++      health: Math.max(...impactedStakeholders.map(i => i.domainImpacts.health), stakeholder.domains.health),
++      operational: Math.max(...impactedStakeholders.map(i => i.domainImpacts.operational), stakeholder.domains.operational),
++      social: Math.max(...impactedStakeholders.map(i => i.domainImpacts.social), stakeholder.domains.social)
++    };
++    
++    // Update session with new stakeholder
++    await saveSession(sessionId, {
++      stakeholders: [...existingStakeholders, stakeholder]
++    });
++    
++    return {
++      stakeholder,
++      impactedStakeholders,
++      aggregateImpact,
++      confidence: 0.85
++    };
++    
++  } catch (error: any) {
++    console.error('❌ Error in propagateNewStakeholder:', error.message);
++    
++    // Return minimal report on error
++    return {
++      stakeholder,
++      impactedStakeholders: [],
++      aggregateImpact: stakeholder.domains,
++      confidence: 0.5
++    };
++  }
++}
++
++/**
++ * Tool: Store AI response (wrapper around insertAiResponse)
++ */
++export async function storeAiResponse(payload: {
++  response_id: string;
++  thread_id: string;
++  model: string;
++  stage_ref?: string;
++  instruction_set_id?: string;
++  request_payload?: any;
++  response_payload?: any;
++  tokens_in?: number;
++  tokens_out?: number;
++  total_tokens?: number;
++  estimated_cost?: number;
++}): Promise<any> {
++  return await insertAiResponse(payload);
++}
++
++/**
++ * Tool: Get thread context (wrapper around getRecentMessages)
++ */
++export async function getThreadContext(thread_id: string, limit: number = 8): Promise<any[]> {
++  return await getRecentMessages(thread_id, limit);
++}
++
++// Helper functions
++
++function inferRole(name: string): string {
++  const lower = name.toLowerCase();
++  if (lower.includes('partner') || lower.includes('spouse')) return 'Family member';
++  if (lower.includes('parent') || lower.includes('mother') || lower.includes('father')) return 'Family member';
++  if (lower.includes('child') || lower.includes('son') || lower.includes('daughter')) return 'Family member';
++  if (lower.includes('manager') || lower.includes('boss')) return 'Work supervisor';
++  if (lower.includes('doctor') || lower.includes('physician')) return 'Healthcare provider';
++  if (lower.includes('friend')) return 'Friend';
++  return 'Other';
++}
++
++function inferDomains(name: string, context: string): Stakeholder['domains'] {
++  const lower = name.toLowerCase();
++  const contextLower = context.toLowerCase();
++  
++  const domains: Stakeholder['domains'] = {
++    emotional: 0.5,
++    financial: 0.5,
++    health: 0.5,
++    operational: 0.5,
++    social: 0.5
++  };
++  
++  // Adjust based on role
++  if (lower.includes('partner') || lower.includes('spouse')) {
++    domains.emotional = 0.9;
++    domains.financial = 0.7;
++    domains.social = 0.8;
++  }
++  
++  if (lower.includes('parent')) {
++    domains.emotional = 0.8;
++    domains.health = 0.9;
++    domains.financial = 0.4;
++  }
++  
++  if (lower.includes('manager') || lower.includes('boss')) {
++    domains.operational = 0.9;
++    domains.financial = 0.7;
++  }
++  
++  if (lower.includes('doctor')) {
++    domains.health = 0.9;
++    domains.emotional = 0.6;
++  }
++  
++  // Adjust based on context
++  if (contextLower.includes('money') || contextLower.includes('cost') || contextLower.includes('financial')) {
++    domains.financial = Math.max(domains.financial, 0.7);
++  }
++  
++  if (contextLower.includes('health') || contextLower.includes('medical') || contextLower.includes('illness')) {
++    domains.health = Math.max(domains.health, 0.7);
++  }
++  
++  return domains;
++}
++
++function inferFrequency(name: string, context: string): string {
++  const contextLower = context.toLowerCase();
++  if (contextLower.includes('daily') || contextLower.includes('every day')) return 'Daily';
++  if (contextLower.includes('weekly') || contextLower.includes('every week')) return 'Weekly';
++  if (contextLower.includes('monthly') || contextLower.includes('every month')) return 'Monthly';
++  if (contextLower.includes('rarely') || contextLower.includes('seldom')) return 'Rarely';
++  return 'Regular';
++}
++
++function inferContribution(name: string, context: string): string {
++  const contextLower = context.toLowerCase();
++  if (contextLower.includes('decision') || contextLower.includes('decide')) return 'Decision maker';
++  if (contextLower.includes('support') || contextLower.includes('help')) return 'Supporter';
++  if (contextLower.includes('affected') || contextLower.includes('impact')) return 'Affected party';
++  return 'Involved';
++}
++
++function mapClassification(classification: string): Stakeholder['classification'] {
++  const map: Record<string, Stakeholder['classification']> = {
++    'key': 'Key',
++    'closely_coupled': 'CloselyCoupled',
++    'loosely_coupled': 'LooselyCoupled',
++    'systemic': 'Systemic',
++    'dynamic': 'Dynamic'
++  };
++  
++  return map[classification.toLowerCase()] || 'LooselyCoupled';
++}
++
++function calculateImpactScore(newStakeholder: Stakeholder, existing: Stakeholder): number {
++  // Higher impact if both are Key stakeholders
++  if (newStakeholder.classification === 'Key' && existing.classification === 'Key') {
++    return 0.9;
++  }
++  
++  // Medium impact if one is Key
++  if (newStakeholder.classification === 'Key' || existing.classification === 'Key') {
++    return 0.7;
++  }
++  
++  // Lower impact otherwise
++  return 0.5;
++}
++
++function calculateDomainImpacts(newStakeholder: Stakeholder, existing: Stakeholder): PropagationReport['impactedStakeholders'][0]['domainImpacts'] {
++  return {
++    emotional: Math.max(newStakeholder.domains.emotional, existing.domains.emotional) * 0.8,
++    financial: Math.max(newStakeholder.domains.financial, existing.domains.financial) * 0.8,
++    health: Math.max(newStakeholder.domains.health, existing.domains.health) * 0.8,
++    operational: Math.max(newStakeholder.domains.operational, existing.domains.operational) * 0.8,
++    social: Math.max(newStakeholder.domains.social, existing.domains.social) * 0.8
++  };
++}
++
++function inferConsequences(newStakeholder: Stakeholder, existing: Stakeholder): string[] {
++  const consequences: string[] = [];
++  
++  if (newStakeholder.classification === 'Key' && existing.classification === 'Key') {
++    consequences.push('Both stakeholders have high influence - coordination required');
++    consequences.push('Decisions may need joint approval');
++  }
++  
++  if (newStakeholder.domains.financial > 0.7 && existing.domains.financial > 0.7) {
++    consequences.push('Financial implications for both parties');
++  }
++  
++  if (newStakeholder.domains.emotional > 0.7 && existing.domains.emotional > 0.7) {
++    consequences.push('Emotional considerations for both parties');
++  }
++  
++  return consequences.length > 0 ? consequences : ['Moderate interaction expected'];
++}
++
++function inferPlanUpdates(newStakeholder: Stakeholder, existing: Stakeholder): string[] {
++  const updates: string[] = [];
++  
++  if (newStakeholder.classification === 'Key') {
++    updates.push('Include new stakeholder in decision-making process');
++    updates.push('Schedule coordination meetings if needed');
++  }
++  
++  if (newStakeholder.domains.financial > 0.7) {
++    updates.push('Review financial aspects of plan');
++    updates.push('Consider budget implications');
++  }
++  
++  if (newStakeholder.domains.health > 0.7) {
++    updates.push('Include health considerations in plan');
++    updates.push('Coordinate with healthcare providers if applicable');
++  }
++  
++  return updates.length > 0 ? updates : ['Monitor stakeholder interactions'];
++}
+

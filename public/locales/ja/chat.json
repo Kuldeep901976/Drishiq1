@@ -1,0 +1,192 @@
+{
+  "modeSelection": {
+    "title": "ドリシク",
+    "subtitle": "あなたのパーソナル占星ガイド",
+    "description": "星々を通して洞察と指針を見つけましょう",
+    "header": {
+      "title": "どのようなガイダンスを求めていますか？",
+      "subtitle": "開始するにはオプションを選択してください",
+      "credits": "クレジット",
+      "buyMore": "追加購入"
+    },
+    "options": {
+      "myself": {
+        "title": "自分のために",
+        "description": "あなたのために特別に作成されたパーソナルガイダンスと洞察を受け取れます",
+        "feature": "✓ 保存されたプロフィールを使用します"
+      },
+      "other": {
+        "title": "大切な人のために",
+        "description": "家族や大切な人のためのサポートと占星ガイダンスを提供します",
+        "feature": "✓ その人の情報を入力します"
+      }
+    },
+    "footer": {
+      "security": "🔐 あなたの情報は安全かつプライベートです",
+      "copyright": "© 2024 ドリシク. 全著作権所有。"
+    },
+    "features": {
+      "personalized": "パーソナライズ",
+      "accurate": "正確",
+      "insightful": "洞察的"
+    },
+    "loading": {
+      "checkingCredits": "クレジットを確認中...",
+      "loading": "読み込み中..."
+    },
+    "errors": {
+      "title": "エラー",
+      "goBack": "戻る",
+      "noCredits": {
+        "title": "利用可能なクレジットがありません",
+        "message": "会話を開始するには少なくとも 1 クレジットが必要です。続行するにはクレジットを購入してください。",
+        "buyCredits": "クレジットを購入",
+        "goBack": "戻る"
+      }
+    },
+    "pendingSession": {
+      "title": "進行中の会話があります",
+      "message": "以前に開始したセッションがあります。途中から再開できます。",
+      "resume": "会話を再開",
+      "close": "閉じる",
+      "dontShowAgain": "今後表示しない（このデバイス）"
+    }
+  },
+  "astro": {
+    "loading": {
+      "title": "ドリシク",
+      "message": "会話を開始しています..."
+    },
+    "form": {
+      "title": "その方について教えてください",
+      "fields": {
+        "firstName": {
+          "label": "名前 *",
+          "placeholder": "名前を入力してください"
+        },
+        "relationship": {
+          "label": "関係性 *",
+          "placeholder": "関係性を選択",
+          "options": {
+            "spouse": "配偶者",
+            "child": "子ども",
+            "parent": "親",
+            "sibling": "兄弟姉妹",
+            "friend": "友人",
+            "other": "その他"
+          }
+        },
+        "dob": {
+          "label": "生年月日 *"
+        },
+        "gender": {
+          "label": "性別 *",
+          "placeholder": "性別を選択",
+          "options": {
+            "male": "男性",
+            "female": "女性",
+            "other": "その他"
+          }
+        }
+      },
+      "next": "次へ",
+      "errors": {
+        "required": "すべての必須項目を入力してください"
+      }
+    },
+    "question": {
+      "title": "占星術の洞察",
+      "message": "{name} のための個別占星ガイダンスを希望しますか？",
+      "subtitle": "計算には出生地と出生時間が必要です。",
+      "notInterested": "興味がない",
+      "includeIt": "はい、含める"
+    },
+    "details": {
+      "title": "{name} の占星詳細",
+      "fields": {
+        "placeOfBirth": {
+          "label": "出生地 *",
+          "placeholder": "市区町村、国"
+        },
+        "timeOfBirth": {
+          "label": "出生時間 *"
+        }
+      },
+      "submit": "送信してチャットを開始",
+      "processing": "処理中...",
+      "errors": {
+        "required": "占星詳細をすべて入力してください",
+        "geocodeFailed": "場所情報を特定できませんでした。出生地を確認してください。",
+        "geocodeInvalid": "出生地のジオコードに失敗しました。確認して再試行してください。",
+        "incomplete": "場所の完全な情報（緯度・経度・タイムゾーン）を計算できませんでした。"
+      }
+    },
+    "errors": {
+      "profileNotFound": "プロフィールが見つかりません。まずプロフィールを完成させてください。",
+      "loadFailed": "プロフィールの読み込みに失敗しました",
+      "createFailed": "プロフィールの作成に失敗しました",
+      "chatFailed": "チャットの開始に失敗しました",
+      "loginRequired": "続行するにはログインしてください"
+    }
+  },
+  "messages": {
+    "loading": "読み込み中...",
+    "checkingCredits": "クレジット確認中...",
+    "initiating": "会話を開始しています...",
+    "processing": "処理中...",
+    "submitting": "回答を送信しています...",
+    "thinking": "ドリシクが考えています...",
+    "sending": "送信中...",
+    "transcribing": "文字起こし中...",
+    "recording": "録音中...",
+    "clickToStop": "クリックして停止",
+    "clickToRecord": "クリックして音声メッセージを録音（Whisper）"
+  },
+  "chat": {
+    "header": {
+      "personal": "パーソナルチャット",
+      "caregiver": "チャット: {name}"
+    },
+    "input": {
+      "placeholder": "メッセージを入力...",
+      "placeholderFrozen": "上のオプションを選択してください...",
+      "send": "送信",
+      "sending": "送信中...",
+      "noContent": "(内容なし)"
+    },
+    "voice": {
+      "recording": "録音中...",
+      "processing": "処理中...",
+      "transcribing": "文字起こし中...",
+      "stop": "録音中… 停止するにはクリック",
+      "start": "クリックして音声メッセージを録音（Whisper）"
+    },
+    "interactive": {
+      "submit": "送信",
+      "addDetails": "詳細を追加...",
+      "expand": "詳細を追加するために展開",
+      "collapse": "詳細を折りたたむ",
+      "moreQuestions": "送信後にさらに {count} 件の質問{plural}が表示されます",
+      "stage": "ステージ:",
+      "typeResponse": "ここに回答を入力..."
+    },
+    "actions": {
+      "delete": "メッセージを削除",
+      "newChat": "新しいチャット",
+      "generatePDF": "PDF レポートを生成"
+    },
+    "errors": {
+      "insufficientCredits": "クレジットが不足しています。購入ページに移動中...",
+      "serverError": "サーバーエラーが発生しました。再試行してください。",
+      "parseError": "サーバー応答の解析に失敗しました",
+      "emptyResponse": "サーバーから空の応答が返されました",
+      "deleteFailed": "メッセージを削除できませんでした。古すぎる可能性があります。",
+      "deleteError": "メッセージ削除中にエラーが発生しました。再試行してください。",
+      "communicationError": "サーバーとの通信エラーが発生しました"
+    },
+    "pdf": {
+      "available": "PDF レポート利用可能",
+      "generate": "PDF レポートを生成"
+    }
+  }
+}

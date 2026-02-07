@@ -1,0 +1,70 @@
+--- a/app/api/ai/call-v2/route.ts
++++ b/app/api/ai/call-v2/route.ts
+@@ -164,19 +164,47 @@ export async function POST(request: NextRequest) {
+     // Call OpenAI Responses API
+     const openai = getOpenAIClient();
+     
+-    // Note: Responses API uses different endpoint structure
+-    // For now, using chat completions as fallback until Responses API is fully available
+-    // TODO: Update to use responses.create() when SDK supports it
++    // Try Responses API first if available, fallback to chat.completions
++    let response: any;
++    let assistantMessage = '';
++    let responseId = '';
++    let tokensIn = 0;
++    let tokensOut = 0;
++    let totalTokens = 0;
+     
+-    const response = await openai.chat.completions.create({
+-      model,
+-      messages: inputArray,
+-      max_tokens: maxTokens,
+-      temperature
+-    });
++    try {
++      // Check if responses.create() is available (Responses SDK)
++      if (typeof (openai as any).responses?.create === 'function') {
++        response = await (openai as any).responses.create({
++          model,
++          input: inputArray,
++          max_tokens: maxTokens,
++          temperature
++        });
++        
++        // Handle Responses API shape
++        assistantMessage = response.choices?.[0]?.text || response.choices?.[0]?.message?.content || '';
++        responseId = response.id || `resp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
++        const usage = response.usage || {};
++        tokensIn = usage.prompt_tokens || 0;
++        tokensOut = usage.completion_tokens || 0;
++        totalTokens = usage.total_tokens || (tokensIn + tokensOut);
++      } else {
++        throw new Error('Responses API not available, using fallback');
++      }
++    } catch (responsesError: any) {
++      // Fallback to chat.completions
++      console.log('⚠️ Responses API not available, using chat.completions fallback');
++      
++      response = await openai.chat.completions.create({
++        model,
++        messages: inputArray,
++        max_tokens: maxTokens,
++        temperature
++      });
++      
++      // Handle chat.completions shape
++      assistantMessage = response.choices[0]?.message?.content || '';
++      responseId = response.id || `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
++      const usage = response.usage || {};
++      tokensIn = usage.prompt_tokens || 0;
++      tokensOut = usage.completion_tokens || 0;
++      totalTokens = usage.total_tokens || (tokensIn + tokensOut);
++    }
+ 
+-    const assistantMessage = response.choices[0]?.message?.content || '';
+-    const responseId = response.id;
+-    const usage = response.usage || {};
+-    const tokensIn = usage.prompt_tokens || 0;
+-    const tokensOut = usage.completion_tokens || 0;
+-    const totalTokens = usage.total_tokens || 0;
+ 

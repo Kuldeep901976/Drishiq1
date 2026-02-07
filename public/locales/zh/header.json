@@ -1,0 +1,116 @@
+{
+  "logo_alt": "德里希克 标志",
+
+  "meet_yourself": {
+    "label": "遇见自己",
+    "types_label": "性格类型",
+    "types": {
+      "builder": "建设者",
+      "builder_hover": "创造、构建并主动行动的人",
+      "seeker": "探索者",
+      "seeker_hover": "寻求意义和新视角的人",
+      "giver": "给予者",
+      "giver_hover": "帮助他人并提供支持的人",
+      "connector": "连接者",
+      "connector_hover": "将人们联系在一起的人",
+      "dependent": "依赖者",
+      "dependent_hover": "经常依靠他人获得支持的人",
+      "escaper": "逃离者",
+      "escaper_hover": "试图逃避或远离压力的人",
+      "giving_beyond": "超越界限的给予",
+      "giving_beyond_hover": "超过个人贡献的行为",
+      "problem_carrier": "问题承载者",
+      "problem_carrier_hover": "替他人承担问题的人",
+      "rebooter": "重启者",
+      "rebooter_hover": "重新启动并重新定义情况的人",
+      "solo": "独行者",
+      "solo_hover": "重视独立和独处的人"
+    }
+  },
+
+  "drishiq": "德里希克",
+  "drishiq_hover": "前往德里希克主页",
+
+  "blog": "博客",
+  "blog_hover": "阅读文章、故事和想法",
+
+  "voice": "声音",
+  "voice_hover": "聆听观点和音频内容",
+
+  "grow": "成长",
+  "grow_hover": "学习、协作和扩展的机会",
+
+  "bridge": "桥梁",
+  "bridge_hover": "与他人连接并建立社区",
+
+  "your_path_label": "你的道路",
+  "your_path": {
+    "your_clarity_pass": "你的清晰通行证",
+    "your_clarity_pass_hover": "获取你的清晰通行证",
+    "co_create": "共同创造",
+    "co_create_hover": "与他人一起塑造你的体验",
+    "get_first_light": "获得第一束光",
+    "get_first_light_hover": "从初步的清晰会话开始",
+    "fuel_a_journey": "支持一段旅程",
+    "fuel_a_journey_hover": "支持某人的个人成长之旅",
+    "gift_a_spark": "赠送火花",
+    "gift_a_spark_hover": "赠送一场初次清晰会话",
+    "spread_the_light": "传播光芒",
+    "spread_the_light_hover": "在你的网络中分享德里希克并扩展社区"
+  },
+
+  "language_button_label": "语言",
+
+  "languages": {
+    "en": "English",
+    "hi": "हिन्दी",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "ja": "日本語",
+    "ru": "Русский",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ta": "தமிழ்",
+    "pt": "Português",
+    "ar": "العربية"
+  },
+
+  "profile_options_label": "个人资料选项",
+  "profile_options": {
+    "got_an_invitation": "收到邀请了吗？",
+    "got_an_invitation_hover": "输入邀请码解锁访问权限",
+    "reserve_my_spot": "预留我的位置",
+    "reserve_my_spot_hover": "通过付款和联系方式确认你的名额",
+    "request_an_invitation": "申请邀请",
+    "request_an_invitation_hover": "分享你的信息以获得提前访问机会",
+    "gift_clarity": "赠送清晰度",
+    "gift_clarity_hover": "赠送清晰会话或邀请",
+    "grow_with_us": "与我们一起成长",
+    "grow_with_us_hover": "成为大使、联盟伙伴或协作者"
+  },
+
+  "profile": {
+    "user_fallback": "用户",
+    "welcome_back": "欢迎回来！",
+    "dashboard": "仪表盘",
+    "user_profile": "用户资料",
+    "settings": "资料设置",
+    "sign_out": "退出登录",
+    "sign_in": "登录",
+    "sign_up": "注册",
+    "log_out": "退出",
+    "search": "搜索",
+    "light_mode": "浅色模式",
+    "dark_mode": "深色模式",
+    "about": "关于德里希克",
+    "terms_conditions": "条款和条件",
+    "years": "年",
+    "scan_to_sign_up": "扫描注册",
+    "qr_scan_instruction": "使用手机相机扫描二维码",
+    "qr_enlarge_hover": "点击放大二维码",
+    "dashboard_hover": "查看你的仪表盘",
+    "settings_hover": "管理你的资料设置",
+    "sign_out_hover": "退出你的账户"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "notFound": {
+    "title": "404",
+    "heading": "Page Not Found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "loading": "Loading...",
+    "logo": {
+      "alt": "DrishiQ Logo",
+      "tagline": "See Through the Challenge"
+    },
+    "banner": {
+      "top": {
+        "title": "Join the DrishiQ Revolution",
+        "subtitle": "Transform challenges into clarity with AI-powered insights",
+        "signUp": "Sign Up"
+      },
+      "bottom": {
+        "title": "Ready to Transform Your Challenges?",
+        "description": "Join thousands who have found clarity through AI-powered insights",
+        "getStarted": "Get Started"
+      }
+    },
+    "solutions": {
+      "title": "Get Back on Track",
+      "goHome": {
+        "title": "Go Home",
+        "description": "Return to our homepage",
+        "button": "Home"
+      },
+      "tryAgain": {
+        "title": "Try Again",
+        "description": "Go back to the previous page",
+        "button": "Go Back"
+      },
+      "getHelp": {
+        "title": "Get Help",
+        "description": "Contact our support team",
+        "button": "Contact"
+      }
+    },
+    "status": {
+      "operational": "All systems operational"
+    }
+  },
+  "error": {
+    "title": "Something went wrong!",
+    "description": "An error occurred. Please refresh the page.",
+    "unexpected": "An unexpected error occurred",
+    "tryAgain": "Try again",
+    "refresh": "Refresh the page"
+  },
+  "globalError": {
+    "title": "Something went wrong!",
+    "description": "An unexpected error occurred",
+    "tryAgain": "Try again"
+  },
+  "userNotFound": {
+    "title": "User Not Found",
+    "description": "The user profile you are looking for does not exist.",
+    "goHome": "Go to Home",
+    "back": "Go Back"
+  },
+  "loading": {
+    "default": "Loading...",
+    "page": "Loading page...",
+    "content": "Loading content...",
+    "profile": "Loading profile...",
+    "data": "Loading data...",
+    "pleaseWait": "Please wait..."
+  },
+  "network": {
+    "offline": "You are currently offline",
+    "online": "Connection restored",
+    "slow": "Slow connection detected",
+    "timeout": "Request timeout. Please try again.",
+    "failed": "Network request failed"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalid": "Invalid input",
+    "tooShort": "Input is too short",
+    "tooLong": "Input is too long",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number",
+    "passwordMismatch": "Passwords do not match",
+    "weakPassword": "Password is too weak"
+  },
+  "unauthorized": {
+    "title": "Access Denied",
+    "description": "You don't have permission to access this page.",
+    "loginRequired": "Please log in to continue",
+    "goToLogin": "Go to Login",
+    "goHome": "Go to Home"
+  },
+  "forbidden": {
+    "title": "Forbidden",
+    "description": "You don't have permission to access this resource.",
+    "contactSupport": "Contact Support",
+    "goHome": "Go to Home"
+  },
+  "serverError": {
+    "title": "Server Error",
+    "description": "Something went wrong on our end. We're working to fix it.",
+    "tryAgain": "Try Again",
+    "contactSupport": "Contact Support",
+    "goHome": "Go to Home"
+  },
+  "maintenance": {
+    "title": "Under Maintenance",
+    "description": "We're currently performing scheduled maintenance. Please check back soon.",
+    "estimatedTime": "Estimated time: {time}",
+    "contact": "For urgent matters, please contact support"
+  },
+  "sessionExpired": {
+    "title": "Session Expired",
+    "description": "Your session has expired. Please log in again.",
+    "login": "Log In",
+    "goHome": "Go to Home"
+  },
+  "paymentError": {
+    "title": "Payment Error",
+    "description": "There was an error processing your payment.",
+    "tryAgain": "Try Again",
+    "contactSupport": "Contact Support",
+    "backToPlans": "Back to Plans"
+  },
+  "generic": {
+    "somethingWentWrong": "Something went wrong",
+    "pleaseTryAgain": "Please try again",
+    "contactSupport": "Contact Support",
+    "goHome": "Go to Home",
+    "refresh": "Refresh",
+    "cancel": "Cancel",
+    "ok": "OK"
+  }
+}
+

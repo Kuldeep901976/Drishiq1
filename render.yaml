@@ -1,0 +1,142 @@
+services:
+  - type: web
+    name: drishiq-test
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    repo: https://github.com/drishiq2-dot/drishiq1.git
+    branch: master
+    autoDeploy: true
+    healthCheckPath: /api/health
+    plan: free
+    # Scaling configuration (uncomment when ready to scale)
+    # instances: 1  # Start with 1, increase to 3-5 for horizontal scaling
+    # instanceClass: standard  # Change from free to standard for better performance
+    # autoScaling:
+    #   minInstances: 1
+    #   maxInstances: 5
+    #   targetCPU: 70
+    #   targetMemory: 80
+    envVars:
+      - key: NODE_ENV
+        value: preprod
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_API_KEY
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+        sync: false
+      - key: NEXT_PUBLIC_FIREBASE_APP_ID
+        sync: false
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://drishiq-test.onrender.com
+      - key: FIREBASE_PRIVATE_KEY
+        sync: false
+      - key: FIREBASE_CLIENT_EMAIL
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: FROM_EMAIL
+        value: noreply@drishiq.com
+      - key: BLOB_READ_WRITE_TOKEN
+        sync: false
+      - key: NEXT_PUBLIC_GA_ID
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      # Responses API Configuration (for /api/ai/call-v2)
+      - key: OPENAI_RESPONSES_KEY
+        sync: false
+        # TODO: Set this in Render dashboard to your OpenAI Responses API key
+        # If not set, will fallback to OPENAI_API_KEY
+      - key: OPENAI_RESPONSES_MODEL
+        value: "gpt-5-mini"
+        # TODO: Update to actual model name when Responses API is available
+      - key: DRISHIQ_AI_MODE
+        value: "responses"
+        # Options: "responses" (new API), "chat" (old API), "hybrid" (both)
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      # Redis configuration for rate limiting and caching
+      - key: UPSTASH_REDIS_REST_URL
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      # Supabase connection pooling (optional - for better performance)
+      - key: NEXT_PUBLIC_SUPABASE_POOLER_URL
+        sync: false
+      - key: SUPABASE_SERVICE_POOLER_URL
+        sync: false
+      - key: SUPABASE_POOL_SIZE
+        value: "15"
+      # Supabase read replica (optional - for read-heavy operations)
+      - key: SUPABASE_READ_REPLICA_URL
+        sync: false
+      # Admin Auth Service URL
+      - key: ADMIN_AUTH_URL
+        value: https://admin-auth-service.onrender.com
+
+  # Admin-Auth Service - Separate service for super-admin authentication
+  - type: web
+    name: admin-auth-service
+    env: node
+    buildCommand: cd admin-auth && npm install
+    startCommand: cd admin-auth && node index.js
+    repo: https://github.com/drishiq2-dot/drishiq1.git
+    branch: master
+    autoDeploy: true
+    healthCheckPath: /health
+    plan: free
+    envVars:
+      # Environment
+      - key: NODE_ENV
+        value: production
+      # Production Mode (CRITICAL - must be false)
+      - key: LOCAL_DEV
+        value: "false"
+      # Supabase Configuration (uses same as main service)
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      # Admin Auth Service Configuration
+      - key: ADMIN_AUTH_PORT
+        value: "8443"
+      - key: WEBAUTHN_RP_ID
+        value: "admin.drishiq.com"  # Update to your production domain
+      - key: WEBAUTHN_RP_NAME
+        value: "DrishiQ Admin"
+      - key: SESSION_TTL_SECONDS
+        value: "900"  # 15 minutes
+      # Security Configuration (optional - configure if needed)
+      - key: ADMIN_IP_WHITELIST
+        sync: false  # Set VPN IP ranges if using: "10.0.0.0/8,172.16.0.0/12"
+      - key: REQUIRE_MTLS
+        value: "false"  # Set to "true" if using mTLS with certificates
+      # Email Notifications (uses same SMTP as main service)
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: FROM_EMAIL
+        value: "noreply@drishiq.com"

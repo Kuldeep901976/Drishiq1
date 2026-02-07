@@ -1,0 +1,281 @@
+{
+  "hero": {
+    "title": "本物の人々が語る、本物のストーリー",
+    "subtitle": "Drishiq がどのように人生を変えてきたのかを知ってください。すべてのストーリーは唯一無二です。",
+    "cta_button": "✨ あなたのストーリーを共有する",
+    "cta_link": "/testimonials/submit"
+  },
+  "filters": {
+    "search_placeholder": "口コミを検索…",
+    "category_all": "すべてのカテゴリ",
+    "categories": {
+      "career_development": "キャリア開発",
+      "life_coaching": "ライフコーチング",
+      "business_consulting": "ビジネスコンサルティング",
+      "educational_consulting": "教育コンサルティング",
+      "content_marketing": "コンテンツマーケティング",
+      "change_management": "チェンジマネジメント",
+      "clarity_mental_resilience": "明確さとメンタルレジリエンス"
+    },
+    "rating_all": "すべての評価",
+    "rating_five": "星5つ",
+    "rating_four_plus": "星4以上",
+    "rating_three_plus": "星3以上",
+    "featured_only": "特集のみ",
+    "sort_label": "並べ替え：",
+    "sort_date": "日付",
+    "sort_rating": "評価",
+    "sort_likes": "いいね",
+    "sort_comments": "コメント",
+    "sort_asc": " ↑",
+    "sort_desc": " ↓"
+  },
+  "loading": {
+    "message": "口コミを読み込み中…"
+  },
+  "error": {
+    "message": "口コミの取得中にエラーが発生しました"
+  },
+  "testimonials_list": {
+    "no_results": "口コミが見つかりませんでした。最初にストーリーを共有する人になりませんか？",
+    "share_story_button": "あなたのストーリーを共有する",
+    "read_more": "続きを読む →",
+    "featured_badge": "⭐ 特集",
+    "anonymous": "匿名",
+    "user": "ユーザー",
+    "back_to_testimonials": "← 口コミ一覧へ戻る",
+    "share_testimonial": "この口コミを共有する",
+    "like_testimonial": "この口コミにいいね",
+    "comment_testimonial": "この口コミにコメントする"
+  },
+  "pagination": {
+    "previous": "前へ",
+    "next": "次へ"
+  },
+  "sidebar": {
+    "title": "💭 より良いコミュニティづくりにご協力ください",
+    "vision_title": "🌟 私たちのビジョンに参加しよう",
+    "vision_description": "共有された困難が、仲間としての力へと変わるコミュニティを築いています。",
+    "pipeline_vision": "私たちの考えるコミュニティ：あなたのストーリーが誰かの希望になる場所。",
+    "buttons": {
+      "share_story": "💬 ストーリーを共有する",
+      "write_blog": "✍️ ブログを書く",
+      "share_suggestions": "💡 提案を共有する"
+    },
+    "links": {
+      "share_story": "/testimonials/submit",
+      "write_blog": "/blog/create",
+      "share_suggestions": "/community/suggestions"
+    },
+    "playlist": {
+      "title": "📺 ストーリーを見る"
+    }
+  },
+  "services_section": {
+    "title": "Drishiq のサービスを探索する",
+    "description": "私たちのサービスが、あなたの明確さと成長をどのように支援できるかをご紹介します"
+  },
+  "form": {
+    "title": "あなたのストーリーを共有する",
+    "subtitle": "あなたの経験は、誰かを勇気づける力になります。Drishiq があなたの人生にどんな影響を与えたのかを教えてください。",
+    "fields": {
+      "name": {
+        "label": "お名前",
+        "placeholder": "フルネームを入力してください",
+        "required": true
+      },
+      "email": {
+        "label": "メールアドレス",
+        "placeholder": "your.email@example.com",
+        "required": true
+      },
+      "role": {
+        "label": "役職 / 職業",
+        "placeholder": "例：マーケティングマネージャー、起業家、学生",
+        "required": false
+      },
+      "location": {
+        "label": "所在地",
+        "placeholder": "市区町村、国",
+        "required": false
+      },
+      "category": {
+        "label": "カテゴリ",
+        "placeholder": "カテゴリを選択（任意）",
+        "required": false,
+        "options": {
+          "career_development": "キャリア開発",
+          "life_coaching": "ライフコーチング",
+          "business_consulting": "ビジネスコンサルティング",
+          "educational_consulting": "教育コンサルティング",
+          "content_marketing": "コンテンツマーケティング",
+          "change_management": "チェンジマネジメント",
+          "management_consulting": "マネジメントコンサルティング",
+          "marketing_consulting": "マーケティングコンサルティング",
+          "customer_service": "カスタマーサービス",
+          "customer_support": "カスタマーサポート",
+          "life_path_choices": "人生の選択と進路",
+          "confidence_presence": "自信と存在感",
+          "growth_capability": "成長と能力開発",
+          "relationship_social": "人間関係とソーシャルバランス",
+          "clarity_mental_resilience": "明確さとメンタルレジリエンス",
+          "others": "その他"
+        }
+      },
+      "rating": {
+        "label": "評価",
+        "required": true
+      },
+      "title": {
+        "label": "ストーリーのタイトル",
+        "placeholder": "ストーリーに魅力的なタイトルを付けてください（任意）…",
+        "help": "タイトルがあると、他の人があなたのストーリーを見つけやすく理解しやすくなります",
+        "required": false
+      },
+      "content": {
+        "label": "あなたのストーリー",
+        "placeholder": "Drishiq との体験を共有してください。どんな課題に直面しましたか？Drishiq はどのように役立ちましたか？どんな変化が起きましたか？",
+        "required": true
+      },
+      "custom_category": {
+        "label": "カテゴリを指定する",
+        "placeholder": "具体的なカテゴリを入力してください（例：健康とウェルビーイング、ファイナンシャルプランニングなど）",
+        "help": "あなたの体験を最もよく表すカテゴリを指定してください"
+      },
+      "display_name": {
+        "label": "表示名",
+        "placeholder": "例：ジョン D."
+      },
+      "user_info": {
+        "title": "あなたの口コミは次の形式で送信されます：",
+        "name_label": "名前：",
+        "email_label": "メール：",
+        "name_default": "あなたの名前",
+        "email_default": "あなたのメール"
+      },
+      "profile_image": {
+        "label": "プロフィール画像"
+      },
+      "upload_image": {
+        "label": "画像をアップロード"
+      },
+      "choose_avatar": {
+        "label": "または、アバターを選択する"
+      },
+      "avatar_placeholder": "アバターを選択（任意）",
+      "avatar_selected": "✓ アバター選択済み",
+      "remove_button": "削除",
+      "change_button": "変更",
+      "tags": {
+        "label": "タグ（任意）",
+        "placeholder": "タグをカンマ区切りで追加",
+        "help": "例：リーダーシップ、成長、明確さ、変化"
+      },
+      "anonymous": {
+        "label": "匿名で送信する",
+        "description": "名前を公開したくない場合はチェックしてください"
+      },
+      "featured": {
+        "label": "特集掲載を許可する",
+        "description": "あなたの口コミをトップページに掲載することを許可します"
+      }
+    },
+    "buttons": {
+      "submit": "口コミを送信する",
+      "submitting": "送信中…",
+      "cancel": "キャンセル",
+      "draft": "下書きとして保存"
+    },
+    "validation": {
+      "required": "この項目は必須です",
+      "email_invalid": "有効なメールアドレスを入力してください",
+      "rating_required": "評価を選択してください",
+      "content_min": "少なくとも50文字入力してください",
+      "content_max": "2000文字以内にしてください",
+      "login_required": "口コミを送信するにはログインしてください。または「匿名で送信する」を選択してログインせずに送信できます。"
+    },
+    "success": {
+      "title": "ありがとうございます！",
+      "message": "あなたの口コミは正常に送信され、現在承認待ちです。まもなく口コミページにリダイレクトされます。",
+      "cta": "すべての口コミを見る"
+    },
+    "error": {
+      "title": "送信エラー",
+      "message": "口コミの送信中にエラーが発生しました。もう一度お試しください。",
+      "retry": "再試行"
+    }
+  },
+  "ratings": {
+    "1": "悪い",
+    "2": "まあまあ",
+    "3": "良い",
+    "4": "とても良い",
+    "5": "素晴らしい"
+  },
+  "social_sharing": {
+    "title": "この口コミを共有する",
+    "platforms": {
+      "facebook": "Facebook で共有",
+      "twitter": "Twitter で共有",
+      "linkedin": "LinkedIn で共有",
+      "whatsapp": "WhatsApp で共有",
+      "copy_link": "リンクをコピー"
+    }
+  },
+  "success_page": {
+    "hero": {
+      "title": "🎉 あなたのストーリーが送信されました！",
+      "message": "Drishiq コミュニティと経験を共有していただきありがとうございます。あなたのストーリーはチームによって確認され、他の人を励ますために掲載される可能性があります。"
+    },
+    "what_happens_next": {
+      "title": "次はどうなりますか？",
+      "steps": [
+        {
+          "icon": "review",
+          "title": "審査プロセス",
+          "description": "チームが24〜48時間以内にあなたのストーリーを確認します"
+        },
+        {
+          "icon": "featured",
+          "title": "特集ストーリー",
+          "description": "優れたストーリーはトップページで紹介されることがあります"
+        },
+        {
+          "icon": "community",
+          "title": "コミュニティへの影響",
+          "description": "あなたのストーリーは、明確さを求める他の人を励ますことができます"
+        }
+      ]
+    },
+    "action_buttons": {
+      "go_home": "🏠 ホームへ戻る",
+      "submit_another": "📝 もう1つストーリーを送信する"
+    },
+    "community_feedback": {
+      "title": "💭 より良いコミュニティづくりにご協力ください",
+      "vision_title": "🌟 経験を分かち合うコミュニティに参加しよう",
+      "vision_description": "私たちが作っているのは単なるプラットフォームではありません。痛み・喜び・失敗・成功を分かち合い、つながり、支え合い、共に成長できるコミュニティです。あなたの声が、この使命を形作ります。",
+      "pipeline_vision": "あなたのストーリーが誰かの希望となり、共有された困難が力となり、どんな経験も“理解し合えるコミュニティ”をつくる一部になります。",
+      "buttons": {
+        "share_vision": "💬 あなたの意見を共有する",
+        "join_movement": "🌱 コミュニティに参加する"
+      },
+      "links": {
+        "share_vision": "/support-details",
+        "join_movement": "/community"
+      }
+    },
+    "bottom_cta": {
+      "title": "次のクリアセッションの準備はできていますか？",
+      "description": "Drishiq と共に自己探求の旅を続けましょう",
+      "buttons": {
+        "start_session": "💬 新しいセッションを開始する",
+        "return_home": "🏠 ホームへ戻る"
+      },
+      "links": {
+        "start_session": "/user/chat",
+        "return_home": "/"
+      }
+    }
+  }
+}

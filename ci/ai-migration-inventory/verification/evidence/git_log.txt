@@ -1,0 +1,50 @@
+﻿1fc1af5 Add locales and og images from ../public folder
+c1d0633 docs: Update verification artifacts - migration executed successfully
+7ded476 fix: Ensure columns exist before creating indexes and foreign keys
+3af82ff fix: Add defensive checks for foreign key constraints in migration
+861f8fa docs: Add comprehensive status report and artifacts checklist
+4f92384 docs: Force add ops runbook and PR checklist (critical for deployment)
+2be763e docs: Add ops runbook, PR checklist, and verification queries
+f166985 feat: Add Responses API scaffolding (instruction_sets, ai_responses, call-v2)
+8b0b0c5 Fix userName consistency and add extended text box to multiple choice questions
+0062e29 Add build artifacts (excluding cache)
+c9def74 Build: commit latest changes and updates
+ffbb6c3 Fix payment flow and phone verification: Remove unused place_of_birth fields, fix phone verification logic, add priceplan guards, and ensure complete signup flow
+9580807 Fix payment flow: sync profile data, gender constraint, and credits balance
+680af98 Fix language switching and testimonials API language support
+918e4cd Improve language change handler: use router.replace instead of reload for smoother UX
+897108f Fix: Lazy initialize OpenAI client to prevent build-time errors on Render
+0645c30 Fix: Lazy initialize OpenAI client to prevent build-time errors on Render
+8268fc4 fix: update render.yaml to use npm instead of yarn
+f4d5312 chore: update render.yaml with GitHub repo and fix .gitignore merge conflict
+1a07fd6 fix: lazy initialize OpenAI client in reset-thread route to prevent build errors
+8162381 fix: use npm start to match Render dashboard configuration
+e49bb7b fix: update render.yaml to use yarn and include build step
+c633397 chore: update render.yaml for test deployment and update .gitignore
+9516929 feat: add GitHub Actions deployment workflow and update Render configuration
+97e55a2 trying to implement chat
+52c6fa2 refactor: Resolve hydration errors in client-side components
+0610df9 feat: refactor blog pages with enhanced internationalization and dynamic content loading
+3857d5d chore(aider): ignore runtime files, keep config
+909e585 chore(vscode/ts): Prettier on save, ESLint fixes, TS Bundler resolution
+2a40bd4 Update pre-production configuration
+1d4a3f2 Update configuration for pre-production environment
+501302b Resolve merge conflicts and fix .gitignore
+ed83069 Resolve merge conflicts
+ad5e60f Fix .gitignore formatting for deployment folder
+ecd8786 Remove deployment folder from main repository - now used for pre-production
+e863185 Fix prerendering errors: wrap useSearchParams components in Suspense boundaries
+fd1f1d3 Fix build errors: correct 'use client' directive placement and update Next.js config
+da50f53 FIX: Resolve build errors - fix 'use client' directive placement and remove problematic webpack config
+8af0255 FIX: Simplify build script to just remove supabase functions directory
+3db07a1 FIX: Update build script to use cross-platform Node.js commands for Linux deployment
+512d175 FIX: Resolve all merge conflicts and update build script for renamed supabase functions
+40cbd4a FIX: Use move instead of delete for supabase functions during build
+cadb2f0 FIX: Move supabase functions out of build path
+72b53f5 FIX: Simplify build script to directly remove supabase directory
+cc6d64f FORCE: New deployment with supabase directory removal fix
+4ed985e FIX: Remove supabase directory before build to prevent Deno import errors
+29f6950 FIX: More specific TypeScript includes to exclude supabase functions
+9125a49 FIX: Add supabase/functions exclusion to .gitignore
+03f79ed FIX: Exclude entire supabase/functions directory from TypeScript compilation
+d21c86c FIX: Exclude Supabase Edge Functions from Next.js build

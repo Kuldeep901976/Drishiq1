@@ -1,0 +1,142 @@
+{
+  "about": {
+    "heading": "À propos de Drishique",
+    "description1": "Drishique est une plateforme qui vous aide à affronter les défis de la vie avec clarté et confiance.",
+    "description2": "Nous fournissons des conseils personnalisés, du soutien et des ressources pour que vous puissiez prendre des décisions éclairées et grandir.",
+    "description3": {
+      "prefix": "Prêt à commencer votre voyage ?"
+    },
+    "join_button": "Rejoignez-nous maintenant",
+    "tagline": "Réfléchir. Décider. Grandir."
+  },
+  "hero": {
+    "message1": {
+      "title": "Quelque chose ne va pas — mais tu n'arrives pas à le nommer",
+      "subtitle": "Découvre avec Drishique les espaces encore inexplorés",
+      "button": "🔍 Regarder de plus près"
+    },
+    "message2": {
+      "title": "Le problème est clair, le chemin ne l'est pas",
+      "subtitle": "Repère les zones floues. Drishique marche avec toi",
+      "button": "Expérimenter"
+    },
+    "message3": {
+      "title": "Tu es fatigué de prétendre que tout va bien",
+      "subtitle": "Tu n'as pas à porter ce fardeau seul. Drishique te rencontre là où tu es",
+      "button": "👤 Rencontre-toi"
+    },
+    "message4": {
+      "title": "Tu n'as pas besoin d'être réparé — juste d'un moment qui te voit vraiment",
+      "subtitle": "Travaille avec Drishique pour être vu — sans être corrigé, sans être jugé",
+      "button": "💪 Tiens-toi droit"
+    },
+    "message5": {
+      "title": "Commençons — en douceur",
+      "subtitle": "Ce n'est pas un grand saut. Juste un pas tranquille — quand tu es prêt",
+      "button": "🚀 Commençons"
+    },
+    "message6": {
+      "title": "Tu essaies, mais tu n'es pas convaincu",
+      "subtitle": "Parfois c'est un obstacle. Parfois un manque de compétence. Parfois juste un soutien.",
+      "button": "🤝 Drishique peut aider"
+    }
+  },
+  "choose_path": {
+    "title": "Choisissez votre chemin",
+    "description": "Passez par la porte qui vous semble juste — construisez, explorez, offrez ou soutenez. Chaque porte s'ouvre sur l'espoir.",
+    "cards": {
+      "build": {
+        "title": "Construisez avec nous",
+        "subtitle": "Co-création / collaboration",
+        "hover_message": "Vos idées et votre énergie peuvent aider à façonner Drishique pour tous."
+      },
+      "early_access": {
+        "title": "Accès anticipé",
+        "subtitle": "Essayez d'abord / explorez de nouveaux outils",
+        "hover_message": "Soyez parmi les premiers à essayer ce que nous construisons."
+      },
+      "support": {
+        "title": "Soutenez les autres",
+        "subtitle": "Soutien communautaire",
+        "hover_message": "Aidez à parrainer des séances pour ceux qui ne peuvent pas se les permettre."
+      },
+      "gift": {
+        "title": "Offrez de la clarté",
+        "subtitle": "Pour quelqu'un qui compte pour vous",
+        "hover_message": "Offrez de la clarté à une personne en qui vous croyez."
+      }
+    }
+  },
+  "features": {
+    "heading_features": {
+      "title": "Fonctionnalités",
+      "line1": "Drishique n'est pas seulement un outil — c'est un compagnon. Chaque fonctionnalité est conçue pour apaiser le bruit, susciter la réflexion et vous ramener à ce qui compte."
+    },
+    "card1": {
+      "title": "Natif mondial",
+      "description": "Support multilingue complet, conçu pour de vraies personnes, pas seulement pour les anglophones"
+    },
+    "card2": {
+      "title": "Clarté axée sur la voix",
+      "description": "Parlez naturellement — Drishique écoute en profondeur et transforme votre confusion en carte visuelle de clarté"
+    },
+    "card3": {
+      "title": "Conception inclusive",
+      "description": "Parrainez une séance, demandez-en une ou transmettez-la — un cercle partagé de chercheurs et de soutiens"
+    },
+    "card4": {
+      "title": "Soin accessible",
+      "description": "Dialogue réfléchi et intelligent qui vous rencontre là où vous êtes. Un espace sûr pour la clarté mentale — pas de conseils préfabriqués"
+    },
+    "cta": {
+      "description": "Drishique est là pour vous aider à faire une pause, réfléchir et avancer — peu importe qui vous êtes ou d'où vous venez."
+    },
+    "try_now": {
+      "button": "Essayez maintenant"
+    },
+    "heading_bridge": "Connexion humaine",
+    "description": "L'espoir est la première chose que nous perdons dans la douleur — et le plus grand cadeau que nous puissions offrir. Drishique est le pont qui empêche quiconque de se sentir vide.",
+    "giver_card": {
+      "title": "🎁 Si vous pouvez donner",
+      "text_lines": [
+        "Votre soutien transforme l'hésitation en espoir.",
+        "Une séance parrainée par vous peut être une bouée de sauvetage pour quelqu'un d'autre.",
+        "Ce n'est pas de la charité, c'est de la connexion.",
+        "Ce n'est pas une aumône, mais une main ferme."
+      ],
+      "button": "🎁 Parrainer une séance"
+    },
+    "needy_card": {
+      "title": "🌱 Si vous avez besoin d'aide",
+      "text_lines": [
+        "Demander est une force, pas une faiblesse.",
+        "Si le coût est un obstacle, racontez-nous votre histoire. Nous essaierons de vous mettre en relation avec un fournisseur bienveillant.",
+        "Nous veillerons à ce que vous ayez un espace pour trouver de la clarté,",
+        "et le courage de franchir votre prochaine étape."
+      ],
+      "button": "✍️ Partagez votre défi"
+    },
+    "footer_text": "Un monde meilleur commence lorsque donner et recevoir partagent le même espace."
+  },
+  "grow_with_us": {
+    "title": "Grandissez avec nous",
+    "subtitle": "Rejoignez notre mission pour rendre la croissance personnelle accessible à tous",
+    "roles": {
+      "investor": { "title": "Investisseur", "description": "Soutenez notre mission financièrement", "icon": "💰" },
+      "promoter": { "title": "Promoteur", "description": "Diffusez notre message", "icon": "📣" },
+      "ambassador": { "title": "Ambassadeur", "description": "Représentez-nous dans votre communauté", "icon": "🌍" },
+      "creator": { "title": "Créateur", "description": "Créez et collaborez", "icon": "✨" },
+      "affiliate": { "title": "Affilié", "description": "Rejoignez notre programme d'affiliation", "icon": "🌱" },
+      "referral": { "title": "Partenaire de référence", "description": "Partagez et recommandez d'autres", "icon": "🔗" }
+    },
+    "cards_cta": "Chaque rôle compte. Choisissez le chemin qui vous semble juste — et construisons ensemble la clarté.",
+    "join_button": "🎁 Rejoignez notre mouvement",
+    "learn_more": "En savoir plus"
+  },
+  "mental_fog": {
+    "title": "Prêt à dissiper le brouillard mental ?",
+    "description": "Commencez une séance avec Drishique et découvrez la clarté grâce à la réflexion intelligente.",
+    "button": "🚀 Démarrer la séance"
+  },
+  "tagline": "Réfléchir. Décider. Grandir."
+}

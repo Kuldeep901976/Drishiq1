@@ -1,0 +1,11 @@
+--- a/lib/ddsa/stageDecisionEngine.ts
++++ b/lib/ddsa/stageDecisionEngine.ts
+@@ -4,7 +4,7 @@
+  * Honors stage order, gating, and tenant overrides
+  */
+ 
+-import { stageManifest, StageMeta, StageKey, getStageMeta } from './stageManifest';
++import { stageManifest, StageMeta, StageKey, getStageMeta, getStagesInOrder } from './stageManifest';
+ import type { TenantConfig } from '@/lib/tenant/types';
+ import type { ConversationFocus } from './types';
+

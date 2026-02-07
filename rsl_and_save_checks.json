@@ -1,0 +1,122 @@
+[
+  {
+    "file": "lib/dds-state.ts",
+    "line": 45,
+    "codeSnippet": "export async function saveDdsState(threadId: string, state: any, tenantId?: string): Promise<void>",
+    "rls_wrapper_used": "withTenantContext",
+    "risk": "OK",
+    "rationale": "Correctly uses withTenantContext for RLS when tenantId is provided. Falls back to Supabase (RLS policies) if direct Postgres fails."
+  },
+  {
+    "file": "lib/ddsa/pipeline-executor.ts",
+    "line": 181-182,
+    "codeSnippet": "saveDdsState: async (threadId: string, stateUpdate: any) => { await saveDdsState(threadId, stateUpdate, input.tenantId); }",
+    "rls_wrapper_used": "closure (saveDdsState wrapper)",
+    "risk": "OK",
+    "rationale": "Passes input.tenantId to saveDdsState which uses withTenantContext"
+  },
+  {
+    "file": "lib/ddsa/pipeline-executor.ts",
+    "line": 418-419,
+    "codeSnippet": "saveDdsState: async (threadId: string, state: any) => { await saveDdsState(threadId, state, input.tenantId); }",
+    "rls_wrapper_used": "closure (saveDdsState wrapper)",
+    "risk": "OK",
+    "rationale": "Passes input.tenantId to saveDdsState which uses withTenantContext"
+  },
+  {
+    "file": "lib/ddsa/stages/greeting-stage.ts",
+    "line": 74-107,
+    "codeSnippet": "await input.saveDdsState(threadId, updatedState)",
+    "rls_wrapper_used": "closure (input.saveDdsState)",
+    "risk": "WARN",
+    "rationale": "Relies on pipeline-executor to provide tenant-aware saveDdsState. If called directly without tenantId, RLS may not be set."
+  },
+  {
+    "file": "lib/ddsa/stages/intent-stage.ts",
+    "line": 260-261,
+    "codeSnippet": "await input.saveDdsState(threadId, confirmResult.updatedState)",
+    "rls_wrapper_used": "closure (input.saveDdsState)",
+    "risk": "WARN",
+    "rationale": "Relies on pipeline-executor to provide tenant-aware saveDdsState."
+  },
+  {
+    "file": "lib/ddsa/backgroundScheduler.ts",
+    "line": 67-68,
+    "codeSnippet": "await input.saveDdsState!(input.threadId!, { [enrichmentKey]: result.output.data });",
+    "rls_wrapper_used": "withTenantContext",
+    "risk": "OK",
+    "rationale": "Wrapped in withTenantContext(input.tenantId, ...) at line 63"
+  },
+  {
+    "file": "lib/ddsa/backgroundScheduler.ts",
+    "line": 74-75,
+    "codeSnippet": "await input.saveDdsState(input.threadId, { [enrichmentKey]: result.output.data })",
+    "rls_wrapper_used": "none",
+    "risk": "WARN",
+    "rationale": "Fallback path when withTenantContext fails - uses regular saveDdsState"
+  },
+  {
+    "file": "lib/ddsa/stages/commit-stage.ts",
+    "line": 124,
+    "codeSnippet": "await saveDdsState(threadId, updatedState, input.tenantId);",
+    "rls_wrapper_used": "closure (saveDdsState with tenantId)",
+    "risk": "OK",
+    "rationale": "Directly calls saveDdsState with tenantId parameter"
+  },
+  {
+    "file": "lib/ddsa/getNextStageMessage.ts",
+    "line": 123-125,
+    "codeSnippet": "saveDdsState: async (tid: string, s: any) => { const { saveDdsState } = await import('@/lib/dds-state'); await saveDdsState(tid, s, tenantId); }",
+    "rls_wrapper_used": "closure (saveDdsState with tenantId)",
+    "risk": "OK",
+    "rationale": "Passes tenantId to saveDdsState"
+  },
+  {
+    "file": "lib/ddsa/getNextStageMessage.ts",
+    "line": 214-215,
+    "codeSnippet": "saveDdsState: async (threadId: string, state: any) => { await saveDdsState(threadId, state, params.tenantId); }",
+    "rls_wrapper_used": "closure (saveDdsState with tenantId)",
+    "risk": "OK",
+    "rationale": "Passes params.tenantId to saveDdsState"
+  },
+  {
+    "file": "lib/ddsa/stages/stakeholders-stage.ts",
+    "line": 59-62,
+    "codeSnippet": "const { data: stakeholders } = await supabase.from('ddsa_stakeholders').select('*').eq('thread_id', threadId);",
+    "rls_wrapper_used": "none",
+    "risk": "BLOCKER",
+    "rationale": "Direct DB read without setPostgresTenant or withTenantContext. RLS policies may not apply correctly."
+  },
+  {
+    "file": "lib/ddsa/stages/stakeholders-stage.ts",
+    "line": 81-84,
+    "codeSnippet": "const { data: stakeholders } = await supabase.from('ddsa_stakeholders').select('*').eq('thread_id', threadId);",
+    "rls_wrapper_used": "none",
+    "risk": "BLOCKER",
+    "rationale": "Direct DB read without RLS context (legacy path). May leak data across tenants."
+  },
+  {
+    "file": "lib/ddsa/pipeline-executor.ts",
+    "line": 72-77,
+    "codeSnippet": "const { data: stageConfigs, error } = await supabase.from('ddsa_stage_config').select('*').eq('is_active', true).order('position', { ascending: true });",
+    "rls_wrapper_used": "none",
+    "risk": "WARN",
+    "rationale": "Stage configs should be tenant-isolated. May need RLS policies or tenant filter."
+  },
+  {
+    "file": "lib/ddsa/pipeline-executor.ts",
+    "line": 568-573,
+    "codeSnippet": "const { data: profile } = await supabase.from('profiles').select('*').eq('id', userId).maybeSingle();",
+    "rls_wrapper_used": "none",
+    "risk": "WARN",
+    "rationale": "Profile reads should respect tenant isolation. RLS policies should handle this, but no explicit tenant context set."
+  },
+  {
+    "file": "lib/ddsa/feature-flags.ts",
+    "line": 143-146,
+    "codeSnippet": ".upsert(configRows, { onConflict: 'config_key', ignoreDuplicates: false })",
+    "rls_wrapper_used": "none",
+    "risk": "WARN",
+    "rationale": "Feature flag configs should be tenant-isolated. May need tenant filter or RLS policies."
+  }
+]

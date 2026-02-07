@@ -1,0 +1,314 @@
+{
+  "scan_metadata": {
+    "timestamp": "2024-12-19T00:00:00Z",
+    "purpose": "Map main-chat stages for safe onboarding adapter integration",
+    "strategy": "Non-invasive: adapter pattern with read-only execution"
+  },
+  "main_chat_stages": {
+    "greeting": {
+      "file": "lib/ddsa/stages/greeting-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["userProfile", "ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Uses saveDdsState provided by executor. No direct DB writes."
+    },
+    "cfq": {
+      "file": "lib/ddsa/stages/cfq-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState.cfq_context", "userProfile"],
+      "safe_for_onboarding": true,
+      "notes": "Read-only except for ddsState updates via executor-provided saveDdsState."
+    },
+    "intent": {
+      "file": "lib/ddsa/stages/intent-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState", "userProfile"],
+      "safe_for_onboarding": true,
+      "notes": "Calls computeIntent but only updates ddsState. Safe with adapter."
+    },
+    "bundled_intake": {
+      "file": "lib/ddsa/stages/bundled-intake.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Collects structured context. Safe with adapter sandboxing."
+    },
+    "stakeholders": {
+      "file": "lib/ddsa/stages/stakeholders-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "No direct DB access. Uses executor-provided saveDdsState."
+    },
+    "history": {
+      "file": "lib/ddsa/stages/history-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "assumptions": {
+      "file": "lib/ddsa/stages/assumptions-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "hypotheses": {
+      "file": "lib/ddsa/stages/hypotheses-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "checklist_status": {
+      "file": "lib/ddsa/stages/checklist-status-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "core_problem": {
+      "file": "lib/ddsa/stages/core-problem.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "options": {
+      "file": "lib/ddsa/stages/options.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "plan": {
+      "file": "lib/ddsa/stages/plan-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "astro_advice": {
+      "file": "lib/ddsa/stages/astro-advice-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "health_tip": {
+      "file": "lib/ddsa/stages/health-tip-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "feedback_final": {
+      "file": "lib/ddsa/stages/feedback-final.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "solution_delivery": {
+      "file": "lib/ddsa/stages/solution-delivery-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "pdf_report": {
+      "file": "lib/ddsa/stages/pdf-report-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "enrichment": {
+      "file": "lib/ddsa/stages/enrichment-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "feedback": {
+      "file": "lib/ddsa/stages/feedback-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    },
+    "commit": {
+      "file": "lib/ddsa/stages/commit-stage.ts",
+      "export": "execute",
+      "side_effects": "medium",
+      "writes_to": ["ddsState via saveDdsState", "action_packets table (via upsertActionPacket)"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": false,
+      "notes": "Writes to action_packets table. Should be blocked in onboarding context or use adapter with isOnboarding guard."
+    },
+    "coordinator": {
+      "file": "lib/ddsa/stages/coordinator-stage.ts",
+      "export": "execute",
+      "side_effects": "low",
+      "writes_to": ["ddsState via saveDdsState"],
+      "reads_from": ["ddsState"],
+      "safe_for_onboarding": true,
+      "notes": "Safe with adapter."
+    }
+  },
+  "onboarding_stages": {
+    "onboarding_greeting": {
+      "file": "lib/ddsa/stages/onboarding-greeting.ts",
+      "export": "execute",
+      "purpose": "Onboarding-specific greeting with name collection"
+    },
+    "onboarding_profile_collection": {
+      "file": "lib/ddsa/stages/onboarding-profile-collection.ts",
+      "export": "execute",
+      "purpose": "Collect location, age range, tone, consent"
+    },
+    "onboarding_intent_detection": {
+      "file": "lib/ddsa/stages/onboarding-intent-detection.ts",
+      "export": "execute",
+      "purpose": "Intent detection with max 2 follow-ups"
+    },
+    "onboarding_email_collection": {
+      "file": "lib/ddsa/stages/onboarding-email-collection.ts",
+      "export": "execute",
+      "purpose": "Email fallback when phone/payment declined"
+    },
+    "onboarding_deep_intake": {
+      "file": "lib/ddsa/stages/onboarding-deep-intake.ts",
+      "export": "execute",
+      "purpose": "Deep intake for onboarding flow"
+    },
+    "onboarding_phone_verification": {
+      "file": "lib/ddsa/stages/onboarding-phone-verification.ts",
+      "export": "execute",
+      "purpose": "Phone collection and OTP verification"
+    },
+    "onboarding_problem_understanding": {
+      "file": "lib/ddsa/stages/onboarding-problem-understanding.ts",
+      "export": "execute",
+      "purpose": "Problem understanding stage"
+    },
+    "onboarding_next_steps": {
+      "file": "lib/ddsa/stages/onboarding-next-steps.ts",
+      "export": "execute",
+      "purpose": "Next steps and handoff to main chat"
+    }
+  },
+  "executor_analysis": {
+    "onboarding_pipeline_executor": {
+      "file": "lib/ddsa/onboarding-pipeline-executor.ts",
+      "current_behavior": "Filters stages by pipeline_type='onboarding', uses loadStageFromDB from stage-registry",
+      "needs_update": true,
+      "required_changes": [
+        "Add ctx.isOnboarding = true when executing stages",
+        "Use onboarding-stage-registry instead of direct stage-registry",
+        "Ensure saveDdsState routes to onboarding_concierge_data table (already done)"
+      ]
+    },
+    "main_pipeline_executor": {
+      "file": "lib/ddsa/pipeline-executor.ts",
+      "current_behavior": "Loads all active stages, no pipeline_type filter",
+      "needs_update": false,
+      "notes": "Main chat executor should remain unchanged"
+    }
+  },
+  "registry_analysis": {
+    "current_registry": {
+      "file": "lib/ddsa/stage-registry.ts",
+      "structure": "Static imports + dynamic DB loading",
+      "onboarding_stages_registered": true,
+      "main_stages_registered": true,
+      "needs_separation": true,
+      "recommendation": "Create onboarding-stage-registry.ts that composes main registry but keeps onboarding entries separate"
+    }
+  },
+  "adapter_strategy": {
+    "approach": "Read-only adapter with sandboxing",
+    "key_principles": [
+      "Shallow copy ddsState to prevent mutations",
+      "Set ctx.isOnboarding = true to signal onboarding context",
+      "Intercept saveDdsState to route to onboarding table",
+      "Block stages that write to main chat tables (e.g., commit stage)"
+    ],
+    "safe_stages": [
+      "greeting", "cfq", "intent", "bundled_intake", "stakeholders",
+      "history", "assumptions", "hypotheses", "checklist_status",
+      "core_problem", "options", "plan", "astro_advice", "health_tip",
+      "feedback_final", "solution_delivery", "pdf_report", "enrichment",
+      "feedback", "coordinator"
+    ],
+    "unsafe_stages": [
+      "commit"
+    ],
+    "notes": "Most stages are safe because they only use saveDdsState which is executor-controlled. Commit stage writes to action_packets and should be blocked or guarded."
+  },
+  "database_config": {
+    "table": "ddsa_stage_config",
+    "required_columns": ["stage_id", "stage_name", "pipeline_type", "position", "is_active", "dependencies"],
+    "migration_needed": true,
+    "idempotency": "Use ON CONFLICT (stage_id) DO NOTHING or DO UPDATE"
+  },
+  "recommendations": {
+    "priority_1": [
+      "Create main-stage-adapter.ts for safe main stage execution",
+      "Create onboarding-stage-registry.ts that composes main registry",
+      "Update OnboardingPipelineExecutor to use adapter and pass isOnboarding flag"
+    ],
+    "priority_2": [
+      "Create idempotent DB migration for onboarding stage configs",
+      "Add feature flag FEATURE_ONBOARDING_PIPELINE",
+      "Add tests for adapter safety"
+    ],
+    "priority_3": [
+      "Add executor guards for commit stage in onboarding context",
+      "Add telemetry for adapter usage",
+      "Document adapter pattern for future stages"
+    ]
+  }
+}
+
+
+

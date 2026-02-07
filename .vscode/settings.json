@@ -1,0 +1,84 @@
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["classnames\\(([^)]*)\\)", "'([^']*)'"],
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.eol": "\n",
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+  "eslint.alwaysShowStatus": true,
+
+  /* ---------- AI Agent Permissions ---------- */
+  "cursor.agent.allowTools": [
+    "read_file",
+    "write_file",
+    "edit_file",
+    "search_replace"
+  ],
+  "diffEditor.maxComputationTime": 0,
+  "workbench.settings.editor": "json",
+
+  /* ---------- SCOPE GUARDS ---------- */
+  "files.readonlyInclude": {
+    ".next/**": true,
+    "api/**": true,
+    "pages/**": true,
+    "public/**": true,
+    "app/ar/**": true,
+    "app/auth/**": true,
+    "app/bn/**": true,
+    "app/chat/**": true,
+    "app/create-enhanced/**": true,
+    "app/mindful-decision-making/**": true,
+    "app/personal-growth-journeys/**": true,
+    "app/submission-confirmation/**": true
+  },
+
+  "search.exclude": {
+    "**/node_modules/**": true,
+    ".next/**": true,
+    "api/**": true,
+    "pages/**": true,
+    "public/**": true,
+    "lib/**": true,
+    "app/**": true,
+
+    "app/blog/**": false,
+    "lib/blog/**": false
+  },
+
+  "files.exclude": {
+    "**/node_modules": true,
+    ".next": true,
+    "api": true,
+    "pages": true,
+    "public": true,
+    "lib": false,
+    "app/ar": true,
+    "app/auth": true,
+    "app/bn": true,
+    "app/chat": true,
+    "app/create-enhanced": true,
+    "app/mindful-decision-making": true,
+    "app/personal-growth-journeys": true,
+    "app/submission-confirmation": true
+  },
+
+  "files.readonlyFromPermissions": true
+}

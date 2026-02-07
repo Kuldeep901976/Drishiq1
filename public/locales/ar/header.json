@@ -1,0 +1,116 @@
+{
+  "logo_alt": "شعار دريشيق",
+
+  "meet_yourself": {
+    "label": "التقِ بنفسك",
+    "types_label": "أنواع الشخصيات",
+    "types": {
+      "builder": "الباني",
+      "builder_hover": "الشخص الذي يبني ويُنشئ ويبدأ المبادرات",
+      "seeker": "الباحث",
+      "seeker_hover": "الشخص الذي يبحث عن المعنى ووجهات نظر جديدة",
+      "giver": "المُعطي",
+      "giver_hover": "الشخص الذي يساعد الآخرين ويقدم الدعم",
+      "connector": "الواصل",
+      "connector_hover": "الشخص الذي يربط بين الناس",
+      "dependent": "المعتمد",
+      "dependent_hover": "الشخص الذي يعتمد على الآخرين للحصول على الدعم",
+      "escaper": "الهارب",
+      "escaper_hover": "الشخص الذي يحاول الهروب أو الابتعاد عن التوتر",
+      "giving_beyond": "العطاء خارج الحدود",
+      "giving_beyond_hover": "أعمال تتجاوز المساهمة الشخصية",
+      "problem_carrier": "حامل المشكلات",
+      "problem_carrier_hover": "الشخص الذي يحمل مشكلات الآخرين على عاتقه",
+      "rebooter": "المُعيد الانطلاق",
+      "rebooter_hover": "الشخص الذي يعيد بدء الظروف ويعيد تعريفها",
+      "solo": "المنعزل",
+      "solo_hover": "الشخص الذي يقدّر الاستقلال والعزلة"
+    }
+  },
+
+  "drishiq": "دريشيق",
+  "drishiq_hover": "اذهب إلى الصفحة الرئيسية لدريشيق",
+
+  "blog": "مدوّنة",
+  "blog_hover": "اقرأ مقالات وقصصاً وأفكاراً",
+
+  "voice": "الصوت",
+  "voice_hover": "استمع إلى وجهات النظر والمحتوى الصوتي",
+
+  "grow": "النمو",
+  "grow_hover": "فرص للتعلم والتعاون والتوسع",
+
+  "bridge": "الجسر",
+  "bridge_hover": "اتصل بالآخرين وابنِ مجتمعك",
+
+  "your_path_label": "مسارك",
+  "your_path": {
+    "your_clarity_pass": "بطاقة الوضوح الخاصة بك",
+    "your_clarity_pass_hover": "احصل على بطاقة الوضوح",
+    "co_create": "الإنشاء المشترك",
+    "co_create_hover": "شكّل تجربتك بالتعاون مع الآخرين",
+    "get_first_light": "احصل على الضوء الأول",
+    "get_first_light_hover": "ابدأ بجلسة وضوح أولية",
+    "fuel_a_journey": "ادعم رحلة",
+    "fuel_a_journey_hover": "ادعم رحلة نمو شخصي لشخص ما",
+    "gift_a_spark": "أهدِ شرارة",
+    "gift_a_spark_hover": "أهدِ جلسة وضوح أولية لشخص ما",
+    "spread_the_light": "انشر النور",
+    "spread_the_light_hover": "شارك دريشيق مع شبكتك ونمِّ المجتمع"
+  },
+
+  "language_button_label": "اللغة",
+
+  "languages": {
+    "en": "English",
+    "hi": "हिन्दी",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "ja": "日本語",
+    "ru": "Русский",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ta": "தமிழ்",
+    "pt": "Português",
+    "ar": "العربية"
+  },
+
+  "profile_options_label": "خيارات الملف الشخصي",
+  "profile_options": {
+    "got_an_invitation": "هل لديك دعوة؟",
+    "got_an_invitation_hover": "أدخل رمز الدعوة لفتح الوصول",
+    "reserve_my_spot": "احجز مكانك",
+    "reserve_my_spot_hover": "ثبّت مكانك بالدفع ورقم التواصل",
+    "request_an_invitation": "اطلب دعوة",
+    "request_an_invitation_hover": "شارك معلوماتك ليتم النظر في منحك وصولاً مبكراً",
+    "gift_clarity": "أهدِ دعوة",
+    "gift_clarity_hover": "أهدِ جلسة وضوح أو دعوة لشخص ما",
+    "grow_with_us": "انمُ معنا",
+    "grow_with_us_hover": "كن سفيراً أو شريكاً أو متعاوناً"
+  },
+
+  "profile": {
+    "user_fallback": "المستخدم",
+    "welcome_back": "مرحباً بعودتك!",
+    "dashboard": "لوحة التحكم",
+    "user_profile": "ملف المستخدم",
+    "settings": "إعدادات الملف",
+    "sign_out": "تسجيل الخروج",
+    "sign_in": "تسجيل الدخول",
+    "sign_up": "إنشاء حساب",
+    "log_out": "تسجيل الخروج",
+    "search": "ابحث",
+    "light_mode": "الوضع الفاتح",
+    "dark_mode": "الوضع الداكن",
+    "about": "عن دريشيق",
+    "terms_conditions": "الأحكام والشروط",
+    "years": "سنوات",
+    "scan_to_sign_up": "امسح للتسجيل",
+    "qr_scan_instruction": "استخدم كاميرا هاتفك لمسح رمز QR",
+    "qr_enlarge_hover": "اضغط لتكبير رمز QR",
+    "dashboard_hover": "اعرض لوحة التحكم الخاصة بك",
+    "settings_hover": "أدر إعدادات ملفك الشخصي",
+    "sign_out_hover": "سجّل الخروج من حسابك"
+  }
+}

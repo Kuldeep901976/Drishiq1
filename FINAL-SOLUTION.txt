@@ -1,0 +1,60 @@
+=================================================================
+  FINAL SOLUTION - IF EXCLUSION STILL DOESN'T WORK
+=================================================================
+
+If you've excluded .next and restarted but still get file locking errors:
+
+STEP 1: Verify Exclusion
+---------------------------------
+1. Open Windows Security
+2. Virus & threat protection > Manage settings
+3. Exclusions > Add or remove exclusions
+4. Check if you see: "C:\drishiq 1\.next"
+5. If NOT there, add it again
+
+STEP 2: Exclude ENTIRE Project Directory
+---------------------------------
+Instead of just .next, exclude the whole project:
+1. In Exclusions, add: "C:\drishiq 1"
+2. This excludes everything in the project (including .next)
+3. RESTART computer
+
+STEP 3: Check for Other Antivirus
+---------------------------------
+1. Check if you have other antivirus software:
+   - Norton
+   - McAfee
+   - Avast
+   - AVG
+   - Kaspersky
+   - etc.
+2. If yes, exclude .next from ALL of them
+
+STEP 4: Temporarily Disable Real-Time Protection (TEST ONLY)
+---------------------------------
+To test if antivirus is the issue:
+1. Windows Security > Virus & threat protection
+2. Manage settings
+3. Turn OFF "Real-time protection" temporarily
+4. Try: npm run dev
+5. If it works, antivirus is definitely the issue
+6. Turn Real-time protection back ON
+7. Then properly exclude .next
+
+STEP 5: Alternative - Use WSL
+---------------------------------
+If nothing works, use Windows Subsystem for Linux:
+1. Install WSL: wsl --install
+2. Run Next.js inside WSL (no Windows Defender interference)
+
+=================================================================
+IMPORTANT:
+=================================================================
+- Exclusions require a RESTART to take effect
+- The path must be EXACT: "C:\drishiq 1\.next" (with space)
+- If you have multiple antivirus, exclude from all
+- Excluding the entire project directory is safer
+
+=================================================================
+
+

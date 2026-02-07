@@ -1,0 +1,31 @@
+# wrangler.test.toml
+# Test configuration for Cloudflare Pages Functions only
+# Use: npx wrangler pages dev --config wrangler.test.toml
+
+name = "drishiq-functions-test"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Pages Functions mode - no main worker file needed
+# Functions are automatically discovered in the functions/ directory
+
+# R2 bucket binding (for file uploads)
+[[r2_buckets]]
+binding = "DRISHIQ_UPLOADS"
+bucket_name = "drishiq-uploads"
+preview_bucket_name = "drishiq-uploads-dev"
+
+# Shared non-secret vars
+[vars]
+NODE_ENV = "development"
+
+# --- Supabase (public) ---
+NEXT_PUBLIC_SUPABASE_URL = ""
+NEXT_PUBLIC_SUPABASE_ANON_KEY = ""
+NEXT_PUBLIC_SUPABASE_POOLER_URL = ""
+NEXT_PUBLIC_APP_URL = "https://drishiq-test.onrender.com"
+
+# --- R2 / CDN related ---
+R2_PUBLIC_BASE_URL = "https://cdn.drishiq.com"
+R2_BUCKET_NAME = "drishiq-uploads"
+

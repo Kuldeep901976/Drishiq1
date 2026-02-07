@@ -1,0 +1,281 @@
+{
+  "hero": {
+    "title": "Real Stories from Real People",
+    "subtitle": "Discover how DrishiQ has transformed lives. Every story is unique.",
+    "cta_button": "✨ Share Your Story",
+    "cta_link": "/testimonials/submit"
+  },
+  "filters": {
+    "search_placeholder": "Search testimonials...",
+    "category_all": "All Categories",
+    "categories": {
+      "career_development": "Career Development",
+      "life_coaching": "Life Coaching",
+      "business_consulting": "Business Consulting",
+      "educational_consulting": "Educational Consulting",
+      "content_marketing": "Content Marketing",
+      "change_management": "Change Management",
+      "clarity_mental_resilience": "Clarity & Mental Resilience"
+    },
+    "rating_all": "All Ratings",
+    "rating_five": "5 Stars",
+    "rating_four_plus": "4+ Stars",
+    "rating_three_plus": "3+ Stars",
+    "featured_only": "Featured only",
+    "sort_label": "Sort by:",
+    "sort_date": "Date",
+    "sort_rating": "Rating",
+    "sort_likes": "Likes",
+    "sort_comments": "Comments",
+    "sort_asc": " ↑",
+    "sort_desc": " ↓"
+  },
+  "loading": {
+    "message": "Loading testimonials..."
+  },
+  "error": {
+    "message": "An error occurred while fetching testimonials"
+  },
+  "testimonials_list": {
+    "no_results": "No testimonials found. Be the first to share your story!",
+    "share_story_button": "Share Your Story",
+    "read_more": "Read More →",
+    "featured_badge": "⭐ Featured",
+    "anonymous": "Anonymous",
+    "user": "User",
+    "back_to_testimonials": "← Back to Testimonials",
+    "share_testimonial": "Share this testimonial",
+    "like_testimonial": "Like this testimonial",
+    "comment_testimonial": "Comment on this testimonial"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "sidebar": {
+    "title": "💭 Help Us Build a Better Community",
+    "vision_title": "🌟 Join Our Vision",
+    "vision_description": "We're building a community where shared struggles create collective strength.",
+    "pipeline_vision": "Our Pipeline Vision: A space where your story becomes someone else's hope.",
+    "buttons": {
+      "share_story": "💬 Share Your Story",
+      "write_blog": "✍️ Write Blog Post",
+      "share_suggestions": "💡 Share Suggestions"
+    },
+    "links": {
+      "share_story": "/testimonials/submit",
+      "write_blog": "/blog/create",
+      "share_suggestions": "/community/suggestions"
+    },
+    "playlist": {
+      "title": "📺 Watch Our Stories"
+    }
+  },
+  "services_section": {
+    "title": "Explore DrishiQ Services",
+    "description": "Discover how our services can help you achieve clarity and growth"
+  },
+  "form": {
+    "title": "Share Your Story",
+    "subtitle": "Your experience can inspire others. Tell us how DrishiQ has impacted your life.",
+    "fields": {
+      "name": {
+        "label": "Your Name",
+        "placeholder": "Enter your full name",
+        "required": true
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "your.email@example.com",
+        "required": true
+      },
+      "role": {
+        "label": "Your Role/Profession",
+        "placeholder": "e.g., Marketing Manager, Entrepreneur, Student",
+        "required": false
+      },
+      "location": {
+        "label": "Location",
+        "placeholder": "City, Country",
+        "required": false
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Select a category (optional)",
+        "required": false,
+        "options": {
+          "career_development": "Career Development",
+          "life_coaching": "Life Coaching",
+          "business_consulting": "Business Consulting",
+          "educational_consulting": "Educational Consulting",
+          "content_marketing": "Content Marketing",
+          "change_management": "Change Management",
+          "management_consulting": "Management Consulting",
+          "marketing_consulting": "Marketing Consulting",
+          "customer_service": "Customer Service",
+          "customer_support": "Customer Support",
+          "life_path_choices": "Life Path & Choices",
+          "confidence_presence": "Confidence & Presence",
+          "growth_capability": "Growth & Capability Building",
+          "relationship_social": "Relationship & Social Balance",
+          "clarity_mental_resilience": "Clarity & Mental Resilience",
+          "others": "Others"
+        }
+      },
+      "rating": {
+        "label": "Rating",
+        "required": true
+      },
+      "title": {
+        "label": "Story Title",
+        "placeholder": "Give your story a compelling title (optional)...",
+        "help": "A title helps others find and understand your story better",
+        "required": false
+      },
+      "content": {
+        "label": "Your Story",
+        "placeholder": "Share your experience with DrishiQ. What challenges did you face? How did DrishiQ help? What changed in your life?",
+        "required": true
+      },
+      "custom_category": {
+        "label": "Specify Your Category",
+        "placeholder": "Enter your specific category (e.g., Health & Wellness, Financial Planning, etc.)",
+        "help": "Please provide a specific category that best describes your experience"
+      },
+      "display_name": {
+        "label": "Display Name",
+        "placeholder": "e.g., John D."
+      },
+      "user_info": {
+        "title": "Your Testimonial will be submitted as:",
+        "name_label": "Name:",
+        "email_label": "Email:",
+        "name_default": "Your Name",
+        "email_default": "Your Email"
+      },
+      "profile_image": {
+        "label": "Profile Image"
+      },
+      "upload_image": {
+        "label": "Upload your own image"
+      },
+      "choose_avatar": {
+        "label": "Or choose from our avatars"
+      },
+      "avatar_placeholder": "Select an avatar (optional)",
+      "avatar_selected": "✓ Avatar selected",
+      "remove_button": "Remove",
+      "change_button": "Change",
+      "tags": {
+        "label": "Tags (Optional)",
+        "placeholder": "Add tags separated by commas",
+        "help": "e.g., leadership, growth, clarity, transformation"
+      },
+      "anonymous": {
+        "label": "Submit anonymously",
+        "description": "Check this if you prefer not to share your name publicly"
+      },
+      "featured": {
+        "label": "Allow featured placement",
+        "description": "Allow us to feature your testimonial on our homepage"
+      }
+    },
+    "buttons": {
+      "submit": "Submit Testimonial",
+      "submitting": "Submitting...",
+      "cancel": "Cancel",
+      "draft": "Save as Draft"
+    },
+    "validation": {
+      "required": "This field is required",
+      "email_invalid": "Please enter a valid email address",
+      "rating_required": "Please select a rating",
+      "content_min": "Please write at least 50 characters",
+      "content_max": "Please keep it under 2000 characters",
+      "login_required": "Please log in to submit a testimonial or check \"Submit anonymously\" to submit without logging in."
+    },
+    "success": {
+      "title": "Thank You!",
+      "message": "Your testimonial has been submitted successfully and is pending approval. You'll be redirected to the testimonials page shortly.",
+      "cta": "View All Testimonials"
+    },
+    "error": {
+      "title": "Submission Failed",
+      "message": "There was an error submitting your testimonial. Please try again.",
+      "retry": "Try Again"
+    }
+  },
+  "ratings": {
+    "1": "Poor",
+    "2": "Fair",
+    "3": "Good",
+    "4": "Very Good",
+    "5": "Excellent"
+  },
+  "social_sharing": {
+    "title": "Share this testimonial",
+    "platforms": {
+      "facebook": "Share on Facebook",
+      "twitter": "Share on Twitter",
+      "linkedin": "Share on LinkedIn",
+      "whatsapp": "Share on WhatsApp",
+      "copy_link": "Copy Link"
+    }
+  },
+  "success_page": {
+    "hero": {
+      "title": "🎉 Your Story Has Been Submitted!",
+      "message": "Thank you for sharing your DrishiQ experience with our community. Your story will be reviewed by our team and may be featured on our platform to inspire others on their clarity journey."
+    },
+    "what_happens_next": {
+      "title": "What Happens Next?",
+      "steps": [
+        {
+          "icon": "review",
+          "title": "Review Process",
+          "description": "Our team will review your submission within 24-48 hours"
+        },
+        {
+          "icon": "featured",
+          "title": "Featured Stories",
+          "description": "Exceptional stories may be featured on our homepage"
+        },
+        {
+          "icon": "community",
+          "title": "Community Impact",
+          "description": "Your story could inspire others seeking clarity"
+        }
+      ]
+    },
+    "action_buttons": {
+      "go_home": "🏠 Go Home",
+      "submit_another": "📝 Submit Another Story"
+    },
+    "community_feedback": {
+      "title": "💭 Help Us Build a Better Community",
+      "vision_title": "🌟 Join Our Vision: A Community of Shared Experiences",
+      "vision_description": "We're building something bigger than just a platform. This is the foundation of a community where people who share your pain, happiness, failures, and successes can connect, support, and grow together. Your feedback shapes this important mission.",
+      "pipeline_vision": "Our Pipeline Vision: A space where your story becomes someone else's hope, where shared struggles create collective strength, and where every experience contributes to building a community that truly understands.",
+      "buttons": {
+        "share_vision": "💬 Share Your Vision",
+        "join_movement": "🌱 Join the Movement"
+      },
+      "links": {
+        "share_vision": "/support-details",
+        "join_movement": "/community"
+      }
+    },
+    "bottom_cta": {
+      "title": "Ready for Your Next Clarity Session?",
+      "description": "Continue your journey of self-discovery with DrishiQ",
+      "buttons": {
+        "start_session": "💬 Start a New Session",
+        "return_home": "🏠 Return Home"
+      },
+      "links": {
+        "start_session": "/user/chat",
+        "return_home": "/"
+      }
+    }
+  }
+}

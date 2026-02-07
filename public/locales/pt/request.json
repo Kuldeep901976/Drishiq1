@@ -1,0 +1,266 @@
+{
+  "title": "Convite",
+  "invitation": {
+    "title": "Solicitar convite",
+    "subtitle": "Junte-se à comunidade exclusiva do DrishiQ",
+    "description": "Obtenha acesso antecipado à nossa plataforma e faça parte da revolução da inteligência.",
+    "form": {
+      "name": "Nome completo",
+      "email": "Endereço de e-mail",
+      "phone": "Número de telefone",
+      "company": "Empresa/Organização",
+      "role": "Função/Cargo",
+      "interest": "Área de interesse",
+      "message": "Por que você quer se juntar ao DrishiQ?",
+      "submit": "Solicitar convite",
+      "success": "Solicitação de convite enviada com sucesso!",
+      "error": "Falha ao enviar solicitação de convite. Por favor, tente novamente."
+    }
+  },
+  "status": {
+    "pending": "Convite pendente",
+    "approved": "Convite aprovado",
+    "rejected": "Convite rejeitado",
+    "expired": "Convite expirado"
+  },
+  "email": {
+    "subject": "Solicitação de convite DrishiQ",
+    "confirmation": "Obrigado pelo seu interesse no DrishiQ. Analisaremos sua solicitação e entraremos em contato em breve.",
+    "approval": "Parabéns! Seu convite para o DrishiQ foi aprovado.",
+    "rejection": "Obrigado pelo seu interesse. Infelizmente, não podemos aprovar seu convite neste momento."
+  },
+  "hero": {
+    "trialAccess": {
+      "title": "Solicitar acesso ao DrishiQ",
+      "subtitle": "Candidate-se ao acesso de teste, a cota disponível pode permitir que você experimente o DrishiQ gratuitamente"
+    },
+    "sponsorSupport": {
+      "title": "Solicitar apoio de patrocinador",
+      "subtitle": "Solicite apoio de patrocinador para acessar o DrishiQ e explorar seu caminho adiante"
+    },
+    "default": {
+      "title": "Solicitar acesso ao DrishiQ",
+      "subtitle": "Candidate-se ao acesso de teste, a cota disponível pode permitir que você experimente o DrishiQ gratuitamente"
+    }
+  },
+  "tabs": {
+    "trialAccess": {
+      "label": "🎯 Acesso de teste",
+      "unavailable": "(indisponível)",
+      "title": "Mudar para acesso de teste",
+      "description": "Acesso de teste: Para usuários que desejam experimentar o DrishiQ, mas não podem pagar por ele. O acesso será concedido com base na cota atualmente disponível."
+    },
+    "sponsorSupport": {
+      "label": "💚 Apoio de patrocinador",
+      "unavailable": "(indisponível)",
+      "title": "Mudar para apoio de patrocinador",
+      "description": "Apoio de patrocinador: Para usuários que buscam assistência financeira/patrocínio para acessar o DrishiQ. Por favor, forneça detalhes sobre seu desafio para que possamos conectá-lo com patrocinadores adequados."
+    }
+  },
+  "form": {
+    "sections": {
+      "personalInfo": {
+        "title": "👤 Informações pessoais",
+        "fields": {
+          "firstName": {
+            "label": "Primeiro nome",
+            "placeholder": "Digite seu primeiro nome",
+            "required": "*"
+          },
+          "lastName": {
+            "label": "Sobrenome",
+            "placeholder": "Digite seu sobrenome",
+            "required": "*"
+          },
+          "email": {
+            "label": "E-mail",
+            "placeholder": "your.email@example.com",
+            "required": "*"
+          },
+          "phone": {
+            "label": "Telefone",
+            "placeholder": "Digite o número de telefone",
+            "required": "*"
+          },
+          "country": {
+            "label": "País",
+            "placeholder": "Selecione o país",
+            "required": "*"
+          },
+          "location": {
+            "label": "Localização (Cidade)",
+            "placeholder": "Digite sua cidade",
+            "required": "*"
+          }
+        }
+      },
+      "comments": {
+        "title": "💬 Comentários adicionais",
+        "placeholder": "Por favor, compartilhe qualquer informação adicional...",
+        "required": "*"
+      },
+      "phoneVerification": {
+        "title": "📱 Verificação de telefone",
+        "description": "Por favor, verifique seu número de telefone para enviar sua solicitação. Enviaremos um código de verificação por SMS.",
+        "info": "Seu número de telefone será verificado antes de enviar sua solicitação. Isso nos ajuda a garantir a segurança e autenticidade das solicitações.",
+        "button": "Verificar telefone primeiro",
+        "required": "*"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "submitTrial": "📧 Enviar solicitação de teste",
+      "submitSponsor": "💚 Enviar solicitação de patrocinador",
+      "submitting": "Enviando...",
+      "submittingWithIcon": "⏳ Enviando..."
+    }
+  },
+  "phoneVerification": {
+    "frozen": {
+      "title": "📱 Confirmar número de telefone",
+      "subtitle": "Por favor, confirme seu número de telefone para receber o código de verificação",
+      "phoneLabel": "Número de telefone",
+      "info": "ℹ️ Verifique este número de telefone para prosseguir com sua solicitação.",
+      "sendOtp": "Enviar OTP",
+      "sendingOtp": "Enviando OTP...",
+      "backToForm": "Voltar ao formulário",
+      "bypassDev": "⚠️ Continuar sem verificação (somente Dev)"
+    },
+    "otp": {
+      "title": "🔐 Digite o código de verificação",
+      "subtitle": "Digite o código OTP enviado para seu telefone",
+      "label": "Digite o código OTP",
+      "placeholder": "000000",
+      "sentTo": "Enviado para {phone}",
+      "verify": "Verificar e enviar",
+      "verifying": "Verificando...",
+      "resend": "🔄 Reenviar OTP (clique aqui)",
+      "resendCountdown": "Reenviar OTP ({countdown}s)",
+      "back": "Voltar"
+    },
+    "errors": {
+      "billing": {
+        "title": "O faturamento do Firebase deve estar habilitado para verificação de telefone.",
+        "message": "Por favor, habilite o faturamento no Console do Firebase ou entre em contato com support@drishiq.com para obter ajuda.",
+        "steps": {
+          "title": "Para habilitar a autenticação por telefone do Firebase:",
+          "step1": "Vá para o Console do Firebase → Seu projeto",
+          "step2": "Navegue até Configurações → Uso e faturamento",
+          "step3": "Habilite o faturamento (plano Blaze necessário para autenticação por telefone)",
+          "step4": "Aguarde alguns minutos para a ativação"
+        },
+        "contact": "Ou entre em contato com {email} para obter ajuda."
+      }
+    }
+  },
+  "errors": {
+    "validation": {
+      "firstNameRequired": "O primeiro nome é obrigatório",
+      "lastNameRequired": "O sobrenome é obrigatório",
+      "emailRequired": "E-mail válido é obrigatório",
+      "phoneRequired": "O número de telefone é obrigatório",
+      "countryRequired": "O país é obrigatório",
+      "locationRequired": "A localização (cidade) é obrigatória",
+      "commentsRequired": "Os comentários são obrigatórios",
+      "phoneNotVerified": "Por favor, verifique seu número de telefone primeiro",
+      "phoneNotVerifiedDetails": "Por favor, verifique seu número de telefone primeiro clicando no botão \"Verificar telefone primeiro\" na seção de verificação de telefone abaixo.",
+      "invalidOtp": "Por favor, digite um OTP válido de 6 dígitos",
+      "otpExpired": "A sessão OTP expirou. Por favor, solicite um novo código."
+    },
+    "userExists": {
+      "email": "Este e-mail já está registrado. Por favor, faça login ou use um e-mail diferente.",
+      "phone": "Este número de telefone já está registrado. Por favor, faça login ou use um número de telefone diferente.",
+      "signInLink": "Fazer login em vez disso →",
+      "message": "Por favor, faça login ou use credenciais diferentes."
+    },
+    "otp": {
+      "invalidCode": "Código OTP inválido. Por favor, verifique e tente novamente.",
+      "expired": "O código OTP expirou. Por favor, solicite um novo.",
+      "invalid": "Código de verificação inválido"
+    },
+    "submission": {
+      "failed": "Falha ao enviar solicitação. Por favor, tente novamente.",
+      "phoneCheckFailed": "Falha ao verificar credenciais. Por favor, tente novamente.",
+      "sendOtpFailed": "Falha ao enviar código de verificação",
+      "invalidPhone": "Formato de número de telefone inválido",
+      "tooManyRequests": "Muitas solicitações. Por favor, tente novamente mais tarde.",
+      "quotaExceeded": "Cota de SMS esgotada. Por favor, tente novamente mais tarde."
+    }
+  },
+  "success": {
+    "title": {
+      "trial": "🎯 Solicitação recebida!",
+      "sponsor": "💚 Solicitação recebida!"
+    },
+    "phoneVerified": "Número de telefone verificado ✅",
+    "message": {
+      "trial": "Recebemos sua solicitação de acesso de teste e a analisaremos com base na cota disponível.",
+      "sponsor": "Recebemos sua solicitação de apoio de patrocinador e a analisaremos para corresponder aos interesses dos patrocinadores."
+    },
+    "whatHappensNext": {
+      "title": "📧 O que acontece a seguir?",
+      "trial": {
+        "item1": "Recebemos sua solicitação de acesso de teste",
+        "item2": "Analisaremos sua solicitação com base na cota atualmente disponível",
+        "item3": "Por favor, verifique seu e-mail para o link de registro",
+        "item4": "Após o registro bem-sucedido, você receberá 1 crédito gratuito",
+        "item5": "Se encontrarmos uma correspondência, enviaremos um link por e-mail para explorar o DrishiQ"
+      },
+      "sponsor": {
+        "item1": "Recebemos sua solicitação de apoio de patrocinador",
+        "item2": "Analisaremos sua solicitação e a corresponderemos aos interesses dos patrocinadores",
+        "item3": "Por favor, verifique seu e-mail para o link de registro",
+        "item4": "Após a aprovação, você terá acesso ao DrishiQ com apoio de patrocinador",
+        "item5": "Se encontrarmos uma correspondência, enviaremos um link por e-mail para explorar o DrishiQ"
+      }
+    },
+    "youtube": {
+      "title": "Veja o DrishiQ em ação"
+    },
+    "buttons": {
+      "returnHome": "Voltar à página inicial",
+      "learnMore": "Saiba mais sobre o DrishiQ"
+    }
+  },
+  "thankYou": {
+    "trialAccess": {
+      "title": "🎯 Solicitação de acesso de teste recebida!",
+      "subtitle": "Obrigado pelo seu interesse no DrishiQ",
+      "message": "Recebemos sua solicitação de acesso de teste e a analisaremos com base na cota disponível.",
+      "whatHappensNext": {
+        "title": "📧 O que acontece a seguir?",
+        "item1": "Recebemos sua solicitação de acesso de teste",
+        "item2": "Analisaremos sua solicitação com base na cota atualmente disponível",
+        "item3": "Se encontrarmos uma correspondência, enviaremos um link de registro para você concluir seu registro",
+        "item4": "Por favor, verifique seu e-mail para o link de registro",
+        "item5": "Após o registro bem-sucedido, você receberá 1 crédito gratuito"
+      }
+    },
+    "sponsorSupport": {
+      "title": "💚 Solicitação de apoio de patrocinador recebida!",
+      "subtitle": "Obrigado por entrar em contato para apoio de patrocinador",
+      "message": "Recebemos sua solicitação de apoio de patrocinador e a analisaremos para corresponder aos interesses dos patrocinadores.",
+      "whatHappensNext": {
+        "title": "📧 O que acontece a seguir?",
+        "item1": "Recebemos sua solicitação de apoio de patrocinador",
+        "item2": "Analisaremos sua solicitação e a corresponderemos aos interesses dos patrocinadores",
+        "item3": "Se encontrarmos uma correspondência com patrocinadores, enviaremos um link de registro por e-mail",
+        "item4": "Por favor, verifique seu e-mail para o link de registro",
+        "item5": "Após a aprovação, você terá acesso ao DrishiQ com apoio de patrocinador"
+      }
+    },
+    "requestId": {
+      "label": "ID da solicitação:",
+      "info": "Por favor, guarde este ID para referência ao entrar em contato com o suporte."
+    },
+    "buttons": {
+      "returnHome": "Voltar à página inicial",
+      "learnMore": "Saiba mais sobre o DrishiQ"
+    },
+    "support": {
+      "title": "Precisa de ajuda?",
+      "message": "Entre em contato com nossa equipe de suporte",
+      "email": "support@drishiq.com"
+    }
+  }
+}

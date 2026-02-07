@@ -1,0 +1,101 @@
+{
+  "logo_alt": "DrishiQ logo",
+
+  "meet_yourself": {
+    "label": "Meet Yourself",
+    "types_label": "Personality Types",
+    "types": {
+      "builder": "Builder",
+      "builder_hover": "A person who builds, creates and takes initiative",
+      "seeker": "Seeker",
+      "seeker_hover": "A person seeking meaning and new perspectives",
+      "giver": "Giver",
+      "giver_hover": "A person who supports others and offers help",
+      "connector": "Connector",
+      "connector_hover": "A person who brings people together",
+      "dependent": "Dependent",
+      "dependent_hover": "Someone who often relies on others for support",
+      "escaper": "Escaper",
+      "escaper_hover": "Someone who avoids or withdraws from stress",
+      "giving_beyond": "Giving Beyond",
+      "giving_beyond_hover": "Actions that go beyond personal contribution",
+      "problem_carrier": "Problem Carrier",
+      "problem_carrier_hover": "Someone who takes on or internalizes others' problems",
+      "rebooter": "Rebooter",
+      "rebooter_hover": "A person who restarts and reframes situations",
+      "solo": "Solo",
+      "solo_hover": "A person who values independence and solitude"
+    }
+  },
+
+  "drishiq": "DrishiQ",
+  "drishiq_hover": "Go to the DrishiQ homepage",
+
+  "blog": "Blog",
+  "blog_hover": "Read articles, stories and insights",
+
+  "voice": "Voice",
+  "voice_hover": "Hear perspectives and audio content",
+
+  "grow": "Grow",
+  "grow_hover": "Opportunities to learn, collaborate, and expand",
+
+  "bridge": "Bridge",
+  "bridge_hover": "Connect with others and build community",
+
+  "your_path_label": "Your Path",
+  "your_path": {
+    "co_create": "Co-create",
+    "co_create_hover": "Collaborate with others to shape your experience",
+    "get_first_light": "Get First Light",
+    "get_first_light_hover": "Begin with an introductory clarity session",
+    "fuel_a_journey": "Fuel a Journey",
+    "fuel_a_journey_hover": "Support someone's ongoing personal growth",
+    "gift_a_spark": "Gift a Spark",
+    "gift_a_spark_hover": "Send someone an introductory clarity session as a gift",
+    "spread_the_light": "Spread the Light",
+    "spread_the_light_hover": "Share DrishiQ with your network to grow the community"
+  },
+
+  "language_button_label": "Language",
+
+  "languages": {
+    "en": "English",
+    "hi": "हिन्दी",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "ja": "日本語",
+    "ru": "Русский",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ta": "தமிழ்",
+    "pt": "Português",
+    "ar": "العربية"
+  },
+
+  "profile_options_label": "Profile options",
+  "profile_options": {
+    "got_an_invitation": "Got an Invitation?",
+    "got_an_invitation_hover": "Enter an invitation code to unlock access",
+    "reserve_my_spot": "Reserve My Spot",
+    "reserve_my_spot_hover": "Confirm your place with payment and a contact number",
+    "request_an_invitation": "Request an Invitation",
+    "request_an_invitation_hover": "Share your details to be considered for early access",
+    "gift_clarity": "Gift an Invitation",
+    "gift_clarity_hover": "Gift someone a clarity session or invite",
+    "grow_with_us": "Grow with Us",
+    "grow_with_us_hover": "Become an ambassador, affiliate or collaborator"
+  },
+
+  "profile": {
+    "user_fallback": "User",
+    "welcome_back": "Welcome back!",
+    "dashboard": "Dashboard",
+    "settings": "Profile Settings",
+    "sign_out": "Sign Out",
+    "dashboard_hover": "View your dashboard",
+    "settings_hover": "Manage your profile settings",
+    "sign_out_hover": "Sign out of your account"
+  }
+}

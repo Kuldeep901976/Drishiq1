@@ -1,0 +1,116 @@
+{
+  "logo_alt": "Logotipo Drishiq",
+
+  "meet_yourself": {
+    "label": "Encontre-se consigo mesmo",
+    "types_label": "Tipos de personalidade",
+    "types": {
+      "builder": "Construtor",
+      "builder_hover": "Uma pessoa que cria, constrói e toma iniciativa",
+      "seeker": "Buscador",
+      "seeker_hover": "Uma pessoa que busca significado e novas perspectivas",
+      "giver": "Doador",
+      "giver_hover": "Uma pessoa que ajuda os outros e oferece apoio",
+      "connector": "Conector",
+      "connector_hover": "Uma pessoa que conecta outras pessoas",
+      "dependent": "Dependente",
+      "dependent_hover": "Uma pessoa que frequentemente depende dos outros para apoio",
+      "escaper": "Fugitivo",
+      "escaper_hover": "Uma pessoa que tenta escapar ou se afastar do estresse",
+      "giving_beyond": "Dar além dos limites",
+      "giving_beyond_hover": "Ações que vão além da contribuição pessoal",
+      "problem_carrier": "Portador de problemas",
+      "problem_carrier_hover": "Uma pessoa que carrega os problemas dos outros",
+      "rebooter": "Reiniciador",
+      "rebooter_hover": "Uma pessoa que reinicia e redefine situações",
+      "solo": "Solista",
+      "solo_hover": "Uma pessoa que valoriza independência e solitude"
+    }
+  },
+
+  "drishiq": "Drishiq",
+  "drishiq_hover": "Ir para a página inicial da Drishiq",
+
+  "blog": "Blog",
+  "blog_hover": "Leia artigos, histórias e ideias",
+
+  "voice": "Voz",
+  "voice_hover": "Ouça perspectivas e conteúdos em áudio",
+
+  "grow": "Crescimento",
+  "grow_hover": "Oportunidades de aprender, colaborar e expandir",
+
+  "bridge": "Ponte",
+  "bridge_hover": "Conecte-se com outros e construa comunidade",
+
+  "your_path_label": "Seu caminho",
+  "your_path": {
+    "your_clarity_pass": "Seu passe de clareza",
+    "your_clarity_pass_hover": "Obtenha seu passe de clareza",
+    "co_create": "Cocriação",
+    "co_create_hover": "Modele sua experiência em conjunto com outras pessoas",
+    "get_first_light": "Receba a primeira luz",
+    "get_first_light_hover": "Comece com uma sessão inicial de clareza",
+    "fuel_a_journey": "Apoiar uma jornada",
+    "fuel_a_journey_hover": "Apoie a jornada de crescimento pessoal de alguém",
+    "gift_a_spark": "Presenteie uma faísca",
+    "gift_a_spark_hover": "Presenteie alguém com uma sessão inicial de clareza",
+    "spread_the_light": "Espalhe a luz",
+    "spread_the_light_hover": "Compartilhe a Drishiq na sua rede e amplie a comunidade"
+  },
+
+  "language_button_label": "Idioma",
+
+  "languages": {
+    "en": "English",
+    "hi": "हिन्दी",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "ja": "日本語",
+    "ru": "Русский",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ta": "தமிழ்",
+    "pt": "Português",
+    "ar": "العربية"
+  },
+
+  "profile_options_label": "Opções de perfil",
+  "profile_options": {
+    "got_an_invitation": "Recebeu um convite?",
+    "got_an_invitation_hover": "Insira o código do convite para desbloquear o acesso",
+    "reserve_my_spot": "Reservar meu lugar",
+    "reserve_my_spot_hover": "Garanta seu lugar com pagamento e número de contato",
+    "request_an_invitation": "Solicitar um convite",
+    "request_an_invitation_hover": "Compartilhe suas informações para ser considerado para acesso antecipado",
+    "gift_clarity": "Presentear clareza",
+    "gift_clarity_hover": "Presenteie uma sessão de clareza ou um convite",
+    "grow_with_us": "Cresça conosco",
+    "grow_with_us_hover": "Torne-se embaixador, afiliado ou colaborador"
+  },
+
+  "profile": {
+    "user_fallback": "Usuário",
+    "welcome_back": "Bem-vindo de volta!",
+    "dashboard": "Painel",
+    "user_profile": "Perfil do usuário",
+    "settings": "Configurações do perfil",
+    "sign_out": "Sair",
+    "sign_in": "Entrar",
+    "sign_up": "Cadastrar-se",
+    "log_out": "Sair",
+    "search": "Buscar",
+    "light_mode": "Modo claro",
+    "dark_mode": "Modo escuro",
+    "about": "Sobre a Drishiq",
+    "terms_conditions": "Termos e condições",
+    "years": "Anos",
+    "scan_to_sign_up": "Escaneie para se cadastrar",
+    "qr_scan_instruction": "Use a câmera do seu telefone para escanear o QR code",
+    "qr_enlarge_hover": "Clique para ampliar o QR code",
+    "dashboard_hover": "Ver seu painel",
+    "settings_hover": "Gerenciar as configurações do seu perfil",
+    "sign_out_hover": "Sair da sua conta"
+  }
+}

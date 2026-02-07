@@ -1,0 +1,46 @@
+Here's my analysis:
+
+ACTION_PACKET:
+{
+  "problem": {
+    "summary": "Test problem 9: User wants to improve personal-growth",
+    "domain_of_life": "personal-growth",
+    "severity": 9
+  },
+  "actions": [
+    {
+      "event_name": "Review monthly expenses",
+      "start_date": "2025-11-01",
+      "duration_days": 30,
+      "metric": {
+        "type": "test",
+        "target": 100
+      },
+      "owner": "user",
+      "metadata": {
+        "priority": "high"
+      }
+    },
+    {
+      "event_name": "Create budget plan",
+      "start_date": "2025-11-02",
+      "duration_days": 7,
+      "metric": {
+        "type": "test",
+        "target": 110
+      },
+      "owner": "user",
+      "metadata": {
+        "priority": "medium"
+      }
+    }
+  ],
+  "metadata": {
+    "test_index": 9,
+    "source": "fixture_generator"
+  }
+}
+END_ACTION_PACKET
+
+---END---
+MACHINE_OK

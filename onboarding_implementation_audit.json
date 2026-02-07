@@ -1,0 +1,300 @@
+{
+  "summary": {
+    "status": "PARTIAL",
+    "reason": "Core stages implemented and registered: profile collection, intent detection, email fallback. Missing: database stage config rows, pipeline order configuration, tone preference application in formatter, consent UI in frontend, prefill friends/contacts logic, email service implementation. Security: exact DOB stored in some places (should use age_range only)."
+  },
+  "checks": {
+    "registry_entries": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stage-registry.ts", "lines": "40-44"},
+        {"file": "lib/ddsa/stage-registry.ts", "lines": "74-80"}
+      ],
+      "fix": ""
+    },
+    "pipeline_order": {
+      "ok": false,
+      "evidence": [
+        {"file": "lib/ddsa/onboarding-pipeline-executor.ts", "lines": "143-150"}
+      ],
+      "fix": "Pipeline executor loads stages from ddsa_stage_config by position, but new stages need DB rows. Create migration: INSERT INTO ddsa_stage_config (stage_id, stage_name, is_active, position, dependencies, pipeline_type) VALUES ('onboarding_profile_collection', 'Onboarding Profile Collection', true, 2, ARRAY['onboarding_greeting']::jsonb, 'onboarding'), ('onboarding_intent_detection', 'Onboarding Intent Detection', true, 4, ARRAY['onboarding_profile_collection']::jsonb, 'onboarding'), ('onboarding_email_collection', 'Onboarding Email Collection', true, 9, ARRAY['onboarding_next_steps']::jsonb, 'onboarding');"
+    },
+    "db_stage_config": {
+      "ok": false,
+      "evidence": [],
+      "fix": "Create database/migrations/add-onboarding-stages-config.sql with INSERT statements for the three new stages with correct positions and dependencies."
+    },
+    "profile_collection_stage": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "1-392"},
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "58-392"}
+      ],
+      "fix": ""
+    },
+    "deterministic_location_facts": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "16-37"},
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "136-137"}
+      ],
+      "fix": ""
+    },
+    "age_range_buttons": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "224-236"},
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "241-247"}
+      ],
+      "fix": ""
+    },
+    "tone_preference_storage": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "276-277"},
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "251-274"}
+      ],
+      "fix": ""
+    },
+    "consent_capture": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "258-284"},
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "293-295"}
+      ],
+      "fix": ""
+    },
+    "save_onboarding_data": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "128-133"},
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "177-216"},
+        {"file": "lib/onboarding-concierge/data-store.ts", "lines": "66-133"}
+      ],
+      "fix": ""
+    },
+    "voice_transcription": {
+      "ok": true,
+      "evidence": [
+        {"file": "app/api/transcribe/route.ts", "lines": "1-422"},
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "215-296"}
+      ],
+      "fix": ""
+    },
+    "elicit_issue": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "887-920"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "892-898"}
+      ],
+      "fix": ""
+    },
+    "intent_detection_stage": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "1-328"},
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "31-328"}
+      ],
+      "fix": ""
+    },
+    "followup_limit": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "78-80"},
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "175-204"}
+      ],
+      "fix": ""
+    },
+    "phone_otp_stage": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-phone-verification.ts", "lines": "54-90"},
+        {"file": "lib/ddsa/stages/onboarding-phone-verification.ts", "lines": "114-155"}
+      ],
+      "fix": ""
+    },
+    "email_fallback_stage": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-email-collection.ts", "lines": "1-244"},
+        {"file": "lib/ddsa/stages/onboarding-email-collection.ts", "lines": "51-244"}
+      ],
+      "fix": ""
+    },
+    "payment_signup_claim": {
+      "ok": true,
+      "evidence": [
+        {"file": "app/api/payment/record-transaction/route.ts", "lines": "5-325"},
+        {"file": "app/api/payment/record-transaction/route.ts", "lines": "510-549"}
+      ],
+      "fix": ""
+    },
+    "prefill_contacts": {
+      "ok": false,
+      "evidence": [],
+      "fix": "In app/api/auth/signup/route.ts after user creation (line 85), query onboarding_concierge_data by email/phone: const { data: onboardingData } = await supabase.from('onboarding_concierge_data').select('city, age_range, problem_category').or(`email.eq.${email},phone_number.eq.${phone}`).maybeSingle(); if (onboardingData) { // Prefill friend suggestions based on city/age_range/problem_category }"
+    },
+    "pipeline_executor": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/onboarding-pipeline-executor.ts", "lines": "121-289"},
+        {"file": "lib/ddsa/stage-registry.ts", "lines": "39-265"},
+        {"file": "app/api/chat/onboarding-handler.ts", "lines": "200-202"}
+      ],
+      "fix": ""
+    },
+    "greeting_reinit": {
+      "ok": true,
+      "evidence": [
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "432-468"}
+      ],
+      "fix": ""
+    },
+    "joke_policy": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "238-252"},
+        {"file": "packages/policy/engine.ts", "lines": "50-366"}
+      ],
+      "fix": ""
+    },
+    "tests_present": {
+      "ok": true,
+      "evidence": [
+        {"file": "tests/unit/onboarding-language-detection.test.ts", "lines": "1-85"},
+        {"file": "tests/integration/onboarding-phone-verification.test.ts", "lines": "1-150"},
+        {"file": "tests/e2e/onboarding-intent-handoff.test.ts", "lines": "1-200"},
+        {"file": "tests/integration/onboarding-pipeline-executor.test.ts", "lines": "1-150"}
+      ],
+      "fix": ""
+    },
+    "telemetry_events": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/onboarding-concierge/data-store.ts", "lines": "118-130"},
+        {"file": "lib/ddsa/stages/onboarding-phone-verification.ts", "lines": "143-156"},
+        {"file": "app/api/payment/record-transaction/route.ts", "lines": "756-780"}
+      ],
+      "fix": ""
+    },
+    "email_helper_impl": {
+      "ok": false,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-email-collection.ts", "lines": "16-32"}
+      ],
+      "fix": "Implement sendEmailInstructions in lib/ddsa/stages/onboarding-email-collection.ts. Replace TODO with actual email service call (SendGrid/Resend/etc): await emailService.send({ to: email, subject: 'Welcome to DrishiQ', template: 'onboarding-instructions', data: context });"
+    },
+    "stage_input_output_contract": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "7-8"},
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "58"},
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "7-8"},
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "31"}
+      ],
+      "fix": ""
+    },
+    "consent_ui": {
+      "ok": false,
+      "evidence": [],
+      "fix": "In components/OnboardingConciergeOverlay.tsx, add UI to display consent question when stage returns waitingForToneAndConsent. Show buttons for 'Yes, save' and 'No, thanks'. Block saveOnboardingData call until consent given or store session-only data when declined."
+    },
+    "security_privacy_risks": {
+      "ok": false,
+      "evidence": [
+        {"file": "lib/onboarding-concierge/data-store.ts", "lines": "19"},
+        {"file": "app/api/payment/record-transaction/route.ts", "lines": "100"}
+      ],
+      "fix": "Security risk: date_of_birth stored in onboarding_concierge_data and temporary_signups. Should only store age_range. Remove date_of_birth from schema or ensure it's never populated. Use age_range only (<18, 18-30, 30-50, 50+)."
+    }
+  },
+  "implementation_report": {
+    "completeness": "The onboarding pipeline implementation is approximately 85% complete. All three new stages (profile collection, intent detection, email fallback) are implemented, registered in the code registry, and follow the correct StageInput/StageResult contract. Telemetry events are wired, tests are created, and core functionality like deterministic location facts, age range collection, consent capture, and max 2 follow-ups enforcement are all working. However, database configuration is missing (no ddsa_stage_config rows), pipeline order needs DB setup, frontend consent UI is not implemented, email service is stubbed, prefill logic for friends/contacts is absent, and there's a security concern with exact DOB storage instead of age_range only.",
+    "key_gaps": [
+      "Database stage config rows missing - new stages not in ddsa_stage_config table, so pipeline executor won't find them",
+      "Pipeline order not configured - stages need position and dependencies in database",
+      "Frontend consent UI missing - no UI component to show consent question and capture user choice",
+      "Email service not implemented - sendEmailInstructions is a stub with TODO",
+      "Prefill friends/contacts logic missing - no code to query onboarding data and suggest contacts during signup",
+      "Security: exact DOB stored - should use age_range only, date_of_birth is PII risk"
+    ],
+    "prioritized_next_steps": [
+      {
+        "step": "Create database migration to add ddsa_stage_config rows for the three new stages with correct positions and dependencies",
+        "impact": "high",
+        "effort": "tiny"
+      },
+      {
+        "step": "Implement frontend consent UI in OnboardingConciergeOverlay to display consent question and capture user choice",
+        "impact": "high",
+        "effort": "medium"
+      },
+      {
+        "step": "Implement sendEmailInstructions function with actual email service (SendGrid/Resend) integration",
+        "impact": "medium",
+        "effort": "medium"
+      },
+      {
+        "step": "Add prefill friends/contacts logic in signup route to query onboarding_concierge_data and suggest contacts based on city/age_range/problem_category",
+        "impact": "low",
+        "effort": "medium"
+      },
+      {
+        "step": "Remove or restrict date_of_birth storage - ensure only age_range is stored, not exact DOB",
+        "impact": "high",
+        "effort": "tiny"
+      },
+      {
+        "step": "Verify pipeline executor loads stages in correct order from database and test end-to-end flow",
+        "impact": "high",
+        "effort": "tiny"
+      }
+    ]
+  },
+  "actionable_fixes": [
+    {
+      "id": 2,
+      "fileSuggested": "database/migrations/add-onboarding-stages-config.sql",
+      "snippet": "-- Add onboarding stages to ddsa_stage_config\nINSERT INTO ddsa_stage_config (stage_id, stage_name, stage_type, position, is_active, is_required, library_path, dependencies, pipeline_type, description)\nVALUES\n  ('onboarding_profile_collection', 'Onboarding Profile Collection', 'processing', 2, true, false, 'lib/ddsa/stages/onboarding-profile-collection.ts', '[\"onboarding_greeting\"]'::jsonb, 'onboarding', 'Collect location, age range, tone preference, and consent'),\n  ('onboarding_intent_detection', 'Onboarding Intent Detection', 'processing', 4, true, false, 'lib/ddsa/stages/onboarding-intent-detection.ts', '[\"onboarding_profile_collection\", \"elicit_issue\"]'::jsonb, 'onboarding', 'Detect intent with max 2 follow-ups'),\n  ('onboarding_email_collection', 'Onboarding Email Collection', 'processing', 9, true, false, 'lib/ddsa/stages/onboarding-email-collection.ts', '[\"onboarding_next_steps\"]'::jsonb, 'onboarding', 'Email fallback when phone/payment declined')\nON CONFLICT (stage_id) DO UPDATE SET position = EXCLUDED.position, dependencies = EXCLUDED.dependencies;",
+      "explanation": "Database migration to add the three new onboarding stages to ddsa_stage_config table with correct positions and dependencies"
+    },
+    {
+      "id": 25,
+      "fileSuggested": "components/OnboardingConciergeOverlay.tsx",
+      "snippet": "// Add consent UI rendering when stage returns waitingForToneAndConsent\n{output?.data?.waitingForToneAndConsent && (\n  <div className=\"consent-ui\">\n    <p>{message}</p>\n    <div className=\"tone-choices\">\n      {output.data.toneChoices?.map(tone => (\n        <button key={tone} onClick={() => handleToneSelection(tone)}>{tone}</button>\n      ))}\n    </div>\n    <div className=\"consent-choices\">\n      {output.data.consentChoices?.map(choice => (\n        <button key={choice} onClick={() => handleConsentSelection(choice === 'Yes, save')}>\n          {choice}\n        </button>\n      ))}\n    </div>\n  </div>\n)}",
+      "explanation": "Frontend UI component to display tone preference and consent question with buttons, blocking save until consent given"
+    },
+    {
+      "id": 23,
+      "fileSuggested": "lib/ddsa/stages/onboarding-email-collection.ts",
+      "snippet": "async function sendEmailInstructions(email: string, context: { threadId?: string; profile?: any }): Promise<void> {\n  try {\n    // Import your email service (e.g., Resend, SendGrid)\n    const { Resend } = await import('resend');\n    const resend = new Resend(process.env.RESEND_API_KEY);\n    \n    await resend.emails.send({\n      from: 'onboarding@drishiq.com',\n      to: email,\n      subject: 'Welcome to DrishiQ - Helpful Resources',\n      html: `<p>Thank you for your interest. Here are helpful resources...</p>`,\n      // Or use template: 'onboarding-instructions',\n      // data: { threadId: context.threadId, ...context.profile }\n    });\n  } catch (error) {\n    console.error('❌ [Email] Failed to send instructions:', error);\n  }\n}",
+      "explanation": "Implement actual email sending in sendEmailInstructions function using Resend or SendGrid service"
+    },
+    {
+      "id": 17,
+      "fileSuggested": "app/api/auth/signup/route.ts",
+      "snippet": "// After user creation (line 85), add prefill logic:\nconst { data: onboardingData } = await serviceClient\n  .from('onboarding_concierge_data')\n  .select('city, age_range, problem_category')\n  .or(`email.eq.${authData.user.email},phone_number.eq.${phone || ''}`)\n  .maybeSingle();\n\nif (onboardingData) {\n  // Prefill friend/contact suggestions based on profile\n  const suggestions = await generateContactSuggestions({\n    city: onboardingData.city,\n    ageRange: onboardingData.age_range,\n    problemCategory: onboardingData.problem_category\n  });\n  // Store suggestions in user metadata or session\n}",
+      "explanation": "Query onboarding_concierge_data by email/phone after signup to get profile data and prefill friend/contact suggestions"
+    },
+    {
+      "id": 26,
+      "fileSuggested": "lib/onboarding-concierge/data-store.ts",
+      "snippet": "// Remove date_of_birth from schema fields list (line 94)\n// Change from:\n'date_of_birth', 'age_range', 'gender',\n// To:\n'age_range', 'gender',\n// And ensure saveOnboardingData never accepts or stores date_of_birth - only age_range",
+      "explanation": "Security fix: Remove date_of_birth from allowed schema fields to prevent exact DOB storage. Only store age_range (<18, 18-30, 30-50, 50+)."
+    },
+    {
+      "id": 2,
+      "fileSuggested": "lib/ddsa/onboarding-pipeline-executor.ts",
+      "snippet": "// Verify pipeline_type filter is working (line 149)\n// Ensure query includes: .eq('pipeline_type', 'onboarding')\n// Test that stages load in correct order: onboarding_greeting (1) → onboarding_profile_collection (2) → elicit_issue (3) → onboarding_intent_detection (4) → ...",
+      "explanation": "Verify pipeline executor correctly filters and orders stages from database by position"
+    }
+  ],
+  "final_question": {
+    "text": "I have produced the audit above. Which implementation report would you like next (choose format) and what filename should I use?",
+    "options": ["JSON", "Markdown", "CSV", "Git patch", "PR bundle"],
+    "reply_instructions": "Reply with: FORMAT, FILENAME (e.g., Markdown, onboarding-audit-v1.md)"
+  }
+}
+
+
+

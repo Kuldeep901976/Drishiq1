@@ -1,0 +1,181 @@
+{
+  "signIn": {
+    "title": "Entrar",
+    "tabs": {
+      "social": "Social",
+      "email": "E-mail/Senha",
+      "magic": "Link Mágico"
+    },
+    "roleCategories": {
+      "regular": "Regular",
+      "grow": "Crescimento",
+      "enterprise": "Enterprise"
+    },
+    "roles": {
+      "user": "Usuário regular",
+      "client_admin": "Administrador da empresa",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Terapeuta",
+      "consultant": "Consultor",
+      "investor": "Investidor",
+      "partner": "Parceiro",
+      "sponsor": "Patrocinador",
+      "volunteer": "Voluntário",
+      "affiliate": "Afiliado",
+      "enterprise_admin": "Administrador Enterprise"
+    },
+    "roleTaglines": {
+      "user": "Acesso ao painel pessoal",
+      "client_admin": "Gerenciar contas da empresa",
+      "mentor": "Guiar e apoiar outras pessoas",
+      "coach": "Serviços profissionais de coaching",
+      "therapist": "Apoio à saúde mental",
+      "consultant": "Consultoria empresarial",
+      "investor": "Oportunidades de investimento",
+      "partner": "Parcerias estratégicas",
+      "sponsor": "Apoio a causas e iniciativas",
+      "volunteer": "Contribuição comunitária",
+      "affiliate": "Parceria de indicação",
+      "enterprise_admin": "Gerenciar funcionários da empresa"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Digite seu endereço de e-mail",
+        "label": "E-mail"
+      },
+      "password": {
+        "placeholder": "Digite sua senha",
+        "label": "Senha"
+      },
+      "submit": {
+        "signIn": "Entrar",
+        "signingIn": "Entrando...",
+        "sendMagicLink": "Enviar link mágico",
+        "sending": "Enviando...",
+        "cancel": "Cancelar"
+      }
+    },
+    "socialAuth": {
+      "google": "Continuar com Google",
+      "linkedin": "Continuar com LinkedIn"
+    },
+    "welcome": {
+      "title": "Bem-vindo de volta, {username}! 👋",
+      "credits": "Seus créditos",
+      "availableCredits": "Créditos disponíveis",
+      "total": "Total",
+      "used": "Usados",
+      "whoAreYouSeeking": "Para quem você precisa de orientação?",
+      "forMyself": {
+        "title": "Para mim",
+        "description": "Receba orientação personalizada para você"
+      },
+      "forOthers": {
+        "title": "Para alguém importante para mim",
+        "description": "Busque orientação para alguém querido"
+      },
+      "needCredits": "Você precisa de créditos para acessar nossos serviços",
+      "buyCredits": "🛒 Comprar créditos agora",
+      "buyMoreCredits": "💳 Comprar mais créditos",
+      "limitedCredits": "ℹ️ Você está com poucos créditos. Considere comprar mais para evitar interrupções.",
+      "sufficientCredits": "✅ Você tem créditos suficientes. Pronto para começar!",
+      "back": "Voltar",
+      "signOut": "Sair"
+    },
+    "footer": {
+      "noAccount": "Não tem uma conta? Cadastre-se",
+      "forgotPassword": "Esqueceu a senha?",
+      "info": "Após entrar, você poderá escolher entre receber orientação para você ou para alguém importante. Cada sessão usa 1 crédito."
+    },
+    "errors": {
+      "accountNotFound": "Conta não encontrada. Cadastre-se para criar uma conta.",
+      "invalidCredentials": "Senha incorreta. Tente novamente ou use \"Esqueceu a senha\" para redefinir.",
+      "userNotFound": "Sua conta ainda não está configurada. Complete seu perfil para continuar.",
+      "signUpPrompt": "Cadastre-se para criar uma conta ou tente entrar novamente.",
+      "magicLinkError": "Falha ao enviar o link mágico",
+      "socialAuthError": "Falha na autenticação com {provider}. Verifique a configuração OAuth {provider} no Supabase.",
+      "authError": "Ocorreu um erro durante a autenticação",
+      "emailRequired": "O endereço de e-mail é obrigatório"
+    }
+  },
+  "signUp": {
+    "title": "Cadastrar",
+    "tabs": {
+      "social": "Social",
+      "email": "E-mail/Senha",
+      "magic": "Link Mágico"
+    },
+    "roleCategories": {
+      "regular": "Regular",
+      "grow": "Crescimento",
+      "enterprise": "Enterprise"
+    },
+    "roles": {
+      "user": "Usuário regular",
+      "client_admin": "Administrador da empresa",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Terapeuta",
+      "consultant": "Consultor",
+      "investor": "Investidor",
+      "partner": "Parceiro",
+      "sponsor": "Patrocinador",
+      "volunteer": "Voluntário",
+      "affiliate": "Afiliado",
+      "enterprise_admin": "Administrador Enterprise"
+    },
+    "roleTaglines": {
+      "user": "Acesso ao painel pessoal",
+      "client_admin": "Gerenciar contas da empresa",
+      "mentor": "Guiar e apoiar outras pessoas",
+      "coach": "Serviços profissionais de coaching",
+      "therapist": "Apoio à saúde mental",
+      "consultant": "Consultoria empresarial",
+      "investor": "Oportunidades de investimento",
+      "partner": "Parcerias estratégicas",
+      "sponsor": "Apoio a causas e iniciativas",
+      "volunteer": "Contribuição comunitária",
+      "affiliate": "Parceria de indicação",
+      "enterprise_admin": "Administração da plataforma"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Digite seu endereço de e-mail",
+        "label": "E-mail"
+      },
+      "submit": {
+        "sendPasswordLink": "Enviar link para criar senha",
+        "sendMagicLink": "Enviar link mágico",
+        "sending": "Enviando...",
+        "cancel": "Cancelar"
+      }
+    },
+    "socialAuth": {
+      "google": "Continuar com Google",
+      "linkedin": "Continuar com LinkedIn"
+    },
+    "success": {
+      "passwordLinkSent": "O link para criar senha foi enviado para {email}. Confira sua caixa de entrada e clique para criar sua senha!",
+      "magicLinkSent": "O link mágico foi enviado para {email}. Confira sua caixa de entrada!"
+    },
+    "footer": {
+      "hasAccount": "Já tem uma conta?",
+      "signIn": "Entrar",
+      "info": "Após se cadastrar, você verificará seu número de telefone e completará seu perfil antes de acessar o painel.",
+      "terms": "Ao se cadastrar, você concorda com nossos",
+      "termsLink": "Termos de Serviço",
+      "and": "e",
+      "privacyLink": "Política de Privacidade"
+    },
+    "errors": {
+      "emailRequired": "O endereço de e-mail é obrigatório",
+      "userExists": "Já existe um usuário com este e-mail",
+      "userExistsTip": "💡 Dica: se você já tem uma conta, por favor",
+      "signInInstead": "entre",
+      "magicLinkError": "Falha ao enviar o link mágico",
+      "emailSignupError": "Falha ao enviar o link de criação de senha",
+      "socialAuthError": "Falha na autenticação com {provider}"
+    }
+  }
+}

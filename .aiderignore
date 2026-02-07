@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+public/**/*.png
+public/**/*.jpg
+public/**/*.mp4
+public/**/*.mov

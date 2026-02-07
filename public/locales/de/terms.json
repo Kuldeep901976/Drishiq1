@@ -1,0 +1,145 @@
+{
+  "title": "Nutzungsbedingungen, Datenschutzrichtlinie und Cookie-Richtlinie",
+  "lastUpdated": "Zuletzt aktualisiert:",
+  "lastUpdatedText": "Gilt dauerhaft, sofern nicht ausdrücklich aktualisiert.",
+  "sections": {
+    "terms": {
+      "title": "1. Nutzungsbedingungen",
+      "userDefinition": {
+        "title": "1.1 Definition von \"Nutzer\"",
+        "content": "\"Nutzer\" bedeutet „Kunde“, „Sie“, „Ihr“ oder jede Person, die die Drishiq Website/App besucht oder die angebotenen Dienste verwendet. Für Nutzer unter 18 Jahren ist eine klare Zustimmung und Aufsicht durch einen Elternteil/Erziehungsberechtigten erforderlich. Durch die Nutzung der Plattform bestätigen Sie, dass Sie volljährig (18+) sind oder dass eine gültige Zustimmung vorliegt."
+      },
+      "natureOfServices": {
+        "title": "1.2 Art der Dienstleistungen",
+        "content1": "Drishiq ist eine KI-gestützte Plattform, die Nutzern hilft, Klarheit über persönliche Herausforderungen zu gewinnen – durch strukturierte Fragen und Problem-Analysen. Es handelt sich nicht um medizinische, psychologische, rechtliche, finanzielle oder Notfall-Dienstleistungen.",
+        "content2": "Die Plattform unterstützt Nutzer dabei, ihre Probleme besser zu verstehen. Ergebnisse hängen jedoch von vielen Faktoren ab – Motivation, persönliche Situation, finanzielle Lage, Gesundheit usw. Daher kann kein bestimmtes Ergebnis garantiert werden. Drishiq ersetzt keine professionellen Dienstleistungen."
+      },
+      "aiDisclosure": {
+        "title": "1.3 Hinweis zur KI-Nutzung",
+        "content": "Alle Antworten werden von KI generiert. Sie können unvollständig, ungenau oder falsch interpretiert sein. Bitte nutzen Sie die Informationen verantwortungsvoll und prüfen Sie wichtige Inhalte zusätzlich."
+      },
+      "generalDisclaimer": {
+        "title": "1.4 Allgemeiner Hinweis",
+        "content": "Drishiq ist kein Dienst für medizinische oder psychologische Notfälle. Bei Suizidgedanken, Selbstgefährdung oder akuten psychischen Problemen wenden Sie sich sofort an eine Notfallnummer oder einen Arzt.",
+        "disclaimerBox": {
+          "label": "Hinweis:",
+          "content": "Keine Inhalte oder Empfehlungen von Drishiq sind von Behörden geprüft oder zertifiziert. Alles wird „wie gesehen“ und ohne Garantie bereitgestellt."
+        }
+      },
+      "userExpectation": {
+        "title": "1.5 Erwartungen der Nutzer",
+        "content1": "Die Plattform ist ein exploratives Tool. Wenn ein Nutzer nicht das erwartete Ergebnis erhält, erkennt er an, dass Vorschläge weder Versprechen noch garantierte Lösungen sind.",
+        "content2": "Sollte eine Analyse deutlich vom tatsächlichen Problem abweichen, kann Drishiq nach Überprüfung eine Rückerstattung der Sitzung oder eine zusätzliche Sitzung anbieten."
+      },
+      "sessionCharges": {
+        "title": "1.6 Sitzungsgebühren und Umfang",
+        "content": "Eine Sitzung umfasst nur ein einzelnes Problem.",
+        "points": {
+          "point1": "Eine Sitzung beginnt, sobald der Nutzer eine Frage sendet.",
+          "point2": "Das Thema kann während der Sitzung nicht geändert werden.",
+          "point3": "Die Sitzung gilt als abgeschlossen, wenn Drishiq geantwortet hat, der Nutzer sie beendet oder 2 Tage ohne Interaktion vergangen sind.",
+          "point4": "Für jedes neue Problem wird eine neue Sitzung benötigt.",
+          "point5": "Keine versteckten Gebühren.",
+          "point6": "Alle Zahlungen erfolgen im Voraus. Rückerstattungen gibt es nur in Ausnahmefällen – z. B. wenn Drishiq keine sinnvolle Analyse liefern konnte."
+        }
+      },
+      "paidSubscriptions": {
+        "title": "1.7 Bezahlte Abos, Abrechnung und Preise",
+        "content": "Eine Sitzung = ein Problem. Preise werden klar angezeigt und sind nach Kauf nicht verhandelbar.",
+        "points": {
+          "point1": "Wenn der Nutzer mehr Sitzungen nutzt als enthalten, können zusätzliche Gebühren anfallen.",
+          "point2": "Aktive Credits oder eine gültige Einzelsitzungszahlung sind vor dem Start nötig.",
+          "point3": "Alle Preise sind vor dem Kauf sichtbar.",
+          "point4": "Abos können sich automatisch verlängern.",
+          "point5": "Drishiq kann die Preise mit Vorankündigung ändern."
+        }
+      },
+      "dataRetention": {
+        "title": "1.8 Datenspeicherung",
+        "content": "Drishiq speichert Sitzungsdaten bis zu 24 Monate, sofern keine frühere Löschung angefragt wird.",
+        "points": {
+          "point1": "Daten können genutzt werden, um die Plattform zu verbessern oder Analysemodelle zu trainieren.",
+          "point2": "Alle Daten werden anonymisiert und nach geltendem Datenschutzrecht behandelt."
+        }
+      },
+      "governingLaw": {
+        "title": "1.9 Geltendes Recht",
+        "content": "Diese Bedingungen unterliegen dem indischen Recht. Gerichtsstand ist Indien."
+      }
+    },
+    "cookies": {
+      "title": "2. Cookie-Richtlinie",
+      "webAppCovered": {
+        "title": "2.1 Für welche Webseiten gilt das?",
+        "content": "Diese Cookie-Richtlinie gilt für Drishiq.com und alle zugehörigen Webseiten. Bei Änderungen wird das Datum „Zuletzt aktualisiert“ angepasst."
+      },
+      "whatAreCookies": {
+        "title": "2.2 Was sind Cookies?",
+        "content": "Cookies sind kleine Dateien, die auf Ihrem Gerät gespeichert werden. Sie helfen dabei, Einstellungen zu merken, Navigation zu verbessern und die Benutzererfahrung zu optimieren."
+      },
+      "typesOfCookies": {
+        "title": "2.3 Cookie-Arten",
+        "points": {
+          "point1": "Notwendige Cookies – für grundlegende Funktionen der Website.",
+          "point2": "Analyse-Cookies – helfen zu verstehen, wie Nutzer die Website verwenden.",
+          "point3": "Funktions-Cookies – speichern z. B. Sprache, Textgröße oder Einstellungen."
+        }
+      },
+      "managingCookies": {
+        "title": "2.4 Cookies verwalten",
+        "content": "Sie können Cookies über die Browser-Einstellungen löschen oder blockieren. Manche Funktionen funktionieren dann eventuell eingeschränkt."
+      }
+    },
+    "privacy": {
+      "title": "3. Datenschutzrichtlinie",
+      "scope": {
+        "title": "3.1 Geltungsbereich",
+        "content": "Diese Richtlinie erklärt, wie Drishiq Ihre Daten sammelt, nutzt, speichert und schützt – sowohl auf der Website als auch in der App."
+      },
+      "dataWeCollect": {
+        "title": "3.2 Welche Daten wir sammeln",
+        "points": {
+          "point1": "Von Ihnen bereitgestellte Daten: Name, E-Mail, Telefonnummer, Nachrichten, Zahlungsdaten.",
+          "point2": "Automatisch erfasste Daten: IP-Adresse, Gerät, Browser, Nutzungsstatistiken, Fehlerberichte.",
+          "point3": "Daten von Drittanbietern: z. B. Zahlungsdienstleister oder Partner."
+        }
+      },
+      "howWeUseData": {
+        "title": "3.3 Wie wir Ihre Daten verwenden",
+        "points": {
+          "point1": "Um Ihre Erfahrung zu personalisieren",
+          "point2": "Um Support und Service bereitzustellen",
+          "point3": "Um Sicherheit und Betrugsschutz zu gewährleisten",
+          "point4": "Um relevante Hinweise zu senden (mit Einwilligung)",
+          "point5": "Um die Plattform zu analysieren und zu verbessern",
+          "point6": "Zur Kontoverifizierung und technischen Diagnose"
+        }
+      },
+      "dataStorage": {
+        "title": "3.4 Speicherung & Sicherheit",
+        "content1": "Wir speichern Ihre Daten sicher und nutzen Verschlüsselung und moderne Sicherheitsstandards.",
+        "content2": "Bei einem Datenschutzvorfall informieren wir betroffene Nutzer und Behörden nach geltendem Recht."
+      },
+      "yourRights": {
+        "title": "3.5 Ihre Rechte",
+        "points": {
+          "point1": "Sie können Ihre Daten jederzeit einsehen, bearbeiten oder löschen lassen.",
+          "point2": "Sie können Marketing-E-Mails abbestellen.",
+          "point3": "Sie können eine Datenübertragung anfordern.",
+          "point4": "Sie können sich bei einer Datenschutzbehörde beschweren."
+        },
+        "contactText": "Für diese Anfragen kontaktieren Sie uns unter:"
+      },
+      "childrenPrivacy": {
+        "title": "3.6 Datenschutz bei Minderjährigen",
+        "content": "Unter 18 Jahren ist eine elterliche Zustimmung notwendig. Unter 13 Jahren wird Drishiq nicht genutzt oder verarbeitet."
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Bei Fragen zu Nutzungsbedingungen, Cookies oder Datenschutz kontaktieren Sie uns:",
+      "companyName": "Drishiq Pvt. Ltd.",
+      "emailLabel": "E-Mail: support@drishiq.com"
+    }
+  }
+}

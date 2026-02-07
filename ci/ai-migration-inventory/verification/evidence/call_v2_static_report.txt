@@ -1,0 +1,93 @@
+Call-V2 API Route Static Analysis Report
+=========================================
+File: app/api/ai/call-v2/route.ts
+Date: 2025-01-10
+
+VALIDATION:
+✅ PASS: Validates thread_id and input are required (lines 62-67)
+✅ PASS: Returns 400 error if validation fails
+✅ PASS: Validates stage exists (lines 77-82)
+✅ PASS: Validates stage is enabled (lines 84-89)
+
+STAGE RESOLUTION:
+✅ PASS: Uses getStageById() from db-adapters (line 72)
+✅ PASS: Uses getStageByName() from db-adapters (line 74)
+✅ PASS: Falls back from stage_id to stage_name
+
+INSTRUCTION SET RESOLUTION:
+✅ PASS: Uses getInstructionSetById() from db-adapters (lines 94, 96)
+✅ PASS: Checks instruction_set_id from request body first
+✅ PASS: Falls back to stage.instruction_set_id
+✅ PASS: Continues gracefully if no instruction set found (line 99-102)
+
+CONTEXT ASSEMBLY:
+✅ PASS: Uses getRecentMessages() from db-adapters (line 110)
+✅ PASS: Assembles input array with:
+   - System prompt from instruction set (lines 116-121)
+   - Behavior guidance metadata (lines 124-133)
+   - Few-shot examples (lines 136-151)
+   - Recent conversation messages (lines 154-159)
+   - Current user input (lines 162-165)
+
+OPENAI CLIENT:
+✅ PASS: Uses getOpenAIClient() helper (line 168)
+✅ PASS: Falls back from OPENAI_RESPONSES_KEY to OPENAI_API_KEY (line 22)
+✅ PASS: Throws error if no key available
+
+API CALL:
+⚠️  NOTE: Currently uses chat.completions.create() (line 174)
+   - TODO comment indicates Responses API not yet available
+   - Falls back to chat.completions until Responses SDK available
+
+RESPONSE HANDLING:
+✅ PASS: Extracts assistantMessage from response.choices[0]?.message?.content (line 181)
+✅ PASS: Extracts responseId from response.id (line 182)
+✅ PASS: Handles usage object with fallbacks (lines 183-186)
+✅ PASS: Calculates total_tokens fallback if missing (line 186)
+
+SCHEMA VALIDATION:
+✅ PASS: Uses Ajv for JSON schema validation (line 30)
+✅ PASS: Validates if instructionSet.output_schema exists (line 196)
+✅ PASS: Handles parse errors gracefully (lines 205-208)
+
+PERSISTENCE:
+✅ PASS: Uses insertAiResponse() from db-adapters (lines 212-231)
+✅ PASS: Stores all required fields:
+   - response_id, thread_id, thread_type
+   - model, stage_ref, instruction_set_id
+   - request_payload, response_payload
+   - tokens_in, tokens_out, total_tokens
+   - estimated_cost, schema_validated
+✅ PASS: Logs warning if persistence fails (line 234)
+
+RESPONSE FORMAT:
+✅ PASS: Returns JSON with:
+   - ok: true/false
+   - response_id
+   - output_text
+   - parsed_json (optional)
+   - usage object
+   - schema_validated
+   - response_time_ms
+
+ERROR HANDLING:
+✅ PASS: Wrapped in try/catch (line 44, 255)
+✅ PASS: Returns 500 on error (line 264)
+✅ PASS: Includes error message in response
+⚠️  WARNING: Exposes error.stack in development mode (line 262)
+   - Consider sanitizing stack traces
+⚠️  WARNING: Error messages not sanitized for secrets (line 261)
+   - Should mask API keys in error messages
+
+SECRETS LOGGING:
+⚠️  WARNING: Error logging may expose secrets (line 256)
+   - console.error('❌ Error in /api/ai/call-v2:', error)
+   - Should sanitize error messages before logging
+✅ PASS: No hardcoded API keys in code
+✅ PASS: API keys read from environment variables only
+
+OVERALL ASSESSMENT: ✅ MOSTLY VALID
+- All core functionality present
+- Uses db-adapters correctly
+- Minor improvements needed: Error sanitization, Responses API support
+

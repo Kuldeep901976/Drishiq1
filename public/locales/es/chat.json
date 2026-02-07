@@ -1,0 +1,192 @@
+{
+  "modeSelection": {
+    "title": "Drishiq",
+    "subtitle": "Tu guía personal de astrología",
+    "description": "Descubre perspectivas y orientación a través de las estrellas",
+    "header": {
+      "title": "¿Para quién quieres orientación?",
+      "subtitle": "Elige una opción para comenzar",
+      "credits": "Créditos",
+      "buyMore": "Comprar más"
+    },
+    "options": {
+      "myself": {
+        "title": "Para mí",
+        "description": "Obtén orientación y perspectivas personales creadas especialmente para ti",
+        "feature": "✓ Usa tu perfil guardado"
+      },
+      "other": {
+        "title": "Para alguien de quien me preocupo",
+        "description": "Proporciona orientación y apoyo para un ser querido o miembro de la familia",
+        "feature": "✓ Ingresa su información"
+      }
+    },
+    "footer": {
+      "security": "🔐 Tu información está segura y es privada",
+      "copyright": "© 2024 Drishiq. Todos los derechos reservados."
+    },
+    "features": {
+      "personalized": "Personalizado",
+      "accurate": "Preciso",
+      "insightful": "Perspicaz"
+    },
+    "loading": {
+      "checkingCredits": "Verificando créditos...",
+      "loading": "Cargando..."
+    },
+    "errors": {
+      "title": "Error",
+      "goBack": "Volver",
+      "noCredits": {
+        "title": "No hay créditos disponibles",
+        "message": "Necesitas al menos 1 crédito para iniciar una conversación. Por favor, compra créditos para continuar.",
+        "buyCredits": "Comprar créditos",
+        "goBack": "Volver"
+      }
+    },
+    "pendingSession": {
+      "title": "Tienes una conversación en curso",
+      "message": "Iniciaste una sesión anteriormente. Ahora puedes reanudarla donde la dejaste.",
+      "resume": "Reanudar conversación",
+      "close": "Cerrar",
+      "dontShowAgain": "No mostrar de nuevo (este dispositivo)"
+    }
+  },
+  "astro": {
+    "loading": {
+      "title": "Drishiq",
+      "message": "Iniciando conversación..."
+    },
+    "form": {
+      "title": "Cuéntanos sobre ellos",
+      "fields": {
+        "firstName": {
+          "label": "Nombre *",
+          "placeholder": "Ingresa su nombre"
+        },
+        "relationship": {
+          "label": "Relación *",
+          "placeholder": "Elige la relación",
+          "options": {
+            "spouse": "Cónyuge",
+            "child": "Hijo/a",
+            "parent": "Padre/Madre",
+            "sibling": "Hermano/a",
+            "friend": "Amigo/a",
+            "other": "Otro"
+          }
+        },
+        "dob": {
+          "label": "Fecha de nacimiento *"
+        },
+        "gender": {
+          "label": "Género *",
+          "placeholder": "Elige el género",
+          "options": {
+            "male": "Masculino",
+            "female": "Femenino",
+            "other": "Otro"
+          }
+        }
+      },
+      "next": "Siguiente",
+      "errors": {
+        "required": "Por favor, completa todos los campos requeridos"
+      }
+    },
+    "question": {
+      "title": "Perspectiva astrológica",
+      "message": "¿Quieres orientación astrológica personalizada para {name}?",
+      "subtitle": "Necesitamos su lugar y hora de nacimiento para calcularlo.",
+      "notInterested": "No me interesa",
+      "includeIt": "Sí, incluirlo"
+    },
+    "details": {
+      "title": "Detalles de astrología para {name}",
+      "fields": {
+        "placeOfBirth": {
+          "label": "Lugar de nacimiento *",
+          "placeholder": "Ciudad, País"
+        },
+        "timeOfBirth": {
+          "label": "Hora de nacimiento *"
+        }
+      },
+      "submit": "Enviar e iniciar chat",
+      "processing": "Procesando...",
+      "errors": {
+        "required": "Por favor, completa todos los detalles de astrología",
+        "geocodeFailed": "Error al calcular los detalles de ubicación. Por favor, verifica el lugar de nacimiento.",
+        "geocodeInvalid": "Error al geocodificar el lugar de nacimiento. Por favor, verifica la ubicación e intenta de nuevo.",
+        "incomplete": "Error al calcular los detalles completos de ubicación (latitud, longitud, zona horaria)."
+      }
+    },
+    "errors": {
+      "profileNotFound": "Perfil no encontrado. Por favor, completa tu perfil primero.",
+      "loadFailed": "Error al cargar el perfil",
+      "createFailed": "Error al crear el perfil",
+      "chatFailed": "Error al iniciar el chat",
+      "loginRequired": "Por favor, inicia sesión para continuar"
+    }
+  },
+  "messages": {
+    "loading": "Cargando...",
+    "checkingCredits": "Verificando créditos...",
+    "initiating": "Iniciando conversación...",
+    "processing": "Procesando...",
+    "submitting": "Enviando tus respuestas...",
+    "thinking": "Drishiq está pensando...",
+    "sending": "Enviando...",
+    "transcribing": "Transcribiendo...",
+    "recording": "Grabando...",
+    "clickToStop": "Haz clic para detener",
+    "clickToRecord": "Haz clic para grabar un mensaje de voz (Whisper)"
+  },
+  "chat": {
+    "header": {
+      "personal": "Chat personal",
+      "caregiver": "Chat: {name}"
+    },
+    "input": {
+      "placeholder": "Escribe tu mensaje...",
+      "placeholderFrozen": "Por favor, elige una opción arriba...",
+      "send": "Enviar",
+      "sending": "Enviando...",
+      "noContent": "(Sin contenido)"
+    },
+    "voice": {
+      "recording": "Grabando...",
+      "processing": "Procesando...",
+      "transcribing": "Transcribiendo...",
+      "stop": "Grabando... Haz clic para detener",
+      "start": "Haz clic para grabar un mensaje de voz (Whisper)"
+    },
+    "interactive": {
+      "submit": "Enviar",
+      "addDetails": "Agregar detalles...",
+      "expand": "Expandir para agregar detalles",
+      "collapse": "Colapsar detalles",
+      "moreQuestions": "{count} pregunta{plural} más aparecerá después de enviar",
+      "stage": "Etapa:",
+      "typeResponse": "Escribe tu respuesta aquí..."
+    },
+    "actions": {
+      "delete": "Eliminar mensaje",
+      "newChat": "Nuevo chat",
+      "generatePDF": "Generar informe PDF"
+    },
+    "errors": {
+      "insufficientCredits": "Créditos insuficientes. Redirigiendo a la compra...",
+      "serverError": "Ocurrió un error del servidor. Por favor, intenta de nuevo.",
+      "parseError": "Error al analizar la respuesta del servidor",
+      "emptyResponse": "Respuesta vacía del servidor",
+      "deleteFailed": "Error al eliminar el mensaje. Puede ser demasiado antiguo.",
+      "deleteError": "Error al eliminar el mensaje. Por favor, intenta de nuevo.",
+      "communicationError": "Error en la comunicación con el servidor"
+    },
+    "pdf": {
+      "available": "Informe PDF disponible",
+      "generate": "Generar informe PDF"
+    }
+  }
+}

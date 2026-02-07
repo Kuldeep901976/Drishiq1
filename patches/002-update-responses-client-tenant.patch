@@ -1,0 +1,60 @@
+--- a/lib/responses/responsesClient.ts
++++ b/lib/responses/responsesClient.ts
+@@ -10,6 +10,8 @@
+ // Use global fetch (available in Next.js/Node.js 18+)
+ import { USE_RESPONSES_API, validateResponsesAPIEnv } from './feature-flag';
++import type { TenantConfig } from '@/lib/tenant/types';
++import { getTenantConfig } from '@/lib/tenant/registry';
+ 
+ // Responses API endpoint - use /responses (plural) - confirmed working
+ // Auto-fix if user set /response (singular) by mistake
+@@ -145,7 +147,8 @@
+ /**
+  * Create a non-streaming response using the Responses API
+  * Automatically falls back to ChatCompletion if Responses API is unavailable (404)
+  */
+-export async function createResponse(req: ResponsesRequest): Promise<ResponsesResponse> {
++export async function createResponse(
++  req: ResponsesRequest,
++  tenantId?: string
++): Promise<ResponsesResponse> {
+   if (!USE_RESPONSES_API) {
+     throw new Error("Responses API is disabled via USE_RESPONSES_API feature flag");
+   }
+   
+   validateResponsesAPIEnv();
+   
+-  if (!RESPONSES_KEY) {
++  // Resolve API key from tenant config or fallback to global
++  let apiKey = RESPONSES_KEY;
++  if (tenantId) {
++    const tenantConfig = await getTenantConfig(tenantId);
++    if (tenantConfig.ai?.keyAlias) {
++      // TODO: Resolve from secret manager
++      // apiKey = await resolveKeyAlias(tenantConfig.ai.keyAlias);
++      console.warn('⚠️ [Responses Client] Key alias resolution not implemented, using fallback');
++    }
++    // Use tenant-specific model/temperature if provided
++    if (tenantConfig.ai?.model) {
++      req.model = tenantConfig.ai.model;
++    }
++    if (tenantConfig.ai?.temperature !== undefined) {
++      req.temperature = tenantConfig.ai.temperature;
++    }
++  }
++  
++  if (!apiKey) {
+     throw new Error("RESPONSES_API_KEY or OPENAI_RESPONSES_KEY environment variable is not set");
+   }
+ 
+@@ -194,7 +197,7 @@
+   const res = await fetch(RESPONSES_BASE, {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json",
+-      Authorization: `Bearer ${RESPONSES_KEY}`,
++      Authorization: `Bearer ${apiKey}`,
+       // Add OpenAI-Organization header if set
+       ...(process.env.OPENAI_ORGANIZATION ? { "OpenAI-Organization": process.env.OPENAI_ORGANIZATION } : {}),
+     },
+

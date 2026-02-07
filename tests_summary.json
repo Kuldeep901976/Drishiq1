@@ -1,0 +1,73 @@
+[
+  {
+    "file": "tests/ddsa/confirm-intent.spec.ts",
+    "touchesDDSA": true,
+    "mustUpdate": false,
+    "testNames": [
+      "earlyIntentPass - Classifier Thresholds",
+      "handleConfirmReply - A/B/C Branches",
+      "generateWithQOL - Confirm Prompt Generation",
+      "Scope Lock Enforcement"
+    ],
+    "notes": "Tests confirm-intent flow. May need updates for stakeholders/options/plan integration."
+  },
+  {
+    "file": "tests/ddsa/questioning_orchestrator.spec.ts",
+    "touchesDDSA": true,
+    "mustUpdate": false,
+    "testNames": ["Unknown - file not read"],
+    "notes": "Should test QOL integration with confirm-intent."
+  },
+  {
+    "file": "tests/ddsa/stageDecisionEngine.spec.ts",
+    "touchesDDSA": true,
+    "mustUpdate": true,
+    "testNames": ["Unknown - file not read"],
+    "notes": "Must add tests for scope lock enforcement after confirm-intent."
+  },
+  {
+    "file": "tests/db/rls-session.spec.ts",
+    "touchesDDSA": false,
+    "mustUpdate": false,
+    "testNames": ["Unknown - file not read"],
+    "notes": "Should verify RLS is set correctly for saveDdsState operations."
+  },
+  {
+    "file": "tests/tenant/registry.spec.ts",
+    "touchesDDSA": false,
+    "mustUpdate": false,
+    "testNames": ["Unknown - file not read"],
+    "notes": "Should verify feature flags (enableIntentConfirmation, enableScopeLock) are loaded correctly."
+  },
+  {
+    "suggestedNewTests": [
+      {
+        "file": "tests/ddsa/stakeholders-integration.spec.ts",
+        "testName": "Stakeholders stage respects confirmedIntent",
+        "description": "Verify stakeholders stage does not ask redundant questions when intent is confirmed"
+      },
+      {
+        "file": "tests/ddsa/options-integration.spec.ts",
+        "testName": "Options stage uses confirmedIntent for context",
+        "description": "Verify options are generated based on confirmed intent, not generic templates"
+      },
+      {
+        "file": "tests/ddsa/plan-integration.spec.ts",
+        "testName": "Plan stage respects scopeLock",
+        "description": "Verify plan generation respects scope lock and does not include out-of-scope actions"
+      },
+      {
+        "file": "tests/ddsa/confirm-to-stakeholders-flow.spec.ts",
+        "testName": "End-to-end: confirm-intent → stakeholders → options → plan",
+        "description": "Full integration test of the complete flow"
+      },
+      {
+        "file": "tests/ddsa/rls-save-dds-state.spec.ts",
+        "testName": "saveDdsState respects tenant RLS",
+        "description": "Verify all saveDdsState calls set RLS context correctly"
+      }
+    ]
+  }
+]
+
+

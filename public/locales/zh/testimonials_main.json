@@ -1,0 +1,281 @@
+{
+  "hero": {
+    "title": "真实的人物，真实的故事",
+    "subtitle": "了解 Drishiq 如何改变了许多人的生活。每个故事都独一无二。",
+    "cta_button": "✨ 分享你的故事",
+    "cta_link": "/testimonials/submit"
+  },
+  "filters": {
+    "search_placeholder": "搜索评价…",
+    "category_all": "全部分类",
+    "categories": {
+      "career_development": "职业发展",
+      "life_coaching": "人生指导",
+      "business_consulting": "商业咨询",
+      "educational_consulting": "教育咨询",
+      "content_marketing": "内容营销",
+      "change_management": "变更管理",
+      "clarity_mental_resilience": "清晰与心理韧性"
+    },
+    "rating_all": "全部评分",
+    "rating_five": "5 星",
+    "rating_four_plus": "4 星以上",
+    "rating_three_plus": "3 星以上",
+    "featured_only": "仅显示精选",
+    "sort_label": "排序：",
+    "sort_date": "日期",
+    "sort_rating": "评分",
+    "sort_likes": "点赞",
+    "sort_comments": "评论",
+    "sort_asc": " ↑",
+    "sort_desc": " ↓"
+  },
+  "loading": {
+    "message": "正在加载评价..."
+  },
+  "error": {
+    "message": "获取评价时发生错误"
+  },
+  "testimonials_list": {
+    "no_results": "没有找到任何评价。成为第一个分享故事的人吧！",
+    "share_story_button": "分享你的故事",
+    "read_more": "阅读更多 →",
+    "featured_badge": "⭐ 精选",
+    "anonymous": "匿名",
+    "user": "用户",
+    "back_to_testimonials": "← 返回评价列表",
+    "share_testimonial": "分享此评价",
+    "like_testimonial": "点赞此评价",
+    "comment_testimonial": "评论此评价"
+  },
+  "pagination": {
+    "previous": "上一页",
+    "next": "下一页"
+  },
+  "sidebar": {
+    "title": "💭 帮助我们打造更好的社区",
+    "vision_title": "🌟 加入我们的愿景",
+    "vision_description": "我们正在建设一个让分享的困难成为集体力量的社区。",
+    "pipeline_vision": "我们的社区理念：你的故事可能成为他人的希望。",
+    "buttons": {
+      "share_story": "💬 分享你的故事",
+      "write_blog": "✍️ 撰写博客文章",
+      "share_suggestions": "💡 分享建议"
+    },
+    "links": {
+      "share_story": "/testimonials/submit",
+      "write_blog": "/blog/create",
+      "share_suggestions": "/community/suggestions"
+    },
+    "playlist": {
+      "title": "📺 观看我们的故事"
+    }
+  },
+  "services_section": {
+    "title": "探索 Drishiq 的服务",
+    "description": "了解我们的服务如何帮助你获得清晰与成长"
+  },
+  "form": {
+    "title": "分享你的故事",
+    "subtitle": "你的经历可能会激励他人。告诉我们 Drishiq 如何影响了你的生活。",
+    "fields": {
+      "name": {
+        "label": "你的名字",
+        "placeholder": "请输入你的全名",
+        "required": true
+      },
+      "email": {
+        "label": "邮箱地址",
+        "placeholder": "your.email@example.com",
+        "required": true
+      },
+      "role": {
+        "label": "你的角色/职业",
+        "placeholder": "例如：市场经理、创业者、学生",
+        "required": false
+      },
+      "location": {
+        "label": "所在地",
+        "placeholder": "城市，国家",
+        "required": false
+      },
+      "category": {
+        "label": "分类",
+        "placeholder": "选择一个分类（可选）",
+        "required": false,
+        "options": {
+          "career_development": "职业发展",
+          "life_coaching": "人生指导",
+          "business_consulting": "商业咨询",
+          "educational_consulting": "教育咨询",
+          "content_marketing": "内容营销",
+          "change_management": "变更管理",
+          "management_consulting": "管理咨询",
+          "marketing_consulting": "营销咨询",
+          "customer_service": "客户服务",
+          "customer_support": "客户支持",
+          "life_path_choices": "人生路径与选择",
+          "confidence_presence": "自信与个人风采",
+          "growth_capability": "成长与能力建设",
+          "relationship_social": "关系与社交平衡",
+          "clarity_mental_resilience": "清晰与心理韧性",
+          "others": "其他"
+        }
+      },
+      "rating": {
+        "label": "评分",
+        "required": true
+      },
+      "title": {
+        "label": "故事标题",
+        "placeholder": "为你的故事取一个吸引人的标题（可选）…",
+        "help": "标题有助于他人更容易找到并理解你的故事",
+        "required": false
+      },
+      "content": {
+        "label": "你的故事",
+        "placeholder": "分享你与 Drishiq 的经历。你遇到了哪些挑战？Drishiq 如何帮助你？你的生活发生了什么变化？",
+        "required": true
+      },
+      "custom_category": {
+        "label": "自定义分类",
+        "placeholder": "输入你的自定义分类（例如：健康与养生、财务规划等）",
+        "help": "请提供一个最能描述你经历的具体分类"
+      },
+      "display_name": {
+        "label": "展示名称",
+        "placeholder": "例如：John D."
+      },
+      "user_info": {
+        "title": "你的评价将以以下形式提交：",
+        "name_label": "姓名：",
+        "email_label": "邮箱：",
+        "name_default": "你的名字",
+        "email_default": "你的邮箱"
+      },
+      "profile_image": {
+        "label": "头像"
+      },
+      "upload_image": {
+        "label": "上传你的图片"
+      },
+      "choose_avatar": {
+        "label": "或从我们的头像中选择"
+      },
+      "avatar_placeholder": "选择一个头像（可选）",
+      "avatar_selected": "✓ 头像已选择",
+      "remove_button": "删除",
+      "change_button": "更改",
+      "tags": {
+        "label": "标签（可选）",
+        "placeholder": "用逗号分隔添加标签",
+        "help": "例如：领导力、成长、清晰、转变"
+      },
+      "anonymous": {
+        "label": "匿名提交",
+        "description": "如果你不想公开显示你的姓名，请勾选此项"
+      },
+      "featured": {
+        "label": "允许精选展示",
+        "description": "允许我们在首页展示你的评价"
+      }
+    },
+    "buttons": {
+      "submit": "提交评价",
+      "submitting": "正在提交…",
+      "cancel": "取消",
+      "draft": "保存为草稿"
+    },
+    "validation": {
+      "required": "此字段为必填项",
+      "email_invalid": "请输入有效的邮箱地址",
+      "rating_required": "请选择评分",
+      "content_min": "请至少输入 50 个字符",
+      "content_max": "请保持在 2000 字以内",
+      "login_required": "请登录后提交评价，或勾选“匿名提交”以不登录提交。"
+    },
+    "success": {
+      "title": "谢谢！",
+      "message": "你的评价已成功提交，正在等待审核。你将很快被重定向到评价页面。",
+      "cta": "查看所有评价"
+    },
+    "error": {
+      "title": "提交失败",
+      "message": "提交评价时发生错误，请重试。",
+      "retry": "重新尝试"
+    }
+  },
+  "ratings": {
+    "1": "差",
+    "2": "一般",
+    "3": "好",
+    "4": "很好",
+    "5": "优秀"
+  },
+  "social_sharing": {
+    "title": "分享此评价",
+    "platforms": {
+      "facebook": "分享到 Facebook",
+      "twitter": "分享到 Twitter",
+      "linkedin": "分享到 LinkedIn",
+      "whatsapp": "分享到 WhatsApp",
+      "copy_link": "复制链接"
+    }
+  },
+  "success_page": {
+    "hero": {
+      "title": "🎉 你的故事已提交！",
+      "message": "感谢你向 Drishiq 社区分享你的经历。我们的团队会审核你的故事，并可能在平台上展示以激励更多寻求清晰的人。"
+    },
+    "what_happens_next": {
+      "title": "接下来会发生什么？",
+      "steps": [
+        {
+          "icon": "review",
+          "title": "审核流程",
+          "description": "我们的团队将在 24–48 小时内审核你的提交内容"
+        },
+        {
+          "icon": "featured",
+          "title": "精选故事",
+          "description": "优秀的故事可能会展示在我们的首页"
+        },
+        {
+          "icon": "community",
+          "title": "社区影响",
+          "description": "你的故事可能会激励其他寻找清晰的人"
+        }
+      ]
+    },
+    "action_buttons": {
+      "go_home": "🏠 返回首页",
+      "submit_another": "📝 再提交一个故事"
+    },
+    "community_feedback": {
+      "title": "💭 帮助我们打造更强大的社区",
+      "vision_title": "🌟 加入我们的愿景：共享经验的社区",
+      "vision_description": "我们正在打造的不仅仅是一个平台，而是一个让人们分享痛苦、喜悦、失败与成功的真实社区。在这里，人们可以互相理解、支持并共同成长。你的反馈会帮助我们完善这一使命。",
+      "pipeline_vision": "我们的理念：你的故事成为别人的希望，分享的困难凝聚成力量，每一段经历都在建设一个真正理解你的社区。",
+      "buttons": {
+        "share_vision": "💬 分享你的想法",
+        "join_movement": "🌱 加入这个社区"
+      },
+      "links": {
+        "share_vision": "/support-details",
+        "join_movement": "/community"
+      }
+    },
+    "bottom_cta": {
+      "title": "准备好开始你的下一个清晰会话了吗？",
+      "description": "继续与你的 Drishiq 自我探索之旅",
+      "buttons": {
+        "start_session": "💬 开始新的会话",
+        "return_home": "🏠 返回首页"
+      },
+      "links": {
+        "start_session": "/user/chat",
+        "return_home": "/"
+      }
+    }
+  }
+}

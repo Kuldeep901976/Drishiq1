@@ -1,0 +1,234 @@
+name: 🚀 DrishiQ Deployment Pipeline
+
+on:
+  push:
+    branches: [dev, preprod]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'preprod'
+        type: choice
+        options:
+        - dev
+        - preprod
+        - prod
+
+env:
+  NODE_VERSION: '18'
+  SUPABASE_VERSION: '1.0.0'
+
+jobs:
+  # Development Deployment (Automatic)
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Run linting
+        run: npm run lint
+
+      - name: 🧪 Run tests
+        run: npm run test
+
+      - name: 🗄️ Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: ${{ env.SUPABASE_VERSION }}
+
+      - name: 🚀 Deploy to Development
+        run: node drishiq-cli.js deploy dev
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_NAME: DrishiQ_Development
+
+      - name: ✅ Development deployment complete
+        run: echo "Development deployment successful!"
+
+  # Pre-Production Deployment (Semi-automatic)
+  deploy-preprod:
+    if: github.ref == 'refs/heads/preprod' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'preprod')
+    runs-on: ubuntu-latest
+    environment: preprod
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Run linting
+        run: npm run lint
+
+      - name: 🧪 Run comprehensive tests
+        run: npm run test:preprod
+
+      - name: 🗄️ Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: ${{ env.SUPABASE_VERSION }}
+
+      - name: 🔍 Schema validation
+        run: node drishiq-cli.js test schema
+
+      - name: 🚀 Deploy to Pre-Production
+        run: node drishiq-cli.js deploy preprod
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_NAME: DrishiQ_PreProduction
+          PREPROD_SUPABASE_URL: ${{ secrets.PREPROD_SUPABASE_URL }}
+          PREPROD_SUPABASE_ANON_KEY: ${{ secrets.PREPROD_SUPABASE_ANON_KEY }}
+          PREPROD_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PREPROD_SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: 🔄 Sync data from production
+        run: node drishiq-cli.js sync-data prod preprod
+        env:
+          PROD_SUPABASE_URL: ${{ secrets.PROD_SUPABASE_URL }}
+          PROD_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PROD_SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: ✅ Pre-production deployment complete
+        run: echo "Pre-production deployment successful!"
+
+  # Production Deployment (Manual approval required)
+  deploy-prod:
+    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod')
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Run linting
+        run: npm run lint
+
+      - name: 🧪 Run production tests
+        run: npm run test:prod
+
+      - name: 🗄️ Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: ${{ env.SUPABASE_VERSION }}
+
+      - name: 🔍 Schema validation
+        run: node drishiq-cli.js test schema
+
+      - name: 📝 Generate production types
+        run: node drishiq-cli.js generate-types prod
+
+      - name: 🚀 Deploy to Production
+        run: node drishiq-cli.js deploy prod
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_NAME: DrishiQ_Production
+          PROD_SUPABASE_URL: ${{ secrets.PROD_SUPABASE_URL }}
+          PROD_SUPABASE_ANON_KEY: ${{ secrets.PROD_SUPABASE_ANON_KEY }}
+          PROD_SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.PROD_SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: 📊 Post-deployment health check
+        run: |
+          echo "Running health checks..."
+          curl -f ${{ secrets.PROD_APP_URL }}/api/health || exit 1
+
+      - name: ✅ Production deployment complete
+        run: echo "Production deployment successful!"
+
+  # Schema Migration Validation
+  validate-schema:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🗄️ Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: ${{ env.SUPABASE_VERSION }}
+
+      - name: 🔍 Validate schema changes
+        run: |
+          echo "Validating schema changes..."
+          supabase db lint
+          supabase db diff --schema public
+
+      - name: 📝 Generate migration report
+        run: |
+          echo "## Schema Migration Report" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Schema validation passed" >> $GITHUB_STEP_SUMMARY
+          echo "📊 Changes detected:" >> $GITHUB_STEP_SUMMARY
+          supabase db diff --schema public >> $GITHUB_STEP_SUMMARY
+
+  # Security and Compliance Checks
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔒 Run security scan
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+
+      - name: 📋 Dependency audit
+        run: npm audit --audit-level=moderate
+
+  # Performance Testing (Pre-production only)
+  performance-test:
+    if: github.ref == 'refs/heads/preprod'
+    runs-on: ubuntu-latest
+    needs: deploy-preprod
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🏃‍♂️ Run performance tests
+        run: npm run test:performance
+        env:
+          TEST_URL: ${{ secrets.PREPROD_APP_URL }}
+
+      - name: 📊 Performance report
+        run: |
+          echo "## Performance Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Performance tests completed" >> $GITHUB_STEP_SUMMARY

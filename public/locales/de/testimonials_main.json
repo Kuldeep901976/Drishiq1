@@ -1,0 +1,281 @@
+{
+  "hero": {
+    "title": "Echte Geschichten von echten Menschen",
+    "subtitle": "Erfahren Sie, wie Drishiq Leben verändert hat. Jede Geschichte ist einzigartig.",
+    "cta_button": "✨ Teilen Sie Ihre Geschichte",
+    "cta_link": "/testimonials/submit"
+  },
+  "filters": {
+    "search_placeholder": "Erfahrungsberichte durchsuchen...",
+    "category_all": "Alle Kategorien",
+    "categories": {
+      "career_development": "Karriereentwicklung",
+      "life_coaching": "Lebensberatung",
+      "business_consulting": "Unternehmensberatung",
+      "educational_consulting": "Bildungsberatung",
+      "content_marketing": "Content Marketing",
+      "change_management": "Change Management",
+      "clarity_mental_resilience": "Klarheit und mentale Resilienz"
+    },
+    "rating_all": "Alle Bewertungen",
+    "rating_five": "5 Sterne",
+    "rating_four_plus": "4+ Sterne",
+    "rating_three_plus": "3+ Sterne",
+    "featured_only": "Nur hervorgehoben",
+    "sort_label": "Sortieren:",
+    "sort_date": "Datum",
+    "sort_rating": "Bewertung",
+    "sort_likes": "Gefällt mir",
+    "sort_comments": "Kommentare",
+    "sort_asc": " ↑",
+    "sort_desc": " ↓"
+  },
+  "loading": {
+    "message": "Erfahrungsberichte werden geladen..."
+  },
+  "error": {
+    "message": "Fehler beim Abrufen der Erfahrungsberichte"
+  },
+  "testimonials_list": {
+    "no_results": "Keine Erfahrungsberichte gefunden. Seien Sie der Erste, der eine Geschichte teilt!",
+    "share_story_button": "Teilen Sie Ihre Geschichte",
+    "read_more": "Weiterlesen →",
+    "featured_badge": "⭐ Hervorgehoben",
+    "anonymous": "Anonym",
+    "user": "Benutzer",
+    "back_to_testimonials": "← Zurück zu Erfahrungsberichten",
+    "share_testimonial": "Diesen Erfahrungsbericht teilen",
+    "like_testimonial": "Diesen Erfahrungsbericht liken",
+    "comment_testimonial": "Diesen Erfahrungsbericht kommentieren"
+  },
+  "pagination": {
+    "previous": "Vorherige",
+    "next": "Nächste"
+  },
+  "sidebar": {
+    "title": "💭 Helfen Sie uns, eine bessere Community aufzubauen",
+    "vision_title": "🌟 Schließen Sie sich unserer Vision an",
+    "vision_description": "Wir bauen eine Community auf, in der geteilte Kämpfe kollektive Stärke schaffen.",
+    "pipeline_vision": "Unsere Pipeline-Vision: Ein Ort, an dem Ihre Geschichte zur Hoffnung eines anderen wird.",
+    "buttons": {
+      "share_story": "💬 Teilen Sie Ihre Geschichte",
+      "write_blog": "✍️ Blog-Beitrag schreiben",
+      "share_suggestions": "💡 Vorschläge teilen"
+    },
+    "links": {
+      "share_story": "/testimonials/submit",
+      "write_blog": "/blog/create",
+      "share_suggestions": "/community/suggestions"
+    },
+    "playlist": {
+      "title": "📺 Sehen Sie sich unsere Geschichten an"
+    }
+  },
+  "services_section": {
+    "title": "Drishiq-Dienste erkunden",
+    "description": "Erfahren Sie, wie unsere Dienste Ihnen helfen können, Klarheit und Wachstum zu erreichen"
+  },
+  "form": {
+    "title": "Teilen Sie Ihre Geschichte",
+    "subtitle": "Ihre Erfahrung kann andere inspirieren. Erzählen Sie uns, wie Drishiq Ihr Leben beeinflusst hat.",
+    "fields": {
+      "name": {
+        "label": "Ihr Name",
+        "placeholder": "Geben Sie Ihren vollständigen Namen ein",
+        "required": true
+      },
+      "email": {
+        "label": "E-Mail-Adresse",
+        "placeholder": "your.email@example.com",
+        "required": true
+      },
+      "role": {
+        "label": "Ihre Rolle/Beruf",
+        "placeholder": "z.B. Marketing Manager, Unternehmer, Student",
+        "required": false
+      },
+      "location": {
+        "label": "Standort",
+        "placeholder": "Stadt, Land",
+        "required": false
+      },
+      "category": {
+        "label": "Kategorie",
+        "placeholder": "Wählen Sie eine Kategorie (optional)",
+        "required": false,
+        "options": {
+          "career_development": "Karriereentwicklung",
+          "life_coaching": "Lebensberatung",
+          "business_consulting": "Unternehmensberatung",
+          "educational_consulting": "Bildungsberatung",
+          "content_marketing": "Content Marketing",
+          "change_management": "Change Management",
+          "management_consulting": "Managementberatung",
+          "marketing_consulting": "Marketingberatung",
+          "customer_service": "Kundenservice",
+          "customer_support": "Kundensupport",
+          "life_path_choices": "Lebensweg und Entscheidungen",
+          "confidence_presence": "Selbstvertrauen und Präsenz",
+          "growth_capability": "Wachstum und Kompetenzaufbau",
+          "relationship_social": "Beziehungen und soziales Gleichgewicht",
+          "clarity_mental_resilience": "Klarheit und mentale Resilienz",
+          "others": "Andere"
+        }
+      },
+      "rating": {
+        "label": "Bewertung",
+        "required": true
+      },
+      "title": {
+        "label": "Titel der Geschichte",
+        "placeholder": "Geben Sie Ihrer Geschichte einen ansprechenden Titel (optional)...",
+        "help": "Ein Titel hilft anderen, Ihre Geschichte besser zu entdecken und zu verstehen",
+        "required": false
+      },
+      "content": {
+        "label": "Ihre Geschichte",
+        "placeholder": "Teilen Sie Ihre Erfahrung mit Drishiq. Mit welchen Herausforderungen waren Sie konfrontiert? Wie hat Drishiq geholfen? Was hat sich in Ihrem Leben verändert?",
+        "required": true
+      },
+      "custom_category": {
+        "label": "Geben Sie Ihre Kategorie an",
+        "placeholder": "Geben Sie Ihre spezifische Kategorie ein (z.B. Gesundheit und Wellness, Finanzplanung, etc.)",
+        "help": "Bitte geben Sie eine spezifische Kategorie an, die Ihre Erfahrung am besten beschreibt"
+      },
+      "display_name": {
+        "label": "Anzeigename",
+        "placeholder": "z.B. Johann M."
+      },
+      "user_info": {
+        "title": "Ihr Erfahrungsbericht wird wie folgt eingereicht:",
+        "name_label": "Name:",
+        "email_label": "E-Mail:",
+        "name_default": "Ihr Name",
+        "email_default": "Ihre E-Mail"
+      },
+      "profile_image": {
+        "label": "Profilbild"
+      },
+      "upload_image": {
+        "label": "Laden Sie Ihr Bild hoch"
+      },
+      "choose_avatar": {
+        "label": "Oder wählen Sie aus unseren Avataren"
+      },
+      "avatar_placeholder": "Wählen Sie einen Avatar (optional)",
+      "avatar_selected": "✓ Avatar ausgewählt",
+      "remove_button": "Entfernen",
+      "change_button": "Ändern",
+      "tags": {
+        "label": "Tags (optional)",
+        "placeholder": "Fügen Sie durch Kommas getrennte Tags hinzu",
+        "help": "z.B. Führung, Wachstum, Klarheit, Transformation"
+      },
+      "anonymous": {
+        "label": "Anonym einreichen",
+        "description": "Aktivieren Sie dies, wenn Sie Ihren Namen nicht öffentlich teilen möchten"
+      },
+      "featured": {
+        "label": "Hervorgehobene Platzierung erlauben",
+        "description": "Erlauben Sie uns, Ihren Erfahrungsbericht auf unserer Homepage anzuzeigen"
+      }
+    },
+    "buttons": {
+      "submit": "Erfahrungsbericht einreichen",
+      "submitting": "Wird eingereicht...",
+      "cancel": "Abbrechen",
+      "draft": "Als Entwurf speichern"
+    },
+    "validation": {
+      "required": "Dieses Feld ist erforderlich",
+      "email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "rating_required": "Bitte wählen Sie eine Bewertung",
+      "content_min": "Bitte schreiben Sie mindestens 50 Zeichen",
+      "content_max": "Bitte halten Sie es unter 2000 Zeichen",
+      "login_required": "Bitte melden Sie sich an, um einen Erfahrungsbericht einzureichen, oder aktivieren Sie \"Anonym einreichen\", um ohne Anmeldung einzureichen."
+    },
+    "success": {
+      "title": "Vielen Dank!",
+      "message": "Ihr Erfahrungsbericht wurde erfolgreich eingereicht und wartet auf Genehmigung. Sie werden in Kürze zur Seite mit den Erfahrungsberichten weitergeleitet.",
+      "cta": "Alle Erfahrungsberichte ansehen"
+    },
+    "error": {
+      "title": "Einreichung fehlgeschlagen",
+      "message": "Bei der Einreichung Ihres Erfahrungsberichts ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "retry": "Erneut versuchen"
+    }
+  },
+  "ratings": {
+    "1": "Schlecht",
+    "2": "In Ordnung",
+    "3": "Gut",
+    "4": "Sehr gut",
+    "5": "Ausgezeichnet"
+  },
+  "social_sharing": {
+    "title": "Diesen Erfahrungsbericht teilen",
+    "platforms": {
+      "facebook": "Auf Facebook teilen",
+      "twitter": "Auf Twitter teilen",
+      "linkedin": "Auf LinkedIn teilen",
+      "whatsapp": "Auf WhatsApp teilen",
+      "copy_link": "Link kopieren"
+    }
+  },
+  "success_page": {
+    "hero": {
+      "title": "🎉 Ihre Geschichte wurde eingereicht!",
+      "message": "Vielen Dank, dass Sie Ihre Drishiq-Erfahrung mit unserer Community geteilt haben. Ihre Geschichte wird von unserem Team überprüft und kann auf unserer Plattform angezeigt werden, um andere auf ihrer Reise zur Klarheit zu inspirieren."
+    },
+    "what_happens_next": {
+      "title": "Was passiert als Nächstes?",
+      "steps": [
+        {
+          "icon": "review",
+          "title": "Überprüfungsprozess",
+          "description": "Unser Team wird Ihre Einreichung innerhalb von 24-48 Stunden überprüfen"
+        },
+        {
+          "icon": "featured",
+          "title": "Hervorgehobene Geschichten",
+          "description": "Außergewöhnliche Geschichten können auf unserer Homepage erscheinen"
+        },
+        {
+          "icon": "community",
+          "title": "Community-Auswirkung",
+          "description": "Ihre Geschichte kann andere inspirieren, die nach Klarheit suchen"
+        }
+      ]
+    },
+    "action_buttons": {
+      "go_home": "🏠 Zur Startseite",
+      "submit_another": "📝 Eine weitere Geschichte einreichen"
+    },
+    "community_feedback": {
+      "title": "💭 Helfen Sie uns, eine bessere Community aufzubauen",
+      "vision_title": "🌟 Schließen Sie sich unserer Vision an: Eine Community geteilter Erfahrungen",
+      "vision_description": "Wir bauen etwas viel Größeres als nur eine Plattform auf. Es ist das Fundament einer Community, in der Menschen, die Ihre Schmerzen, Freuden, Misserfolge und Erfolge teilen, sich verbinden, einander unterstützen und gemeinsam wachsen können. Ihr Feedback formt diese wichtige Mission.",
+      "pipeline_vision": "Unsere Pipeline-Vision: Ein Ort, an dem Ihre Geschichte zur Hoffnung eines anderen wird, an dem geteilte Kämpfe kollektive Stärke schaffen und an dem jede Erfahrung zum Aufbau einer Community beiträgt, die wirklich versteht.",
+      "buttons": {
+        "share_vision": "💬 Teilen Sie Ihre Vision",
+        "join_movement": "🌱 Treten Sie der Bewegung bei"
+      },
+      "links": {
+        "share_vision": "/support-details",
+        "join_movement": "/community"
+      }
+    },
+    "bottom_cta": {
+      "title": "Bereit für Ihre nächste Klarheitssitzung?",
+      "description": "Setzen Sie Ihre Reise der Selbstfindung mit Drishiq fort",
+      "buttons": {
+        "start_session": "💬 Eine neue Sitzung starten",
+        "return_home": "🏠 Zurück zur Startseite"
+      },
+      "links": {
+        "start_session": "/user/chat",
+        "return_home": "/"
+      }
+    }
+  }
+}

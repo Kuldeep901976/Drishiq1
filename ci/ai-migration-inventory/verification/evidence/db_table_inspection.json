@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-11-10T20:55:12.269Z",
+  "supabase_url": "https://xzrpgqymjfdhwnrrfgpa.supabase.co",
+  "results": {
+    "instruction_sets": {
+      "exists": true,
+      "count": 0
+    },
+    "ai_responses": {
+      "exists": true,
+      "count": 0
+    }
+  }
+}

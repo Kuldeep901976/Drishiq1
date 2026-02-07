@@ -1,0 +1,177 @@
+{
+  "banner": {
+    "0": {
+      "title": "🧠 Sortez de l'impasse. Obtenez la clarté",
+      "text": "Vous vous sentez brumeux, dépassé ou déchiré entre les options ?\nDrishique vous aide à organiser vos pensées, réfléchir profondément et prendre des décisions plus sages — à travers des conversations intelligentes émotionnellement et alimentées par l'IA.",
+      "cta": "🎯 Commencez votre session de clarté"
+    },
+    "1": {
+      "title": "💬 Vous ne pouvez pas payer ? Votre défi est toujours important",
+      "text": "Vous luttez pour comprendre les choses mais ne pouvez pas vous permettre une session ?\nNous vous entendons. Chez Drishique, aucune voix n'est ignorée. Partagez votre défi — et nous essaierons de vous connecter avec une session parrainée.",
+      "cta": "📝 Soumettez votre défi pour le soutien"
+    },
+    "2": {
+      "title": "💚 Offrez le don de la clarté",
+      "text": "Une conversation peut changer le monde de quelqu'un.\nDonnez une session pour aider quelqu'un à passer de la confusion à la confiance. Votre gentillesse pourrait être le tournant de leur voyage.",
+      "cta": "🌟 Financez une session maintenant"
+    },
+    "3": {
+      "title": "🔄 Partagez pour inspirer. Gagnez des crédits",
+      "text": "Drishique vous a-t-il aidé à résoudre un défi ou à obtenir une clarté émotionnelle ?\nVotre histoire pourrait inspirer quelqu'un d'autre — et vous rapporter des crédits de session en retour.",
+      "cta": "📣 Partagez votre histoire"
+    },
+    "4": {
+      "title": "🌍 Une plateforme. Plusieurs voyages",
+      "text": "Chaque voyage vers la clarté est différent. Certains cherchent des conseils, d'autres offrent du soutien.\nDrishique rassemble tout — soutenu par la perspicacité, l'empathie et la croissance humaine partagée.",
+      "cta": "🧭 Explorez l'expérience Drishique"
+    }
+  },
+  "areas": {
+    "heading": "Domaines dans lesquels nous aidons",
+    "subtitle": "Chaque défi est unique, mais le chemin vers la clarté ne l'est pas. Nous vous aidons à naviguer à travers les situations les plus communes et complexes de la vie.",
+    "areas_subtitle_long": "Chaque défi est unique, mais le chemin vers la clarté ne l'est pas. Nous vous aidons à naviguer à travers les situations les plus communes et complexes de la vie à travers des conversations alimentées par l'IA qui comprennent votre contexte et fournissent des insights actionnables.",
+    "not_seeing_challenge": "Vous ne voyez pas votre défi ici ?",
+    "start_now": "Commencez maintenant",
+    "count": "7",
+    "card1": {
+      "title": "Clarté mentale et fatigue",
+      "icon": "🔁",
+      "quote1": "Je pense trop à tout — au final je ne fais rien",
+      "quote2": "Mon esprit est toujours occupé",
+      "quote3": "Je ne sais plus ce qui est important pour moi",
+      "quote4": "Chaque décision semble pouvoir changer toute ma vie",
+      "quote5": "Je suis paralysé par trop de possibilités et de 'et si'",
+      "quote6": "Parfois j'aimerais que quelqu'un me dise juste quoi faire",
+      "back1": "La clarté vient de l'action, pas de la pensée infinie",
+      "back2": "Votre intuition en sait plus que votre esprit qui sur-pense",
+      "back3": "Le perfectionnisme est l'ennemi du progrès — commencez par suffisant",
+      "back4": "La plupart des décisions sont réversibles — vous pouvez toujours ajuster le cap",
+      "back5": "Concentrez-vous sur la prochaine petite étape, pas sur tout le voyage",
+      "back6": "La fatigue est souvent un signal que vous essayez de contrôler trop",
+      "back7": "Prenez des pauses — votre esprit a besoin de repos pour traiter et nettoyer",
+      "back8": "Écrivez vos pensées — les sortir aide à organiser"
+    },
+    "card2": {
+      "title": "Direction et but",
+      "icon": "🔎",
+      "quote1": "Je ne suis pas sûr de ce que je veux dans la vie",
+      "quote2": "Je suis bon à certaines choses mais ne sais pas quelle voie prendre",
+      "quote3": "Tout le monde attend quelque chose de différent de moi — je me sens déchiré",
+      "quote4": "Je fais bien les choses mais quelque chose ne va pas",
+      "quote5": "Je vois d'autres avec des objectifs clairs et me sens perdu",
+      "quote6": "Et si je choisis le mauvais chemin et gaspille des années de ma vie ?",
+      "back1": "Le but émerge de l'action, pas de penser à l'action",
+      "back2": "Vos valeurs sont la boussole de votre vie — qu'est-ce qui est vraiment important ?",
+      "back3": "La comparaison vole la joie — votre chemin est unique",
+      "back4": "Chaque expérience vous enseigne ce que vous voulez",
+      "back5": "Changer de direction est naturel — c'est ainsi que vous trouvez votre chemin",
+      "back6": "Cherchez ce qui vous donne de l'énergie — souvent c'est votre vocation",
+      "back7": "Commencez par ce qui éveille votre curiosité, pas ce que vous pensez devoir faire",
+      "back8": "Votre but peut évoluer — n'est pas fixé pour toujours"
+    },
+    "card3": {
+      "title": "Expression émotionnelle et jugement",
+      "icon": "💬",
+      "quote1": "Je ne peux pas parler sans me sentir jugé",
+      "quote2": "Les gens n'écoutent pas vraiment — ils donnent juste des conseils",
+      "quote3": "Je souris à l'extérieur mais suis lourd à l'intérieur",
+      "quote4": "J'ai toujours l'impression de jouer un rôle, pas d'être moi-même",
+      "quote5": "Quand j'essaie de m'ouvrir, les gens essaient de me réparer ou m'ignorent",
+      "quote6": "Je suis fatigué de prétendre que tout va bien",
+      "back1": "Vos émotions sont correctes — vous n'avez pas besoin de permission pour les ressentir",
+      "back2": "La vulnérabilité est du courage, pas de la faiblesse",
+      "back3": "Cherchez votre communauté — des gens qui écoutent sans essayer de réparer",
+      "back4": "L'authenticité attire les bonnes personnes dans votre vie",
+      "back5": "Vous méritez d'être entendu et compris, pas réparé",
+      "back6": "Le jugement des autres reflète souvent leurs propres peurs",
+      "back7": "Pratiquez d'abord l'expression de vous-même dans des endroits sûrs",
+      "back8": "Votre vérité émotionnelle est votre super-pouvoir, pas votre faiblesse"
+    },
+    "card4": {
+      "title": "Performance et confiance",
+      "icon": "🎯",
+      "quote1": "Je me fige dans les moments importants — même quand je suis prêt",
+      "quote2": "Je me prépare pour un entretien d'embauche… mais panique à l'intérieur",
+      "quote3": "Je connais mon sujet mais c'est difficile de parler avec confiance",
+      "quote4": "Mon esprit devient vide quand j'ai besoin de performer sous pression",
+      "quote5": "Je pratique tout mais me sens toujours pas assez bon",
+      "quote6": "Et s'ils découvrent que je ne suis pas vraiment qualifié ?",
+      "back1": "La confiance se construit à travers l'action, pas la préparation",
+      "back2": "Vous êtes plus capable que vous ne le pensez — faites confiance à vos connaissances",
+      "back3": "La nervosité est naturelle — montre que vous vous souciez du succès",
+      "back4": "Concentrez-vous sur servir les autres, pas les impressionner",
+      "back5": "Votre valeur n'est pas déterminée par une performance ou un résultat",
+      "back6": "Pratiquez des techniques de respiration pour calmer votre système nerveux",
+      "back7": "Rappelez-vous vos succès passés — vous avez surmonté des défis avant",
+      "back8": "La confiance grandit avec chaque petit pas que vous faites"
+    },
+    "card5": {
+      "title": "Amélioration des compétences",
+      "icon": "🎾",
+      "quote1": "Je suis coincé sur un plateau avec mon coup droit de tennis",
+      "quote2": "Je veux m'améliorer mais ne sais pas ce qui me retient",
+      "quote3": "J'ai pratiqué mais quelque chose ne fonctionne pas",
+      "quote4": "Je vois d'autres exceller pendant que je reste au même niveau",
+      "quote5": "Peut-être que je ne suis pas naturellement assez talentueux",
+      "quote6": "Je crains d'avoir atteint mes limites et que ce soit le maximum",
+      "back1": "Les plateaux font partie du processus d'apprentissage — pas la fin",
+      "back2": "Divisez la compétence en composants plus petits et plus spécifiques",
+      "back3": "Demandez des commentaires à quelqu'un qui voit ce que vous ne pouvez pas voir",
+      "back4": "Parfois vous devez oublier avant de réapprendre",
+      "back5": "Le progrès n'est pas toujours linéaire — faites confiance au processus",
+      "back6": "Concentrez-vous sur la pratique délibérée, pas juste la répétition",
+      "back7": "Enregistrez-vous pour voir ce que vous ne pouvez pas sentir",
+      "back8": "Prenez des pauses — votre esprit consolide l'apprentissage pendant le repos"
+    },
+    "card6": {
+      "title": "Confusion relationnelle",
+      "icon": "💔",
+      "quote1": "Je ne suis pas sûr si je devrais continuer mon mariage",
+      "quote2": "Nous nous disputons souvent — mais ne sais pas vraiment à propos de quoi",
+      "quote3": "Je me sens déconnecté dans ma relation mais ne peux pas expliquer pourquoi",
+      "quote4": "Je les aime mais ne me sens plus moi-même avec eux",
+      "quote5": "Chaque conversation devient une bataille que je ne voulais pas commencer",
+      "quote6": "Je crains la solitude mais me sens seul même ensemble",
+      "back1": "Les relations saines nécessitent une présence authentique des deux parties",
+      "back2": "La communication concerne la compréhension, pas avoir raison",
+      "back3": "Parfois l'amour seul ne suffit pas — la compatibilité et la croissance comptent aussi",
+      "back4": "Vous pouvez aimer quelqu'un et avoir encore besoin de le quitter",
+      "back5": "La solitude vaut mieux que se sentir seul dans une relation",
+      "back6": "Faites attention aux patterns — ils révèlent la vérité sur votre relation",
+      "back7": "La thérapie de couple n'est pas le dernier recours — c'est un outil de croissance",
+      "back8": "Votre bonheur compte — ne le sacrifiez pas pour la relation"
+    },
+    "card7": {
+      "title": "Confusion des jeunes",
+      "icon": "🎓",
+      "quote1": "Je suis bon en sciences mais ne sais pas quoi faire ensuite",
+      "quote2": "Je vais bientôt diplômer — me sens perdu",
+      "quote3": "Mes parents veulent une chose, je veux autre chose",
+      "quote4": "Tout le monde semble avoir trouvé son chemin dans la vie sauf moi",
+      "quote5": "Je crains de prendre la mauvaise décision et de ruiner mon avenir",
+      "quote6": "Et si je ne suis pas assez intelligent ou bon pour ce que je veux faire ?",
+      "back1": "La vingtaine est pour explorer, pas pour connaître toutes les réponses",
+      "back2": "Suivez votre curiosité — elle vous mènera à votre passion",
+      "back3": "C'est votre vie à vivre, pas pour vos parents à concevoir",
+      "back4": "Tout le monde trouve son chemin en marchant — vous n'êtes pas en retard",
+      "back5": "Les meilleures décisions viennent de suivre vos valeurs, pas les attentes des autres",
+      "back6": "Les stages et projets parallèles vous enseignent plus que n'importe quel diplôme",
+      "back7": "Réseau avec des gens qui vous inspirent — ils ouvriront des portes",
+      "back8": "Les erreurs dans la vingtaine sont un investissement dans votre sagesse future"
+    }
+  },
+  "blog": {
+    "heading": "📰 Perspectives du blog",
+    "subtitle": "Pas de conseils, mais de la perspective. Pas de bruit, mais des mots réfléchis auxquels vous pouvez revenir quand vous avez besoin de direction.",
+    "read_more_button": "Lire plus de blogs"
+  },
+  "testimonials": {
+    "heading": "💬 Ce que disent les utilisateurs",
+    "subtitle": "Écoutez les vraies histoires de personnes qui ont trouvé la clarté et la direction grâce à Drishique.",
+    "real_stories": "Vraies histoires",
+    "real_stories_suffix": " Réflexions honnêtes. Voyez comment Drishique a fait la différence.",
+    "one_story": "Une histoire. Une étincelle. Un pas en avant —",
+    "share_story": "Partagez votre histoire avec Drishique",
+    "default_content": "Drishique m'a aidé à briser les blocages mentaux et à obtenir la clarté. Le processus d'auto-découverte a ouvert mes yeux et m'a donné de la force."
+  }
+}

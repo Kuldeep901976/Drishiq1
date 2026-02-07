@@ -1,0 +1,181 @@
+{
+  "signIn": {
+    "title": "Se connecter",
+    "tabs": {
+      "social": "Social",
+      "email": "E-mail/Mot de passe",
+      "magic": "Lien magique"
+    },
+    "roleCategories": {
+      "regular": "Régulier",
+      "grow": "Croissance",
+      "enterprise": "Entreprise"
+    },
+    "roles": {
+      "user": "Utilisateur régulier",
+      "client_admin": "Administrateur d’entreprise",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Thérapeute",
+      "consultant": "Consultant",
+      "investor": "Investisseur",
+      "partner": "Partenaire",
+      "sponsor": "Sponsor",
+      "volunteer": "Bénévole",
+      "affiliate": "Affilié",
+      "enterprise_admin": "Administrateur Enterprise"
+    },
+    "roleTaglines": {
+      "user": "Accès au tableau de bord personnel",
+      "client_admin": "Gérer les comptes de l’entreprise",
+      "mentor": "Guider et soutenir les autres",
+      "coach": "Services de coaching professionnel",
+      "therapist": "Soutien en santé mentale",
+      "consultant": "Conseils en affaires",
+      "investor": "Opportunités d’investissement",
+      "partner": "Partenariats stratégiques",
+      "sponsor": "Soutien aux causes et initiatives",
+      "volunteer": "Contribution communautaire",
+      "affiliate": "Partenariat de parrainage",
+      "enterprise_admin": "Gérer les employés de l’entreprise"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Entrez votre adresse e-mail",
+        "label": "E-mail"
+      },
+      "password": {
+        "placeholder": "Entrez votre mot de passe",
+        "label": "Mot de passe"
+      },
+      "submit": {
+        "signIn": "Se connecter",
+        "signingIn": "Connexion...",
+        "sendMagicLink": "Envoyer le lien magique",
+        "sending": "Envoi...",
+        "cancel": "Annuler"
+      }
+    },
+    "socialAuth": {
+      "google": "Continuer avec Google",
+      "linkedin": "Continuer avec LinkedIn"
+    },
+    "welcome": {
+      "title": "Bon retour, {username} ! 👋",
+      "credits": "Vos crédits",
+      "availableCredits": "Crédits disponibles",
+      "total": "Total",
+      "used": "Utilisés",
+      "whoAreYouSeeking": "Pour qui cherchez-vous des conseils ?",
+      "forMyself": {
+        "title": "Pour moi",
+        "description": "Recevez des conseils personnalisés pour vous-même"
+      },
+      "forOthers": {
+        "title": "Pour quelqu’un qui m’est cher",
+        "description": "Chercher des conseils pour un proche"
+      },
+      "needCredits": "Vous avez besoin de crédits pour accéder à nos services",
+      "buyCredits": "🛒 Acheter des crédits maintenant",
+      "buyMoreCredits": "💳 Acheter plus de crédits",
+      "limitedCredits": "ℹ️ Vous avez un nombre limité de crédits. Pensez à en acheter davantage pour éviter toute interruption.",
+      "sufficientCredits": "✅ Vous avez suffisamment de crédits. Prêt à commencer !",
+      "back": "Retour",
+      "signOut": "Se déconnecter"
+    },
+    "footer": {
+      "noAccount": "Pas de compte ? Inscrivez-vous",
+      "forgotPassword": "Mot de passe oublié ?",
+      "info": "Après vous être connecté, vous pourrez choisir de recevoir des conseils pour vous-même ou pour quelqu’un qui vous est cher. Chaque session utilise 1 crédit."
+    },
+    "errors": {
+      "accountNotFound": "Compte introuvable. Veuillez vous inscrire pour créer un compte.",
+      "invalidCredentials": "Mot de passe incorrect. Veuillez réessayer ou utiliser « Mot de passe oublié » pour le réinitialiser.",
+      "userNotFound": "Votre compte n’est pas encore configuré. Veuillez compléter votre profil pour continuer.",
+      "signUpPrompt": "Veuillez vous inscrire pour créer un compte ou réessayez de vous connecter.",
+      "magicLinkError": "Échec de l’envoi du lien magique",
+      "socialAuthError": "Échec de l’authentification {provider}. Veuillez vérifier votre configuration OAuth {provider} sur Supabase.",
+      "authError": "Une erreur s’est produite lors de l’authentification",
+      "emailRequired": "L’adresse e-mail est requise"
+    }
+  },
+  "signUp": {
+    "title": "S’inscrire",
+    "tabs": {
+      "social": "Social",
+      "email": "E-mail/Mot de passe",
+      "magic": "Lien magique"
+    },
+    "roleCategories": {
+      "regular": "Régulier",
+      "grow": "Croissance",
+      "enterprise": "Entreprise"
+    },
+    "roles": {
+      "user": "Utilisateur régulier",
+      "client_admin": "Administrateur d’entreprise",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Thérapeute",
+      "consultant": "Consultant",
+      "investor": "Investisseur",
+      "partner": "Partenaire",
+      "sponsor": "Sponsor",
+      "volunteer": "Bénévole",
+      "affiliate": "Affilié",
+      "enterprise_admin": "Administrateur Enterprise"
+    },
+    "roleTaglines": {
+      "user": "Accès au tableau de bord personnel",
+      "client_admin": "Gérer les comptes de l’entreprise",
+      "mentor": "Guider et soutenir les autres",
+      "coach": "Services de coaching professionnel",
+      "therapist": "Soutien en santé mentale",
+      "consultant": "Conseils en affaires",
+      "investor": "Opportunités d’investissement",
+      "partner": "Partenariats stratégiques",
+      "sponsor": "Soutien aux causes et initiatives",
+      "volunteer": "Contribution communautaire",
+      "affiliate": "Partenariat de parrainage",
+      "enterprise_admin": "Administration de la plateforme"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Entrez votre adresse e-mail",
+        "label": "E-mail"
+      },
+      "submit": {
+        "sendPasswordLink": "Envoyer le lien de création de mot de passe",
+        "sendMagicLink": "Envoyer le lien magique",
+        "sending": "Envoi...",
+        "cancel": "Annuler"
+      }
+    },
+    "socialAuth": {
+      "google": "Continuer avec Google",
+      "linkedin": "Continuer avec LinkedIn"
+    },
+    "success": {
+      "passwordLinkSent": "Le lien de création de mot de passe a été envoyé à {email}. Consultez votre boîte de réception et cliquez sur le lien pour créer votre mot de passe !",
+      "magicLinkSent": "Le lien magique a été envoyé à {email}. Consultez votre boîte de réception !"
+    },
+    "footer": {
+      "hasAccount": "Vous avez déjà un compte ?",
+      "signIn": "Se connecter",
+      "info": "Après votre inscription, vous devrez vérifier votre numéro de téléphone et compléter votre profil avant d’accéder à votre tableau de bord.",
+      "terms": "En vous inscrivant, vous acceptez nos",
+      "termsLink": "Conditions d’utilisation",
+      "and": "et",
+      "privacyLink": "Politique de confidentialité"
+    },
+    "errors": {
+      "emailRequired": "L’adresse e-mail est requise",
+      "userExists": "Un utilisateur avec cet e-mail existe déjà",
+      "userExistsTip": "💡 Astuce : si vous avez déjà un compte, veuillez",
+      "signInInstead": "vous connecter",
+      "magicLinkError": "Échec de l’envoi du lien magique",
+      "emailSignupError": "Échec de l’envoi du lien de création de mot de passe",
+      "socialAuthError": "Échec de l’authentification {provider}"
+    }
+  }
+}

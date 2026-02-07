@@ -1,0 +1,471 @@
+diff --git a/migrations/20250115_013_responses_api_migration.sql b/migrations/20250115_013_responses_api_migration.sql
+new file mode 100644
+index 0000000..1234567
+--- /dev/null
++++ b/migrations/20250115_013_responses_api_migration.sql
+@@ -0,0 +1,32 @@
++-- Migration: Responses API migration (2025-01-15)
++-- Adds provider_response_id/prompt_hash/response_hash to chat_messages & ai_responses
++-- Creates pipeline_traces table
++
++-- 1) Add columns to chat_messages
++ALTER TABLE IF EXISTS chat_messages
++  ADD COLUMN IF NOT EXISTS provider_response_id TEXT,
++  ADD COLUMN IF NOT EXISTS prompt_hash TEXT,
++  ADD COLUMN IF NOT EXISTS response_hash TEXT;
++
++-- 2) Add columns to ai_responses (if exists)
++ALTER TABLE IF EXISTS ai_responses
++  ADD COLUMN IF NOT EXISTS prompt_hash TEXT,
++  ADD COLUMN IF NOT EXISTS response_hash TEXT;
++
++-- 3) Create pipeline_traces for structured observability
++CREATE TABLE IF NOT EXISTS pipeline_traces (
++  trace_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
++  thread_id UUID NOT NULL,
++  tenant_id UUID,
++  stage_id TEXT,
++  stage_position INT,
++  llm_model TEXT,
++  llm_prompt_hash TEXT,
++  llm_response_hash TEXT,
++  start_ts TIMESTAMPTZ,
++  end_ts TIMESTAMPTZ,
++  latency_ms INT,
++  status TEXT,
++  output_delta JSONB,
++  created_at TIMESTAMPTZ DEFAULT NOW()
++);
++
+diff --git a/lib/responses/responsesClient.ts b/lib/responses/responsesClient.ts
+index 1234567..abcdefg 100644
+--- a/lib/responses/responsesClient.ts
++++ b/lib/responses/responsesClient.ts
+@@ -9,6 +9,7 @@
+  */
+ 
+ // Use global fetch (available in Next.js/Node.js 18+)
++import { createHash } from 'crypto';
+ import { USE_RESPONSES_API, validateResponsesAPIEnv } from './feature-flag';
+ import type { TenantConfig } from '@/lib/tenant/types';
+ import { getTenantConfig } from '@/lib/tenant/registry';
+@@ -38,6 +39,9 @@ export interface ResponsesResponse {
+   metadata?: Record<string, any>;
++  _prompt_hash?: string | null;
++  _response_hash?: string | null;
++  _fetched_at?: string;
+ }
+ 
+ /**
+@@ -239,10 +243,30 @@ export async function createResponse(
+   const responseText = await res.text();
+ 
+-  // Handle 404 - Responses API endpoint doesn't exist yet
+-  if (res.status === 404) {
++  // Handle HTTP errors
++  if (!res.ok) {
++    // Handle 404 - Responses API endpoint doesn't exist yet
++    if (res.status === 404) {
+     console.error(`❌ Responses API endpoint not found (404): ${RESPONSES_BASE}`);
+     console.error(`Response: ${responseText.substring(0, 500)}`);
+     
+@@ -260,6 +284,7 @@ export async function createResponse(
+       throw error;
+     }
+ 
++    // Handle authentication errors
++    if (res.status === 401 || res.status === 403) {
+     console.error(`❌ Responses API authentication failed (${res.status})`);
+     console.error(`Response: ${responseText.substring(0, 500)}`);
+     throw new Error(`Responses API authentication failed: ${res.status} ${responseText.substring(0, 200)}`);
+@@ -275,6 +300,24 @@ export async function createResponse(
+   // Parse successful response
+   try {
+     const json = await JSON.parse(responseText);
++    // Compute prompt hash from the input used
++    try {
++      const inputPayload = requestBody.input ?? requestBody;
++      const promptHash = createHash('sha256').update(JSON.stringify(inputPayload)).digest('hex');
++      json._prompt_hash = promptHash;
++    } catch (e) {
++      // best-effort; do not break main flow
++      json._prompt_hash = null;
++    }
++
++    // Compute response hash from raw response body
++    try {
++      const responseHash = createHash('sha256').update(responseText).digest('hex');
++      json._response_hash = responseHash;
++    } catch (e) {
++      json._response_hash = null;
++    }
++
++    // Attach a timestamp
++    json._fetched_at = new Date().toISOString();
++
+     console.log('✅ [Responses API] Success:', {
+       id: json.id,
+       model: json.model,
+diff --git a/lib/ai/tenant-client.ts b/lib/ai/tenant-client.ts
+index 1234567..abcdefg 100644
+--- a/lib/ai/tenant-client.ts
++++ b/lib/ai/tenant-client.ts
+@@ -45,14 +45,19 @@ export function createTenantResponsesClient(tenantConfig?: TenantConfig) {
+     /**
+      * Respond with tenant-aware configuration
+      */
+     async respond(opts: {
++      threadId?: string;
+       systemBrief?: string;
+       userText: string;
+       model?: string;
+       temperature?: number;
+       maxTokens?: number;
+-    }): Promise<string> {
++    }): Promise<{ content: string; responseId?: string | null; promptHash?: string | null; responseHash?: string | null; raw?: any }> {
+       // Use tenant config defaults or request overrides
+       const model = opts.model ?? tenantConfig?.ai?.model ?? 'gpt-4-turbo';
+       const temperature = typeof opts.temperature === 'number' 
+         ? opts.temperature 
+         : tenantConfig?.ai?.temperature ?? 0.7;
+       const maxTokens = opts.maxTokens ?? tenantConfig?.ai?.maxTokens ?? 2000;
+       
+       // Build input array
+       const input: Array<{ role: string; content: string }> = [];
+       
+       if (opts.systemBrief) {
+         input.push({ role: 'system', content: opts.systemBrief });
+       }
+       
+       input.push({ role: 'user', content: opts.userText });
+       
+       // Create request
+       const responsesRequest: ResponsesRequest = {
+         model,
+         input,
+         temperature,
+         max_tokens: maxTokens,
+         metadata: {
+           tenant_id: tenantConfig?.id,
++          thread_id: opts.threadId,
+           source: 'tenant-aware-client'
+         }
+       };
+       
+       // Resolve API key
+       const apiKey = await resolveApiKey(tenantConfig?.ai?.keyAlias);
+       
+       // Call Responses API with tenant-specific key
+       // Pass tenantId to createResponse so key routing works end-to-end
+       const response = await createResponse(responsesRequest, tenantConfig?.id);
+       const normalized = normalizeResponse(response);
+       
+-      return normalized.content;
++      return {
++        content: normalized.content,
++        responseId: normalized.id ?? response?.id ?? null,
++        promptHash: response?._prompt_hash ?? null,
++        responseHash: response?._response_hash ?? null,
++        raw: response
++      };
+     }
+   };
+ }
+diff --git a/lib/ddsa/responses-helper.ts b/lib/ddsa/responses-helper.ts
+index 1234567..abcdefg 100644
+--- a/lib/ddsa/responses-helper.ts
++++ b/lib/ddsa/responses-helper.ts
+@@ -9,6 +9,7 @@
+  */
+ 
+ import { createResponse, normalizeResponse } from '../responses/responsesClient';
++import { getRecentMessages, insertAiResponse } from './db-adapters';
+ import OpenAI from 'openai';
+ 
+ export interface QuestionRequest {
+@@ -266,8 +267,30 @@ export async function generateQuestionWithResponses(
+     // Log response metadata (non-sensitive)
+     const normalized = normalizeResponse(response);
+     console.log('✅ [Responses API] Response:', {
+       responseId: normalized.id,
+       contentLength: normalized.content?.length,
+       tokens: normalized.usage?.total_tokens
+     });
+ 
++    // Extract response metadata
++    const responseId = normalized.id ?? response?.id ?? null;
++    const promptHash = response?._prompt_hash ?? null;
++    const responseHash = response?._response_hash ?? null;
++
++    // Persist ai response record for traceability
++    try {
++      await insertAiResponse({
++        response_id: responseId || `resp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
++        thread_id: request.threadId,
++        model,
++        stage_ref: request.context?.stageId ?? null,
++        request_payload: { input: inputArray },
++        response_payload: response,
++        prompt_hash: promptHash,
++        response_hash: responseHash,
++        tokens_in: response?.usage?.prompt_tokens ?? normalized.usage?.prompt_tokens ?? null,
++        tokens_out: response?.usage?.completion_tokens ?? normalized.usage?.completion_tokens ?? null,
++        total_tokens: response?.usage?.total_tokens ?? normalized.usage?.total_tokens ?? null
++      });
++    } catch (err) {
++      // best-effort — do not block main flow
++      console.warn('⚠️ Failed to insert ai_response:', err);
++    }
++
+     // Normalize response
+     let question = normalized.content.trim();
+diff --git a/packages/core/persistent-thread-manager.ts b/packages/core/persistent-thread-manager.ts
+index 1234567..abcdefg 100644
+--- a/packages/core/persistent-thread-manager.ts
++++ b/packages/core/persistent-thread-manager.ts
+@@ -211,6 +211,11 @@ export class PersistentThreadManager {
+     }
+ 
+     try {
++      // Extract provider_response_id and hashes from metadata
++      const providerResponseId = message.metadata?.provider_response_id || message.metadata?.responseId || null;
++      const promptHash = message.metadata?.prompt_hash || message.metadata?._prompt_hash || null;
++      const responseHash = message.metadata?.response_hash || message.metadata?._response_hash || null;
++
+       // Save to database
+       const { data, error } = await supabase!
+         .from('chat_messages')
+@@ -220,6 +225,9 @@ export class PersistentThreadManager {
+           message_type: message.messageType || 'text',
+           tags: message.tags || [],
+           metadata: message.metadata || {},
++          provider_response_id: providerResponseId,
++          prompt_hash: promptHash,
++          response_hash: responseHash,
+           processing_time_ms: message.processingTimeMs || 0
+         })
+         .select()
+diff --git a/app/api/ai/call-v2/route.ts b/app/api/ai/call-v2/route.ts
+index 1234567..abcdefg 100644
+--- a/app/api/ai/call-v2/route.ts
++++ b/app/api/ai/call-v2/route.ts
+@@ -225,6 +225,7 @@ export async function POST(request: NextRequest) {
+     // Use Responses API adapter
+     let response: any;
+     let normalized: { content: string; id: string; usage?: { prompt_tokens: number; completion_tokens: number; total_tokens: number } };
++    let responsesApiResult: any = null;
+     
+     try {
+       // Try Responses API first
+-      const responsesApiResult = await createResponse({
++      responsesApiResult = await createResponse({
+         model,
+         input: inputArray,
+         max_tokens: maxTokens,
+         temperature
+       });
+       
+       normalized = normalizeResponse(responsesApiResult);
+     } catch (responsesError: any) {
+       // Fallback to chat.completions if Responses API is not available
+       console.warn('⚠️ Responses API not available, falling back to chat.completions:', responsesError.message);
+       
+       const openai = await getAPIClient(providerId, apiEndpoint);
+       const chatResponse = await openai.chat.completions.create({
+         model,
+         messages: inputArray,
+         max_tokens: maxTokens,
+         temperature
+       });
+       
+       normalized = normalizeResponse(chatResponse);
+     }
+ 
+     const assistantMessage = normalized.content;
+     const responseId = normalized.id;
++    const promptHash = responsesApiResult?._prompt_hash ?? null;
++    const responseHash = responsesApiResult?._response_hash ?? null;
+     const tokensIn = normalized.usage?.prompt_tokens || 0;
+     const tokensOut = normalized.usage?.completion_tokens || 0;
+     const totalTokens = normalized.usage?.total_tokens || 0;
+@@ -283,6 +284,8 @@ export async function POST(request: NextRequest) {
+       response_payload: responsesApiResult ?? {},
+       tokens_in: tokensIn,
+       tokens_out: tokensOut,
+       total_tokens: totalTokens,
+       estimated_cost: estimatedCost,
+       schema_validated: schemaValidated ?? undefined,
++      prompt_hash: promptHash,
++      response_hash: responseHash
+     });
+diff --git a/lib/dds-state.ts b/lib/dds-state.ts
+index 1234567..abcdefg 100644
+--- a/lib/dds-state.ts
++++ b/lib/dds-state.ts
+@@ -45,6 +45,15 @@ export async function saveDdsState(
+   threadId: string,
+   state: any,
+   tenantId?: string
+ ): Promise<void> {
++  // Load current state to determine _version
++  const current = await loadDdsState(threadId);
++  const currentVersion = (current && typeof current._version === 'number') ? current._version : 0;
++
++  // Ensure schema version and incremented _version
++  const stateWithMeta = {
++    ...state,
++    _schema_version: state._schema_version ?? '1.0.0',
++    _version: (state._version && state._version > currentVersion) ? state._version : currentVersion + 1,
++    _tenant_id: tenantId ?? state._tenant_id ?? null,
++    _updated_at: new Date().toISOString()
++  };
++
+   if (tenantId) {
+     // Use direct Postgres pool to set session RLS context for this operation
+     try {
+       const { withTenantContext } = await import('@/lib/db/postgres-pool');
+       await withTenantContext(tenantId, async (client) => {
+-        await client.query(
+-          'UPDATE chat_threads SET metadata = jsonb_set(COALESCE(metadata, \'{}\'::jsonb), \'{dds_state}\', $1::jsonb) WHERE id = $2',
+-          [JSON.stringify(state), threadId]
+-        );
++        const res = await client.query(
++          `UPDATE chat_threads
++           SET metadata = jsonb_set(COALESCE(metadata, '{}'::jsonb), '{dds_state}', $1::jsonb)
++           WHERE id = $2 AND (
++             (metadata->'dds_state'->>'_version') IS NULL
++             OR (metadata->'dds_state'->>'_version')::int < $3
++           )`,
++          [JSON.stringify(stateWithMeta), threadId, stateWithMeta._version]
++        );
++
++        if (res.rowCount === 0) {
++          // Version conflict — caller should retry with latest state
++          throw new Error('dds_state version conflict');
++        }
+       });
+       return;
+     } catch (pgError: any) {
+@@ -68,7 +77,7 @@ export async function saveDdsState(
+     if (supabase) {
+       await supabase
+         .from('chat_threads')
+         .upsert({
+           id: threadId,
+-          metadata: { dds_state: state }
++          metadata: { dds_state: stateWithMeta }
+         }, { onConflict: 'id' });
+       return;
+     }
+   } catch (err) {
+     console.warn('⚠️ [DDS-STATE] DB save failed, using in-memory fallback:', err);
+   }
+   
+   // Fallback to in-memory
+-  inMemoryState.set(threadId, state);
++  inMemoryState.set(threadId, stateWithMeta);
+ }
+diff --git a/lib/ddsa/intent-classifier.ts b/lib/ddsa/intent-classifier.ts
+index 1234567..abcdefg 100644
+--- a/lib/ddsa/intent-classifier.ts
++++ b/lib/ddsa/intent-classifier.ts
+@@ -44,13 +44,20 @@ export async function earlyIntentPass(
+   const userText = messages.slice(-3).join('\n\n');
+ 
+   try {
+-    const raw = await client.respond({
++    const rawResult = await client.respond({
++      threadId,
+       systemBrief,
+       userText,
+       maxTokens: 300,
+       model: tenant?.ai?.model || 'gpt-4-turbo',
+       temperature: 0.3 // Lower temperature for classification
+     });
++
++    // Extract content and metadata
++    const raw = rawResult.content ?? (typeof rawResult === 'string' ? rawResult : '');
++    const responseId = rawResult.responseId ?? null;
++    const promptHash = rawResult.promptHash ?? null;
++    const responseHash = rawResult.responseHash ?? null;
+ 
+     // Expect JSON; attempt parse
+     try {
+@@ -72,6 +79,9 @@ export async function earlyIntentPass(
+       // Audit log
+       if (threadId && tenantId) {
+         await audit.log('INTENT_CLASSIFIED', {
+           threadId,
++          response_id: responseId,
++          prompt_hash: promptHash,
++          response_hash: responseHash,
+           intent_label: result.intent_label,
+           confidence: result.confidence,
+           required_fields: result.required_fields,
+diff --git a/lib/ddsa/message-exchange-layer.ts b/lib/ddsa/message-exchange-layer.ts
+index 1234567..abcdefg 100644
+--- a/lib/ddsa/message-exchange-layer.ts
++++ b/lib/ddsa/message-exchange-layer.ts
+@@ -1,4 +1,11 @@
++/**
++ * DEPRECATED: This file uses the older OpenAI Assistants / Threads API.
++ * The Responses API is used across the codebase. Please migrate callers to
++ * use lib/responses/responsesClient.createResponse() and manage conversation
++ * state via the app-managed threadId (chat_threads.id).
++ *
++ * For now this file emits a console warning on import to ensure maintainers notice.
++ */
++console.warn('[DEPRECATION] lib/ddsa/message-exchange-layer.ts uses old Assistants API. Migrate to Responses API.');
++
+ /**
+  * Message Exchange Layer
+  * Abstracts OpenAI API calls for thread management and message exchange
++ * @deprecated Use Responses API instead (lib/responses/responsesClient.ts)
+  */
+ 
+ import OpenAI from 'openai';
+@@ -22,6 +29,7 @@ export class MessageExchangeLayer {
+ export class MessageExchangeLayer {
+   private client: OpenAI;
+   private assistantId: string;
++  private deprecated = true;
+ 
+   constructor() {
+     const apiKey = process.env.OPENAI_API_KEY;
+@@ -32,6 +40,7 @@ export class MessageExchangeLayer {
+   /**
+    * Create a message in a thread
+    */
+   async createMessage(threadId: string, content: string, role: 'user' | 'assistant' = 'user'): Promise<{ success: boolean; messageId?: string; error?: string }> {
++    console.warn('MessageExchangeLayer.createMessage called — using deprecated Assistants API. Replace this call with createResponse wrapper.');
+     try {
+       const message = await this.client.beta.threads.messages.create(threadId, {
+         role,
+diff --git a/README_RESPONSES_MIGRATION.md b/README_RESPONSES_MIGRATION.md
+new file mode 100644
+index 0000000..1234567
+--- /dev/null
++++ b/README_RESPONSES_MIGRATION.md
+@@ -0,0 +1,20 @@
++# Responses API Migration - Quick Notes
++
++Apply order:
++
++1. Run migrations: `migrations/20250115_013_responses_api_migration.sql`
++
++2. Apply code changes (this patch does that)
++
++3. Run tests and verify (see checklist)
++
++Verification checklist (short):
++
++- DB: `provider_response_id`, `prompt_hash`, `response_hash` in `chat_messages`
++
++- Table: `pipeline_traces` exists
++
++- Run an API call and confirm `chat_messages` newest row has hashes and provider_response_id
++
++- Confirm `chat_threads.metadata.dds_state` contains `_schema_version` and `_version`
++
++If any error, follow rollback steps in your internal runbook.
+

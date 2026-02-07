@@ -1,0 +1,23 @@
+{
+  "loading": "Cargando...",
+  "error": "Error",
+  "success": "Éxito",
+  "cancel": "Cancelar",
+  "save": "Guardar",
+  "edit": "Editar",
+  "delete": "Eliminar",
+  "submit": "Enviar",
+  "continue": "Continuar",
+  "back": "Atrás",
+  "next": "Siguiente",
+  "close": "Cerrar",
+  "yes": "Sí",
+  "no": "No",
+  "required": "Obligatorio",
+  "optional": "Opcional",
+  "search": "Buscar",
+  "filter": "Filtrar",
+  "sort": "Ordenar",
+  "refresh": "Actualizar",
+  "retry": "Reintentar"
+}

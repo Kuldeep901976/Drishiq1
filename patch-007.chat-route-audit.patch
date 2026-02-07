@@ -1,0 +1,29 @@
+--- a/app/api/chat/route.ts
++++ b/app/api/chat/route.ts
+@@ -3000,9 +3000,9 @@ export async function POST(req: NextRequest) {
+             state: currentDdsState 
+           });
+           
+-          audit.log('INTENT_COMPUTED', { threadId: localThreadId, intent: intent.label, confidence: intent.confidence });
++          audit.log('INTENT_COMPUTED', { threadId: localThreadId, intent: intent.label, confidence: intent.confidence }, tenantId);
+           
+         } catch (err) {
+-          audit.log('INTENT_COMPUTE_FAILED', { threadId: localThreadId, err: String(err) });
++          audit.log('INTENT_COMPUTE_FAILED', { threadId: localThreadId, err: String(err) }, tenantId);
+           
+           // Persist fallback intent and continue
+@@ -3020,9 +3020,9 @@ export async function POST(req: NextRequest) {
+           };
+           enrichment = await runEnrichment(enrichmentState, intent);
+-          audit.log('ENRICHMENT_COMPLETED', { 
++          audit.log('ENRICHMENT_COMPLETED', { 
+             threadId: localThreadId,
+             modulesRun: enrichment.modulesRun,
+             modulesCount: enrichment.modulesRun.length
+-          });
++          }, tenantId);
+         } catch (err) {
+-          audit.log('ENRICHMENT_FAILED', { threadId: localThreadId, err: String(err) });
++          audit.log('ENRICHMENT_FAILED', { threadId: localThreadId, err: String(err) }, tenantId);
+           // Continue with empty enrichment
+

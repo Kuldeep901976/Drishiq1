@@ -1,0 +1,211 @@
+{
+  "suggestions": {
+    "title": "💡 Community Suggestions",
+    "subtitle": "Help us build a better DrishiQ! Share your ideas for new features, design improvements, content modules, and anything else that would make our platform more valuable for you.",
+    "successTitle": "Suggestion Submitted Successfully!",
+    "successMessage": "Thank you for your feedback. Our team will review your suggestion and consider it for future updates.",
+    "errorTitle": "Submission Failed",
+    "errorMessage": "There was an error submitting your suggestion. Please try again or contact support.",
+    "form": {
+      "categoryLabel": "What type of suggestion is this? *",
+      "categoryPlaceholder": "Select a category",
+      "otherCategoryLabel": "Please specify your category *",
+      "otherCategoryPlaceholder": "Enter your custom category",
+      "titleLabel": "Brief title for your suggestion *",
+      "titlePlaceholder": "e.g., Add dark mode toggle, Improve mobile navigation, Create new content module",
+      "descriptionLabel": "Describe your suggestion in detail *",
+      "descriptionPlaceholder": "Explain what you'd like to see, why it would be helpful, and how it might work...",
+      "priorityLabel": "How important is this to you? *",
+      "priorityPlaceholder": "Select priority",
+      "impactLabel": "Who would this benefit? *",
+      "impactPlaceholder": "Select impact scope",
+      "additionalDetailsLabel": "Additional context or examples (optional)",
+      "additionalDetailsPlaceholder": "Any additional thoughts, examples, or context that might help us understand your suggestion better...",
+      "aboutYouTitle": "About You",
+      "submitterTypeLabel": "I am a: *",
+      "submitterNameLabel": "Your Name (optional)",
+      "submitterNamePlaceholder": "Your name",
+      "allowContactLabel": "Allow us to contact you for follow-up questions about this suggestion",
+      "emailLabel": "Email address (optional)",
+      "emailPlaceholder": "your.email@example.com",
+      "cancel": "Cancel",
+      "submit": "Submit Suggestion",
+      "submitting": "Submitting..."
+    },
+    "categories": {
+      "communityPageDesign": "Community Page Design",
+      "ux": "UX",
+      "module": "Module",
+      "features": "Features",
+      "other": "Other"
+    },
+    "priorities": {
+      "low": "Low - Nice to have",
+      "medium": "Medium - Would improve experience",
+      "high": "High - Significantly improves usability",
+      "critical": "Critical - Blocks important functionality"
+    },
+    "impacts": {
+      "individual": "Individual users",
+      "smallGroups": "Small groups",
+      "largeCommunity": "Large community",
+      "allUsers": "All users",
+      "businessOps": "Business operations"
+    },
+    "submitterTypes": {
+      "guest": "Guest User",
+      "registered": "Registered User",
+      "anonymous": "Anonymous"
+    },
+    "howWeUse": {
+      "title": "💭 How We Use Your Suggestions",
+      "analysis": {
+        "title": "📊 Analysis & Prioritization",
+        "description": "We review all suggestions and prioritize them based on community impact, feasibility, and alignment with our vision."
+      },
+      "planning": {
+        "title": "🔄 Development Planning",
+        "description": "Top suggestions are incorporated into our development roadmap and feature planning cycles."
+      },
+      "updates": {
+        "title": "📢 Community Updates",
+        "description": "We keep the community informed about which suggestions are being worked on and when they'll be available."
+      },
+      "collaboration": {
+        "title": "🤝 Collaborative Development",
+        "description": "For complex features, we may reach out to gather more detailed requirements and feedback."
+      }
+    },
+    "successPage": {
+      "title": "Thank You for Your Suggestion!",
+      "message": "Your feedback has been submitted successfully. Our team will review your suggestion and consider it for future updates. We appreciate you helping us build a better DrishiQ!",
+      "submitAnother": "Submit Another Suggestion",
+      "backToHome": "Back to Home",
+      "tabs": {
+        "services": "🚀 DrishiQ Services",
+        "about": "💡 About DrishiQ"
+      },
+      "services": {
+        "title": "Discover What DrishiQ Can Do For You",
+        "subtitle": "Explore our comprehensive range of services designed to help you achieve clarity, growth, and success in your personal and professional journey.",
+        "careerGuidance": {
+          "title": "Career Guidance",
+          "description": "Get personalized career advice, skill assessments, and roadmap planning to achieve your professional goals."
+        },
+        "personalDevelopment": {
+          "title": "Personal Development",
+          "description": "Build essential life skills, improve productivity, and develop a growth mindset for lasting success."
+        },
+        "communitySupport": {
+          "title": "Community Support",
+          "description": "Connect with like-minded individuals, share experiences, and get support from our growing community."
+        }
+      },
+      "about": {
+        "title": "About DrishiQ",
+        "subtitle": "We're building a platform that goes beyond traditional guidance - creating a community where every experience contributes to collective growth.",
+        "mission": {
+          "title": "🎯 Our Mission",
+          "description1": "To provide intelligent, personalized guidance that helps individuals navigate life's challenges and achieve their full potential.",
+          "description2": "We believe that everyone has unique insights and experiences that can benefit others. Our platform creates the space for this wisdom to be shared and amplified."
+        },
+        "vision": {
+          "title": "🌱 Our Vision",
+          "description1": "A world where personal growth is accessible to everyone, where shared experiences create collective wisdom, and where every individual can find their path to success.",
+          "description2": "We're not just building a platform - we're cultivating a community that truly understands and supports each other's journey."
+        },
+        "approach": {
+          "title": "💡 Our Approach",
+          "description": "We combine cutting-edge technology with human wisdom to create a unique guidance experience.",
+          "points": {
+            "personalized": "Personalized recommendations based on your unique situation",
+            "community": "Community-driven insights and real-world experiences",
+            "learning": "Continuous learning and adaptation to your needs",
+            "safe": "Safe, supportive environment for growth and exploration"
+          }
+        },
+        "whatsNext": {
+          "title": "🚀 What's Next",
+          "description1": "We're constantly evolving based on community feedback and suggestions like yours.",
+          "description2": "Upcoming features include:",
+          "features": {
+            "ai": "Advanced AI-powered guidance systems",
+            "workshops": "Interactive workshops and webinars",
+            "mobile": "Mobile applications for on-the-go support",
+            "integration": "Integration with professional development tools"
+          }
+        }
+      },
+      "cta": {
+        "title": "Ready to Start Your Journey?",
+        "message": "Join thousands of others who are already experiencing the power of community-driven growth.",
+        "explore": "Explore DrishiQ",
+        "readStories": "Read Success Stories"
+      },
+      "youtube": {
+        "title": "Watch Real Stories from DrishiQ Users"
+      }
+    }
+  },
+  "home": {
+    "focusToday": "Your Focus Today:",
+    "nudge": "Nudge: share a 1‑liner or join a live room",
+    "postMorningThought": "Post a Morning Thought",
+    "joinLiveRoom": "Join a Live Room",
+    "latestTrack": "Your latest track:",
+    "viewComments": "View comments",
+    "motivation": "🔥 9:00 AM Motivation",
+    "innerClarity": "✨ Inner Clarity Awakens",
+    "clarityQuote": "\"The clarity you seek is already within you — it's just waiting for space to speak.\"",
+    "listenToMusic": "🎵 Listen to Music",
+    "watchVideo": "📽️ Watch a Video",
+    "readStory": "📖 Read a Story",
+    "postThought": "📝 Post Your Thought",
+    "feelingInspired": "Feeling inspired? Share your own beats, voice, or vibe — someone out there might need your rhythm today.",
+    "musicPicks": "🎵 Music Picks for You",
+    "topMusicContributors": "Top Music Contributors",
+    "videosEnjoy": "📽️ Videos You Might Enjoy",
+    "topVideoCreators": "Top Video Creators",
+    "gotMessage": "🎥 Got a message to share or a moment worth capturing? Upload your video and become someone's reason to smile.",
+    "realStories": "📚 Real Stories",
+    "topStorytellers": "Top Storytellers",
+    "gotSomething": "Got something on your mind? Share your creativity, story, or thought — your voice might spark someone else's clarity.",
+    "creativeSpace": "🎨 Creative Space",
+    "topCreators": "Top Creators",
+    "unleashCreativity": "🎨 Unleash your creativity! Whether it's a sketch, a dish, or a poetic thought — your expression can color someone's world.",
+    "peopleSeekingHelp": "🆘 People Seeking Help",
+    "topSupporters": "Top Supporters",
+    "notAlone": "🤝 You're not alone. Share your struggle or offer a kind word — your presence could be someone's turning point.",
+    "eventsLike": "📅 Events You Might Like",
+    "gotInterests": "📅 Got interests or passions? Explore events that match your vibe — and maybe find your next turning point.",
+    "askQuestion": "Ask a Question",
+    "whatsOnMind": "What's on your mind?",
+    "tuneRecommendations": "Tune your recommendations",
+    "adjustWeights": "Adjust weights and filters to align the feed with your vibe.",
+    "musicWeight": "Music weight",
+    "videoWeight": "Video weight",
+    "storiesWeight": "Stories weight",
+    "calm": "Calm",
+    "energy": "Energy",
+    "focus": "Focus",
+    "english": "English",
+    "hindi": "Hindi",
+    "puzzlesMindGames": "🧠 Puzzles & Mind Games",
+    "riddleOfDay": "Riddle of the Day",
+    "logicChallenge": "Logic Challenge",
+    "yourAnswer": "Your answer",
+    "reveal": "Reveal",
+    "showAnswer": "Show Answer"
+  },
+  "tickers": {
+    "career": "☀️ Career: Opportunities opening up",
+    "love": "☀️ Love: Honest conversations spark magic",
+    "health": "☀️ Health: Time to detox",
+    "finance": "☀️ Finance: Reassess investments",
+    "life": "☀️ Life: Seek clarity, not control",
+    "moonInsight": "🌙 Moon Insight: Share your birth date, time & location for daily emotional guidance",
+    "tip": "💬 Tip: Keep a 1‑line journal today",
+    "focus": "🧘 Focus: Breathe out slowly before tough calls"
+  }
+}
+

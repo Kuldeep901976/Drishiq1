@@ -1,0 +1,526 @@
+{
+  "title": "Payment",
+  "pricing": {
+    "title": "Path to DrishiQ",
+    "subtitle": "Choose the path that resonates with where you are in your journey of self-discovery. Every plan is designed to meet you exactly where you need support most.",
+    "stats": {
+      "findClarity": "95%",
+      "findClarityLabel": "Find Clarity",
+      "alwaysAvailable": "24/7",
+      "alwaysAvailableLabel": "Always Available",
+      "moneyBack": "30 Day",
+      "moneyBackLabel": "Money Back"
+    },
+    "offerBanner": {
+      "title": "First-Time Special Offer!",
+      "description": "Special pricing available for new users on First Light session — no strings, no subscriptions",
+      "close": "Close offer"
+    },
+    "defaultPricingIndicator": {
+      "default": "Showing Default Pricing",
+      "earlyAccess": "Showing Early Access Pricing",
+      "regular": "Showing Regular Pricing",
+      "clickInstructions": "Click on a pricing section to activate special rates!"
+    },
+    "foundingMemberOffer": {
+      "badge": "FOUNDING MEMBER OFFER",
+      "title": "First Believers Offer",
+      "launchDate": "Official Launch: January 1st, 2026",
+      "description": "As one of our first 10,000 users, this special pricing is available for 3 months after launch. Join our founding community and lock in exclusive rates before regular pricing begins.",
+      "earlyAccess": {
+        "title": "Early Access Pricing",
+        "description": "Special rates available for 3 months after launch - lock in your pricing now",
+        "active": "✓ Active"
+      },
+      "regular": {
+        "title": "Regular Pricing",
+        "description": "Standard rates that will apply after the 3-month early access period",
+        "active": "✓ Active"
+      },
+      "highlight": "✨ This is an early access offer available for 3 months from launch - lock in these special rates before they expire! ✨"
+    },
+    "clarityPass": {
+      "title": "💫 Your Clarity Pass",
+      "quote": "Take a pause, choose clarity, and gift yourself the space you truly deserve.",
+      "description": "Find the perfect plan to match your journey toward clarity and personal growth"
+    },
+    "plans": {
+      "freeTrial": {
+        "name": "Free Trial",
+        "emotionLabel": "Just curious to try",
+        "description": "Perfect way to experience DrishiQ",
+        "duration": "72 hours",
+        "validity": "72 hours after activation",
+        "sessions": "1",
+        "sessionsLabel": "session",
+        "sessionsPlural": "sessions",
+        "features": {
+          "invitationBased": "Invitation-Based",
+          "featuredStory": "Featured Story Submission",
+          "testimonial": "Testimonial Submission",
+          "socialMedia": "Social Media Challenge",
+          "sessionValidity": "01 Session valid for 72 hours after activation"
+        },
+        "cta": "Try Free"
+      },
+      "firstLight": {
+        "name": "First Light",
+        "emotionLabel": "Just starting to see",
+        "description": "Perfect for beginners exploring DrishiQ",
+        "duration": "1 week",
+        "validity": "1 week after activation",
+        "sessions": "1",
+        "features": {
+          "allFreePlan": "All that we have in Free Plan",
+          "sessionValidity": "Session valid for 1 week after activation",
+          "exportPdf": "Export session transcript as PDF",
+          "noRecurring": "No recurring fees",
+          "directAccess": "Direct access after payment"
+        },
+        "cta": "Start Your Journey",
+        "foundingSupport": "Founding support pricing"
+      },
+      "steadyLens": {
+        "name": "Steady Lens",
+        "emotionLabel": "Building rhythm",
+        "description": "For those ready to establish consistent practice",
+        "duration": "1 month",
+        "validity": "1 month after activation",
+        "sessions": "5",
+        "features": {
+          "sessionsValidity": "05 Sessions valid for 1 month after activation",
+          "allFirstLight": "All that we have in First Light",
+          "sessionValidity": "Session valid for 1 month after activation"
+        },
+        "cta": "Build Your Rhythm"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "emotionLabel": "For organizations at scale",
+        "description": "Perfect for organizations helping people at scale",
+        "duration": "1 month",
+        "validity": "1 month after activation",
+        "sessions": "10",
+        "features": {
+          "sessionsValidity": "10 Sessions valid for 1 month after activation",
+          "adminDashboard": "Admin dashboard",
+          "multiUser": "Multi-user Access",
+          "reports": "Reports & Insights"
+        },
+        "cta": "Scale Enterprise"
+      },
+      "mostPopular": "Most Popular",
+      "free": "FREE",
+      "pricingUnavailable": "Pricing unavailable",
+      "loadingPricing": "Loading pricing..."
+    },
+    "trustIndicators": {
+      "securePayment": {
+        "title": "Secure Payment",
+        "description": "256-bit SSL encryption"
+      },
+      "flexiblePlans": {
+        "title": "Flexible Plans",
+        "description": "Change anytime"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Always here to help"
+      }
+    },
+    "customPackage": {
+      "title": "✨ Need More Flexibility? We've Got You Covered!",
+      "description": "Looking for a customized package that fits your unique needs? We're here to help create the perfect solution for you.",
+      "getInTouch": "Get in Touch",
+      "email": "support@drishiq.com",
+      "subtext": "Write to us with your requirements and we'll design a package that perfectly fits your needs"
+    },
+    "giftSection": {
+      "badge": "Gifting for Current Plan Holders",
+      "title": "🌌 Gift a Moment of Clarity",
+      "quote": "Your clarity helped you. Now pass it on.",
+      "description": "Gift a session to a friend, family member, or someone who needs it — at a special supporter rate.",
+      "giftVersion": "🎁 GIFT VERSION",
+      "mostGifted": "Most Gifted",
+      "premiumGiftBenefit": "Premium gift benefit",
+      "giftPlans": {
+        "firstLight": {
+          "name": "First Light",
+          "emotionLabel": "Just starting to see",
+          "description": "Perfect for beginners exploring DrishiQ",
+          "sessions": "1",
+          "validity": "1 week after activation",
+          "features": {
+            "allFreePlan": "All that we have in Free Plan",
+            "sessionValidity": "Session valid for 1 week after activation",
+            "exportPdf": "Export session transcript as PDF",
+            "noRecurring": "No recurring fees",
+            "directAccess": "Direct access after payment"
+          },
+          "cta": "Gift First Light"
+        },
+        "steadyLens": {
+          "name": "Steady Lens",
+          "emotionLabel": "Building rhythm",
+          "description": "For those ready to establish consistent practice",
+          "sessions": "2",
+          "validity": "1 month after activation",
+          "features": {
+            "sessionsValidity": "02 Sessions valid for 1 month after activation",
+            "allFirstLight": "All that we have in First Light",
+            "sessionValidity": "Session valid for 1 month after activation"
+          },
+          "cta": "Gift Steady Lens"
+        },
+        "deeperSense": {
+          "name": "Deeper Sense",
+          "emotionLabel": "Deeper exploration",
+          "description": "For those seeking deeper understanding",
+          "sessions": "5",
+          "validity": "2 months after activation",
+          "features": {
+            "sessionsValidity": "05 Sessions valid for 2 months after activation",
+            "allSteadyLens": "All that we have in Steady Lens",
+            "extendedValidity": "Extended validity for deeper exploration"
+          },
+          "cta": "Gift Deeper Sense"
+        }
+      },
+      "howItWorks": {
+        "title": "How Gifting Works",
+        "step1": {
+          "title": "Choose & Personalize",
+          "description": "Select a plan and add recipient's name with your message"
+        },
+        "step2": {
+          "title": "Send the Gift",
+          "description": "We'll send them a beautiful email or give you a shareable link"
+        },
+        "step3": {
+          "title": "They Experience Clarity",
+          "description": "Recipients get instant access to start their journey"
+        }
+      },
+      "giftFeatures": {
+        "personalNotes": {
+          "title": "Personal Notes",
+          "description": "Add a heartfelt message with your gift"
+        },
+        "anonymous": {
+          "title": "Anonymous Option",
+          "description": "Gift anonymously to someone in need"
+        },
+        "instantAccess": {
+          "title": "Instant Access",
+          "description": "Recipients get immediate session access"
+        }
+      }
+    },
+    "supportSection": {
+      "badge": "Helping Those in Need",
+      "title": "🕊️Become a Lightgiver",
+      "quote": "Your support opens the door for someone else to pause, breathe, and rediscover their way forward.",
+      "description": "Give it to a stranger in need to breathe, and rediscover their way forward.",
+      "anyAmount": "ANY AMOUNT",
+      "giftLevels": {
+        "gentleNudge": {
+          "title": "One Gentle Nudge",
+          "emotionLabel": "Gift one quiet moment",
+          "description": "Perfect for someone who needs a gentle push toward clarity",
+          "sessions": "1 session",
+          "validity": "2 weeks",
+          "feature": "1 session for 2 weeks"
+        },
+        "shiftForward": {
+          "title": "A Shift Forward",
+          "emotionLabel": "Support someone's next honest step",
+          "description": "Give someone the space to take their next meaningful step",
+          "sessions": "2 sessions",
+          "validity": "1 month",
+          "feature": "2 sessions for 1 month"
+        },
+        "deeperSpace": {
+          "title": "Deeper Space",
+          "emotionLabel": "Let them sit with it longer",
+          "description": "Create space for deeper exploration and understanding",
+          "sessions": "5 sessions",
+          "validity": "2 months",
+          "feature": "5 sessions for 2 months"
+        },
+        "heart": {
+          "title": "Heart Donation",
+          "emotionLabel": "Give from the heart",
+          "description": "Contribute any amount to help us keep DrishiQ accessible for everyone who needs it",
+          "sessions": "Flexible",
+          "validity": "Flexible",
+          "feature": "Any amount welcome"
+        }
+      },
+      "giftFeatures": {
+        "personalNotes": {
+          "title": "Personal Notes",
+          "description": "Add a heartfelt message with your gift"
+        },
+        "anonymous": {
+          "title": "Anonymous Option",
+          "description": "Gift anonymously to someone in need"
+        },
+        "instantAccess": {
+          "title": "Instant Access",
+          "description": "Recipients get immediate session access"
+        }
+      },
+      "donateNow": "Donate Now",
+      "giftThis": "Gift This",
+      "socialMediaTooltip": "Stay tuned to our social media channels for promotion campaigns"
+    },
+    "alerts": {
+      "pricingUpdated": "Pricing updated successfully!",
+      "pricingSaveFailed": "Failed to save pricing",
+      "pricingLoadFailed": "Failed to load pricing for this country. Please try again.",
+      "pricingDataFailed": "Failed to load pricing data"
+    },
+    "tooltips": {
+      "activateGiftPricing": "Click to activate special gift pricing",
+      "clickInstructions": "Click to see instructions"
+    }
+  },
+  "page": {
+    "header": {
+      "title": "DrishiQ Payment",
+      "backToPlans": "← Back to Plans"
+    },
+    "planSummary": {
+      "title": "Plan Summary",
+      "planPrice": "Plan Price",
+      "tax": "Tax",
+      "totalAmount": "Total Amount",
+      "location": "Location",
+      "pricingCategory": "Pricing Category",
+      "credits": "credits"
+    },
+    "paymentMethods": {
+      "title": "Choose Payment Method",
+      "cashfree": {
+        "name": "Cashfree",
+        "description": "Cards, UPI, Net Banking, Wallets"
+      },
+      "paypal": {
+        "name": "PayPal",
+        "description": "PayPal, Credit/Debit Cards"
+      },
+      "proceed": "Proceed to Payment",
+      "selectMethod": "Select Payment Method",
+      "securityNotice": "Your payment is secured with 256-bit SSL encryption"
+    },
+    "error": {
+      "title": "Payment Error",
+      "backToPlans": "Back to Plans",
+      "planNotFound": "Plan Not Found",
+      "planNotFoundMessage": "The selected plan could not be found.",
+      "loading": "Loading payment details..."
+    }
+  },
+  "method": {
+    "title": "Choose Payment Method",
+    "subtitle": "Select your preferred payment method to complete your {purpose} contribution.",
+    "gift": "gift",
+    "support": "support",
+    "summary": {
+      "giftContribution": "Gift Contribution",
+      "supportContribution": "Support Contribution",
+      "name": "Name",
+      "email": "Email"
+    },
+    "cashfree": {
+      "name": "Cashfree",
+      "description": "Pay with UPI, Cards, Net Banking"
+    },
+    "paypal": {
+      "name": "PayPal",
+      "description": "Pay securely with PayPal"
+    },
+    "continue": "Continue with {method}",
+    "processing": "Processing...",
+    "security": "Your payment is secure and encrypted. We never store your payment details.",
+    "loading": "Loading payment methods..."
+  },
+  "failure": {
+    "title": "Payment Not Processed",
+    "subtitle": "We couldn't complete your payment",
+    "transactionFailed": "⚠️ Transaction Failed",
+    "notCharged": "Don't worry! Your card was not charged.",
+    "possibleReasons": "Possible Reasons",
+    "reasons": {
+      "insufficientFunds": "Insufficient funds in your account",
+      "incorrectCard": "Incorrect card information",
+      "bankDeclined": "Bank declined the transaction",
+      "networkIssues": "Network connectivity issues",
+      "cardExpired": "Card expired or invalid"
+    },
+    "tryAgain": "Try Again 🔄",
+    "backToPlans": "Back to Plans",
+    "contactSupport": "Contact Support",
+    "needHelp": "Need Help?",
+    "helpMessage": "If this issue persists, please contact our support team.",
+    "supportEmail": "support@drishiq.com"
+  },
+  "process": {
+    "title": "Complete Your Payment",
+    "subtitle": "Secure payment processing with multiple payment options",
+    "serviceDetails": "Service Details",
+    "service": "Service",
+    "amount": "Amount",
+    "credits": "Credits",
+    "currency": "Currency",
+    "paymentMethodsAvailable": "Payment Methods Available",
+    "paypal": {
+      "name": "PayPal",
+      "description": "Global payments"
+    },
+    "cashfree": {
+      "name": "Cashfree",
+      "description": "Indian payments"
+    },
+    "phonepe": {
+      "name": "PhonePe",
+      "description": "UPI payments"
+    },
+    "paymentError": "Payment Error",
+    "proceedToPayment": "Proceed to Payment",
+    "processing": "Processing...",
+    "security": "🔒 Your payment is secured with industry-standard encryption",
+    "loading": "Loading payment details...",
+    "error": "Error",
+    "invalidDetails": "Invalid payment details"
+  },
+  "processing": {
+    "title": "Processing Payment",
+    "subtitle": "Please wait while we process your payment",
+    "loading": "Processing...",
+    "error": "Payment failed. Please try again."
+  },
+  "success": {
+    "title": "Payment Successful",
+    "subtitle": "Your payment has been processed successfully",
+    "message": "Thank you for your payment. You will receive a confirmation email shortly.",
+    "continue": "Continue"
+  },
+  "methods": {
+    "credit_card": "Credit Card",
+    "debit_card": "Debit Card",
+    "upi": "UPI",
+    "net_banking": "Net Banking",
+    "wallet": "Wallet"
+  },
+  "form": {
+    "card_number": "Card Number",
+    "expiry_date": "Expiry Date",
+    "cvv": "CVV",
+    "name_on_card": "Name on Card",
+    "amount": "Amount",
+    "pay_now": "Pay Now"
+  },
+  "checkout": {
+    "pay": "Pay",
+    "processing": "Processing...",
+    "loading": "Loading..."
+  },
+  "thankYou": {
+    "title": "Thank You! 🙏",
+    "subtitle": "Your payment has been processed successfully",
+    "creditsAdded": "✅ Credits Added to Your Account",
+    "creditsReady": "+{credits} Credits Ready to Use",
+    "whatsNext": "What's Next?",
+    "creditsAvailable": "Your credits are now available! You can start your first conversation or explore other features.",
+    "startConversation": "Start Your First Conversation 🚀",
+    "viewDashboard": "View My Dashboard",
+    "purchaseMore": "Purchase More Credits",
+    "needHelp": "Need help? Contact our support team",
+    "supportEmail": "support@drishiq.com"
+  },
+  "verification": {
+    "verifying": "Verifying Payment",
+    "pleaseWait": "Please wait while we confirm your payment...",
+    "failed": "Payment Verification Failed",
+    "tryAgain": "Try Again",
+    "contactSupport": "Contact Support",
+    "successful": "Payment Successful!",
+    "activated": "Thank you for your payment. Your DrishiQ access has been activated.",
+    "paymentDetails": "Payment Details",
+    "transactionId": "Transaction ID:",
+    "amount": "Amount:",
+    "status": "Status:",
+    "continueToDrishiq": "Continue to DrishiQ",
+    "confirmationEmail": "You will receive a confirmation email shortly.",
+    "questions": "If you have any questions, please contact our support team."
+  },
+  "credits": {
+    "checking": "Checking credits...",
+    "pleaseLogin": "Please log in to check credits",
+    "couldNotCheck": "Could not check credits",
+    "unableToCheck": "Unable to check credits",
+    "noCredits": "No credits. Please purchase credits to continue.",
+    "errorVerifying": "Error verifying user account",
+    "creditsAvailable": "Credits Available",
+    "totalCredits": "Total Credits",
+    "creditsUsed": "Credits Used",
+    "buyCredits": "Buy Credits",
+    "noCreditsAvailable": "No Credits Available",
+    "needCredits": "You need at least 1 credit to start a conversation. Please purchase credits to continue."
+  },
+  "successPage": {
+    "processing": "Processing your payment...",
+    "creditsAdded": "✓ Credits added to your account",
+    "processingError": "Processing Error",
+    "backToPlans": "Back to Plans",
+    "paymentDataNotFound": "Payment Data Not Found",
+    "unableToLoad": "Unable to load payment details.",
+    "paymentConfirmation": "Payment Confirmation",
+    "plan": "Plan",
+    "creditsAddedLabel": "Credits Added",
+    "amountPaid": "Amount Paid",
+    "transactionId": "Transaction ID",
+    "status": "Status",
+    "paymentSuccessful": "Payment Successful",
+    "whatsNext": "What's Next?",
+    "creditsAddedToAccount": "Credits added to your account",
+    "startFirstSession": "• Start your first clarity session",
+    "checkEmail": "• Check your email for confirmation",
+    "shareGift": "• Share the gift with your recipient",
+    "goToChat": "Go to Chat Now →",
+    "viewAllPlans": "View All Plans",
+    "shareJourney": "Share your journey with DrishiQ",
+    "shareTwitter": "Share on Twitter",
+    "shareLinkedIn": "Share on LinkedIn",
+    "categories": {
+      "prelaunch": {
+        "title": "🎉 Welcome to the DrishiQ Family!",
+        "subtitle": "You're an Early Believer",
+        "message": "Thank you for believing in DrishiQ's vision and strengthening our foundation. Your early support helps us build something truly meaningful for everyone seeking clarity.",
+        "badge": "Early Believer"
+      },
+      "postlaunch": {
+        "title": "✨ Your Journey to Clarity Begins!",
+        "subtitle": "Welcome to DrishiQ",
+        "message": "Thank you for choosing DrishiQ. You've taken the first step towards greater self-awareness and clarity. Your journey of discovery starts now.",
+        "badge": "Clarity Seeker"
+      },
+      "gift": {
+        "title": "🎁 Your Gift of Clarity is Ready!",
+        "subtitle": "Spreading the Light",
+        "message": "Thank you for gifting clarity to someone special. Your thoughtful gesture will help them pause, breathe, and rediscover their way forward.",
+        "badge": "Clarity Giver"
+      },
+      "support": {
+        "title": "🕊️ Thank You for Your Compassion!",
+        "subtitle": "Making a Difference",
+        "message": "Your support opens doors for someone in need to find clarity and strength. You're helping us make DrishiQ accessible to everyone who needs it.",
+        "badge": "Compassion Keeper",
+        "downloadBadge": "🎖️ Download Your Badge",
+        "badgeDescription": "Show your support with this special badge",
+        "downloadButton": "Download Badge"
+      }
+    }
+  }
+}

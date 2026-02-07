@@ -1,0 +1,31 @@
+Agent SDK Recognition Report
+=============================
+Date: 2025-01-10
+
+FILES CHECKED:
+- lib/ddsa/agent-orchestrator.ts: ❌ NOT FOUND
+- lib/ddsa/agents/*.ts: ❌ NOT FOUND
+
+STATUS: ❌ Agent SDK not implemented
+
+RECOMMENDATION:
+Agent SDK not implemented — recommended next step: implement orchestrator using OpenAI Agents SDK or in-house agent runner.
+
+The current implementation provides:
+- ✅ DB adapter layer for Responses API
+- ✅ API route wrapper (call-v2)
+- ✅ Instruction sets and response persistence
+
+Missing components for full agent orchestration:
+- ❌ Agent orchestrator/coordinator
+- ❌ Agent lifecycle management
+- ❌ Multi-agent coordination
+- ❌ Agent state management
+- ❌ Agent-to-agent communication
+
+NEXT STEPS:
+1. Implement agent-orchestrator.ts to coordinate multiple agents
+2. Create agent definitions in lib/ddsa/agents/
+3. Integrate with OpenAI Agents SDK when available
+4. Add agent state persistence to ai_responses or new agent_state table
+

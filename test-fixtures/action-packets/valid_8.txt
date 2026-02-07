@@ -1,0 +1,72 @@
+Here's my analysis:
+
+ACTION_PACKET:
+{
+  "problem": {
+    "summary": "Test problem 8: User wants to improve relationships",
+    "domain_of_life": "relationships",
+    "severity": 8
+  },
+  "actions": [
+    {
+      "event_name": "Review monthly expenses",
+      "start_date": "2025-11-01",
+      "duration_days": 30,
+      "metric": {
+        "type": "test",
+        "target": 100
+      },
+      "owner": "user",
+      "metadata": {
+        "priority": "high"
+      }
+    },
+    {
+      "event_name": "Create budget plan",
+      "start_date": "2025-11-02",
+      "duration_days": 7,
+      "metric": {
+        "type": "test",
+        "target": 110
+      },
+      "owner": "user",
+      "metadata": {
+        "priority": "medium"
+      }
+    },
+    {
+      "event_name": "Cancel subscriptions",
+      "start_date": "2025-11-03",
+      "duration_days": 3,
+      "metric": {
+        "type": "test",
+        "target": 120
+      },
+      "owner": "user",
+      "metadata": {
+        "priority": "medium"
+      }
+    },
+    {
+      "event_name": "Track spending",
+      "start_date": "2025-11-04",
+      "duration_days": 14,
+      "metric": {
+        "type": "test",
+        "target": 130
+      },
+      "owner": "user",
+      "metadata": {
+        "priority": "medium"
+      }
+    }
+  ],
+  "metadata": {
+    "test_index": 8,
+    "source": "fixture_generator"
+  }
+}
+END_ACTION_PACKET
+
+---END---
+MACHINE_OK

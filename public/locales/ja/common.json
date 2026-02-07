@@ -1,0 +1,23 @@
+{
+  "loading": "読み込み中...",
+  "error": "エラー",
+  "success": "成功",
+  "cancel": "キャンセル",
+  "save": "保存",
+  "edit": "編集",
+  "delete": "削除",
+  "submit": "送信",
+  "continue": "続ける",
+  "back": "戻る",
+  "next": "次へ",
+  "close": "閉じる",
+  "yes": "はい",
+  "no": "いいえ",
+  "required": "必須",
+  "optional": "任意",
+  "search": "検索",
+  "filter": "フィルター",
+  "sort": "並べ替え",
+  "refresh": "更新",
+  "retry": "再試行"
+}

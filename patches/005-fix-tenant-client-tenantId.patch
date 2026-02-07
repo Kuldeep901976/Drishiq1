@@ -1,0 +1,17 @@
+--- a/lib/ai/tenant-client.ts
++++ b/lib/ai/tenant-client.ts
+@@ -88,7 +88,7 @@ export function createTenantResponsesClient(tenantConfig?: TenantConfig) {
+       };
+       
+       // Resolve API key
+-      const apiKey = await resolveApiKey(tenantConfig?.ai?.keyAlias);
++      const apiKey = await resolveApiKey(tenantConfig?.ai?.keyAlias);
+       
+       // Call Responses API with tenant-specific key
+       // Note: createResponse will be updated to accept tenantId, for now we use tenant-client wrapper
+-      const response = await createResponse(responsesRequest);
++      const response = await createResponse(responsesRequest, tenantConfig?.id);
+       const normalized = normalizeResponse(response);
+       
+       return normalized.content;
+

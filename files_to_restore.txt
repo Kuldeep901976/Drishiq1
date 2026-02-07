@@ -1,0 +1,15 @@
+﻿ci/ai-migration-inventory/verification/QUICK_OPS_CHECKLIST.txt
+ci/ai-migration-inventory/verification/decision_response_template.json
+ci/ai-migration-inventory/verification/evidence/cmd_file_checks.txt
+ci/ai-migration-inventory/verification/evidence/cmd_git_branch.txt
+ci/ai-migration-inventory/verification/evidence/cmd_git_log.txt
+ci/ai-migration-inventory/verification/evidence/cmd_git_status.txt
+ci/ai-migration-inventory/verification/evidence/cmd_node_npm.txt
+ci/ai-migration-inventory/verification/evidence/cmd_package.json.txt
+ci/ai-migration-inventory/verification/evidence/diff_call_route.patch
+ci/ai-migration-inventory/verification/evidence/sql_instruction_sets_error.json
+ci/ai-migration-inventory/verification/evidence/sql_stages_error.json
+ci/ai-migration-inventory/verification/evidence/sql_table_list.json
+ci/ai-migration-inventory/verification/mapping_document.json
+ci/ai-migration-inventory/verification/pr_branch_info.txt
+ci/ai-migration-inventory/verification/verification_checklist.json

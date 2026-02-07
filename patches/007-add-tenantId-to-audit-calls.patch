@@ -1,0 +1,49 @@
+--- a/lib/ddsa/stages/cfq-stage.ts
++++ b/lib/ddsa/stages/cfq-stage.ts
+@@ -92,7 +92,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+ 
+       if (audit && typeof audit.log === 'function') {
+         await audit.log('CFQ.QUESTION_SENT', {
+           threadId,
+           questionType
+-        });
++        }, input.tenantId);
+       }
+ 
+       return {
+@@ -180,7 +180,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+ 
+       if (audit && typeof audit.log === 'function') {
+         await audit.log('CFQ.ANSWER_RECEIVED', {
+           threadId,
+           answer: answerText.substring(0, 100)
+-        });
++        }, input.tenantId);
+       }
+ 
+       return {
+--- a/lib/ddsa/stages/options.ts
++++ b/lib/ddsa/stages/options.ts
+@@ -98,7 +98,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+ 
+     if (audit && typeof audit.log === 'function') {
+       await audit.log('OPTIONS.PRESENTED', {
+         threadId,
+         optionCount: filteredOptions.length
+-      });
++      }, input.tenantId);
+     }
+ 
+     return {
+--- a/lib/ddsa/stages/plan-stage.ts
++++ b/lib/ddsa/stages/plan-stage.ts
+@@ -98,7 +98,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+ 
+     if (audit && typeof audit.log === 'function') {
+       await audit.log('PLAN.GENERATED', {
+         threadId,
+         actionCount: finalPlan.actions.length
+-      });
++      }, input.tenantId);
+     }
+

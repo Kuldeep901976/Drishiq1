@@ -1,0 +1,266 @@
+{
+  "title": "邀请",
+  "invitation": {
+    "title": "请求邀请",
+    "subtitle": "加入德瑞希Q的专属社区",
+    "description": "获得我们平台的早期访问权限，成为智慧革命的一部分。",
+    "form": {
+      "name": "全名",
+      "email": "电子邮箱地址",
+      "phone": "电话号码",
+      "company": "公司/组织",
+      "role": "角色/职位",
+      "interest": "兴趣领域",
+      "message": "你为什么想加入德瑞希Q？",
+      "submit": "请求邀请",
+      "success": "邀请请求已成功提交！",
+      "error": "邀请请求提交失败。请再试一次。"
+    }
+  },
+  "status": {
+    "pending": "邀请待处理",
+    "approved": "邀请已批准",
+    "rejected": "邀请已拒绝",
+    "expired": "邀请已过期"
+  },
+  "email": {
+    "subject": "德瑞希Q 邀请请求",
+    "confirmation": "感谢您对德瑞希Q的兴趣。我们将审核您的请求并尽快与您联系。",
+    "approval": "恭喜！您的德瑞希Q邀请已获批准。",
+    "rejection": "感谢您的兴趣。很遗憾，我们暂时无法批准您的邀请。"
+  },
+  "hero": {
+    "trialAccess": {
+      "title": "请求德瑞希Q访问权限",
+      "subtitle": "申请试用访问，现有配额可能让您免费体验德瑞希Q"
+    },
+    "sponsorSupport": {
+      "title": "请求赞助支持",
+      "subtitle": "请求赞助支持以访问德瑞希Q并探索您的前进道路"
+    },
+    "default": {
+      "title": "请求德瑞希Q访问权限",
+      "subtitle": "申请试用访问，现有配额可能让您免费体验德瑞希Q"
+    }
+  },
+  "tabs": {
+    "trialAccess": {
+      "label": "🎯 试用访问",
+      "unavailable": "(不可用)",
+      "title": "切换到试用访问",
+      "description": "试用访问：适用于想体验德瑞希Q但暂时无法负担的用户。访问权限将基于当前可用配额提供。"
+    },
+    "sponsorSupport": {
+      "label": "💚 赞助支持",
+      "unavailable": "(不可用)",
+      "title": "切换到赞助支持",
+      "description": "赞助支持：适用于需要财务协助/赞助以访问德瑞希Q的用户。请提供您的挑战详情，以便我们为您匹配合适的赞助者。"
+    }
+  },
+  "form": {
+    "sections": {
+      "personalInfo": {
+        "title": "👤 个人信息",
+        "fields": {
+          "firstName": {
+            "label": "名",
+            "placeholder": "输入您的名字",
+            "required": "*"
+          },
+          "lastName": {
+            "label": "姓",
+            "placeholder": "输入您的姓氏",
+            "required": "*"
+          },
+          "email": {
+            "label": "电子邮箱",
+            "placeholder": "your.email@example.com",
+            "required": "*"
+          },
+          "phone": {
+            "label": "电话",
+            "placeholder": "输入电话号码",
+            "required": "*"
+          },
+          "country": {
+            "label": "国家",
+            "placeholder": "选择国家",
+            "required": "*"
+          },
+          "location": {
+            "label": "位置（城市）",
+            "placeholder": "输入您的城市",
+            "required": "*"
+          }
+        }
+      },
+      "comments": {
+        "title": "💬 附加备注",
+        "placeholder": "请分享任何额外信息...",
+        "required": "*"
+      },
+      "phoneVerification": {
+        "title": "📱 电话验证",
+        "description": "请验证您的电话号码以提交请求。我们将通过短信发送验证码。",
+        "info": "在提交您的请求之前，您的电话号码必须经过验证。这有助于确保请求的安全性和真实性。",
+        "button": "请先验证电话",
+        "required": "*"
+      }
+    },
+    "buttons": {
+      "cancel": "取消",
+      "submitTrial": "📧 提交试用请求",
+      "submitSponsor": "💚 提交赞助请求",
+      "submitting": "提交中...",
+      "submittingWithIcon": "⏳ 提交中..."
+    }
+  },
+  "phoneVerification": {
+    "frozen": {
+      "title": "📱 验证电话号码",
+      "subtitle": "请验证您的电话号码以获取验证码",
+      "phoneLabel": "电话号码",
+      "info": "ℹ️ 请验证此电话号码以继续您的请求。",
+      "sendOtp": "发送OTP",
+      "sendingOtp": "正在发送OTP...",
+      "backToForm": "返回表单",
+      "bypassDev": "⚠️ 无需验证继续（仅限开发）"
+    },
+    "otp": {
+      "title": "🔐 输入验证码",
+      "subtitle": "请输入发送到您手机上的OTP验证码",
+      "label": "输入OTP验证码",
+      "placeholder": "000000",
+      "sentTo": "已发送至 {phone}",
+      "verify": "验证并提交",
+      "verifying": "正在验证...",
+      "resend": "🔄 重新发送OTP（点击这里）",
+      "resendCountdown": "重新发送OTP（{countdown}s）",
+      "back": "返回"
+    },
+    "errors": {
+      "billing": {
+        "title": "必须启用 Firebase 计费才能进行电话验证。",
+        "message": "请在 Firebase 控制台中启用计费，或联系 support@drishiq.com 以获取帮助。",
+        "steps": {
+          "title": "启用 Firebase 电话认证的方法：",
+          "step1": "进入 Firebase Console → 您的项目",
+          "step2": "导航到 Settings → Usage and billing",
+          "step3": "启用计费（电话认证需要 Blaze 计划）",
+          "step4": "等待几分钟使其生效"
+        },
+        "contact": "或联系 {email} 获取帮助。"
+      }
+    }
+  },
+  "errors": {
+    "validation": {
+      "firstNameRequired": "名是必填项",
+      "lastNameRequired": "姓氏是必填项",
+      "emailRequired": "必须提供有效的电子邮箱",
+      "phoneRequired": "电话号码是必填项",
+      "countryRequired": "国家是必填项",
+      "locationRequired": "位置（城市）是必填项",
+      "commentsRequired": "备注是必填项",
+      "phoneNotVerified": "请先验证您的电话号码",
+      "phoneNotVerifiedDetails": "请在下方电话号码验证区域点击“请先验证电话”。",
+      "invalidOtp": "请输入有效的6位数OTP",
+      "otpExpired": "OTP已过期，请请求新的验证码。"
+    },
+    "userExists": {
+      "email": "此邮箱已注册。请登录或使用其他邮箱。",
+      "phone": "此电话号码已注册。请登录或使用其他号码。",
+      "signInLink": "改为登录 →",
+      "message": "请登录或使用其他凭证。"
+    },
+    "otp": {
+      "invalidCode": "无效的OTP验证码。请检查后重试。",
+      "expired": "OTP验证码已过期。请重新请求。",
+      "invalid": "无效的验证代码"
+    },
+    "submission": {
+      "failed": "请求提交失败。请再试一次。",
+      "phoneCheckFailed": "凭证验证失败。请再试一次。",
+      "sendOtpFailed": "验证码发送失败",
+      "invalidPhone": "无效的电话号码格式",
+      "tooManyRequests": "请求过多。请稍后再试。",
+      "quotaExceeded": "SMS 配额已用完。请稍后再试。"
+    }
+  },
+  "success": {
+    "title": {
+      "trial": "🎯 请求已收到！",
+      "sponsor": "💚 请求已收到！"
+    },
+    "phoneVerified": "电话号码已验证 ✅",
+    "message": {
+      "trial": "我们已收到您的试用访问请求，并将根据可用配额进行审核。",
+      "sponsor": "我们已收到您的赞助支持请求，并将根据赞助者兴趣进行审核。"
+    },
+    "whatHappensNext": {
+      "title": "📧 接下来会发生什么？",
+      "trial": {
+        "item1": "我们已收到您的试用访问请求",
+        "item2": "我们将根据当前可用配额审核您的请求",
+        "item3": "请检查您的邮箱以获取注册链接",
+        "item4": "成功注册后您将获得 1 个免费积分",
+        "item5": "匹配成功后，我们将发送链接以便您探索德瑞希Q"
+      },
+      "sponsor": {
+        "item1": "我们已收到您的赞助支持请求",
+        "item2": "我们将审核您的请求并与赞助者兴趣进行匹配",
+        "item3": "请检查您的邮箱以获取注册链接",
+        "item4": "批准后，您将获得赞助支持并可访问德瑞希Q",
+        "item5": "匹配成功后，我们将发送链接以便您探索德瑞希Q"
+      }
+    },
+    "youtube": {
+      "title": "观看德瑞希Q的实际演示"
+    },
+    "buttons": {
+      "returnHome": "返回首页",
+      "learnMore": "了解更多关于德瑞希Q的信息"
+    }
+  },
+  "thankYou": {
+    "trialAccess": {
+      "title": "🎯 试用访问请求已收到！",
+      "subtitle": "感谢您对德瑞希Q的兴趣",
+      "message": "我们已收到您的试用请求，并将根据可用配额进行审核。",
+      "whatHappensNext": {
+        "title": "📧 接下来会发生什么？",
+        "item1": "我们已收到您的试用请求",
+        "item2": "我们将根据当前可用配额审核",
+        "item3": "如果匹配成功，我们将发送注册链接",
+        "item4": "请检查您的邮箱以获取注册链接",
+        "item5": "成功注册后您将获得 1 个免费积分"
+      }
+    },
+    "sponsorSupport": {
+      "title": "💚 赞助支持请求已收到！",
+      "subtitle": "感谢您寻求赞助支持",
+      "message": "我们已收到您的请求并将与赞助者兴趣进行匹配。",
+      "whatHappensNext": {
+        "title": "📧 接下来会发生什么？",
+        "item1": "我们已收到您的赞助支持请求",
+        "item2": "我们将审核并与赞助者兴趣匹配",
+        "item3": "如果匹配成功，我们将发送注册链接",
+        "item4": "请检查您的邮箱以获取注册链接",
+        "item5": "批准后，您将获得赞助支持并可访问德瑞希Q"
+      }
+    },
+    "requestId": {
+      "label": "请求 ID：",
+      "info": "请保留此 ID 以便在联系支持团队时使用。"
+    },
+    "buttons": {
+      "returnHome": "返回首页",
+      "learnMore": "了解更多关于德瑞希Q的信息"
+    },
+    "support": {
+      "title": "需要帮助？",
+      "message": "请联系支持团队",
+      "email": "support@drishiq.com"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+This is a normal message without any ACTION_PACKET block.
+
+---END---
+MACHINE_OK

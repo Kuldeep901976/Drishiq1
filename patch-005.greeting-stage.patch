@@ -1,0 +1,26 @@
+--- a/lib/ddsa/stages/greeting-stage.ts
++++ b/lib/ddsa/stages/greeting-stage.ts
+@@ -546,7 +546,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+     if (audit && typeof audit.log === 'function') {
+       await audit.log('GREETING.SENT', {
+         threadId,
+         userId: input.userId,
+         userName: greetingName,
+         source: 'greeting-handler',
+         hasCFQBlock: false // No CFQ blocks in greeting
+-      });
++      }, input.tenantId);
+     }
+ 
+     return {
+@@ -587,7 +587,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+     if (audit && typeof audit.log === 'function') {
+       await audit.log('GREETING.FAILED', {
+         threadId,
+         error: error.message
+-      });
++      }, input.tenantId);
+     }
+ 
+     return {
+

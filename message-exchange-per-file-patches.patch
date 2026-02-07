@@ -1,0 +1,179 @@
+*** Begin Patch
+*** Update File: lib/ddsa/stages/intent-stage.ts
+@@
+-  const { getMessageExchangeLayer } = await import('../message-exchange-layer');
+-  const exchangeLayer = getMessageExchangeLayer();
++  // Migrated: use new MessageExchangeAdapter and persistent thread manager
++  import MessageExchangeAdapter from '@/lib/ddsa/messageExchangeAdapter';
++  import { PersistentThreadManager } from '@/packages/core/persistent-thread-manager';
++  const threadManager = new PersistentThreadManager();
++  // NOTE: removed getMessageExchangeLayer() usage. Use MessageExchangeAdapter directly for assistant responses
+@@
+-  const messageResult = await exchangeLayer.createMessage(assistantThreadId, systemPrompt, 'user');
++  // Persist the user message using application thread manager (replaces exchangeLayer.createMessage(...,'user'))
++  await threadManager.addMessage(assistantThreadId, {
++    id: `user_${Date.now()}`,
++    threadId: assistantThreadId,
++    role: 'user',
++    content: systemPrompt,
++    messageType: 'text',
++    tags: [],
++    metadata: {},
++    createdAt: new Date(),
++    processingTimeMs: 0
++  });
+@@
+-  const runResult = await exchangeLayer.createRun(assistantThreadId);
++  /* TODO: MANUAL REVIEW: createRun was used to create a provider-run and then poll it.
++     Replace with one of:
++       - synchronous call via MessageExchangeAdapter.createAssistantMessage(...) if immediate response is acceptable, or
++       - schedule a background job that calls Responses API and updates DB, then poll job status.
++     For now we keep a placeholder to flag manual migration.
++  */
++  // const runResult = await exchangeLayer.createRun(assistantThreadId); // DEPRECATED
++  const runResult = { runId: null }; // placeholder
+@@
+-  const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30);
++  /* TODO: MANUAL REVIEW: pollRun polled provider-run status. Replace with job-status polling if you use background jobs.
++     Placeholder kept for flow continuity.
++  */
++  // const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30); // DEPRECATED
++  const pollResult = { status: 'placeholder' };
+@@
+-  const messageResponse = await exchangeLayer.getLatestAssistantMessage(assistantThreadId);
+-  const assistantText = messageResponse?.message ?? '';
++  // Replace getLatestAssistantMessage with adapter helper
++  const latest = (await MessageExchangeAdapter.getLatestAssistantMessages(assistantThreadId, 1))[0] || null;
++  const assistantText = latest?.content ?? '';
+*** End Patch
+
+*** Begin Patch
+*** Update File: lib/ddsa/openai-assistant-helper.ts
+@@
+-import { getMessageExchangeLayer } from './message-exchange-layer';
++// Migrated: use MessageExchangeAdapter and PersistentThreadManager
++import MessageExchangeAdapter from '@/lib/ddsa/messageExchangeAdapter';
++import { PersistentThreadManager } from '@/packages/core/persistent-thread-manager';
++const threadManager = new PersistentThreadManager();
+@@
+-  const exchangeLayer = getMessageExchangeLayer();
+-
+-  const messageResult = await exchangeLayer.createMessage(assistantThreadId, fullPrompt, 'user');
++  // Persist user message to app-managed thread (replaces createMessage(..., 'user'))
++  await threadManager.addMessage(assistantThreadId, {
++    id: `user_${Date.now()}`,
++    threadId: assistantThreadId,
++    role: 'user',
++    content: fullPrompt,
++    messageType: 'text',
++    tags: [],
++    metadata: {},
++    createdAt: new Date(),
++    processingTimeMs: 0
++  });
+@@
+-  const runResult = await exchangeLayer.createRun(assistantThreadId);
+-  const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30);
++  /* TODO: MANUAL REVIEW: createRun/pollRun previously used provider-side runs.
++     Replace with:
++       - MessageExchangeAdapter.createAssistantMessage({...}) for synchronous call, or
++       - schedule background job & poll job status
++  */
++  // const runResult = await exchangeLayer.createRun(assistantThreadId); // DEPRECATED
++  const runResult = { runId: null };
++  // const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30); // DEPRECATED
++  const pollResult = { status: 'placeholder' };
+@@
+-  const runResult = await exchangeLayer.createRun(assistantThreadId);
+-  const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30);
++  /* TODO: MANUAL REVIEW: replace createRun/pollRun; see notes above */
++  const runResult = { runId: null };
++  const pollResult = { status: 'placeholder' };
+@@
+-  const messageResponse = await exchangeLayer.getLatestAssistantMessage(assistantThreadId);
+-  const assistantAnswer = messageResponse?.message ?? '';
++  const latest = (await MessageExchangeAdapter.getLatestAssistantMessages(assistantThreadId, 1))[0] || null;
++  const assistantAnswer = latest?.content ?? '';
+@@
+-  const exchangeLayer = getMessageExchangeLayer();
+-
+-  const messageResult = await exchangeLayer.createMessage(assistantThreadId, answerMessage, 'user');
++  // Persist user message for processing answer flow
++  await threadManager.addMessage(assistantThreadId, {
++    id: `user_${Date.now()}`,
++    threadId: assistantThreadId,
++    role: 'user',
++    content: answerMessage,
++    messageType: 'text',
++    tags: [],
++    metadata: {},
++    createdAt: new Date(),
++    processingTimeMs: 0
++  });
+@@
+-  const assistantResponse = await exchangeLayer.getLatestAssistantMessage(assistantThreadId);
+-  const assistantText = assistantResponse?.message ?? '';
++  const latest2 = (await MessageExchangeAdapter.getLatestAssistantMessages(assistantThreadId, 1))[0] || null;
++  const assistantText = latest2?.content ?? '';
+*** End Patch
+
+*** Begin Patch
+*** Update File: lib/ddsa/message-exchange-fallback.ts
+@@
+-export class FallbackMessageExchangeLayer {
++/**
++ * FallbackMessageExchangeLayer
++ *
++ * This fallback provides stub implementations compatible with the old
++ * MessageExchangeLayer interface. It intentionally does not call the OpenAI
++ * Assistants API. Keep as fallback compatibility for now.
++ *
++ * NOTE: Prefer using MessageExchangeAdapter for new code.
++ */
++export class FallbackMessageExchangeLayer {
+@@
+   async createMessage(threadId: string, content: string, role: 'user' | 'assistant' = 'user'): Promise<...> {
+-    // stub: do nothing or persist locally
+-    return { ok: true, threadId, content, role };
++    // stub: do nothing or persist locally
++    // For compat: persist to app thread store if desired, otherwise return placeholder
++    return { ok: true, threadId, content, role };
+   }
+@@
+   async createRun(threadId: string, assistantId?: string): Promise<...> {
+-    // stub: return fake run
+-    return { runId: null };
++    // stub: return fake run - callers should migrate to adapter or background jobs
++    return { runId: null };
+   }
+@@
+   async pollRun(threadId: string, runId: string, maxAttempts: number = 60): createRun(threadId: string, assistantId?: string): Promise<...> {
+-    // stub: immediately report completed (no run exists)
+-    return { status: 'completed' };
++    // stub: immediately report completed (no run exists)
++    return { status: 'completed' };
+   }
+@@
+   async getLatestAssistantMessage(threadId: string): Promise<...> {
+-    // stub: no message available
+-    return { message: null };
++    // stub: no message available. New code should call MessageExchangeAdapter.getLatestAssistantMessages(...)
++    return { message: null };
+   }
+ }
+*** End Patch
+
+*** Begin Patch
+*** Update File: app/api/reset-thread/route.ts
+@@
+-  const thread = await client.beta.threads.create();
++  // Migration: avoid using provider-managed threads (beta.threads).
++  // Use an app-managed thread id (UUID) and persist into chat_threads as needed.
++  // Generate a UUID for the new thread.
++  const { v4: uuidv4 } = await import('uuid');
++  const threadId = uuidv4();
++  // TODO: Persist threadId into chat_threads table (e.g., INSERT INTO chat_threads ...)
++  // Note: callers previously expected 'thread.id' — we return an object with id property for compatibility.
++  const thread = { id: threadId };
+*** End Patch
+

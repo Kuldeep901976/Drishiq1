@@ -1,0 +1,406 @@
+{
+  "hero": {
+    "authenticated": {
+      "badge": "Share Your Testimonial",
+      "title": "Your Testimonial Matters.",
+      "subtitle": "Help Others Discover DrishiQ.",
+      "description": "Share your authentic experience with DrishiQ. Your testimonial helps others discover how we can transform their lives."
+    },
+    "guest": {
+      "badge": "Share Your Unique Challenge",
+      "title": "Share Your Unique Challenge.",
+      "subtitle": "We'll Offer If It's Really Unique.",
+      "description": "Tell us about your unique challenge. If it's truly unique, we'll offer you a personalized solution to help you overcome it."
+    }
+  },
+  "form": {
+    "title": {
+      "authenticated": "Share Your Testimonial",
+      "guest": "Share Your Unique Challenge"
+    },
+    "subtitle": {
+      "authenticated": "Help others discover how DrishiQ can transform their lives by sharing your authentic experience.",
+      "guest": "Tell us about your unique challenge. If it's truly unique, we'll offer you a personalized solution."
+    },
+    "personal_info": {
+      "title": "Your Information",
+      "fields": {
+        "name": {
+          "label": "Full Name *",
+          "placeholder": "Enter your full name"
+        },
+        "email": {
+          "label": "Email Address *",
+          "placeholder": "your.email@example.com"
+        },
+        "phone": {
+          "label": "Phone Number *",
+          "placeholder": "Enter phone number"
+        },
+        "profession": {
+          "label": "Profession / Role",
+          "placeholder": "e.g., Software Engineer, Student, Entrepreneur"
+        },
+        "preferred_language": {
+          "label": "Preferred Language *",
+          "placeholder": "Select your preferred language"
+        }
+      }
+    },
+    "story_section": {
+      "title": {
+        "authenticated": "Your Testimonial",
+        "guest": "Your Unique Challenge"
+      },
+      "rating": {
+        "label": "Rating *",
+        "excellent": "⭐ Excellent",
+        "very_good": "👍 Very Good",
+        "good": "👍 Good",
+        "fair": "👌 Fair",
+        "poor": "👌 Poor"
+      },
+      "role": {
+        "label": "Your Role *",
+        "placeholder": "e.g., Software Engineer, Student, Entrepreneur, etc."
+      },
+      "story": {
+        "placeholder": {
+          "authenticated": "Share your authentic experience with DrishiQ. How has it helped you? What challenges did it help you overcome? What would you tell others about your journey?",
+          "guest": "Describe your unique challenge in detail. What makes it unique? What have you tried so far? What specific help are you looking for?"
+        },
+        "hint": {
+          "authenticated": "Minimum 100 characters. Be as detailed as you'd like to help others.",
+          "guest": "Minimum 100 characters. Be specific about what makes your challenge unique."
+        },
+        "character_count": "{count}/1000"
+      },
+      "image_upload": {
+        "label": "Click to Upload Photo",
+        "hint": "JPG, PNG up to 5MB",
+        "change": "Change"
+      }
+    },
+    "phone_verification": {
+      "title": "Phone Verification Required",
+      "description": {
+        "frozen": "Please confirm your phone number to receive the verification code",
+        "otp": "Enter the OTP code sent to your phone"
+      },
+      "phone_label": "Phone Number",
+      "phone_locked_hint": "This number is locked for verification. Contact support if you need to change it.",
+      "phone_verify_hint": "Verify this phone number to continue with your story submission.",
+      "otp_label": "Enter 6-Digit Code",
+      "otp_placeholder": "000000",
+      "otp_sent_to": "OTP sent to {phone}",
+      "buttons": {
+        "send_otp": "Send Verification Code",
+        "sending": "Sending OTP...",
+        "verify_submit": "Verify & Submit Story",
+        "verifying": "Verifying...",
+        "resend": "🔄 Resend OTP (Click Here)",
+        "resend_countdown": "Resend OTP ({count}s)",
+        "back_to_form": "← Back to Form"
+      },
+      "errors": {
+        "phone_required": "Please enter your phone number and select country code",
+        "otp_invalid": "Please enter a valid 6-digit OTP",
+        "otp_expired": "OTP session expired. Please request a new code.",
+        "otp_wrong": "Invalid OTP code. Please check and try again.",
+        "otp_expired_code": "OTP code expired. Please request a new one.",
+        "verification_failed": "Failed to send OTP. Please try again.",
+        "system_not_ready": "Verification system not ready. Please refresh and try again."
+      }
+    },
+    "info_note": {
+      "title": "What happens next?",
+      "description": "Since you are not logged in, we will verify your phone number to ensure authenticity. After verification, your challenge will be reviewed by our team. If it's truly unique, we'll offer you a personalized solution."
+    },
+    "guidelines": {
+      "title": "Story Guidelines",
+      "subtitle": "Tips for sharing your experience",
+      "tips": [
+        "Be specific about the challenge you faced",
+        "Describe how DrishiQ helped you find clarity",
+        "Share the positive changes you experienced",
+        "Use your own words and authentic voice",
+        "Consider how your story might help others"
+      ]
+    },
+    "impact_stats": {
+      "title": "Your Story Matters",
+      "description": "Stories like yours have helped thousands of people take their first step",
+      "stories_shared": "Stories Shared",
+      "people_inspired": "People Inspired"
+    },
+    "buttons": {
+      "back_to_stories": "Back to Stories",
+      "submit_testimonial": "Submit Testimonial",
+      "share_challenge": "Share My Challenge",
+      "submitting": "Submitting..."
+    },
+    "validation": {
+      "image_size": "Image size must be less than 5MB. Please choose a smaller image.",
+      "image_type": "Please upload a valid image file (JPG, PNG, or WEBP).",
+      "story_min": "Please write at least 100 characters",
+      "required": "This field is required"
+    },
+    "errors": {
+      "submission_failed": "Error submitting your experience. Please try again.",
+      "user_not_found": "User not found in users table",
+      "api_error": "Failed to submit your story. Please try again or contact support."
+    },
+    "success_alert": {
+      "authenticated": "Thank you for sharing your testimonial! We will review it and get back to you soon."
+    }
+  },
+  "thank_you": {
+    "title": "Thank You! 🙏",
+    "subtitle": "Your Story Has Been Submitted Successfully",
+    "description": {
+      "main": "We've received your unique challenge and our team will review it carefully.",
+      "sub": "If your challenge is truly unique, we'll reach out to you with a personalized solution to help you overcome it."
+    },
+    "what_happens_next": {
+      "title": "What Happens Next?",
+      "steps": {
+        "review": {
+          "number": "1️⃣",
+          "title": "Review Process",
+          "description": "Our team will carefully review your submission"
+        },
+        "evaluation": {
+          "number": "2️⃣",
+          "title": "Evaluation",
+          "description": "We'll assess if your challenge is unique and requires our specialized approach"
+        },
+        "contact": {
+          "number": "3️⃣",
+          "title": "Contact",
+          "description": "If approved, we'll reach out to you via email with next steps"
+        }
+      }
+    },
+    "video": {
+      "title": "Watch Our Latest Video",
+      "playlist_link": "View Full Playlist →"
+    },
+    "buttons": {
+      "go_home": "🏠 Go to Home",
+      "read_blogs": "📖 Read and Share Blogs"
+    }
+  },
+  "testimonial_form": {
+    "title": {
+      "label": "Story Title",
+      "placeholder": "Give your story a compelling title (optional)...",
+      "hint": "A title helps others find and understand your story better"
+    },
+    "content": {
+      "label": "Your Story *",
+      "placeholder": "Share your experience with DrishiQ. What challenges did you face? How did DrishiQ help? What changed in your life?"
+    },
+    "rating": {
+      "label": "Rating *",
+      "excellent": "Excellent",
+      "very_good": "Very Good",
+      "good": "Good",
+      "fair": "Fair",
+      "poor": "Poor"
+    },
+    "category": {
+      "label": "Category",
+      "placeholder": "Select a category (optional)",
+      "custom": {
+        "label": "Specify Your Category *",
+        "placeholder": "Enter your specific category (e.g., Health & Wellness, Financial Planning, etc.)",
+        "hint": "Please provide a specific category that best describes your experience"
+      }
+    },
+    "anonymous": {
+      "label": "Submit anonymously",
+      "user_info": {
+        "title": "Your Testimonial will be submitted as:",
+        "name": "Name:",
+        "email": "Email:"
+      },
+      "fields": {
+        "display_name": {
+          "label": "Display Name",
+          "placeholder": "e.g., John D."
+        },
+        "role": {
+          "label": "Role/Profession",
+          "placeholder": "e.g., Software Engineer"
+        },
+        "location": {
+          "label": "Location",
+          "placeholder": "e.g., New York, USA"
+        }
+      }
+    },
+    "profile_image": {
+      "label": "Profile Image",
+      "upload": {
+        "label": "Upload your own image",
+        "remove": "Remove"
+      },
+      "avatar": {
+        "label": "Or choose from our avatars",
+        "placeholder": "Select an avatar (optional)",
+        "selected": "✓ Avatar selected",
+        "change": "Change"
+      }
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "submit": "Submit Testimonial",
+      "submitting": "Submitting..."
+    },
+    "errors": {
+      "login_required": "Please log in to submit a testimonial or check \"Submit anonymously\" to submit without logging in.",
+      "submission_failed": "Failed to submit testimonial"
+    },
+    "success": {
+      "title": "Thank You!",
+      "message": "Your testimonial has been submitted successfully and is pending approval. You'll be redirected to the testimonials page shortly."
+    }
+  },
+  "testimonial_success": {
+    "title": "🎉 Thank You for Sharing Your Story!",
+    "message": "Your testimonial has been submitted successfully and is pending review. We appreciate you taking the time to share your experience with our community.",
+    "what_happens_next": {
+      "title": "What Happens Next?",
+      "review": {
+        "title": "Review Process",
+        "description": "Our team will review your submission within 24-48 hours"
+      },
+      "featured": {
+        "title": "Featured Stories",
+        "description": "Exceptional stories may be featured on our homepage"
+      },
+      "community": {
+        "title": "Community Impact",
+        "description": "Your story could inspire others seeking clarity"
+      }
+    },
+    "buttons": {
+      "go_home": "🏠 Go Home",
+      "submit_another": "📝 Submit Another Story"
+    },
+    "community_feedback": {
+      "title": "💭 Help Us Build a Better Community",
+      "vision_title": "🌟 Join Our Vision: A Community of Shared Experiences",
+      "vision_description": "We're building something bigger than just a platform. This is the foundation of a community where people who share your pain, happiness, failures, and successes can connect, support, and grow together. Your feedback shapes this important mission.",
+      "pipeline_vision": "Our Pipeline Vision: A space where your story becomes someone else's hope, where shared struggles create collective strength, and where every experience contributes to building a community that truly understands.",
+      "buttons": {
+        "share_vision": "💬 Share Your Vision",
+        "join_movement": "🌱 Join the Movement"
+      }
+    },
+    "bottom_cta": {
+      "title": "Ready for Your Next Clarity Session?",
+      "description": "Continue your journey of self-discovery with DrishiQ",
+      "buttons": {
+        "start_session": "💬 Start a New Session",
+        "return_home": "🏠 Return Home"
+      }
+    }
+  },
+  "submit": {
+    "title": "Share Your Testimonial",
+    "subtitle": "Your experience can inspire others. Tell us how DrishiQ has impacted your life.",
+    "success_page": {
+      "title": "🎉 Thank You for Sharing Your Story!",
+      "message": "Your testimonial has been submitted successfully and is pending review. We appreciate you taking the time to share your experience with our community.",
+      "go_home": "🏠 Go Home"
+    }
+  },
+  "success_page": {
+    "what_happens_next": {
+      "title": "What Happens Next?"
+    },
+    "review_process": "Review Process",
+    "review_description": "Our team will review your submission within 24-48 hours",
+    "featured_stories": "Featured Stories",
+    "featured_description": "Exceptional stories may be featured on our homepage",
+    "community_impact": "Community Impact",
+    "community_description": "Your story could inspire others seeking clarity",
+    "submit_another": "📝 Submit Another Story",
+    "help_community": "💭 Help Us Build a Better Community",
+    "join_vision": "🌟 Join Our Vision: A Community of Shared Experiences",
+    "vision_description": "We're building something bigger than just a platform. This is the foundation of a community where people who share your pain, happiness, failures, and successes can connect, support, and grow together. Your feedback shapes this important mission.",
+    "pipeline_vision": "Our Pipeline Vision: A space where your story becomes someone else's hope, where shared struggles create collective strength, and where every experience contributes to building a community that truly understands.",
+    "share_vision": "💬 Share Your Vision",
+    "join_movement": "🌱 Join the Movement",
+    "next_clarity": "Ready for Your Next Clarity Session?",
+    "continue_journey": "Continue your journey of self-discovery with DrishiQ",
+    "start_session": "💬 Start a New Session",
+    "return_home": "🏠 Return Home"
+  },
+  "ui_elements": {
+    "hero": {
+      "title": "Real Stories from Real People",
+      "subtitle": "Discover how DrishiQ has transformed lives. Every story is unique.",
+      "cta_button": "✨ Share Your Story"
+    },
+    "filters": {
+      "search_placeholder": "Search testimonials...",
+      "category_label": "All Categories",
+      "rating_label": "All Ratings",
+      "featured_label": "Featured Only",
+      "sort_label": "Sort by:",
+      "sort_options": {
+        "date": "Date",
+        "rating": "Rating",
+        "likes": "Likes",
+        "comments": "Comments"
+      }
+    },
+    "badges": {
+      "featured_story": "🌟 Featured Story",
+      "user_story": "✨ User Story"
+    },
+    "messages": {
+      "loading": "Loading testimonials...",
+      "no_results": "No testimonials found. Share your story first!",
+      "error": "Error loading testimonials"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "loading": "Loading...",
+  "categories": {
+    "career_development": "Career Development",
+    "life_coaching": "Life Coaching",
+    "business_consulting": "Business Consulting",
+    "educational_consulting": "Educational Consulting",
+    "content_marketing": "Content Marketing",
+    "change_management": "Change Management",
+    "management_consulting": "Management Consulting",
+    "marketing_consulting": "Marketing Consulting",
+    "customer_service": "Customer Service",
+    "customer_support": "Customer Support",
+    "life_path_choices": "Life Path & Choices",
+    "confidence_presence": "Confidence & Presence",
+    "growth_capability": "Growth & Capability Building",
+    "relationship_social": "Relationship & Social Balance",
+    "clarity_mental": "Clarity & Mental Resilience",
+    "others": "Others"
+  },
+  "languages": {
+    "english": "English",
+    "hindi": "Hindi",
+    "arabic": "Arabic",
+    "german": "German",
+    "spanish": "Spanish",
+    "french": "French",
+    "chinese": "Chinese",
+    "japanese": "Japanese",
+    "russian": "Russian",
+    "tamil": "Tamil"
+  }
+}
+

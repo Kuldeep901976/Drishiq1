@@ -1,0 +1,40 @@
+--- a/lib/dds-state.ts
++++ b/lib/dds-state.ts
+@@ -42,7 +42,25 @@ export async function loadDdsState(threadId: string): Promise<any | null> {
+   }
+ }
+ 
+-export async function saveDdsState(threadId: string, state: any): Promise<void> {
++/**
++ * Save DDS state with optional tenant context for RLS
++ * @param threadId - Thread ID
++ * @param state - State to save
++ * @param tenantId - Optional tenant ID for RLS context
++ */
++export async function saveDdsState(
++  threadId: string, 
++  state: any,
++  tenantId?: string
++): Promise<void> {
++  if (tenantId) {
++    // Use withTenantContext for RLS
++    try {
++      const { withTenantContext } = await import('@/lib/db/postgres-pool');
++      await withTenantContext(tenantId, async (client) => {
++        await client.query(
++          'UPDATE chat_threads SET dds_state = $1 WHERE id = $2',
++          [JSON.stringify(state), threadId]
++        );
++      });
++      return;
++    } catch (pgError: any) {
++      console.warn('⚠️ [dds-state] Direct Postgres failed, falling back to Supabase:', pgError.message);
++      // Fall through to Supabase fallback
++    }
++  }
++  
++  // Fallback to Supabase (relies on RLS policies if tenantId is in state or table)
+   const supabase = createServiceClient();
+   await supabase.from('chat_threads').update({ dds_state: state }).eq('id', threadId);
+ }
+

@@ -1,0 +1,47 @@
+*** Begin Patch: app/api/reset-thread/route.ts ***
+--- a/app/api/reset-thread/route.ts
++++ b/app/api/reset-thread/route.ts
+@@ -1,7 +1,8 @@
+ import { NextRequest, NextResponse } from "next/server";
+-import OpenAI from "openai";
++// import OpenAI from "openai"; // REMOVED - no longer using beta.threads API
+ 
+-// Lazy initialization - only create client when route handler is called
++// TODO: MANUAL REVIEW - This route should use app-managed threadId instead of creating OpenAI threads
++// Generate a UUID for threadId or use existing thread management system
+ function getOpenAIClient() {
+   if (!process.env.OPENAI_API_KEY) {
+     throw new Error("OPENAI_API_KEY environment variable is not set");
+@@ -12,15 +13,19 @@
+ export async function POST(req: NextRequest) {
+   try {
+     const body = await req.json();
+     const { userId = "anon" } = body as { userId?: string };
+ 
+-    // Create OpenAI client only when handler is called (not during build)
+-    const client = getOpenAIClient();
++    // TODO: MANUAL REVIEW - Replace beta.threads.create() with app-managed threadId
++    // Option 1: Generate a new UUID for the thread
++    // Option 2: Use existing thread management (e.g., create a new chat_threads row)
++    // Option 3: If this route is for resetting, clear existing thread state instead
++    
++    // For now, generating a UUID as placeholder
++    const { v4: uuidv4 } = await import('uuid');
++    const threadId = uuidv4();
+ 
+-    // Create a brand new Assistants thread
+-    const thread = await client.beta.threads.create();
++    // TODO: If you need to persist this threadId, insert into chat_threads table here
++    // Example: await insertChatThread({ id: threadId, userId, ... });
+     
+-    console.log(`🆕 Created new thread for reset: ${thread.id}`);
++    console.log(`🆕 Generated new threadId for reset: ${threadId}`);
+ 
+     return NextResponse.json({
+-      threadId: thread.id,
++      threadId: threadId,
+       message: "Thread reset successfully"
+     });
+   } catch (err: any) {
+*** End Patch ***
+

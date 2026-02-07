@@ -1,0 +1,13 @@
+--- a/lib/ddsa/stages/plan-stage.ts
++++ b/lib/ddsa/stages/plan-stage.ts
+@@ -124,7 +124,7 @@ export async function execute(input: StageInput): Promise<StageResult> {
+     if (audit && typeof audit.log === 'function') {
+       await audit.log('PLAN.FAILED', {
+         threadId,
+         error: error.message
+-      });
++      }, input.tenantId);
+     }
+ 
+     return {
+

@@ -1,0 +1,418 @@
+{
+  "solo": {
+    "topband": {
+      "label": "Solo, no solo estar solo — historias de rostros familiares"
+    },
+    "hero": {
+      "title": "Solo, no silencioso",
+      "subtitle": "Te gusta la libertad. Sientes paz. Y algunas noches, la quietud se siente un poco más fuerte.",
+      "cta": {
+        "primary": "Conéctate contigo mismo — aquí",
+        "secondary": "Cómo ayuda Drisheeq"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "¿Tu espacio está tranquilo — o simplemente vacío?",
+        "1": "¿Quién escucha tus pequeñas victorias hoy?",
+        "2": "¿La rutina te dirige — o te ayuda?",
+        "3": "¿Cuándo fue la última vez que te sentiste completamente visto?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Libertad",
+        "subtitle": "Tus reglas, tu ritmo"
+      },
+      "1": {
+        "title": "Paz",
+        "subtitle": "El silencio que cura"
+      },
+      "2": {
+        "title": "Espacio",
+        "subtitle": "Lugar para crecer"
+      },
+      "3": {
+        "title": "Soledad",
+        "subtitle": "Los bordes que pinchan"
+      },
+      "4": {
+        "title": "Atascado",
+        "subtitle": "Rutina en bucle"
+      },
+      "5": {
+        "title": "Listo",
+        "subtitle": "Para un cambio suave"
+      }
+    },
+    "emotions": {
+      "label": "Cómo puede sentirse la vida en solitario"
+    },
+    "celeb": {
+      "0": {
+        "name": "Serena Williams",
+        "profession": "Tenista",
+        "quote": "\"El enfoque tranquilo antes del partido es crucial.\""
+      },
+      "1": {
+        "name": "Steve Jobs",
+        "profession": "Empresario",
+        "quote": "\"Tu tiempo es limitado, así que no lo desperdicies viviendo la vida de otra persona.\""
+      },
+      "2": {
+        "name": "Emma Watson",
+        "profession": "Actriz",
+        "quote": "\"Nunca me he sentido tan fuerte como cuando estoy sola.\""
+      },
+      "3": {
+        "name": "A.P.J. Abdul Kalam",
+        "profession": "Científico",
+        "quote": "\"El hombre necesita dificultades porque son necesarias para disfrutar del éxito.\""
+      },
+      "4": {
+        "name": "Mary Kom",
+        "profession": "Boxeadora",
+        "quote": "\"No dejes que nadie te diga que no puedes.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Primer apartamento en solitario",
+        "line": "El sueño hecho realidad. El eco vino con él.",
+        "body": "Finalmente tienes un lugar que respira como tú. Pero las primeras noches parecen más grandes que tu voz. La libertad es real — y también la quietud que nadie ve.",
+        "bullet": {
+          "0": "Enciendes programas para compañía, no para la historia.",
+          "1": "La cena es rápida; la silla de enfrente permanece sin usar.",
+          "2": "Las buenas noticias parecen pequeñas cuando no hay testigo."
+        },
+        "nudge": "Formaliza un momento: sirve la comida, enciende una vela, di una línea de gratitud en voz alta — enséñale a la habitación tu voz.",
+        "frame": {
+          "0": {
+            "h": "Noche de libertad",
+            "p": "Tus reglas. Tu lista de reproducción. Las luces como quieras."
+          },
+          "1": {
+            "h": "Eco en la cena",
+            "p": "Silla que nadie jala. Noticias sin lugar."
+          },
+          "2": {
+            "h": "Pequeño ritual",
+            "p": "Coloca un plato. Enciende una vela. Hazlo tuyo."
+          }
+        },
+        "cta": "Pruébalo con Drisheeq →"
+      },
+      "1": {
+        "title": "Lejos de casa",
+        "line": "El brillo de la nueva ciudad. El dolor del domingo.",
+        "body": "Te mudaste por una razón — crecimiento, una oportunidad, un reinicio. Los días de semana están bastante ocupados. Los domingos pueden alargarse como un retraso de aeropuerto en tu propia habitación.",
+        "bullet": {
+          "0": "Pospones llamadas porque 'no hay nada que decir'.",
+          "1": "Trabajas todo el día pero no llenas.",
+          "2": "Las ventanas muestran la vida en progreso y tú observas."
+        },
+        "nudge": "Envía esta frase a alguien 'Pensando en ti, no necesitas responder.' Luego sal por una marca — árbol, café, esquina — y llámala tuya.",
+        "frame": {
+          "0": {
+            "h": "Brillo de la nueva ciudad",
+            "p": "Lavandería, compras, pensamientos que permanecen."
+          },
+          "1": {
+            "h": "Quietud del domingo",
+            "p": "Di hola, no necesitas una razón"
+          },
+          "2": {
+            "h": "Llamada a casa",
+            "p": "Di hola. No necesitas una razón."
+          }
+        },
+        "cta": "Crea una pequeña marca →"
+      },
+      "2": {
+        "title": "Rutina sin fin",
+        "line": "Ser eficiente no es estar nutrido.",
+        "body": "Tu día funciona como una aplicación de lista de tareas — campanas satisfactorias, color mínimo. La máquina funciona. La persona dentro quiere algo más suave.",
+        "bullet": {
+          "0": "Olvidas cuándo reíste en voz alta solo por última vez.",
+          "1": "Haces scroll para dormir y despiertas cansado.",
+          "2": "Cancelas pequeños planes con el tú futuro."
+        },
+        "nudge": "Agrega algo nutritivo que puedas hacer en minutos: estirarte en el piso, llamar a un primo, hacer huevos con atención.",
+        "frame": {
+          "0": {
+            "h": "Victorias en piloto automático",
+            "p": "Gym ✔ Trabajo ✔ Preparación ✔"
+          },
+          "1": {
+            "h": "Momentos silenciosos",
+            "p": "Buenas noticias, nadie que empuje."
+          },
+          "2": {
+            "h": "Agrega una cosa",
+            "p": "Una caminata. Un mensaje. Un descanso en la ventana."
+          }
+        },
+        "cta": "Agrega algo nutritivo →"
+      },
+      "3": {
+        "title": "Victoria en solitario",
+        "line": "Cuando la habitación permanece pequeña y la victoria es grande.",
+        "body": "Lo lograste. La pantalla brilla, el chat hace ping, y luego solo estás tú y el aire. La alegría sin testigos también cuenta — es tuya.",
+        "bullet": {
+          "0": "Quieres compartir pero no quieres parecer necesitado.",
+          "1": "La victoria en una habitación vacía parece pequeña.",
+          "2": "Te preguntas si importa cuando nadie mira."
+        },
+        "nudge": "Toma una foto del momento. Escribe tres palabras que describan cómo se siente. Esta es tu historia para contar.",
+        "frame": {
+          "0": {
+            "h": "Brillo de la pantalla",
+            "p": "Notificación. Logro. Tú."
+          },
+          "1": {
+            "h": "Habitación vacía",
+            "p": "Eco del éxito. Nadie para chocar los cinco."
+          },
+          "2": {
+            "h": "Captúralo",
+            "p": "Foto. Palabras. Tu historia."
+          }
+        },
+        "cta": "Captura tu victoria →"
+      }
+    },
+    "how": {
+      "title": "Cómo Drisheeq marca la diferencia",
+      "0": {
+        "h": "Claridad en solitario",
+        "d": "Ve tus patrones claramente, sin juicio."
+      },
+      "1": {
+        "h": "Empujones suaves",
+        "d": "Pequeños pasos que se ajustan a tu ritmo en solitario."
+      },
+      "2": {
+        "h": "Espacio para respirar",
+        "d": "Herramientas para crear soledad significativa."
+      },
+      "3": {
+        "h": "Elección de conexión",
+        "d": "Decide cuándo y cómo conectarte."
+      }
+    },
+    "nudge": {
+      "label": "Prueba esto:"
+    }
+  },
+  "giving_beyond": {
+    "topband": {
+      "label": "Más allá de dar, no solo generoso — historias de rostros familiares"
+    },
+    "hero": {
+      "title": "Dar más allá de ti mismo",
+      "subtitle": "Tu corazón es tan grande que a menudo olvidas guardar un poco de amor para ti. Ves necesidades en todas partes y te sientes obligado a satisfacerlas, incluso si te cuesta todo.",
+      "cta": {
+        "primary": "Encuentra tu equilibrio de dar →",
+        "secondary": "¿Cómo ayuda Drisheeq?"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "¿Das hasta que no te queda nada para ti?",
+        "1": "¿Sientes culpa cuando no puedes ayudar a alguien?",
+        "2": "¿Pones constantemente las necesidades de otros antes que las tuyas?",
+        "3": "¿Sientes rencor cuando tu generosidad no es apreciada?",
+        "4": "¿Cómo se sentiría dar desde un lugar de abundancia en lugar de vacío?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Generoso",
+        "subtitle": "Siempre listo para dar"
+      },
+      "1": {
+        "title": "Agotado",
+        "subtitle": "Dar hasta el vacío"
+      },
+      "2": {
+        "title": "Resentido",
+        "subtitle": "Cuando dar no es correspondido"
+      },
+      "3": {
+        "title": "Culpable",
+        "subtitle": "Cuando no puedes ayudar"
+      },
+      "4": {
+        "title": "Invisible",
+        "subtitle": "Tus necesidades son pasadas por alto"
+      },
+      "5": {
+        "title": "Sabio",
+        "subtitle": "Aprendiendo a dar sabiamente"
+      }
+    },
+    "emotions": {
+      "label": "Cómo puede sentirse dar más allá"
+    },
+    "celeb": {
+      "0": {
+        "name": "Madre Teresa",
+        "profession": "Humanitaria",
+        "quote": "\"No es cuánto damos sino cuánto amor ponemos en dar lo que importa.\""
+      },
+      "1": {
+        "name": "Martin Luther King Junior",
+        "profession": "Líder de derechos civiles",
+        "quote": "\"La pregunta más persistente y urgente de la vida es: '¿Qué estás haciendo por los demás?'\""
+      },
+      "2": {
+        "name": "Nelson Mandela",
+        "profession": "Líder",
+        "quote": "\"Lo que cuenta en la vida no es el mero hecho de haber vivido. Es la diferencia que hemos hecho en la vida de los demás.\""
+      },
+      "3": {
+        "name": "Malala Yousafzai",
+        "profession": "Activista",
+        "quote": "\"Cuando todo el mundo está en silencio, incluso una voz se vuelve poderosa.\""
+      },
+      "4": {
+        "name": "Oprah Winfrey",
+        "profession": "Líder de medios",
+        "quote": "\"La mayor aventura que puedes emprender es vivir la vida de tus sueños.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Dar más allá de tus límites",
+        "line": "Das hasta que no queda nada por dar.",
+        "body": "Tu corazón es tan grande que a menudo olvidas guardar un poco de amor para ti. Ves necesidades en todas partes y te sientes obligado a satisfacerlas, incluso si te cuesta todo.",
+        "bullet": {
+          "0": "Constantemente pones las necesidades de otros antes que las tuyas.",
+          "1": "Sientes culpa cuando no puedes ayudar a alguien.",
+          "2": "Rara vez pides ayuda, incluso cuando la necesitas desesperadamente."
+        },
+        "nudge": "Hoy, identifica una pequeña forma de cuidarte sin sentir culpa.",
+        "frame": {
+          "0": {
+            "h": "Mano amiga",
+            "p": "Siempre extendiendo la mano"
+          },
+          "1": {
+            "h": "Taza vacía",
+            "p": "Corriendo en vacío"
+          },
+          "2": {
+            "h": "Corazón de oro",
+            "p": "Intenciones puras"
+          }
+        },
+        "cta": "Aprende a dar de manera sostenible →"
+      },
+      "1": {
+        "title": "Equilibrio del servicio",
+        "line": "El verdadero servicio incluye cuidar al servidor.",
+        "body": "Los ayudantes más efectivos son aquellos que mantienen su propio bienestar. Cuando estás vacío, no puedes dar tu mejor versión a nadie.",
+        "bullet": {
+          "0": "Regularmente descuidas tu salud y necesidades.",
+          "1": "Sientes que nunca haces suficiente, sin importar cuánto des.",
+          "2": "Luchas para establecer límites con aquellos a quienes ayudas."
+        },
+        "nudge": "Esta semana, establece un límite: di 'Puedo ayudar, pero no ahora' a una solicitud.",
+        "frame": {
+          "0": {
+            "h": "Balanzas equilibradas",
+            "p": "Encontrando el equilibrio"
+          },
+          "1": {
+            "h": "Autocuidado",
+            "p": "Recargándote a ti mismo"
+          },
+          "2": {
+            "h": "Límites saludables",
+            "p": "Protegiendo tu energía"
+          }
+        },
+        "cta": "Construye hábitos de dar sostenibles →"
+      },
+      "2": {
+        "title": "El ciclo del vacío",
+        "line": "Dar sin recibir crea un ciclo insostenible.",
+        "body": "Cuando solo das y nunca recibes, creas un flujo unidireccional que finalmente conduce al agotamiento. Dar saludablemente implica tanto dar como recibir.",
+        "bullet": {
+          "0": "Te sientes incómodo cuando otros intentan ayudarte.",
+          "1": "Crees que pedir ayuda te convierte en una carga.",
+          "2": "Has olvidado cómo recibir con gracia."
+        },
+        "nudge": "Practica recibir: esta semana, acepta una pequeña oferta de ayuda sin explicar por qué la necesitas.",
+        "frame": {
+          "0": {
+            "h": "Ciclo de dar",
+            "p": "Flujo continuo"
+          },
+          "1": {
+            "h": "Recibir ayuda",
+            "p": "Aprendiendo a aceptar"
+          },
+          "2": {
+            "h": "Renovación",
+            "p": "Encontrando el equilibrio"
+          }
+        },
+        "cta": "Rompe el ciclo del vacío →"
+      },
+      "3": {
+        "title": "Impacto sostenible",
+        "line": "El dar más poderoso viene de un corazón lleno.",
+        "body": "Cuando te cuidas mientras cuidas de otros, tu impacto se multiplica. Te conviertes en una fuerza sostenible para el bien en el mundo.",
+        "bullet": {
+          "0": "Quieres hacer una diferencia duradera en el mundo.",
+          "1": "Estás listo para aprender prácticas de dar sostenibles.",
+          "2": "Quieres inspirar a otros con tu ejemplo."
+        },
+        "nudge": "Comparte tu viaje de dar con alguien que pueda beneficiarse de tu experiencia.",
+        "frame": {
+          "0": {
+            "h": "Efecto dominó",
+            "p": "Creando impacto duradero"
+          },
+          "1": {
+            "h": "Inspirando a otros",
+            "p": "Liderando con el ejemplo"
+          },
+          "2": {
+            "h": "Dar sostenible",
+            "p": "Impacto a largo plazo"
+          }
+        },
+        "cta": "Crea un impacto duradero →"
+      }
+    },
+    "how": {
+      "title": "Cómo Drisheeq marca la diferencia",
+      "0": {
+        "h": "Rastreador de equilibrio de dar",
+        "d": "Ve dónde y cuánto estás dando."
+      },
+      "1": {
+        "h": "Herramientas de descanso y renovación",
+        "d": "Incorpora la reposición en tu rutina."
+      },
+      "2": {
+        "h": "Coaching de límites",
+        "d": "Aprende a decir sí sin perderte a ti mismo."
+      },
+      "3": {
+        "h": "Planificación de impacto",
+        "d": "Enfócate en dar que perdure."
+      }
+    },
+    "nudge": {
+      "label": "Prueba esto:"
+    },
+    "bridge": {
+      "title": "Puedes dar sin perder tu luz.",
+      "body": "Drisheeq ayuda a quienes dan a encontrar el equilibrio entre la generosidad y la sostenibilidad personal, para que tu bondad se convierta en una fortaleza de por vida.",
+      "cta": "Comienza tu chequeo de claridad →"
+    }
+  }
+}

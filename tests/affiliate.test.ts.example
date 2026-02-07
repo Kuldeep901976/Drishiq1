@@ -1,0 +1,126 @@
+// tests/affiliate.test.ts.example
+// Example test file for affiliate system
+// Install: npm install --save-dev @testing-library/react @testing-library/jest-dom jest
+
+import { 
+  calculateEarnings, 
+  checkSelfReferral,
+  parseAffiliateCookie,
+  isAffiliateCookieValid
+} from '../lib/affiliate-utils';
+
+describe('Affiliate Utilities', () => {
+  describe('calculateEarnings', () => {
+    it('calculates percentage earnings correctly', () => {
+      const amount = calculateEarnings(1000, 'percentage', 10, 'purchase');
+      expect(amount).toBe(100);
+    });
+
+    it('calculates fixed earnings correctly', () => {
+      const amount = calculateEarnings(1000, 'fixed', 50, 'purchase');
+      expect(amount).toBe(50);
+    });
+
+    it('applies signup rate adjustment', () => {
+      const purchaseAmount = calculateEarnings(1000, 'percentage', 10, 'purchase');
+      const signupAmount = calculateEarnings(1000, 'percentage', 10, 'signup');
+      expect(signupAmount).toBe(purchaseAmount * 0.5);
+    });
+  });
+
+  describe('checkSelfReferral', () => {
+    it('detects self-referral by email domain', () => {
+      const isSelf = checkSelfReferral('user@example.com', 'affiliate@example.com');
+      expect(isSelf).toBe(true);
+    });
+
+    it('returns false for different domains', () => {
+      const isSelf = checkSelfReferral('user@example.com', 'affiliate@other.com');
+      expect(isSelf).toBe(false);
+    });
+
+    it('handles null affiliate email', () => {
+      const isSelf = checkSelfReferral('user@example.com', null);
+      expect(isSelf).toBe(false);
+    });
+  });
+
+  describe('parseAffiliateCookie', () => {
+    it('parses valid cookie correctly', () => {
+      const cookie = {
+        refCode: 'TEST01',
+        affiliateId: '123',
+        timestamp: Date.now(),
+        expiresAt: Date.now() + 1000000
+      };
+      const parsed = parseAffiliateCookie(JSON.stringify(cookie));
+      expect(parsed).toEqual(cookie);
+    });
+
+    it('returns null for invalid JSON', () => {
+      const parsed = parseAffiliateCookie('invalid json');
+      expect(parsed).toBeNull();
+    });
+  });
+
+  describe('isAffiliateCookieValid', () => {
+    it('returns true for valid cookie', () => {
+      const cookie = {
+        refCode: 'TEST01',
+        affiliateId: '123',
+        timestamp: Date.now(),
+        expiresAt: Date.now() + 1000000
+      };
+      expect(isAffiliateCookieValid(cookie)).toBe(true);
+    });
+
+    it('returns false for expired cookie', () => {
+      const cookie = {
+        refCode: 'TEST01',
+        affiliateId: '123',
+        timestamp: Date.now() - 2000000,
+        expiresAt: Date.now() - 1000000
+      };
+      expect(isAffiliateCookieValid(cookie)).toBe(false);
+    });
+  });
+});
+
+// Integration test example
+describe('Affiliate Attribution Flow', () => {
+  it('should attribute signup to affiliate', async () => {
+    // 1. User clicks affiliate link
+    const clickResponse = await fetch('/api/affiliate/track-click', {
+      method: 'POST',
+      body: JSON.stringify({ refCode: 'TEST01', path: '/' })
+    });
+    expect(clickResponse.ok).toBe(true);
+
+    // 2. User signs up
+    const signupResponse = await fetch('/api/auth/signup', {
+      method: 'POST',
+      body: JSON.stringify({ email: 'test@example.com', password: 'password' })
+    });
+    const { userId } = await signupResponse.json();
+
+    // 3. Attribute signup
+    const attributeResponse = await fetch('/api/affiliate/attribute', {
+      method: 'POST',
+      headers: { 'Cookie': clickResponse.headers.get('Set-Cookie') || '' },
+      body: JSON.stringify({
+        userId,
+        eventType: 'signup',
+        orderTotal: 0
+      })
+    });
+    expect(attributeResponse.ok).toBe(true);
+
+    // 4. Verify earnings created
+    const earningsResponse = await fetch('/api/admin/earnings?affiliate_id=xxx');
+    const earnings = await earningsResponse.json();
+    expect(earnings.data.length).toBeGreaterThan(0);
+  });
+});
+
+
+

@@ -1,0 +1,13 @@
+{
+  "query": "SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'instruction_sets'",
+  "error": {
+    "code": "42P01",
+    "message": "relation \"instruction_sets\" does not exist",
+    "line": 17,
+    "position": 6
+  },
+  "timestamp": "2025-01-10T08:35:00Z",
+  "conclusion": "instruction_sets table does NOT exist in database",
+  "status": "confirmed_missing"
+}
+

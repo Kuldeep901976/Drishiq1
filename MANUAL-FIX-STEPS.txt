@@ -1,0 +1,48 @@
+=================================================================
+  MANUAL FIX FOR ANTIVIRUS FILE LOCKING
+=================================================================
+
+If the batch file didn't work, do this manually:
+
+STEP 1: Open Windows Security
+---------------------------------
+1. Press Windows Key
+2. Type "Windows Security"
+3. Press Enter
+
+STEP 2: Navigate to Exclusions
+---------------------------------
+1. Click "Virus & threat protection" (left sidebar)
+2. Under "Virus & threat protection settings", click "Manage settings"
+3. Scroll down to "Exclusions"
+4. Click "Add or remove exclusions"
+
+STEP 3: Add the Exclusion
+---------------------------------
+1. Click "Add an exclusion"
+2. Click "Folder"
+3. Navigate to: C:\drishiq 1
+4. Select the ".next" folder
+5. Click "Select Folder"
+
+STEP 4: Verify
+---------------------------------
+1. You should see "C:\drishiq 1\.next" in the exclusions list
+2. If you see it, you're done!
+
+STEP 5: Restart
+---------------------------------
+1. RESTART YOUR COMPUTER (this is important!)
+2. After restart, run: npm run dev
+
+=================================================================
+IMPORTANT NOTES:
+=================================================================
+- The exclusion MUST be added for this to work
+- You MUST restart your computer after adding it
+- If you still see file locking errors after restart, the exclusion wasn't added correctly
+- Check the exclusions list to confirm it's there
+
+=================================================================
+
+

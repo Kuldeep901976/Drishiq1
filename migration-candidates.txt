@@ -1,0 +1,195 @@
+=== Migration Candidates for MessageExchangeLayer -> MessageExchangeAdapter ===
+Generated: 2025-01-15
+
+This file lists all files that reference the old MessageExchangeLayer API and need migration.
+
+---
+
+## File 1: lib/ddsa/stages/intent-stage.ts
+
+**Import:**
+Line 488: const { getMessageExchangeLayer } = await import('../message-exchange-layer');
+
+**Usage:**
+Line 489: const exchangeLayer = getMessageExchangeLayer();
+
+**createMessage (user):**
+Line 546: const messageResult = await exchangeLayer.createMessage(assistantThreadId, systemPrompt, 'user');
+
+**createRun:**
+Line 552: const runResult = await exchangeLayer.createRun(assistantThreadId);
+
+**pollRun:**
+Line 558: const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30);
+
+**getLatestAssistantMessage:**
+Line 564: const messageResponse = await exchangeLayer.getLatestAssistantMessage(assistantThreadId);
+
+**Context:**
+This is in the `generateIntentQuestionWithOpenAI` function (around line 475-600). The function:
+- Builds a system prompt for intent classification
+- Creates a user message in the assistant thread
+- Creates and polls a run
+- Gets the latest assistant message
+
+**Variables:**
+- `exchangeLayer` - instance of MessageExchangeLayer
+- `assistantThreadId` - the thread ID
+- `systemPrompt` - the prompt content
+- `runResult.runId` - the run ID from createRun
+- `messageResponse.message` - the assistant's response message
+
+---
+
+## File 2: lib/ddsa/openai-assistant-helper.ts
+
+**Import:**
+Line 8: import { getMessageExchangeLayer } from './message-exchange-layer';
+
+**Usage (Function 1 - generateQuestionWithAssistant):**
+Line 47: const exchangeLayer = getMessageExchangeLayer();
+
+**createMessage (user):**
+Line 158: const messageResult = await exchangeLayer.createMessage(assistantThreadId, fullPrompt, 'user');
+
+**createRun:**
+Line 167: const runResult = await exchangeLayer.createRun(assistantThreadId);
+
+**pollRun (first occurrence - checking active run):**
+Line 141: const pollResult = await exchangeLayer.pollRun(assistantThreadId, activeRun.id, 30);
+
+**pollRun (second occurrence - after createRun):**
+Line 176: const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30);
+
+**getLatestAssistantMessage:**
+Line 185: const messageResponse = await exchangeLayer.getLatestAssistantMessage(assistantThreadId);
+
+**Usage (Function 2 - processAnswerWithAssistant):**
+Line 267: const exchangeLayer = getMessageExchangeLayer();
+
+**createMessage (user):**
+Line 271: const messageResult = await exchangeLayer.createMessage(assistantThreadId, answerMessage, 'user');
+
+**createRun:**
+Line 281: const runResult = await exchangeLayer.createRun(assistantThreadId);
+
+**pollRun:**
+Line 290: const pollResult = await exchangeLayer.pollRun(assistantThreadId, runResult.runId, 30);
+
+**getLatestAssistantMessage:**
+Line 299: const assistantResponse = await exchangeLayer.getLatestAssistantMessage(assistantThreadId);
+
+**Context:**
+This file has two main functions:
+1. `generateQuestionWithAssistant` - generates a question using the assistant API
+2. `processAnswerWithAssistant` - processes a user's answer and gets the next response
+
+Both functions follow the same pattern:
+- Get exchangeLayer instance
+- Create user message
+- Create run
+- Poll run
+- Get latest assistant message
+
+**Variables:**
+- `exchangeLayer` - instance of MessageExchangeLayer
+- `assistantThreadId` - the thread ID
+- `fullPrompt` / `answerMessage` - message content
+- `activeRun.id` - existing run ID (in first pollRun call)
+- `runResult.runId` - the run ID from createRun
+- `messageResponse.message` / `assistantResponse.message` - the assistant's response
+
+---
+
+## File 3: lib/ddsa/message-exchange-fallback.ts
+
+**Class Definition:**
+Line 6: export class FallbackMessageExchangeLayer {
+
+**Methods:**
+Line 10: async createMessage(threadId: string, content: string, role: 'user' | 'assistant' = 'user'): Promise<...>
+Line 34: async createRun(threadId: string, assistantId?: string): Promise<...>
+Line 46: async pollRun(threadId: string, runId: string, maxAttempts: number = 60): Promise<...>
+Line 58: async getLatestAssistantMessage(threadId: string): Promise<...>
+
+**Context:**
+This is a fallback implementation that provides stub methods. It's used when the main MessageExchangeLayer is unavailable. This file might need special consideration:
+- It's a fallback/stub implementation
+- It doesn't actually call the OpenAI API
+- It might be kept as-is or updated to match the new adapter interface
+
+**Note:** This file implements the same interface as MessageExchangeLayer but doesn't use the deprecated API. Consider whether this needs migration or can remain as a fallback.
+
+---
+
+## File 4: app/api/reset-thread/route.ts
+
+**beta.threads usage:**
+Line 21: const thread = await client.beta.threads.create();
+
+**Context:**
+This is creating a new thread using the old beta.threads API. This should be migrated to use the app-managed threadId system instead.
+
+**Variables:**
+- `client` - OpenAI client instance
+- `thread.id` - the created thread ID
+
+---
+
+## Summary
+
+**Files requiring migration:**
+1. lib/ddsa/stages/intent-stage.ts - 1 import, 5 method calls (createMessage, createRun, pollRun, getLatestAssistantMessage)
+2. lib/ddsa/openai-assistant-helper.ts - 1 import, 10 method calls across 2 functions
+3. lib/ddsa/message-exchange-fallback.ts - Fallback implementation (may need special handling)
+4. app/api/reset-thread/route.ts - 1 beta.threads.create() call
+
+**Total method calls to migrate:**
+- createMessage: 4 calls (all 'user' role)
+- createRun: 3 calls
+- pollRun: 4 calls
+- getLatestAssistantMessage: 3 calls
+- beta.threads.create: 1 call
+
+**Files to exclude (no migration needed):**
+- lib/ddsa/message-exchange-layer.ts - The deprecated file itself (already marked deprecated)
+- lib/ddsa/messageExchangeAdapter.ts - The new adapter (target, not source)
+- archive/* - Old archived code
+- patches/* - Test/example code
+
+---
+
+## Migration Patterns Needed
+
+1. **Import replacement:**
+   - `import { getMessageExchangeLayer } from './message-exchange-layer'` 
+   → `import MessageExchangeAdapter from '@/lib/ddsa/messageExchangeAdapter'`
+
+2. **Factory function replacement:**
+   - `const exchangeLayer = getMessageExchangeLayer()`
+   → Remove (use MessageExchangeAdapter directly)
+
+3. **createMessage(user) replacement:**
+   - `await exchangeLayer.createMessage(threadId, content, 'user')`
+   → `await (new PersistentThreadManager()).addMessage(threadId, { ... })`
+
+4. **createRun replacement:**
+   - `await exchangeLayer.createRun(threadId)`
+   → TODO: Manual review - createRun needs to be replaced with Responses API pattern
+
+5. **pollRun replacement:**
+   - `await exchangeLayer.pollRun(threadId, runId, maxAttempts)`
+   → TODO: Manual review - pollRun needs to be replaced with Responses API pattern
+
+6. **getLatestAssistantMessage replacement:**
+   - `await exchangeLayer.getLatestAssistantMessage(threadId)`
+   → `(await MessageExchangeAdapter.getLatestAssistantMessages(threadId, 1))[0] || null`
+
+7. **beta.threads.create replacement:**
+   - `await client.beta.threads.create()`
+   → Use app-managed threadId (generate UUID or use existing thread management)
+
+---
+
+END OF CANDIDATES LIST
+

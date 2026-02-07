@@ -1,0 +1,61 @@
+--- lib/ddsa/db-adapters.ts
++++ lib/ddsa/db-adapters.ts
+@@ -75,9 +75,12 @@
+ export async function getStageById(stageId: string): Promise<NormalizedStage | null> {
+   try {
+     const supabase = createServiceClient();
+     
+-    // Try by stage_id (VARCHAR) first, then by id (UUID)
++    // Try by stage_id (VARCHAR) first, then by id (UUID) - deterministic query
+     const { data, error } = await supabase
+       .from('ddsa_stage_config')
+       .select('*')
+-      .or(`stage_id.eq.${stageId},id.eq.${stageId}`)
++      .eq('stage_id', stageId)
++      .eq('is_active', true)
++      .maybeSingle();
++    
++    // If not found by stage_id, try by id
++    if (!data) {
++      const { data: dataById, error: errorById } = await supabase
++        .from('ddsa_stage_config')
++        .select('*')
++        .eq('id', stageId)
+       .eq('is_active', true)
+       .maybeSingle();
++      if (errorById || !dataById) return null;
++      data = dataById;
++    }
+ 
+     if (error) {
+       console.error('❌ Error fetching stage:', error);
+       return null;
+@@ -231,6 +234,7 @@
+ /**
+  * Insert AI response into ai_responses table
++ * Uses upsert to handle conflicts gracefully
+  */
+ export async function insertAiResponse(payload: AiResponseInsert): Promise<any | null> {
+   try {
+     const supabase = createServiceClient();
+     
+-    const { data, error } = await supabase
++    // Use upsert to handle duplicate response_id conflicts
++    const { data, error } = await supabase
+       .from('ai_responses')
+-      .insert({
++      .upsert({
+         response_id: payload.response_id,
+         thread_id: payload.thread_id,
+         thread_type: payload.thread_type || 'chat',
+@@ -251,7 +255,8 @@
+       .select()
+       .single();
+ 
+-    if (error) {
++    // On conflict, return existing row instead of error
++    if (error && !error.message.includes('duplicate')) {
+       console.error('❌ Error inserting AI response:', error);
+       return null;
+     }
+

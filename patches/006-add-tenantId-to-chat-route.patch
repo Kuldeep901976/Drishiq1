@@ -1,0 +1,52 @@
+--- a/app/api/chat/route.ts
++++ b/app/api/chat/route.ts
+@@ -19,6 +19,7 @@ import audit from "@/lib/audit";
+ import { handleDDSARequest, ChatRequest } from './ddsa-handler';
+ import { shouldUseModularPipeline } from '@/lib/ddsa/feature-flags';
+ import { createResponse, normalizeResponse } from '@/lib/responses/responsesClient';
++import { resolveTenantId, setTenantRLS } from '@/app/api/middleware/tenant';
+ 
+ // ... existing code ...
+ 
+@@ -1053,6 +1054,12 @@ export async function POST(req: NextRequest) {
+ export async function POST(req: NextRequest) {
+   try {
+     // ... existing code ...
++    
++    // Resolve tenant ID from request
++    const tenantId = resolveTenantId(req);
++    if (tenantId) {
++      await setTenantRLS(tenantId);
++    }
+     
+     // ... existing code ...
+     
+@@ -1386,6 +1393,7 @@ export async function POST(req: NextRequest) {
+         const stageInput: StageInput = {
+           threadId: localThreadId,
+           userId: userId || 'anon',
++          tenantId, // Pass tenantId to stages
+           userProfile: profileForGreeting || {},
+           ddsState: currentDdsState || {},
+           language: language || 'en',
+@@ -2732,6 +2740,7 @@ export async function POST(req: NextRequest) {
+         const stageInput: StageInput = {
+           threadId: localThreadId,
+           userId: userId || 'anon',
++          tenantId, // Pass tenantId to stages
+           userProfile: profileForGreeting || {},
+           ddsState: currentDdsState || {},
+           language: language || 'en',
+@@ -3053,6 +3062,7 @@ export async function POST(req: NextRequest) {
+             await safeSaveDdsState(localThreadId, newState);
++            // Pass tenantId to saveDdsState if available
++            if (tenantId) {
++              await safeSaveDdsState(localThreadId, newState, tenantId);
++            } else {
++              await safeSaveDdsState(localThreadId, newState);
++            }
+-            await safeSaveDdsState(localThreadId, newState);
+             currentDdsState = newState;
+             if (tries > 0) console.log(`DDSA Stage-2: State save retry succeeded on attempt ${tries + 1}`);
+             break;
+

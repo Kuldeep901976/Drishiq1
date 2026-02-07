@@ -1,0 +1,21 @@
+[Unit]
+Description=AI Jobs Worker
+After=network.target
+
+[Service]
+Type=simple
+User=your-user
+WorkingDirectory=/path/to/repo
+ExecStart=/usr/bin/npx tsx scripts/run-ai-jobs-worker.ts --interval=5000 --limit=20
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=ai-jobs-worker
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,136 @@
+{
+  "notFound": {
+    "title": "404",
+    "heading": "Page non trouvée",
+    "description": "La page que vous recherchez a peut-être été supprimée, renommée ou est temporairement indisponible.",
+    "loading": "Chargement...",
+    "logo": {
+      "alt": "Logo Drisheeq",
+      "tagline": "Voyez le défi"
+    },
+    "banner": {
+      "top": {
+        "title": "Rejoignez la révolution Drisheeq",
+        "subtitle": "Transformez les défis en clarté avec des informations alimentées par l'IA",
+        "signUp": "S'inscrire"
+      },
+      "bottom": {
+        "title": "Prêt à transformer vos défis ?",
+        "description": "Rejoignez des milliers de personnes qui ont trouvé la clarté grâce aux informations alimentées par l'IA",
+        "getStarted": "Commencer"
+      }
+    },
+    "solutions": {
+      "title": "Retour sur la bonne voie",
+      "goHome": {
+        "title": "Aller à l'accueil",
+        "description": "Retourner à notre page d'accueil",
+        "button": "Accueil"
+      },
+      "tryAgain": {
+        "title": "Réessayer",
+        "description": "Retourner à la page précédente",
+        "button": "Retour"
+      },
+      "getHelp": {
+        "title": "Obtenir de l'aide",
+        "description": "Contactez notre équipe d'assistance",
+        "button": "Contacter"
+      }
+    },
+    "status": {
+      "operational": "Tous les systèmes fonctionnent"
+    }
+  },
+  "error": {
+    "title": "Quelque chose s'est mal passé !",
+    "description": "Une erreur s'est produite. Veuillez actualiser la page.",
+    "unexpected": "Une erreur inattendue s'est produite",
+    "tryAgain": "Réessayer",
+    "refresh": "Actualiser la page"
+  },
+  "globalError": {
+    "title": "Quelque chose s'est mal passé !",
+    "description": "Une erreur inattendue s'est produite",
+    "tryAgain": "Réessayer"
+  },
+  "userNotFound": {
+    "title": "Utilisateur non trouvé",
+    "description": "Le profil utilisateur que vous recherchez n'existe pas.",
+    "goHome": "Aller à l'accueil",
+    "back": "Retour"
+  },
+  "loading": {
+    "default": "Chargement...",
+    "page": "Chargement de la page...",
+    "content": "Chargement du contenu...",
+    "profile": "Chargement du profil...",
+    "data": "Chargement des données...",
+    "pleaseWait": "Veuillez patienter..."
+  },
+  "network": {
+    "offline": "Vous êtes actuellement hors ligne",
+    "online": "Connexion rétablie",
+    "slow": "Connexion lente détectée",
+    "timeout": "Délai d'attente dépassé. Veuillez réessayer.",
+    "failed": "La requête réseau a échoué"
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire",
+    "invalid": "Entrée non valide",
+    "tooShort": "L'entrée est trop courte",
+    "tooLong": "L'entrée est trop longue",
+    "invalidEmail": "Veuillez entrer une adresse e-mail valide",
+    "invalidPhone": "Veuillez entrer un numéro de téléphone valide",
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "weakPassword": "Le mot de passe est trop faible"
+  },
+  "unauthorized": {
+    "title": "Accès refusé",
+    "description": "Vous n'avez pas la permission d'accéder à cette page.",
+    "loginRequired": "Veuillez vous connecter pour continuer",
+    "goToLogin": "Aller à la connexion",
+    "goHome": "Aller à l'accueil"
+  },
+  "forbidden": {
+    "title": "Interdit",
+    "description": "Vous n'avez pas la permission d'accéder à cette ressource.",
+    "contactSupport": "Contacter le support",
+    "goHome": "Aller à l'accueil"
+  },
+  "serverError": {
+    "title": "Erreur du serveur",
+    "description": "Quelque chose s'est mal passé de notre côté. Nous travaillons à résoudre le problème.",
+    "tryAgain": "Réessayer",
+    "contactSupport": "Contacter le support",
+    "goHome": "Aller à l'accueil"
+  },
+  "maintenance": {
+    "title": "En maintenance",
+    "description": "Nous effectuons actuellement une maintenance planifiée. Veuillez revenir bientôt.",
+    "estimatedTime": "Temps estimé : {time}",
+    "contact": "Pour les questions urgentes, veuillez contacter le support"
+  },
+  "sessionExpired": {
+    "title": "Session expirée",
+    "description": "Votre session a expiré. Veuillez vous reconnecter.",
+    "login": "Se connecter",
+    "goHome": "Aller à l'accueil"
+  },
+  "paymentError": {
+    "title": "Erreur de paiement",
+    "description": "Une erreur s'est produite lors du traitement de votre paiement.",
+    "tryAgain": "Réessayer",
+    "contactSupport": "Contacter le support",
+    "backToPlans": "Retour aux plans"
+  },
+  "generic": {
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "pleaseTryAgain": "Veuillez réessayer",
+    "contactSupport": "Contacter le support",
+    "goHome": "Aller à l'accueil",
+    "refresh": "Actualiser",
+    "cancel": "Annuler",
+    "ok": "OK"
+  }
+}

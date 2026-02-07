@@ -1,0 +1,9 @@
+ACTION_PACKET:
+{
+  "problem": {"summary": "Test with émojis 🎯 and unicode 中文"},
+  "actions": [{"event_name": "Test"}]
+}
+END_ACTION_PACKET
+
+---END---
+MACHINE_OK

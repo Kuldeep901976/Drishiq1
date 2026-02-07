@@ -1,0 +1,35 @@
+=================================================================
+  CRITICAL: FIX ANTIVIRUS FILE LOCKING - DO THIS NOW
+=================================================================
+
+The file locking errors are caused by Windows Defender scanning files.
+
+YOU MUST EXCLUDE THE BUILD DIRECTORY FROM ANTIVIRUS.
+
+STEP-BY-STEP (2 minutes):
+
+1. Press Windows Key
+2. Type "Windows Security" and open it
+3. Click "Virus & threat protection" (left sidebar)
+4. Click "Manage settings" (under "Virus & threat protection settings")
+5. Scroll down to "Exclusions"
+6. Click "Add or remove exclusions"
+7. Click "Add an exclusion"
+8. Click "Folder"
+9. Navigate to: C:\drishiq 1
+10. Select the "build" folder
+11. Click "Select Folder"
+12. RESTART YOUR COMPUTER
+13. Then run: npm run dev
+
+ALTERNATIVE (PowerShell as Administrator):
+1. Right-click PowerShell → Run as Administrator
+2. Run: Add-MpPreference -ExclusionPath "C:\drishiq 1\build"
+3. Restart computer
+4. Run: npm run dev
+
+=================================================================
+THERE IS NO OTHER WORKAROUND. YOU MUST DO THIS.
+=================================================================
+
+

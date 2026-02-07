@@ -1,0 +1,33 @@
+/* ========================================
+   ADMIN MODULE
+   CSS ARCHITECTURE: LEVEL 3 (Higher Priority)
+   ======================================== */
+
+/* Admin Dashboard */
+.admin-dashboard {
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.admin-header {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}

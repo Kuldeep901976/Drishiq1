@@ -1,0 +1,284 @@
+{
+  "main_page": {
+    "hero": {
+      "badge": "Mit Drishiq wachsen",
+      "title": "🌱 Gemeinsam erhebt man sich",
+      "description": "Egal ob Sie ein Affiliate, Investor, Creator oder Community-Stimme sind – es gibt eine Rolle für Sie beim Aufbau einer ruhigen, klarheitsorientierten Plattform, die mit Menschen wächst, nicht mit Druck.",
+      "stir_lines": {
+        "choose_lane": "Wählen Sie Ihre Spur. Wir werden die Straße mit Ihnen ausbauen.",
+        "share_earn": "Teilen Sie, was Sie lieben. Verdienen Sie, was Sie aufbauen.",
+        "belief_momentum": "Verwandeln Sie Überzeugung in Dynamik.",
+        "collaborate": "Arbeiten Sie zusammen, ohne Chaos.",
+        "early_seen_useful": "Seien Sie früh dran. Seien Sie sichtbar. Seien Sie nützlich."
+      },
+      "cta": {
+        "explore_paths": "Erkunden Sie die 6 Wege",
+        "tell_interest": "Erzählen Sie uns von Ihrem Interesse"
+      },
+      "visual": {
+        "title": "Ein lebender Wachstumsbaum mit sechs leuchtenden Ästen",
+        "description": "Jeder Ast repräsentiert einen Weg, mit Drishiq zu wachsen, mit Energie, die zu unserer Plattform fließt und von ihr ausgeht – Co-Wachstum in Aktion."
+      }
+    },
+    "why_drishiq": {
+      "title": "Warum mit einer klarheitsorientierten Plattform wachsen?",
+      "description": "Drishiq hilft Menschen, Nebel in kleine, ehrliche Schritte umzuwandeln – in ihrem eigenen Tempo. Partner helfen uns, diese Mission zu erreichen, zu unterrichten und zu sichern. Sie bringen Ihre Stärken mit. Wir teilen unsere Tools, Zielgruppe und Ressourcen.",
+      "growth_loop": {
+        "title": "Gemeinsam schaffen wir eine gesündere Wachstumsschleife",
+        "steps": ["Wert", "Vertrauen", "Reichweite", "Umsatz", "Reinvestition"]
+      },
+      "features": {
+        "transparent_terms": {
+          "title": "Transparente Bedingungen",
+          "description": "Klare Zuordnung und ehrliche Berichterstattung"
+        },
+        "co_created_launches": {
+          "title": "Gemeinsam gestaltete Starts",
+          "description": "Keine einmaligen Kampagnen, sondern sinnvolle Partnerschaften"
+        },
+        "practical_assets": {
+          "title": "Praktische Vermögenswerte",
+          "description": "Copy-Kits, Tracker, Dashboards"
+        },
+        "recognition_loops": {
+          "title": "Anerkennungsschleifen",
+          "description": "Shoutouts, Features, Fallstudien"
+        }
+      }
+    },
+    "six_paths": {
+      "title": "Die sechs Wege",
+      "description": "Wählen Sie Ihre Spur – wir bauen gemeinsam Dynamik auf",
+      "learn_more": "Mehr erfahren"
+    },
+    "roles": {
+      "affiliates": {
+        "title": "Affiliates",
+        "description": "Verdienen Sie, während Sie ein Produkt teilen, an das Sie glauben."
+      },
+      "referrals": {
+        "title": "Empfehlungen",
+        "description": "Laden Sie jemanden ein, der Drishiq lieben wird, und erhalten Sie eine Belohnung."
+      },
+      "investors": {
+        "title": "Investoren",
+        "description": "Finanzieren Sie eine Menschen-zentrierte Plattform mit klaren Meilensteinen."
+      },
+      "ambassadors": {
+        "title": "Botschafter",
+        "description": "Seien Sie die Stimme von Drishiq in Ihrem Kreis oder in Ihrer Stadt."
+      },
+      "collaborators": {
+        "title": "Creator / Collaborators",
+        "description": "Erstellen Sie Inhalte, Funktionen und Erlebnisse – gemeinsam."
+      },
+      "promoters": {
+        "title": "Promoter",
+        "description": "Verstärken Sie Launches und Geschichten über Kanäle, die Sie bereits nutzen."
+      }
+    },
+    "shared_impact": {
+      "title": "Was wir mit Partnern aufbauen",
+      "description": "Gemeinsam schaffen wir bedeutungsvolle Auswirkungen, die anhalten"
+    }
+  },
+  
+  "interest": {
+    "role_copy": {
+      "investor": {
+        "title": "✨ In Klarheit investieren",
+        "tagline": "Teilen Sie Ihre Details mit und lassen Sie uns erkunden, wie Ihre Investition Klarheit schaffen kann."
+      },
+      "investors": {
+        "title": "✨ In Klarheit investieren",
+        "tagline": "Teilen Sie Ihre Details mit und lassen Sie uns erkunden, wie Ihre Investition Klarheit schaffen kann."
+      },
+      "promoter": {
+        "title": "📣 Nutzen Sie Ihre Stimme, um Klarheit zu verstärken",
+        "tagline": "Erzählen Sie uns von Ihrer Plattform und wie Sie Klarheit verstärken möchten."
+      },
+      "promoters": {
+        "title": "📣 Nutzen Sie Ihre Stimme, um Klarheit zu verstärken",
+        "tagline": "Erzählen Sie uns von Ihrer Plattform und wie Sie Klarheit verstärken möchten."
+      },
+      "ambassador": {
+        "title": "🌍 Seien Sie das Gesicht der Klarheit in Ihrer Welt",
+        "tagline": "Lassen Sie uns Ihre Gemeinschaft kennen und wie Sie Klarheit vertreten möchten."
+      },
+      "ambassadors": {
+        "title": "🌍 Seien Sie das Gesicht der Klarheit in Ihrer Welt",
+        "tagline": "Lassen Sie uns Ihre Gemeinschaft kennen und wie Sie Klarheit vertreten möchten."
+      },
+      "creator": {
+        "title": "✨ Erstellen Sie für Klarheit. Arbeiten Sie zusammen für Veränderung.",
+        "tagline": "Zeigen Sie uns Ihr Handwerk und wie Sie Ihre Kreativität beitragen möchten."
+      },
+      "collaborators": {
+        "title": "✨ Erstellen Sie für Klarheit. Arbeiten Sie zusammen für Veränderung.",
+        "tagline": "Zeigen Sie uns Ihr Handwerk und wie Sie Ihre Kreativität beitragen möchten."
+      },
+      "affiliate": {
+        "title": "🌱 Treten Sie dem Kreis der Veränderung bei",
+        "tagline": "Erzählen Sie uns, wie Sie DrishiQ teilen werden und seien Sie Teil unseres Affiliate-Kreises."
+      },
+      "affiliates": {
+        "title": "🌱 Treten Sie dem Kreis der Veränderung bei",
+        "tagline": "Erzählen Sie uns, wie Sie DrishiQ teilen werden und seien Sie Teil unseres Affiliate-Kreises."
+      },
+      "referral": {
+        "title": "🔗 Teilen Sie Klarheit, teilen Sie Fürsorge",
+        "tagline": "Erzählen Sie uns, wen Sie einladen möchten oder wie Sie Empfehlungen nutzen planen, um anderen zu helfen."
+      },
+      "referrals": {
+        "title": "🔗 Teilen Sie Klarheit, teilen Sie Fürsorge",
+        "tagline": "Erzählen Sie uns, wen Sie einladen möchten oder wie Sie Empfehlungen nutzen planen, um anderen zu helfen."
+      }
+    },
+    
+    "form": {
+      "name_label": "Vollständiger Name",
+      "name_placeholder": "Geben Sie Ihren vollständigen Namen ein",
+      "email_label": "E-Mail-Adresse",
+      "email_placeholder": "your@email.com",
+      "phone_label": "Telefonnummer",
+      "phone_placeholder": "1234567890",
+      "notes_label": "Gibt es etwas, das Sie teilen möchten?",
+      "notes_placeholder": "Kontext, Ziele oder Links, die wir sehen sollen",
+      "privacy_notice": "Wir werden Ihre Details niemals weitergeben. Ihre Informationen sind sicher und privat.",
+      "submit_button": "Absenden",
+      
+      "investor_details": "Investitionsdetails",
+      "investment_stage": "Investitionsstadium",
+      "investment_stage_placeholder": "Seed, Serie A, Wachstum, usw.",
+      "ticket_size": "Investitionsgröße",
+      "ticket_size_placeholder": "$50K, $100K, $500K+",
+      "invest_timeline": "Investitionszeitplan",
+      "invest_timeline_placeholder": "Sofort, 3-6 Monate, explorativ",
+      
+      "promoter_details": "Promoter-Details",
+      "platforms": "Plattformen",
+      "platforms_placeholder": "Instagram, YouTube, Blog, Newsletter",
+      "audience": "Zielgruppengröße",
+      "audience_placeholder": "10K, 50K, 100K+ followers/subscribers",
+      "sample_links": "Beispiel-Links",
+      "sample_links_placeholder": "Links zu Ihrem besten Werbeinhalten",
+      
+      "ambassador_details": "Botschafter-Details",
+      "community": "Gemeinschaft",
+      "community_placeholder": "Studenten, Fachleute, lokale Gruppen",
+      "region": "Region",
+      "region_placeholder": "Stadt, Bundesland oder Online-Gemeinschaften",
+      "activities": "Aktivitäten",
+      "activities_placeholder": "Veranstaltungen, Workshops, Treffen, die Sie organisieren",
+      
+      "creator_details": "Creator-Details",
+      "craft_area": "Handwerksbereich",
+      "craft_area_placeholder": "Schreiben, Design, Video, Audio, usw.",
+      "portfolio": "Portfolio",
+      "portfolio_placeholder": "Links zu Ihren besten Arbeiten oder Ihrem Portfolio",
+      
+      "affiliate_details": "Affiliate-Details",
+      "affiliate_channels": "Affiliate-Kanäle",
+      "affiliate_channels_placeholder": "Website, soziale Medien, E-Mail-Liste",
+      "traffic_estimate": "Verkehrsschätzung",
+      "traffic_estimate_placeholder": "Monatliche Besucher, Follower, Abonnenten",
+      "payout_preference": "Auszahlungspräferenz",
+      "payout_preference_placeholder": "PayPal, bank transfer, crypto, etc.",
+      
+      "referral_details": "Empfehlungsdetails",
+      "person_name": "Name der Person",
+      "person_name_placeholder": "Wen empfehlen Sie?",
+      "person_email": "E-Mail der Person (optional)",
+      "person_email_placeholder": "their@email.com",
+      "relationship": "Beziehung",
+      "relationship_placeholder": "Freund, Kollege, Familie, sonstiges"
+    },
+    
+    "otp": {
+      "title": "📱 Verifizieren Sie Ihr Telefon",
+      "message": "Wir haben einen 6-stelligen Code an gesendet",
+      "placeholder": "Geben Sie den 6-stelligen Code ein",
+      "verify_button": "Code verifizieren",
+      "verifying": "Verifizierung läuft..."
+    },
+    
+    "success": {
+      "investor": "Danke, dass Sie in Klarheit investieren!",
+      "promoter": "Danke, dass Sie Klarheit verstärken!",
+      "ambassador": "Danke, dass Sie Klarheit vertreten!",
+      "creator": "Danke, dass Sie für Klarheit kreativ sind!",
+      "affiliate": "Danke, dass Sie unserem Kreis beigetreten sind!",
+      "referral": "Danke, dass Sie Klarheit weitergeben!",
+      "message": "Wir haben einen Verifizierungscode an Ihr Telefon gesendet. Bitte überprüfen Sie Ihre Nachrichten und geben Sie den Code ein, um Ihre Bewerbung abzuschließen."
+    }
+  },
+  
+  "success": {
+    "next_steps_title": "Was kommt als nächstes?",
+    "email_confirmation_title": "E-Mail-Bestätigung",
+    "email_confirmation_desc": "Sie erhalten in Kürze eine Bestätigungs-E-Mail mit allen Details Ihrer Bewerbung.",
+    "phone_verification_title": "Telefonverifizierung",
+    "phone_verification_desc": "Ihre Telefonnummer wurde verifiziert und wird für zukünftige Kommunikation verwendet.",
+    "questions_text": "Fragen? Kontaktieren Sie uns unter",
+    
+    "investor": {
+      "title": "Investitionsbewerbung abgeschlossen!",
+      "description": "Ihre Investitionsbewerbung wurde erfolgreich eingereicht und verifiziert. Unser Team wird Ihre Details überprüfen und Sie innerhalb von 24-48 Stunden kontaktieren.",
+      "next_step_1": "Unser Investitionsteam wird Ihre Bewerbung überprüfen",
+      "next_step_2": "Wir werden einen Anruf vereinbaren, um Ihre Investitionsthese zu besprechen",
+      "next_step_3": "Sie erhalten detaillierte Informationen über unsere Finanzierungsrunden",
+      "next_step_4": "Wir halten Sie über unsere Wachstumsmeilensteine auf dem Laufenden",
+      "cta_text": "Erkunden Sie unsere Vision"
+    },
+    
+    "promoter": {
+      "title": "Promoter-Bewerbung abgeschlossen!",
+      "description": "Ihre Promoter-Bewerbung wurde erfolgreich eingereicht und verifiziert. Unser Team wird Ihre Plattformdetails überprüfen und sich innerhalb von 24-48 Stunden bei Ihnen melden.",
+      "next_step_1": "Unser Marketing-Team wird Ihre Plattformdetails überprüfen",
+      "next_step_2": "Wir werden Zusammenarbeitsmöglichkeiten und Bedingungen besprechen",
+      "next_step_3": "Sie erhalten Werbematerialien und Richtlinien",
+      "next_step_4": "Wir richten das Tracking für Ihre Werbemaßnahmen ein",
+      "cta_text": "Sehen Sie sich unsere Produkte an"
+    },
+    
+    "ambassador": {
+      "title": "Botschafter-Bewerbung abgeschlossen!",
+      "description": "Ihre Botschafter-Bewerbung wurde erfolgreich eingereicht und verifiziert. Unser Team wird Ihre Community-Details überprüfen und Sie innerhalb von 24-48 Stunden kontaktieren.",
+      "next_step_1": "Unser Community-Team wird Ihre Bewerbung überprüfen",
+      "next_step_2": "Wir werden Ihre Rolle und Verantwortungen besprechen",
+      "next_step_3": "Sie erhalten Botschafter-Materialien und Richtlinien",
+      "next_step_4": "Wir verbinden Sie mit anderen Botschaftern",
+      "cta_text": "Treten Sie unserer Gemeinschaft bei"
+    },
+    
+    "creator": {
+      "title": "Creator-Bewerbung abgeschlossen!",
+      "description": "Ihre Creator-Bewerbung wurde erfolgreich eingereicht und verifiziert. Unser Team wird Ihr Portfolio überprüfen und sich innerhalb von 24-48 Stunden bei Ihnen melden.",
+      "next_step_1": "Unser Creative-Team wird Ihr Portfolio überprüfen",
+      "next_step_2": "Wir werden Zusammenarbeitsmöglichkeiten besprechen",
+      "next_step_3": "Sie erhalten kreative Briefs und Richtlinien",
+      "next_step_4": "Wir richten einen Arbeitsbereich für Ihre Projekte ein",
+      "cta_text": "Sehen Sie sich unsere Arbeiten an"
+    },
+    
+    "affiliate": {
+      "title": "Affiliate-Bewerbung abgeschlossen!",
+      "description": "Ihre Affiliate-Bewerbung wurde erfolgreich eingereicht und verifiziert. Unser Team wird Ihre Details überprüfen und Sie innerhalb von 24-48 Stunden kontaktieren.",
+      "next_step_1": "Unser Affiliate-Team wird Ihre Bewerbung überprüfen",
+      "next_step_2": "Wir werden Provisionsätze und Bedingungen besprechen",
+      "next_step_3": "Sie erhalten Affiliate-Links und Materialien",
+      "next_step_4": "Wir richten das Tracking für Ihre Überweisungen ein",
+      "cta_text": "Beginnen Sie zu verdienen"
+    },
+    
+    "referral": {
+      "title": "Empfehlungs-Bewerbung abgeschlossen!",
+      "description": "Ihre Empfehlungs-Bewerbung wurde erfolgreich eingereicht und verifiziert. Unser Team wird Ihre Details überprüfen und Sie innerhalb von 24-48 Stunden kontaktieren.",
+      "next_step_1": "Unser Empfehlungsteam wird Ihre Bewerbung überprüfen",
+      "next_step_2": "Wir werden Empfehlungsbedingungen und Belohnungen besprechen",
+      "next_step_3": "Sie erhalten Empfehlungslinks und Materialien",
+      "next_step_4": "Wir verfolgen Ihre Empfehlungsaktivitäten",
+      "cta_text": "Teilen Sie DrishiQ"
+    }
+  }
+}

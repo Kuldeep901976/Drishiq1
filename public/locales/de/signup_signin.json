@@ -1,0 +1,181 @@
+{
+  "signIn": {
+    "title": "Anmelden",
+    "tabs": {
+      "social": "Sozial",
+      "email": "E-Mail/Passwort",
+      "magic": "Magic Link"
+    },
+    "roleCategories": {
+      "regular": "Regulär",
+      "grow": "Wachstum",
+      "enterprise": "Enterprise"
+    },
+    "roles": {
+      "user": "Regulärer Benutzer",
+      "client_admin": "Unternehmensadministrator",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Therapeut",
+      "consultant": "Berater",
+      "investor": "Investor",
+      "partner": "Partner",
+      "sponsor": "Sponsor",
+      "volunteer": "Freiwilliger",
+      "affiliate": "Affiliate",
+      "enterprise_admin": "Enterprise-Administrator"
+    },
+    "roleTaglines": {
+      "user": "Zugriff auf persönliches Dashboard",
+      "client_admin": "Unternehmenskonten verwalten",
+      "mentor": "Andere anleiten und unterstützen",
+      "coach": "Professionelle Coaching-Dienstleistungen",
+      "therapist": "Unterstützung für mentale Gesundheit",
+      "consultant": "Geschäftsberatung",
+      "investor": "Investitionsmöglichkeiten",
+      "partner": "Strategische Partnerschaft",
+      "sponsor": "Unterstützung von Projekten und Initiativen",
+      "volunteer": "Beitrag zur Gemeinschaft",
+      "affiliate": "Empfehlungspartnerschaft",
+      "enterprise_admin": "Unternehmensmitarbeiter verwalten"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+        "label": "E-Mail"
+      },
+      "password": {
+        "placeholder": "Geben Sie Ihr Passwort ein",
+        "label": "Passwort"
+      },
+      "submit": {
+        "signIn": "Anmelden",
+        "signingIn": "Anmeldung läuft...",
+        "sendMagicLink": "Magic Link senden",
+        "sending": "Wird gesendet...",
+        "cancel": "Abbrechen"
+      }
+    },
+    "socialAuth": {
+      "google": "Mit Google fortfahren",
+      "linkedin": "Mit LinkedIn fortfahren"
+    },
+    "welcome": {
+      "title": "Willkommen zurück, {username}! 👋",
+      "credits": "Ihre Credits",
+      "availableCredits": "Verfügbare Credits",
+      "total": "Gesamt",
+      "used": "Verwendet",
+      "whoAreYouSeeking": "Für wen suchen Sie Unterstützung?",
+      "forMyself": {
+        "title": "Für mich selbst",
+        "description": "Erhalten Sie persönliche Unterstützung für sich selbst"
+      },
+      "forOthers": {
+        "title": "Für jemanden, der mir wichtig ist",
+        "description": "Suchen Sie Unterstützung für eine geliebte Person"
+      },
+      "needCredits": "Sie benötigen Credits, um unsere Dienste zu nutzen",
+      "buyCredits": "🛒 Jetzt Credits kaufen",
+      "buyMoreCredits": "💳 Mehr Credits kaufen",
+      "limitedCredits": "ℹ️ Sie haben begrenzte Credits. Erwägen Sie, mehr zu kaufen, um Unterbrechungen zu vermeiden.",
+      "sufficientCredits": "✅ Sie haben genügend Credits. Bereit zum Start!",
+      "back": "Zurück",
+      "signOut": "Abmelden"
+    },
+    "footer": {
+      "noAccount": "Kein Konto? Registrieren",
+      "forgotPassword": "Passwort vergessen?",
+      "info": "Nach der Anmeldung können Sie wählen, ob Sie Unterstützung für sich selbst oder für jemanden erhalten möchten, der Ihnen wichtig ist. Jede Sitzung verwendet 1 Credit."
+    },
+    "errors": {
+      "accountNotFound": "Konto nicht gefunden. Bitte registrieren Sie sich, um ein Konto zu erstellen.",
+      "invalidCredentials": "Falsches Passwort. Bitte versuchen Sie es erneut oder nutzen Sie „Passwort vergessen“, um es zurückzusetzen.",
+      "userNotFound": "Ihr Konto ist noch nicht eingerichtet. Bitte vervollständigen Sie Ihr Profil, um fortzufahren.",
+      "signUpPrompt": "Bitte registrieren Sie sich oder versuchen Sie erneut, sich anzumelden.",
+      "magicLinkError": "Fehler beim Senden des Magic Links",
+      "socialAuthError": "{provider}-Authentifizierung fehlgeschlagen. Bitte überprüfen Sie Ihre Supabase {provider} OAuth-Konfiguration.",
+      "authError": "Es ist ein Fehler bei der Authentifizierung aufgetreten",
+      "emailRequired": "E-Mail-Adresse ist erforderlich"
+    }
+  },
+  "signUp": {
+    "title": "Registrieren",
+    "tabs": {
+      "social": "Sozial",
+      "email": "E-Mail/Passwort",
+      "magic": "Magic Link"
+    },
+    "roleCategories": {
+      "regular": "Regulär",
+      "grow": "Wachstum",
+      "enterprise": "Enterprise"
+    },
+    "roles": {
+      "user": "Regulärer Benutzer",
+      "client_admin": "Unternehmensadministrator",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Therapeut",
+      "consultant": "Berater",
+      "investor": "Investor",
+      "partner": "Partner",
+      "sponsor": "Sponsor",
+      "volunteer": "Freiwilliger",
+      "affiliate": "Affiliate",
+      "enterprise_admin": "Enterprise-Administrator"
+    },
+    "roleTaglines": {
+      "user": "Zugriff auf persönliches Dashboard",
+      "client_admin": "Unternehmenskonten verwalten",
+      "mentor": "Andere anleiten und unterstützen",
+      "coach": "Professionelle Coaching-Dienstleistungen",
+      "therapist": "Unterstützung für mentale Gesundheit",
+      "consultant": "Geschäftsberatung",
+      "investor": "Investitionsmöglichkeiten",
+      "partner": "Strategische Partnerschaft",
+      "sponsor": "Unterstützung von Projekten und Initiativen",
+      "volunteer": "Beitrag zur Gemeinschaft",
+      "affiliate": "Empfehlungspartnerschaft",
+      "enterprise_admin": "Plattformverwaltung"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+        "label": "E-Mail"
+      },
+      "submit": {
+        "sendPasswordLink": "Passwort-Link senden",
+        "sendMagicLink": "Magic Link senden",
+        "sending": "Wird gesendet...",
+        "cancel": "Abbrechen"
+      }
+    },
+    "socialAuth": {
+      "google": "Mit Google fortfahren",
+      "linkedin": "Mit LinkedIn fortfahren"
+    },
+    "success": {
+      "passwordLinkSent": "Link zur Passworterstellung wurde an {email} gesendet. Überprüfen Sie Ihren Posteingang und klicken Sie auf den Link, um Ihr Passwort zu erstellen!",
+      "magicLinkSent": "Magic Link wurde an {email} gesendet. Posteingang prüfen!"
+    },
+    "footer": {
+      "hasAccount": "Sie haben bereits ein Konto?",
+      "signIn": "Anmelden",
+      "info": "Nach der Registrierung verifizieren Sie Ihre Telefonnummer und vervollständigen Ihr Profil, bevor Sie auf Ihr Dashboard zugreifen.",
+      "terms": "Mit der Registrierung stimmen Sie unseren",
+      "termsLink": "Nutzungsbedingungen",
+      "and": "und",
+      "privacyLink": "Datenschutzbestimmungen"
+    },
+    "errors": {
+      "emailRequired": "E-Mail-Adresse ist erforderlich",
+      "userExists": "Ein Benutzer mit dieser E-Mail existiert bereits",
+      "userExistsTip": "💡 Tipp: Wenn Sie bereits ein Konto haben, bitte",
+      "signInInstead": "melden Sie sich an",
+      "magicLinkError": "Fehler beim Senden des Magic Links",
+      "emailSignupError": "Fehler beim Senden des Passworterstellungs-Links",
+      "socialAuthError": "{provider}-Authentifizierung fehlgeschlagen"
+    }
+  }
+}

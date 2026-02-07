@@ -1,0 +1,418 @@
+{
+  "solo": {
+    "topband": {
+      "label": "Solo, nicht nur allein — Geschichten bekannter Gesichter"
+    },
+    "hero": {
+      "title": "Solo, nicht still",
+      "subtitle": "Du liebst Freiheit. Du spürst Frieden. Und manche Nächte fühlt sich die Stille etwas lauter an.",
+      "cta": {
+        "primary": "Checke mit dir selbst ein — hier",
+        "secondary": "Wie Drisheeq hilft"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Ist dein Raum ruhig — oder einfach nur leer?",
+        "1": "Wer hört heute deine kleinen Siege?",
+        "2": "Steuert dich die Routine — oder hilft sie dir?",
+        "3": "Wann hast du dich das letzte Mal vollständig gesehen gefühlt?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Freiheit",
+        "subtitle": "Deine Regeln, dein Rhythmus"
+      },
+      "1": {
+        "title": "Frieden",
+        "subtitle": "Die Stille, die heilt"
+      },
+      "2": {
+        "title": "Raum",
+        "subtitle": "Platz zum Wachsen"
+      },
+      "3": {
+        "title": "Einsamkeit",
+        "subtitle": "Die Kanten, die stechen"
+      },
+      "4": {
+        "title": "Festgefahren",
+        "subtitle": "Routine in der Schleife"
+      },
+      "5": {
+        "title": "Bereit",
+        "subtitle": "Für sanfte Veränderung"
+      }
+    },
+    "emotions": {
+      "label": "Wie sich das Solo-Leben anfühlen kann"
+    },
+    "celeb": {
+      "0": {
+        "name": "Serena Williams",
+        "profession": "Tennisspielerin",
+        "quote": "\"Ruhige Konzentration vor dem Match ist entscheidend.\""
+      },
+      "1": {
+        "name": "Steve Jobs",
+        "profession": "Unternehmer",
+        "quote": "\"Deine Zeit ist begrenzt, also verschwende sie nicht damit, das Leben eines anderen zu leben.\""
+      },
+      "2": {
+        "name": "Emma Watson",
+        "profession": "Schauspielerin",
+        "quote": "\"Ich habe mich nie so stark gefühlt wie wenn ich allein bin.\""
+      },
+      "3": {
+        "name": "A.P.J. Abdul Kalam",
+        "profession": "Wissenschaftler",
+        "quote": "\"Der Mensch braucht Schwierigkeiten, denn sie sind notwendig, um Erfolg zu genießen.\""
+      },
+      "4": {
+        "name": "Mary Kom",
+        "profession": "Boxerin",
+        "quote": "\"Lass dir von niemandem sagen, dass du es nicht kannst.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Erste Wohnung allein",
+        "line": "Der Traum wurde wahr. Das Echo kam mit.",
+        "body": "Endlich hast du einen Ort, der wie du atmet. Aber die ersten Nächte fühlen sich größer an als deine Stimme. Die Freiheit ist echt — und die Stille, die niemand sieht, auch.",
+        "bullet": {
+          "0": "Du schaltest Shows für Gesellschaft ein, nicht für die Geschichte.",
+          "1": "Das Abendessen ist schnell; der Stuhl gegenüber bleibt ungenutzt.",
+          "2": "Gute Nachrichten fühlen sich klein an, wenn es keinen Zeugen gibt."
+        },
+        "nudge": "Formalisiere einen Moment: Serviere Essen, zünde eine Kerze an, sage laut eine Zeile der Dankbarkeit — bringe dem Raum deine Stimme bei.",
+        "frame": {
+          "0": {
+            "h": "Freiheitsnacht",
+            "p": "Deine Regeln. Deine Playlist. Lichter wie du willst."
+          },
+          "1": {
+            "h": "Echo beim Abendessen",
+            "p": "Stuhl, den niemand zieht. Nachrichten ohne Platz."
+          },
+          "2": {
+            "h": "Kleines Ritual",
+            "p": "Stelle einen Teller hin. Zünde eine Kerze an. Mache es zu deinem."
+          }
+        },
+        "cta": "Probiere es mit Drisheeq →"
+      },
+      "1": {
+        "title": "Weit weg von zu Hause",
+        "line": "Der Glanz der neuen Stadt. Der Schmerz des Sonntags.",
+        "body": "Du bist aus einem Grund weggezogen — Wachstum, eine Chance, ein Neustart. Die Wochentage sind beschäftigt genug. Sonntage können sich wie eine Flugverspätung in deinem eigenen Zimmer anfühlen.",
+        "bullet": {
+          "0": "Du verschiebst Anrufe, weil es 'nichts zu sagen' gibt.",
+          "1": "Du arbeitest den ganzen Tag, füllst aber nicht auf.",
+          "2": "Fenster zeigen Leben im Gange und du schaust zu."
+        },
+        "nudge": "Sende jemandem diesen Satz 'Denke an dich, keine Antwort nötig.' Dann gehe für eine Markierung hinaus — Baum, Café, Ecke — und nenne sie dein.",
+        "frame": {
+          "0": {
+            "h": "Glanz der neuen Stadt",
+            "p": "Wäsche, Lebensmittel, Gedanken, die bleiben."
+          },
+          "1": {
+            "h": "Sonntagsstille",
+            "p": "Sag Hallo, du brauchst keinen Grund"
+          },
+          "2": {
+            "h": "Anruf nach Hause",
+            "p": "Sag Hallo. Du brauchst keinen Grund."
+          }
+        },
+        "cta": "Schaffe eine kleine Markierung →"
+      },
+      "2": {
+        "title": "Endlose Routine",
+        "line": "Effizient sein ist nicht genährt sein.",
+        "body": "Dein Tag läuft wie eine To-Do-Listen-App — befriedigende Glocken, minimale Farbe. Die Maschine funktioniert. Die Person drinnen will etwas Weicheres.",
+        "bullet": {
+          "0": "Du vergisst, wann du das letzte Mal allein laut gelacht hast.",
+          "1": "Du scrollst zum Einschlafen und wachst müde auf.",
+          "2": "Du sagst kleine Pläne mit dem zukünftigen Ich ab."
+        },
+        "nudge": "Füge etwas Nährendes hinzu, das du in Minuten erledigen kannst: Auf dem Boden dehnen, einen Cousin anrufen, achtsam Eier machen.",
+        "frame": {
+          "0": {
+            "h": "Autopilot-Siege",
+            "p": "Gym ✔ Arbeit ✔ Vorbereitung ✔"
+          },
+          "1": {
+            "h": "Stille Momente",
+            "p": "Gute Nachrichten, niemand zum Anstoßen."
+          },
+          "2": {
+            "h": "Füge eine Sache hinzu",
+            "p": "Ein Spaziergang. Eine Nachricht. Eine Fensterpause."
+          }
+        },
+        "cta": "Füge etwas Nährendes hinzu →"
+      },
+      "3": {
+        "title": "Solo-Sieg",
+        "line": "Wenn der Raum klein bleibt und der Sieg groß ist.",
+        "body": "Du hast es geschafft. Der Bildschirm leuchtet, der Chat pingt, und dann bist nur du und die Luft. Freude ohne Zeugen zählt auch — sie gehört dir.",
+        "bullet": {
+          "0": "Du möchtest teilen, aber nicht bedürftig wirken.",
+          "1": "Sieg in einem leeren Raum fühlt sich klein an.",
+          "2": "Du fragst dich, ob es zählt, wenn niemand zuschaut."
+        },
+        "nudge": "Mache ein Foto des Moments. Schreibe drei Wörter, die beschreiben, wie es sich anfühlt. Das ist deine Geschichte zu erzählen.",
+        "frame": {
+          "0": {
+            "h": "Bildschirmglanz",
+            "p": "Benachrichtigung. Errungenschaft. Du."
+          },
+          "1": {
+            "h": "Leerer Raum",
+            "p": "Echo des Erfolgs. Niemand zum High-Five."
+          },
+          "2": {
+            "h": "Halte es fest",
+            "p": "Foto. Worte. Deine Geschichte."
+          }
+        },
+        "cta": "Erfasse deinen Sieg →"
+      }
+    },
+    "how": {
+      "title": "Wie Drisheeq den Unterschied macht",
+      "0": {
+        "h": "Solo-Klarheit",
+        "d": "Sieh deine Muster klar, ohne Urteil."
+      },
+      "1": {
+        "h": "Sanfte Anstöße",
+        "d": "Kleine Schritte, die zu deinem Solo-Rhythmus passen."
+      },
+      "2": {
+        "h": "Atemraum",
+        "d": "Werkzeuge, um bedeutsame Einsamkeit zu schaffen."
+      },
+      "3": {
+        "h": "Verbindungsauswahl",
+        "d": "Entscheide, wann und wie du dich verbindest."
+      }
+    },
+    "nudge": {
+      "label": "Probiere dies:"
+    }
+  },
+  "giving_beyond": {
+    "topband": {
+      "label": "Über das Geben hinaus, nicht nur großzügig — Geschichten bekannter Gesichter"
+    },
+    "hero": {
+      "title": "Über sich selbst hinaus geben",
+      "subtitle": "Dein Herz ist so groß, dass du oft vergisst, etwas Liebe für dich selbst aufzubewahren. Du siehst überall Bedürfnisse und fühlst dich gezwungen, sie zu erfüllen, selbst wenn es dich alles kostet.",
+      "cta": {
+        "primary": "Finde dein Gleichgewicht beim Geben →",
+        "secondary": "Wie hilft Drisheeq?"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Gibst du, bis nichts mehr für dich übrig ist?",
+        "1": "Fühlst du Schuld, wenn du jemandem nicht helfen kannst?",
+        "2": "Stellst du ständig die Bedürfnisse anderer vor deine eigenen?",
+        "3": "Fühlst du Groll, wenn dein Geben nicht geschätzt wird?",
+        "4": "Wie würde es sich anfühlen, aus einem Ort der Fülle statt der Leere zu geben?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Großzügig",
+        "subtitle": "Immer bereit zu geben"
+      },
+      "1": {
+        "title": "Erschöpft",
+        "subtitle": "Geben bis zur Leere"
+      },
+      "2": {
+        "title": "Verbittert",
+        "subtitle": "Wenn Geben nicht erwidert wird"
+      },
+      "3": {
+        "title": "Schuldig",
+        "subtitle": "Wenn du nicht helfen kannst"
+      },
+      "4": {
+        "title": "Unsichtbar",
+        "subtitle": "Deine Bedürfnisse werden übersehen"
+      },
+      "5": {
+        "title": "Weise",
+        "subtitle": "Weise geben lernen"
+      }
+    },
+    "emotions": {
+      "label": "Wie sich Geben über sich hinaus anfühlen kann"
+    },
+    "celeb": {
+      "0": {
+        "name": "Mutter Teresa",
+        "profession": "Humanitäre",
+        "quote": "\"Nicht wie viel wir geben, sondern wie viel Liebe wir ins Geben legen, ist wichtig.\""
+      },
+      "1": {
+        "name": "Martin Luther King Junior",
+        "profession": "Bürgerrechtsführer",
+        "quote": "\"Die beständigste und dringendste Frage des Lebens ist: 'Was tust du für andere?'\""
+      },
+      "2": {
+        "name": "Nelson Mandela",
+        "profession": "Führer",
+        "quote": "\"Was im Leben zählt, ist nicht die bloße Tatsache, dass wir gelebt haben. Es ist der Unterschied, den wir im Leben anderer gemacht haben.\""
+      },
+      "3": {
+        "name": "Malala Yousafzai",
+        "profession": "Aktivistin",
+        "quote": "\"Wenn die ganze Welt schweigt, wird selbst eine Stimme mächtig.\""
+      },
+      "4": {
+        "name": "Oprah Winfrey",
+        "profession": "Medienführerin",
+        "quote": "\"Das größte Abenteuer, das du unternehmen kannst, ist, das Leben deiner Träume zu leben.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Über deine Grenzen hinaus geben",
+        "line": "Du gibst, bis nichts mehr zu geben übrig ist.",
+        "body": "Dein Herz ist so groß, dass du oft vergisst, etwas Liebe für dich selbst aufzubewahren. Du siehst überall Bedürfnisse und fühlst dich gezwungen, sie zu erfüllen, selbst wenn es dich alles kostet.",
+        "bullet": {
+          "0": "Du stellst ständig die Bedürfnisse anderer vor deine eigenen.",
+          "1": "Du fühlst Schuld, wenn du jemandem nicht helfen kannst.",
+          "2": "Du bittest selten um Hilfe, selbst wenn du sie dringend brauchst."
+        },
+        "nudge": "Erkenne heute einen kleinen Weg, für dich selbst zu sorgen, ohne Schuld zu fühlen.",
+        "frame": {
+          "0": {
+            "h": "Helfende Hand",
+            "p": "Immer ausgestreckt"
+          },
+          "1": {
+            "h": "Leere Tasse",
+            "p": "Auf leer laufen"
+          },
+          "2": {
+            "h": "Goldenes Herz",
+            "p": "Reine Absichten"
+          }
+        },
+        "cta": "Lerne nachhaltig zu geben →"
+      },
+      "1": {
+        "title": "Gleichgewicht des Dienens",
+        "line": "Echter Dienst beinhaltet, sich um den Dienenden zu kümmern.",
+        "body": "Die effektivsten Helfer sind diejenigen, die ihr eigenes Wohlbefinden aufrechterhalten. Wenn du leer bist, kannst du niemandem dein Bestes geben.",
+        "bullet": {
+          "0": "Du vernachlässigst regelmäßig deine Gesundheit und Bedürfnisse.",
+          "1": "Du fühlst, dass du nie genug tust, egal wie viel du gibst.",
+          "2": "Du kämpfst damit, Grenzen mit denen zu setzen, denen du hilfst."
+        },
+        "nudge": "Setze diese Woche eine Grenze: Sage 'Ich kann helfen, aber nicht jetzt' zu einer Anfrage.",
+        "frame": {
+          "0": {
+            "h": "Ausgeglichene Waage",
+            "p": "Gleichgewicht finden"
+          },
+          "1": {
+            "h": "Selbstfürsorge",
+            "p": "Sich selbst aufladen"
+          },
+          "2": {
+            "h": "Gesunde Grenzen",
+            "p": "Deine Energie schützen"
+          }
+        },
+        "cta": "Baue nachhaltige Gewohnheiten des Gebens auf →"
+      },
+      "2": {
+        "title": "Der Kreislauf der Leere",
+        "line": "Geben ohne zu empfangen schafft einen unhaltbaren Kreislauf.",
+        "body": "Wenn du nur gibst und nie empfängst, schaffst du einen einseitigen Fluss, der schließlich zum Burnout führt. Gesundes Geben beinhaltet sowohl Geben als auch Empfangen.",
+        "bullet": {
+          "0": "Du fühlst dich unwohl, wenn andere versuchen, dir zu helfen.",
+          "1": "Du glaubst, dass um Hilfe zu bitten dich zur Last macht.",
+          "2": "Du hast vergessen, wie man mit Anmut empfängt."
+        },
+        "nudge": "Übe das Empfangen: Akzeptiere diese Woche ein kleines Hilfsangebot, ohne zu erklären, warum du es brauchst.",
+        "frame": {
+          "0": {
+            "h": "Kreislauf des Gebens",
+            "p": "Kontinuierlicher Fluss"
+          },
+          "1": {
+            "h": "Hilfe empfangen",
+            "p": "Lernen anzunehmen"
+          },
+          "2": {
+            "h": "Erneuerung",
+            "p": "Gleichgewicht finden"
+          }
+        },
+        "cta": "Durchbrich den Kreislauf der Leere →"
+      },
+      "3": {
+        "title": "Nachhaltige Wirkung",
+        "line": "Das kraftvollste Geben kommt aus einem vollen Herzen.",
+        "body": "Wenn du für dich selbst sorgst, während du dich um andere kümmerst, multipliziert sich deine Wirkung. Du wirst zu einer nachhaltigen Kraft für das Gute in der Welt.",
+        "bullet": {
+          "0": "Du willst einen bleibenden Unterschied in der Welt machen.",
+          "1": "Du bist bereit, nachhaltige Praktiken des Gebens zu lernen.",
+          "2": "Du möchtest andere durch dein Beispiel inspirieren."
+        },
+        "nudge": "Teile deine Reise des Gebens mit jemandem, der von deiner Erfahrung profitieren könnte.",
+        "frame": {
+          "0": {
+            "h": "Welleneffekt",
+            "p": "Bleibende Wirkung schaffen"
+          },
+          "1": {
+            "h": "Andere inspirieren",
+            "p": "Mit gutem Beispiel vorangehen"
+          },
+          "2": {
+            "h": "Nachhaltiges Geben",
+            "p": "Langfristige Wirkung"
+          }
+        },
+        "cta": "Schaffe bleibende Wirkung →"
+      }
+    },
+    "how": {
+      "title": "Wie Drisheeq den Unterschied macht",
+      "0": {
+        "h": "Gleichgewichtstracker für Geben",
+        "d": "Sieh, wo und wie viel du gibst."
+      },
+      "1": {
+        "h": "Ruhe- und Erneuerungswerkzeuge",
+        "d": "Baue Auffüllung in deine Routine ein."
+      },
+      "2": {
+        "h": "Grenzen-Coaching",
+        "d": "Lerne Ja zu sagen, ohne dich selbst zu verlieren."
+      },
+      "3": {
+        "h": "Wirkungsplanung",
+        "d": "Konzentriere dich auf Geben, das Bestand hat."
+      }
+    },
+    "nudge": {
+      "label": "Probiere dies:"
+    },
+    "bridge": {
+      "title": "Du kannst geben, ohne dein Licht zu verlieren.",
+      "body": "Drisheeq hilft Gebenden, das Gleichgewicht zwischen Großzügigkeit und persönlicher Nachhaltigkeit zu finden, damit deine Freundlichkeit zu einer lebenslangen Stärke wird.",
+      "cta": "Beginne deine Klarheitsprüfung →"
+    }
+  }
+}

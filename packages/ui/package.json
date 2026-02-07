@@ -1,0 +1,31 @@
+{
+  "name": "@drishiq/ui",
+  "version": "1.0.0",
+  "description": "Trishek Green UI components for DrishiQ ChatModule",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts,.tsx",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["drishiq", "chat", "ui", "components", "trishek-green"],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.0.0",
+    "@drishiq/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  }
+}
+
+
+

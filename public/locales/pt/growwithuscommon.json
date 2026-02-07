@@ -1,0 +1,284 @@
+{
+  "main_page": {
+    "hero": {
+      "badge": "Crescer com Drishiq",
+      "title": "🌱 Juntos nos elevamos",
+      "description": "Seja você um afiliado, investidor, criador ou voz da comunidade—há um papel para você na construção de uma plataforma tranquila e focada na clareza que cresce com as pessoas, não com a pressão.",
+      "stir_lines": {
+        "choose_lane": "Escolha sua trilha. Vamos construir a estrada com você.",
+        "share_earn": "Compartilhe o que você ama. Ganhe o que você constrói.",
+        "belief_momentum": "Transforme crença em impulso.",
+        "collaborate": "Colabore sem caos.",
+        "early_seen_useful": "Seja cedo. Seja visível. Seja útil."
+      },
+      "cta": {
+        "explore_paths": "Explore os 6 caminhos",
+        "tell_interest": "Conte-nos seu interesse"
+      },
+      "visual": {
+        "title": "Uma árvore de crescimento viva com seis ramos luminosos",
+        "description": "Cada ramo representa um caminho para crescer com Drishiq, com energia fluindo para e de nossa plataforma—co-crescimento em ação."
+      }
+    },
+    "why_drishiq": {
+      "title": "Por que crescer com uma plataforma focada em clareza?",
+      "description": "Drishiq ajuda as pessoas a transformar névoa em pequenos passos honestos—no seu ritmo. Parceiros nos ajudam a alcançar, ensinar e sustentar essa missão. Você traz suas forças. Compartilhamos nossas ferramentas, audiência e recursos.",
+      "growth_loop": {
+        "title": "Juntos, criamos um ciclo de crescimento mais saudável",
+        "steps": ["Valor", "Confiança", "Alcance", "Receita", "Reinvestimento"]
+      },
+      "features": {
+        "transparent_terms": {
+          "title": "Termos transparentes",
+          "description": "Atribuição clara e relatórios honestos"
+        },
+        "co_created_launches": {
+          "title": "Lançamentos co-criados",
+          "description": "Não blitzes pontuais, mas parcerias significativas"
+        },
+        "practical_assets": {
+          "title": "Ativos práticos",
+          "description": "Kits de cópia, rastreadores, painéis"
+        },
+        "recognition_loops": {
+          "title": "Loops de reconhecimento",
+          "description": "Menções, destaques, estudos de caso"
+        }
+      }
+    },
+    "six_paths": {
+      "title": "Os seis caminhos",
+      "description": "Escolha sua trilha—construiremos impulso juntos",
+      "learn_more": "Saiba mais"
+    },
+    "roles": {
+      "affiliates": {
+        "title": "Afiliados",
+        "description": "Ganhe enquanto compartilha um produto em que você acredita."
+      },
+      "referrals": {
+        "title": "Indicações",
+        "description": "Convide alguém que amará Drishiq e receba uma recompensa."
+      },
+      "investors": {
+        "title": "Investidores",
+        "description": "Financie uma plataforma centrada no ser humano com marcos claros."
+      },
+      "ambassadors": {
+        "title": "Embaixadores",
+        "description": "Seja a voz de Drishiq em seu círculo ou cidade."
+      },
+      "collaborators": {
+        "title": "Criadores / Colaboradores",
+        "description": "Crie conteúdo, recursos e experiências—juntos."
+      },
+      "promoters": {
+        "title": "Promotores",
+        "description": "Amplifique lançamentos e histórias nos canais que você já usa."
+      }
+    },
+    "shared_impact": {
+      "title": "O que construímos com parceiros",
+      "description": "Juntos, criamos um impacto significativo que dura"
+    }
+  },
+  
+  "interest": {
+    "role_copy": {
+      "investor": {
+        "title": "✨ Invista em clareza",
+        "tagline": "Compartilhe seus detalhes e vamos explorar como seu investimento pode moldar a clareza."
+      },
+      "investors": {
+        "title": "✨ Invista em clareza",
+        "tagline": "Compartilhe seus detalhes e vamos explorar como seu investimento pode moldar a clareza."
+      },
+      "promoter": {
+        "title": "📣 Use sua voz para amplificar a clareza",
+        "tagline": "Conte-nos sobre sua plataforma e como você gostaria de amplificar a clareza."
+      },
+      "promoters": {
+        "title": "📣 Use sua voz para amplificar a clareza",
+        "tagline": "Conte-nos sobre sua plataforma e como você gostaria de amplificar a clareza."
+      },
+      "ambassador": {
+        "title": "🌍 Seja o rosto da clareza no seu mundo",
+        "tagline": "Deixe-nos conhecer sua comunidade e como você gostaria de representar a clareza."
+      },
+      "ambassadors": {
+        "title": "🌍 Seja o rosto da clareza no seu mundo",
+        "tagline": "Deixe-nos conhecer sua comunidade e como você gostaria de representar a clareza."
+      },
+      "creator": {
+        "title": "✨ Crie para a clareza. Colabore para a mudança.",
+        "tagline": "Mostre-nos seu ofício e como você gostaria de contribuir com sua criatividade."
+      },
+      "collaborators": {
+        "title": "✨ Crie para a clareza. Colabore para a mudança.",
+        "tagline": "Mostre-nos seu ofício e como você gostaria de contribuir com sua criatividade."
+      },
+      "affiliate": {
+        "title": "🌱 Junte-se ao círculo da mudança",
+        "tagline": "Conte-nos como você compartilhará DrishiQ e seja parte de nosso círculo de afiliados."
+      },
+      "affiliates": {
+        "title": "🌱 Junte-se ao círculo da mudança",
+        "tagline": "Conte-nos como você compartilhará DrishiQ e seja parte de nosso círculo de afiliados."
+      },
+      "referral": {
+        "title": "🔗 Compartilhe clareza, compartilhe cuidado",
+        "tagline": "Conte-nos quem você gostaria de convidar ou como você planeja usar indicações para apoiar outros."
+      },
+      "referrals": {
+        "title": "🔗 Compartilhe clareza, compartilhe cuidado",
+        "tagline": "Conte-nos quem você gostaria de convidar ou como você planeja usar indicações para apoiar outros."
+      }
+    },
+    
+    "form": {
+      "name_label": "Nome completo",
+      "name_placeholder": "Digite seu nome completo",
+      "email_label": "Endereço de e-mail",
+      "email_placeholder": "your@email.com",
+      "phone_label": "Número de telefone",
+      "phone_placeholder": "1234567890",
+      "notes_label": "Há algo que você gostaria de compartilhar?",
+      "notes_placeholder": "Contexto, objetivos ou links que você quer que vejamos",
+      "privacy_notice": "Nunca compartilharemos seus detalhes. Suas informações são seguras e privadas.",
+      "submit_button": "Enviar",
+      
+      "investor_details": "Detalhes de investimento",
+      "investment_stage": "Estágio de investimento",
+      "investment_stage_placeholder": "Seed, Série A, Crescimento, etc.",
+      "ticket_size": "Tamanho do ticket",
+      "ticket_size_placeholder": "$50K, $100K, $500K+",
+      "invest_timeline": "Cronograma de investimento",
+      "invest_timeline_placeholder": "Imediato, 3-6 meses, explorando",
+      
+      "promoter_details": "Detalhes do promotor",
+      "platforms": "Plataformas",
+      "platforms_placeholder": "Instagram, YouTube, Blog, Newsletter",
+      "audience": "Tamanho da audiência",
+      "audience_placeholder": "10K, 50K, 100K+ followers/subscribers",
+      "sample_links": "Links de amostra",
+      "sample_links_placeholder": "Links para seu melhor conteúdo promocional",
+      
+      "ambassador_details": "Detalhes do embaixador",
+      "community": "Comunidade",
+      "community_placeholder": "Estudantes, profissionais, grupos locais",
+      "region": "Região",
+      "region_placeholder": "Cidade, estado ou comunidades online",
+      "activities": "Atividades",
+      "activities_placeholder": "Eventos, workshops, encontros que você organiza",
+      
+      "creator_details": "Detalhes do criador",
+      "craft_area": "Área de criação",
+      "craft_area_placeholder": "Escrita, design, vídeo, áudio, etc.",
+      "portfolio": "Portfólio",
+      "portfolio_placeholder": "Links para seu melhor trabalho ou portfólio",
+      
+      "affiliate_details": "Detalhes do afiliado",
+      "affiliate_channels": "Canais de afiliados",
+      "affiliate_channels_placeholder": "Site, redes sociais, lista de e-mail",
+      "traffic_estimate": "Estimativa de tráfego",
+      "traffic_estimate_placeholder": "Visitantes mensais, seguidores, inscritos",
+      "payout_preference": "Preferência de pagamento",
+      "payout_preference_placeholder": "PayPal, bank transfer, crypto, etc.",
+      
+      "referral_details": "Detalhes de indicação",
+      "person_name": "Nome da pessoa",
+      "person_name_placeholder": "Quem você está indicando?",
+      "person_email": "E-mail da pessoa (opcional)",
+      "person_email_placeholder": "their@email.com",
+      "relationship": "Relação",
+      "relationship_placeholder": "Amigo, colega, família, outro"
+    },
+    
+    "otp": {
+      "title": "📱 Verifique seu telefone",
+      "message": "Enviamos um código de 6 dígitos para",
+      "placeholder": "Digite o código de 6 dígitos",
+      "verify_button": "Verificar código",
+      "verifying": "Verificando..."
+    },
+    
+    "success": {
+      "investor": "Obrigado por investir em clareza!",
+      "promoter": "Obrigado por amplificar a clareza!",
+      "ambassador": "Obrigado por representar a clareza!",
+      "creator": "Obrigado por criar para a clareza!",
+      "affiliate": "Obrigado por se juntar ao nosso círculo!",
+      "referral": "Obrigado por compartilhar clareza adiante!",
+      "message": "Enviamos um código de verificação para seu telefone. Por favor, verifique suas mensagens e digite o código para completar sua aplicação."
+    }
+  },
+  
+  "success": {
+    "next_steps_title": "O que acontece a seguir?",
+    "email_confirmation_title": "Confirmação de e-mail",
+    "email_confirmation_desc": "Você receberá um e-mail de confirmação em breve com todos os detalhes de sua aplicação.",
+    "phone_verification_title": "Verificação telefônica",
+    "phone_verification_desc": "Seu número de telefone foi verificado e será usado para futuras comunicações.",
+    "questions_text": "Dúvidas? Entre em contato conosco em",
+    
+    "investor": {
+      "title": "Aplicação de investimento concluída!",
+      "description": "Sua aplicação de investimento foi enviada e verificada com sucesso. Nosso time analisará seus detalhes e entrará em contato com você dentro de 24-48 horas.",
+      "next_step_1": "Nosso time de investimento analisará sua aplicação",
+      "next_step_2": "Agendaremos uma chamada para discutir sua tese de investimento",
+      "next_step_3": "Você receberá informações detalhadas sobre nossas rodadas de financiamento",
+      "next_step_4": "Manteremos você atualizado sobre nossos marcos de crescimento",
+      "cta_text": "Explore nossa visão"
+    },
+    
+    "promoter": {
+      "title": "Aplicação de promotor concluída!",
+      "description": "Sua aplicação de promotor foi enviada e verificada com sucesso. Nosso time analisará os detalhes de sua plataforma e entrará em contato com você dentro de 24-48 horas.",
+      "next_step_1": "Nosso time de marketing analisará os detalhes de sua plataforma",
+      "next_step_2": "Discutiremos oportunidades de colaboração e termos",
+      "next_step_3": "Você receberá materiais e diretrizes promocionais",
+      "next_step_4": "Configuraremos o rastreamento de suas atividades promocionais",
+      "cta_text": "Veja nossos produtos"
+    },
+    
+    "ambassador": {
+      "title": "Aplicação de embaixador concluída!",
+      "description": "Sua aplicação de embaixador foi enviada e verificada com sucesso. Nosso time analisará os detalhes de sua comunidade e entrará em contato com você dentro de 24-48 horas.",
+      "next_step_1": "Nosso time de comunidade analisará sua aplicação",
+      "next_step_2": "Discutiremos seu papel e responsabilidades",
+      "next_step_3": "Você receberá materiais e diretrizes de embaixador",
+      "next_step_4": "Conectaremos você com outros embaixadores",
+      "cta_text": "Junte-se à nossa comunidade"
+    },
+    
+    "creator": {
+      "title": "Aplicação de criador concluída!",
+      "description": "Sua aplicação de criador foi enviada e verificada com sucesso. Nosso time analisará seu portfólio e entrará em contato com você dentro de 24-48 horas.",
+      "next_step_1": "Nosso time criativo analisará seu portfólio",
+      "next_step_2": "Discutiremos oportunidades de colaboração",
+      "next_step_3": "Você receberá briefings criativos e diretrizes",
+      "next_step_4": "Configuraremos um espaço de trabalho para seus projetos",
+      "cta_text": "Veja nosso trabalho"
+    },
+    
+    "affiliate": {
+      "title": "Aplicação de afiliado concluída!",
+      "description": "Sua aplicação de afiliado foi enviada e verificada com sucesso. Nosso time analisará seus detalhes e entrará em contato com você dentro de 24-48 horas.",
+      "next_step_1": "Nosso time de afiliados analisará sua aplicação",
+      "next_step_2": "Discutiremos taxas de comissão e termos",
+      "next_step_3": "Você receberá links e materiais de afiliados",
+      "next_step_4": "Configuraremos o rastreamento de suas indicações",
+      "cta_text": "Comece a ganhar"
+    },
+    
+    "referral": {
+      "title": "Aplicação de indicação concluída!",
+      "description": "Sua aplicação de indicação foi enviada e verificada com sucesso. Nosso time analisará seus detalhes e entrará em contato com você dentro de 24-48 horas.",
+      "next_step_1": "Nosso time de indicações analisará sua aplicação",
+      "next_step_2": "Discutiremos termos de indicação e recompensas",
+      "next_step_3": "Você receberá links e materiais de indicação",
+      "next_step_4": "Rastrearemos suas atividades de indicação",
+      "cta_text": "Compartilhe DrishiQ"
+    }
+  }
+}

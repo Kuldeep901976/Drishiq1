@@ -1,0 +1,40 @@
+--- a/lib/audit.ts
++++ b/lib/audit.ts
+ /**
+  * Audit logging module
+  * Provides audit logging functionality for DDSA operations
++ * Now includes PII redaction based on tenant privacy settings
+  */
+ 
++import { redactPIIFromObject } from '@/lib/utils/log-redaction';
++import { getTenantConfig } from '@/lib/tenant/registry';
++
+ interface AuditData {
+   [key: string]: any;
+ }
+ 
+ /**
+  * Log an audit event
++ * @param event - Event name
++ * @param data - Audit data (will be redacted if tenant requires)
++ * @param tenantId - Optional tenant ID for privacy-aware redaction
+  */
+-async function log(event: string, data: AuditData = {}): Promise<void> {
++async function log(event: string, data: AuditData = {}, tenantId?: string): Promise<void> {
+   try {
+-    // For now, just log to console
+-    // TODO: Implement database logging if needed
+-    console.log(`[AUDIT] ${event}:`, JSON.stringify(data, null, 2));
++    // Get tenant config for privacy settings
++    const tenantConfig = tenantId ? await getTenantConfig(tenantId) : null;
++    
++    // Redact PII if tenant requires it
++    const redactedData = redactPIIFromObject(data, tenantConfig);
++    
++    // For now, just log to console
++    // TODO: Implement database logging if needed
++    console.log(`[AUDIT] ${event}:`, JSON.stringify(redactedData, null, 2));
+   } catch (error) {
+     console.error(`[AUDIT] Failed to log event ${event}:`, error);
+   }
+

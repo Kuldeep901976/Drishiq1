@@ -1,0 +1,712 @@
+{
+  "builder": {
+    "hero": {
+      "subtitle": "Baumeister, nicht nur beschäftigt — Geschichten bekannter Gesichter",
+      "title": "Immer am Bauen",
+      "description": "Dein Auge ist auf dem nächsten Schritt, bevor dein Fuß auf dem letzten landet. Du blühst in Bewegung auf, aber wann hältst du an und bist einfach nur?",
+      "cta": {
+        "primary": "Siehe deine Baumuster →",
+        "secondary": {
+          "label": "Wie hilft Drishik?",
+          "sentence": "Kläre deine Vision. Balance dein Tempo."
+        }
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Gibt es immer 'noch eine Sache', die du fertigstellen möchtest, bevor du dich ausruhst?",
+        "1": "Kämpfst du damit, langsamer zu werden, selbst wenn du es willst?",
+        "2": "Passen deine Beziehungen oft um deine Projekte herum?",
+        "3": "Fühlt sich deine Identität damit verbunden an, was du baust oder erreichst?",
+        "4": "Hast du dich jemals gefragt: Was wäre, wenn ich aufhöre zu bauen?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Inspiriert",
+        "subtitle": "Von Zweck getrieben"
+      },
+      "1": {
+        "title": "Müde",
+        "subtitle": "Immer in Bewegung"
+      },
+
+      "2": {
+        "title": "Stolz",
+        "subtitle": "Es Gestalt annehmen sehen"
+      },
+      "3": {
+        "title": "Isoliert",
+        "subtitle": "Wenige verstehen das Tempo"
+      },
+      "4": {
+        "title": "Überlastet",
+        "subtitle": "Zu viele Säulen auf einmal"
+      },
+      "5": {
+        "title": "Erfüllt",
+        "subtitle": "Etwas Bedeutsames bauen"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Elon Musk",
+        "profession": "Unternehmer",
+        "quote": "Wenn etwas wichtig genug ist, tust du es, auch wenn die Chancen nicht zu deinen Gunsten stehen."
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Medienführerin",
+        "quote": "Dein Bestes in diesem Moment zu tun, versetzt dich in die beste Position für den nächsten Moment."
+      },
+      "2": {
+        "name": "J.R.R. Tolkien",
+        "profession": "Autor",
+        "quote": "Langsam reist man sehr weit."
+      },
+      "3": {
+        "name": "Jane Goodall",
+        "profession": "Wissenschaftlerin",
+        "quote": "Was du tust, macht einen Unterschied, und du musst entscheiden, welche Art von Unterschied du machen möchtest."
+      },
+      "4": {
+        "name": "Howard Schultz",
+        "profession": "Wirtschaftsführer",
+        "quote": "Träume mehr als andere. Erwarte mehr als andere für möglich halten."
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Der Antrieb zu bauen",
+        "line": "Du siehst überall Möglichkeiten.",
+        "body": "Wo andere leeren Raum sehen, siehst du eine Grundlage. Wo andere 'genug' sehen, siehst du 'mehr zu tun'. Deine Vorstellungskraft und Fähigkeit zu bauen sind dein Geschenk — aber sie sind auch deine Last.",
+        "bullet": {
+          "0": "Du hast immer mehrere Projekte am Laufen.",
+          "1": "Du fühlst dich ruhelos ohne Ziel oder Plan.",
+          "2": "Du verknüpfst Produktivität mit Selbstwert."
+        },
+        "nudge": "Schreibe deine aktuellen Projekte auf und markiere diejenigen, die wirklich mit deinen Werten übereinstimmen — nicht nur mit deinen Gewohnheiten.",
+        "frame": {
+
+
+
+          "0": {
+            "h": "Blaupause",
+            "p": "Zukunft planen"
+          },
+          "1": {
+            "h": "Hammer und Nagel",
+            "p": "Aktiv gestalten"
+          },
+          "2": {
+            "h": "Wachsende Struktur",
+            "p": "Fortschritt sehen"
+          }
+        },
+        "cta": "Richte dein Bauen an deinen Werten aus →"
+      },
+      "1": {
+        "title": "Wenn die Struktur dein Meister wird",
+        "line": "Nicht jeder Bau ist das Gewicht wert.",
+        "body": "Manchmal beginnt das, was du baust, dich zu formen — leitet deine Zeit, Entscheidungen und sogar deine Gesundheit.",
+        "bullet": {
+          "0": "Deine Projekte fressen deine persönliche Zeit auf.",
+          "1": "Du fühlst dich schuldig, wegzugehen.",
+          "2": "Du bleibst lange bei einer Idee, nachdem ihr Wert verblasst ist."
+        },
+        "nudge": "Frage: 'Wenn ich das heute loslasse, was gewinne ich an Zeit, Gesundheit oder Freude zurück?'",
+        "frame": {
+          "0": {
+            "h": "Rissiger Turm",
+            "p": "Zeichen von Belastung"
+          },
+
+
+
+          "1": {
+            "h": "Uhr ohne Zeiger",
+            "p": "Zeit entgleitet"
+          },
+          "2": {
+            "h": "Gebundene Figur",
+            "p": "An Arbeit gebunden"
+          }
+        },
+        "cta": "Befreie dich von instabilem Bauen →"
+      },
+      "2": {
+        "title": "Ziegel und Atem ausbalancieren",
+        "line": "Jede starke Struktur ruht auf einem soliden Fundament — und das bist du.",
+        "body": "Je stärker du bist, desto stärker können deine Schöpfungen sein. Mit Ausgewogenheit zu bauen bedeutet, Raum für Ruhe, Reflexion und Beziehungen zu schaffen.",
+        "bullet": {
+          "0": "Du vernachlässigst persönliche Bedürfnisse für Fristen.",
+          "1": "Du hast seit Jahren keine bewusste Pause gemacht.",
+          "2": "Du spürst, wie sich deine Leidenschaft in Druck verwandelt."
+        },
+        "nudge": "Reserviere jede Woche nicht verhandelbare Zeit für etwas, das nicht mit deinen Projekten zusammenhängt.",
+        "frame": {
+
+
+
+          "0": {
+            "h": "Ausgeglichene Steine",
+            "p": "Stabilität und Kraft"
+          },
+          "1": {
+            "h": "Offenes Feld",
+            "p": "Raum zum Atmen"
+          },
+          "2": {
+            "h": "Hände, die eine Pflanze halten",
+            "p": "Sowohl dich als auch deine Arbeit nähren"
+          }
+        },
+        "cta": "Baue ohne zu brechen →"
+      },
+      "3": {
+        "title": "Über dich hinaus bauen",
+        "line": "Die bedeutungsvollsten Bauten bleiben, nachdem du gegangen bist.",
+        "body": "Ein wahrer Baumeister weiß, wann er die Werkzeuge weitergibt. Lehren, Delegieren und den Prozess teilen kann deine Arbeit größer machen als dich selbst.",
+        "bullet": {
+          "0": "Du möchtest, dass deine Arbeit ein Vermächtnis ist.",
+          "1": "Du bist bereit für mehr Zusammenarbeit.",
+          "2": "Du möchtest, dass deine Bauten über dich hinaus dienen."
+        },
+        "nudge": "Wähle eine Person zum Mentoring oder zur Einbeziehung in dein aktuelles Projekt.",
+        "frame": {
+
+
+
+          "0": {
+            "h": "Offene Tür",
+            "p": "Andere einladen"
+          },
+          "1": {
+            "h": "Hände, die eine Pflanze weitergeben",
+            "p": "Fähigkeiten teilen"
+          },
+          "2": {
+            "h": "Vollendetes Gebäude in der Sonne",
+            "p": "Vermächtnis etabliert"
+          }
+        },
+        "cta": "Schaffe bleibende Wirkung →"
+      }
+    },
+
+
+    "cta": {
+
+      "how": {
+        "label": "Wie Drishik hilft",
+        "sentence": "Kläre deine Vision. Balance dein Tempo."
+      }
+    },
+    "try_this": "Probiere dies:",
+    "bridge": {
+      "title": "Bereit, die Zukunft zu gestalten?",
+      "body": "Drishik hilft Baumeistern, das Gleichgewicht zwischen Bauen und Selbstfürsorge zu finden und stellt sicher, dass deine Energie, Gesundheit und Klarheit mit deiner Arbeit wachsen.",
+      "cta": "Starte deine Klarheitsprüfung →"
+    },
+    "how": {
+      "title": "Wie Drishik den Unterschied macht",
+      "0": {
+        "h": "Bau-Wert-Karte",
+        "d": "Drishik hilft dir zu sehen, welche Projekte wirklich mit deinen Werten übereinstimmen."
+      },
+      "1": {
+        "h": "Tempo-Reset",
+        "d": "Drishik bietet dir echte Werkzeuge und Strategien, um langsamer zu werden, ohne Schwung zu verlieren."
+      },
+      "2": {
+        "h": "Balance-Praktiken",
+        "d": "Drishik teilt dir tägliche Praktiken mit, die Ruhe, Reflexion und Beziehungen priorisieren."
+      },
+      "3": {
+        "h": "Vermächtnis-Baumeister",
+        "d": "Drishik gestaltet deine Wirkung so, dass sie über dich hinaus dient und langfristige Bedeutung schafft."
+      }
+    }
+  },
+"connector": {
+    "section": {
+      "0": {
+        "title": "Das Geschenk der Brücken",
+        "line": "Du siehst, wo Menschen sich treffen sollten.",
+        "body": "Du bist der Faden zwischen Geschichten, die Verbindung zwischen isolierten Ideen, der Funke, der Dinge möglich macht. Die Welt braucht deine Offenheit — und deine Fähigkeit, die Welt zusammenzubringen.",
+        "bullet": {
+          "0": "Du stellst intuitiv Menschen vor, die einander helfen können.",
+          "1": "Du kannst es nicht ertragen, jemanden auszuschließen.",
+          "2": "Du wirst energetisiert, wenn du Beziehungen entstehen siehst."
+        },
+        "nudge": "Liste drei Verbindungen auf, die du kürzlich hergestellt hast und die sich wirklich bedeutungsvoll anfühlten — nicht nur bequem.",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+            "h": "Menschen verbinden.",
+            "p": "Menschen verbinden."
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Holding groups together..jpg",
+            "h": "Gruppen zusammenhalten.",
+            "p": "Gruppen zusammenhalten."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+            "h": "Menschen verbinden.",
+            "p": "Menschen verbinden."
+          }
+        },
+        "cta": "Verbinde dort, wo es am meisten zählt →"
+      },
+      "1": {
+        "title": "Zu viele Fäden halten",
+        "line": "Selbst das stärkste Netz kann unter Belastung ausfransen.",
+        "body": "Wenn du der Klebstoff in jedermanns Leben bist, kann es sich anfühlen, als würde nichts ohne dich funktionieren — und das kann dich still erschöpfen.",
+        "bullet": {
+          "0": "Du fühlst dich schuldig, wenn du nicht zu jeder Veranstaltung gehen kannst.",
+          "1": "Dein Posteingang oder deine Nachrichten sind immer voller Anfragen.",
+          "2": "Du findest es schwer, 'nein' ohne Erklärung zu sagen."
+        },
+        "nudge": "Halte inne, bevor du auf eine Anfrage antwortest. Frage: 'Gehört das zu mir?'",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+            "h": "Das Eis brechen.",
+            "p": "Das Eis brechen."
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Bringing teams together..jpg",
+            "h": "Teams zusammenbringen.",
+            "p": "Teams zusammenbringen."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+            "h": "Das Eis brechen.",
+            "p": "Das Eis brechen."
+          }
+        },
+        "cta": "Schütze deinen Raum, ohne Verbindungen zu brechen →"
+      },
+      "2": {
+        "title": "Deinen Platz im Netzwerk finden",
+        "line": "Verbindung ist am stärksten, wenn du Teil davon bist.",
+        "body": "Es ist leicht, das stille Zentrum zu werden, das niemand bemerkt — weil du damit beschäftigt bist, sicherzustellen, dass andere bemerkt werden. Aber deine Stimme und Bedürfnisse verdienen gleichwertigen Raum.",
+        "bullet": {
+          "0": "Menschen kennen dich als 'Verbinder', aber nicht tief als Person.",
+          "1": "Deine eigenen Meilensteine bleiben oft ungefeiert.",
+          "2": "Du zögerst, um Hilfe zu bitten."
+        },
+        "nudge": "Teile diese Woche ein persönliches Ziel oder eine Herausforderung mit jemandem, dem du vertraust.",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+            "h": "Harmonie aufbauen",
+            "p": "Harmonie aufbauen"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Creating safe spaces..jpg",
+            "h": "Sichere Räume schaffen.",
+            "p": "Sichere Räume schaffen."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+            "h": "Harmonie aufbauen",
+            "p": "Harmonie aufbauen"
+          }
+        },
+        "cta": "Tritt in den Kreis ein, den du geschaffen hast →"
+      },
+      "3": {
+        "title": "Verbinden für Transformation",
+        "line": "Die mächtigsten Brücken verbinden nicht nur Menschen — sie verändern Leben.",
+        "body": "Wenn deine Verbindungen mit Absicht und Fürsorge aufgebaut werden, erzeugen sie Wellen nach außen, formen Gemeinschaften und schaffen Wirkung, die über dich hinausgeht.",
+        "bullet": {
+          "0": "Du möchtest, dass dein Netzwerk einen Zweck über soziale Verbindungen hinaus hat.",
+          "1": "Du träumst davon, Initiativen zu starten, die mehr Menschen helfen.",
+          "2": "Du siehst Potenzial in Menschen, das andere übersehen."
+        },
+        "nudge": "Wähle eine Beziehung oder Gruppe aus, in die du tief investierst — nicht mehr Breite, sondern mehr Tiefe.",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+            "h": "Dauerhafte Bindungen schaffen.",
+            "p": "Dauerhafte Bindungen schaffen."
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Everyone belongs..jpg",
+            "h": "Jeder gehört dazu.",
+            "p": "Jeder gehört dazu."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+            "h": "Dauerhafte Bindungen schaffen.",
+            "p": "Dauerhafte Bindungen schaffen."
+          }
+        },
+        "cta": "Mache deine Verbindungen zählbar →"
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Verbindungskarte",
+        "d": "Sieh, wohin deine Energie fließt."
+      },
+      "1": {
+        "h": "Grenzwerkzeuge",
+        "d": "Lerne Ja zu sagen, ohne zu übertreiben."
+      },
+      "2": {
+        "h": "Gegenseitigkeitspraktiken",
+        "d": "Baue ausgewogene Beziehungen auf."
+      },
+      "3": {
+        "h": "Zweckweg",
+        "d": "Richte Verbindung auf das aus, was dir am meisten bedeutet."
+      },
+      "title": "Wie Drishik den Unterschied macht"
+    },
+    "hero": {
+      "title": "Stimmen zusammenhalten",
+      "subtitle": "Du verbindest Menschen, schaffst Gelegenheiten und machst aus Fremden Mitarbeiter. Aber während du alle verbunden hältst, fühlst du dich immer noch gesehen?"
+    },
+    "stir": {
+      "line": {
+        "0": "Kennst du oft die Geschichte von allen, teilst aber selten deine eigene?",
+        "1": "Bist du die erste Person, die Leute nach 'mit wem sprechen' fragen?",
+        "2": "Fühlst du dich verantwortlich, die Gemeinschaft zusammenzuhalten?",
+        "3": "Hast du dich inmitten deines eigenen Netzwerks einsam gefühlt?",
+        "4": "Wie wäre es, von innen nach außen zu verbinden, anstatt zuerst nach außen?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Warm",
+        "subtitle": "Zu Hause in jeder Menge"
+      },
+      "1": {
+        "title": "Überlastet",
+        "subtitle": "Zu viele Fäden zu halten"
+      },
+      "2": {
+        "title": "Geschätzt",
+        "subtitle": "Andere verlassen sich auf dich"
+      },
+      "3": {
+        "title": "Unsichtbar",
+        "subtitle": "Deine Geschichte nimmt den Rücksitz ein"
+      },
+      "4": {
+        "title": "Stolz",
+        "subtitle": "Brücken bauen, die andere brauchten"
+      },
+      "5": {
+        "title": "Erschöpft",
+        "subtitle": "Energie zu dünn verteilt"
+      },
+      "header": "Wie sich Verbinden anfühlen kann"
+    },
+    "celeb": {
+      "items": [
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/maya_angelou.jpg",
+          "name": "Maya Angelou",
+          "profession": "Dichterin",
+          "source": "Zitat",
+          "quote": "\"Wir sind uns ähnlicher, meine Freunde, als wir verschieden sind.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Howard_Schultz.jpg",
+          "name": "Howard Schultz",
+          "profession": "Wirtschaftsführer",
+          "source": "Zitat",
+          "quote": "\"Im Leben kannst du nicht alles sein. Aber du kannst die Dinge sein, die wirklich zählen.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Malala_Yousafzai.jpg",
+          "name": "Malala Yousafzai",
+          "profession": "Aktivistin",
+          "source": "Zitat",
+          "quote": "\"Wenn die ganze Welt schweigt, wird selbst eine Stimme mächtig.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Desmond_Tutu.jpg",
+          "name": "Desmond Tutu",
+          "profession": "Führer",
+          "source": "Zitat",
+          "quote": "\"Tue dein kleines bisschen Gutes, wo du bist; es sind diese kleinen Stücke Gutes, die die Welt überwältigen.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Fred_Rogers.jpg",
+          "name": "Fred Rogers",
+          "profession": "Pädagoge",
+          "source": "Zitat",
+          "quote": "\"Beziehungen gegenseitiger Fürsorge erfordern Freundlichkeit, Geduld und Verständnis.\""
+        }
+      ]
+    },
+    "bridge": {
+      "title": "Bereit, mit Klarheit zu verbinden?",
+      "body": "Drishik hilft Verbindern zu verstehen, wohin ihre Energie fließt und welche Beziehungen wirklich zählen. Denn die besten Beziehungen sind die, die dich nicht leer zurücklassen.",
+      "cta": "Kartiere deine Verbindungen →"
+    },
+    "topband": {
+      "label": "Verbinder, nicht nur Netzwerker — Geschichten bekannter Gesichter"
+    },
+    "cta": {
+      "early_access": "Entdecke deine Verbindungsmuster →",
+      "how": {
+        "label": "Wie Drishik hilft",
+        "sentence": "Verstehe deine Energie. Balance deine Beziehungen."
+      }
+    },
+    "btn": {
+      "early_access": "Starte deine Klarheitsprüfung →"
+    }
+  },
+"dependent": {
+    "hero": {
+      "title": "Abhängig durch Design",
+      "subtitle": "Interdependenz ist kein Fehler. So bewegen sich Menschen — zusammen. Die Kunst ist zu wissen, welche Verbindungen dich erheben und welche dich still binden."
+    },
+    "stir": {
+      "line": {
+        "0": "Wer stabilisiert dich — und wer lenkt dich?",
+        "1": "Sind deine Jas gewählt oder automatisch?",
+        "2": "Wo fühlt sich Fürsorge schwer an?",
+        "3": "Welche Grenze würde dich freundlicher machen?",
+        "4": "Welche Unterstützung befeuert echtes Wachstum?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Unterstützung",
+        "subtitle": "Hände, die stabilisieren"
+      },
+      "1": {
+        "title": "Vertrauen",
+        "subtitle": "In kleinen Taten aufgebaut"
+      },
+      "2": {
+        "title": "Raum",
+        "subtitle": "Liebe mit Luft"
+      },
+      "3": {
+        "title": "Grenzen",
+        "subtitle": "Freundlich und klar"
+      },
+      "4": {
+        "title": "Dankbarkeit",
+        "subtitle": "Danke, keine Schuld"
+      },
+      "5": {
+        "title": "Wachstum",
+        "subtitle": "Zusammen aufsteigen"
+      },
+      "header": "Wie sich Abhängigkeit anfühlen kann"
+    },
+    "celeb": {
+      "items": [
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/maya_angelou.jpg",
+          "name": "Maya Angelou",
+          "profession": "Dichterin",
+          "source": "Interview",
+          "quote": "\"Niemand, aber niemand, kann es hier alleine schaffen.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Steve_Jobs.jpg",
+          "name": "Steve Jobs",
+          "profession": "Unternehmer",
+          "source": "Gespräch",
+          "quote": "\"Große Dinge im Geschäft werden nie von einer Person gemacht.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Priyanka-chopra.jpg",
+          "name": "Priyanka Chopra Jonas",
+          "profession": "Schauspielerin",
+          "source": "TEDx",
+          "quote": "\"Sich auf andere zu stützen macht dich nicht weniger — es macht dich menschlich.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Stephen_Hawking.jpg",
+          "name": "Stephen Hawking",
+          "profession": "Physiker",
+          "source": "Vortrag",
+          "quote": "\"Wir sind jetzt alle verbunden, wie Neuronen in einem riesigen Gehirn.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Sachin_Tendulkar.jpg",
+          "name": "Sachin Tendulkar",
+          "profession": "Cricketspieler",
+          "source": "Presse",
+          "quote": "\"Ich verdanke meinen Erfolg den Menschen, die an meiner Seite standen.\""
+        }
+      ]
+    },
+    "bridge": {
+      "title": "Interdependenz kann deine Stärke sein",
+      "body": "Drishik hilft dir, die Unterstützung zu erkennen, die dich stärkt — nicht die Beziehungen, die dich binden. Denn gesunde Interdependenz bedeutet, auf andere angewiesen zu sein, ohne dich selbst zu verlieren.",
+      "cta": "Starte deine Klarheitsreise →"
+    },
+    "topband": {
+      "label": "Abhängig, nicht weniger — Geschichten bekannter Gesichter"
+    },
+    "cta": {
+      "early_access": "Überprüfe deine Abhängigkeitskarte →",
+      "how": "Wie Drishik hilft"
+    },
+    "btn": {
+      "early_access": "Überprüfe deine Abhängigkeitskarte"
+    },
+    "section": {
+      "0": {
+        "title": "Der Komfort der Verbindung",
+        "line": "Wärme, die stabilisiert. Routinen, die verwurzeln.",
+        "body": "Geteilte Routinen, Insider-Witze, am Ende des Tages bei jemandem einchecken — diese Bindungen halten dich geerdet. Aber Komfort kann auch ein Schild werden, der dich vom Wachsen abhält.",
+        "bullet": {
+          "0": "Du verlässt dich auf einen kleinen Kreis für die meisten Entscheidungen.",
+          "1": "Du fühlst dich verankert — und manchmal zögerlich, Risiken einzugehen.",
+          "2": "Du gibst nach, um den Frieden zu wahren."
+        },
+        "nudge": "Liste zwei Unterstützungen auf, die dich energetisieren, und eine, die dich still nach unten zieht. Halte die ersten zwei nah; gestalte die dritte neu.",
+        "cta": {
+          "label": "Kartiere energetisierende Unterstützung →",
+          "sentence": "Manche Hände helfen dir zu wachsen, manche halten dich fest. Kenne den Unterschied."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+            "h": "Ihr Fels in Stürmen",
+            "p": "Ihr Fels in Stürmen"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/You hold others up..jpg",
+            "h": "Du hältst andere hoch",
+            "p": "Du hältst andere hoch"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+            "h": "Ihr Fels in Stürmen",
+            "p": "Ihr Fels in Stürmen"
+          }
+        }
+      },
+      "1": {
+        "title": "Grenzen innerhalb von Bindungen",
+        "line": "Nähe mit Luft. Liebe mit Raum.",
+        "body": "Jede gesunde Abhängigkeit hat unsichtbare Linien. Zu viel Vertrauen kann sie verwischen, zu viel Distanz kann sie brechen. Linien mit Klarheit neu zu ziehen verhindert, dass Vertrauen sich in Spannung verwandelt.",
+        "bullet": {
+          "0": "Du entschuldigst dich dafür, Zeit für dich zu nehmen.",
+          "1": "Du teilst Passwörter, Kalender, Pläne aus Gewohnheit.",
+          "2": "'Nein' zu sagen fühlt sich wie eine Bedrohung für die Beziehung an."
+        },
+        "nudge": "Schreibe eine Grenze als freundliches Versprechen: 'Ich werde nach 19 Uhr morgen antworten. Ich möchte meinen besten Verstand geben.'",
+        "cta": {
+          "label": "Schreibe eine freundliche Grenze →",
+          "sentence": "Grenzen zerstören Liebe nicht. Sie reinigen sie."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+            "h": "Sie sicher halten",
+            "p": "Sie sicher halten"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Their success is yours..png",
+            "h": "Ihr Erfolg ist deiner",
+            "p": "Ihr Erfolg ist deiner"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+            "h": "Sie sicher halten",
+            "p": "Sie sicher halten"
+          }
+        }
+      },
+      "2": {
+        "title": "Das Gewicht der Erwartungen",
+        "line": "Dankbarkeit ist kein Vertrag.",
+        "body": "Manchmal kommt Unterstützung mit Bedingungen — Verpflichtungen, die du nicht unterschrieben hast. Es ist nicht egoistisch zu wissen, wo Geben endet und Leben beginnt.",
+        "bullet": {
+          "0": "Du führst Buch über Gefälligkeiten (ihre oder deine).",
+          "1": "Du entschuldigst dich für Bedürfnisse, die menschlich sind.",
+          "2": "Du machst dir Sorgen, dass Liebe zurückgezogen wird, wenn du Grenzen setzt."
+        },
+        "nudge": "Schreibe ein Dankeschön, das keine Rückzahlung verspricht: 'Danke. Es bedeutete viel.' Punkt.",
+        "cta": {
+          "label": "Praktiziere saubere Dankbarkeit →",
+          "sentence": "Dankbarkeit ist keine Schuld. Es ist ein tiefer Atemzug."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+            "h": "Deine Grenzen finden",
+            "p": "Deine Grenzen finden"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Love with wisdom..jpg",
+            "h": "Liebe mit Weisheit",
+            "p": "Liebe mit Weisheit"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+            "h": "Deine Grenzen finden",
+            "p": "Deine Grenzen finden"
+          }
+        }
+      },
+      "3": {
+        "title": "Gegenseitiges Wachstum",
+        "line": "Abhängigkeit, die zu Resilienz wird.",
+        "body": "Abhängigkeit kann ein Startplatz sein, wenn sie auf Respekt und gemeinsamen Fortschritt aufgebaut ist. Wenn du wächst, wachsen auch deine Verbindungen.",
+        "bullet": {
+          "0": "Du feierst Fähigkeiten, nicht nur Gefälligkeiten.",
+          "1": "Du fragst 'Was hilft?' genauso oft wie 'Kannst du helfen?'.",
+          "2": "Du verwandelst Unterstützung in gemeinsamen Schwung."
+        },
+        "nudge": "Frage jemanden diese Woche: 'Wie kann ich auf kleine Weise dein Ziel unterstützen?' Dann tu es.",
+        "cta": {
+          "label": "Schaffe gegenseitiges Wachstum →",
+          "sentence": "Echte Stärke ist nicht, was du allein aufbauen kannst. Es ist, was ihr zusammen werden könnt."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+            "h": "Stärker als Team",
+            "p": "Stärker als Team"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Walking side by side..jpg",
+            "h": "Seite an Seite gehen",
+            "p": "Seite an Seite gehen"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+            "h": "Stärker als Team",
+            "p": "Stärker als Team"
+          }
+        }
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Klarheitsgespräche",
+        "d": "Drishik führt dich durch sanfte Anregungen, die Unschärfe in klare Entscheidungen verwandeln."
+      },
+      "1": {
+        "h": "Du-Tempo-Pläne",
+        "d": "Drishik teilt kleine, stapelbare Aktionen, damit du ohne Druck vorankommen kannst."
+      },
+      "2": {
+        "h": "Musterfinder",
+        "d": "Drishik hilft dir zu sehen, wer und was dich wirklich antreibt."
+      },
+      "3": {
+        "h": "Check-in, der sich kümmert",
+        "d": "Drishik sendet menschliche Anstöße, damit sich dein Wachstum unterstützt anfühlt, nicht überwacht."
+      },
+      "title": "Wie Drishik den Unterschied macht"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "query": "SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'stages'",
+  "error": {
+    "code": "42P01",
+    "message": "relation \"stages\" does not exist",
+    "line": 28,
+    "position": 6
+  },
+  "timestamp": "2025-01-10T08:40:00Z",
+  "conclusion": "stages table does NOT exist in database",
+  "status": "confirmed_missing",
+  "implication": "Core DDSA schema may not be deployed to this database instance"
+}
+

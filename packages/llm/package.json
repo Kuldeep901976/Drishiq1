@@ -1,0 +1,26 @@
+{
+  "name": "@drishiq/llm",
+  "version": "1.0.0",
+  "description": "LLM provider adapters and routing for DrishiQ ChatModule",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["drishiq", "chat", "llm", "providers", "routing"],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "dependencies": {
+    "@drishiq/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
+
+
+

@@ -1,0 +1,418 @@
+{
+  "solo": {
+    "topband": {
+      "label": "Solo — não apenas sozinho — Histórias de rostos conhecidos"
+    },
+    "hero": {
+      "title": "Solo, não silêncio",
+      "subtitle": "Você ama liberdade. Você sente paz. E em algumas noites, essa paz soa um pouco alta demais.",
+      "cta": {
+        "primary": "Cheque com você mesmo — aqui",
+        "secondary": "Como o DrishiQ ajuda"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Seu espaço está quieto — ou apenas vazio?",
+        "1": "Quem ouve suas pequenas vitórias hoje?",
+        "2": "A rotina está conduzindo você — ou ajudando você?",
+        "3": "Quando foi a última vez que você se sentiu completamente visto?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Liberdade",
+        "subtitle": "Suas regras, seu ritmo"
+      },
+      "1": {
+        "title": "Paz",
+        "subtitle": "Silêncio que cura"
+      },
+      "2": {
+        "title": "Espaço",
+        "subtitle": "Espaço para crescer"
+      },
+      "3": {
+        "title": "Solidão",
+        "subtitle": "Bordas que machucam"
+      },
+      "4": {
+        "title": "Travado",
+        "subtitle": "Rotina em repetição"
+      },
+      "5": {
+        "title": "Pronto",
+        "subtitle": "Para uma mudança suave"
+      }
+    },
+    "emotions": {
+      "label": "Como a vida solo pode se sentir"
+    },
+    "celeb": {
+      "0": {
+        "name": "Serena Williams",
+        "profession": "Jogadora de tênis",
+        "quote": "\"O foco calmo antes de um jogo é crucial.\""
+      },
+      "1": {
+        "name": "Steve Jobs",
+        "profession": "Empreendedor",
+        "quote": "\"Seu tempo é limitado, então não o desperdice vivendo a vida de outra pessoa.\""
+      },
+      "2": {
+        "name": "Emma Watson",
+        "profession": "Atriz",
+        "quote": "\"Nunca me sinto tão forte quanto quando estou sozinha.\""
+      },
+      "3": {
+        "name": "A. P. J. Abdul Kalam",
+        "profession": "Cientista",
+        "quote": "\"O ser humano precisa de dificuldades porque elas são necessárias para desfrutar do sucesso.\""
+      },
+      "4": {
+        "name": "Mary Kom",
+        "profession": "Boxeadora",
+        "quote": "\"Não deixe ninguém dizer que você não pode.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "O primeiro apartamento solo",
+        "line": "O sonho se realizou. O eco veio junto.",
+        "body": "Finalmente você tem um lugar que respira como você. Mas nas primeiras noites, sua voz parece maior que o normal. A liberdade é real — e também o silêncio que ninguém vê.",
+        "bullet": {
+          "0": "Você liga a TV não pela história, mas pela companhia.",
+          "1": "O jantar é cedo; a cadeira da frente permanece vazia.",
+          "2": "Boas notícias parecem menores quando ninguém testemunha."
+        },
+        "nudge": "Transforme um momento em ritual: sirva a comida, acenda uma vela, diga uma linha de gratidão em voz alta — ensine o cômodo a ouvir sua voz.",
+        "frame": {
+          "0": {
+            "h": "Noite de liberdade",
+            "p": "Suas regras. Sua playlist. Sua luz."
+          },
+          "1": {
+            "h": "Eco do jantar",
+            "p": "Cadeira não puxada. Notícia sem lugar."
+          },
+          "2": {
+            "h": "Pequeno ritual",
+            "p": "Uma mesa posta. Uma vela acesa. Torne isso seu."
+          }
+        },
+        "cta": "Experimente com DrishiQ →"
+      },
+      "1": {
+        "title": "A milhas de casa",
+        "line": "O brilho da nova cidade. A dor do domingo.",
+        "body": "Você se mudou por um motivo — crescimento, oportunidade, reinício. Os dias da semana são ocupados. Os domingos podem se estender como atrasos de aeroporto no seu próprio quarto.",
+        "bullet": {
+          "0": "Você evita ligações porque 'não há nada para dizer'.",
+          "1": "Você trabalha o dia todo, mas não se sente preenchido.",
+          "2": "Janelas mostram vidas em movimento enquanto você apenas observa."
+        },
+        "nudge": "Envie isto para alguém: 'Pensando em você — não precisa responder.' Depois saia e encontre um marco — árvore, café, esquina — e declare como seu.",
+        "frame": {
+          "0": {
+            "h": "Brilho da nova cidade",
+            "p": "Roupa para lavar. Mercado. Pensamentos em pausa."
+          },
+          "1": {
+            "h": "Silêncio de domingo",
+            "p": "Diga oi. Nenhum motivo necessário."
+          },
+          "2": {
+            "h": "Ligando para casa",
+            "p": "Diga oi. Nenhum motivo necessário."
+          }
+        },
+        "cta": "Crie um pequeno marco →"
+      },
+      "2": {
+        "title": "Rotina interminável",
+        "line": "Ser eficiente não é o mesmo que ser nutrido.",
+        "body": "Seu dia funciona como um app de checklist — alertas satisfatórios, cores mínimas. A máquina funciona. A pessoa dentro deseja algo mais suave.",
+        "bullet": {
+          "0": "Você esqueceu a última vez que riu alto sozinho.",
+          "1": "Você rola a tela para dormir e acorda cansado.",
+          "2": "Você cancela pequenos planos com seu 'eu do futuro'."
+        },
+        "nudge": "Adicione algo nutritivo que possa ser feito em minutos: alongamento no chão, uma ligação para um primo, cozinhar um ovo com atenção.",
+        "frame": {
+          "0": {
+            "h": "Vitórias no piloto automático",
+            "p": "Academia ✔ Trabalho ✔ Preparação ✔"
+          },
+          "1": {
+            "h": "Momento silencioso",
+            "p": "Boa notícia, ninguém para empurrar."
+          },
+          "2": {
+            "h": "Adicione uma coisa",
+            "p": "Uma caminhada. Uma mensagem. Uma pausa na janela."
+          }
+        },
+        "cta": "Adicione algo nutritivo →"
+      },
+      "3": {
+        "title": "Vitórias solo",
+        "line": "O quarto é pequeno, mas as vitórias são grandes.",
+        "body": "Você conseguiu. A tela brilha, o chat apita — e então é só você e o ar. Alegria sem testemunhas ainda conta — é sua.",
+        "bullet": {
+          "0": "Você quer compartilhar, mas não parecer carente.",
+          "1": "Vitórias parecem menores em um quarto vazio.",
+          "2": "Você se pergunta se importa quando ninguém vê."
+        },
+        "nudge": "Tire uma foto do momento. Escreva três palavras que descrevem como isso se sente. Essa é sua história para contar.",
+        "frame": {
+          "0": {
+            "h": "Brilho da tela",
+            "p": "Notificação. Conquista. Você."
+          },
+          "1": {
+            "h": "Quarto vazio",
+            "p": "Eco do sucesso. Ninguém para dar um high-five."
+          },
+          "2": {
+            "h": "Capture isso",
+            "p": "Foto. Palavras. Sua história."
+          }
+        },
+        "cta": "Capture sua vitória →"
+      }
+    },
+    "how": {
+      "title": "Como o DrishiQ faz diferença",
+      "0": {
+        "h": "Clareza solo",
+        "d": "Veja seus padrões claramente, sem julgamento."
+      },
+      "1": {
+        "h": "Empurrões suaves",
+        "d": "Pequenos passos que combinam com seu ritmo solo."
+      },
+      "2": {
+        "h": "Espaço para respirar",
+        "d": "Ferramentas para criar solitude significativa."
+      },
+      "3": {
+        "h": "Opções de conexão",
+        "d": "Decida quando e como se conectar."
+      }
+    },
+    "nudge": {
+      "label": "Experimente isso:"
+    }
+  },
+  "giving_beyond": {
+    "topband": {
+      "label": "Além de dar — não apenas generoso — Histórias de rostos conhecidos"
+    },
+    "hero": {
+      "title": "Dar além de si",
+      "subtitle": "Seu coração é tão grande que você frequentemente esquece de guardar um pouco de amor para si. Você vê necessidades em todo lugar e sente que deve atendê-las, mesmo que isso custe tudo.",
+      "cta": {
+        "primary": "Encontre seu equilíbrio ao dar →",
+        "secondary": "Como o DrishiQ ajuda?"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Você dá até não sobrar nada para si?",
+        "1": "Você se sente culpado quando não consegue ajudar alguém?",
+        "2": "Você constantemente coloca as necessidades dos outros antes das suas?",
+        "3": "Você sente ressentimento quando seu dar não é reconhecido?",
+        "4": "Como seria dar a partir da abundância, não do vazio?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Generoso",
+        "subtitle": "Sempre pronto para dar"
+      },
+      "1": {
+        "title": "Exausto",
+        "subtitle": "Dar até esvaziar"
+      },
+      "2": {
+        "title": "Ressentido",
+        "subtitle": "Quando o dar não volta"
+      },
+      "3": {
+        "title": "Culpado",
+        "subtitle": "Quando você não consegue ajudar"
+      },
+      "4": {
+        "title": "Invisível",
+        "subtitle": "Suas necessidades passam despercebidas"
+      },
+      "5": {
+        "title": "Sábio",
+        "subtitle": "Aprendendo a dar com sabedoria"
+      }
+    },
+    "emotions": {
+      "label": "Como pode ser sentir-se além do dar"
+    },
+    "celeb": {
+      "0": {
+        "name": "Madre Teresa",
+        "profession": "Humanitária",
+        "quote": "\"Não importa quanto damos, mas quanto amor colocamos no ato de dar.\""
+      },
+      "1": {
+        "name": "Martin Luther King Jr.",
+        "profession": "Líder de direitos civis",
+        "quote": "\"A pergunta mais persistente e urgente da vida é: ‘O que você está fazendo pelos outros?’\""
+      },
+      "2": {
+        "name": "Nelson Mandela",
+        "profession": "Líder",
+        "quote": "\"O que importa na vida não é apenas vivermos, mas a diferença que fazemos na vida dos outros.\""
+      },
+      "3": {
+        "name": "Malala Yousafzai",
+        "profession": "Ativista",
+        "quote": "\"Quando o mundo inteiro está em silêncio, até uma voz se torna poderosa.\""
+      },
+      "4": {
+        "name": "Oprah Winfrey",
+        "profession": "Líder de mídia",
+        "quote": "\"A maior aventura que você pode viver é viver a vida dos seus sonhos.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Dar além dos limites",
+        "line": "Você dá até não restar nada.",
+        "body": "Seu coração é tão grande que você frequentemente esquece de guardar um pouco de amor para si. Você vê necessidades em todo lugar e sente que precisa suprir todas — mesmo que isso consuma você.",
+        "bullet": {
+          "0": "Você constantemente coloca as necessidades dos outros antes das suas.",
+          "1": "Você sente culpa quando não consegue ajudar.",
+          "2": "Você raramente pede ajuda, mesmo quando precisa."
+        },
+        "nudge": "Hoje, identifique uma pequena forma de cuidar de si — sem culpa.",
+        "frame": {
+          "0": {
+            "h": "Mão que ajuda",
+            "p": "Sempre estendida"
+          },
+          "1": {
+            "h": "Copo vazio",
+            "p": "Funcionando no limite"
+          },
+          "2": {
+            "h": "Coração dourado",
+            "p": "Intenções puras"
+          }
+        },
+        "cta": "Aprenda a dar de forma sustentável →"
+      },
+      "1": {
+        "title": "O equilíbrio do servir",
+        "line": "O verdadeiro servir inclui cuidar do servidor.",
+        "body": "Os melhores ajudadores são aqueles que preservam seu próprio bem-estar. Quando você está vazio, não consegue oferecer seu melhor.",
+        "bullet": {
+          "0": "Você frequentemente negligencia sua saúde e necessidades.",
+          "1": "Você sente que nunca faz o suficiente, não importa quanto dê.",
+          "2": "Você tem dificuldade em estabelecer limites com quem você ajuda."
+        },
+        "nudge": "Defina um limite esta semana: diga 'eu posso ajudar, mas não agora' a um pedido.",
+        "frame": {
+          "0": {
+            "h": "Balança equilibrada",
+            "p": "Encontrando equilíbrio"
+          },
+          "1": {
+            "h": "Autocuidado",
+            "p": "Recarregando a si mesmo"
+          },
+          "2": {
+            "h": "Limites saudáveis",
+            "p": "Protegendo sua energia"
+          }
+        },
+        "cta": "Construa hábitos sustentáveis de dar →"
+      },
+      "2": {
+        "title": "O ciclo do esgotamento",
+        "line": "Dar sem receber cria um ciclo instável.",
+        "body": "Quando você só dá e nunca recebe, cria um fluxo unilateral que inevitavelmente leva ao esgotamento. Dar de forma saudável exige dar e receber.",
+        "bullet": {
+          "0": "Você se sente desconfortável quando outros tentam ajudá-lo.",
+          "1": "Você acredita que pedir ajuda o torna um peso.",
+          "2": "Você esqueceu como receber com graça."
+        },
+        "nudge": "Pratique receber: esta semana aceite uma pequena oferta de ajuda sem se justificar.",
+        "frame": {
+          "0": {
+            "h": "Ciclo do dar",
+            "p": "Fluxo contínuo"
+          },
+          "1": {
+            "h": "Recebendo ajuda",
+            "p": "Aprendendo a receber"
+          },
+          "2": {
+            "h": "Renovação",
+            "p": "Encontrando equilíbrio"
+          }
+        },
+        "cta": "Rompra o ciclo do esgotamento →"
+      },
+      "3": {
+        "title": "Impacto sustentável",
+        "line": "O dar mais forte vem de um coração cheio.",
+        "body": "Quando você cuida de si enquanto cuida dos outros, seu impacto multiplica. Você se torna uma força duradoura de bondade no mundo.",
+        "bullet": {
+          "0": "Você quer fazer uma diferença duradoura.",
+          "1": "Você está pronto para aprender práticas sustentáveis de dar.",
+          "2": "Você quer inspirar outros com seu exemplo."
+        },
+        "nudge": "Compartilhe sua jornada de dar com alguém que possa se beneficiar dela.",
+        "frame": {
+          "0": {
+            "h": "Efeito ondulante",
+            "p": "Criando impacto duradouro"
+          },
+          "1": {
+            "h": "Inspirando outros",
+            "p": "Liderança pelo exemplo"
+          },
+          "2": {
+            "h": "Dar sustentável",
+            "p": "Impacto de longo prazo"
+          }
+        },
+        "cta": "Crie impacto duradouro →"
+      }
+    },
+    "how": {
+      "title": "Como o DrishiQ faz diferença",
+      "0": {
+        "h": "Rastreador de equilíbrio do dar",
+        "d": "Veja onde e quanto você dá."
+      },
+      "1": {
+        "h": "Ferramentas de descanso e renovação",
+        "d": "Crie reposição dentro da sua rotina."
+      },
+      "2": {
+        "h": "Coaching de limites",
+        "d": "Aprenda a dizer sim sem perder a si mesmo."
+      },
+      "3": {
+        "h": "Plano de impacto",
+        "d": "Foque no dar que permanece."
+      }
+    },
+    "nudge": {
+      "label": "Experimente isso:"
+    },
+    "bridge": {
+      "title": "Você pode dar sem perder sua luz.",
+      "body": "O DrishiQ ajuda quem dá a encontrar equilíbrio entre generosidade e sustentabilidade pessoal, para que sua bondade se torne uma força por toda a vida.",
+      "cta": "Comece sua verificação de clareza →"
+    }
+  }
+}

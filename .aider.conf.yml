@@ -1,0 +1,7 @@
+model: claude-sonnet-4-5-20250929
+weak-model: claude-3-5-haiku-20241022
+
+git: true
+auto-commits: true # ✅ lowercase boolean
+
+pretty: true

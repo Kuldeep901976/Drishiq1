@@ -1,0 +1,27 @@
+--- a/lib/ddsa/backgroundScheduler.ts
++++ b/lib/ddsa/backgroundScheduler.ts
+@@ -1,6 +1,7 @@
+ /**
+  * Background Scheduler
+  * Schedules parallel-safe stages for background execution
++ * Ensures tenant context is set for RLS before execution
+  */
+ 
+ import type { StageMeta, StageKey } from './stageManifest';
+@@ -15,6 +16,14 @@
+ export async function scheduleBackgroundStage(
+   stageKey: StageKey,
+   input: StageInput
+ ): Promise<void> {
++  // Set tenant context for RLS before execution
++  if (input.tenantId) {
++    const { setPostgresTenant } = await import('@/lib/db/rls-session');
++    const { createServiceClient } = await import('@/lib/supabase');
++    const supabase = createServiceClient();
++    await setPostgresTenant(supabase, input.tenantId);
++  }
++  
+   try {
+     // Import stage dynamically
+     const stageModule = await import(`./stages/${stageKey.replace('_', '-')}-stage`);
+

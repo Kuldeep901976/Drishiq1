@@ -1,0 +1,6 @@
+8b0b0c5 drishiq2-dot 2025-11-10 06:17:16 +0530 Fix userName consistency and add extended text box to multiple choice questions
+0062e29 drishiq2-dot 2025-11-09 20:36:37 +0530 Add build artifacts (excluding cache)
+c9def74 drishiq2-dot 2025-11-08 10:58:23 +0530 Build: commit latest changes and updates
+ffbb6c3 drishiq2-dot 2025-11-06 15:19:13 +0530 Fix payment flow and phone verification: Remove unused place_of_birth fields, fix phone verification logic, add priceplan guards, and ensure complete signup flow
+9580807 drishiq2-dot 2025-11-05 22:48:54 +0530 Fix payment flow: sync profile data, gender constraint, and credits balance
+

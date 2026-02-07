@@ -1,0 +1,210 @@
+{
+  "suggestions": {
+    "title": "💡 Community-Vorschläge",
+    "subtitle": "Helfen Sie uns, ein besseres Drishiq zu erstellen! Teilen Sie Ihre Ideen für neue Funktionen, Design-Verbesserungen, Inhaltsmodule und alles, was unsere Plattform für Sie wertvoller machen könnte.",
+    "successTitle": "Vorschlag erfolgreich eingereicht!",
+    "successMessage": "Vielen Dank für Ihr Feedback. Unser Team wird Ihren Vorschlag prüfen und für zukünftige Updates berücksichtigen.",
+    "errorTitle": "Einreichung fehlgeschlagen",
+    "errorMessage": "Bei der Einreichung Ihres Vorschlags ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie den Support.",
+    "form": {
+      "categoryLabel": "Was für eine Art von Vorschlag ist das? *",
+      "categoryPlaceholder": "Wählen Sie eine Kategorie",
+      "otherCategoryLabel": "Bitte geben Sie Ihre Kategorie an *",
+      "otherCategoryPlaceholder": "Geben Sie Ihre benutzerdefinierte Kategorie ein",
+      "titleLabel": "Kurzer Titel für Ihren Vorschlag *",
+      "titlePlaceholder": "z.B. Dark Mode-Umschaltung hinzufügen, mobile Navigation verbessern, neues Inhaltsmodul erstellen",
+      "descriptionLabel": "Beschreiben Sie Ihren Vorschlag im Detail *",
+      "descriptionPlaceholder": "Sagen Sie uns, was Sie sehen möchten, warum es hilfreich wäre und wie es funktionieren könnte...",
+      "priorityLabel": "Wie wichtig ist das für Sie? *",
+      "priorityPlaceholder": "Priorität wählen",
+      "impactLabel": "Wer würde davon profitieren? *",
+      "impactPlaceholder": "Wirkungsbereich wählen",
+      "additionalDetailsLabel": "Zusätzlicher Kontext oder Beispiele (optional)",
+      "additionalDetailsPlaceholder": "Weitere Gedanken, Beispiele oder Kontext, die uns helfen könnten, Ihren Vorschlag besser zu verstehen...",
+      "aboutYouTitle": "Über Sie",
+      "submitterTypeLabel": "Ich bin: *",
+      "submitterNameLabel": "Ihr Name (optional)",
+      "submitterNamePlaceholder": "Ihr Name",
+      "allowContactLabel": "Erlauben Sie uns, Sie für Folgefragen zu diesem Vorschlag zu kontaktieren",
+      "emailLabel": "E-Mail-Adresse (optional)",
+      "emailPlaceholder": "your.email@example.com",
+      "cancel": "Abbrechen",
+      "submit": "Vorschlag einreichen",
+      "submitting": "Wird eingereicht..."
+    },
+    "categories": {
+      "communityPageDesign": "Community-Seiten-Design",
+      "ux": "UX",
+      "module": "Modul",
+      "features": "Funktionen",
+      "other": "Andere"
+    },
+    "priorities": {
+      "low": "Niedrig - wäre schön",
+      "medium": "Mittel - würde die Erfahrung verbessern",
+      "high": "Hoch - verbessert die Benutzerfreundlichkeit erheblich",
+      "critical": "Kritisch - blockiert wesentliche Funktionalität"
+    },
+    "impacts": {
+      "individual": "Einzelner Benutzer",
+      "smallGroups": "Kleine Gruppen",
+      "largeCommunity": "Große Community",
+      "allUsers": "Alle Benutzer",
+      "businessOps": "Geschäftsbetrieb"
+    },
+    "submitterTypes": {
+      "guest": "Gastbenutzer",
+      "registered": "Registrierter Benutzer",
+      "anonymous": "Anonym"
+    },
+    "howWeUse": {
+      "title": "💭 Wie wir Ihre Vorschläge nutzen",
+      "analysis": {
+        "title": "📊 Analyse und Priorisierung",
+        "description": "Wir prüfen alle Vorschläge und priorisieren sie basierend auf Community-Auswirkung, Machbarkeit und Übereinstimmung mit unserer Vision."
+      },
+      "planning": {
+        "title": "🔄 Entwicklungsplanung",
+        "description": "Top-Vorschläge werden in unsere Entwicklungs-Roadmap und Feature-Planungszyklen aufgenommen."
+      },
+      "updates": {
+        "title": "📢 Community-Updates",
+        "description": "Wir halten die Community darüber auf dem Laufenden, an welchen Vorschlägen gearbeitet wird und wann sie verfügbar sein werden."
+      },
+      "collaboration": {
+        "title": "🤝 Kollaborative Entwicklung",
+        "description": "Bei komplexen Funktionen können wir uns melden, um detailliertere Anforderungen und Feedback zu sammeln."
+      }
+    },
+    "successPage": {
+      "title": "Vielen Dank für Ihren Vorschlag!",
+      "message": "Ihr Feedback wurde erfolgreich eingereicht. Unser Team wird Ihren Vorschlag prüfen und für zukünftige Updates berücksichtigen. Wir danken Ihnen, dass Sie uns helfen, ein besseres Drishiq zu erstellen!",
+      "submitAnother": "Einen weiteren Vorschlag einreichen",
+      "backToHome": "Zurück zur Startseite",
+      "tabs": {
+        "services": "🚀 Drishiq-Dienste",
+        "about": "💡 Über Drishiq"
+      },
+      "services": {
+        "title": "Entdecken Sie, was Drishiq für Sie tun kann",
+        "subtitle": "Erkunden Sie unser umfassendes Angebot an Dienstleistungen, die entwickelt wurden, um Ihnen zu helfen, Klarheit, Wachstum und Erfolg auf Ihrer persönlichen und beruflichen Reise zu erreichen.",
+        "careerGuidance": {
+          "title": "Karriereberatung",
+          "description": "Erhalten Sie personalisierte Karriereberatung, Kompetenzbewertung und Roadmap-Planung, um Ihre beruflichen Ziele zu erreichen."
+        },
+        "personalDevelopment": {
+          "title": "Persönliche Entwicklung",
+          "description": "Bauen Sie wesentliche Lebenskompetenzen auf, verbessern Sie die Produktivität und entwickeln Sie eine Wachstumsmentalität für nachhaltigen Erfolg."
+        },
+        "communitySupport": {
+          "title": "Community-Unterstützung",
+          "description": "Vernetzen Sie sich mit Gleichgesinnten, teilen Sie Erfahrungen und erhalten Sie Unterstützung von unserer wachsenden Community."
+        }
+      },
+      "about": {
+        "title": "Über Drishiq",
+        "subtitle": "Wir bauen eine Plattform auf, die über traditionelle Beratung hinausgeht - wir schaffen eine Community, in der jede Erfahrung zum kollektiven Wachstum beiträgt.",
+        "mission": {
+          "title": "🎯 Unsere Mission",
+          "description1": "Intelligente, personalisierte Beratung anzubieten, die Einzelpersonen hilft, die Herausforderungen des Lebens zu meistern und ihr volles Potenzial zu erreichen.",
+          "description2": "Wir glauben, dass jeder einzigartige Einblicke und Erfahrungen hat, von denen andere profitieren können. Unsere Plattform schafft Raum für das Teilen und Verstärken dieses Wissens."
+        },
+        "vision": {
+          "title": "🌱 Unsere Vision",
+          "description1": "Eine Welt, in der persönliche Entwicklung für alle zugänglich ist, in der gemeinsame Erfahrungen kollektives Wissen schaffen und in der jeder Mensch seinen eigenen Weg zum Erfolg finden kann.",
+          "description2": "Wir bauen nicht nur eine Plattform - wir kultivieren eine Community, die die Reisen der anderen wirklich versteht und unterstützt."
+        },
+        "approach": {
+          "title": "💡 Unser Ansatz",
+          "description": "Wir kombinieren modernste Technologie mit menschlicher Weisheit, um ein einzigartiges Beratungserlebnis zu schaffen.",
+          "points": {
+            "personalized": "Personalisierte Empfehlungen basierend auf Ihrer einzigartigen Situation",
+            "community": "Community-gesteuerte Einblicke und reale Erfahrungen",
+            "learning": "Kontinuierliches Lernen und Anpassung an Ihre Bedürfnisse",
+            "safe": "Sichere, unterstützende Umgebung für Wachstum und Erkundung"
+          }
+        },
+        "whatsNext": {
+          "title": "🚀 Was kommt als Nächstes",
+          "description1": "Wir entwickeln uns ständig weiter, basierend auf Community-Feedback und Vorschlägen wie Ihren.",
+          "description2": "Kommende Funktionen umfassen:",
+          "features": {
+            "ai": "Fortgeschrittenes KI-gesteuertes Beratungssystem",
+            "workshops": "Interaktive Workshops und Webinare",
+            "mobile": "Mobile Anwendung für Unterstützung unterwegs",
+            "integration": "Integration mit beruflichen Entwicklungstools"
+          }
+        }
+      },
+      "cta": {
+        "title": "Bereit, Ihre Reise zu beginnen?",
+        "message": "Schließen Sie sich Tausenden anderen an, die bereits die Kraft des community-gesteuerten Wachstums erleben.",
+        "explore": "Drishiq erkunden",
+        "readStories": "Erfolgsgeschichten lesen"
+      },
+      "youtube": {
+        "title": "Sehen Sie echte Geschichten von Drishiq-Benutzern"
+      }
+    }
+  },
+  "home": {
+    "focusToday": "Ihr Fokus heute:",
+    "nudge": "Hinweis: Teilen Sie einen 1-Zeiler oder treten Sie einem Live-Raum bei",
+    "postMorningThought": "Einen Morgengedanken posten",
+    "joinLiveRoom": "Live-Raum beitreten",
+    "latestTrack": "Ihr neuester Track:",
+    "viewComments": "Kommentare anzeigen",
+    "motivation": "🔥 9:00 Uhr Motivation",
+    "innerClarity": "✨ Innere Klarheit erwacht",
+    "clarityQuote": "\"Die Klarheit, die Sie suchen, ist bereits in Ihnen - sie wartet auf Raum zum Sprechen.\"",
+    "listenToMusic": "🎵 Musik hören",
+    "watchVideo": "📽️ Ein Video ansehen",
+    "readStory": "📖 Eine Geschichte lesen",
+    "postThought": "📝 Ihren Gedanken posten",
+    "feelingInspired": "Fühlen Sie sich inspiriert? Teilen Sie Ihre eigenen Beats, Stimme oder Stimmung - dort draußen könnte jemand Ihren Rhythmus brauchen.",
+    "musicPicks": "🎵 Musik-Auswahl für Sie",
+    "topMusicContributors": "Top-Musik-Mitwirkende",
+    "videosEnjoy": "📽️ Videos, die Sie genießen könnten",
+    "topVideoCreators": "Top-Video-Ersteller",
+    "gotMessage": "🎥 Haben Sie eine Nachricht oder einen festhaltenswerten Moment zum Teilen? Laden Sie Ihr Video hoch und seien Sie der Grund für jemandes Lächeln.",
+    "realStories": "📚 Echte Geschichten",
+    "topStorytellers": "Top-Geschichtenerzähler",
+    "gotSomething": "Haben Sie etwas im Kopf? Teilen Sie Ihre Kreativität, Geschichte oder Ihren Gedanken - Ihre Stimme könnte die Klarheit eines anderen entzünden.",
+    "creativeSpace": "🎨 Kreativer Raum",
+    "topCreators": "Top-Kreative",
+    "unleashCreativity": "🎨 Entfesseln Sie Ihre Kreativität! Ob es eine Skizze, ein Rezept oder ein poetischer Gedanke ist - Ihr Ausdruck könnte jemandes Welt färben.",
+    "peopleSeekingHelp": "🆘 Menschen, die Hilfe suchen",
+    "topSupporters": "Top-Unterstützer",
+    "notAlone": "🤝 Sie sind nicht allein. Teilen Sie Ihren Kampf oder bieten Sie ein freundliches Wort an - Ihre Anwesenheit könnte jemandes Wendepunkt sein.",
+    "eventsLike": "📅 Veranstaltungen, die Ihnen gefallen könnten",
+    "gotInterests": "📅 Haben Sie Interessen oder Leidenschaften? Erkunden Sie Veranstaltungen, die zu Ihrer Stimmung passen - und finden Sie vielleicht Ihren nächsten Wendepunkt.",
+    "askQuestion": "Eine Frage stellen",
+    "whatsOnMind": "Was beschäftigt Sie?",
+    "tuneRecommendations": "Ihre Empfehlungen abstimmen",
+    "adjustWeights": "Passen Sie Gewichte und Filter an, um den Feed mit Ihrer Stimmung in Einklang zu bringen.",
+    "musicWeight": "Musik-Gewicht",
+    "videoWeight": "Video-Gewicht",
+    "storiesWeight": "Geschichten-Gewicht",
+    "calm": "Ruhe",
+    "energy": "Energie",
+    "focus": "Fokus",
+    "english": "Englisch",
+    "hindi": "Hindi",
+    "puzzlesMindGames": "🧠 Rätsel und Denkspiele",
+    "riddleOfDay": "Rätsel des Tages",
+    "logicChallenge": "Logik-Herausforderung",
+    "yourAnswer": "Ihre Antwort",
+    "reveal": "Aufdecken",
+    "showAnswer": "Antwort zeigen"
+  },
+  "tickers": {
+    "career": "☀️ Karriere: Möglichkeiten öffnen sich",
+    "love": "☀️ Liebe: Ehrliche Gespräche wecken Magie",
+    "health": "☀️ Gesundheit: Zeit zum Entgiften",
+    "finance": "☀️ Finanzen: Investitionen neu bewerten",
+    "life": "☀️ Leben: Suchen Sie Klarheit, nicht Kontrolle",
+    "moonInsight": "🌙 Mond-Einsicht: Teilen Sie Ihr Geburtsdatum, Zeit und Ort für tägliche emotionale Führung",
+    "tip": "💬 Tipp: Führen Sie heute ein 1-Zeilen-Tagebuch",
+    "focus": "🧘 Fokus: Atmen Sie langsam aus vor dem schwierigen Anruf"
+  }
+}

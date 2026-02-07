@@ -1,0 +1,40 @@
+# CODEOWNERS - Protected Paths Requiring Human Approval
+# This file defines which paths require human review for any changes
+
+# Protected paths - require human approval
+/apps/web/** @human-reviewers
+/infra/** @human-reviewers
+/config/** @human-reviewers
+package.json @human-reviewers
+package-lock.json @human-reviewers
+tsconfig.json @human-reviewers
+tsconfig.*.json @human-reviewers
+.github/** @human-reviewers
+.gitignore @human-reviewers
+.env* @human-reviewers
+*.env @human-reviewers
+database/** @human-reviewers
+migrations/** @human-reviewers
+deploy/** @human-reviewers
+scripts/** @human-reviewers
+docs/** @human-reviewers
+README.md @human-reviewers
+LICENSE @human-reviewers
+
+# AI-editable paths - no approval required
+/apps/chat/** 
+/packages/core/**
+/packages/ui/**
+/components/BlogTTSPlayer.tsx
+/components/Header.tsx
+/lib/drishiq-i18n.tsx
+/app/blog/**
+/app/meet-yourself/**
+/app/grow-with-us/**
+/public/locales/**
+
+# Default: require human approval for everything else
+* @human-reviewers
+
+
+

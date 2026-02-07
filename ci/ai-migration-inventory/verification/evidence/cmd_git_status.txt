@@ -1,0 +1,7 @@
+Git status output (many modified files, mostly .next build artifacts and new untracked files)
+Main changes:
+- Modified: .github/workflows/render-deploy.yml
+- Many .next build artifacts modified/deleted
+- New untracked directories: app/api/ai/, ci/, components/admin/, etc.
+- Many modified markdown files and scripts
+

@@ -1,0 +1,436 @@
+{
+  "rebooter": {
+    "topband": {
+      "label": "Neustarter, nicht kaputt — Geschichten bekannter Gesichter"
+    },
+    "hero": {
+      "title": "Zurücksetzen. Neustarten. Erneuern.",
+      "subtitle": "Sie haben ein Kapitel geschlossen — vielleicht aus freien Stücken, vielleicht nicht — und starren nun auf einen leeren Bildschirm namens \"Weiter\"."
+    },
+    "cta": {
+      "early_access": "Erfahren Sie, was Ihren Neustart antreibt →",
+      "how": "Wie hilft DrishiQ?"
+    },
+    "stir": {
+      "line": {
+        "0": "Fühlen Sie gleichermaßen Erleichterung und Angst?",
+        "1": "Fühlt sich dieser Neustart schwerer an als Ihr erster Anfang?",
+        "2": "Tragen Sie Lektionen — oder Ballast — aus der Vergangenheit mit sich?",
+        "3": "Fragen Sie sich immer wieder 'Kann ich das wirklich noch einmal schaffen?'",
+        "4": "Was wäre, wenn Ihr nächster Aufbau leichter, schneller und wahrer sein könnte?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Befreit",
+        "subtitle": "Loslassen, was Sie geleert hat"
+      },
+      "1": {
+        "title": "Unsicher",
+        "subtitle": "Dem Unbekannten gegenüberstehen"
+      },
+      "2": {
+        "title": "Erfahren",
+        "subtitle": "Sie kennen die Fallstricke"
+      },
+      "3": {
+        "title": "Erschöpft",
+        "subtitle": "Neu anfangen kostet Energie"
+      },
+      "4": {
+        "title": "Fokussiert",
+        "subtitle": "Klarheit darüber, was jetzt zählt"
+      },
+      "5": {
+        "title": "Vorsichtig",
+        "subtitle": "Schutz vor vergangenen Fehlern"
+      }
+    },
+    "emotions": {
+      "label": "Wie sich ein Neustart anfühlen kann"
+    },
+    "celeb": {
+      "0": {
+        "name": "Steve Jobs",
+        "profession": "Unternehmer",
+        "source": "Zitat",
+        "quote": "\"Bleib hungrig. Bleib närrisch.\""
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Medienführerin",
+        "source": "Zitat",
+        "quote": "\"Verwandle deine Wunden in Weisheit.\""
+      },
+      "2": {
+        "name": "J.K. Rowling",
+        "profession": "Autorin",
+        "source": "Zitat",
+        "quote": "\"Der Tiefpunkt wurde zum soliden Fundament, auf dem ich mein Leben wieder aufbaute.\""
+      },
+      "3": {
+        "name": "Elon Musk",
+        "profession": "Unternehmer",
+        "source": "Zitat",
+        "quote": "\"Scheitern ist eine Option. Wenn Dinge nicht scheitern, innovieren Sie nicht genug.\""
+      },
+      "4": {
+        "name": "Maya Angelou",
+        "profession": "Dichterin",
+        "source": "Zitat",
+        "quote": "\"Versuche, ein Regenbogen in jemandes Wolke zu sein.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Pause vor dem Neustart",
+        "line": "Sie haben nicht nur das alte System heruntergefahren.",
+        "body": "Ob Karrierewechsel, Ende einer Partnerschaft oder Abschied von einem Traum – dies ist keine bloße Pause. Es ist die Stille zwischen den Stürmen — wo Ihre nächste Wahl das nächste Kapitel definieren wird.",
+        "bullet": {
+          "0": "Sie sind von etwas weggegangen, das von außen gut aussah.",
+          "1": "Sie nehmen sich bewusst Zeit vor Ihrem nächsten Schritt.",
+          "2": "Sie sind gleichzeitig aufgeregt und erschöpft."
+        },
+        "nudge": "Schreiben Sie drei nicht verhandelbare Dinge für Ihr nächstes Kapitel auf und behalten Sie sie im Blick.",
+        "frame": {
+          "0": {
+            "h": "Pause vor dem Neustart",
+            "p": "Neustart-Symbol"
+          },
+          "1": {
+            "h": "Bereit zum Neustart",
+            "p": "Neuanfang"
+          },
+          "2": {
+            "h": "Pause vor dem Neustart",
+            "p": "Bereit, neues Programm zu laden"
+          }
+        },
+        "cta": "Definieren Sie Ihren Neustart selbst, bevor die Welt es tut →"
+      },
+      "1": {
+        "title": "Lektionen tragen, nicht Ballast",
+        "line": "Ihre Vergangenheit ist eine Bibliothek, kein Gefängnis.",
+        "body": "Jedes Ende hinterlässt Ihnen Geschichten, Narben und Strategien. Die Herausforderung besteht darin zu wissen, was Sie behalten und was Sie loslassen sollten.",
+        "bullet": {
+          "0": "Sie beginnen, Ihre Fehler wieder zu durchleben.",
+          "1": "Sie zögern, Ihren Entscheidungen zu vertrauen.",
+          "2": "Sie wissen, was Sie nicht wollen, aber noch nicht, was Sie wollen."
+        },
+        "nudge": "Schreiben Sie eine harte Lektion auf — und eine Angst, die Sie damit loslassen können.",
+        "frame": {
+          "0": {
+            "h": "Lektionen tragen, nicht Ballast",
+            "p": "Loslassen"
+          },
+          "1": {
+            "h": "Freiheit von alten Mustern",
+            "p": "Gespeicherte Lektionen"
+          },
+          "2": {
+            "h": "Lektionen tragen, nicht Ballast",
+            "p": "Freiheit von alten Mustern"
+          }
+        },
+        "cta": "Gehen Sie leichter voran →"
+      },
+      "2": {
+        "title": "Aufbau Ihrer nächsten Version",
+        "line": "Dies ist keine Wiederholung — es ist ein Upgrade.",
+        "body": "Das Schöne am Neuanfang ist, dass Sie nicht wirklich bei null anfangen. Sie haben Rahmenwerke, Resilienz und Klarheit, die nur durch Erfahrung entstehen.",
+        "bullet": {
+          "0": "Sie mischen alte Fähigkeiten mit neuen Ideen.",
+          "1": "Sie gestalten Ihr nächstes Leben basierend darauf, wer Sie jetzt sind.",
+          "2": "Sie fühlen sich bereit, kalkulierte Risiken einzugehen."
+        },
+        "nudge": "Erstellen Sie ein 'Version 2.0' Vision Board — nicht mit Worten, sondern mit Bildern.",
+        "frame": {
+          "0": {
+            "h": "Planen mit Absicht",
+            "p": "Planen mit Absicht"
+          },
+          "1": {
+            "h": "Aufbau Ihrer nächsten Version",
+            "p": "Mutiges Handeln"
+          },
+          "2": {
+            "h": "Planen mit Absicht",
+            "p": "System in Bewegung"
+          }
+        },
+        "cta": "Bauen Sie den Neustart, von dem Sie träumen →"
+      },
+      "3": {
+        "title": "Gedeihen nach dem Reset",
+        "line": "Der Reset ist nicht das Ende — er ist der Trainingsplatz.",
+        "body": "Sobald Sie Fuß gefasst haben, können Sie Ihren Neustart nutzen, um ein Leben aufzubauen, das ausgerichteter, widerstandsfähiger und erfüllender ist als zuvor.",
+        "bullet": {
+          "0": "Sie wollen diesmal wirklich dabei bleiben.",
+          "1": "Sie beraten andere, die neu starten.",
+          "2": "Sie fühlen sich stolz darauf, wie weit Sie gekommen sind."
+        },
+        "nudge": "Teilen Sie Ihre Neustart-Geschichte mit jemandem, der gerade erst anfängt.",
+        "frame": {
+          "0": {
+            "h": "Pause vor dem Neustart",
+            "p": "Erfolg"
+          },
+          "1": {
+            "h": "Anderen beim Neustart helfen",
+            "p": "Anderen beim Neustart helfen"
+          },
+          "2": {
+            "h": "Gedeihen nach dem Reset",
+            "p": "Vorwärts gehen"
+          }
+        },
+        "cta": "Verwandeln Sie Ihren Neustart in ein Vermächtnis →"
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Neustart-Karte",
+        "d": "Sehen Sie, wo Sie sind und wohin Sie gehen."
+      },
+      "1": {
+        "h": "Lektionen-Filter-Tool",
+        "d": "Behalten Sie Wissen, lassen Sie Gewicht los."
+      },
+      "2": {
+        "h": "Versions-Builder",
+        "d": "Gestalten Sie Ihr verbessertes Leben Schritt für Schritt."
+      },
+      "3": {
+        "h": "Zugang zum Support-Netzwerk",
+        "d": "Verbinden Sie sich mit anderen, die neu starten."
+      }
+    },
+    "bridge": {
+      "title": "Jeder Neustart ist kein Schritt zurück, sondern vorwärts.",
+      "body": "DrishiQ hilft Ihnen, Ihren Neustart als Wachstumschance zu sehen, aus vergangenen Erfahrungen zu lernen und jedes Mal etwas Stärkeres aufzubauen.",
+      "cta": "Starten Sie Ihren Klarheits-Check →"
+    },
+    "nudge": {
+      "label": "Probieren Sie dies:"
+    }
+  },
+  "seeker": {
+    "topband": {
+      "label": "Suchender, nicht verloren — Geschichten bekannter Gesichter"
+    },
+    "hero": {
+      "title": "Neue Horizonte erkunden",
+      "subtitle": "Sie haben gelesen, erforscht, gefragt, und dennoch passen die Teile nicht ganz zusammen. Hier ist ein Ort, um die Jagd zu stoppen und nach innen zu hören.",
+      "cta": {
+        "primary": "Erkunden Sie Ihre Suchenden-Karte →",
+        "secondary": "Wie hilft DrishiQ?"
+      }
+    },
+    "cta": {
+      "early_access": "Kartieren Sie Ihre Suchreise →",
+      "how": "Wie macht DrishiQ den Unterschied"
+    },
+    "stir": {
+      "line": {
+        "0": "Haben Sie das Gefühl, immer 'kurz davor' zu sein, Ihre Antwort zu finden?",
+        "1": "Haben Sie viele Wege erkundet, sich aber auf keinem niedergelassen?",
+        "2": "Werden Sie zur nächsten Möglichkeit gezogen, bevor Sie die letzte beendet haben?",
+        "3": "Suchen Sie mehr nach Erleichterung als nach Richtung?",
+        "4": "Was wäre, wenn die Antwort nicht 'da draußen' wäre, sondern bereits drinnen?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Rastlos",
+        "subtitle": "Auf der Suche nach mehr"
+      },
+      "1": {
+        "title": "Neugierig",
+        "subtitle": "Die Fragen enden nie"
+      },
+      "2": {
+        "title": "Hoffnungsvoll",
+        "subtitle": "Jede neue Tür könnte 'es' sein"
+      },
+      "3": {
+        "title": "Frustriert",
+        "subtitle": "Klarheit entgleitet"
+      },
+      "4": {
+        "title": "Inspiriert",
+        "subtitle": "Funken in viele Richtungen"
+      },
+      "5": {
+        "title": "Unruhig",
+        "subtitle": "Noch nicht dort, wo Sie sind"
+      }
+    },
+    "emotions": {
+      "label": "Wie sich Suchen anfühlen kann"
+    },
+    "celeb": {
+      "0": {
+        "name": "Rumi",
+        "profession": "Dichter",
+        "source": "Zitat",
+        "quote": "\"Was du suchst, sucht dich.\""
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Moderatorin",
+        "source": "Zitat",
+        "quote": "\"Das größte Abenteuer, das du unternehmen kannst, ist das Leben deiner Träume zu leben.\""
+      },
+      "2": {
+        "name": "David Attenborough",
+        "profession": "Naturforscher",
+        "source": "Zitat",
+        "quote": "\"Das Verständnis der natürlichen Welt ist eine Quelle von Neugier und Erfüllung.\""
+      },
+      "3": {
+        "name": "J.K. Rowling",
+        "profession": "Autorin",
+        "source": "Zitat",
+        "quote": "\"Es ist unmöglich zu leben, ohne bei etwas zu scheitern...\""
+      },
+      "4": {
+        "name": "Elon Musk",
+        "profession": "Unternehmer",
+        "source": "Zitat",
+        "quote": "\"Gewöhnliche Menschen können sich dafür entscheiden, außergewöhnlich zu sein.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Nervenkitzel und Erschöpfung",
+        "line": "Suchen kann ein Geschenk sein, aber auch eine Schleife.",
+        "body": "Sie lieben die Jagd — den Funken einer neuen Idee, den Zug eines frischen Weges. Aber mit jeder Wendung ändert sich das Ziel. Es ist aufregend... und ermüdend.",
+        "bullet": {
+          "0": "Sie beginnen oft viele Dinge, beenden aber nur wenige.",
+          "1": "Sie fühlen sich unruhig, wenn Sie nichts verfolgen.",
+          "2": "Sie haben den Überblick über die Anzahl der 'nächsten großen Dinge' verloren, die Sie ausprobiert haben."
+        },
+        "nudge": "Listen Sie Ihre letzten fünf Suchen auf. Markieren Sie, welche Sie wirklich beenden möchten — und warum.",
+        "frame": {
+          "0": {
+            "h": "Offene Tür",
+            "p": "Eine weitere Möglichkeit"
+          },
+          "1": {
+            "h": "Kompass dreht sich",
+            "p": "Richtungen ändern"
+          },
+          "2": {
+            "h": "Kartenzyklus",
+            "p": "Zurück zu sich selbst"
+          }
+        },
+        "cta": "Stoppen Sie und überprüfen Sie Ihre Karte →"
+      },
+      "1": {
+        "title": "Angst, den richtigen Weg zu verpassen",
+        "line": "Wenn jede Option dringend erscheint.",
+        "body": "Manchmal jagen Sie, weil Sie befürchten, dass 'das Richtige' an Ihnen vorbeiziehen könnte. Aber wenn Sie alles ausprobieren, bleiben Sie selten lange genug, um Wurzeln zu schlagen.",
+        "bullet": {
+          "0": "Sie machen sich Sorgen, dass Sie es bereuen werden, etwas nicht auszuprobieren.",
+          "1": "Sie fühlen sich ängstlich, Verpflichtungen einzugehen.",
+          "2": "Sie suchen nach Zeichen, dass Sie für etwas 'gemacht' sind."
+        },
+        "nudge": "Fragen Sie sich selbst: 'Was befürchte ich, dass passiert, wenn ich einen Weg wähle?'",
+        "frame": {
+          "0": {
+            "h": "Überall Zeichen",
+            "p": "Zu viele Richtungen"
+          },
+          "1": {
+            "h": "Zelt auf Rädern",
+            "p": "Niemals lange bleiben"
+          },
+          "2": {
+            "h": "Ein Weg vorwärts",
+            "p": "Sich für Verpflichtung entscheiden"
+          }
+        },
+        "cta": "Wählen Sie einen Schritt vorwärts →"
+      },
+      "2": {
+        "title": "Suchen, um still zu sitzen zu vermeiden",
+        "line": "Stille kann beängstigender wirken als Verwirrung.",
+        "body": "Für manche Suchende ist Bewegung eine Möglichkeit, der Konfrontation mit Unsicherheit oder Schmerz zu entgehen. Es ist einfacher, auf etwas zuzurennen, als mit dem zu sitzen, was ist.",
+        "bullet": {
+          "0": "Sie füllen Ihren Kalender, um Reflexion zu vermeiden.",
+          "1": "Sie jagen Ideen, wenn Sie ängstlich sind.",
+          "2": "Sie fühlen sich 'leer', wenn es nichts Neues gibt, auf das Sie abzielen können."
+        },
+        "nudge": "Verbringen Sie heute 15 Minuten in völliger Stille — keine Bildschirme, keine Pläne. Sehen Sie, was an die Oberfläche kommt.",
+        "frame": {
+          "0": {
+            "h": "Stille Bank",
+            "p": "Sitzen ohne Agenda"
+          },
+          "1": {
+            "h": "Stiller See",
+            "p": "Sehen, was darunter ist"
+          },
+          "2": {
+            "h": "Offener Himmel",
+            "p": "Freiheit im Frieden"
+          }
+        },
+        "cta": "Versuchen Sie einmal Frieden →"
+      },
+      "3": {
+        "title": "Beim Suchen finden",
+        "line": "Die Reise selbst könnte die Antwort sein.",
+        "body": "Nicht alle Suche dreht sich ums Ankommen. Einige drehen sich ums Werden. Aber um zu werden, müssen Sie einige Suchen landen und Sie formen lassen, bevor Sie weitermachen.",
+        "bullet": {
+          "0": "Sie haben Wissen, aber Sie wenden es nicht an.",
+          "1": "Sie überspringen schnell kleine Siege zur nächsten Jagd.",
+          "2": "Sie möchten, dass sich Ihre Suche erfüllender anfühlt."
+        },
+        "nudge": "Benennen Sie eine Lektion aus Ihrer letzten Suche und entscheiden Sie, wie Sie sie für den nächsten Monat leben werden.",
+        "frame": {
+          "0": {
+            "h": "Offenes Buch",
+            "p": "Gesammelte Lektionen"
+          },
+          "1": {
+            "h": "Wurzeln wachsen",
+            "p": "Lang genug bleiben, um zu wachsen"
+          },
+          "2": {
+            "h": "Sonnenaufgangsweg",
+            "p": "Mit Klarheit vorwärts gehen"
+          }
+        },
+        "cta": "Lassen Sie eine Einsicht bleiben →"
+      }
+    },
+    "bridge": {
+      "title": "Die Antwort ist möglicherweise nicht dort, wo Sie suchen.",
+      "body": "DrishiQ hilft Suchenden wie Ihnen, rastlose Bewegung in geerdetete Richtung zu verwandeln. Ihre Fragen sind wichtig — und auch Ihre Fähigkeit, in den Antworten zu ruhen, die Sie bereits halten.",
+      "cta": "Starten Sie Ihren Klarheits-Check →"
+    },
+    "how": {
+      "0": {
+        "h": "Suchenden-Karte",
+        "d": "Legen Sie Ihre Suchen dar und sehen Sie Muster."
+      },
+      "1": {
+        "h": "Prioritäts-Kompass",
+        "d": "Filtern Sie Ideen durch das Wichtigste."
+      },
+      "2": {
+        "h": "Verwurzelungs-Praktiken",
+        "d": "Bleiben Sie mit einer Option lange genug, um daraus zu wachsen."
+      },
+      "3": {
+        "h": "Reflexionspunkte",
+        "d": "Bemerken Sie, wie weit Sie bereits gekommen sind."
+      }
+    },
+    "nudge": {
+      "label": "Probieren Sie dies:"
+    }
+  }
+}

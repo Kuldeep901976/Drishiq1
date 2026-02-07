@@ -1,0 +1,181 @@
+{
+  "signIn": {
+    "title": "サインイン",
+    "tabs": {
+      "social": "ソーシャル",
+      "email": "メール/パスワード",
+      "magic": "マジックリンク"
+    },
+    "roleCategories": {
+      "regular": "一般",
+      "grow": "成長",
+      "enterprise": "エンタープライズ"
+    },
+    "roles": {
+      "user": "一般ユーザー",
+      "client_admin": "企業管理者",
+      "mentor": "メンター",
+      "coach": "コーチ",
+      "therapist": "セラピスト",
+      "consultant": "コンサルタント",
+      "investor": "投資家",
+      "partner": "パートナー",
+      "sponsor": "スポンサー",
+      "volunteer": "ボランティア",
+      "affiliate": "アフィリエイト",
+      "enterprise_admin": "エンタープライズ管理者"
+    },
+    "roleTaglines": {
+      "user": "個人ダッシュボードへのアクセス",
+      "client_admin": "企業アカウントの管理",
+      "mentor": "他者を導き、サポートする",
+      "coach": "プロフェッショナルコーチングサービス",
+      "therapist": "メンタルヘルス支援",
+      "consultant": "ビジネスアドバイス",
+      "investor": "投資機会",
+      "partner": "戦略的パートナーシップ",
+      "sponsor": "活動や取り組みの支援",
+      "volunteer": "コミュニティ貢献",
+      "affiliate": "紹介パートナーシップ",
+      "enterprise_admin": "企業従業員の管理"
+    },
+    "form": {
+      "email": {
+        "placeholder": "メールアドレスを入力してください",
+        "label": "メール"
+      },
+      "password": {
+        "placeholder": "パスワードを入力してください",
+        "label": "パスワード"
+      },
+      "submit": {
+        "signIn": "サインイン",
+        "signingIn": "サインイン中...",
+        "sendMagicLink": "マジックリンクを送信",
+        "sending": "送信中...",
+        "cancel": "キャンセル"
+      }
+    },
+    "socialAuth": {
+      "google": "Googleで続ける",
+      "linkedin": "LinkedInで続ける"
+    },
+    "welcome": {
+      "title": "お帰りなさい、{username} さん！ 👋",
+      "credits": "あなたのクレジット",
+      "availableCredits": "利用可能クレジット",
+      "total": "合計",
+      "used": "使用済み",
+      "whoAreYouSeeking": "誰のためにガイダンスを求めていますか？",
+      "forMyself": {
+        "title": "自分のため",
+        "description": "自分のためのパーソナルガイダンスを受け取る"
+      },
+      "forOthers": {
+        "title": "大切な人のため",
+        "description": "大切な人のためのガイダンスを受け取る"
+      },
+      "needCredits": "サービスを利用するにはクレジットが必要です",
+      "buyCredits": "🛒 クレジットを購入する",
+      "buyMoreCredits": "💳 クレジットを追加購入する",
+      "limitedCredits": "ℹ️ クレジットが少なくなっています。中断を避けるために追加購入をご検討ください。",
+      "sufficientCredits": "✅ 十分なクレジットがあります。準備完了です！",
+      "back": "戻る",
+      "signOut": "サインアウト"
+    },
+    "footer": {
+      "noAccount": "アカウントがありませんか？ サインアップ",
+      "forgotPassword": "パスワードをお忘れですか？",
+      "info": "サインイン後、自分のためまたは大切な人のためにガイダンスを選択できます。各セッションには1クレジットを使用します。"
+    },
+    "errors": {
+      "accountNotFound": "アカウントが見つかりません。サインアップしてアカウントを作成してください。",
+      "invalidCredentials": "パスワードが間違っています。再試行するか「パスワードを忘れた」を使用してください。",
+      "userNotFound": "アカウントがまだ設定されていません。続行するにはプロフィール設定を完了してください。",
+      "signUpPrompt": "アカウント作成のためにサインアップするか、もう一度サインインを試してください。",
+      "magicLinkError": "マジックリンクの送信に失敗しました",
+      "socialAuthError": "{provider} の認証に失敗しました。Supabase の {provider} OAuth 設定を確認してください。",
+      "authError": "認証中にエラーが発生しました",
+      "emailRequired": "メールアドレスは必須です"
+    }
+  },
+  "signUp": {
+    "title": "サインアップ",
+    "tabs": {
+      "social": "ソーシャル",
+      "email": "メール/パスワード",
+      "magic": "マジックリンク"
+    },
+    "roleCategories": {
+      "regular": "一般",
+      "grow": "成長",
+      "enterprise": "エンタープライズ"
+    },
+    "roles": {
+      "user": "一般ユーザー",
+      "client_admin": "企業管理者",
+      "mentor": "メンター",
+      "coach": "コーチ",
+      "therapist": "セラピスト",
+      "consultant": "コンサルタント",
+      "investor": "投資家",
+      "partner": "パートナー",
+      "sponsor": "スポンサー",
+      "volunteer": "ボランティア",
+      "affiliate": "アフィリエイト",
+      "enterprise_admin": "エンタープライズ管理者"
+    },
+    "roleTaglines": {
+      "user": "個人ダッシュボードへのアクセス",
+      "client_admin": "企業アカウントの管理",
+      "mentor": "他者を導き、サポートする",
+      "coach": "プロフェッショナルコーチングサービス",
+      "therapist": "メンタルヘルス支援",
+      "consultant": "ビジネスアドバイス",
+      "investor": "投資機会",
+      "partner": "戦略的パートナーシップ",
+      "sponsor": "活動や取り組みの支援",
+      "volunteer": "コミュニティ貢献",
+      "affiliate": "紹介パートナーシップ",
+      "enterprise_admin": "プラットフォーム管理"
+    },
+    "form": {
+      "email": {
+        "placeholder": "メールアドレスを入力してください",
+        "label": "メール"
+      },
+      "submit": {
+        "sendPasswordLink": "パスワード作成リンクを送信",
+        "sendMagicLink": "マジックリンクを送信",
+        "sending": "送信中...",
+        "cancel": "キャンセル"
+      }
+    },
+    "socialAuth": {
+      "google": "Googleで続ける",
+      "linkedin": "LinkedInで続ける"
+    },
+    "success": {
+      "passwordLinkSent": "{email} にパスワード作成リンクを送信しました。受信箱を確認し、リンクをクリックしてパスワードを作成してください！",
+      "magicLinkSent": "{email} にマジックリンクを送信しました。受信箱を確認してください！"
+    },
+    "footer": {
+      "hasAccount": "すでにアカウントをお持ちですか？",
+      "signIn": "サインイン",
+      "info": "サインアップ後、電話番号の確認とプロフィールの入力を行ってからダッシュボードにアクセスできます。",
+      "terms": "サインアップすることで、あなたは当社の",
+      "termsLink": "利用規約",
+      "and": "および",
+      "privacyLink": "プライバシーポリシー"
+    },
+    "errors": {
+      "emailRequired": "メールアドレスは必須です",
+      "userExists": "このメールアドレスのユーザーはすでに存在します",
+      "userExistsTip": "💡 ヒント: すでにアカウントをお持ちの場合は、",
+      "signInInstead": "サインインしてください",
+      "magicLinkError": "マジックリンクの送信に失敗しました",
+      "emailSignupError": "パスワード作成リンクの送信に失敗しました",
+      "socialAuthError": "{provider} の認証に失敗しました"
+    }
+  }
+}

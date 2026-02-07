@@ -1,0 +1,192 @@
+{
+  "modeSelection": {
+    "title": "DrishiQ",
+    "subtitle": "Your Personal Astrology Guide",
+    "description": "Discover insights and guidance through the stars",
+    "header": {
+      "title": "Who are you seeking guidance for?",
+      "subtitle": "Select an option to get started",
+      "credits": "Credits",
+      "buyMore": "Buy More"
+    },
+    "options": {
+      "myself": {
+        "title": "For Myself",
+        "description": "Get personalized guidance and insights tailored specifically for you",
+        "feature": "✓ Uses your saved profile"
+      },
+      "other": {
+        "title": "For Someone I Care About",
+        "description": "Provide guidance and support for a loved one or family member",
+        "feature": "✓ Enter their details"
+      }
+    },
+    "footer": {
+      "security": "🔐 Your information is secure and private",
+      "copyright": "© 2024 DrishiQ. All rights reserved."
+    },
+    "features": {
+      "personalized": "Personalized",
+      "accurate": "Accurate",
+      "insightful": "Insightful"
+    },
+    "loading": {
+      "checkingCredits": "Checking credits...",
+      "loading": "Loading..."
+    },
+    "errors": {
+      "title": "Error",
+      "goBack": "Go Back",
+      "noCredits": {
+        "title": "No Credits Available",
+        "message": "You need at least 1 credit to start a conversation. Please purchase credits to continue.",
+        "buyCredits": "Buy Credits",
+        "goBack": "Go Back"
+      }
+    },
+    "pendingSession": {
+      "title": "You have an ongoing conversation",
+      "message": "You started a session earlier. You can resume it now to continue where you left off.",
+      "resume": "Resume Conversation",
+      "close": "Close",
+      "dontShowAgain": "Don't show again (this device)"
+    }
+  },
+  "astro": {
+    "loading": {
+      "title": "DrishiQ",
+      "message": "Initiating conversation..."
+    },
+    "form": {
+      "title": "Tell us about them",
+      "fields": {
+        "firstName": {
+          "label": "First Name *",
+          "placeholder": "Enter their name"
+        },
+        "relationship": {
+          "label": "Relationship *",
+          "placeholder": "Select relationship",
+          "options": {
+            "spouse": "Spouse",
+            "child": "Child",
+            "parent": "Parent",
+            "sibling": "Sibling",
+            "friend": "Friend",
+            "other": "Other"
+          }
+        },
+        "dob": {
+          "label": "Date of Birth *"
+        },
+        "gender": {
+          "label": "Gender *",
+          "placeholder": "Select gender",
+          "options": {
+            "male": "Male",
+            "female": "Female",
+            "other": "Other"
+          }
+        }
+      },
+      "next": "Next",
+      "errors": {
+        "required": "Please fill all required fields"
+      }
+    },
+    "question": {
+      "title": "Astrological Insights",
+      "message": "Would you like personalized astrological guidance for {name}?",
+      "subtitle": "We'll need their place and time of birth to calculate this.",
+      "notInterested": "Not Interested",
+      "includeIt": "Yes, Include It"
+    },
+    "details": {
+      "title": "Astro Details for {name}",
+      "fields": {
+        "placeOfBirth": {
+          "label": "Place of Birth *",
+          "placeholder": "City, Country"
+        },
+        "timeOfBirth": {
+          "label": "Time of Birth *"
+        }
+      },
+      "submit": "Submit & Start Chat",
+      "processing": "Processing...",
+      "errors": {
+        "required": "Please fill all astro details",
+        "geocodeFailed": "Failed to calculate location details. Please check the place of birth.",
+        "geocodeInvalid": "Failed to geocode place of birth. Please verify the location and try again.",
+        "incomplete": "Failed to calculate complete location details (latitude, longitude, timezone)."
+      }
+    },
+    "errors": {
+      "profileNotFound": "Profile not found. Please complete your profile first.",
+      "loadFailed": "Failed to load profile",
+      "createFailed": "Failed to create profile",
+      "chatFailed": "Failed to initiate chat",
+      "loginRequired": "Please log in to continue"
+    }
+  },
+  "messages": {
+    "loading": "Loading...",
+    "checkingCredits": "Checking credits...",
+    "initiating": "Initiating conversation...",
+    "processing": "Processing...",
+    "submitting": "Submitting your answers...",
+    "thinking": "DrishiQ is thinking...",
+    "sending": "Sending...",
+    "transcribing": "Transcribing...",
+    "recording": "Recording...",
+    "clickToStop": "Click to stop",
+    "clickToRecord": "Click to record voice message (Whisper)"
+  },
+  "chat": {
+    "header": {
+      "personal": "Personal Chat",
+      "caregiver": "Chat for: {name}"
+    },
+    "input": {
+      "placeholder": "Type your message...",
+      "placeholderFrozen": "Please select an option above...",
+      "send": "Send",
+      "sending": "Sending...",
+      "noContent": "(No content)"
+    },
+    "voice": {
+      "recording": "Recording...",
+      "processing": "Processing...",
+      "transcribing": "Transcribing...",
+      "stop": "Recording... Click to stop",
+      "start": "Click to record voice message (Whisper)"
+    },
+    "interactive": {
+      "submit": "Submit",
+      "addDetails": "Add details...",
+      "expand": "Expand to add details",
+      "collapse": "Collapse details",
+      "moreQuestions": "{count} more question{plural} will appear after submission",
+      "stage": "Stage:",
+      "typeResponse": "Type your response here..."
+    },
+    "actions": {
+      "delete": "Delete message",
+      "newChat": "New Chat",
+      "generatePDF": "Generate PDF Report"
+    },
+    "errors": {
+      "insufficientCredits": "Insufficient credits. Redirecting to purchase...",
+      "serverError": "Server error occurred. Please try again.",
+      "parseError": "Failed to parse server response",
+      "emptyResponse": "Empty response from server",
+      "deleteFailed": "Failed to delete message. It may be too old to delete.",
+      "deleteError": "Error deleting message. Please try again.",
+      "communicationError": "Error communicating with server"
+    },
+    "pdf": {
+      "available": "PDF Report Available",
+      "generate": "Generate PDF Report"
+    }
+  }
+}

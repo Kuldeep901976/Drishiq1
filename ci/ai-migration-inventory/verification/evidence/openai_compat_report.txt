@@ -1,0 +1,74 @@
+OpenAI API Compatibility Report
+================================
+File: app/api/ai/call-v2/route.ts
+Date: 2025-01-10
+
+CURRENT IMPLEMENTATION:
+⚠️  STATUS: Uses chat.completions.create() only
+   - Line 174: const response = await openai.chat.completions.create(...)
+   - TODO comment indicates Responses API not yet available (line 171-172)
+
+RESPONSES API SUPPORT:
+❌ NOT IMPLEMENTED: No code for responses.create()
+   - No check for openai.responses?.create
+   - No fallback logic between Responses API and chat.completions
+   - TODO comment indicates future implementation needed
+
+RESPONSE SHAPE HANDLING:
+✅ PASS: Handles chat.completions shape correctly:
+   - response.choices[0]?.message?.content (line 181)
+   - response.id (line 182)
+   - response.usage (line 183)
+
+⚠️  MISSING: No handling for Responses API shape:
+   - Would need: response.choices[0]?.text OR response.choices[0]?.message?.content
+   - Would need: Different response.id format handling
+
+USAGE OBJECT HANDLING:
+✅ PASS: Guards response.usage existence (line 183)
+✅ PASS: Provides fallbacks for all usage fields:
+   - usage.prompt_tokens || 0 (line 184)
+   - usage.completion_tokens || 0 (line 185)
+   - usage.total_tokens || 0 (line 186)
+
+⚠️  NOTE: No fallback calculation for total_tokens if missing
+   - Could add: totalTokens = tokensIn + tokensOut if total_tokens missing
+
+RESPONSE ID HANDLING:
+✅ PASS: Uses response.id directly (line 182)
+⚠️  MISSING: No fallback if response.id is missing
+   - Should generate: `resp_${Date.now()}_${random}` if missing
+
+RECOMMENDATIONS:
+1. Add Responses API detection:
+   ```typescript
+   if (typeof (openai as any).responses?.create === 'function') {
+     // Use Responses API
+   } else {
+     // Fallback to chat.completions
+   }
+   ```
+
+2. Handle both response shapes:
+   ```typescript
+   const assistantMessage = response.choices?.[0]?.text 
+     || response.choices?.[0]?.message?.content 
+     || '';
+   ```
+
+3. Add response_id fallback:
+   ```typescript
+   const responseId = response.id || `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+   ```
+
+4. Add total_tokens fallback calculation:
+   ```typescript
+   const totalTokens = usage.total_tokens || (tokensIn + tokensOut);
+   ```
+
+OVERALL ASSESSMENT: ⚠️  PARTIAL
+- Works with chat.completions API
+- Missing Responses API support
+- Missing response shape handling for both APIs
+- Needs fallback logic for response_id and total_tokens
+

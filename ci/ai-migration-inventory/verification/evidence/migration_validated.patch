@@ -1,0 +1,49 @@
+--- database/migrations/20251110_add_instruction_sets_and_ai_call_v2.sql
++++ database/migrations/20251110_add_instruction_sets_and_ai_call_v2.sql
+@@ -1,4 +1,7 @@
+ -- Migration: add instruction_sets table (idempotent) and ensure stages.instruction_set_id column
+ 
+ BEGIN;
+ 
++-- Ensure pgcrypto extension exists (required for gen_random_uuid())
++CREATE EXTENSION IF NOT EXISTS "pgcrypto";
++
+ -- Create instruction_sets if not exists
+@@ -28,3 +31,30 @@
+   END IF;
+ END $$;
+ 
++-- Create ai_responses table if not exists
++CREATE TABLE IF NOT EXISTS ai_responses (
++  response_id TEXT PRIMARY KEY,
++  thread_id TEXT NOT NULL,
++  thread_type TEXT DEFAULT 'chat',
++  model TEXT NOT NULL,
++  stage_ref TEXT,
++  instruction_set_id UUID,
++  request_payload JSONB DEFAULT '{}'::jsonb,
++  response_payload JSONB DEFAULT '{}'::jsonb,
++  tokens_in INTEGER DEFAULT 0,
++  tokens_out INTEGER DEFAULT 0,
++  total_tokens INTEGER DEFAULT 0,
++  estimated_cost NUMERIC(10, 6) DEFAULT 0,
++  schema_validated BOOLEAN,
++  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
++);
++
++-- Create indexes for ai_responses
++CREATE INDEX IF NOT EXISTS idx_ai_responses_thread_id ON ai_responses(thread_id);
++CREATE INDEX IF NOT EXISTS idx_ai_responses_created_at ON ai_responses(created_at);
++CREATE INDEX IF NOT EXISTS idx_ai_responses_instruction_set_id ON ai_responses(instruction_set_id);
++
++-- Add foreign key constraint if instruction_sets exists
++DO $$
++BEGIN
++  IF EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'instruction_sets') THEN
++    ALTER TABLE ai_responses ADD CONSTRAINT fk_ai_responses_instruction_set 
++      FOREIGN KEY (instruction_set_id) REFERENCES instruction_sets(id) ON DELETE SET NULL;
++  END IF;
++END $$;
++
+ COMMIT;
+

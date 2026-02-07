@@ -1,0 +1,39 @@
+DB Adapters Static Verification
+=================================
+File: lib/ddsa/db-adapters.ts
+SHA256: a444ea364edc3d73f47e7c34366f38fb9c0821976d7445feec975e6b9058dcca
+
+SERVICE CLIENT USAGE: ✅ PASS
+- Line 73: createServiceClient() used in getStageById
+- Line 120: createServiceClient() used in getStageByName
+- Line 159: createServiceClient() used in getInstructionSetById
+- Line 201: createServiceClient() used in getRecentMessages
+- Line 236: createServiceClient() used in insertAiResponse
+- Verified: createServiceClient() uses SUPABASE_SERVICE_ROLE_KEY (lib/supabase.ts:9)
+
+TABLE MAPPING: ✅ PASS
+- getStageById/getStageByName: queries 'ddsa_stage_config' table ✅
+- getRecentMessages: queries 'chat_messages' table ✅
+- getInstructionSetById: queries 'instruction_sets' table ✅
+- insertAiResponse: inserts into 'ai_responses' table ✅
+
+NORMALIZATION: ✅ PASS
+- getStageById: Returns NormalizedStage with id, name, model, enabled, etc. ✅
+- getStageByName: Returns NormalizedStage with same structure ✅
+- getInstructionSetById: Returns InstructionSet with all required fields ✅
+- getRecentMessages: Returns ChatMessage[] with role, content, etc. ✅
+
+ERROR HANDLING: ✅ PASS
+- All functions wrapped in try-catch blocks
+- Returns null on error (graceful degradation)
+- Console.error logging for debugging
+
+INSERT AI RESPONSE: ✅ PASS
+- insertAiResponse function exists and accepts AiResponseInsert interface
+- Uses .insert().select().single() pattern (returns inserted row)
+- Handles all required fields: response_id, thread_id, model, tokens, etc.
+- Note: Does NOT use upsert/conflict handling - may fail on duplicate response_id
+  ⚠️ RECOMMENDATION: Consider adding ON CONFLICT handling for response_id
+
+CONCLUSION: DB adapters are correctly implemented and use service role client.
+

@@ -1,0 +1,62 @@
+API Route Static Verification
+==============================
+File: app/api/ai/call-v2/route.ts
+SHA256: 28ae439f6f5c37b43981fdb0742c0de9e370fe795316872984018d786056fef9
+
+FILE PRESENCE: ✅ PASS
+- Route exists at app/api/ai/call-v2/route.ts
+
+VALIDATION: ✅ PASS
+- Validates thread_id (line 62)
+- Validates input (line 62)
+- Returns 400 error if missing ✅
+
+STAGE RESOLUTION: ✅ PASS
+- Resolves via getStageById if stage_id provided (line 72)
+- Resolves via getStageByName if stage_name provided (line 74)
+- Returns 404 if stage not found (line 78)
+- Checks stage.enabled (line 84) ✅
+
+INSTRUCTION SET RESOLUTION: ✅ PASS
+- Resolves via getInstructionSetById (lines 94, 96)
+- Checks instruction_set_id from request or stage metadata ✅
+- Continues gracefully if not found (warning only) ✅
+
+OPENAI INTEGRATION: ✅ PASS
+- Uses getOpenAIClient() helper (line 168)
+- Falls back to chat.completions.create() (line 174)
+- TODO comment indicates future Responses API support (line 172) ✅
+- Extracts response data: id, content, usage ✅
+
+RESPONSE STORAGE: ✅ PASS
+- Calls insertAiResponse() with all required fields (line 212)
+- Includes response_id, thread_id, model, tokens, cost ✅
+- Handles schema validation if instruction set has output_schema ✅
+
+RESPONSE SHAPE: ✅ PASS
+- Returns JSON with ok: true (line 241)
+- Includes response_id (line 242)
+- Includes output_text (line 243)
+- Includes usage object with tokens_in, tokens_out, total_tokens (lines 245-249)
+- Includes parsed_json if schema provided (line 244)
+- Includes response_time_ms (line 252) ✅
+
+ERROR HANDLING: ✅ PASS
+- Try-catch wrapper (line 47)
+- Returns 500 with error message (line 258)
+- Stack trace only in development (line 262) ✅
+
+TYPE ERRORS DETECTED: ⚠️ WARNINGS
+- Line 184: usage.prompt_tokens - type error (usage may be {})
+- Line 185: usage.completion_tokens - type error
+- Line 186: usage.total_tokens - type error
+- Line 230: schema_validated type mismatch (null vs boolean | undefined)
+
+RECOMMENDATIONS:
+1. Fix type errors with proper usage type checking
+2. Add ON CONFLICT handling to insertAiResponse for duplicate response_id
+3. Consider adding request timeout handling
+4. Add rate limiting considerations
+
+CONCLUSION: API route exists and implements required functionality with minor type issues.
+

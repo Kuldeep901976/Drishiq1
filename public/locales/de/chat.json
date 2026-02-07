@@ -1,0 +1,192 @@
+{
+  "modeSelection": {
+    "title": "Drishiq",
+    "subtitle": "Ihr persönlicher Astrologie-Ratgeber",
+    "description": "Entdecken Sie Einsichten und Führung durch die Sterne",
+    "header": {
+      "title": "Für wen möchten Sie Führung?",
+      "subtitle": "Wählen Sie eine Option zum Starten",
+      "credits": "Guthaben",
+      "buyMore": "Mehr kaufen"
+    },
+    "options": {
+      "myself": {
+        "title": "Für mich selbst",
+        "description": "Erhalten Sie persönliche Führung und Einsichten, die speziell für Sie erstellt wurden",
+        "feature": "✓ Verwendet Ihr gespeichertes Profil"
+      },
+      "other": {
+        "title": "Für jemanden, um den ich mich kümmere",
+        "description": "Bieten Sie Führung und Unterstützung für einen geliebten Menschen oder ein Familienmitglied",
+        "feature": "✓ Geben Sie deren Informationen ein"
+      }
+    },
+    "footer": {
+      "security": "🔐 Ihre Informationen sind sicher und privat",
+      "copyright": "© 2024 Drishiq. Alle Rechte vorbehalten."
+    },
+    "features": {
+      "personalized": "Personalisiert",
+      "accurate": "Genau",
+      "insightful": "Aufschlussreich"
+    },
+    "loading": {
+      "checkingCredits": "Guthaben wird überprüft...",
+      "loading": "Wird geladen..."
+    },
+    "errors": {
+      "title": "Fehler",
+      "goBack": "Zurück",
+      "noCredits": {
+        "title": "Kein Guthaben verfügbar",
+        "message": "Sie benötigen mindestens 1 Guthaben, um ein Gespräch zu beginnen. Bitte kaufen Sie Guthaben, um fortzufahren.",
+        "buyCredits": "Guthaben kaufen",
+        "goBack": "Zurück"
+      }
+    },
+    "pendingSession": {
+      "title": "Sie haben ein laufendes Gespräch",
+      "message": "Sie haben zuvor eine Sitzung gestartet. Sie können sie jetzt dort fortsetzen, wo Sie aufgehört haben.",
+      "resume": "Gespräch fortsetzen",
+      "close": "Schließen",
+      "dontShowAgain": "Nicht mehr anzeigen (dieses Gerät)"
+    }
+  },
+  "astro": {
+    "loading": {
+      "title": "Drishiq",
+      "message": "Gespräch wird gestartet..."
+    },
+    "form": {
+      "title": "Erzählen Sie uns über sie",
+      "fields": {
+        "firstName": {
+          "label": "Vorname *",
+          "placeholder": "Geben Sie ihren Namen ein"
+        },
+        "relationship": {
+          "label": "Beziehung *",
+          "placeholder": "Beziehung wählen",
+          "options": {
+            "spouse": "Ehepartner/in",
+            "child": "Kind",
+            "parent": "Elternteil",
+            "sibling": "Geschwister",
+            "friend": "Freund/in",
+            "other": "Andere"
+          }
+        },
+        "dob": {
+          "label": "Geburtsdatum *"
+        },
+        "gender": {
+          "label": "Geschlecht *",
+          "placeholder": "Geschlecht wählen",
+          "options": {
+            "male": "Männlich",
+            "female": "Weiblich",
+            "other": "Andere"
+          }
+        }
+      },
+      "next": "Weiter",
+      "errors": {
+        "required": "Bitte füllen Sie alle erforderlichen Felder aus"
+      }
+    },
+    "question": {
+      "title": "Astrologische Einsicht",
+      "message": "Möchten Sie persönliche astrologische Führung für {name}?",
+      "subtitle": "Wir benötigen deren Geburtsort und -zeit, um dies zu berechnen.",
+      "notInterested": "Nicht interessiert",
+      "includeIt": "Ja, einbeziehen"
+    },
+    "details": {
+      "title": "Astrologie-Details für {name}",
+      "fields": {
+        "placeOfBirth": {
+          "label": "Geburtsort *",
+          "placeholder": "Stadt, Land"
+        },
+        "timeOfBirth": {
+          "label": "Geburtszeit *"
+        }
+      },
+      "submit": "Absenden und Chat starten",
+      "processing": "Wird verarbeitet...",
+      "errors": {
+        "required": "Bitte füllen Sie alle Astrologie-Details aus",
+        "geocodeFailed": "Standortdetails konnten nicht berechnet werden. Bitte überprüfen Sie den Geburtsort.",
+        "geocodeInvalid": "Geburtsort konnte nicht geokodiert werden. Bitte überprüfen Sie den Standort und versuchen Sie es erneut.",
+        "incomplete": "Vollständige Standortdetails (Breitengrad, Längengrad, Zeitzone) konnten nicht berechnet werden."
+      }
+    },
+    "errors": {
+      "profileNotFound": "Profil nicht gefunden. Bitte vervollständigen Sie zuerst Ihr Profil.",
+      "loadFailed": "Profil konnte nicht geladen werden",
+      "createFailed": "Profil konnte nicht erstellt werden",
+      "chatFailed": "Chat konnte nicht gestartet werden",
+      "loginRequired": "Bitte melden Sie sich an, um fortzufahren"
+    }
+  },
+  "messages": {
+    "loading": "Wird geladen...",
+    "checkingCredits": "Guthaben wird überprüft...",
+    "initiating": "Gespräch wird gestartet...",
+    "processing": "Wird verarbeitet...",
+    "submitting": "Ihre Antworten werden übermittelt...",
+    "thinking": "Drishiq denkt nach...",
+    "sending": "Wird gesendet...",
+    "transcribing": "Wird transkribiert...",
+    "recording": "Aufnahme läuft...",
+    "clickToStop": "Zum Stoppen klicken",
+    "clickToRecord": "Klicken Sie, um eine Sprachnachricht aufzunehmen (Whisper)"
+  },
+  "chat": {
+    "header": {
+      "personal": "Persönlicher Chat",
+      "caregiver": "Chat: {name}"
+    },
+    "input": {
+      "placeholder": "Geben Sie Ihre Nachricht ein...",
+      "placeholderFrozen": "Bitte wählen Sie oben eine Option...",
+      "send": "Senden",
+      "sending": "Wird gesendet...",
+      "noContent": "(Kein Inhalt)"
+    },
+    "voice": {
+      "recording": "Aufnahme läuft...",
+      "processing": "Wird verarbeitet...",
+      "transcribing": "Wird transkribiert...",
+      "stop": "Aufnahme läuft... Zum Stoppen klicken",
+      "start": "Klicken Sie, um eine Sprachnachricht aufzunehmen (Whisper)"
+    },
+    "interactive": {
+      "submit": "Absenden",
+      "addDetails": "Details hinzufügen...",
+      "expand": "Erweitern, um Details hinzuzufügen",
+      "collapse": "Details einklappen",
+      "moreQuestions": "{count} weitere Frage{plural} erscheint nach dem Absenden",
+      "stage": "Phase:",
+      "typeResponse": "Geben Sie hier Ihre Antwort ein..."
+    },
+    "actions": {
+      "delete": "Nachricht löschen",
+      "newChat": "Neuer Chat",
+      "generatePDF": "PDF-Bericht erstellen"
+    },
+    "errors": {
+      "insufficientCredits": "Unzureichendes Guthaben. Weiterleitung zum Kauf...",
+      "serverError": "Es ist ein Serverfehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "parseError": "Server-Antwort konnte nicht geparst werden",
+      "emptyResponse": "Leere Antwort vom Server",
+      "deleteFailed": "Nachricht konnte nicht gelöscht werden. Sie könnte zu alt sein.",
+      "deleteError": "Fehler beim Löschen der Nachricht. Bitte versuchen Sie es erneut.",
+      "communicationError": "Fehler bei der Kommunikation mit dem Server"
+    },
+    "pdf": {
+      "available": "PDF-Bericht verfügbar",
+      "generate": "PDF-Bericht erstellen"
+    }
+  }
+}

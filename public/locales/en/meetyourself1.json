@@ -1,0 +1,469 @@
+{
+  "builder": {
+    "hero": {
+      "subtitle": "Builder, not just busy — stories from known faces",
+      "title": "Always Building",
+      "description": "Your eyes are on the next step before your feet have landed on the last. You thrive on momentum, but when do you get to stand still and simply be?",
+      "cta": {
+        "primary": "See your building patterns →",
+        "secondary": "How DrishiQ helps?"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Is there always 'one more thing' to finish before you can rest?",
+        "1": "Do you struggle to slow down, even when you want to?",
+        "2": "Are your relationships often fitted around your projects?",
+        "3": "Does your identity feel tied to what you're making or achieving?",
+        "4": "Have you ever asked yourself: What if I stopped building?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Driven",
+        "subtitle": "Fueled by purpose"
+      },
+      "1": {
+        "title": "Tired",
+        "subtitle": "Always in motion"
+      },
+      "2": {
+        "title": "Proud",
+        "subtitle": "Watching it take shape"
+      },
+      "3": {
+        "title": "Isolated",
+        "subtitle": "Few understand the pace"
+      },
+      "4": {
+        "title": "Overextended",
+        "subtitle": "Too many pillars at once"
+      },
+      "5": {
+        "title": "Fulfilled",
+        "subtitle": "Creating something that matters"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Elon Musk",
+        "profession": "Entrepreneur",
+        "quote": "When something is important enough, you do it even if the odds are not in your favor."
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Media Leader",
+        "quote": "Doing the best at this moment puts you in the best place for the next moment."
+      },
+      "2": {
+        "name": "J.R.R. Tolkien",
+        "profession": "Author",
+        "quote": "Little by little, one travels far."
+      },
+      "3": {
+        "name": "Jane Goodall",
+        "profession": "Scientist",
+        "quote": "What you do makes a difference, and you have to decide what kind of difference you want to make."
+      },
+      "4": {
+        "name": "Howard Schultz",
+        "profession": "Business Leader",
+        "quote": "Dream more than others think practical. Expect more than others think possible."
+      }
+    },
+    "section": {
+      "0": {
+        "title": "The Drive to Build",
+        "line": "You see possibilities everywhere.",
+        "body": "Where others see an empty lot, you see a foundation. Where others see 'enough,' you see 'more to do.' Your ability to envision and create is your gift — but also your weight.",
+        "bullet": {
+          "0": "You always have multiple projects in motion.",
+          "1": "You feel restless without a goal or plan.",
+          "2": "You equate productivity with self-worth."
+        },
+        "nudge": "Write down your current projects and mark the ones that truly align with your values — not just your habits.",
+        "frame": {
+          "0": {
+            "h": "Blueprints",
+            "p": "Planning the future"
+          },
+          "1": {
+            "h": "Hammer & Nails",
+            "p": "Actively shaping"
+          },
+          "2": {
+            "h": "Rising Structure",
+            "p": "Seeing progress"
+          }
+        },
+        "cta": "Align your builds with your values →"
+      },
+      "1": {
+        "title": "When the Structure Owns You",
+        "line": "Not every build is worth the weight.",
+        "body": "Sometimes the thing you're creating starts shaping you — dictating your time, choices, and even your health.",
+        "bullet": {
+          "0": "Your projects consume your personal time.",
+          "1": "You feel guilty stepping away.",
+          "2": "You stay with an idea long after its value has faded."
+        },
+        "nudge": "Ask: 'If I walked away today, what would I gain back in time, health, or joy?'",
+        "frame": {
+          "0": {
+            "h": "Tower With Cracks",
+            "p": "Signs of strain"
+          },
+          "1": {
+            "h": "Clock Without Hands",
+            "p": "Time slipping unnoticed"
+          },
+          "2": {
+            "h": "Tethered Figure",
+            "p": "Bound to the work"
+          }
+        },
+        "cta": "Free yourself from unsustainable builds →"
+      },
+      "2": {
+        "title": "Balancing Bricks and Breath",
+        "line": "Every strong structure rests on a solid foundation — and that includes you.",
+        "body": "The stronger you are, the stronger your creations can be. Building with balance means making space for rest, reflection, and relationships.",
+        "bullet": {
+          "0": "You neglect personal needs for deadlines.",
+          "1": "You haven't taken an intentional break in years.",
+          "2": "You feel your passion turning into pressure."
+        },
+        "nudge": "Block out non-negotiable time each week for something unrelated to your projects.",
+        "frame": {
+          "0": {
+            "h": "Balanced Stones",
+            "p": "Stability and strength"
+          },
+          "1": {
+            "h": "Open Field",
+            "p": "Space to breathe"
+          },
+          "2": {
+            "h": "Hands Holding a Plant",
+            "p": "Nurturing both you and your work"
+          }
+        },
+        "cta": "Build without breaking →"
+      },
+      "3": {
+        "title": "Building Beyond Yourself",
+        "line": "The most meaningful builds last after you step away.",
+        "body": "A true builder knows when to pass the tools. Teaching, delegating, and sharing the process can make your work bigger than you.",
+        "bullet": {
+          "0": "You want your work to have a legacy.",
+          "1": "You're ready to collaborate more.",
+          "2": "You want your builds to serve beyond you."
+        },
+        "nudge": "Choose one person to mentor or involve in your current project.",
+        "frame": {
+          "0": {
+            "h": "Open Doorway",
+            "p": "Inviting others in"
+          },
+          "1": {
+            "h": "Hands Passing a Plant",
+            "p": "Sharing skills"
+          },
+          "2": {
+            "h": "Completed Building in Sunlight",
+            "p": "Legacy in place"
+          }
+        },
+        "cta": "Create lasting impact →"
+      }
+    },
+    "try_this": "Try this:",
+    "section": {
+      "cta": "How DrishiQ helps"
+    },
+    "bridge": {
+      "title": "Ready to Shape the Future?",
+      "description": "Drishiq helps builders find balance between creation and self-care, ensuring your energy, health, and clarity grow alongside your work.",
+      "cta": "Begin your clarity check →"
+    }
+  },
+  "connector": {
+    "topband.label": "Connector, not just networker — stories from known faces",
+    "hero.title": "Holding Voices Together",
+    "hero.subtitle": "You link people, spark opportunities, and turn strangers into allies. But in making sure everyone is connected, do you still feel seen yourself?",
+    "cta.early_access": "Discover your connection patterns →",
+    "cta.how": "How Drishiq helps",
+    "stir.line.0": "Do you often know everyone's story but rarely share your own?",
+    "stir.line.1": "Are you the first person people call for 'who to talk to'?",
+    "stir.line.2": "Do you feel responsible for holding communities together?",
+    "stir.line.3": "Have you felt lonely in the middle of your own network?",
+    "stir.line.4": "What would it be like to connect inward before outward?",
+    "emote.0.title": "Warm",
+    "emote.0.subtitle": "At home in any crowd",
+    "emote.1.title": "Overextended",
+    "emote.1.subtitle": "Too many threads to hold",
+    "emote.2.title": "Valued",
+    "emote.2.subtitle": "Others rely on you",
+    "emote.3.title": "Invisible",
+    "emote.3.subtitle": "Your story takes a backseat",
+    "emote.4.title": "Proud",
+    "emote.4.subtitle": "Building bridges others needed",
+    "emote.5.title": "Drained",
+    "emote.5.subtitle": "Energy spread too thin",
+    "celeb.items": [
+      {
+        "img": "/assets/images/meet-yourself/connector/celebs/maya_angelou.jpg",
+        "name": "Maya Angelou",
+        "profession": "Poet",
+        "source": "Quote",
+        "quote": "\"We are more alike, my friends, than we are unalike.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/connector/celebs/Howard_Schultz.jpg",
+        "name": "Howard Schultz",
+        "profession": "Business Leader",
+        "source": "Quote",
+        "quote": "\"In life, you can't have everything. But you can have the things that really matter.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/connector/celebs/Malala_Yousafzai.jpg",
+        "name": "Malala Yousafzai",
+        "profession": "Activist",
+        "source": "Quote",
+        "quote": "\"When the whole world is silent, even one voice becomes powerful.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/connector/celebs/Desmond_Tutu.jpg",
+        "name": "Desmond Tutu",
+        "profession": "Leader",
+        "source": "Quote",
+        "quote": "\"Do your little bit of good where you are; those little bits overwhelm the world.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/connector/celebs/Fred_Rogers.jpg",
+        "name": "Fred Rogers",
+        "profession": "Educator",
+        "source": "Quote",
+        "quote": "\"Mutual caring relationships require kindness, patience, and understanding.\""
+      }
+    ],
+    "section.0.title": "The Gift of Bridges",
+    "section.0.line": "You see where people should meet before they do.",
+    "section.0.body": "You're the thread between stories, the link between isolated ideas, the spark that makes things possible. The world needs your openness — and your ability to bring worlds together.",
+    "section.0.bullet.0": "You instinctively introduce people who might help each other.",
+    "section.0.bullet.1": "You can't stand to see someone left out.",
+    "section.0.bullet.2": "You're energized by watching relationships form.",
+    "section.0.nudge": "List three connections you've recently made that truly felt meaningful — not just convenient.",
+    "section.0.frame.0.img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+    "section.0.frame.0.h": "Connecting people.",
+    "section.0.frame.0.p": "Connecting people.",
+    "section.0.frame.1.img": "/assets/images/meet-yourself/connector/right slider/top/Holding groups together..jpg",
+    "section.0.frame.1.h": "Holding groups together.",
+    "section.0.frame.1.p": "Holding groups together.",
+    "section.0.frame.2.img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+    "section.0.frame.2.h": "Connecting people.",
+    "section.0.frame.2.p": "Connecting people.",
+    "section.0.cta": "Connect where it matters most →",
+    "section.1.title": "Holding Too Many Threads",
+    "section.1.line": "Even the strongest net can fray under strain.",
+    "section.1.body": "When you're the glue in everyone's lives, it can feel like nothing moves without you — and that can quietly exhaust you.",
+    "section.1.bullet.0": "You feel guilty if you can't attend every event.",
+    "section.1.bullet.1": "Your inbox or messages are always full of requests.",
+    "section.1.bullet.2": "You find it hard to say 'no' without explanation.",
+    "section.1.nudge": "Pause before responding to a request. Ask: 'Is this mine to hold?'",
+    "section.1.frame.0.img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+    "section.1.frame.0.h": "Breaking the ice.",
+    "section.1.frame.0.p": "Breaking the ice.",
+    "section.1.frame.1.img": "/assets/images/meet-yourself/connector/right slider/medium/Bringing teams together..jpg",
+    "section.1.frame.1.h": "Bringing teams together.",
+    "section.1.frame.1.p": "Bringing teams together.",
+    "section.1.frame.2.img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+    "section.1.frame.2.h": "Breaking the ice.",
+    "section.1.frame.2.p": "Breaking the ice.",
+    "section.1.cta": "Protect your space without breaking connections →",
+    "section.2.title": "Finding Your Own Place in the Network",
+    "section.2.line": "Connection is strongest when you're part of it too.",
+    "section.2.body": "It's easy to become the quiet center that no one notices — because you're busy making sure others are noticed. But your voice and needs deserve equal space.",
+    "section.2.bullet.0": "People know you as 'the connector' but not deeply as a person.",
+    "section.2.bullet.1": "Your own milestones often go uncelebrated.",
+    "section.2.bullet.2": "You're hesitant to ask for help.",
+    "section.2.nudge": "Share one personal goal or challenge with someone you trust this week.",
+    "section.2.frame.0.img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+    "section.2.frame.0.h": "Building harmony",
+    "section.2.frame.0.p": "Building harmony",
+    "section.2.frame.1.img": "/assets/images/meet-yourself/connector/right slider/lower/Creating safe spaces..jpg",
+    "section.2.frame.1.h": "Creating safe spaces.",
+    "section.2.frame.1.p": "Creating safe spaces.",
+    "section.2.frame.2.img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+    "section.2.frame.2.h": "Building harmony",
+    "section.2.frame.2.p": "Building harmony",
+    "section.2.cta": "Step into the circle you've created →",
+    "section.3.title": "Connecting for Change",
+    "section.3.line": "The most powerful bridges don't just link people — they change lives.",
+    "section.3.body": "When your connections are built with intention and care, they ripple outward, shaping communities and creating impact that lasts beyond you.",
+    "section.3.bullet.0": "You want your network to have purpose beyond social links.",
+    "section.3.bullet.1": "You dream of starting initiatives that help more people.",
+    "section.3.bullet.2": "You see potential in people others overlook.",
+    "section.3.nudge": "Choose one relationship or group to invest deeper time in — not more breadth, but more depth.",
+    "section.3.frame.0.img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+    "section.3.frame.0.h": "Creating lasting bonds.",
+    "section.3.frame.0.p": "Creating lasting bonds.",
+    "section.3.frame.1.img": "/assets/images/meet-yourself/connector/right slider/lowest/Everyone belongs..jpg",
+    "section.3.frame.1.h": "Everyone belongs.",
+    "section.3.frame.1.p": "Everyone belongs.",
+    "section.3.frame.2.img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+    "section.3.frame.2.h": "Creating lasting bonds.",
+    "section.3.frame.2.p": "Creating lasting bonds.",
+    "section.3.cta": "Make your connections count →",
+    "bridge.title": "You can connect without disappearing in the crowd.",
+    "bridge.body": "Drishiq helps connectors honor their own presence while continuing to weave the bonds that strengthen others.",
+    "bridge.cta": "Begin your clarity check →",
+    "how.0.h": "Connection Map",
+    "how.0.d": "See where your energy is going.",
+    "how.1.h": "Boundary Tools",
+    "how.1.d": "Learn to say yes without overextending.",
+    "how.2.h": "Mutuality Practices",
+    "how.2.d": "Create balanced relationships.",
+    "how.3.h": "Purpose Paths",
+    "how.3.d": "Align connections with what matters most to you.",
+    "btn.early_access": "Begin your clarity check →"
+  },
+  "dependent": {
+    "topband.label": "Dependent, not diminished — stories from known faces",
+    "hero.title": "Dependent, By Design",
+    "hero.subtitle": "Interdependence isn't a flaw. It's how humans move — together. The art is knowing which ties lift you, and which ones quietly tie you down.",
+    "cta.early_access": "Check your dependency map →",
+    "cta.how": "How DrishiQ helps",
+    "stir.line.0": "Who steadies you—and who steers you?",
+    "stir.line.1": "Are your yes's chosen or automatic?",
+    "stir.line.2": "Where does care feel heavy?",
+    "stir.line.3": "What boundary would make you kinder?",
+    "stir.line.4": "Which support fuels real growth?",
+    "emote.0.title": "Support",
+    "emote.0.subtitle": "Hands that steady",
+    "emote.1.title": "Trust",
+    "emote.1.subtitle": "Built in small acts",
+    "emote.2.title": "Space",
+    "emote.2.subtitle": "Love with air",
+    "emote.3.title": "Boundaries",
+    "emote.3.subtitle": "Kind and clear",
+    "emote.4.title": "Gratitude",
+    "emote.4.subtitle": "Thanks, not debt",
+    "emote.5.title": "Growth",
+    "emote.5.subtitle": "Updraft together",
+    "celeb.items": [
+      {
+        "img": "/assets/images/meet-yourself/dependent/celebs/maya_angelou.jpg",
+        "name": "Maya Angelou",
+        "profession": "Poet",
+        "source": "Interview",
+        "quote": "\"Nobody, but nobody, can make it out here alone.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/dependent/celebs/Steve_Jobs.jpg",
+        "name": "Steve Jobs",
+        "profession": "Entrepreneur",
+        "source": "Talk",
+        "quote": "\"Great things in business are never done by one person.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/dependent/celebs/Priyanka-chopra.jpg",
+        "name": "Priyanka Chopra Jonas",
+        "profession": "Actor",
+        "source": "TEDx",
+        "quote": "\"Leaning on others doesn't make you less — it makes you human.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/dependent/celebs/Stephen_Hawking.jpg",
+        "name": "Stephen Hawking",
+        "profession": "Physicist",
+        "source": "Lecture",
+        "quote": "\"We are all now connected, like neurons in a giant brain.\""
+      },
+      {
+        "img": "/assets/images/meet-yourself/dependent/celebs/Sachin_Tendulkar.jpg",
+        "name": "Sachin Tendulkar",
+        "profession": "Cricketer",
+        "source": "Press",
+        "quote": "\"I owe my success to the people who stood by me.\""
+      }
+    ],
+    "section.0.title": "The Comfort of Connection",
+    "section.0.line": "Warmth that steadies. Routines that root.",
+    "section.0.body": "Shared routines, inside jokes, someone to check in at the end of the day — these bonds keep you grounded. But comfort can also become a shield that keeps you from growing.",
+    "section.0.bullet.0": "You lean on a small circle for most decisions.",
+    "section.0.bullet.1": "You feel anchored — and sometimes hesitant to step out.",
+    "section.0.bullet.2": "You say yes by default to keep peace.",
+    "section.0.nudge": "List two supports that energize you and one that quietly drains you. Keep the first two close; redesign the third.",
+    "section.0.frame.0.img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+    "section.0.frame.0.h": "Their rock in storms",
+    "section.0.frame.0.p": "Their rock in storms",
+    "section.0.frame.1.img": "/assets/images/meet-yourself/dependent/right slider/top/You hold others up..jpg",
+    "section.0.frame.1.h": "You hold others up",
+    "section.0.frame.1.p": "You hold others up",
+    "section.0.frame.2.img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+    "section.0.frame.2.h": "Their rock in storms",
+    "section.0.frame.2.p": "Their rock in storms",
+    "section.1.title": "Boundaries Within Bonds",
+    "section.1.line": "Closeness with air. Love with space.",
+    "section.1.body": "Every healthy dependency has invisible lines. Too much reliance can blur them, too much distance can break them. Redrawing lines with clarity keeps trust from turning into tension.",
+    "section.1.bullet.0": "You apologize for taking time alone.",
+    "section.1.bullet.1": "You share passwords, calendars, plans by habit.",
+    "section.1.bullet.2": "Saying 'no' feels like a threat to the relationship.",
+    "section.1.nudge": "Write one boundary as a kind promise: 'I'll reply after 7pm tomorrow. I want to give this my best mind.'",
+    "section.1.frame.0.img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+    "section.1.frame.0.h": "Keeping them safe",
+    "section.1.frame.0.p": "Keeping them safe",
+    "section.1.frame.1.img": "/assets/images/meet-yourself/dependent/right slider/medium/Their success is yours..png",
+    "section.1.frame.1.h": "Their success is yours",
+    "section.1.frame.1.p": "Their success is yours",
+    "section.1.frame.2.img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+    "section.1.frame.2.h": "Keeping them safe",
+    "section.1.frame.2.p": "Keeping them safe",
+    "section.2.title": "The Weight of Expectations",
+    "section.2.line": "Gratitude is not a contract.",
+    "section.2.body": "Sometimes support comes with strings — obligations you didn't sign up for. It's not selfish to ask where the giving ends and the living begins.",
+    "section.2.bullet.0": "You keep receipts of favors (theirs or yours).",
+    "section.2.bullet.1": "You say 'sorry' for needs that are human.",
+    "section.2.bullet.2": "You worry love will be withdrawn if you set limits.",
+    "section.2.nudge": "Write a thank-you that doesn't promise payback: 'Thank you for being there. It meant a lot.' Period.",
+    "section.2.frame.0.img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+    "section.2.frame.0.h": "Finding your limits",
+    "section.2.frame.0.p": "Finding your limits",
+    "section.2.frame.1.img": "/assets/images/meet-yourself/dependent/right slider/lower/Love with wisdom..jpg",
+    "section.2.frame.1.h": "Love with wisdom",
+    "section.2.frame.1.p": "Love with wisdom",
+    "section.2.frame.2.img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+    "section.2.frame.2.h": "Finding your limits",
+    "section.2.frame.2.p": "Finding your limits",
+    "section.3.title": "Mutual Growth",
+    "section.3.line": "Reliance that becomes resilience.",
+    "section.3.body": "Dependence can be a launchpad when it's built on respect and shared progress. When you grow, your connections grow too.",
+    "section.3.bullet.0": "You celebrate skills, not just favors.",
+    "section.3.bullet.1": "You ask 'What helps you grow?' as often as 'Can you help me?'.",
+    "section.3.bullet.2": "You turn support into shared momentum.",
+    "section.3.nudge": "Ask one person this week: 'What's one small way I can back your goal?' Then do it.",
+    "section.3.frame.0.img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+    "section.3.frame.0.h": "Stronger as a team",
+    "section.3.frame.0.p": "Stronger as a team",
+    "section.3.frame.1.img": "/assets/images/meet-yourself/dependent/right slider/lowest/Walking side by side..jpg",
+    "section.3.frame.1.h": "Walking side by side",
+    "section.3.frame.1.p": "Walking side by side",
+    "section.3.frame.2.img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+    "section.3.frame.2.h": "Stronger as a team",
+    "section.3.frame.2.p": "Stronger as a team",
+    "bridge.title": "Dependence can be dignified.",
+    "bridge.body": "Drishiq helps you identify supports that empower rather than entangle — so you can lean without losing yourself.",
+    "bridge.cta": "Begin your clarity check →",
+    "how.0.h": "Clarity Conversations",
+    "how.0.d": "Gentle prompts that turn fog into words — then into choices.",
+    "how.1.h": "You-Pace Plans",
+    "how.1.d": "Small, stackable actions. No pressure, just momentum.",
+    "how.2.h": "Pattern Finder",
+    "how.2.d": "Notice who and what truly fuels you. Nudge what matters.",
+    "how.3.h": "Check-ins that Care",
+    "how.3.d": "Short, human-sounding follow-ups so progress feels supported, not policed.",
+    "btn.early_access": "Check your dependency map"
+  }
+}
+

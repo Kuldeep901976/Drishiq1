@@ -1,0 +1,256 @@
+{
+  "summary": {
+    "status": "MOSTLY_COMPLETE",
+    "reason": "Core onboarding pipeline implemented with language detection (cookie/IP/navigator), greeting that asks for name AND challenge together, age/location collection integrated in greeting stage, transition to intent_detection stage, phone verification with OTP, payment/signup flow, pipeline executor, profile collection stage, max 2 follow-ups enforcement. Fixed: repeated greeting bug. Still missing: email fallback stage, explicit consent capture in greeting flow, prefill friends/contacts, comprehensive tests, and some telemetry events."
+  },
+  "checks": {
+    "1_cookie_language": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/language-detection.ts", "lines": "15-25"},
+        {"file": "lib/language-detection.ts", "lines": "93-99"},
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "470-485"}
+      ],
+      "fix": ""
+    },
+    "2_ip_timezone_lang": {
+      "ok": true,
+      "evidence": [
+        {"file": "app/api/detect-location/route.ts", "lines": "56-182"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "39-74"},
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "540-597"}
+      ],
+      "fix": ""
+    },
+    "3_navigator_language_fallback": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/language-detection.ts", "lines": "111-126"}
+      ],
+      "fix": ""
+    },
+    "4_vpn_proxy_detection": {
+      "ok": true,
+      "evidence": [
+        {"file": "app/api/detect-location/route.ts", "lines": "94-148"},
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "563-582"}
+      ],
+      "fix": ""
+    },
+    "5_greeting_detected_language": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "259-444"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "326-356"}
+      ],
+      "fix": "",
+      "note": "Fixed: Repeated greeting bug resolved. Checks greetingSent/greetingText state before generating new greeting. If step is 'initial' but greeting was already sent, fixes step to 'asking_name_and_challenge' and processes user message instead of regenerating greeting."
+    },
+    "6_name_acknowledged": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "343-354"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "446-914"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "610-871"}
+      ],
+      "fix": "",
+      "note": "Updated: Greeting now asks for name AND challenge together in first message. After collection, proceeds to age/location collection, then transitions to intent_detection. Fixed repeated greeting bug by checking greetingSent state."
+    },
+    "7_profile_collection_stage": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "58-388"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "916-1178"}
+      ],
+      "fix": "",
+      "note": "Profile collection implemented in two places: 1) Dedicated onboarding-profile-collection.ts stage (location, age, tone, consent), 2) Age/location collection integrated into greeting stage (collecting_age_location step) before transitioning to intent_detection."
+    },
+    "8_deterministic_location_confirmation": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "94-217"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "916-1178"}
+      ],
+      "fix": "",
+      "note": "Location confirmation implemented in onboarding-profile-collection.ts. Also collected in greeting stage (collecting_age_location step) with IP-detected location confirmation."
+    },
+    "9_age_range_collection": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-profile-collection.ts", "lines": "219-249"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "924-1078"}
+      ],
+      "fix": "",
+      "note": "Age range collection implemented in both onboarding-profile-collection.ts (with buttons) and greeting stage (collecting_age_location step with LLM-generated messages)."
+    },
+    "10_tone_preference": {
+      "ok": false,
+      "evidence": [],
+      "fix": "Add tone preference question with buttons (Casual/Formal/Neutral) in onboarding-profile-collection.ts. Store in dds_state.userProfile.tone and apply via getUserMessageFormatter in subsequent stages."
+    },
+    "11_consent_capture": {
+      "ok": false,
+      "evidence": [],
+      "fix": "Add explicit consent prompt before saving profile in onboarding-profile-collection.ts. Store consent in dds_state.consent = {profile: true, timestamp: ISO}. Check consent before all saveOnboardingData calls."
+    },
+    "12_profile_persistence": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/onboarding-concierge/data-store.ts", "lines": "66-133"},
+        {"file": "app/api/payment/record-transaction/route.ts", "lines": "5-325"}
+      ],
+      "fix": ""
+    },
+    "13_voice_transcription": {
+      "ok": true,
+      "evidence": [
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "215-296"},
+        {"file": "app/api/transcribe/route.ts", "lines": "1-137"}
+      ],
+      "fix": ""
+    },
+    "14_initial_issue_persisted": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "774-920"},
+        {"file": "lib/onboarding-concierge/data-store.ts", "lines": "66-133"}
+      ],
+      "fix": ""
+    },
+    "15_intent_detection_stage": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "31-324"},
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "996-1015"}
+      ],
+      "fix": "",
+      "note": "Intent detection stage exists (onboarding-intent-detection.ts). Greeting stage transitions to it after collecting name, challenge, age, and location. Stage uses earlyIntentPass from intent-classifier.ts."
+    },
+    "16_followups_max_2": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "175-195"},
+        {"file": "lib/ddsa/stages/onboarding-intent-detection.ts", "lines": "203-209"}
+      ],
+      "fix": "",
+      "note": "Max 2 follow-ups enforced in onboarding-intent-detection.ts. Tracks followUpCount in dds_state.intent. After 2 follow-ups, proceeds regardless of confidence."
+    },
+    "17_phone_collection_otp": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-phone-verification.ts", "lines": "54-90"},
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "155-167"}
+      ],
+      "fix": ""
+    },
+    "18_phone_verification_gating": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-phone-verification.ts", "lines": "114-155"},
+        {"file": "lib/ddsa/stages/onboarding-problem-understanding.ts", "lines": "1-251"}
+      ],
+      "fix": ""
+    },
+    "19_email_fallback": {
+      "ok": false,
+      "evidence": [],
+      "fix": "Create lib/ddsa/stages/onboarding-email-collection.ts stage. Trigger when user declines phone verification or payment. Collect email, store in onboardingData.email, and send instructions via email service. Register in stage-registry.ts."
+    },
+    "20_payment_signup_profile_claim": {
+      "ok": true,
+      "evidence": [
+        {"file": "app/api/payment/record-transaction/route.ts", "lines": "327-784"},
+        {"file": "app/api/payment/record-transaction/route.ts", "lines": "5-325"}
+      ],
+      "fix": ""
+    },
+    "21_prefill_friends_contacts": {
+      "ok": false,
+      "evidence": [],
+      "fix": "In app/api/auth/signup/route.ts or app/api/payment/record-transaction/route.ts, after user creation, query onboarding_concierge_data by email/phone to get profile data (city, age_range, problem_category). Prefill friend/contact suggestions during signup based on collected profile data."
+    },
+    "22_pipeline_executor_registry": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/onboarding-pipeline-executor.ts", "lines": "121-289"},
+        {"file": "lib/ddsa/stage-registry.ts", "lines": "39-265"},
+        {"file": "lib/ddsa/pipeline-executor.ts", "lines": "56-141"}
+      ],
+      "fix": ""
+    },
+    "23_reinit_greeting_language_change": {
+      "ok": true,
+      "evidence": [
+        {"file": "components/OnboardingConciergeOverlay.tsx", "lines": "432-468"}
+      ],
+      "fix": ""
+    },
+    "24_joke_policy": {
+      "ok": true,
+      "evidence": [
+        {"file": "lib/ddsa/stages/onboarding-greeting.ts", "lines": "238-252"},
+        {"file": "packages/policy/engine.ts", "lines": "50-111"}
+      ],
+      "fix": ""
+    },
+    "25_tests": {
+      "ok": false,
+      "evidence": [],
+      "fix": "Create tests/unit/onboarding-language-detection.test.ts (test cookie/IP/navigator fallback), tests/integration/onboarding-phone-verification.test.ts (test OTP send/verify flow), tests/e2e/onboarding-intent-handoff.test.ts (test intent detection with profile data), tests/integration/onboarding-pipeline-executor.test.ts (test pipeline orchestration)."
+    },
+    "26_telemetry": {
+      "ok": false,
+      "evidence": [
+        {"file": "lib/language-detection.ts", "lines": "63-87"}
+      ],
+      "fix": "Add telemetry events: profile_saved (in lib/onboarding-concierge/data-store.ts saveOnboardingData after successful save), phone_verified (in lib/ddsa/stages/onboarding-phone-verification.ts after OTP verification), purchase_completed (in app/api/payment/record-transaction/route.ts after successful payment). Use window.gtag('event', ...) or analytics.track(). lang_detect_source already tracked in language-detection.ts."
+    }
+  },
+  "gaps": [
+    {
+      "id": 7,
+      "fileSuggested": "lib/ddsa/stages/onboarding-profile-collection.ts",
+      "suggestedSnippet": "export async function execute(input: StageInput): Promise<StageResult> {\n  const ddsState = input.ddsState || {};\n  if (!ddsState.onboarding_profile_collection) {\n    ddsState.onboarding_profile_collection = { step: 'location' };\n  }\n  \n  // Step 1: Collect location with deterministic confirmation\n  if (ddsState.onboarding_profile_collection.step === 'location') {\n    const locationFacts: Record<string, string> = {\n      'Mumbai': 'Mumbai is known for its vibrant street food culture',\n      'Delhi': 'Delhi is home to the iconic Red Fort'\n    };\n    const cityFact = locationFacts[city] || `${city} is a wonderful place`;\n    return { status: 'halted', message: `Thank you! ${cityFact}. This helps me understand your context better.` };\n  }\n  \n  // Step 2: Age range buttons\n  // Step 3: Tone preference (Casual/Formal/Neutral)\n  // Step 4: Consent capture\n}",
+      "explanation": "Missing dedicated profile collection stage for location, age range, tone preference, and consent"
+    },
+    {
+      "id": 15,
+      "fileSuggested": "app/api/intent/detect/route.ts",
+      "suggestedSnippet": "import { earlyIntentPass } from '@/lib/ddsa/intent-classifier';\n\nexport async function POST(req: NextRequest) {\n  const { profile, initialIssue } = await req.json();\n  const result = await earlyIntentPass([initialIssue], 'onboarding', profile.threadId);\n  \n  let nextStage = 'onboarding_cfq';\n  if (result.confidence >= 0.75) nextStage = 'provide_advice';\n  else if (result.confidence >= 0.4) nextStage = 'ask_followups';\n  else nextStage = 'escalate_to_human';\n  \n  return NextResponse.json({\n    intent: result.intent_label,\n    confidence: result.confidence,\n    slots: result.required_fields,\n    nextStage,\n    followups: result.confidence >= 0.4 && result.confidence < 0.75 ? ['question1', 'question2'] : undefined\n  });\n}",
+      "explanation": "Missing dedicated intent detection API endpoint that accepts profile and initialIssue, returns structured JSON with confidence-based routing"
+    },
+    {
+      "id": 16,
+      "fileSuggested": "lib/ddsa/stages/onboarding-intent-detection.ts",
+      "suggestedSnippet": "// Track follow-up count in dds_state.intent\nif (!ddsState.intent) ddsState.intent = { followUpCount: 0 };\n\nif (result.confidence >= 0.4 && result.confidence < 0.75 && ddsState.intent.followUpCount < 2) {\n  ddsState.intent.followUpCount++;\n  return { status: 'halted', message: followUpQuestion };\n} else if (ddsState.intent.followUpCount >= 2) {\n  // Max 2 follow-ups reached, proceed regardless\n  return { status: 'ok', message: 'Moving forward...' };\n}",
+      "explanation": "Missing max 2 follow-ups enforcement in intent detection stage"
+    },
+    {
+      "id": 19,
+      "fileSuggested": "lib/ddsa/stages/onboarding-email-collection.ts",
+      "suggestedSnippet": "export async function execute(input: StageInput): Promise<StageResult> {\n  const ddsState = input.ddsState || {};\n  const phoneVerification = ddsState.onboarding_phone_verification;\n  \n  // Trigger if phone verification declined or payment declined\n  if (phoneVerification?.declined || ddsState.payment?.declined) {\n    return {\n      status: 'halted',\n      message: 'No worries! Would you like to share your email so we can send you helpful resources?',\n      output: { waitingForEmail: true }\n    };\n  }\n  \n  // Store email and send instructions\n  await saveOnboardingData({ email }, tenantId);\n  await sendEmailInstructions(email);\n}",
+      "explanation": "Missing email capture fallback stage when user declines phone verification or payment"
+    },
+    {
+      "id": 25,
+      "fileSuggested": "tests/integration/onboarding-phone-verification.test.ts",
+      "suggestedSnippet": "describe('Onboarding Phone Verification', () => {\n  it('should send OTP and verify phone number', async () => {\n    const response = await fetch('/api/chat/onboarding-concierge', {\n      method: 'POST',\n      body: JSON.stringify({ \n        threadId: 'test_thread',\n        phoneNumber: '+1234567890'\n      })\n    });\n    expect(response.status).toBe(200);\n    const data = await response.json();\n    expect(data.message).toContain('OTP');\n    \n    // Verify OTP\n    const verifyResponse = await fetch('/api/chat/onboarding-concierge', {\n      method: 'POST',\n      body: JSON.stringify({ threadId: 'test_thread', otpCode: '123456' })\n    });\n    expect(verifyResponse.status).toBe(200);\n  });\n});",
+      "explanation": "Missing comprehensive test suite for onboarding flow components (language detection, OTP verification, intent handoff, pipeline execution)"
+    },
+    {
+      "id": 26,
+      "fileSuggested": "lib/onboarding-concierge/data-store.ts",
+      "suggestedSnippet": "// In saveOnboardingData function, after successful save (line 116 or 127):\nif (typeof window !== 'undefined' && window.gtag) {\n  window.gtag('event', 'profile_saved', {\n    event_category: 'onboarding',\n    thread_id: data.thread_id,\n    has_location: !!(data.city || data.country),\n    has_age_range: !!data.age_range\n  });\n}\n\n// In onboarding-phone-verification.ts after OTP verified (line 143):\nif (typeof window !== 'undefined' && window.gtag) {\n  window.gtag('event', 'phone_verified', {\n    event_category: 'onboarding',\n    thread_id: threadId\n  });\n}\n\n// In payment/record-transaction/route.ts after successful payment:\nif (typeof window !== 'undefined' && window.gtag) {\n  window.gtag('event', 'purchase_completed', {\n    event_category: 'onboarding',\n    user_id: userId,\n    transaction_type: transactionType\n  });\n}",
+      "explanation": "Missing telemetry events for profile_saved, phone_verified, and purchase_completed"
+    }
+  ],
+  "recommendations": [
+    "Implement dedicated onboarding-profile-collection.ts stage for location (with deterministic facts map), age range (buttons), tone preference (Casual/Formal/Neutral), and explicit consent capture",
+    "Create app/api/intent/detect/route.ts endpoint that accepts {profile, initialIssue} and returns {intent, confidence, slots, nextStage, followups?} with confidence-based routing (>=0.75 → provide_advice, 0.4-0.75 → ask_followups max 2, <0.4 → escalate_to_human)",
+    "Add max 2 follow-ups enforcement in intent detection stage by tracking followUpCount in dds_state.intent and halting after 2 clarifying questions",
+    "Create onboarding-email-collection.ts stage as fallback when user declines phone verification or payment, with email storage and instruction sending",
+    "Add explicit consent capture before saving profile data in onboarding flow, stored in dds_state.consent with timestamp",
+    "Create comprehensive test suite: unit tests for language detection (cookie/IP/navigator), integration tests for phone OTP verification, E2E tests for intent handoff and pipeline orchestration",
+    "Add telemetry events: profile_saved (in data-store.ts), phone_verified (in onboarding-phone-verification.ts), purchase_completed (in payment/record-transaction/route.ts) using window.gtag or analytics.track"
+  ]
+}

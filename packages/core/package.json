@@ -1,0 +1,26 @@
+{
+  "name": "@drishiq/core",
+  "version": "1.0.0",
+  "description": "Core chat domain logic and tag protocol for DrishiQ ChatModule",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["drishiq", "chat", "core", "protocol"],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "dependencies": {
+    "@drishiq/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
+
+
+

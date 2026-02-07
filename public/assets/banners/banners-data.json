@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "position": 1,
+    "title": "🧠 Get Unstuck. Get Clarity.",
+    "text": "Feeling foggy, overwhelmed, or torn between choices? Drishiq helps you organize your thoughts, reflect deeply, and make wiser decisions — through emotionally intelligent, structured conversations.",
+    "image_url": "/assets/banners/banner-0-1753217601452.jpg",
+    "cta_label": "🎯 Start Your Clarity Session",
+    "cta_link": "/invitation",
+    "is_active": true,
+    "created_at": "2025-07-22T21:19:03.796Z",
+    "updated_at": "2025-07-22T21:19:03.796Z"
+  },
+  {
+    "id": 2,
+    "position": 2,
+    "title": "💬 Can't Pay? Your Challenge Still Matters.",
+    "text": "Struggling to figure things out but can't afford a session? We hear you. At Drishiq, no voice goes unheard. Share your challenge — and we'll try to connect you with a sponsored session.",
+    "image_url": "/assets/banners/banner-1-1753218298881.jpg",
+    "cta_label": "📝 Submit Your Challenge for Support",
+    "cta_link": "/supportdetails",
+    "is_active": true,
+    "created_at": "2025-07-22T21:19:03.796Z",
+    "updated_at": "2025-07-22T21:19:03.796Z"
+  },
+  {
+    "id": 3,
+    "position": 3,
+    "title": "💚 Give the Gift of Clarity",
+    "text": "A single conversation can shift someone's world. Donate a session to help someone move from confusion to confidence. Your kindness could be the turning point in their journey.",
+    "image_url": "/assets/banners/banner-2-1753218056625.jpg",
+    "cta_label": "🌟 Sponsor a Session Now",
+    "cta_link": "/payment",
+    "is_active": true,
+    "created_at": "2025-07-22T21:19:03.796Z",
+    "updated_at": "2025-07-22T21:19:03.796Z"
+  },
+  {
+    "id": 4,
+    "position": 4,
+    "title": "🔄 Share to Inspire. Earn Credits.",
+    "text": "Did Drishiq help you solve a challenge or gain emotional clarity? Your story could inspire someone else — and earn you session credits in return.",
+    "image_url": "/assets/banners/banner-3-1753218624317.jpg",
+    "cta_label": "📣 Share Your Story",
+    "cta_link": "/stories",
+    "is_active": true,
+    "created_at": "2025-07-22T21:19:03.796Z",
+    "updated_at": "2025-07-22T21:19:03.796Z"
+  },
+  {
+    "id": 5,
+    "position": 5,
+    "title": "🌍 One Platform. Many Journeys.",
+    "text": "Every journey to clarity is different. Some seek guidance, others offer support. Drishiq brings it all together — powered by insight, empathy, and shared human growth.",
+    "image_url": "/assets/banners/banner-4-1753218891541.avif",
+    "cta_label": "🧭 Explore the Drishiq Experience",
+    "cta_link": "/about",
+    "is_active": true,
+    "created_at": "2025-07-22T21:19:03.796Z",
+    "updated_at": "2025-07-22T21:19:03.796Z"
+  },
+  {
+    "id": 6,
+    "position": 6,
+    "title": "🤝 Be Part of the Clarity Circle",
+    "text": "Join a growing community of seekers, sponsors, and storytellers. Drishiq isn't just about answers — it's about connection, compassion, and collective growth.",
+    "image_url": "/assets/banners/banner-5-1753218996511.avif",
+    "cta_label": "🔗 Join the Circle",
+    "cta_link": "/signup",
+    "is_active": true,
+    "created_at": "2025-07-22T21:19:03.796Z",
+    "updated_at": "2025-07-22T21:19:03.796Z"
+  }
+]

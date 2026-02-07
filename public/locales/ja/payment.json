@@ -1,0 +1,526 @@
+{
+  "title": "支払い",
+  "pricing": {
+    "title": "ドリシクの道",
+    "subtitle": "自己探求の旅のどの段階にいるかに共鳴する道を選んでください。各プランは、あなたが最もサポートを必要とする場所で寄り添えるよう設計されています。",
+    "stats": {
+      "findClarity": "95%",
+      "findClarityLabel": "明確さを見つける",
+      "alwaysAvailable": "24/7",
+      "alwaysAvailableLabel": "いつでも利用可能",
+      "moneyBack": "30日",
+      "moneyBackLabel": "返金保証"
+    },
+    "offerBanner": {
+      "title": "初回限定特別オファー！",
+      "description": "新規ユーザー限定、初回「ファーストライト」セッションが特別価格で利用可能 — 条件なし、サブスク不要",
+      "close": "オファーを閉じる"
+    },
+    "defaultPricingIndicator": {
+      "default": "デフォルト価格を表示中",
+      "earlyAccess": "早期アクセス価格を表示中",
+      "regular": "通常価格を表示中",
+      "clickInstructions": "特別料金を有効化するには価格セクションをクリック！"
+    },
+    "foundingMemberOffer": {
+      "badge": "創設メンバーオファー",
+      "title": "最初に信じてくれた人へのオファー",
+      "launchDate": "正式リリース：2026年1月1日",
+      "description": "最初の1万人のユーザーとして、この特別価格はリリース後3か月間利用できます。創設コミュニティに参加し、通常価格が始まる前に特別料金を確保しましょう。",
+      "earlyAccess": {
+        "title": "早期アクセス価格",
+        "description": "リリース後3か月間利用できる特別料金 — 今すぐ価格を確保",
+        "active": "✓ 有効"
+      },
+      "regular": {
+        "title": "通常価格",
+        "description": "早期アクセス期間終了後に適用される標準料金",
+        "active": "✓ 有効"
+      },
+      "highlight": "✨ これはリリース後3か月間限定の早期アクセスオファーです — 終了前に特別料金を確保してください！ ✨"
+    },
+    "clarityPass": {
+      "title": "💫 あなたのクリアリティパス",
+      "quote": "一度立ち止まり、明確さを選び、自分が本当に必要としている空間を与えましょう。",
+      "description": "明確さと個人の成長に寄り添う最適なプランを見つけてください"
+    },
+    "plans": {
+      "freeTrial": {
+        "name": "無料トライアル",
+        "emotionLabel": "ちょっと試してみたい",
+        "description": "ドリシクを体験する最適な方法",
+        "duration": "72時間",
+        "validity": "有効：アクティベーション後72時間",
+        "sessions": "1",
+        "sessionsLabel": "セッション",
+        "sessionsPlural": "セッション",
+        "features": {
+          "invitationBased": "招待制",
+          "featuredStory": "特別ストーリー投稿",
+          "testimonial": "体験談投稿",
+          "socialMedia": "SNSチャレンジ",
+          "sessionValidity": "アクティベーション後72時間有効の1セッション"
+        },
+        "cta": "無料で試す"
+      },
+      "firstLight": {
+        "name": "ファーストライト",
+        "emotionLabel": "見え始めてきた",
+        "description": "ドリシクを初めて探索する人に最適",
+        "duration": "1週間",
+        "validity": "有効：アクティベーション後1週間",
+        "sessions": "1",
+        "features": {
+          "allFreePlan": "無料プランのすべてを含む",
+          "sessionValidity": "アクティベーション後1週間有効のセッション",
+          "exportPdf": "セッション記録をPDFで出力",
+          "noRecurring": "定期課金なし",
+          "directAccess": "支払い後すぐにアクセス可能"
+        },
+        "cta": "旅を始める",
+        "foundingSupport": "創設サポート価格"
+      },
+      "steadyLens": {
+        "name": "ステディエンゲージ",
+        "emotionLabel": "リズムができてきた",
+        "description": "継続的な習慣を築きたい人に最適",
+        "duration": "1か月",
+        "validity": "有効：アクティベーション後1か月",
+        "sessions": "5",
+        "features": {
+          "sessionsValidity": "アクティベーション後1か月有効の5セッション",
+          "allFirstLight": "ファーストライトの全内容を含む",
+          "sessionValidity": "アクティベーション後1か月有効のセッション"
+        },
+        "cta": "自分のリズムを作る"
+      },
+      "enterprise": {
+        "name": "エンタープライズ",
+        "emotionLabel": "大規模組織向け",
+        "description": "大規模に人をサポートする組織に最適",
+        "duration": "1か月",
+        "validity": "アクティベーション後1か月",
+        "sessions": "10",
+        "features": {
+          "sessionsValidity": "アクティベーション後1か月有効の10セッション",
+          "adminDashboard": "管理者ダッシュボード",
+          "multiUser": "複数ユーザーアクセス",
+          "reports": "レポートとインサイト"
+        },
+        "cta": "組織をスケールする"
+      },
+      "mostPopular": "最も人気",
+      "free": "無料",
+      "pricingUnavailable": "価格情報は利用できません",
+      "loadingPricing": "料金を読み込み中..."
+    },
+    "trustIndicators": {
+      "securePayment": {
+        "title": "安全な支払い",
+        "description": "256ビットSSL暗号化"
+      },
+      "flexiblePlans": {
+        "title": "柔軟なプラン",
+        "description": "いつでも変更可能"
+      },
+      "support": {
+        "title": "24/7サポート",
+        "description": "いつでもサポートします"
+      }
+    },
+    "customPackage": {
+      "title": "✨ もっと柔軟なプランが必要ですか？お任せください！",
+      "description": "あなたの独自のニーズに合わせたカスタムプランをお探しですか？最適なソリューション作りをサポートします。",
+      "getInTouch": "お問い合わせ",
+      "email": "support@drishiq.com",
+      "subtext": "必要事項をお送りいただければ、あなたにぴったりのプランを設計します"
+    },
+    "giftSection": {
+      "badge": "現行プランユーザー向けギフト",
+      "title": "🌌 明確さのひとときを贈る",
+      "quote": "あなたの明確さがあなたを助けたように、今度は誰かを助けてください。",
+      "description": "特別サポート価格で、友人・家族・必要とする誰かにセッションを贈りましょう。",
+      "giftVersion": "🎁 ギフト版",
+      "mostGifted": "最も贈られている",
+      "premiumGiftBenefit": "プレミアムギフト特典",
+      "giftPlans": {
+        "firstLight": {
+          "name": "ファーストライト",
+          "emotionLabel": "見え始めてきた",
+          "description": "ドリシクを始めて探索する人に最適",
+          "sessions": "1",
+          "validity": "アクティベーション後1週間",
+          "features": {
+            "allFreePlan": "無料プランのすべてを含む",
+            "sessionValidity": "アクティベーション後1週間有効のセッション",
+            "exportPdf": "セッション記録をPDF出力",
+            "noRecurring": "定期料金なし",
+            "directAccess": "支払い後すぐにアクセス可能"
+          },
+          "cta": "ファーストライトを贈る"
+        },
+        "steadyLens": {
+          "name": "ステディエンゲージ",
+          "emotionLabel": "リズムを作っている",
+          "description": "継続的な実践を築きたい人に最適",
+          "sessions": "2",
+          "validity": "アクティベーション後1か月",
+          "features": {
+            "sessionsValidity": "アクティベーション後1か月有効の2セッション",
+            "allFirstLight": "ファーストライトのすべてを含む",
+            "sessionValidity": "アクティベーション後1か月有効のセッション"
+          },
+          "cta": "ステディエンゲージを贈る"
+        },
+        "deeperSense": {
+          "name": "ディーパセンス（深い理解）",
+          "emotionLabel": "深い探求",
+          "description": "より深い理解を求める人に最適",
+          "sessions": "5",
+          "validity": "アクティベーション後2か月",
+          "features": {
+            "sessionsValidity": "アクティベーション後2か月有効の5セッション",
+            "allSteadyLens": "ステディエンゲージのすべてを含む",
+            "extendedValidity": "深い探求のための延長された有効期間"
+          },
+          "cta": "ディーパセンスを贈る"
+        }
+      },
+      "howItWorks": {
+        "title": "ギフトの仕組み",
+        "step1": {
+          "title": "選んでカスタマイズ",
+          "description": "プランを選び、受取人の名前とメッセージを追加"
+        },
+        "step2": {
+          "title": "ギフトを送る",
+          "description": "美しいメールを送信するか、共有リンクをご提供します"
+        },
+        "step3": {
+          "title": "相手がクリアリティを体験",
+          "description": "受取人は即時アクセスを得て、旅を始められます"
+        }
+      },
+      "giftFeatures": {
+        "personalNotes": {
+          "title": "パーソナルメッセージ",
+          "description": "ギフトに心のこもったメッセージを添える"
+        },
+        "anonymous": {
+          "title": "匿名オプション",
+          "description": "必要としている人に匿名で贈ることも可能"
+        },
+        "instantAccess": {
+          "title": "即時アクセス",
+          "description": "受取人はすぐにセッションへアクセス可能"
+        }
+      }
+    },
+    "supportSection": {
+      "badge": "必要としている人を支援",
+      "title": "🕊️ 希望の光になる",
+      "quote": "あなたの支援は、誰かが立ち止まり、深呼吸し、再び前へ進むための扉を開きます。",
+      "description": "誰かが自分の道を再発見するための助けを提供しましょう。",
+      "anyAmount": "任意の金額",
+      "giftLevels": {
+        "gentleNudge": {
+          "title": "そっと背中を押す",
+          "emotionLabel": "静かなひとときを贈る",
+          "description": "明確さへ優しく導くために最適",
+          "sessions": "1セッション",
+          "validity": "2週間",
+          "feature": "2週間有効の1セッション"
+        },
+        "shiftForward": {
+          "title": "小さな一歩の支援",
+          "emotionLabel": "次の正直な一歩を応援",
+          "description": "誰かが次の有意義な一歩を踏み出すための空間を提供",
+          "sessions": "2セッション",
+          "validity": "1か月",
+          "feature": "1か月有効の2セッション"
+        },
+        "deeperSpace": {
+          "title": "深い支援",
+          "emotionLabel": "もう少し長く向き合えるように",
+          "description": "深い探求と理解のための空間を提供",
+          "sessions": "5セッション",
+          "validity": "2か月",
+          "feature": "2か月有効の5セッション"
+        },
+        "heart": {
+          "title": "心からの寄付",
+          "emotionLabel": "心で贈る",
+          "description": "ドリシクを必要な人みんなに届けるために、どんな金額でも支援できます",
+          "sessions": "自由",
+          "validity": "自由",
+          "feature": "どんな金額でも歓迎"
+        }
+      },
+      "giftFeatures": {
+        "personalNotes": {
+          "title": "パーソナルメッセージ",
+          "description": "ギフトにメッセージを添える"
+        },
+        "anonymous": {
+          "title": "匿名オプション",
+          "description": "必要な人に匿名で贈り物を届ける"
+        },
+        "instantAccess": {
+          "title": "即時アクセス",
+          "description": "受取人はすぐにセッションにアクセス可能"
+        }
+      },
+      "donateNow": "今すぐ寄付",
+      "giftThis": "これを贈る",
+      "socialMediaTooltip": "キャンペーン情報はSNSでご確認ください"
+    },
+    "alerts": {
+      "pricingUpdated": "価格が正常に更新されました！",
+      "pricingSaveFailed": "価格の保存に失敗しました",
+      "pricingLoadFailed": "この国の価格を読み込めませんでした。もう一度お試しください。",
+      "pricingDataFailed": "価格データの読み込みに失敗しました"
+    },
+    "tooltips": {
+      "activateGiftPricing": "特別ギフト価格を有効化するにはクリック",
+      "clickInstructions": "説明を見るにはクリック"
+    }
+  },
+  "page": {
+    "header": {
+      "title": "ドリシク支払い",
+      "backToPlans": "← プランに戻る"
+    },
+    "planSummary": {
+      "title": "プラン概要",
+      "planPrice": "プラン料金",
+      "tax": "税金",
+      "totalAmount": "合計金額",
+      "location": "場所",
+      "pricingCategory": "価格カテゴリー",
+      "credits": "クレジット"
+    },
+    "paymentMethods": {
+      "title": "支払い方法を選択",
+      "cashfree": {
+        "name": "Cashfree",
+        "description": "カード、UPI、ネットバンキング、ウォレット"
+      },
+      "paypal": {
+        "name": "PayPal",
+        "description": "PayPal、クレジット/デビットカード"
+      },
+      "proceed": "支払いに進む",
+      "selectMethod": "支払い方法を選択してください",
+      "securityNotice": "あなたの支払いは256ビットSSL暗号化で保護されています"
+    },
+    "error": {
+      "title": "支払いエラー",
+      "backToPlans": "プランに戻る",
+      "planNotFound": "プランが見つかりません",
+      "planNotFoundMessage": "選択したプランが見つかりませんでした。",
+      "loading": "支払い情報を読み込み中..."
+    }
+  },
+  "method": {
+    "title": "支払い方法を選択",
+    "subtitle": "{purpose} の支援を完了するために、ご希望のお支払い方法をお選びください。",
+    "gift": "ギフト",
+    "support": "サポート",
+    "summary": {
+      "giftContribution": "ギフトの支援",
+      "supportContribution": "サポートの支援",
+      "name": "名前",
+      "email": "メール"
+    },
+    "cashfree": {
+      "name": "Cashfree",
+      "description": "UPI、カード、ネットバンキングで支払う"
+    },
+    "paypal": {
+      "name": "PayPal",
+      "description": "PayPalで安全に支払う"
+    },
+    "continue": "{method} で続行",
+    "processing": "処理中...",
+    "security": "お支払いは安全に暗号化されています。カード情報を保存することはありません。",
+    "loading": "支払い方法を読み込み中..."
+  },
+  "failure": {
+    "title": "支払いが完了しませんでした",
+    "subtitle": "お支払いを完了できませんでした",
+    "transactionFailed": "⚠️ トランザクション失敗",
+    "notCharged": "ご安心ください！カードから料金は引き落とされていません。",
+    "possibleReasons": "考えられる理由",
+    "reasons": {
+      "insufficientFunds": "残高不足",
+      "incorrectCard": "カード情報が正しくありません",
+      "bankDeclined": "銀行が取引を拒否しました",
+      "networkIssues": "ネットワーク接続の問題",
+      "cardExpired": "カードが期限切れまたは無効"
+    },
+    "tryAgain": "再試行 🔄",
+    "backToPlans": "プランに戻る",
+    "contactSupport": "サポートに連絡",
+    "needHelp": "お困りですか？",
+    "helpMessage": "問題が続く場合は、サポートチームにご連絡ください。",
+    "supportEmail": "support@drishiq.com"
+  },
+  "process": {
+    "title": "支払いを完了",
+    "subtitle": "複数の方法で安全に支払いを処理します",
+    "serviceDetails": "サービス詳細",
+    "service": "サービス",
+    "amount": "金額",
+    "credits": "クレジット",
+    "currency": "通貨",
+    "paymentMethodsAvailable": "利用可能な支払い方法",
+    "paypal": {
+      "name": "PayPal",
+      "description": "グローバル支払い"
+    },
+    "cashfree": {
+      "name": "Cashfree",
+      "description": "インド支払い"
+    },
+    "phonepe": {
+      "name": "PhonePe",
+      "description": "UPI支払い"
+    },
+    "paymentError": "支払いエラー",
+    "proceedToPayment": "支払いに進む",
+    "processing": "処理中...",
+    "security": "🔒 お支払いは業界標準の暗号化で保護されています",
+    "loading": "支払い情報を読み込み中...",
+    "error": "エラー",
+    "invalidDetails": "無効な支払い情報"
+  },
+  "processing": {
+    "title": "支払い処理中",
+    "subtitle": "支払いを処理していますのでお待ちください",
+    "loading": "処理中...",
+    "error": "支払いに失敗しました。再試行してください。"
+  },
+  "success": {
+    "title": "支払い成功",
+    "subtitle": "支払いが正常に処理されました",
+    "message": "お支払いありがとうございます。まもなく確認メールが届きます。",
+    "continue": "続ける"
+  },
+  "methods": {
+    "credit_card": "クレジットカード",
+    "debit_card": "デビットカード",
+    "upi": "UPI",
+    "net_banking": "ネットバンキング",
+    "wallet": "ウォレット"
+  },
+  "form": {
+    "card_number": "カード番号",
+    "expiry_date": "有効期限",
+    "cvv": "CVV",
+    "name_on_card": "カード名義",
+    "amount": "金額",
+    "pay_now": "今すぐ支払う"
+  },
+  "checkout": {
+    "pay": "支払う",
+    "processing": "処理中...",
+    "loading": "読み込み中..."
+  },
+  "thankYou": {
+    "title": "ありがとうございます！🙏",
+    "subtitle": "お支払いが正常に処理されました",
+    "creditsAdded": "✅ クレジットがアカウントに追加されました",
+    "creditsReady": "+{credits} クレジットが利用可能",
+    "whatsNext": "次のステップ",
+    "creditsAvailable": "クレジットが利用可能になりました！最初の対話を開始できます。",
+    "startConversation": "最初の対話を始める 🚀",
+    "viewDashboard": "ダッシュボードを見る",
+    "purchaseMore": "クレジットを追加購入",
+    "needHelp": "お困りですか？サポートにお問い合わせください",
+    "supportEmail": "support@drishiq.com"
+  },
+  "verification": {
+    "verifying": "支払いを確認しています",
+    "pleaseWait": "支払い確認が完了するまでお待ちください...",
+    "failed": "支払い確認に失敗しました",
+    "tryAgain": "再試行",
+    "contactSupport": "サポートに連絡",
+    "successful": "支払い成功！",
+    "activated": "お支払いありがとうございます。ドリシクのアクセスが有効化されました。",
+    "paymentDetails": "支払い詳細",
+    "transactionId": "取引ID：",
+    "amount": "金額：",
+    "status": "ステータス：",
+    "continueToDrishiq": "ドリシクへ進む",
+    "confirmationEmail": "まもなく確認メールが届きます。",
+    "questions": "ご質問がある場合はサポートにご連絡ください。"
+  },
+  "credits": {
+    "checking": "クレジットを確認中...",
+    "pleaseLogin": "クレジットを確認するにはログインしてください",
+    "couldNotCheck": "クレジットを確認できませんでした",
+    "unableToCheck": "クレジット確認に失敗しました",
+    "noCredits": "クレジットがありません。ご購入ください。",
+    "errorVerifying": "ユーザー確認でエラーが発生しました",
+    "creditsAvailable": "利用可能クレジット",
+    "totalCredits": "総クレジット",
+    "creditsUsed": "使用済みクレジット",
+    "buyCredits": "クレジット購入",
+    "noCreditsAvailable": "利用できるクレジットがありません",
+    "needCredits": "対話を開始するには1クレジット必要です。ご購入ください。"
+  },
+  "successPage": {
+    "processing": "支払いを処理しています...",
+    "creditsAdded": "✓ クレジットが追加されました",
+    "processingError": "処理エラー",
+    "backToPlans": "プランに戻る",
+    "paymentDataNotFound": "支払いデータが見つかりません",
+    "unableToLoad": "支払い詳細を読み込めませんでした。",
+    "paymentConfirmation": "支払い確認",
+    "plan": "プラン",
+    "creditsAddedLabel": "追加されたクレジット",
+    "amountPaid": "支払金額",
+    "transactionId": "取引ID",
+    "status": "ステータス",
+    "paymentSuccessful": "支払い成功",
+    "whatsNext": "次のステップ",
+    "creditsAddedToAccount": "クレジットがアカウントに追加されました",
+    "startFirstSession": "• 最初のクリアリティセッションを開始",
+    "checkEmail": "• 確認メールをチェック",
+    "shareGift": "• ギフトを受取人と共有",
+    "goToChat": "チャットへ進む →",
+    "viewAllPlans": "すべてのプランを見る",
+    "shareJourney": "ドリシクでの旅を共有する",
+    "shareTwitter": "X（Twitter）で共有",
+    "shareLinkedIn": "LinkedInで共有",
+    "categories": {
+      "prelaunch": {
+        "title": "🎉 ドリシクファミリーへようこそ！",
+        "subtitle": "あなたは初期サポーターです",
+        "message": "ドリシクのビジョンを信じ、基盤づくりを支えてくださりありがとうございます。",
+        "badge": "初期サポーター"
+      },
+      "postlaunch": {
+        "title": "✨ あなたの明確さの旅が始まりました！",
+        "subtitle": "ドリシクへようこそ",
+        "message": "ドリシクを選んでいただきありがとうございます。あなたは自己認識と明確さへの第一歩を踏み出しました。",
+        "badge": "明確さの探求者"
+      },
+      "gift": {
+        "title": "🎁 あなたの明確さの贈り物が準備できました！",
+        "subtitle": "光を分かち合う",
+        "message": "大切な人に明確さをプレゼントしてくれてありがとうございます。あなたの優しさがその人の道を照らします。",
+        "badge": "明確さの贈り主"
+      },
+      "support": {
+        "title": "🕊️ あなたの思いやりに感謝します！",
+        "subtitle": "誰かの人生を変えています",
+        "message": "あなたの支援は、必要とする人が明確さと力を取り戻す助けとなります。ドリシクを誰にでも届けるために貢献してくださりありがとうございます。",
+        "badge": "思いやりのある人",
+        "downloadBadge": "🎖️ バッジをダウンロード",
+        "badgeDescription": "この特別バッジであなたの支援を示しましょう",
+        "downloadButton": "バッジをダウンロード"
+      }
+    }
+  }
+}

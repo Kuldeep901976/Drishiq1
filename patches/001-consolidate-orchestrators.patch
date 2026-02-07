@@ -1,0 +1,70 @@
+--- a/lib/ddsa/dynamic-stage-selector.ts
++++ b/lib/ddsa/dynamic-stage-selector.ts
+@@ -6,7 +6,7 @@
+  */
+ 
+ import type { StageInput, StageResult } from './stage-router';
+-import { orchestrateNextQuestion, type OrchestrationResult } from './question-orchestrator';
++import { generate as generateWithQOL, type QuestioningResult } from './questioning_orchestrator';
+ import { checkClarificationGate } from './clarification-gate';
+ 
+ export interface StageSelection {
+@@ -28,7 +28,7 @@
+   conversationHistory: Array<{ role: 'user' | 'assistant'; content: string }>
+ ): Promise<StageSelection> {
+   const { ddsState = {}, message = '' } = input;
+ 
+   // Step 1: Check if we need clarification (pre-stage check)
+   const clarificationCheck = await checkClarificationGate(input, {
+     messages: conversationHistory,
+@@ -36,7 +36,7 @@
+     userProfile: input.userProfile || {}
+   });
+ 
+   // If hard question needed, use orchestrator
+   if (clarificationCheck.needsClarification) {
+-    const orchestration = await orchestrateNextQuestion(input, conversationHistory);
++    const orchestration = await generateWithQOL(
++      {
++        stageId: 'clarification',
++        requiredFields: [],
++        questionType: 'hard',
++        appliesKindHonesty: false
++      },
++      ddsState,
++      input.userProfile || {},
++      conversationHistory,
++      undefined,
++      input.tenantId
++    );
+     
+     return {
+       stageId: 'clarification',
+-      question: orchestration.selectedQuestion.question,
++      question: orchestration.question,
+       shouldUseOrchestrator: true,
+-      reasoning: `Clarification needed: ${clarificationCheck.trigger} - using orchestrator`
++      reasoning: orchestration.reasoning || `Clarification needed: ${clarificationCheck.trigger}`
+     };
+   }
+ 
+   // Step 2: Use orchestrator to brainstorm and select optimal question
+-  const orchestration = await orchestrateNextQuestion(input, conversationHistory);
++  const orchestration = await generateWithQOL(
++    {
++      stageId: 'dynamic',
++      requiredFields: [],
++      questionType: 'auto',
++      appliesKindHonesty: false
++    },
++    ddsState,
++    input.userProfile || {},
++    conversationHistory,
++    undefined,
++    input.tenantId
++  );
+ 
+   // Step 3: Map question source to stage ID
+-  const stageId = mapSourceToStageId(orchestration.selectedQuestion.source, ddsState);
++  const stageId = mapSourceToStageId(orchestration.metadata?.source || 'cfq', ddsState);
+

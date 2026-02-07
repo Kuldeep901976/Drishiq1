@@ -1,0 +1,143 @@
+# wrangler.toml
+
+# Root config for running DrishiQ on Cloudflare (Workers + Next.js via OpenNext)
+
+name = "drishiq"
+compatibility_date = "2025-05-05"
+compatibility_flags = ["nodejs_compat"]
+
+# Custom worker entrypoint (wraps OpenNext worker + exports ConversationDO)
+main = "worker.ts"
+
+# Static assets served by Pages
+[assets]
+directory = ".open-next/assets"
+
+# R2 bucket binding (for file uploads)
+# - Create the bucket in Cloudflare dashboard first.
+[[r2_buckets]]
+binding = "DRISHIQ_UPLOADS"         # will be available as env.DRISHIQ_UPLOADS in Workers/Functions
+bucket_name = "drishiq-uploads"     # change to your actual bucket name
+preview_bucket_name = "drishiq-uploads-dev"
+
+# Durable Object namespace for per-conversation/session state (Phase 3)
+[[durable_objects.bindings]]
+name = "CONVERSATION_SESSIONS"      # env.CONVERSATION_SESSIONS in code
+class_name = "ConversationDO"       # name of your DO class in worker code
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["ConversationDO", "DOQueueHandler", "DOShardedTagCache", "BucketCachePurge"]
+
+# Shared non-secret vars (equivalent to your NEXT_PUBLIC_* and other safe values)
+[vars]
+NODE_ENV = "preprod"
+
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL = "https://xzrpgqymjfdhwnrrfgpa.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6cnBncXltamZkaHducnJmZ3BhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NjY0MzQsImV4cCI6MjA3MDE0MjQzNH0.p_xYDgGbZQiX7UZQp-kY6Q1UqBcaGmX3alflRO4kJrE"
+SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh6cnBncXltamZkaHducnJmZ3BhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDU2NjQzNCwiZXhwIjoyMDcwMTQyNDM0fQ.6FWONbGXBy6JAWZtkpdlsI_la5uON_okGoORTHo2kGE"
+NEXT_PUBLIC_SUPABASE_POOLER_URL = "https://xzrpgqymjfdhwnrrfgpa.supabase.co:6543"
+SUPABASE_SERVICE_POOLER_URL = "https://xzrpgqymjfdhwnrrfgpa.supabase.co:6543"
+SUPABASE_POOL_SIZE = "15"
+JOB_WORKER_INTERVAL_MS = "2000ms"
+JOB_WORKER_LIMIT = "10jobsperrun"
+SUPABASE_DB_PASSWORD = "DrishiQ%40jkylt5N%"
+DATABASE_URL = "postgresql://postgres.xzrpgqymjfdhwnrrfgpa:DrishiQ%40jkylt5N%@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres"
+
+# Storage selection
+STORAGE_PROVIDER = "supabase"
+
+# Cloudflare R2 (S3-compatible API)
+R2_ACCOUNT_ID = "86228ef10c3817a9bdd5d8c8bb4e4e52"
+R2_ACCESS_KEY_ID = "6bd65696c12db8092cc59e951c247f70"
+R2_SECRET_ACCESS_KEY = "5c5fbee0c7ed4495cc7b5841abae2e9686b297b74bf9fd89e65c4d4eecc130b6"
+R2_BUCKET_NAME = "drishiq-uploads"
+R2_PUBLIC_BASE_URL = "https://cdn.drishiq.com"
+
+# Firebase Configuration
+NEXT_PUBLIC_FIREBASE_API_KEY = "AIzaSyB5rVtWEYlbqcYC-y4KyzQ51HA9DrazAdc"
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN = "drishiq-69d6b.firebaseapp.com"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID = "drishiq-69d6b"
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET = "drishiq-69d6b.firebasestorage.app"
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID = "341465357014"
+NEXT_PUBLIC_FIREBASE_APP_ID = "1:341465357014:web:4a2538789d74afb9ad0777"
+
+# Payment Configuration
+PAYPAL_CLIENT_ID = "AUS8--fx3gXVOtYryo6cdbDQ5h7iLK-Ii76t6TUusz6NeEhnUQQbfjt5FOICiBawRDYp2mjdjljti0K-"
+PAYPAL_CLIENT_SECRET = "EGvs6-acTJiJ8zAMnPj0Q6h0wrgTrg_wlXgHwBTntyfGItt5XBhQtH5KyMFb3jFvWPHhj-9wK55dl-de"
+PAYPAL_ENVIRONMENT = "sandbox"
+PAYPAL_WEBHOOK_ID = "0M443990EE1848942"
+
+# Admin Auth Service
+ADMIN_AUTH_PORT = "8443"
+LOCAL_DEV = "true"
+REQUIRE_MTLS = "false"
+
+# Email notification settings
+NOTIFICATION_EMAIL = "security@drishiq.com"
+SMTP_HOST = "smtp.your-provider.com"
+SMTP_PORT = "587"
+SMTP_USER = "your-smtp-username"
+SMTP_PASS = "your-smtp-password"
+FROM_EMAIL = "noreply@drishiq.com"
+
+# Cashfree Configuration
+CASHFREE_APP_ID = "TEST10782097cb1a7a3a9f8d2226149b79028701"
+CASHFREE_SECRET_KEY = "SET_VIA_CLOUDFLARE_SECRETS"
+CASHFREE_ENVIRONMENT = "sandbox"
+CASHFREE_REDIRECT_URL = "https://localhost:3000/payment/cashfree/callback"
+CASHFREE_WEBHOOK_ID = "https://localhost:3000/api/payment/cashfree/webhook"
+
+# OpenAI Responses API
+OPENAI_RESPONSES_KEY = "SET_VIA_CLOUDFLARE_SECRETS"
+OPENAI_RESPONSES_PROJECT = "drishiq-1"
+OPENAI_RESPONSES_BASE_URL = "https://api.openai.com/v1/response"
+OPENAI_RESPONSES_MODEL = "gpt-4o-mini"
+OPENAI_TIMEOUT = "60000"
+OPENAI_MAX_RETRIES = "3"
+
+# Optional (for flexibility / CI/CD)
+DRISHIQ_AI_MODE = "responses"
+DRISHIQ_ENV = "staging"
+
+# OpenAI Configuration
+OPENNAI_API_KEY = "SET_VIA_CLOUDFLARE_SECRETS"
+
+# OpenAI assistant ID
+PRIMARYY_ASSISTANT_ID = "aasst_xmhRFPvMQGGzcS3ecal3lOm2"
+
+# Anthropic Configuration (Optional)
+ANTHROPIC_API_KEY = "your-anthropic-api-key-here"
+
+# Grok Configuration (Optional)
+GROK_API_KEY = "your-grok-api-key-here"
+
+# OAuth (if you're using Google Sign-In)
+Google_Client_ID = "SET_VIA_CLOUDFLARE_SECRETS"
+GOOGLE_CLIENT_SECRET = "SET_VIA_CLOUDFLARE_SECRETS"
+
+# Google Cloud Text-to-Speech
+GOOGLE_CLOUD_API_KEY = "AIzaSyAHYHo5lc8YDmQD3LXnFJg00cSiNyNNaKg"
+
+# Admin Auth Service - Local Development
+DDSA_INTERNAL_SECRET = "ddsa-internal-secret-5b6754dd-0f25-4250-87f4-35553eac122d"
+DDSA_MODULAR_PIPELINE_ENABLED = "true"
+
+# Redis configuration
+UPSTASH_REDIS_REST_URL = "https://beloved-bream-12735.upstash.io"
+UPSTASH_REDIS_REST_TOKEN = "SET_VIA_CLOUDFLARE_SECRETS"
+
+########################################
+# Environments (optional but recommended)
+########################################
+
+[env.dev]
+vars = { NODE_ENV = "development" }
+
+[env.preprod]
+vars = { NODE_ENV = "preprod" }
+
+[env.prod]
+vars = { NODE_ENV = "production", NEXT_PUBLIC_APP_URL = "https://www.drishiq.com", LOCAL_DEV = "false", DRISHIQ_ENV = "production", CASHFREE_REDIRECT_URL = "https://www.drishiq.com/payment/cashfree/callback", CASHFREE_WEBHOOK_ID = "https://www.drishiq.com/api/payment/cashfree/webhook", PAYPAL_ENVIRONMENT = "production" }
+

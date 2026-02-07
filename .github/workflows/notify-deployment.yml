@@ -1,0 +1,25 @@
+name: Notify Deployment
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Slack
+        uses: 8398a7/action-slack@v3
+        with:
+          status: success
+          text: '🚀 New deployment triggered from ${{ github.ref_name }} branch! Commit: ${{ github.sha }}'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      
+      - name: Notify Discord
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: success
+          title: 'Deployment Started - ${{ github.ref_name }} branch'
+          description: 'New code pushed to ${{ github.ref_name }} branch (Commit: ${{ github.sha }})' 

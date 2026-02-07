@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Drishiq ACTION_PACKET Schema",
+  "description": "Validation schema for DDSA Action Packet output",
+  "type": "object",
+  "properties": {
+    "problem": {
+      "type": "object",
+      "properties": {
+        "prob_id": { "type": "string" },
+        "summary": { "type": "string" },
+        "description": { "type": "string" },
+        "domain_of_life": { "type": "string" },
+        "severity": { "type": ["integer", "null"] },
+        "metadata": { "type": ["object", "null"] }
+      },
+      "required": ["summary"],
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_name": { "type": "string" },
+          "start_date": { "type": ["string", "null"], "format": "date" },
+          "end_date": { "type": ["string", "null"], "format": "date" },
+          "duration_days": { "type": ["integer", "null"] },
+          "metric": { "type": ["string", "object", "null"] },
+          "status": {
+            "type": "string",
+            "enum": ["pending", "in_progress", "completed", "cancelled"],
+            "default": "pending"
+          },
+          "owner": { "type": ["string", "null"] },
+          "metadata": { "type": ["object", "null"] }
+        },
+        "required": ["event_name"],
+        "additionalProperties": true
+      }
+    },
+    "metadata": { "type": ["object", "null"] }
+  },
+  "required": ["problem", "actions"],
+  "additionalProperties": false
+}

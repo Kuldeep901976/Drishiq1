@@ -1,0 +1,136 @@
+{
+  "notFound": {
+    "title": "404",
+    "heading": "Página não encontrada",
+    "description": "A página que você está procurando pode ter sido removida, renomeada ou está temporariamente indisponível.",
+    "loading": "Carregando...",
+    "logo": {
+      "alt": "Logo Drisheeq",
+      "tagline": "Veja o desafio"
+    },
+    "banner": {
+      "top": {
+        "title": "Junte-se à revolução Drisheeq",
+        "subtitle": "Transforme desafios em clareza com insights impulsionados por IA",
+        "signUp": "Cadastre-se"
+      },
+      "bottom": {
+        "title": "Pronto para transformar seus desafios?",
+        "description": "Junte-se a milhares que encontraram clareza através de insights impulsionados por IA",
+        "getStarted": "Começar"
+      }
+    },
+    "solutions": {
+      "title": "Volte aos trilhos",
+      "goHome": {
+        "title": "Ir para início",
+        "description": "Voltar para nossa página inicial",
+        "button": "Início"
+      },
+      "tryAgain": {
+        "title": "Tentar novamente",
+        "description": "Voltar para a página anterior",
+        "button": "Voltar"
+      },
+      "getHelp": {
+        "title": "Obter ajuda",
+        "description": "Entre em contato com nossa equipe de suporte",
+        "button": "Contato"
+      }
+    },
+    "status": {
+      "operational": "Todos os sistemas funcionando"
+    }
+  },
+  "error": {
+    "title": "Algo deu errado!",
+    "description": "Ocorreu um erro. Por favor, atualize a página.",
+    "unexpected": "Ocorreu um erro inesperado",
+    "tryAgain": "Tentar novamente",
+    "refresh": "Atualizar página"
+  },
+  "globalError": {
+    "title": "Algo deu errado!",
+    "description": "Ocorreu um erro inesperado",
+    "tryAgain": "Tentar novamente"
+  },
+  "userNotFound": {
+    "title": "Usuário não encontrado",
+    "description": "O perfil de usuário que você está procurando não existe.",
+    "goHome": "Ir para início",
+    "back": "Voltar"
+  },
+  "loading": {
+    "default": "Carregando...",
+    "page": "Carregando página...",
+    "content": "Carregando conteúdo...",
+    "profile": "Carregando perfil...",
+    "data": "Carregando dados...",
+    "pleaseWait": "Por favor, aguarde..."
+  },
+  "network": {
+    "offline": "Você está atualmente offline",
+    "online": "Conexão restaurada",
+    "slow": "Conexão lenta detectada",
+    "timeout": "Tempo limite da solicitação excedido. Por favor, tente novamente.",
+    "failed": "Solicitação de rede falhou"
+  },
+  "validation": {
+    "required": "Este campo é obrigatório",
+    "invalid": "Entrada inválida",
+    "tooShort": "A entrada é muito curta",
+    "tooLong": "A entrada é muito longa",
+    "invalidEmail": "Por favor, insira um endereço de e-mail válido",
+    "invalidPhone": "Por favor, insira um número de telefone válido",
+    "passwordMismatch": "As senhas não coincidem",
+    "weakPassword": "A senha é muito fraca"
+  },
+  "unauthorized": {
+    "title": "Acesso negado",
+    "description": "Você não tem permissão para acessar esta página.",
+    "loginRequired": "Por favor, faça login para continuar",
+    "goToLogin": "Ir para login",
+    "goHome": "Ir para início"
+  },
+  "forbidden": {
+    "title": "Proibido",
+    "description": "Você não tem permissão para acessar este recurso.",
+    "contactSupport": "Contatar suporte",
+    "goHome": "Ir para início"
+  },
+  "serverError": {
+    "title": "Erro do servidor",
+    "description": "Algo deu errado do nosso lado. Estamos trabalhando para corrigir.",
+    "tryAgain": "Tentar novamente",
+    "contactSupport": "Contatar suporte",
+    "goHome": "Ir para início"
+  },
+  "maintenance": {
+    "title": "Em manutenção",
+    "description": "Estamos realizando manutenção programada no momento. Por favor, volte em breve.",
+    "estimatedTime": "Tempo estimado: {time}",
+    "contact": "Para assuntos urgentes, por favor contate o suporte"
+  },
+  "sessionExpired": {
+    "title": "Sessão expirada",
+    "description": "Sua sessão expirou. Por favor, faça login novamente.",
+    "login": "Fazer login",
+    "goHome": "Ir para início"
+  },
+  "paymentError": {
+    "title": "Erro de pagamento",
+    "description": "Ocorreu um erro ao processar seu pagamento.",
+    "tryAgain": "Tentar novamente",
+    "contactSupport": "Contatar suporte",
+    "backToPlans": "Voltar aos planos"
+  },
+  "generic": {
+    "somethingWentWrong": "Algo deu errado",
+    "pleaseTryAgain": "Por favor, tente novamente",
+    "contactSupport": "Contatar suporte",
+    "goHome": "Ir para início",
+    "refresh": "Atualizar",
+    "cancel": "Cancelar",
+    "ok": "OK"
+  }
+}

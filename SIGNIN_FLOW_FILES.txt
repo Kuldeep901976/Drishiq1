@@ -1,0 +1,25 @@
+SIGNIN FLOW - ALL FILES TO REPLACE
+=====================================
+
+1. Main Signin Page:
+   - app/signin/page.tsx
+   
+2. Signin Callback (OAuth redirect handler):
+   - app/auth/callback-signin/page.tsx
+   
+3. API Routes:
+   - app/api/auth/signin/route.ts
+   - app/api/auth/check-user/route.ts
+   
+4. Shared Components (if used):
+   - components/Header.tsx (may have signin link)
+   
+5. Middleware (if it affects signin):
+   - middleware.ts (check if it has signin-specific logic)
+
+TOTAL FILES: 5 files
+
+
+
+
+

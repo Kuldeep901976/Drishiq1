@@ -1,0 +1,29 @@
+{
+  "name": "@drishiq/worker",
+  "version": "1.0.0",
+  "description": "Worker orchestrator and streaming glue for DrishiQ ChatModule",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["drishiq", "chat", "worker", "streaming", "orchestrator"],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "dependencies": {
+    "@drishiq/contracts": "workspace:*",
+    "@drishiq/core": "workspace:*",
+    "@drishiq/llm": "workspace:*",
+    "@drishiq/policy": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
+
+
+

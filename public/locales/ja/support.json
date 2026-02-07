@@ -1,0 +1,260 @@
+{
+  "title": "サポート",
+  "hero": {
+    "title": "1つのセッションを支え、1つの人生を支える",
+    "subtitle": "あなたの支援は、誰かが立ち止まり、深呼吸し、これからの道を再び見つける助けになります。どんな金額でも大きな意味があります。",
+    "badge": "サポート詳細"
+  },
+  "supportOptions": {
+    "gentleNudge": {
+      "title": "やさしい後押し",
+      "emotionLabel": "静かなひとときを贈る",
+      "sessions": "1 セッション",
+      "validity": "2 週間",
+      "description": "少しの後押しで明確さを必要とする人に最適"
+    },
+    "shiftForward": {
+      "title": "一歩前へ",
+      "emotionLabel": "誰かの正直な次の一歩を支える",
+      "sessions": "2 セッション",
+      "validity": "1 か月",
+      "description": "誰かが意味のある次のステップを踏み出すためのスペースを与える"
+    },
+    "deeperSpace": {
+      "title": "深いスペース",
+      "emotionLabel": "もっと長く向き合える時間を",
+      "sessions": "5 セッション",
+      "validity": "2 か月",
+      "description": "深い探求と理解のためのスペースを作る"
+    },
+    "heart": {
+      "title": "ハート寄付",
+      "emotionLabel": "心から贈る",
+      "sessions": "柔軟",
+      "validity": "柔軟",
+      "description": "必要とする人のために、ドリシクを利用し続けられるよう任意の金額を支援できます"
+    }
+  },
+  "form": {
+    "heading": {
+      "title": "サポート詳細を入力",
+      "subtitle": "以下の情報を入力して支援を完了してください"
+    },
+    "personal_info": {
+      "title": "👤 個人情報",
+      "anonymous_toggle": "匿名で支援する",
+      "anonymous_hint": "支援は匿名になりますが、お支払いは安全に処理されます"
+    },
+    "fields": {
+      "full_name": {
+        "label": "氏名",
+        "placeholder": "氏名を入力してください"
+      },
+      "email": {
+        "label": "メールアドレス",
+        "placeholder": "your.email@example.com"
+      },
+      "phone": {
+        "label": "電話番号",
+        "placeholder": "+81 1234567890"
+      }
+    },
+    "cause": {
+      "title": "🎯 支援先の選択",
+      "description": "支援をどこに割り当てるか選択するか、必要性の高い場所にドリシクが自動で割り当てることもできます。",
+      "share_instead_label": "ドリシクが必要な場所に割り当てる（推奨）"
+    },
+    "message": {
+      "title": "💌 個別メッセージ",
+      "optional": "任意",
+      "hint": "励ましのメッセージや、なぜ支援しているのかを伝えることもできます（任意）。",
+      "placeholder": "ここにメッセージを入力...",
+      "footer_hint": "匿名でない場合、メッセージは受取人と共有されます"
+    },
+    "buttons": {
+      "back_to_options": "← オプションに戻る",
+      "processing": "処理中...",
+      "complete_support": "💚 支援を完了"
+    }
+  },
+  "options": {
+    "title": "サポートオプション",
+    "custom": "カスタム",
+    "placeholder_enter_amount": "金額を入力"
+  },
+  "trust": {
+    "secure_title": "🔒 安全かつ透明",
+    "secure_text": "お支払いは業界標準の暗号化で安全に処理されます。すべての取引は透明で追跡可能です。",
+    "ssl_encryption": "SSL暗号化",
+    "transparent": "透明性"
+  },
+  "support_payment": {
+    "redirecting": "サポートページへリダイレクト中...",
+    "loading": "読み込み中..."
+  },
+  "payment": {
+    "page": {
+      "header": {
+        "title": "ドリシク支払い",
+        "backToPlans": "← プランに戻る"
+      },
+      "planSummary": {
+        "title": "プラン概要",
+        "planPrice": "プラン料金",
+        "tax": "税金",
+        "totalAmount": "合計金額",
+        "location": "地域",
+        "pricingCategory": "価格カテゴリ",
+        "credits": "クレジット"
+      },
+      "paymentMethods": {
+        "title": "支払い方法の選択",
+        "cashfree": {
+          "name": "Cashfree",
+          "description": "カード、UPI、ネットバンキング、ウォレット"
+        },
+        "paypal": {
+          "name": "PayPal",
+          "description": "PayPal、クレジット/デビットカード"
+        },
+        "proceed": "支払いへ進む",
+        "selectMethod": "支払い方法を選択",
+        "securityNotice": "お支払いは256-bit SSL暗号化で保護されています"
+      },
+      "error": {
+        "title": "支払いエラー",
+        "backToPlans": "プランに戻る",
+        "planNotFound": "プランが見つかりません",
+        "planNotFoundMessage": "選択したプランを見つけられませんでした。",
+        "loading": "支払い情報を読み込み中..."
+      }
+    },
+    "process": {
+      "title": "支払いを完了",
+      "subtitle": "複数の支払い方法で安全に処理されます",
+      "serviceDetails": "サービス詳細",
+      "service": "サービス",
+      "amount": "金額",
+      "credits": "クレジット",
+      "currency": "通貨",
+      "paymentMethodsAvailable": "利用可能な支払い方法",
+      "paypal": {
+        "name": "PayPal",
+        "description": "グローバル決済"
+      },
+      "cashfree": {
+        "name": "Cashfree",
+        "description": "インド国内決済"
+      },
+      "phonepe": {
+        "name": "PhonePe",
+        "description": "UPI支払い"
+      },
+      "paymentError": "支払いエラー",
+      "proceedToPayment": "支払いへ進む",
+      "processing": "処理中...",
+      "security": "🔒 お支払いは業界標準の暗号化で保護されています",
+      "loading": "支払い情報を読み込み中...",
+      "error": "エラー",
+      "invalidDetails": "無効な支払い情報"
+    },
+    "failure": {
+      "title": "支払いが完了しませんでした",
+      "subtitle": "支払いを処理できませんでした",
+      "transactionFailed": "⚠️ 取引失敗",
+      "notCharged": "ご安心ください。カードへの請求はありません。",
+      "possibleReasons": "考えられる理由",
+      "reasons": {
+        "insufficientFunds": "残高不足",
+        "incorrectCard": "カード情報が不正確",
+        "bankDeclined": "銀行が取引を拒否",
+        "networkIssues": "ネットワーク接続の問題",
+        "cardExpired": "カードの有効期限切れまたは無効"
+      },
+      "tryAgain": "再試行 🔄",
+      "backToPlans": "プランに戻る",
+      "contactSupport": "サポートに連絡",
+      "needHelp": "サポートが必要ですか？",
+      "helpMessage": "問題が続く場合は、サポートチームまでお問い合わせください。",
+      "supportEmail": "support@drishiq.com"
+    },
+    "success": {
+      "title": "支払い成功",
+      "subtitle": "支払いが正常に処理されました",
+      "message": "お支払いありがとうございます。確認メールがまもなく届きます。",
+      "continue": "続ける"
+    },
+    "successPage": {
+      "processing": "支払いを処理しています...",
+      "creditsAdded": "✓ クレジットがアカウントに追加されました",
+      "processingError": "処理エラー",
+      "backToPlans": "プランに戻る",
+      "paymentDataNotFound": "支払いデータが見つかりません",
+      "unableToLoad": "支払いの詳細を読み込めませんでした。",
+      "paymentConfirmation": "支払い確認",
+      "plan": "プラン",
+      "creditsAddedLabel": "追加されたクレジット",
+      "amountPaid": "支払金額",
+      "transactionId": "取引ID",
+      "status": "ステータス",
+      "paymentSuccessful": "支払い成功",
+      "whatsNext": "次のステップ",
+      "creditsAddedToAccount": "クレジットがアカウントに追加されました",
+      "startFirstSession": "• 最初のクラリティセッションを開始",
+      "checkEmail": "• 確認メールをチェック",
+      "shareGift": "• ギフトを受取人と共有",
+      "goToChat": "今すぐチャットへ →",
+      "viewAllPlans": "すべてのプランを見る",
+      "shareJourney": "ドリシクとの旅を共有",
+      "shareTwitter": "Twitterで共有",
+      "shareLinkedIn": "LinkedInで共有",
+      "categories": {
+        "prelaunch": {
+          "title": "🎉 ドリシクファミリーへようこそ！",
+          "subtitle": "あなたは初期のサポーターです",
+          "message": "ドリシクのビジョンを信じ、私たちの基盤作りに協力していただきありがとうございます。",
+          "badge": "初期サポーター"
+        },
+        "postlaunch": {
+          "title": "✨ あなたの明確さの旅が始まります！",
+          "subtitle": "ドリシクへようこそ",
+          "message": "ドリシクを選んでいただきありがとうございます。あなたは自己理解と明確さへの大きな第一歩を踏み出しました。",
+          "badge": "クラリティ探索者"
+        },
+        "gift": {
+          "title": "🎁 明確さのギフトが準備できました！",
+          "subtitle": "光を広げる",
+          "message": "誰か特別な人に『明確さ』を贈っていただきありがとうございます。その思いやりが、その人が立ち止まり、自分の道を再発見する助けになります。",
+          "badge": "クラリティの贈り手"
+        },
+        "support": {
+          "title": "🕊️ あなたの思いやりに感謝します！",
+          "subtitle": "変化を生み出す",
+          "message": "あなたの支援は、必要な人のために明確さと力への扉を開きます。",
+          "badge": "思いやりのある人",
+          "downloadBadge": "🎖️ バッジをダウンロード",
+          "badgeDescription": "この特別なバッジであなたのサポートを示しましょう",
+          "downloadButton": "バッジをダウンロード"
+        }
+      }
+    },
+    "thankYou": {
+      "title": "ありがとうございます！🙏",
+      "subtitle": "支払いが正常に処理されました",
+      "creditsAdded": "✅ クレジットがアカウントに追加されました",
+      "creditsReady": "+{credits} クレジット利用可能",
+      "whatsNext": "次のステップ",
+      "creditsAvailable": "クレジットが利用可能になりました！最初の会話を開始したり、他の機能を探索できます。",
+      "startConversation": "最初の会話を始める 🚀",
+      "viewDashboard": "ダッシュボードを見る",
+      "purchaseMore": "クレジットを追加購入",
+      "needHelp": "サポートが必要ですか？ チームにお問い合わせください",
+      "supportEmail": "support@drishiq.com"
+    }
+  },
+  "errors": {
+    "submissionFailed": "サポート情報の送信エラー。もう一度お試しください。",
+    "paymentInitializationFailed": "支払いの開始に失敗しました。もう一度お試しください。",
+    "paymentFailed": "支払いが失敗しました。もう一度お試しください。"
+  }
+}

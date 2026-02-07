@@ -1,0 +1,144 @@
+{
+  "mapping_version": "1.0",
+  "created_at": "2025-01-10T09:00:00Z",
+  "strategy": "adapt_code_to_existing_db",
+  "description": "Maps code's expected entities to actual database tables",
+  "mappings": {
+    "stages_to_ddsa_stage_config": {
+      "source_table": "stages (code expects)",
+      "target_table": "ddsa_stage_config (actual)",
+      "field_mappings": {
+        "stages.id": "ddsa_stage_config.id (UUID)",
+        "stages.name": "ddsa_stage_config.stage_name",
+        "stages.description": "ddsa_stage_config.description",
+        "stages.model": "ddsa_stage_config.config->>'model' (JSONB path)",
+        "stages.reasoning_effort": "ddsa_stage_config.config->>'reasoning_effort'",
+        "stages.verbosity": "ddsa_stage_config.config->>'verbosity'",
+        "stages.max_tokens": "ddsa_stage_config.config->>'max_tokens' (cast to INT)",
+        "stages.temperature": "ddsa_stage_config.config->>'temperature' (cast to FLOAT)",
+        "stages.sticky": "ddsa_stage_config.config->>'sticky' (cast to BOOLEAN)",
+        "stages.priority": "ddsa_stage_config.position",
+        "stages.assignment_policy": "ddsa_stage_config.config->>'assignment_policy'",
+        "stages.enabled": "ddsa_stage_config.is_active",
+        "stages.instruction_set_id": "ddsa_stage_config.config->>'instruction_set_id' OR ddsa_stage_config.metadata->>'instruction_set_id' (to be stored in metadata)"
+      },
+      "notes": [
+        "Stage configuration stored in config JSONB column",
+        "instruction_set_id will be stored in metadata JSONB to avoid schema changes",
+        "stage_id (VARCHAR) is the unique identifier, not id (UUID)"
+      ]
+    },
+    "user_threads_to_chat_threads": {
+      "source_table": "user_threads (code expects)",
+      "target_table": "chat_threads (actual)",
+      "field_mappings": {
+        "user_threads.user_thread_id": "chat_threads.id",
+        "user_threads.user_id": "chat_threads.user_id",
+        "user_threads.created_at": "chat_threads.created_at",
+        "user_threads.updated_at": "chat_threads.updated_at"
+      },
+      "notes": [
+        "chat_threads.id is UUID, serves as both user_thread_id and can represent sub_threads",
+        "Use chat_threads.metadata JSONB to store sub_thread_id if needed",
+        "chat_threads has additional fields: domain_of_life, stage, language, status, solution_summary, etc."
+      ]
+    },
+    "sub_threads_to_chat_threads": {
+      "source_table": "sub_threads (code expects)",
+      "target_table": "chat_threads (actual) OR chat_threads.metadata",
+      "field_mappings": {
+        "sub_threads.sub_thread_id": "chat_threads.id (if separate thread) OR chat_threads.metadata->>'sub_thread_id'",
+        "sub_threads.user_thread_id": "chat_threads.id (parent) OR chat_threads.metadata->>'user_thread_id'",
+        "sub_threads.title": "chat_threads.metadata->>'title'",
+        "sub_threads.next_stage_override": "chat_threads.metadata->>'next_stage_override'",
+        "sub_threads.sticky_stage_id": "chat_threads.metadata->>'sticky_stage_id'",
+        "sub_threads.metadata": "chat_threads.metadata",
+        "sub_threads.created_at": "chat_threads.created_at",
+        "sub_threads.closed_at": "chat_threads.completed_at"
+      },
+      "notes": [
+        "Sub-threads can be represented as separate chat_threads rows OR stored in metadata",
+        "Current codebase uses chat_threads for both user and sub threads",
+        "For call-v2, use thread_id directly from chat_threads.id"
+      ]
+    },
+    "dds_state_storage": {
+      "source_table": "dds_state (code expects)",
+      "target_table": "dds_state (actual) OR chat_messages with SYSTEM_DDS_STATE",
+      "field_mappings": {
+        "dds_state.thread_id": "dds_state.thread_id (TEXT) OR chat_messages.thread_id",
+        "dds_state.state_data": "dds_state.state_data (JSONB) OR chat_messages.content (parsed JSON)"
+      },
+      "notes": [
+        "lib/dds-state.ts already handles both: tries messages table first, then dds_state table",
+        "dds_state table exists and has thread_id (TEXT) and state_data (JSONB)",
+        "No changes needed for dds_state mapping - existing code works"
+      ]
+    },
+    "ai_responses_new_table": {
+      "source_table": "ai_responses (code expects, does not exist)",
+      "target_table": "ai_responses (to be created)",
+      "field_mappings": {
+        "ai_responses.response_id": "ai_responses.response_id (TEXT PRIMARY KEY)",
+        "ai_responses.sub_thread_id": "ai_responses.thread_id (UUID, references chat_threads.id)",
+        "ai_responses.user_thread_id": "ai_responses.thread_id (same as sub_thread_id for now, or use metadata)",
+        "ai_responses.model": "ai_responses.model",
+        "ai_responses.stage_id": "ai_responses.stage_ref (TEXT, references ddsa_stage_config.stage_id)",
+        "ai_responses.instruction_set_id": "ai_responses.instruction_set_id (UUID, references instruction_sets.id)",
+        "ai_responses.request_payload": "ai_responses.request_payload (JSONB)",
+        "ai_responses.response_payload": "ai_responses.response_payload (JSONB)",
+        "ai_responses.tokens_in": "ai_responses.tokens_in",
+        "ai_responses.tokens_out": "ai_responses.tokens_out",
+        "ai_responses.total_tokens": "ai_responses.total_tokens",
+        "ai_responses.estimated_cost": "ai_responses.estimated_cost",
+        "ai_responses.created_at": "ai_responses.created_at"
+      },
+      "notes": [
+        "New table to be created in migration",
+        "thread_id is UUID (references chat_threads.id)",
+        "thread_type field added to distinguish 'chat' vs 'sub' if needed",
+        "stage_ref uses stage_id (VARCHAR) not UUID"
+      ]
+    },
+    "instruction_sets_new_table": {
+      "source_table": "instruction_sets (code expects, does not exist)",
+      "target_table": "instruction_sets (to be created)",
+      "field_mappings": {
+        "instruction_sets.id": "instruction_sets.id (UUID PRIMARY KEY)",
+        "instruction_sets.name": "instruction_sets.name (TEXT UNIQUE)",
+        "instruction_sets.system_prompt": "instruction_sets.system_prompt (TEXT)",
+        "instruction_sets.few_shot_examples": "instruction_sets.few_shot_examples (JSONB)",
+        "instruction_sets.output_schema": "instruction_sets.output_schema (JSONB, optional)",
+        "instruction_sets.metadata": "instruction_sets.metadata (JSONB)",
+        "instruction_sets.version": "instruction_sets.version (INT)",
+        "instruction_sets.created_at": "instruction_sets.created_at",
+        "instruction_sets.updated_at": "instruction_sets.updated_at"
+      },
+      "notes": [
+        "New table to be created in migration",
+        "Links to stages via ddsa_stage_config.metadata->>'instruction_set_id'"
+      ]
+    }
+  },
+  "implementation_notes": {
+    "db_adapter_layer": "Create lib/ddsa/db-adapters.ts to abstract these mappings",
+    "normalization_functions": [
+      "getStageById() - reads from ddsa_stage_config, normalizes to expected format",
+      "getThreadById() - reads from chat_threads, handles user/sub thread logic",
+      "getRecentMessages() - reads from chat_messages for given thread_id",
+      "insertAiResponse() - inserts into new ai_responses table"
+    ],
+    "code_changes_required": [
+      "app/api/ai/call/route.ts - update to use db-adapters (future)",
+      "app/api/ai/call-v2/route.ts - new endpoint using db-adapters",
+      "app/api/admin/stages/route.ts - accept instruction_set_id in metadata",
+      "lib/ddsa/db-adapters.ts - new adapter layer"
+    ],
+    "no_changes_needed": [
+      "lib/dds-state.ts - already handles both dds_state table and messages table",
+      "lib/ddsa/pipeline-executor.ts - already uses ddsa_stage_config correctly",
+      "lib/ddsa/stage-router.ts - already uses ddsa_stage_config correctly"
+    ]
+  }
+}
+

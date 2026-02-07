@@ -1,0 +1,116 @@
+{
+  "logo_alt": "द्रिशीक़ लोगो",
+
+  "meet_yourself": {
+    "label": "खुद से मिलें",
+    "types_label": "व्यक्तित्व प्रकार",
+    "types": {
+      "builder": "निर्माता",
+      "builder_hover": "जो व्यक्ति बनाता है, रचता है और पहल करता है",
+      "seeker": "खोजी",
+      "seeker_hover": "जो व्यक्ति अर्थ और नए दृष्टिकोण की खोज करता है",
+      "giver": "दाता",
+      "giver_hover": "जो दूसरों की मदद करता है और सहयोग देता है",
+      "connector": "संपर्ककर्ता",
+      "connector_hover": "जो लोगों को जोड़ता है",
+      "dependent": "निर्भर",
+      "dependent_hover": "जो अक्सर सहारे के लिए दूसरों पर निर्भर करता है",
+      "escaper": "पलायनकर्ता",
+      "escaper_hover": "जो तनाव से बचने या दूर होने की कोशिश करता है",
+      "giving_beyond": "अपनी सीमा से परे देना",
+      "giving_beyond_hover": "ऐसे कार्य जो व्यक्तिगत योगदान से आगे जाते हैं",
+      "problem_carrier": "समस्या वाहक",
+      "problem_carrier_hover": "जो दूसरों की समस्याएँ अपने ऊपर ले लेता है",
+      "rebooter": "नव प्रारंभकर्ता",
+      "rebooter_hover": "जो परिस्थितियों को फिर से शुरू और परिभाषित करता है",
+      "solo": "एकाकी",
+      "solo_hover": "जो स्वतंत्रता और एकांत को महत्व देता है"
+    }
+  },
+
+  "drishiq": "द्रिशीक़",
+  "drishiq_hover": "द्रिशीक़ होमपेज पर जाएं",
+
+  "blog": "ब्लॉग",
+  "blog_hover": "लेख, कहानियाँ और विचार पढ़ें",
+
+  "voice": "आवाज़",
+  "voice_hover": "दृष्टिकोण और ऑडियो सामग्री सुनें",
+
+  "grow": "विकास",
+  "grow_hover": "सीखने, सहयोग और विस्तार के अवसर",
+
+  "bridge": "पुल",
+  "bridge_hover": "दूसरों से जुड़ें और समुदाय बनाएं",
+
+  "your_path_label": "आपका मार्ग",
+  "your_path": {
+    "your_clarity_pass": "आपका क्लैरिटी पास",
+    "your_clarity_pass_hover": "अपना क्लैरिटी पास प्राप्त करें",
+    "co_create": "सह-निर्माण",
+    "co_create_hover": "दूसरों के साथ मिलकर अपना अनुभव आकार दें",
+    "get_first_light": "पहली रोशनी पाएं",
+    "get_first_light_hover": "एक प्रारंभिक स्पष्टता सत्र से शुरुआत करें",
+    "fuel_a_journey": "यात्रा को ऊर्जा दें",
+    "fuel_a_journey_hover": "किसी की व्यक्तिगत विकास यात्रा का समर्थन करें",
+    "gift_a_spark": "चिंगारी उपहार दें",
+    "gift_a_spark_hover": "किसी को एक प्रारंभिक स्पष्टता सत्र उपहार में दें",
+    "spread_the_light": "प्रकाश फैलाएं",
+    "spread_the_light_hover": "ड्रिशीQ को अपने नेटवर्क में साझा करें और समुदाय बढ़ाएं"
+  },
+
+  "language_button_label": "भाषा",
+
+  "languages": {
+    "en": "English",
+    "hi": "हिन्दी",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "ja": "日本語",
+    "ru": "Русский",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ta": "தமிழ்",
+    "pt": "Português",
+    "ar": "العربية"
+  },
+
+  "profile_options_label": "प्रोफ़ाइल विकल्प",
+  "profile_options": {
+    "got_an_invitation": "निमंत्रण मिला?",
+    "got_an_invitation_hover": "प्रवेश अनलॉक करने के लिए निमंत्रण कोड दर्ज करें",
+    "reserve_my_spot": "अपनी जगह सुरक्षित करें",
+    "reserve_my_spot_hover": "भुगतान और संपर्क नंबर से अपनी जगह पक्की करें",
+    "request_an_invitation": "निमंत्रण का अनुरोध करें",
+    "request_an_invitation_hover": "प्रारंभिक पहुँच के लिए विचार किए जाने हेतु अपनी जानकारी साझा करें",
+    "gift_clarity": "निमंत्रण उपहार दें",
+    "gift_clarity_hover": "किसी को स्पष्टता सत्र या निमंत्रण उपहार दें",
+    "grow_with_us": "हमारे साथ बढ़ें",
+    "grow_with_us_hover": "राजदूत, सहबद्ध या सहयोगी बनें"
+  },
+
+  "profile": {
+    "user_fallback": "उपयोगकर्ता",
+    "welcome_back": "वापसी पर स्वागत है!",
+    "dashboard": "डैशबोर्ड",
+    "user_profile": "उपयोगकर्ता प्रोफ़ाइल",
+    "settings": "प्रोफ़ाइल सेटिंग्स",
+    "sign_out": "साइन आउट",
+    "sign_in": "साइन इन",
+    "sign_up": "साइन अप",
+    "log_out": "लॉग आउट",
+    "search": "खोजें",
+    "light_mode": "लाइट मोड",
+    "dark_mode": "डार्क मोड",
+    "about": "द्रिशीक़ के बारे में",
+    "terms_conditions": "नियम और शर्तें",
+    "years": "वर्ष",
+    "scan_to_sign_up": "साइन अप करने के लिए स्कैन करें",
+    "qr_scan_instruction": "QR कोड स्कैन करने के लिए अपने फोन के कैमरे का उपयोग करें",
+    "qr_enlarge_hover": "QR कोड बड़ा करने के लिए क्लिक करें",
+    "dashboard_hover": "अपना डैशबोर्ड देखें",
+    "settings_hover": "अपनी प्रोफ़ाइल सेटिंग्स प्रबंधित करें",
+    "sign_out_hover": "अपने खाते से साइन आउट करें"
+  }
+}

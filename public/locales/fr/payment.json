@@ -1,0 +1,526 @@
+{
+  "title": "Paiement",
+  "pricing": {
+    "title": "Le chemin Drishiq",
+    "subtitle": "Choisissez la voie qui résonne avec l’étape de votre parcours d’auto-découverte. Chaque plan est conçu pour vous rencontrer exactement là où vous avez le plus besoin de soutien.",
+    "stats": {
+      "findClarity": "95%",
+      "findClarityLabel": "Trouver la clarté",
+      "alwaysAvailable": "24/7",
+      "alwaysAvailableLabel": "Toujours disponible",
+      "moneyBack": "30 jours",
+      "moneyBackLabel": "Garantie de remboursement"
+    },
+    "offerBanner": {
+      "title": "Offre spéciale pour les nouveaux utilisateurs !",
+      "description": "Tarification spéciale pour les nouveaux utilisateurs lors de la première séance « Première Lumière » — sans conditions, sans abonnement",
+      "close": "Fermer l’offre"
+    },
+    "defaultPricingIndicator": {
+      "default": "Affichage de la tarification par défaut",
+      "earlyAccess": "Affichage de la tarification accès anticipé",
+      "regular": "Affichage de la tarification régulière",
+      "clickInstructions": "Cliquez sur la section tarification pour activer les tarifs spéciaux !"
+    },
+    "foundingMemberOffer": {
+      "badge": "Offre Membre Fondateur",
+      "title": "Offre pour les premiers à croire",
+      "launchDate": "Lancement officiel : 1er janvier 2026",
+      "description": "En tant que l’un des 10 000 premiers utilisateurs, cette tarification exclusive est disponible pendant 3 mois après le lancement. Rejoignez notre communauté fondatrice et verrouillez des tarifs spéciaux avant le début des prix réguliers.",
+      "earlyAccess": {
+        "title": "Tarification accès anticipé",
+        "description": "Tarifs spéciaux disponibles pendant 3 mois après le lancement — verrouillez votre prix maintenant",
+        "active": "✓ Actif"
+      },
+      "regular": {
+        "title": "Tarification régulière",
+        "description": "Tarifs standard appliqués après les 3 mois d’accès anticipé",
+        "active": "✓ Actif"
+      },
+      "highlight": "✨ Offre d’accès anticipé disponible pendant 3 mois après le lancement — verrouillez les tarifs avant leur expiration ! ✨"
+    },
+    "clarityPass": {
+      "title": "💫 Votre Passe Clarté",
+      "quote": "Faites une pause, choisissez la clarté et offrez-vous l’espace que vous méritez vraiment.",
+      "description": "Trouvez le plan parfait qui correspond à votre parcours vers la clarté et la croissance personnelle"
+    },
+    "plans": {
+      "freeTrial": {
+        "name": "Essai gratuit",
+        "emotionLabel": "Juste curieux d’essayer",
+        "description": "La meilleure façon de découvrir Drishiq",
+        "duration": "72 heures",
+        "validity": "72 heures après activation",
+        "sessions": "1",
+        "sessionsLabel": "séance",
+        "sessionsPlural": "séances",
+        "features": {
+          "invitationBased": "Sur invitation",
+          "featuredStory": "Soumission d’histoire spéciale",
+          "testimonial": "Soumission de témoignage",
+          "socialMedia": "Défi réseaux sociaux",
+          "sessionValidity": "01 séance valable 72 heures après activation"
+        },
+        "cta": "Essayer gratuitement"
+      },
+      "firstLight": {
+        "name": "Première Lumière",
+        "emotionLabel": "Commence à voir",
+        "description": "Idéal pour les débutants découvrant Drishiq",
+        "duration": "1 semaine",
+        "validity": "1 semaine après activation",
+        "sessions": "1",
+        "features": {
+          "allFreePlan": "Tout ce qui est inclus dans le plan gratuit",
+          "sessionValidity": "Séance valable 1 semaine après activation",
+          "exportPdf": "Exporter la transcription en PDF",
+          "noRecurring": "Aucun frais récurrent",
+          "directAccess": "Accès direct après paiement"
+        },
+        "cta": "Commencer votre voyage",
+        "foundingSupport": "Tarification soutien fondateur"
+      },
+      "steadyLens": {
+        "name": "Engagement Stable",
+        "emotionLabel": "Trouver son rythme",
+        "description": "Pour ceux qui sont prêts à établir une pratique régulière",
+        "duration": "1 mois",
+        "validity": "1 mois après activation",
+        "sessions": "5",
+        "features": {
+          "sessionsValidity": "05 séances valables 1 mois après activation",
+          "allFirstLight": "Tout ce qui est dans Première Lumière",
+          "sessionValidity": "Séance valable 1 mois après activation"
+        },
+        "cta": "Créer votre rythme"
+      },
+      "enterprise": {
+        "name": "Entreprise",
+        "emotionLabel": "Pour les organisations à grande échelle",
+        "description": "Idéal pour les organisations qui accompagnent des personnes à grande échelle",
+        "duration": "1 mois",
+        "validity": "1 mois après activation",
+        "sessions": "10",
+        "features": {
+          "sessionsValidity": "10 séances valables 1 mois",
+          "adminDashboard": "Tableau de bord administrateur",
+          "multiUser": "Accès multi-utilisateurs",
+          "reports": "Rapports et analyses"
+        },
+        "cta": "Développer l’organisation"
+      },
+      "mostPopular": "Le plus populaire",
+      "free": "Gratuit",
+      "pricingUnavailable": "Tarification indisponible",
+      "loadingPricing": "Chargement des tarifs..."
+    },
+    "trustIndicators": {
+      "securePayment": {
+        "title": "Paiement sécurisé",
+        "description": "Chiffrement SSL 256 bits"
+      },
+      "flexiblePlans": {
+        "title": "Plans flexibles",
+        "description": "Modifiez à tout moment"
+      },
+      "support": {
+        "title": "Support 24/7",
+        "description": "Toujours là pour vous aider"
+      }
+    },
+    "customPackage": {
+      "title": "✨ Besoin de plus de flexibilité ? Nous sommes là pour vous !",
+      "description": "Vous cherchez un forfait personnalisé adapté à vos besoins uniques ? Nous pouvons créer la solution idéale pour vous.",
+      "getInTouch": "Contactez-nous",
+      "email": "support@drishiq.com",
+      "subtext": "Envoyez-nous vos besoins et nous concevrons un forfait parfaitement adapté pour vous"
+    },
+    "giftSection": {
+      "badge": "Cadeaux pour détenteurs de plan actif",
+      "title": "🌌 Offrez un moment de clarté",
+      "quote": "Votre clarté vous a aidé. Transmettez-la.",
+      "description": "Offrez une séance à un ami, un membre de votre famille ou quelqu’un dans le besoin — à un tarif spécial de soutien.",
+      "giftVersion": "🎁 Version Cadeau",
+      "mostGifted": "Le plus offert",
+      "premiumGiftBenefit": "Avantage cadeau premium",
+      "giftPlans": {
+        "firstLight": {
+          "name": "Première Lumière",
+          "emotionLabel": "Commence à voir",
+          "description": "Idéal pour les débutants explorant Drishiq",
+          "sessions": "1",
+          "validity": "1 semaine après activation",
+          "features": {
+            "allFreePlan": "Tout ce qui est dans le plan gratuit",
+            "sessionValidity": "Séance valable 1 semaine après activation",
+            "exportPdf": "Exporter la transcription en PDF",
+            "noRecurring": "Aucun frais récurrent",
+            "directAccess": "Accès immédiat après paiement"
+          },
+          "cta": "Offrir Première Lumière"
+        },
+        "steadyLens": {
+          "name": "Engagement Stable",
+          "emotionLabel": "Construire son rythme",
+          "description": "Pour ceux prêts à établir une pratique régulière",
+          "sessions": "2",
+          "validity": "1 mois après activation",
+          "features": {
+            "sessionsValidity": "02 séances valables 1 mois",
+            "allFirstLight": "Tout ce qui est dans Première Lumière",
+            "sessionValidity": "Séance valable 1 mois"
+          },
+          "cta": "Offrir Engagement Stable"
+        },
+        "deeperSense": {
+          "name": "Compréhension Profonde",
+          "emotionLabel": "Exploration profonde",
+          "description": "Pour ceux qui recherchent une compréhension plus profonde",
+          "sessions": "5",
+          "validity": "2 mois après activation",
+          "features": {
+            "sessionsValidity": "05 séances valables 2 mois",
+            "allSteadyLens": "Tout ce qui est dans Engagement Stable",
+            "extendedValidity": "Validité prolongée pour une exploration approfondie"
+          },
+          "cta": "Offrir Compréhension Profonde"
+        }
+      },
+      "howItWorks": {
+        "title": "Comment fonctionne le cadeau",
+        "step1": {
+          "title": "Choisir et personnaliser",
+          "description": "Choisissez un plan et ajoutez le nom du destinataire avec votre message"
+        },
+        "step2": {
+          "title": "Envoyer le cadeau",
+          "description": "Nous envoyons un bel e-mail ou vous fournissons un lien partageable"
+        },
+        "step3": {
+          "title": "Ils vivent la clarté",
+          "description": "Les destinataires ont un accès immédiat pour commencer leur parcours"
+        }
+      },
+      "giftFeatures": {
+        "personalNotes": {
+          "title": "Notes personnalisées",
+          "description": "Ajoutez un message sincère avec votre cadeau"
+        },
+        "anonymous": {
+          "title": "Option anonyme",
+          "description": "Offrez anonymement à quelqu’un dans le besoin"
+        },
+        "instantAccess": {
+          "title": "Accès immédiat",
+          "description": "Les destinataires reçoivent un accès instantané aux séances"
+        }
+      }
+    },
+    "supportSection": {
+      "badge": "Aider ceux dans le besoin",
+      "title": "🕊️ Soyez un rayon d’espoir",
+      "quote": "Votre soutien ouvre la porte à quelqu’un pour s’arrêter, respirer et redécouvrir son chemin.",
+      "description": "Aidez quelqu’un qui a besoin de retrouver stabilité et direction.",
+      "anyAmount": "N’importe quel montant",
+      "giftLevels": {
+        "gentleNudge": {
+          "title": "Petit encouragement",
+          "emotionLabel": "Offrez un moment de calme",
+          "description": "Idéal pour quelqu’un qui a besoin d’un doux élan vers la clarté",
+          "sessions": "1 séance",
+          "validity": "2 semaines",
+          "feature": "1 séance valable 2 semaines"
+        },
+        "shiftForward": {
+          "title": "Un petit coup de pouce",
+          "emotionLabel": "Soutenez la prochaine étape de quelqu’un",
+          "description": "Offrez l’espace pour permettre à quelqu’un d’avancer",
+          "sessions": "2 séances",
+          "validity": "1 mois",
+          "feature": "2 séances valables 1 mois"
+        },
+        "deeperSpace": {
+          "title": "Soutien profond",
+          "emotionLabel": "Laissez-les s’installer plus longtemps",
+          "description": "Créez un espace pour l’exploration et la compréhension profondes",
+          "sessions": "5 séances",
+          "validity": "2 mois",
+          "feature": "5 séances valables 2 mois"
+        },
+        "heart": {
+          "title": "Don du cœur",
+          "emotionLabel": "Donner avec le cœur",
+          "description": "Contribuez à rendre Drishiq accessible à tous ceux qui en ont besoin",
+          "sessions": "Flexible",
+          "validity": "Flexible",
+          "feature": "Tout montant est apprécié"
+        }
+      },
+      "giftFeatures": {
+        "personalNotes": {
+          "title": "Notes personnalisées",
+          "description": "Ajoutez un message à votre cadeau"
+        },
+        "anonymous": {
+          "title": "Option anonyme",
+          "description": "Offrez anonymement à quelqu’un dans le besoin"
+        },
+        "instantAccess": {
+          "title": "Accès immédiat",
+          "description": "Accès instantané pour les destinataires"
+        }
+      },
+      "donateNow": "Faire un don",
+      "giftThis": "Offrir ceci",
+      "socialMediaTooltip": "Restez informé via nos réseaux sociaux pour les campagnes"
+    },
+    "alerts": {
+      "pricingUpdated": "Tarification mise à jour avec succès !",
+      "pricingSaveFailed": "Échec de l’enregistrement de la tarification",
+      "pricingLoadFailed": "Impossible de charger la tarification pour ce pays. Veuillez réessayer.",
+      "pricingDataFailed": "Échec du chargement des données de tarification"
+    },
+    "tooltips": {
+      "activateGiftPricing": "Cliquez pour activer la tarification spéciale cadeau",
+      "clickInstructions": "Cliquez pour afficher les instructions"
+    }
+  },
+  "page": {
+    "header": {
+      "title": "Paiement Drishiq",
+      "backToPlans": "← Retour aux plans"
+    },
+    "planSummary": {
+      "title": "Résumé du plan",
+      "planPrice": "Prix du plan",
+      "tax": "Taxe",
+      "totalAmount": "Montant total",
+      "location": "Emplacement",
+      "pricingCategory": "Catégorie de tarification",
+      "credits": "Crédits"
+    },
+    "paymentMethods": {
+      "title": "Choisir une méthode de paiement",
+      "cashfree": {
+        "name": "Cashfree",
+        "description": "Carte, UPI, virement bancaire, portefeuille"
+      },
+      "paypal": {
+        "name": "PayPal",
+        "description": "PayPal, carte de crédit/débit"
+      },
+      "proceed": "Procéder au paiement",
+      "selectMethod": "Sélectionnez une méthode de paiement",
+      "securityNotice": "Votre paiement est sécurisé par un chiffrement SSL 256 bits"
+    },
+    "error": {
+      "title": "Erreur de paiement",
+      "backToPlans": "Retour aux plans",
+      "planNotFound": "Plan introuvable",
+      "planNotFoundMessage": "Impossible de trouver le plan sélectionné.",
+      "loading": "Chargement des détails du paiement..."
+    }
+  },
+  "method": {
+    "title": "Choisir une méthode de paiement",
+    "subtitle": "Sélectionnez votre méthode préférée pour compléter votre contribution {purpose}.",
+    "gift": "cadeau",
+    "support": "soutien",
+    "summary": {
+      "giftContribution": "Contribution cadeau",
+      "supportContribution": "Contribution soutien",
+      "name": "Nom",
+      "email": "E-mail"
+    },
+    "cashfree": {
+      "name": "Cashfree",
+      "description": "Payer avec UPI, cartes ou virement bancaire"
+    },
+    "paypal": {
+      "name": "PayPal",
+      "description": "Payer en toute sécurité avec PayPal"
+    },
+    "continue": "Continuer avec {method}",
+    "processing": "Traitement...",
+    "security": "Votre paiement est sécurisé et crypté. Nous ne stockons jamais vos informations de paiement.",
+    "loading": "Chargement des méthodes de paiement..."
+  },
+  "failure": {
+    "title": "Le paiement n’a pas été traité",
+    "subtitle": "Nous n’avons pas pu compléter votre paiement",
+    "transactionFailed": "⚠️ Transaction échouée",
+    "notCharged": "Rassurez-vous ! Votre carte n’a pas été débitée.",
+    "possibleReasons": "Raisons possibles",
+    "reasons": {
+      "insufficientFunds": "Fonds insuffisants",
+      "incorrectCard": "Informations de carte incorrectes",
+      "bankDeclined": "Transaction refusée par la banque",
+      "networkIssues": "Problèmes de connexion réseau",
+      "cardExpired": "Carte expirée ou invalide"
+    },
+    "tryAgain": "Réessayer 🔄",
+    "backToPlans": "Retour aux plans",
+    "contactSupport": "Contacter le support",
+    "needHelp": "Besoin d’aide ?",
+    "helpMessage": "Si le problème persiste, veuillez contacter notre équipe de support.",
+    "supportEmail": "support@drishiq.com"
+  },
+  "process": {
+    "title": "Finaliser le paiement",
+    "subtitle": "Traitement sécurisé avec plusieurs options de paiement",
+    "serviceDetails": "Détails du service",
+    "service": "Service",
+    "amount": "Montant",
+    "credits": "Crédits",
+    "currency": "Devise",
+    "paymentMethodsAvailable": "Méthodes de paiement disponibles",
+    "paypal": {
+      "name": "PayPal",
+      "description": "Paiements internationaux"
+    },
+    "cashfree": {
+      "name": "Cashfree",
+      "description": "Paiements en Inde"
+    },
+    "phonepe": {
+      "name": "PhonePe",
+      "description": "Paiements UPI"
+    },
+    "paymentError": "Erreur de paiement",
+    "proceedToPayment": "Procéder au paiement",
+    "processing": "Traitement...",
+    "security": "🔒 Votre paiement est protégé par un chiffrement de niveau industriel",
+    "loading": "Chargement des détails du paiement...",
+    "error": "Erreur",
+    "invalidDetails": "Informations de paiement invalides"
+  },
+  "processing": {
+    "title": "Traitement du paiement",
+    "subtitle": "Veuillez patienter pendant que nous traitons votre paiement",
+    "loading": "Traitement...",
+    "error": "Paiement échoué. Veuillez réessayer."
+  },
+  "success": {
+    "title": "Paiement réussi",
+    "subtitle": "Votre paiement a été traité avec succès",
+    "message": "Merci pour votre paiement. Vous recevrez bientôt un e-mail de confirmation.",
+    "continue": "Continuer"
+  },
+  "methods": {
+    "credit_card": "Carte de crédit",
+    "debit_card": "Carte de débit",
+    "upi": "UPI",
+    "net_banking": "Virement bancaire",
+    "wallet": "Portefeuille"
+  },
+  "form": {
+    "card_number": "Numéro de carte",
+    "expiry_date": "Date d’expiration",
+    "cvv": "CVV",
+    "name_on_card": "Nom sur la carte",
+    "amount": "Montant",
+    "pay_now": "Payer maintenant"
+  },
+  "checkout": {
+    "pay": "Payer",
+    "processing": "Traitement...",
+    "loading": "Chargement..."
+  },
+  "thankYou": {
+    "title": "Merci ! 🙏",
+    "subtitle": "Votre paiement a été traité avec succès",
+    "creditsAdded": "✅ Crédits ajoutés à votre compte",
+    "creditsReady": "+{credits} crédits prêts à l’utilisation",
+    "whatsNext": "Et maintenant ?",
+    "creditsAvailable": "Vos crédits sont maintenant disponibles ! Vous pouvez commencer votre première conversation.",
+    "startConversation": "Commencer une conversation 🚀",
+    "viewDashboard": "Voir le tableau de bord",
+    "purchaseMore": "Acheter plus de crédits",
+    "needHelp": "Besoin d’aide ? Contactez notre support",
+    "supportEmail": "support@drishiq.com"
+  },
+  "verification": {
+    "verifying": "Vérification du paiement",
+    "pleaseWait": "Veuillez patienter pendant la confirmation de votre paiement...",
+    "failed": "Échec de la vérification du paiement",
+    "tryAgain": "Réessayer",
+    "contactSupport": "Contacter le support",
+    "successful": "Paiement réussi !",
+    "activated": "Merci pour votre paiement. Votre accès à Drishiq est maintenant activé.",
+    "paymentDetails": "Détails du paiement",
+    "transactionId": "ID de transaction :",
+    "amount": "Montant :",
+    "status": "Statut :",
+    "continueToDrishiq": "Continuer vers Drishiq",
+    "confirmationEmail": "Vous recevrez bientôt un e-mail de confirmation.",
+    "questions": "Si vous avez des questions, contactez notre support."
+  },
+  "credits": {
+    "checking": "Vérification des crédits...",
+    "pleaseLogin": "Veuillez vous connecter pour vérifier vos crédits",
+    "couldNotCheck": "Impossible de vérifier les crédits",
+    "unableToCheck": "Échec de la vérification",
+    "noCredits": "Aucun crédit. Veuillez en acheter pour continuer.",
+    "errorVerifying": "Erreur lors de la vérification de votre compte",
+    "creditsAvailable": "Crédits disponibles",
+    "totalCredits": "Total des crédits",
+    "creditsUsed": "Crédits utilisés",
+    "buyCredits": "Acheter des crédits",
+    "noCreditsAvailable": "Aucun crédit disponible",
+    "needCredits": "Vous avez besoin d’au moins 1 crédit pour commencer une conversation. Veuillez en acheter."
+  },
+  "successPage": {
+    "processing": "Traitement de votre paiement...",
+    "creditsAdded": "✓ Crédits ajoutés à votre compte",
+    "processingError": "Erreur de traitement",
+    "backToPlans": "Retour aux plans",
+    "paymentDataNotFound": "Données de paiement introuvables",
+    "unableToLoad": "Impossible de charger les détails du paiement.",
+    "paymentConfirmation": "Confirmation du paiement",
+    "plan": "Plan",
+    "creditsAddedLabel": "Crédits ajoutés",
+    "amountPaid": "Montant payé",
+    "transactionId": "ID de transaction",
+    "status": "Statut",
+    "paymentSuccessful": "Paiement réussi",
+    "whatsNext": "Que faire ensuite ?",
+    "creditsAddedToAccount": "Vos crédits ont été ajoutés",
+    "startFirstSession": "• Commencez votre première séance de clarté",
+    "checkEmail": "• Vérifiez votre e-mail pour la confirmation",
+    "shareGift": "• Partagez le cadeau avec votre destinataire",
+    "goToChat": "Accéder au chat →",
+    "viewAllPlans": "Voir tous les plans",
+    "shareJourney": "Partager votre parcours avec Drishiq",
+    "shareTwitter": "Partager sur Twitter",
+    "shareLinkedIn": "Partager sur LinkedIn",
+    "categories": {
+      "prelaunch": {
+        "title": "🎉 Bienvenue dans la famille Drishiq !",
+        "subtitle": "Vous êtes un soutien précoce",
+        "message": "Merci de croire en la vision de Drishiq et d’aider à construire notre fondation.",
+        "badge": "Soutien précoce"
+      },
+      "postlaunch": {
+        "title": "✨ Votre voyage vers la clarté commence !",
+        "subtitle": "Bienvenue chez Drishiq",
+        "message": "Merci d’avoir choisi Drishiq. Vous avez fait le premier pas vers plus de clarté et de conscience de soi.",
+        "badge": "Chercheur de clarté"
+      },
+      "gift": {
+        "title": "🎁 Votre cadeau de clarté est prêt !",
+        "subtitle": "Partager la lumière",
+        "message": "Merci d’avoir offert de la clarté à quelqu’un de spécial. Votre geste aidera cette personne à respirer et à retrouver son chemin.",
+        "badge": "Donneur de clarté"
+      },
+      "support": {
+        "title": "🕊️ Merci pour votre compassion !",
+        "subtitle": "Vous faites une différence",
+        "message": "Votre soutien aide quelqu’un dans le besoin à retrouver clarté et force. Merci d’aider à rendre Drishiq accessible à tous.",
+        "badge": "Personne compatissante",
+        "downloadBadge": "🎖️ Télécharger le badge",
+        "badgeDescription": "Montrez votre soutien avec ce badge spécial",
+        "downloadButton": "Télécharger le badge"
+      }
+    }
+  }
+}

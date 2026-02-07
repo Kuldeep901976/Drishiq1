@@ -1,0 +1,136 @@
+{
+  "notFound": {
+    "title": "404",
+    "heading": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite wurde möglicherweise entfernt, umbenannt oder ist vorübergehend nicht verfügbar.",
+    "loading": "Wird geladen...",
+    "logo": {
+      "alt": "Drisheeq Logo",
+      "tagline": "Sehen Sie die Herausforderung"
+    },
+    "banner": {
+      "top": {
+        "title": "Treten Sie der Drisheeq-Revolution bei",
+        "subtitle": "Verwandeln Sie Herausforderungen in Klarheit mit KI-gestützten Erkenntnissen",
+        "signUp": "Registrieren"
+      },
+      "bottom": {
+        "title": "Bereit, Ihre Herausforderungen zu transformieren?",
+        "description": "Schließen Sie sich Tausenden an, die durch KI-gestützte Erkenntnisse Klarheit gefunden haben",
+        "getStarted": "Jetzt starten"
+      }
+    },
+    "solutions": {
+      "title": "Zurück auf Kurs",
+      "goHome": {
+        "title": "Zur Startseite",
+        "description": "Zurück zu unserer Startseite",
+        "button": "Startseite"
+      },
+      "tryAgain": {
+        "title": "Erneut versuchen",
+        "description": "Zurück zur vorherigen Seite",
+        "button": "Zurück"
+      },
+      "getHelp": {
+        "title": "Hilfe erhalten",
+        "description": "Kontaktieren Sie unser Support-Team",
+        "button": "Kontakt"
+      }
+    },
+    "status": {
+      "operational": "Alle Systeme funktionieren"
+    }
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen!",
+    "description": "Ein Fehler ist aufgetreten. Bitte aktualisieren Sie die Seite.",
+    "unexpected": "Ein unerwarteter Fehler ist aufgetreten",
+    "tryAgain": "Erneut versuchen",
+    "refresh": "Seite aktualisieren"
+  },
+  "globalError": {
+    "title": "Etwas ist schiefgelaufen!",
+    "description": "Ein unerwarteter Fehler ist aufgetreten",
+    "tryAgain": "Erneut versuchen"
+  },
+  "userNotFound": {
+    "title": "Benutzer nicht gefunden",
+    "description": "Das gesuchte Benutzerprofil existiert nicht.",
+    "goHome": "Zur Startseite",
+    "back": "Zurück"
+  },
+  "loading": {
+    "default": "Wird geladen...",
+    "page": "Seite wird geladen...",
+    "content": "Inhalt wird geladen...",
+    "profile": "Profil wird geladen...",
+    "data": "Daten werden geladen...",
+    "pleaseWait": "Bitte warten..."
+  },
+  "network": {
+    "offline": "Sie sind derzeit offline",
+    "online": "Verbindung wiederhergestellt",
+    "slow": "Langsame Verbindung erkannt",
+    "timeout": "Zeitüberschreitung der Anfrage. Bitte versuchen Sie es erneut.",
+    "failed": "Netzwerkanfrage fehlgeschlagen"
+  },
+  "validation": {
+    "required": "Dieses Feld ist erforderlich",
+    "invalid": "Ungültige Eingabe",
+    "tooShort": "Eingabe ist zu kurz",
+    "tooLong": "Eingabe ist zu lang",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "invalidPhone": "Bitte geben Sie eine gültige Telefonnummer ein",
+    "passwordMismatch": "Passwörter stimmen nicht überein",
+    "weakPassword": "Passwort ist zu schwach"
+  },
+  "unauthorized": {
+    "title": "Zugriff verweigert",
+    "description": "Sie haben keine Berechtigung, auf diese Seite zuzugreifen.",
+    "loginRequired": "Bitte melden Sie sich an, um fortzufahren",
+    "goToLogin": "Zur Anmeldung",
+    "goHome": "Zur Startseite"
+  },
+  "forbidden": {
+    "title": "Verboten",
+    "description": "Sie haben keine Berechtigung, auf diese Ressource zuzugreifen.",
+    "contactSupport": "Support kontaktieren",
+    "goHome": "Zur Startseite"
+  },
+  "serverError": {
+    "title": "Serverfehler",
+    "description": "Auf unserer Seite ist etwas schiefgelaufen. Wir arbeiten daran, es zu beheben.",
+    "tryAgain": "Erneut versuchen",
+    "contactSupport": "Support kontaktieren",
+    "goHome": "Zur Startseite"
+  },
+  "maintenance": {
+    "title": "Wartungsarbeiten",
+    "description": "Wir führen derzeit geplante Wartungsarbeiten durch. Bitte schauen Sie bald wieder vorbei.",
+    "estimatedTime": "Geschätzte Zeit: {time}",
+    "contact": "Für dringende Angelegenheiten kontaktieren Sie bitte den Support"
+  },
+  "sessionExpired": {
+    "title": "Sitzung abgelaufen",
+    "description": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.",
+    "login": "Anmelden",
+    "goHome": "Zur Startseite"
+  },
+  "paymentError": {
+    "title": "Zahlungsfehler",
+    "description": "Bei der Verarbeitung Ihrer Zahlung ist ein Fehler aufgetreten.",
+    "tryAgain": "Erneut versuchen",
+    "contactSupport": "Support kontaktieren",
+    "backToPlans": "Zurück zu den Plänen"
+  },
+  "generic": {
+    "somethingWentWrong": "Etwas ist schiefgelaufen",
+    "pleaseTryAgain": "Bitte versuchen Sie es erneut",
+    "contactSupport": "Support kontaktieren",
+    "goHome": "Zur Startseite",
+    "refresh": "Aktualisieren",
+    "cancel": "Abbrechen",
+    "ok": "OK"
+  }
+}

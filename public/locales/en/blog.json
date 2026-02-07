@@ -1,0 +1,55 @@
+{
+  "not_found": "Post not found",
+  "loading": "Loading...",
+  "read_time_unit": "min read",
+  "listen": "Listen",
+  "likes": "Likes",
+  "comments": "Comments",
+  "share": "Share",
+  "cta": {
+    "title": "Ready to Transform?",
+    "subtitle": "Join thousands of professionals who have found clarity through DrishiQ",
+    "share_button": "Share Your Story",
+    "learn_more": "Learn More"
+  },
+  "related_reads": "Related Reads",
+  "go_to_blog": "Go to Blog",
+  "read_more": "Read More",
+  "sidebar": {
+    "learn": "Learn",
+    "learn_desc": "Clarity articles & live talks",
+    "guide": "Guide",
+    "guide_desc": "Guided sessions & prompts",
+    "engage": "Engage",
+    "engage_desc": "Real case stories, ask experts",
+    "share": "Share",
+    "share_desc": "Help-in-need & experiences"
+  },
+  "watch": "Watch",
+  "open_youtube": "Open on YouTube",
+  "get_updates": "Get updates",
+  "email_placeholder": "you@example.com",
+  "email_description": "We'll send occasional highlights. You can unsubscribe anytime.",
+  "main_page": {
+    "title": "Blogs",
+    "subtitle": "Articles on clarity, growth, and personal development",
+    "description": "It's our effort to talk about what's happening around us and how it can be resolved. We provide perspective on real-world challenges and offer practical solutions, making this blog different from others by focusing on actionable insights and meaningful change.",
+    "hero_title": "🚀 Share Your Wisdom!",
+    "hero_subtitle": "Share your knowledge and insights with the DrishiQ community to improve things around.",
+    "submit_article": "Submit your article here",
+    "featured_label": "Featured",
+    "read_article": "Read the article",
+    "view_all": "View all →",
+    "all_articles": "All Articles",
+    "explore_services": "Explore Drishiq Services",
+    "join_title": "Join DrishiQ",
+    "join_subtitle": "Get your clarity check, weekly tips, and early features.",
+    "create_account": "Create free account",
+    "already_member": "Already a member?",
+    "sign_in": "Sign in",
+    "write_post": "Write a blog post",
+    "share_story": "Share Story",
+    "loading_featured": "Loading featured article..."
+    
+  }
+}

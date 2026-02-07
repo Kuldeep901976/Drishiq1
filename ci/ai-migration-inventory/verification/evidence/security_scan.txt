@@ -1,0 +1,36 @@
+Security Scan Report
+===================
+Scan Date: 2025-01-10
+Branch: feature/responses-adapt
+
+HARDCODED SECRETS: ✅ PASS
+- Searched for pattern: sk-[a-zA-Z0-9]{32,}
+- Result: No matches found
+- No OpenAI API keys hardcoded in repository
+
+ENVIRONMENT VARIABLES: ✅ PASS
+- app/api/ai/call-v2/route.ts:
+  - Uses process.env.OPENAI_RESPONSES_KEY (line 22)
+  - Uses process.env.OPENAI_API_KEY as fallback (line 22)
+  - No hardcoded values ✅
+- lib/ddsa/db-adapters.ts:
+  - Uses createServiceClient() which reads from env ✅
+- lib/supabase.ts:
+  - Uses process.env.SUPABASE_SERVICE_ROLE_KEY ✅
+  - Uses process.env.NEXT_PUBLIC_SUPABASE_URL ✅
+
+RENDER.YAML SECRETS: ✅ PASS
+- All sensitive env vars have sync: false ✅
+- OPENAI_RESPONSES_KEY: sync: false (line 64)
+- OPENAI_API_KEY: sync: false (line 61)
+- SUPABASE_SERVICE_ROLE_KEY: sync: false (line 27)
+- All other secrets properly marked with sync: false ✅
+
+API ROUTE SECURITY: ✅ PASS
+- Validates required fields (thread_id, input) ✅
+- Returns appropriate error codes (400, 404, 500) ✅
+- Error messages don't expose sensitive information ✅
+- Stack traces only in development mode ✅
+
+CONCLUSION: No security issues detected. All secrets properly externalized.
+

@@ -1,0 +1,438 @@
+{
+  "rebooter": {
+    "topband": {
+      "label": "Rebooter, not broken — stories from known faces"
+    },
+    "hero": {
+      "title": "Reset. Restart. Renew.",
+      "subtitle": "You've closed a chapter — maybe willingly, maybe not — and now you're staring at a blank screen called \"next.\"",
+      "cta": {
+        "primary": "Explore what's powering your restart →",
+        "secondary": "How DrishiQ helps?"
+      }
+    },
+    "cta": {
+      "early_access": "Explore what's powering your restart →",
+      "how": "How DrishiQ helps?"
+    },
+    "stir": {
+      "line": {
+        "0": "Do you feel relief and fear in equal measure?",
+        "1": "Does this restart feel heavier than your first start?",
+        "2": "Are you carrying lessons — or luggage — from the past?",
+        "3": "Do you keep asking yourself 'can I really do this again?'",
+        "4": "What if your next build could be lighter, faster, and truer?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Liberated",
+        "subtitle": "Leaving what drained you"
+      },
+      "1": {
+        "title": "Uncertain",
+        "subtitle": "Facing the Unknown"
+      },
+      "2": {
+        "title": "Experienced",
+        "subtitle": "You know the pitfalls"
+      },
+      "3": {
+        "title": "Weary",
+        "subtitle": "Starting again takes energy"
+      },
+      "4": {
+        "title": "Focused",
+        "subtitle": "Clarity about what matters now"
+      },
+      "5": {
+        "title": "Protective",
+        "subtitle": "Guarding against past mistakes"
+      }
+    },
+    "emotions": {
+      "label": "What rebooting can feel like"
+    },
+    "celeb": {
+      "0": {
+        "name": "Steve Jobs",
+        "profession": "Entrepreneur",
+        "source": "Quote",
+        "quote": "\"Stay hungry, stay foolish.\""
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Media Leader",
+        "source": "Quote",
+        "quote": "\"Turn your wounds into wisdom.\""
+      },
+      "2": {
+        "name": "J.K. Rowling",
+        "profession": "Author",
+        "source": "Quote",
+        "quote": "\"Rock bottom became the solid foundation on which I rebuilt my life.\""
+      },
+      "3": {
+        "name": "Elon Musk",
+        "profession": "Entrepreneur",
+        "source": "Quote",
+        "quote": "\"Failure is an option. If things aren't failing, you aren't innovating enough.\""
+      },
+      "4": {
+        "name": "Maya Angelou",
+        "profession": "Poet",
+        "source": "Quote",
+        "quote": "\"Try to be a rainbow in someone's cloud.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "The Pause Before the Relaunch",
+        "line": "You've shut down more than just the old system.",
+        "body": "Whether it's a career change, ending a partnership, or stepping away from a dream, this is more than a break. It's the quiet between storms — where your next choice will define the next chapter.",
+        "bullet": {
+          "0": "You walked away from something that looked fine on the outside.",
+          "1": "You're deliberately taking time before your next move.",
+          "2": "You're both excited and exhausted."
+        },
+        "nudge": "List three non‑negotiables for your next chapter — and keep them in sight.",
+        "frame": {
+          "0": {
+            "h": "The Pause Before the Relaunch",
+            "p": "Restart symbol"
+          },
+          "1": {
+            "h": "Ready to restart",
+            "p": "Fresh start"
+          },
+          "2": {
+            "h": "The Pause Before the Relaunch",
+            "p": "Ready to load new program"
+          }
+        },
+        "cta": "Define your reboot before the world does it for you →"
+      },
+      "1": {
+        "title": "Carrying Lessons, Not Luggage",
+        "line": "Your past is a library, not a prison.",
+        "body": "Every ending leaves you with stories, scars, and strategies. The challenge is knowing which to keep and which to let go.",
+        "bullet": {
+          "0": "You find yourself replaying the same mistakes.",
+          "1": "You hesitate to trust your own decisions.",
+          "2": "You know what you don't want, but not yet what you do."
+        },
+        "nudge": "Write down one hard‑earned lesson — and one fear you can release with it.",
+        "frame": {
+          "0": {
+            "h": "Carrying Lessons, Not Luggage",
+            "p": "Letting go"
+          },
+          "1": {
+            "h": "Freedom from old patterns",
+            "p": "Lessons stored"
+          },
+          "2": {
+            "h": "Carrying Lessons, Not Luggage",
+            "p": "Freedom from old patterns"
+          }
+        },
+        "cta": "Step forward lighter →"
+      },
+      "2": {
+        "title": "Building the Next Version of You",
+        "line": "This isn't a repeat — it's an upgrade.",
+        "body": "The beauty of starting again is that you're not truly starting from scratch. You have frameworks, resilience, and the clarity that only comes from experience.",
+        "bullet": {
+          "0": "You're mixing old skills with new ideas.",
+          "1": "You're designing your next life to fit who you are now.",
+          "2": "You feel ready to take calculated risks."
+        },
+        "nudge": "Create a 'Version 2.0' vision board — with images, not just words.",
+        "frame": {
+          "0": {
+            "h": "Planning with intention",
+            "p": "Planning with intention"
+          },
+          "1": {
+            "h": "Building the Next Version of You",
+            "p": "Bold action"
+          },
+          "2": {
+            "h": "Planning with intention",
+            "p": "Systems in motion"
+          }
+        },
+        "cta": "Build the reboot you've been dreaming of →"
+      },
+      "3": {
+        "title": "Thriving After the Reset",
+        "line": "The reset isn't the end — it's the training ground.",
+        "body": "Once you've found your footing, you can use your restart to build a life that's more aligned, resilient, and satisfying than before.",
+        "bullet": {
+          "0": "You want this time to truly stick.",
+          "1": "You're mentoring others who are restarting.",
+          "2": "You feel proud of how far you've come."
+        },
+        "nudge": "Share your reboot story with someone just starting theirs.",
+        "frame": {
+          "0": {
+            "h": "The Pause Before the Relaunch",
+            "p": "Achievement"
+          },
+          "1": {
+            "h": "Helping others restart",
+            "p": "Helping others restart"
+          },
+          "2": {
+            "h": "Thriving After the Reset",
+            "p": "Moving forward"
+          }
+        },
+        "cta": "Turn your restart into a legacy →"
+      }
+    },
+    "bridge": {
+      "title": "Every restart is a step forward, not backward.",
+      "body": "Drishiq helps you see your restarts as growth opportunities, learn from past experiences, and build something stronger each time.",
+      "cta": "Begin your clarity check →"
+    },
+    "how": {
+      "0": {
+        "h": "Restart Map",
+        "d": "Chart where you've been and where you're going."
+      },
+      "1": {
+        "h": "Lesson Filtering Tool",
+        "d": "Keep the wisdom, drop the weight."
+      },
+      "2": {
+        "h": "Version Builder",
+        "d": "Design your upgraded life step-by-step."
+      },
+      "3": {
+        "h": "Support Network Access",
+        "d": "Connect with others rebooting, too."
+      }
+    },
+    "nudge": {
+      "label": "Try this:"
+    }
+  },
+  "seeker": {
+    "topband": {
+      "label": "Seeker, not lost — stories from known faces"
+    },
+    "hero": {
+      "title": "Seeking New Dimensions",
+      "subtitle": "You've read, explored, asked, and still the pieces don't fully fit. Here's a space to pause the chase and listen inward.",
+      "cta": {
+        "primary": "Explore your seeker's map →",
+        "secondary": "How DrishiQ helps?"
+      }
+    },
+    "cta": {
+      "early_access": "Map your seeking journey →",
+      "how": "How Drishiq Makes a Difference"
+    },
+    "stir": {
+      "line": {
+        "0": "Do you feel you're always 'on the verge' of finding your answer?",
+        "1": "Have you explored many paths but settled on none?",
+        "2": "Do you get pulled toward the next possibility before finishing the last?",
+        "3": "Are you searching more for relief than direction?",
+        "4": "What if the answer wasn't 'out there' but already inside?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Restless",
+        "subtitle": "Quest for More"
+      },
+      "1": {
+        "title": "Curious",
+        "subtitle": "Questions never run out"
+      },
+      "2": {
+        "title": "Hopeful",
+        "subtitle": "Every new door could be 'it'"
+      },
+      "3": {
+        "title": "Frustrated",
+        "subtitle": "Clarity slips away"
+      },
+      "4": {
+        "title": "Inspired",
+        "subtitle": "Sparks in many directions"
+      },
+      "5": {
+        "title": "Unsettled",
+        "subtitle": "Still not where you belong"
+      }
+    },
+    "emotions": {
+      "label": "What seeking can feel like"
+    },
+    "celeb": {
+      "0": {
+        "name": "Rumi",
+        "profession": "Poet",
+        "source": "Quote",
+        "quote": "\"What you seek is seeking you.\""
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Host",
+        "source": "Quote",
+        "quote": "\"The biggest adventure you can take is to live the life of your dreams.\""
+      },
+      "2": {
+        "name": "David Attenborough",
+        "profession": "Naturalist",
+        "source": "Quote",
+        "quote": "\"An understanding of the natural world is a source of curiosity and fulfilment.\""
+      },
+      "3": {
+        "name": "J.K. Rowling",
+        "profession": "Author",
+        "source": "Quote",
+        "quote": "\"It is impossible to live without failing at something...\""
+      },
+      "4": {
+        "name": "Elon Musk",
+        "profession": "Entrepreneur",
+        "source": "Quote",
+        "quote": "\"Ordinary people can choose to be extraordinary.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "The Thrill and the Exhaustion",
+        "line": "Seeking can be a gift, but also a loop.",
+        "body": "You love the chase — the spark of a new idea, the pull of a fresh path. But with each turn, the destination shifts. It's exhilarating… and draining.",
+        "bullet": {
+          "0": "You often start many things but finish few.",
+          "1": "You feel restless when you're not pursuing something.",
+          "2": "You've lost count of the number of 'next big things' you've tried."
+        },
+        "nudge": "List your last five pursuits. Mark which ones you truly want to finish — and why.",
+        "frame": {
+          "0": {
+            "h": "Open Door",
+            "p": "Another possibility"
+          },
+          "1": {
+            "h": "Compass Turning",
+            "p": "Changing directions"
+          },
+          "2": {
+            "h": "Map Circle",
+            "p": "Coming back to self"
+          }
+        },
+        "cta": "Pause and check your map →"
+      },
+      "1": {
+        "title": "The Fear of Missing the Right Path",
+        "line": "When every choice feels urgent.",
+        "body": "Sometimes you chase because you're afraid the 'right thing' might pass you by. But in trying everything, you rarely stay long enough to grow roots.",
+        "bullet": {
+          "0": "You worry you'll regret not trying something.",
+          "1": "You feel anxious making commitments.",
+          "2": "You look for signs you're 'meant' to do something."
+        },
+        "nudge": "Ask yourself: 'What am I afraid will happen if I choose one path?'",
+        "frame": {
+          "0": {
+            "h": "Signposts Everywhere",
+            "p": "Too many directions"
+          },
+          "1": {
+            "h": "Tent on Wheels",
+            "p": "Never staying long"
+          },
+          "2": {
+            "h": "Single Path Ahead",
+            "p": "Choosing to commit"
+          }
+        },
+        "cta": "Pick one step forward →"
+      },
+      "2": {
+        "title": "Searching to Avoid Sitting Still",
+        "line": "Stillness can feel scarier than confusion.",
+        "body": "For some seekers, movement is a way to avoid confronting uncertainty or pain. It's easier to run toward something than sit with what is.",
+        "bullet": {
+          "0": "You fill your calendar to avoid reflection.",
+          "1": "You chase ideas when you're anxious.",
+          "2": "You feel 'empty' when there's nothing new to aim for."
+        },
+        "nudge": "Spend 15 minutes today in complete stillness — no screens, no plans. Notice what surfaces.",
+        "frame": {
+          "0": {
+            "h": "Quiet Bench",
+            "p": "Sitting without agenda"
+          },
+          "1": {
+            "h": "Still Lake",
+            "p": "Seeing what's beneath"
+          },
+          "2": {
+            "h": "Open Sky",
+            "p": "Freedom in stillness"
+          }
+        },
+        "cta": "Try stillness once →"
+      },
+      "3": {
+        "title": "Finding While Seeking",
+        "line": "The journey can be the answer.",
+        "body": "Not all seeking is about arriving. Some is about becoming. But to become, you have to let some discoveries land and shape you before moving on.",
+        "bullet": {
+          "0": "You have wisdom but don't apply it.",
+          "1": "You rush past small wins to the next chase.",
+          "2": "You want your search to feel more fulfilling."
+        },
+        "nudge": "Name one lesson from your last pursuit and decide how to live it for the next month.",
+        "frame": {
+          "0": {
+            "h": "Open Book",
+            "p": "Lessons collected"
+          },
+          "1": {
+            "h": "Roots Growing",
+            "p": "Staying long enough to grow"
+          },
+          "2": {
+            "h": "Sunrise Path",
+            "p": "Walking forward with clarity"
+          }
+        },
+        "cta": "Let one insight stay →"
+      }
+    },
+    "bridge": {
+      "title": "The answer may not be where you're looking.",
+      "body": "Drishiq helps seekers like you turn restless motion into grounded direction. Your questions matter — and so does your ability to rest in the answers you already hold.",
+      "cta": "Begin your clarity check →"
+    },
+    "how": {
+      "0": {
+        "h": "Seeker's Map",
+        "d": "Lay out your pursuits and see patterns."
+      },
+      "1": {
+        "h": "Priority Compass",
+        "d": "Filter ideas through what matters most."
+      },
+      "2": {
+        "h": "Rooting Practices",
+        "d": "Stay with a choice long enough to grow from it."
+      },
+      "3": {
+        "h": "Reflection Points",
+        "d": "Notice the progress you've already made."
+      }
+    }
+  }
+}
+

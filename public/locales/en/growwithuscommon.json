@@ -1,0 +1,284 @@
+{
+  "main_page": {
+    "hero": {
+      "badge": "Grow With Drishiq",
+      "title": "🌱 Together We Rise",
+      "description": "Whether you're an affiliate, investor, creator, or community voice—there's a role for you in building a calm, clarity-first platform that scales with people, not pressure.",
+      "stir_lines": {
+        "choose_lane": "Choose your lane. We'll grow the road with you.",
+        "share_earn": "Share what you love. Earn what you build.",
+        "belief_momentum": "Turn belief into momentum.",
+        "collaborate": "Collaborate without chaos.",
+        "early_seen_useful": "Be early. Be seen. Be useful."
+      },
+      "cta": {
+        "explore_paths": "Explore the 6 Paths",
+        "tell_interest": "Tell us your interest"
+      },
+      "visual": {
+        "title": "A Living Growth Tree with Six Luminous Branches",
+        "description": "Each branch represents a path to grow with Drishiq, with energy flowing both to and from our platform—co-growth in action."
+      }
+    },
+    "why_drishiq": {
+      "title": "Why grow with a clarity-first platform?",
+      "description": "Drishiq helps people turn fog into small, honest steps—at their pace. Partners help us reach, teach, and sustain that mission. You bring your strengths. We share our tools, audience, and runway.",
+      "growth_loop": {
+        "title": "Together, we create a healthier growth loop",
+        "steps": ["Value", "Trust", "Reach", "Revenue", "Reinvest"]
+      },
+      "features": {
+        "transparent_terms": {
+          "title": "Transparent Terms",
+          "description": "Clean attribution and honest reporting"
+        },
+        "co_created_launches": {
+          "title": "Co-created Launches",
+          "description": "Not one-off blasts, but meaningful partnerships"
+        },
+        "practical_assets": {
+          "title": "Practical Assets",
+          "description": "Copy kits, trackers, dashboards"
+        },
+        "recognition_loops": {
+          "title": "Recognition Loops",
+          "description": "Shoutouts, features, case studies"
+        }
+      }
+    },
+    "six_paths": {
+      "title": "The Six Paths",
+      "description": "Choose your lane—we'll build momentum together",
+      "learn_more": "Learn More"
+    },
+    "roles": {
+      "affiliates": {
+        "title": "Affiliates",
+        "description": "Earn as you share a product you believe in."
+      },
+      "referrals": {
+        "title": "Referrals",
+        "description": "Invite someone who'll love Drishiq and get rewarded."
+      },
+      "investors": {
+        "title": "Investors",
+        "description": "Fuel a people-first platform with clear milestones."
+      },
+      "ambassadors": {
+        "title": "Ambassadors",
+        "description": "Be the voice of Drishiq in your circle or city."
+      },
+      "collaborators": {
+        "title": "Creators / Collaborators",
+        "description": "Make content, features, and experiences—together."
+      },
+      "promoters": {
+        "title": "Promoters",
+        "description": "Amplify launches and stories across channels you already use."
+      }
+    },
+    "shared_impact": {
+      "title": "What we build with partners",
+      "description": "Together, we create meaningful impact that lasts"
+    }
+  },
+  
+  "interest": {
+    "role_copy": {
+      "investor": {
+        "title": "✨ Invest in Clarity",
+        "tagline": "Share your details and let's explore how your investment can shape clarity."
+      },
+      "investors": {
+        "title": "✨ Invest in Clarity",
+        "tagline": "Share your details and let's explore how your investment can shape clarity."
+      },
+      "promoter": {
+        "title": "📣 Use Your Voice to Amplify Clarity",
+        "tagline": "Tell us about your platform and how you'd like to amplify clarity."
+      },
+      "promoters": {
+        "title": "📣 Use Your Voice to Amplify Clarity",
+        "tagline": "Tell us about your platform and how you'd like to amplify clarity."
+      },
+      "ambassador": {
+        "title": "🌍 Be the Face of Clarity in Your World",
+        "tagline": "Let's know your community and how you'd like to represent clarity."
+      },
+      "ambassadors": {
+        "title": "🌍 Be the Face of Clarity in Your World",
+        "tagline": "Let's know your community and how you'd like to represent clarity."
+      },
+      "creator": {
+        "title": "✨ Create for Clarity. Collaborate for Change.",
+        "tagline": "Show us your craft and how you'd like to contribute your creativity."
+      },
+      "collaborators": {
+        "title": "✨ Create for Clarity. Collaborate for Change.",
+        "tagline": "Show us your craft and how you'd like to contribute your creativity."
+      },
+      "affiliate": {
+        "title": "🌱 Join the Circle of Change",
+        "tagline": "Tell us how you'll share DrishiQ and be part of our affiliate circle."
+      },
+      "affiliates": {
+        "title": "🌱 Join the Circle of Change",
+        "tagline": "Tell us how you'll share DrishiQ and be part of our affiliate circle."
+      },
+      "referral": {
+        "title": "🔗 Share Clarity, Share Care",
+        "tagline": "Tell us who you'd like to invite or how you plan to use referrals to support others."
+      },
+      "referrals": {
+        "title": "🔗 Share Clarity, Share Care",
+        "tagline": "Tell us who you'd like to invite or how you plan to use referrals to support others."
+      }
+    },
+    
+    "form": {
+      "name_label": "Full Name",
+      "name_placeholder": "Enter your full name",
+      "email_label": "Email Address",
+      "email_placeholder": "your@email.com",
+      "phone_label": "Phone Number",
+      "phone_placeholder": "1234567890",
+      "notes_label": "Anything you'd like to share?",
+      "notes_placeholder": "Context, goals, or links you want us to see",
+      "privacy_notice": "We'll never share your details. Your information is secure and private.",
+      "submit_button": "Submit",
+      
+      "investor_details": "Investment Details",
+      "investment_stage": "Investment Stage",
+      "investment_stage_placeholder": "Seed, Series A, Growth, etc.",
+      "ticket_size": "Ticket Size",
+      "ticket_size_placeholder": "$50K, $100K, $500K+",
+      "invest_timeline": "Investment Timeline",
+      "invest_timeline_placeholder": "Immediate, 3-6 months, exploring",
+      
+      "promoter_details": "Promoter Details",
+      "platforms": "Platforms",
+      "platforms_placeholder": "Instagram, YouTube, Blog, Newsletter",
+      "audience": "Audience Size",
+      "audience_placeholder": "10K, 50K, 100K+ followers/subscribers",
+      "sample_links": "Sample Links",
+      "sample_links_placeholder": "Links to your best promotional content",
+      
+      "ambassador_details": "Ambassador Details",
+      "community": "Community",
+      "community_placeholder": "Students, professionals, local group",
+      "region": "Region",
+      "region_placeholder": "City, state, or online communities",
+      "activities": "Activities",
+      "activities_placeholder": "Events, workshops, meetups you organize",
+      
+      "creator_details": "Creator Details",
+      "craft_area": "Craft Area",
+      "craft_area_placeholder": "Writing, design, video, audio, etc.",
+      "portfolio": "Portfolio",
+      "portfolio_placeholder": "Links to your best work or portfolio",
+      
+      "affiliate_details": "Affiliate Details",
+      "affiliate_channels": "Affiliate Channels",
+      "affiliate_channels_placeholder": "Website, social media, email list",
+      "traffic_estimate": "Traffic Estimate",
+      "traffic_estimate_placeholder": "Monthly visitors, followers, subscribers",
+      "payout_preference": "Payout Preference",
+      "payout_preference_placeholder": "PayPal, bank transfer, crypto, etc.",
+      
+      "referral_details": "Referral Details",
+      "person_name": "Person's Name",
+      "person_name_placeholder": "Who are you referring?",
+      "person_email": "Person's Email (optional)",
+      "person_email_placeholder": "their@email.com",
+      "relationship": "Relationship",
+      "relationship_placeholder": "Friend, colleague, family, other"
+    },
+    
+    "otp": {
+      "title": "📱 Verify Your Phone",
+      "message": "We've sent a 6-digit code to",
+      "placeholder": "Enter 6-digit code",
+      "verify_button": "Verify Code",
+      "verifying": "Verifying..."
+    },
+    
+    "success": {
+      "investor": "Thank you for investing in clarity!",
+      "promoter": "Thank you for amplifying clarity!",
+      "ambassador": "Thank you for representing clarity!",
+      "creator": "Thank you for creating for clarity!",
+      "affiliate": "Thank you for joining our circle!",
+      "referral": "Thank you for sharing clarity forward!",
+      "message": "We've sent a verification code to your phone. Please check your messages and enter the code to complete your application."
+    }
+  },
+  
+  "success": {
+    "next_steps_title": "What happens next?",
+    "email_confirmation_title": "Email Confirmation",
+    "email_confirmation_desc": "You'll receive a confirmation email shortly with all the details of your application.",
+    "phone_verification_title": "Phone Verification",
+    "phone_verification_desc": "Your phone number has been verified and will be used for future communications.",
+    "questions_text": "Questions? Contact us at",
+    
+    "investor": {
+      "title": "Investment Application Complete!",
+      "description": "Your investment application has been successfully submitted and verified. Our team will review your details and contact you within 24-48 hours with next steps.",
+      "next_step_1": "Our investment team will review your application",
+      "next_step_2": "We'll schedule a call to discuss your investment thesis",
+      "next_step_3": "You'll receive detailed information about our funding rounds",
+      "next_step_4": "We'll keep you updated on our growth milestones",
+      "cta_text": "Explore Our Vision"
+    },
+    
+    "promoter": {
+      "title": "Promoter Application Complete!",
+      "description": "Your promoter application has been successfully submitted and verified. Our team will review your platform and reach out within 24-48 hours.",
+      "next_step_1": "Our marketing team will review your platform details",
+      "next_step_2": "We'll discuss collaboration opportunities and terms",
+      "next_step_3": "You'll receive promotional materials and guidelines",
+      "next_step_4": "We'll set up tracking for your promotional activities",
+      "cta_text": "See Our Products"
+    },
+    
+    "ambassador": {
+      "title": "Ambassador Application Complete!",
+      "description": "Your ambassador application has been successfully submitted and verified. Our team will review your community details and contact you within 24-48 hours.",
+      "next_step_1": "Our community team will review your application",
+      "next_step_2": "We'll discuss your role and responsibilities",
+      "next_step_3": "You'll receive ambassador materials and guidelines",
+      "next_step_4": "We'll connect you with other ambassadors",
+      "cta_text": "Join Our Community"
+    },
+    
+    "creator": {
+      "title": "Creator Application Complete!",
+      "description": "Your creator application has been successfully submitted and verified. Our team will review your portfolio and reach out within 24-48 hours.",
+      "next_step_1": "Our creative team will review your portfolio",
+      "next_step_2": "We'll discuss collaboration opportunities",
+      "next_step_3": "You'll receive creative briefs and guidelines",
+      "next_step_4": "We'll set up a workspace for your projects",
+      "cta_text": "View Our Work"
+    },
+    
+    "affiliate": {
+      "title": "Affiliate Application Complete!",
+      "description": "Your affiliate application has been successfully submitted and verified. Our team will review your details and contact you within 24-48 hours.",
+      "next_step_1": "Our affiliate team will review your application",
+      "next_step_2": "We'll discuss commission rates and terms",
+      "next_step_3": "You'll receive affiliate links and materials",
+      "next_step_4": "We'll set up tracking for your referrals",
+      "cta_text": "Start Earning"
+    },
+    
+    "referral": {
+      "title": "Referral Application Complete!",
+      "description": "Your referral application has been successfully submitted and verified. Our team will review your details and contact you within 24-48 hours.",
+      "next_step_1": "Our referral team will review your application",
+      "next_step_2": "We'll discuss referral terms and rewards",
+      "next_step_3": "You'll receive referral links and materials",
+      "next_step_4": "We'll track your referral activities",
+      "cta_text": "Share DrishiQ"
+    }
+  }
+}

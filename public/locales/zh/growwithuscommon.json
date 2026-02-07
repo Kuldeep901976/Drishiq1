@@ -1,0 +1,284 @@
+{
+  "main_page": {
+    "hero": {
+      "badge": "与 德瑞希克 一起成长",
+      "title": "🌱 我们一起上升",
+      "description": "无论你是附属机构、投资者、创建者还是社区声音——在建立一个安静、以清晰为先的平台时，你都有一个角色，该平台与人一起成长，而不是压力。",
+      "stir_lines": {
+        "choose_lane": "选择你的路线。我们将与你一起建立道路。",
+        "share_earn": "分享你喜爱的东西。赚取你构建的东西。",
+        "belief_momentum": "将信念转化为动力。",
+        "collaborate": "无混乱地协作。",
+        "early_seen_useful": "早期行动。被看见。有用。"
+      },
+      "cta": {
+        "explore_paths": "探索 6 条路径",
+        "tell_interest": "告诉我们你的兴趣"
+      },
+      "visual": {
+        "title": "一棵有六个发光分支的生活成长树",
+        "description": "每个分支代表与 德瑞希克 一起成长的一条路径，能量流向和流出我们的平台——共同增长在行动中。"
+      }
+    },
+    "why_德瑞希克": {
+      "title": "为什么与以清晰为先的平台一起成长？",
+      "description": "德瑞希克 帮助人们将迷茫转化为小的、诚实的步骤——按照他们的节奏。合作伙伴帮助我们达到、教导和维持这一使命。你带来你的优势。我们分享我们的工具、观众和资源。",
+      "growth_loop": {
+        "title": "一起，我们创建一个更健康的增长循环",
+        "steps": ["价值", "信任", "范围", "收入", "再投资"]
+      },
+      "features": {
+        "transparent_terms": {
+          "title": "透明条款",
+          "description": "清晰的归属和诚实的报告"
+        },
+        "co_created_launches": {
+          "title": "共同创建的发布",
+          "description": "不是一次性的爆炸，而是有意义的合作伙伴关系"
+        },
+        "practical_assets": {
+          "title": "实用资产",
+          "description": "复制工具包、跟踪器、仪表板"
+        },
+        "recognition_loops": {
+          "title": "认可循环",
+          "description": "呼喊、功能、案例研究"
+        }
+      }
+    },
+    "six_paths": {
+      "title": "六条路径",
+      "description": "选择你的路线——我们将一起建立动力",
+      "learn_more": "了解更多"
+    },
+    "roles": {
+      "affiliates": {
+        "title": "附属机构",
+        "description": "在分享你相信的产品时获利。"
+      },
+      "referrals": {
+        "title": "推荐",
+        "description": "邀请会喜欢 德瑞希克 的人并获得奖励。"
+      },
+      "investors": {
+        "title": "投资者",
+        "description": "为以人为本的平台融资，具有明确的里程碑。"
+      },
+      "ambassadors": {
+        "title": "大使",
+        "description": "成为你的圈子或城市中 德瑞希克 的声音。"
+      },
+      "collaborators": {
+        "title": "创建者 / 合作者",
+        "description": "创建内容、功能和体验——一起。"
+      },
+      "promoters": {
+        "title": "推广者",
+        "description": "在你已经使用的渠道上放大启动和故事。"
+      }
+    },
+    "shared_impact": {
+      "title": "我们与合作伙伴构建的东西",
+      "description": "一起，我们创造持久的有意义的影响"
+    }
+  },
+  
+  "interest": {
+    "role_copy": {
+      "investor": {
+        "title": "✨ 投资清晰度",
+        "tagline": "分享你的详细信息，让我们探讨你的投资如何能塑造清晰度。"
+      },
+      "investors": {
+        "title": "✨ 投资清晰度",
+        "tagline": "分享你的详细信息，让我们探讨你的投资如何能塑造清晰度。"
+      },
+      "promoter": {
+        "title": "📣 用你的声音放大清晰度",
+        "tagline": "告诉我们关于你的平台以及你如何想放大清晰度。"
+      },
+      "promoters": {
+        "title": "📣 用你的声音放大清晰度",
+        "tagline": "告诉我们关于你的平台以及你如何想放大清晰度。"
+      },
+      "ambassador": {
+        "title": "🌍 成为你的世界中清晰度的面孔",
+        "tagline": "让我们了解你的社区以及你希望如何代表清晰度。"
+      },
+      "ambassadors": {
+        "title": "🌍 成为你的世界中清晰度的面孔",
+        "tagline": "让我们了解你的社区以及你希望如何代表清晰度。"
+      },
+      "creator": {
+        "title": "✨ 为清晰度创建。为改变而协作。",
+        "tagline": "向我们展示你的工艺以及你希望如何贡献你的创意。"
+      },
+      "collaborators": {
+        "title": "✨ 为清晰度创建。为改变而协作。",
+        "tagline": "向我们展示你的工艺以及你希望如何贡献你的创意。"
+      },
+      "affiliate": {
+        "title": "🌱 加入变化的圈子",
+        "tagline": "告诉我们你将如何分享 德瑞希克 以及成为我们附属机构圈子的一部分。"
+      },
+      "affiliates": {
+        "title": "🌱 加入变化的圈子",
+        "tagline": "告诉我们你将如何分享 德瑞希克 以及成为我们附属机构圈子的一部分。"
+      },
+      "referral": {
+        "title": "🔗 分享清晰度，分享关怀",
+        "tagline": "告诉我们你想邀请谁或你如何计划使用推荐来支持他人。"
+      },
+      "referrals": {
+        "title": "🔗 分享清晰度，分享关怀",
+        "tagline": "告诉我们你想邀请谁或你如何计划使用推荐来支持他人。"
+      }
+    },
+    
+    "form": {
+      "name_label": "全名",
+      "name_placeholder": "输入你的全名",
+      "email_label": "电子邮件地址",
+      "email_placeholder": "your@email.com",
+      "phone_label": "电话号码",
+      "phone_placeholder": "1234567890",
+      "notes_label": "你想分享什么吗？",
+      "notes_placeholder": "我们想看到的背景、目标或链接",
+      "privacy_notice": "我们永远不会分享你的详细信息。你的信息是安全和私密的。",
+      "submit_button": "提交",
+      
+      "investor_details": "投资详情",
+      "investment_stage": "投资阶段",
+      "investment_stage_placeholder": "种子、A 系列、增长等",
+      "ticket_size": "票券大小",
+      "ticket_size_placeholder": "$50K、$100K、$500K+",
+      "invest_timeline": "投资时间表",
+      "invest_timeline_placeholder": "立即、3-6 个月、探索中",
+      
+      "promoter_details": "推广者详情",
+      "platforms": "平台",
+      "platforms_placeholder": "Instagram、YouTube、Blog、Newsletter",
+      "audience": "观众规模",
+      "audience_placeholder": "10K、50K、100K+ 粉丝/订阅者",
+      "sample_links": "样本链接",
+      "sample_links_placeholder": "指向你最好的推广内容的链接",
+      
+      "ambassador_details": "大使详情",
+      "community": "社区",
+      "community_placeholder": "学生、专业人士、本地小组",
+      "region": "地区",
+      "region_placeholder": "城市、州或在线社区",
+      "activities": "活动",
+      "activities_placeholder": "你组织的活动、工作坊、见面会",
+      
+      "creator_details": "创建者详情",
+      "craft_area": "工艺区域",
+      "craft_area_placeholder": "写作、设计、视频、音频等",
+      "portfolio": "作品集",
+      "portfolio_placeholder": "指向你最好的作品或作品集的链接",
+      
+      "affiliate_details": "附属机构详情",
+      "affiliate_channels": "附属渠道",
+      "affiliate_channels_placeholder": "网站、社交媒体、电子邮件列表",
+      "traffic_estimate": "流量估计",
+      "traffic_estimate_placeholder": "月度访客、粉丝、订阅者",
+      "payout_preference": "付款偏好",
+      "payout_preference_placeholder": "PayPal、bank transfer、crypto、etc.",
+      
+      "referral_details": "推荐详情",
+      "person_name": "人名",
+      "person_name_placeholder": "你推荐的是谁？",
+      "person_email": "人的电子邮件(可选)",
+      "person_email_placeholder": "their@email.com",
+      "relationship": "关系",
+      "relationship_placeholder": "朋友、同事、家人、其他"
+    },
+    
+    "otp": {
+      "title": "📱 验证你的电话",
+      "message": "我们向以下地址发送了 6 位代码",
+      "placeholder": "输入 6 位代码",
+      "verify_button": "验证代码",
+      "verifying": "验证中..."
+    },
+    
+    "success": {
+      "investor": "感谢你在清晰度上的投资！",
+      "promoter": "感谢你放大了清晰度！",
+      "ambassador": "感谢你代表清晰度！",
+      "creator": "感谢你为清晰度创建！",
+      "affiliate": "感谢你加入我们的圈子！",
+      "referral": "感谢你向前分享清晰度！",
+      "message": "我们向你的电话发送了验证代码。请检查你的消息并输入代码以完成你的应用。"
+    }
+  },
+  
+  "success": {
+    "next_steps_title": "接下来会发生什么？",
+    "email_confirmation_title": "电子邮件确认",
+    "email_confirmation_desc": "你很快将收到包含应用所有详情的确认电子邮件。",
+    "phone_verification_title": "电话验证",
+    "phone_verification_desc": "你的电话号码已被验证，将用于未来的通信。",
+    "questions_text": "有问题吗？ 请联系我们",
+    
+    "investor": {
+      "title": "投资申请已完成！",
+      "description": "你的投资申请已成功提交并验证。我们的团队将审查你的详细信息，并在 24-48 小时内与你联系。",
+      "next_step_1": "我们的投资团队将审查你的申请",
+      "next_step_2": "我们将安排通话讨论你的投资论文",
+      "next_step_3": "你将收到有关我们融资轮次的详细信息",
+      "next_step_4": "我们将让你了解我们的增长里程碑",
+      "cta_text": "探索我们的愿景"
+    },
+    
+    "promoter": {
+      "title": "推广者申请已完成！",
+      "description": "你的推广者申请已成功提交并验证。我们的团队将审查你的平台详情，并在 24-48 小时内与你联系。",
+      "next_step_1": "我们的营销团队将审查你的平台详情",
+      "next_step_2": "我们将讨论协作机会和条款",
+      "next_step_3": "你将收到推广材料和指南",
+      "next_step_4": "我们将为你的推广活动设置跟踪",
+      "cta_text": "查看我们的产品"
+    },
+    
+    "ambassador": {
+      "title": "大使申请已完成！",
+      "description": "你的大使申请已成功提交并验证。我们的团队将审查你的社区详情，并在 24-48 小时内与你联系。",
+      "next_step_1": "我们的社区团队将审查你的申请",
+      "next_step_2": "我们将讨论你的角色和责任",
+      "next_step_3": "你将收到大使材料和指南",
+      "next_step_4": "我们将你与其他大使联系",
+      "cta_text": "加入我们的社区"
+    },
+    
+    "creator": {
+      "title": "创建者申请已完成！",
+      "description": "你的创建者申请已成功提交并验证。我们的团队将审查你的作品集，并在 24-48 小时内与你联系。",
+      "next_step_1": "我们的创意团队将审查你的作品集",
+      "next_step_2": "我们将讨论协作机会",
+      "next_step_3": "你将收到创意简报和指南",
+      "next_step_4": "我们将为你的项目设置工作空间",
+      "cta_text": "查看我们的工作"
+    },
+    
+    "affiliate": {
+      "title": "附属机构申请已完成！",
+      "description": "你的附属机构申请已成功提交并验证。我们的团队将审查你的详细信息，并在 24-48 小时内与你联系。",
+      "next_step_1": "我们的附属团队将审查你的申请",
+      "next_step_2": "我们将讨论佣金率和条款",
+      "next_step_3": "你将收到附属链接和材料",
+      "next_step_4": "我们将为你的推荐设置跟踪",
+      "cta_text": "开始赚钱"
+    },
+    
+    "referral": {
+      "title": "推荐申请已完成！",
+      "description": "你的推荐申请已成功提交并验证。我们的团队将审查你的详细信息，并在 24-48 小时内与你联系。",
+      "next_step_1": "我们的推荐团队将审查你的申请",
+      "next_step_2": "我们将讨论推荐条款和奖励",
+      "next_step_3": "你将收到推荐链接和材料",
+      "next_step_4": "我们将跟踪你的推荐活动",
+      "cta_text": "分享 德瑞希克"
+    }
+  }
+}

@@ -1,0 +1,696 @@
+{
+  "builder": {
+    "hero": {
+      "subtitle": "建造者，不只是忙碌——熟面孔的故事",
+      "title": "永远在建造",
+      "description": "在你的脚还没踏上最后一步时，你的目光已经落在下一步。你在速度中茁壮，但什么时候停下来、静一静？",
+      "cta": {
+        "primary": "查看你的建造模式 →",
+        "secondary": {
+          "label": "德里希克如何提供帮助？",
+          "sentence": "澄清你的愿景。平衡你的节奏。"
+        }
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "在休息之前，总有“再做一件事”要完成吗？",
+        "1": "即便你想慢下来，也会挣扎无法放慢吗？",
+        "2": "你的关系常常围绕着你的项目而安排吗？",
+        "3": "你的身份是否与你在创造或获得的事物紧密相连？",
+        "4": "你是否曾问自己：如果我停止建造，会发生什么？"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "受激励",
+        "subtitle": "由目标驱动"
+      },
+      "1": {
+        "title": "疲惫",
+        "subtitle": "持续在运转"
+      },
+      "2": {
+        "title": "自豪",
+        "subtitle": "看到它成形"
+      },
+      "3": {
+        "title": "孤立",
+        "subtitle": "只有少数人理解速度"
+      },
+      "4": {
+        "title": "超负荷",
+        "subtitle": "同时承载太多支柱"
+      },
+      "5": {
+        "title": "满足",
+        "subtitle": "在创造有意义的事物"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "埃隆·马斯克",
+        "profession": "企业家",
+        "quote": "当某事重要时，你就去做——即便机会不在你这一边。"
+      },
+      "1": {
+        "name": "奥普拉·温弗瑞",
+        "profession": "媒体领袖",
+        "quote": "此刻做到最好，会把你放到下一个时机的最佳位置。"
+      },
+      "2": {
+        "name": "J.R.R. 托尔金",
+        "profession": "作家",
+        "quote": "慢慢来，但坚持走下去，人会到很远的地方。"
+      },
+      "3": {
+        "name": "简·古道尔",
+        "profession": "科学家",
+        "quote": "你所做的确实产生影响，而你要决定想带来怎样的影响。"
+      },
+      "4": {
+        "name": "霍华德·舒尔茨",
+        "profession": "商业领袖",
+        "quote": "梦想要比别人看到的更多。期望比别人所想的可能更高。"
+      }
+    },
+    "section": {
+      "0": {
+        "title": "建造的驱动力",
+        "line": "你在各处看到可能性。",
+        "body": "当别人看到空白时，你看到基础；当别人看到“够了”时，你看到“还可以做更多”。你的想象力和建造能力是你的天赋——但它们也可能成为负担。",
+        "bullet": {
+          "0": "你总是同时运行多个项目。",
+          "1": "没有目标或计划时你会感到不安。",
+          "2": "你把生产力与自我价值联系在一起。"
+        },
+        "nudge": "写下你当前的项目，并标注真正对齐你价值观的那些——不仅仅是你的习惯。",
+        "frame": {
+          "0": {
+            "h": "蓝图",
+            "p": "为未来规划"
+          },
+          "1": {
+            "h": "锤子与钉子",
+            "p": "积极塑造"
+          },
+          "2": {
+            "h": "生长中的结构",
+            "p": "看到进展"
+          }
+        },
+        "cta": "将你的建造与价值对齐 →"
+      },
+      "1": {
+        "title": "当结构控制你时",
+        "line": "并非每个建造都值得承担其重量。",
+        "body": "有时候，你所建造的东西开始塑造你——支配你的时间、选择，甚至你的健康。",
+        "bullet": {
+          "0": "你的项目吞噬了你的私人时间。",
+          "1": "你会因离开而感到内疚。",
+          "2": "你可能长时间与某个想法纠缠，即便它的价值已褪色。"
+        },
+        "nudge": "问自己：‘如果我今天离开，会在时间、健康或快乐上得到什么回报？’",
+        "frame": {
+          "0": {
+            "h": "裂缝的塔楼",
+            "p": "压力的迹象"
+          },
+          "1": {
+            "h": "无指针的钟表",
+            "p": "时间在流逝"
+          },
+          "2": {
+            "h": "被绑缚的形象",
+            "p": "被工作定义"
+          }
+        },
+        "cta": "从不稳固的建造中解放自己 →"
+      },
+      "2": {
+        "title": "砖与呼吸的平衡",
+        "line": "每一座坚固的结构都建立在坚实的基础之上——而这基础是你。",
+        "body": "你越坚韧，你的创造越能持久。在平衡中建造意味着为休息、反思和关系留出空间。",
+        "bullet": {
+          "0": "你为最后期限忽视了个人需求。",
+          "1": "多年没有刻意休息。",
+          "2": "你感到激情正转化为压力。"
+        },
+        "nudge": "每周为与你项目无关的事保留不可转让的时间。",
+        "frame": {
+          "0": {
+            "h": "平衡的石块",
+            "p": "稳定与力量"
+          },
+          "1": {
+            "h": "开阔的田野",
+            "p": "可呼吸的空间"
+          },
+          "2": {
+            "h": "托着植物的手",
+            "p": "滋养你和你的工作"
+          }
+        },
+        "cta": "以不被耗尽的方式建造 →"
+      },
+      "3": {
+        "title": "超越自我的建造",
+        "line": "最有意义的建造在你离开后仍会持续。",
+        "body": "真正的建造者知道何时传递工具。教导、委派、共享流程可以使你的工作超越你自己。",
+        "bullet": {
+          "0": "你希望你的作品成为一种遗产。",
+          "1": "你准备好进行更多合作。",
+          "2": "你希望你的建造能为你之外的人服务。"
+        },
+        "nudge": "选择在当前项目中指导或加入一个人。",
+        "frame": {
+          "0": {
+            "h": "敞开的门",
+            "p": "邀请他人"
+          },
+          "1": {
+            "h": "传递植物的手",
+            "p": "分享技能"
+          },
+          "2": {
+            "h": "阳光下完整的建筑",
+            "p": "建立遗产"
+          }
+        },
+        "cta": "创造持久影响 →"
+      }
+    },
+    "cta": {
+      "how": {
+        "label": "德里希克如何帮助",
+        "sentence": "澄清你的愿景。平衡你的节奏。"
+      }
+    },
+    "try_this": "试试这个：",
+    "bridge": {
+      "title": "准备好塑造未来了吗？",
+      "body": "德里希克帮助建造者在建造与自我照护之间找到平衡，确保你的能量、健康与清晰度与工作共同成长。",
+      "cta": "开始你的清晰检查 →"
+    },
+    "how": {
+      "title": "德里希克如何带来改变",
+      "0": {
+        "h": "建造-价值图",
+        "d": "德里希克帮助你看清哪些项目真正与价值观对齐。"
+      },
+      "1": {
+        "h": "步调重设",
+        "d": "德里希克提供实际工具与策略，让你在不失去速度的情况下放慢脚步。"
+      },
+      "2": {
+        "h": "平衡实践",
+        "d": "德里希克分享日常练习，优先考虑休息、反思与关系。"
+      },
+      "3": {
+        "h": "遗产建造者",
+        "d": "德里希克设计你的影响以服务超越你、创造长期意义。"
+      }
+    }
+  },
+  "connector": {
+    "section": {
+      "0": {
+        "title": "桥梁的礼物",
+        "line": "你能看见人们应当在哪里相遇。",
+        "body": "你是故事之间的线索，是分散想法之间的纽带，那把使事情成为可能的火花。世界需要你的开放性——也需要你将人们聚合的能力。",
+        "bullet": {
+          "0": "你自然而然地把能互助的人介绍给彼此。",
+          "1": "你无法容忍有人被忽视。",
+          "2": "看到关系形成会让你充满能量。"
+        },
+        "nudge": "列出最近你建立的三个真正有意义的连接——不是出于方便的，而是真正有价值的那种。",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+            "h": "连接人群。",
+            "p": "连接人群。"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Holding groups together..jpg",
+            "h": "维系群体。",
+            "p": "维系群体。"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+            "h": "连接人群。",
+            "p": "连接人群。"
+          }
+        },
+        "cta": "在最重要的地方建立连接 →"
+      },
+      "1": {
+        "title": "同时抓住许多线头",
+        "line": "再坚固的网在压力下也会磨损。",
+        "body": "当你粘连在每个人的生活中时，似乎没有什么能在没有你的情况下运转——这会在安静中耗尽你。",
+        "bullet": {
+          "0": "如果你不能参加每个活动，你会感到内疚。",
+          "1": "你的收件箱或消息总是充斥着请求。",
+          "2": "在没有解释的情况下说“不”对你来说很难。"
+        },
+        "nudge": "在回应请求前停一下。问自己：‘这是我的事吗？’",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+            "h": "打破僵局。",
+            "p": "打破僵局。"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Bringing teams together..jpg",
+            "h": "把团队聚到一起。",
+            "p": "把团队聚到一起。"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+            "h": "打破僵局。",
+            "p": "打破僵局。"
+          }
+        },
+        "cta": "在不破坏连接的情况下守护你的界限 →"
+      },
+      "2": {
+        "title": "在网络中找到你的立足点",
+        "line": "当你是其中一部分时，连接才最强。",
+        "body": "成为那个默默的中心很容易——因为你忙于确保别人被看见。但你的声音和需求同样值得被看见。",
+        "bullet": {
+          "0": "人们称你为“连接者”，却不一定深入了解你这个人。",
+          "1": "你自己的里程碑常常被忽视。",
+          "2": "你犹豫向他人寻求帮助。"
+        },
+        "nudge": "本周与一位你信任的人分享一个个人目标或挑战。",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+            "h": "建立和谐",
+            "p": "建立和谐"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Creating safe spaces..jpg",
+            "h": "创造安全空间。",
+            "p": "创造安全空间。"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+            "h": "建立和谐",
+            "p": "建立和谐"
+          }
+        },
+        "cta": "走进你所创造的圈子 →"
+      },
+      "3": {
+        "title": "为变革而连接",
+        "line": "最强大的桥梁不仅仅是连接人——它们改变生命。",
+        "body": "当你的连接出于意图并带着关怀建立时，它们会形成向外的波纹，塑造社区并产生超出你本人的影响。",
+        "bullet": {
+          "0": "你希望你的网络超越社会联系而有更深的目的。",
+          "1": "你梦想发起能帮助更多人的倡议。",
+          "2": "你能在别人忽视的地方看到潜力。"
+        },
+        "nudge": "选择一个你愿意深入投资时间的关系或团体——不是更广，而是更深。",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+            "h": "创造持久的纽带。",
+            "p": "创造持久的纽带。"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Everyone belongs..jpg",
+            "h": "让每个人都有归属。",
+            "p": "让每个人都有归属。"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+            "h": "创造持久的纽带。",
+            "p": "创造持久的纽带。"
+          }
+        },
+        "cta": "让你的连接产生分量 →"
+      }
+    },
+    "how": {
+      "0": {
+        "h": "连接地图",
+        "d": "查看你的能量流向何处。"
+      },
+      "1": {
+        "h": "界限工具",
+        "d": "学习在不过度付出的情况下说“是”。"
+      },
+      "2": {
+        "h": "互惠实践",
+        "d": "建立平衡的关系。"
+      },
+      "3": {
+        "h": "目标路径",
+        "d": "将连接对齐到对你最重要的事物。"
+      },
+      "title": "德里希克如何带来改变"
+    },
+    "hero": {
+      "title": "汇聚众声",
+      "subtitle": "你把人们连接起来，创造机会，把陌生人变成合作者。但在维系所有人的同时，你仍感到被看见吗？"
+    },
+    "stir": {
+      "line": {
+        "0": "你常常了解每个人的故事，却很少分享自己的故事吗？",
+        "1": "人们第一个会问你“该和谁说话”吗？",
+        "2": "你是否感到有责任把社区维系在一起？",
+        "3": "你是否在自己的网络中感到孤独？",
+        "4": "如果先从内向外连接而不是从外向内，会怎样？"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "温暖",
+        "subtitle": "在人群中感觉像回到家"
+      },
+      "1": {
+        "title": "超负荷",
+        "subtitle": "承担太多线头"
+      },
+      "2": {
+        "title": "被需要",
+        "subtitle": "他人依赖于你"
+      },
+      "3": {
+        "title": "隐形",
+        "subtitle": "你的故事被放在了后座"
+      },
+      "4": {
+        "title": "自豪",
+        "subtitle": "搭建别人所需的桥梁"
+      },
+      "5": {
+        "title": "疲惫",
+        "subtitle": "能量被过度分散"
+      },
+      "header": "连接可能会有的感受"
+    },
+    "celeb": {
+      "items": [
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/maya_angelou.jpg",
+          "name": "玛雅·安吉罗",
+          "profession": "诗人",
+          "source": "引言",
+          "quote": "\"我们比我们想象的更相似，朋友们；我们并非那样不同。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Howard_Schultz.jpg",
+          "name": "霍华德·舒尔茨",
+          "profession": "企业领袖",
+          "source": "引言",
+          "quote": "\"生活中，你不能成为一切，但你可以成为真正重要的那些事物。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Malala_Yousafzai.jpg",
+          "name": "马拉拉·优素福扎伊",
+          "profession": "活动家",
+          "source": "引言",
+          "quote": "\"当整个世界保持沉默时，一个声音也能变得强大。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Desmond_Tutu.jpg",
+          "name": "德斯蒙德·图图",
+          "profession": "领袖",
+          "source": "引言",
+          "quote": "\"在你所在之处做你能做的小小善举；这些小片段会积累成改变世界的力量。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Fred_Rogers.jpg",
+          "name": "弗雷德·罗杰斯",
+          "profession": "教育者",
+          "source": "引言",
+          "quote": "\"互相关怀的关系需要善意、耐心和理解。\""
+        }
+      ]
+    },
+    "bridge": {
+      "title": "准备以清晰连接吗？",
+      "body": "德里希克帮助连接者理解他们的能量流向以及哪些关系真正重要。因为最好的关系不是让你感到空虚的那些。",
+      "cta": "映射你的连接 →"
+    },
+    "topband": {
+      "label": "连接者，不只是社交者——熟面孔的故事"
+    },
+    "cta": {
+      "early_access": "发现你的连接模式 →",
+      "how": {
+        "label": "德里希克如何帮助",
+        "sentence": "理解你的能量。平衡你的关系。"
+      }
+    },
+    "btn": {
+      "early_access": "开始你的清晰检查 →"
+    }
+  },
+  "dependent": {
+    "hero": {
+      "title": "被设计所依赖",
+      "subtitle": "相互依赖不是缺陷。这就是人类行进的方式——一起。艺术在于识别哪些纽带托举你，哪些又在悄悄束缚你。"
+    },
+    "stir": {
+      "line": {
+        "0": "谁让你稳住——谁在引导你？",
+        "1": "你的“是”是你选择的，还是自动的？",
+        "2": "照顾在哪些地方让你感到沉重？",
+        "3": "哪种界限会让你更慈悲？",
+        "4": "哪种支持会真正为成长提供燃料？"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "支持",
+        "subtitle": "稳住你的手"
+      },
+      "1": {
+        "title": "信任",
+        "subtitle": "在小事中建立"
+      },
+      "2": {
+        "title": "空间",
+        "subtitle": "与空气共舞的爱"
+      },
+      "3": {
+        "title": "界限",
+        "subtitle": "慈悲而清晰"
+      },
+      "4": {
+        "title": "感恩",
+        "subtitle": "谢谢，而非欠债"
+      },
+      "5": {
+        "title": "成长",
+        "subtitle": "一起向上"
+      },
+      "header": "依赖可能带来的感受"
+    },
+    "celeb": {
+      "items": [
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/maya_angelou.jpg",
+          "name": "玛雅·安吉罗",
+          "profession": "诗人",
+          "source": "采访",
+          "quote": "\"没有人能单独走出这里。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Steve_Jobs.jpg",
+          "name": "史蒂夫·乔布斯",
+          "profession": "企业家",
+          "source": "对话",
+          "quote": "\"伟大的事情在商业中从不是一个人完成的。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Priyanka-chopra.jpg",
+          "name": "普莉扬卡·乔普拉·乔纳斯",
+          "profession": "演员",
+          "source": "TEDx",
+          "quote": "\"依赖他人并不会让你变得渺小——它让你成为人。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Stephen_Hawking.jpg",
+          "name": "斯蒂芬·霍金",
+          "profession": "物理学家",
+          "source": "演讲",
+          "quote": "\"我们现在都连接在一起，就像一个庞大大脑中的神经元。\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Sachin_Tendulkar.jpg",
+          "name": "萨钦·滕杜尔卡尔",
+          "profession": "板球运动员",
+          "source": "媒体",
+          "quote": "\"我的成功归功于那些一直站在我身边的人。\""
+        }
+      ]
+    },
+    "bridge": {
+      "title": "相互依赖可以成为你的力量",
+      "body": "德里希克帮助你识别真正赋能你的支持——而非束缚你的关系。健康的相互依赖意味着依赖他人，同时不迷失自我。",
+      "cta": "开始你的清晰之旅 →"
+    },
+    "topband": {
+      "label": "依赖者，不是弱点——熟面孔的故事"
+    },
+    "cta": {
+      "early_access": "查看你的依赖地图 →",
+      "how": "德里希克如何提供帮助"
+    },
+    "btn": {
+      "early_access": "查看你的依赖地图"
+    },
+    "section": {
+      "0": {
+        "title": "连接的安慰",
+        "line": "带来稳定的温暖。让日常习惯扎根。",
+        "body": "共享的惯例、内部的玩笑、一天结束时的相互问候——这些纽带把你接地。但安慰有时也会成为阻碍你成长的屏障。",
+        "bullet": {
+          "0": "你在大多数决定上依赖一个小圈子。",
+          "1": "你感到被系住——有时因此犹豫迈步。",
+          "2": "你会错过保持平和的机会。"
+        },
+        "nudge": "列出两个给你能量的支持者和一个让你安静地被拉低的人。把前两者放近；重新设计第三者。",
+        "cta": {
+          "label": "映射赋能型支持 →",
+          "sentence": "有些手帮你成长，有些手拦你步伐。识别差别。"
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+            "h": "风暴中的靠山",
+            "p": "风暴中的靠山"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/You hold others up..jpg",
+            "h": "你托起他人",
+            "p": "你托起他人"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+            "h": "风暴中的靠山",
+            "p": "风暴中的靠山"
+          }
+        }
+      },
+      "1": {
+        "title": "关系中的界限",
+        "line": "与空气共舞的亲近。以空间承载的爱。",
+        "body": "每段健康的依赖中都有无形的界线。过度依赖会模糊它们，过度疏离会撕裂它们。用清晰重新描绘这些线条，能防止信任在压力下崩塌。",
+        "bullet": {
+          "0": "你为独处时间向他人道歉。",
+          "1": "你习惯性地分享密码、日历、计划。",
+          "2": "说“不要”仿佛在威胁关系。"
+        },
+        "nudge": "写下一个温柔的界限，例如：“我会在明晚 7 点后回复。我想给出我能给予的最好状态。”",
+        "cta": {
+          "label": "写一个温柔的界限 →",
+          "sentence": "界限不会摧毁爱——它使之纯粹。"
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+            "h": "保护他们",
+            "p": "保护他们"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Their success is yours..png",
+            "h": "他们的成功就是你的成功",
+            "p": "他们的成功就是你的成功"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+            "h": "保护他们",
+            "p": "保护他们"
+          }
+        }
+      },
+      "2": {
+        "title": "期望的负担",
+        "line": "感激不是契约。",
+        "body": "有时支持伴随义务而来——那些你并未签字承担的责任。聪明的做法是界定给予的边界，以便生活得以继续。",
+        "bullet": {
+          "0": "你会记账（无论是他们的还是你的）。",
+          "1": "你为那些合乎人性的需求感到‘抱歉’。",
+          "2": "你担心设界会让爱被撤回。"
+        },
+        "nudge": "写一条不承诺回报的感谢：‘谢谢你。这对我意义重大。’ 就此止步。",
+        "cta": {
+          "label": "练习纯粹的感恩 →",
+          "sentence": "感恩不是债务。它是一口深呼吸。"
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+            "h": "发现你的界限",
+            "p": "发现你的界限"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Love with wisdom..jpg",
+            "h": "以智慧之爱",
+            "p": "以智慧之爱"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+            "h": "发现你的界限",
+            "p": "发现你的界限"
+          }
+        }
+      },
+      "3": {
+        "title": "相互成长",
+        "line": "依赖变为有弹性的动力。",
+        "body": "当依赖建立在尊重与共同进步上时，它可以成为发射台。你成长时，连接也随之成长。",
+        "bullet": {
+          "0": "你庆祝技能，而不是只是施恩。",
+          "1": "你更多问‘什么真正有帮助？’而不是‘你能帮忙吗？’",
+          "2": "你把支持转化为共同的动力。"
+        },
+        "nudge": "本周问某人：‘为了支持你的目标，我能做的一个小事是什么？’然后去做它。",
+        "cta": {
+          "label": "培养相互成长 →",
+          "sentence": "真正的力量不是你独自能做什么，而是你们一起能成为什么。"
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+            "h": "作为团队更强",
+            "p": "作为团队更强"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Walking side by side..jpg",
+            "h": "并肩同行",
+            "p": "并肩同行"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+            "h": "作为团队更强",
+            "p": "作为团队更强"
+          }
+        }
+      }
+    },
+    "how": {
+      "0": {
+        "h": "清晰对话",
+        "d": "德里希克用温和的提示引导你，把模糊转化为清晰的选择。"
+      },
+      "1": {
+        "h": "按你节奏的计划",
+        "d": "德里希克分享一系列小而堆叠的任务，让你在无压下前进。"
+      },
+      "2": {
+        "h": "模式发现器",
+        "d": "德里希克帮助你识别谁和什么真正为你提供能量。"
+      },
+      "3": {
+        "h": "关怀式检查",
+        "d": "德里希克发送有人情味的补给，让你的成长被感受到是被支持的，而非被管控。"
+      },
+      "title": "德里希克如何带来改变"
+    }
+  }
+}

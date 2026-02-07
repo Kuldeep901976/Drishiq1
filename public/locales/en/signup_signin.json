@@ -1,0 +1,182 @@
+{
+  "signIn": {
+    "title": "Sign in",
+    "tabs": {
+      "social": "Social",
+      "email": "Email/Password",
+      "magic": "Magic Link"
+    },
+    "roleCategories": {
+      "regular": "Regular",
+      "grow": "Grow",
+      "enterprise": "Enterprise"
+    },
+    "roles": {
+      "user": "Regular User",
+      "client_admin": "Company Admin",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Therapist",
+      "consultant": "Consultant",
+      "investor": "Investor",
+      "partner": "Partner",
+      "sponsor": "Sponsor",
+      "volunteer": "Volunteer",
+      "affiliate": "Affiliate",
+      "enterprise_admin": "Enterprise Admin"
+    },
+    "roleTaglines": {
+      "user": "Personal dashboard access",
+      "client_admin": "Manage company accounts",
+      "mentor": "Guide and support others",
+      "coach": "Professional coaching services",
+      "therapist": "Mental health support",
+      "consultant": "Business consulting",
+      "investor": "Investment opportunities",
+      "partner": "Strategic partnerships",
+      "sponsor": "Support causes and initiatives",
+      "volunteer": "Community contribution",
+      "affiliate": "Referral partnerships",
+      "enterprise_admin": "Manage company employees"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Enter your email address",
+        "label": "Email"
+      },
+      "password": {
+        "placeholder": "Enter your password",
+        "label": "Password"
+      },
+      "submit": {
+        "signIn": "Sign In",
+        "signingIn": "Signing in...",
+        "sendMagicLink": "Send Magic Link",
+        "sending": "Sending...",
+        "cancel": "Cancel"
+      }
+    },
+    "socialAuth": {
+      "google": "Continue with Google",
+      "linkedin": "Continue with LinkedIn"
+    },
+    "welcome": {
+      "title": "Welcome back, {username}! 👋",
+      "credits": "Your Credits",
+      "availableCredits": "Available Credits",
+      "total": "Total",
+      "used": "Used",
+      "whoAreYouSeeking": "Who are you seeking guidance for?",
+      "forMyself": {
+        "title": "For Myself",
+        "description": "Get personalized guidance for yourself"
+      },
+      "forOthers": {
+        "title": "For Someone I Care About",
+        "description": "Seek guidance for a loved one"
+      },
+      "needCredits": "You need credits to access our services",
+      "buyCredits": "🛒 Buy Credits Now",
+      "buyMoreCredits": "💳 Buy More Credits",
+      "limitedCredits": "ℹ️ You have limited credits. Consider buying more to avoid interruptions.",
+      "sufficientCredits": "✅ You have sufficient credits. Ready to get started!",
+      "back": "Back",
+      "signOut": "Sign Out"
+    },
+    "footer": {
+      "noAccount": "Don't have an account? Sign up",
+      "forgotPassword": "Forgot password?",
+      "info": "After signing in, you'll be able to choose between getting guidance for yourself or someone you care about. Each session uses 1 credit."
+    },
+    "errors": {
+      "accountNotFound": "Account not found. Please sign up to create an account.",
+      "invalidCredentials": "Incorrect password. Please try again or use \"Forgot Password\" to reset.",
+      "userNotFound": "Your account is not set up. Please complete your profile setup to continue.",
+      "signUpPrompt": "Please sign up to create an account or try signing in again.",
+      "magicLinkError": "Failed to send magic link",
+      "socialAuthError": "{provider} authentication failed. Please check your Supabase {provider} OAuth configuration.",
+      "authError": "An error occurred during authentication",
+      "emailRequired": "Email address is required"
+    }
+  },
+  "signUp": {
+    "title": "Sign up",
+    "tabs": {
+      "social": "Social",
+      "email": "Email/Password",
+      "magic": "Magic Link"
+    },
+    "roleCategories": {
+      "regular": "Regular",
+      "grow": "Grow",
+      "enterprise": "Enterprise"
+    },
+    "roles": {
+      "user": "Regular User",
+      "client_admin": "Company Admin",
+      "mentor": "Mentor",
+      "coach": "Coach",
+      "therapist": "Therapist",
+      "consultant": "Consultant",
+      "investor": "Investor",
+      "partner": "Partner",
+      "sponsor": "Sponsor",
+      "volunteer": "Volunteer",
+      "affiliate": "Affiliate",
+      "enterprise_admin": "Enterprise Admin"
+    },
+    "roleTaglines": {
+      "user": "Personal dashboard access",
+      "client_admin": "Manage company accounts",
+      "mentor": "Guide and support others",
+      "coach": "Professional coaching services",
+      "therapist": "Mental health support",
+      "consultant": "Business consulting",
+      "investor": "Investment opportunities",
+      "partner": "Strategic partnerships",
+      "sponsor": "Support causes and initiatives",
+      "volunteer": "Community contribution",
+      "affiliate": "Referral partnerships",
+      "enterprise_admin": "Platform administration"
+    },
+    "form": {
+      "email": {
+        "placeholder": "Enter your email address",
+        "label": "Email"
+      },
+      "submit": {
+        "sendPasswordLink": "Send Password Link",
+        "sendMagicLink": "Send Magic Link",
+        "sending": "Sending...",
+        "cancel": "Cancel"
+      }
+    },
+    "socialAuth": {
+      "google": "Continue with Google",
+      "linkedin": "Continue with LinkedIn"
+    },
+    "success": {
+      "passwordLinkSent": "Password creation link sent to {email}. Check your inbox and click the link to create your password!",
+      "magicLinkSent": "Magic link sent to {email}. Check your inbox!"
+    },
+    "footer": {
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "info": "After signing up, you'll verify your phone number and complete your profile before accessing your dashboard.",
+      "terms": "By signing up, you agree to our",
+      "termsLink": "Terms of Service",
+      "and": "and",
+      "privacyLink": "Privacy Policy"
+    },
+    "errors": {
+      "emailRequired": "Email address is required",
+      "userExists": "User with this email already exists",
+      "userExistsTip": "💡 Tip: If you already have an account, please",
+      "signInInstead": "sign in",
+      "magicLinkError": "Failed to send magic link",
+      "emailSignupError": "Failed to send password creation link",
+      "socialAuthError": "{provider} authentication failed"
+    }
+  }
+}
+

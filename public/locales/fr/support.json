@@ -1,0 +1,260 @@
+{
+  "title": "Support",
+  "hero": {
+    "title": "Alimentez une session, alimentez une vie",
+    "subtitle": "Votre contribution aide quelqu’un à s’arrêter, respirer et redécouvrir son chemin. Chaque montant fait une différence.",
+    "badge": "Détails du support"
+  },
+  "supportOptions": {
+    "gentleNudge": {
+      "title": "Une douce impulsion",
+      "emotionLabel": "Offrez un moment de calme",
+      "sessions": "1 session",
+      "validity": "2 semaines",
+      "description": "Idéal pour ceux qui ont besoin d’un léger encouragement vers plus de clarté"
+    },
+    "shiftForward": {
+      "title": "Un pas en avant",
+      "emotionLabel": "Soutenez le prochain pas sincère de quelqu’un",
+      "sessions": "2 sessions",
+      "validity": "1 mois",
+      "description": "Offrez à quelqu’un l’espace nécessaire pour avancer vers un pas significatif"
+    },
+    "deeperSpace": {
+      "title": "Un espace plus profond",
+      "emotionLabel": "Laissez-leur plus de temps pour réfléchir",
+      "sessions": "5 sessions",
+      "validity": "2 mois",
+      "description": "Créez un espace pour une exploration et une compréhension plus profondes"
+    },
+    "heart": {
+      "title": "Don du cœur",
+      "emotionLabel": "Donnez du fond du cœur",
+      "sessions": "Flexible",
+      "validity": "Flexible",
+      "description": "Contribuez au montant de votre choix pour aider à maintenir Drishiq accessible à ceux qui en ont besoin"
+    }
+  },
+  "form": {
+    "heading": {
+      "title": "Complétez les détails de votre support",
+      "subtitle": "Remplissez les informations ci-dessous pour finaliser votre contribution"
+    },
+    "personal_info": {
+      "title": "👤 Informations personnelles",
+      "anonymous_toggle": "Contribuer anonymement",
+      "anonymous_hint": "Votre contribution sera anonyme, mais votre paiement sera traité en toute sécurité"
+    },
+    "fields": {
+      "full_name": {
+        "label": "Nom complet",
+        "placeholder": "Entrez votre nom complet"
+      },
+      "email": {
+        "label": "Adresse e-mail",
+        "placeholder": "your.email@example.com"
+      },
+      "phone": {
+        "label": "Numéro de téléphone",
+        "placeholder": "+33 123456789"
+      }
+    },
+    "cause": {
+      "title": "🎯 Choix de la cause",
+      "description": "Choisissez où vous souhaitez que votre soutien soit alloué, ou laissez-nous décider où il est le plus nécessaire.",
+      "share_instead_label": "Laisser Drishiq l’allouer là où c’est le plus nécessaire (recommandé)"
+    },
+    "message": {
+      "title": "💌 Message personnel",
+      "optional": "Optionnel",
+      "hint": "Partagez un message d’encouragement ou expliquez au destinataire pourquoi vous le soutenez (optionnel).",
+      "placeholder": "Écrivez votre message ici...",
+      "footer_hint": "Votre message sera partagé avec le destinataire (si vous n’êtes pas anonyme)"
+    },
+    "buttons": {
+      "back_to_options": "← Retour aux options",
+      "processing": "Traitement...",
+      "complete_support": "💚 Finaliser le support"
+    }
+  },
+  "options": {
+    "title": "Options de support",
+    "custom": "Personnalisé",
+    "placeholder_enter_amount": "Entrez un montant"
+  },
+  "trust": {
+    "secure_title": "🔒 Sécurisé et transparent",
+    "secure_text": "Votre paiement est traité en toute sécurité grâce à un chiffrement conforme aux normes de l’industrie. Toutes les transactions sont transparentes et traçables.",
+    "ssl_encryption": "Chiffrement SSL",
+    "transparent": "Transparent"
+  },
+  "support_payment": {
+    "redirecting": "Redirection vers la section support...",
+    "loading": "Chargement..."
+  },
+  "payment": {
+    "page": {
+      "header": {
+        "title": "Paiement Drishiq",
+        "backToPlans": "← Retour aux plans"
+      },
+      "planSummary": {
+        "title": "Résumé du plan",
+        "planPrice": "Prix du plan",
+        "tax": "Taxe",
+        "totalAmount": "Montant total",
+        "location": "Localisation",
+        "pricingCategory": "Catégorie de tarification",
+        "credits": "Crédits"
+      },
+      "paymentMethods": {
+        "title": "Choisissez un mode de paiement",
+        "cashfree": {
+          "name": "Cashfree",
+          "description": "Carte, UPI, virement bancaire, portefeuille"
+        },
+        "paypal": {
+          "name": "PayPal",
+          "description": "PayPal, carte bancaire"
+        },
+        "proceed": "Procéder au paiement",
+        "selectMethod": "Sélectionnez un mode de paiement",
+        "securityNotice": "Votre paiement est sécurisé par un chiffrement SSL 256 bits"
+      },
+      "error": {
+        "title": "Erreur de paiement",
+        "backToPlans": "Retour aux plans",
+        "planNotFound": "Plan introuvable",
+        "planNotFoundMessage": "Impossible de trouver le plan sélectionné.",
+        "loading": "Chargement des détails du paiement..."
+      }
+    },
+    "process": {
+      "title": "Finalisez votre paiement",
+      "subtitle": "Traitement sécurisé avec plusieurs modes de paiement",
+      "serviceDetails": "Détails du service",
+      "service": "Service",
+      "amount": "Montant",
+      "credits": "Crédits",
+      "currency": "Devise",
+      "paymentMethodsAvailable": "Modes de paiement disponibles",
+      "paypal": {
+        "name": "PayPal",
+        "description": "Paiements internationaux"
+      },
+      "cashfree": {
+        "name": "Cashfree",
+        "description": "Paiements en Inde"
+      },
+      "phonepe": {
+        "name": "PhonePe",
+        "description": "Paiements UPI"
+      },
+      "paymentError": "Erreur de paiement",
+      "proceedToPayment": "Procéder au paiement",
+      "processing": "Traitement...",
+      "security": "🔒 Votre paiement est sécurisé selon les standards de l’industrie",
+      "loading": "Chargement des informations de paiement...",
+      "error": "Erreur",
+      "invalidDetails": "Détails de paiement invalides"
+    },
+    "failure": {
+      "title": "Paiement non abouti",
+      "subtitle": "Nous n'avons pas pu finaliser votre paiement",
+      "transactionFailed": "⚠️ Transaction échouée",
+      "notCharged": "Rassurez-vous ! Aucun montant n’a été débité.",
+      "possibleReasons": "Raisons possibles",
+      "reasons": {
+        "insufficientFunds": "Fonds insuffisants",
+        "incorrectCard": "Informations de carte incorrectes",
+        "bankDeclined": "Transaction refusée par la banque",
+        "networkIssues": "Problèmes de connexion réseau",
+        "cardExpired": "Carte expirée ou invalide"
+      },
+      "tryAgain": "Réessayer 🔄",
+      "backToPlans": "Retour aux plans",
+      "contactSupport": "Contacter le support",
+      "needHelp": "Besoin d’aide ?",
+      "helpMessage": "Si le problème persiste, veuillez contacter notre équipe d’assistance.",
+      "supportEmail": "support@drishiq.com"
+    },
+    "success": {
+      "title": "Paiement réussi",
+      "subtitle": "Votre paiement a été traité avec succès",
+      "message": "Merci pour votre paiement. Un e-mail de confirmation vous sera envoyé sous peu.",
+      "continue": "Continuer"
+    },
+    "successPage": {
+      "processing": "Traitement de votre paiement...",
+      "creditsAdded": "✓ Crédits ajoutés à votre compte",
+      "processingError": "Erreur de traitement",
+      "backToPlans": "Retour aux plans",
+      "paymentDataNotFound": "Données de paiement introuvables",
+      "unableToLoad": "Impossible de charger les détails du paiement.",
+      "paymentConfirmation": "Confirmation de paiement",
+      "plan": "Plan",
+      "creditsAddedLabel": "Crédits ajoutés",
+      "amountPaid": "Montant payé",
+      "transactionId": "ID de transaction",
+      "status": "Statut",
+      "paymentSuccessful": "Paiement réussi",
+      "whatsNext": "Et ensuite ?",
+      "creditsAddedToAccount": "Vos crédits ont été ajoutés à votre compte",
+      "startFirstSession": "• Commencez votre première session de clarté",
+      "checkEmail": "• Vérifiez votre e-mail pour la confirmation",
+      "shareGift": "• Partagez le cadeau avec le destinataire",
+      "goToChat": "Aller au chat →",
+      "viewAllPlans": "Voir tous les plans",
+      "shareJourney": "Partagez votre parcours avec Drishiq",
+      "shareTwitter": "Partager sur Twitter",
+      "shareLinkedIn": "Partager sur LinkedIn",
+      "categories": {
+        "prelaunch": {
+          "title": "🎉 Bienvenue dans la famille Drishiq !",
+          "subtitle": "Vous êtes un soutien précoce",
+          "message": "Merci de croire en la vision de Drishiq et d’aider à construire ses fondations.",
+          "badge": "Soutien précoce"
+        },
+        "postlaunch": {
+          "title": "✨ Votre parcours vers la clarté commence !",
+          "subtitle": "Bienvenue chez Drishiq",
+          "message": "Merci d'avoir choisi Drishiq. Vous avez fait le premier pas vers plus de conscience et de clarté.",
+          "badge": "Chercheur de clarté"
+        },
+        "gift": {
+          "title": "🎁 Votre cadeau de clarté est prêt !",
+          "subtitle": "Diffuser la lumière",
+          "message": "Merci d’avoir offert un cadeau de clarté à quelqu’un de spécial. Votre geste l’aidera à se poser, respirer et retrouver sa direction.",
+          "badge": "Donateur de clarté"
+        },
+        "support": {
+          "title": "🕊️ Merci pour votre compassion !",
+          "subtitle": "Créer une véritable différence",
+          "message": "Votre soutien ouvre la voie à quelqu’un pour trouver force et clarté lorsqu’il en a le plus besoin.",
+          "badge": "Personne compatissante",
+          "downloadBadge": "🎖️ Télécharger votre badge",
+          "badgeDescription": "Montrez votre soutien avec ce badge spécial",
+          "downloadButton": "Télécharger le badge"
+        }
+      }
+    },
+    "thankYou": {
+      "title": "Merci ! 🙏",
+      "subtitle": "Votre paiement a été traité avec succès",
+      "creditsAdded": "✅ Crédits ajoutés à votre compte",
+      "creditsReady": "+{credits} crédits prêts à l’emploi",
+      "whatsNext": "Et maintenant ?",
+      "creditsAvailable": "Vos crédits sont maintenant disponibles ! Vous pouvez démarrer votre première conversation ou explorer d’autres fonctionnalités.",
+      "startConversation": "Commencer ma première conversation 🚀",
+      "viewDashboard": "Voir mon tableau de bord",
+      "purchaseMore": "Acheter plus de crédits",
+      "needHelp": "Besoin d’aide ? Contactez notre support",
+      "supportEmail": "support@drishiq.com"
+    }
+  },
+  "errors": {
+    "submissionFailed": "Erreur lors de la soumission des détails du support. Veuillez réessayer.",
+    "paymentInitializationFailed": "Échec lors de l’initialisation du paiement. Veuillez réessayer.",
+    "paymentFailed": "Échec du paiement. Veuillez réessayer."
+  }
+}

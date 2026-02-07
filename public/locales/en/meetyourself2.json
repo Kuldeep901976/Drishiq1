@@ -1,0 +1,702 @@
+{
+  "giver": {
+    "meta": {
+      "page_title": "Support Giver",
+      "page_description": "Discover if you're giving more than you're refilling"
+    },
+    "stir": {
+      "line": {
+        "0": "When did you last ask for help?",
+        "1": "Do you feel tired more than you feel appreciated?",
+        "2": "How often do you say 'I'm fine' when you're not?",
+        "3": "Does helping still feel good, or just expected?",
+        "4": "Where do you put your own dreams when others need you?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Strong",
+        "subtitle": "Steady for everyone"
+      },
+      "1": {
+        "title": "Invisible",
+        "subtitle": "Forgotten in the background"
+      },
+      "2": {
+        "title": "Proud",
+        "subtitle": "Being the one who can handle it"
+      },
+      "3": {
+        "title": "Drained",
+        "subtitle": "Energy scattered across others"
+      },
+      "4": {
+        "title": "Protective",
+        "subtitle": "Shielding the people you love"
+      },
+      "5": {
+        "title": "Lonely",
+        "subtitle": "Few know how much you hold"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Princess Diana",
+        "profession": "Humanitarian",
+        "source": "Quote",
+        "quote": "\"Carry out a random act of kindness, with no expectation of reward.\""
+      },
+      "1": {
+        "name": "Mahatma Gandhi",
+        "profession": "Leader",
+        "source": "Quote",
+        "quote": "\"The best way to find yourself is to lose yourself in the service of others.\""
+      },
+      "2": {
+        "name": "Michelle Obama",
+        "profession": "Former First Lady",
+        "source": "Quote",
+        "quote": "\"You can't pour from an empty cup. Take care of yourself first.\""
+      },
+      "3": {
+        "name": "Fred Rogers",
+        "profession": "TV Host",
+        "source": "Quote",
+        "quote": "\"Look for the helpers. You will always find people who are helping.\""
+      },
+      "4": {
+        "name": "Dalai Lama",
+        "profession": "Spiritual Leader",
+        "source": "Quote",
+        "quote": "\"Our prime purpose in this life is to help others. And if you can't help them, at least don't hurt them.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "How DrishiQ Makes a Difference",
+      "intro_heading": "You don't have to choose between helping and being whole",
+      "intro_text": "Drishiq helps you protect your energy while staying the generous, steady presence you love being. You don't have to choose between helping and being whole.",
+      "cta_label": "Begin your clarity check →",
+      "features": {
+        "0": {
+          "icon": "🗺️",
+          "heading": "Clear Energy Map",
+          "description": "See where your giving drains you most."
+        },
+        "1": {
+          "icon": "🔋",
+          "heading": "Recharge Plans",
+          "description": "Simple, doable ways to refill before you're empty."
+        },
+        "2": {
+          "icon": "🛡️",
+          "heading": "Boundary Tools",
+          "description": "Practice saying no with confidence."
+        },
+        "3": {
+          "icon": "💬",
+          "heading": "Check-ins for You",
+          "description": "A safe space to be heard without being needed."
+        }
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Clear Energy Map",
+        "d": "See where your giving drains you most."
+      },
+      "1": {
+        "h": "Recharge Plans",
+        "d": "Simple, doable ways to refill before you are empty."
+      },
+      "2": {
+        "h": "Boundary Tools",
+        "d": "Practice saying no with confidence."
+      },
+      "3": {
+        "h": "Check-ins for You",
+        "d": "A safe space to be heard without being needed."
+      },
+      "title": "How DrishiQ Makes a Difference"
+    },
+    "try_this": "Try this:",
+    "section": {
+      "0": {
+        "emoji": "⚓",
+        "title": "Carrying More Than You Say",
+        "line": "You're the anchor in everyone's storm.",
+        "body": "You've learned to be unshakable for others. But even anchors need ground.",
+        "nudge": "Choose one small moment today to say, 'I need a break,' and take it — no explanations.",
+        "cta": {
+          "label": "Take one small pause →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "People assume you're always available.",
+          "1": "You solve problems before they're asked aloud.",
+          "2": "You hide your exhaustion to keep people calm."
+        },
+        "frame": {
+          "0": {
+            "h": "Always ready to help.",
+            "p": "Always ready to help."
+          },
+          "1": {
+            "h": "Handling load of others.",
+            "p": "Handling load of others."
+          },
+          "2": {
+            "h": "Always ready to help.",
+            "p": "Always ready to help."
+          }
+        }
+      },
+      "1": {
+        "emoji": "☕",
+        "title": "Giving Without Refilling",
+        "line": "Your cup keeps tipping forward.",
+        "body": "Helping others feels natural — until your reserves run low. Then giving stops feeling generous and starts feeling heavy.",
+        "nudge": "Block 30 minutes for yourself today. Protect it like you protect others' needs.",
+        "cta": {
+          "label": "Refill before you give →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You skip meals, sleep, or breaks to be there for someone.",
+          "1": "You feel resentment creeping in, but push it down.",
+          "2": "You rarely ask for anything back."
+        },
+        "frame": {
+          "0": {
+            "h": "Energy drains out.",
+            "p": "Energy drains out."
+          },
+          "1": {
+            "h": "Running on empty.",
+            "p": "Running on empty."
+          },
+          "2": {
+            "h": "Energy drains out.",
+            "p": "Energy drains out."
+          }
+        }
+      },
+      "2": {
+        "emoji": "🚧",
+        "title": "Boundaries You Haven't Drawn",
+        "line": "Saying yes has become automatic.",
+        "body": "Sometimes, supporting others means learning when to step back. Saying no doesn't mean you care less — it means you last longer.",
+        "nudge": "Say, 'I can help later' instead of 'yes' immediately. Notice how it feels.",
+        "cta": {
+          "label": "Set one boundary today →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You cancel your own plans when someone calls.",
+          "1": "You feel guilty about needing personal time.",
+          "2": "You can't remember the last time you declined a request."
+        },
+        "frame": {
+          "0": {
+            "h": "Limits that protect you.",
+            "p": "Limits that protect you."
+          },
+          "1": {
+            "h": "Offer whatever is left.",
+            "p": "Offer whatever is left."
+          },
+          "2": {
+            "h": "Limits that protect you.",
+            "p": "Limits that protect you."
+          }
+        }
+      },
+      "3": {
+        "emoji": "🫶",
+        "title": "The Helper Who Also Needs Help",
+        "line": "Strength is knowing when to lean, too.",
+        "body": "Support givers often forget they're allowed to ask for help. Letting others in doesn't make you less — it makes you human.",
+        "nudge": "Share one thing you're struggling with to someone you trust. Let them respond.",
+        "cta": {
+          "label": "Ask once this week →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You avoid asking to keep from burdening anyone.",
+          "1": "You worry people will see you as weak.",
+          "2": "You feel relief only in secret when someone steps up for you."
+        },
+        "frame": {
+          "0": {
+            "h": "Lighter together.",
+            "p": "Lighter together."
+          },
+          "1": {
+            "h": "Strength in allowing care.",
+            "p": "Strength in allowing care."
+          },
+          "2": {
+            "h": "Lighter together.",
+            "p": "Lighter together."
+          }
+        }
+      }
+    }
+  },
+  "escaper": {
+    "meta": {
+      "page_title": "Escaper",
+      "page_description": "Discover if you're running from problems instead of resolving them"
+    },
+    "stir": {
+      "line": {
+        "0": "Do you change jobs, relationships, or cities when things get tough?",
+        "1": "Do you fill your days with noise to avoid certain thoughts?",
+        "2": "Do you often feel relief now, but dread later?",
+        "3": "Patterns keep repeating no matter where you go?",
+        "4": "What would happen if you stopped running for a moment?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Relieved",
+        "subtitle": "The rush of being away"
+      },
+      "1": {
+        "title": "Anxious",
+        "subtitle": "Fear of being pulled back"
+      },
+      "2": {
+        "title": "Restless",
+        "subtitle": "Always scanning for the next exit"
+      },
+      "3": {
+        "title": "Exhausted",
+        "subtitle": "From constant change"
+      },
+      "4": {
+        "title": "Numb",
+        "subtitle": "Avoiding feelings altogether"
+      },
+      "5": {
+        "title": "Hopeful",
+        "subtitle": "Wishing the next place will be different"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Cheryl Strayed",
+        "profession": "Author",
+        "source": "Quote",
+        "quote": "\"You can't ride to the fair unless you get on the pony.\""
+      },
+      "1": {
+        "name": "Nelson Mandela",
+        "profession": "Leader",
+        "source": "Quote",
+        "quote": "\"Courage is not the absence of fear — it's inspiring others to move beyond it.\""
+      },
+      "2": {
+        "name": "Elizabeth Gilbert",
+        "profession": "Author",
+        "source": "Quote",
+        "quote": "\"Select your thoughts like you select your clothes.\""
+      },
+      "3": {
+        "name": "Anthony Bourdain",
+        "profession": "Chef & Traveler",
+        "source": "Quote",
+        "quote": "\"Travel isn't always pretty... The journey changes you.\""
+      },
+      "4": {
+        "name": "Brené Brown",
+        "profession": "Researcher",
+        "source": "Quote",
+        "quote": "\"Choose courage or comfort — not both.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "How Drishiq Helps You Face It",
+      "intro_text": "Drishiq helps you recognize patterns, understand what you're running from, and build courage to face it. You don't have to keep moving to find peace.",
+      "cta_label": "Begin your clarity check →",
+      "features": {
+        "0": {
+          "heading": "Pattern Recognition",
+          "description": "See what you're actually running from."
+        },
+        "1": {
+          "heading": "Root Work",
+          "description": "Address the core instead of symptoms."
+        },
+        "2": {
+          "heading": "Courage Building",
+          "description": "Learn to face discomfort without fleeing."
+        },
+        "3": {
+          "heading": "Grounding Practice",
+          "description": "Build real peace where you are."
+        }
+      }
+    },
+    "section": {
+      "0": {
+        "emoji": "🏃",
+        "title": "The Comfort of the Exit",
+        "line": "Leaving feels like winning — until it doesn't.",
+        "body": "There's a lightness in walking away. You convince yourself the problem was 'there,' not 'here.' But without facing it, it quietly follows you.",
+        "nudge": "Write down the last three big changes you made — and note what you were avoiding at the time.",
+        "cta": {
+          "label": "Spot your escape triggers →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You avoid conflict by disappearing from situations.",
+          "1": "You cut off relationships without explanation.",
+          "2": "You change your environment often to feel better."
+        },
+        "frame": {
+          "0": {
+            "h": "The easy way out",
+            "p": "The easy way out"
+          },
+          "1": {
+            "h": "Ready to go",
+            "p": "Ready to go"
+          },
+          "2": {
+            "h": "The easy way out",
+            "p": "The easy way out"
+          }
+        }
+      },
+      "1": {
+        "emoji": "🛣️",
+        "title": "Escaping in Disguise",
+        "line": "Sometimes running looks like chasing.",
+        "body": "Not all escapes are obvious. You might 'pursue opportunity' or 'seek adventure,' but deep down it's about avoiding the hard thing.",
+        "nudge": "Ask yourself: 'If I couldn't leave or distract myself, what would I have to face?'",
+        "cta": {
+          "label": "Tell the truth about your moves →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You constantly change focus when things get uncomfortable.",
+          "1": "You dive into new hobbies or work to distract from personal issues.",
+          "2": "You hide your avoidance behind ambition."
+        },
+        "frame": {
+          "0": {
+            "h": "Disguised as options",
+            "p": "Disguised as options"
+          },
+          "1": {
+            "h": "Busyness as shield",
+            "p": "Busyness as shield"
+          },
+          "2": {
+            "h": "Disguised as options",
+            "p": "Disguised as options"
+          }
+        }
+      },
+      "2": {
+        "emoji": "⛽",
+        "title": "The High Cost of Constant Motion",
+        "line": "Running drains more than it saves.",
+        "body": "Each escape takes energy — packing, planning, adjusting. You leave behind not just problems, but roots, relationships, and growth.",
+        "nudge": "List one thing you've lost from each escape — and ask if it was worth the relief.",
+        "cta": {
+          "label": "Keep what matters →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You feel exhausted despite 'starting fresh.'",
+          "1": "You miss people or opportunities you left.",
+          "2": "You sense you're always in the beginning phase of life."
+        },
+        "frame": {
+          "0": {
+            "h": "Missing connections",
+            "p": "Missing connections"
+          },
+          "1": {
+            "h": "Growth interrupted",
+            "p": "Growth interrupted"
+          },
+          "2": {
+            "h": "Missing connections",
+            "p": "Missing connections"
+          }
+        }
+      },
+      "3": {
+        "emoji": "🧭",
+        "title": "Facing Instead of Fleeing",
+        "line": "Freedom comes from resolution, not relocation.",
+        "body": "Sometimes the only way forward is through. Facing discomfort, naming the truth, and choosing to stay can break the loop.",
+        "nudge": "Commit to facing one small discomfort this week without leaving.",
+        "cta": {
+          "label": "Choose courage over comfort →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You've begun to see patterns in your escapes.",
+          "1": "You're tired of starting over.",
+          "2": "You're curious what would happen if you stayed."
+        },
+        "frame": {
+          "0": {
+            "h": "New perspective",
+            "p": "New perspective"
+          },
+          "1": {
+            "h": "Roots in place",
+            "p": "Roots in place"
+          },
+          "2": {
+            "h": "New perspective",
+            "p": "New perspective"
+          }
+        }
+      }
+    }
+  },
+  "problem-carrier": {
+    "meta": {
+      "page_title": "Problem Carrier",
+      "page_description": "Discover if you're carrying problems that aren't yours to solve"
+    },
+    "stir": {
+      "line": {
+        "0": "Do you feel like you're always 'holding it together' for everyone?",
+        "1": "Are you carrying issues that aren't yours to fix?",
+        "2": "Do you downplay your own struggles so no one worries?",
+        "3": "Have you forgotten what lightness feels like?",
+        "4": "What would you do with space in your hands — and your head?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Burdened",
+        "subtitle": "Heavy before the day starts"
+      },
+      "1": {
+        "title": "Responsible",
+        "subtitle": "The one everyone counts on"
+      },
+      "2": {
+        "title": "Protective",
+        "subtitle": "Keeping trouble from others"
+      },
+      "3": {
+        "title": "Stretched",
+        "subtitle": "Spread too thin across problems"
+      },
+      "4": {
+        "title": "Guarded",
+        "subtitle": "Careful what you reveal"
+      },
+      "5": {
+        "title": "Tired",
+        "subtitle": "Carrying more than you rest"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Robin Williams",
+        "profession": "Actor",
+        "source": "Quote",
+        "quote": "\"Everyone you meet is fighting a battle you know nothing about.\""
+      },
+      "1": {
+        "name": "Mother Teresa",
+        "profession": "Humanitarian",
+        "source": "Quote",
+        "quote": "\"If you can't feed a hundred people, feed just one.\""
+      },
+      "2": {
+        "name": "Barack Obama",
+        "profession": "Leader",
+        "source": "Quote",
+        "quote": "\"We don't quit. I don't quit.\""
+      },
+      "3": {
+        "name": "Malala Yousafzai",
+        "profession": "Activist",
+        "source": "Quote",
+        "quote": "\"We realize the importance of our voices only when we are silenced.\""
+      },
+      "4": {
+        "name": "Brené Brown",
+        "profession": "Researcher",
+        "source": "Quote",
+        "quote": "\"You can't get to courage without walking through vulnerability.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "How Drishiq Helps",
+      "features": {
+        "0": {
+          "heading": "Weight Mapping",
+          "description": "Visualize what's yours and what's not."
+        },
+        "1": {
+          "heading": "Let-Go Plans",
+          "description": "Small, safe steps to release excess load."
+        },
+        "2": {
+          "heading": "Boundary Practice",
+          "description": "Say no without guilt."
+        },
+        "3": {
+          "heading": "Support Loops",
+          "description": "Connect with those who can help carry."
+        }
+      }
+    },
+    "footer": {
+      "cta_primary": "Start your journey",
+      "cta_secondary": "Learn more"
+    },
+    "messages": {
+      "smoke_test": "[Smoke Test] Using framer-motion if present; otherwise falling back to plain elements."
+    },
+    "celeb_intro": "Problem Carrier, not problem solver — stories from known faces",
+    "emotion_intro": "What problem carrying can feel like",
+    "hero": {
+      "title": "Bearing Every Burden",
+      "subtitle": "It starts as helping, but ends up as living with problems that were never only yours. This space is for finally setting some of them down."
+    },
+    "cta": {
+      "early_access": "Unpack what's weighing on you — here",
+      "how": "How Drishiq helps"
+    },
+    "nudge_label": "Try this:",
+    "bridge": {
+      "title": "You are more than what you carry.",
+      "subtitle": "Drishiq helps you sort, share, and set down what's weighing on you — without losing who you are. You can still be strong without being overloaded.",
+      "cta": "Begin your clarity check →"
+    },
+    "section": {
+      "0": {
+        "emoji": "🧳",
+        "title": "Shoulders That Never Rest",
+        "line": "You've been holding weight for too long.",
+        "body": "Some problems are yours to solve. Others were handed to you because you could 'handle it.' Either way, the load doesn't get lighter just because you're strong.",
+        "nudge": "Write down every problem you're carrying. Circle only the ones that are truly yours to solve.",
+        "cta": {
+          "label": "Lighten your load →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "People share their crises without asking if you're okay.",
+          "1": "You work through personal struggles in silence.",
+          "2": "You're rarely on the receiving end of help."
+        },
+        "frame": {
+          "0": {
+            "h": "Heavy Bag",
+            "p": "The weight you carry."
+          },
+          "1": {
+            "h": "Shared Hands",
+            "p": "Distributing the load."
+          },
+          "2": {
+            "h": "Bag Opened",
+            "p": "Letting some things go."
+          }
+        }
+      },
+      "1": {
+        "emoji": "📦",
+        "title": "Problems That Aren't Yours",
+        "line": "You can care without carrying.",
+        "body": "It's noble to want to protect others, but not every problem needs to live in your arms. Boundaries can be acts of love too.",
+        "nudge": "The next time a problem comes to you, ask: 'What role do you want me to play?' before taking action.",
+        "cta": {
+          "label": "Practice letting go →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "You find yourself solving issues before being asked.",
+          "1": "You take on family, friend, or work burdens out of habit.",
+          "2": "You feel guilty when you step back."
+        },
+        "frame": {
+          "0": {
+            "h": "Passing the Box",
+            "p": "Letting others hold their own."
+          },
+          "1": {
+            "h": "Hands Free",
+            "p": "Creating space."
+          },
+          "2": {
+            "h": "Balanced Share",
+            "p": "Carrying together."
+          }
+        }
+      },
+      "2": {
+        "emoji": "🎭",
+        "title": "The Hidden Weight",
+        "line": "No one sees the full picture.",
+        "body": "When you hide what's heavy, people think you're fine. But invisibility only makes the load heavier.",
+        "nudge": "Tell one person the truth about something you've been downplaying.",
+        "cta": {
+          "label": "Share one truth →",
+          "href": "#assess"
+        },
+        "bullet": {
+          "0": "You rarely share your deeper struggles.",
+          "1": "You smile through exhaustion.",
+          "2": "You believe showing weight will worry others too much."
+        },
+        "frame": {
+          "0": {
+            "h": "Inviting understanding.",
+            "p": "Inviting understanding."
+          },
+          "1": {
+            "h": "Letting others see the truth.",
+            "p": "Letting others see the truth."
+          },
+          "2": {
+            "h": "Inviting understanding.",
+            "p": "Inviting understanding."
+          }
+        }
+      },
+      "3": {
+        "emoji": "👜",
+        "title": "Setting It Down Without Guilt",
+        "line": "Lighter doesn't mean weaker.",
+        "body": "You don't have to carry everything to prove your strength. Choosing what to carry means you last longer — and feel more alive.",
+        "nudge": "Choose one problem to hand off or pause on this week.",
+        "cta": {
+          "label": "Set one down →",
+          "href": "#assess"
+        },
+        "bullet": {
+          "0": "You've defined yourself by endurance.",
+          "1": "You hesitate to hand over responsibilities.",
+          "2": "You've forgotten how rest feels."
+        },
+        "frame": {
+          "0": {
+            "h": "Moving without load.",
+            "p": "Moving without load."
+          },
+          "1": {
+            "h": "Space to choose what's next.",
+            "p": "Space to choose what's next."
+          },
+          "2": {
+            "h": "Moving without load.",
+            "p": "Moving without load."
+          }
+        }
+      }
+    }
+  }
+}

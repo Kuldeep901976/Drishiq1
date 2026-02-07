@@ -1,0 +1,210 @@
+{
+  "suggestions": {
+    "title": "💡 コミュニティの提案",
+    "subtitle": "より良いDrishiqを作るために協力してください!新機能、デザインの改善、コンテンツモジュール、そしてプラットフォームをより価値あるものにするためのアイデアを共有してください。",
+    "successTitle": "提案が正常に送信されました!",
+    "successMessage": "フィードバックをありがとうございます。当チームは提案を確認し、今後のアップデートで検討いたします。",
+    "errorTitle": "送信に失敗しました",
+    "errorMessage": "提案の送信中にエラーが発生しました。もう一度お試しいただくか、サポートにお問い合わせください。",
+    "form": {
+      "categoryLabel": "これはどのような種類の提案ですか? *",
+      "categoryPlaceholder": "カテゴリを選択",
+      "otherCategoryLabel": "カテゴリを指定してください *",
+      "otherCategoryPlaceholder": "カスタムカテゴリを入力",
+      "titleLabel": "提案の簡潔なタイトル *",
+      "titlePlaceholder": "例: ダークモード切替を追加、モバイルナビゲーションの改善、新しいコンテンツモジュールの作成",
+      "descriptionLabel": "提案を詳しく説明してください *",
+      "descriptionPlaceholder": "何を見たいか、なぜ役立つか、どのように機能するかを教えてください...",
+      "priorityLabel": "これはあなたにとってどれくらい重要ですか? *",
+      "priorityPlaceholder": "優先度を選択",
+      "impactLabel": "誰がこれから恩恵を受けますか? *",
+      "impactPlaceholder": "影響範囲を選択",
+      "additionalDetailsLabel": "追加のコンテキストや例(任意)",
+      "additionalDetailsPlaceholder": "提案をより理解するのに役立つ追加のアイデア、例、またはコンテキスト...",
+      "aboutYouTitle": "あなたについて",
+      "submitterTypeLabel": "私は: *",
+      "submitterNameLabel": "お名前(任意)",
+      "submitterNamePlaceholder": "お名前",
+      "allowContactLabel": "この提案に関するフォローアップの質問のためにご連絡することを許可する",
+      "emailLabel": "メールアドレス(任意)",
+      "emailPlaceholder": "your.email@example.com",
+      "cancel": "キャンセル",
+      "submit": "提案を送信",
+      "submitting": "送信中..."
+    },
+    "categories": {
+      "communityPageDesign": "コミュニティページデザイン",
+      "ux": "UX",
+      "module": "モジュール",
+      "features": "機能",
+      "other": "その他"
+    },
+    "priorities": {
+      "low": "低 - あればいい",
+      "medium": "中 - 体験を改善する",
+      "high": "高 - 使いやすさを大幅に改善",
+      "critical": "重大 - 重要な機能をブロックする"
+    },
+    "impacts": {
+      "individual": "個人ユーザー",
+      "smallGroups": "小グループ",
+      "largeCommunity": "大規模コミュニティ",
+      "allUsers": "全ユーザー",
+      "businessOps": "ビジネス運営"
+    },
+    "submitterTypes": {
+      "guest": "ゲストユーザー",
+      "registered": "登録ユーザー",
+      "anonymous": "匿名"
+    },
+    "howWeUse": {
+      "title": "💭 提案の活用方法",
+      "analysis": {
+        "title": "📊 分析と優先順位付け",
+        "description": "すべての提案を確認し、コミュニティへの影響、実現可能性、ビジョンとの整合性に基づいて優先順位を付けます。"
+      },
+      "planning": {
+        "title": "🔄 開発計画",
+        "description": "トップの提案は、開発ロードマップと機能計画サイクルに組み込まれます。"
+      },
+      "updates": {
+        "title": "📢 コミュニティアップデート",
+        "description": "どの提案に取り組んでいるか、いつ利用可能になるかをコミュニティに通知し続けます。"
+      },
+      "collaboration": {
+        "title": "🤝 協力的な開発",
+        "description": "複雑な機能の場合、より詳細な要件とフィードバックを収集するためにご連絡することがあります。"
+      }
+    },
+    "successPage": {
+      "title": "提案ありがとうございます!",
+      "message": "フィードバックが正常に送信されました。当チームは提案を確認し、今後のアップデートで検討いたします。より良いDrishiqの構築にご協力いただきありがとうございます!",
+      "submitAnother": "別の提案を送信",
+      "backToHome": "ホームに戻る",
+      "tabs": {
+        "services": "🚀 Drishiqサービス",
+        "about": "💡 Drishiqについて"
+      },
+      "services": {
+        "title": "Drishiqがあなたのためにできることを発見",
+        "subtitle": "個人的および職業的な旅で明確さ、成長、成功を達成するために設計された包括的なサービスをご覧ください。",
+        "careerGuidance": {
+          "title": "キャリアガイダンス",
+          "description": "専門的な目標を達成するためのパーソナライズされたキャリアアドバイス、スキル評価、ロードマップ計画を取得します。"
+        },
+        "personalDevelopment": {
+          "title": "自己啓発",
+          "description": "重要な生活スキルを構築し、生産性を向上させ、持続可能な成功のための成長マインドセットを開発します。"
+        },
+        "communitySupport": {
+          "title": "コミュニティサポート",
+          "description": "志を同じくする人々とつながり、経験を共有し、成長するコミュニティからサポートを受けます。"
+        }
+      },
+      "about": {
+        "title": "Drishiqについて",
+        "subtitle": "私たちは従来のガイダンスを超えるプラットフォームを構築しています - すべての経験が集合的な成長に貢献するコミュニティを作成しています。",
+        "mission": {
+          "title": "🎯 私たちの使命",
+          "description1": "人生の課題をナビゲートし、最大限の可能性を達成するための賢く、パーソナライズされたガイダンスを提供すること。",
+          "description2": "私たちは、誰もが他の人に利益をもたらすことができるユニークな洞察と経験を持っていると信じています。当プラットフォームは、この知識を共有し、増幅するための空間を作成します。"
+        },
+        "vision": {
+          "title": "🌱 私たちのビジョン",
+          "description1": "個人の成長が誰にでもアクセス可能で、共有された経験が集合的な知識を生み出し、すべての人が成功への独自の道を見つけることができる世界。",
+          "description2": "私たちは単なるプラットフォームを構築しているのではありません - お互いの旅を真に理解し、サポートするコミュニティを育てています。"
+        },
+        "approach": {
+          "title": "💡 私たちのアプローチ",
+          "description": "最先端の技術と人間の知恵を組み合わせて、ユニークなガイダンス体験を作り出します。",
+          "points": {
+            "personalized": "あなたのユニークな状況に基づいたパーソナライズされた推奨事項",
+            "community": "コミュニティ主導の洞察と実世界の経験",
+            "learning": "あなたのニーズに継続的に学習し適応",
+            "safe": "成長と探索のための安全でサポート的な環境"
+          }
+        },
+        "whatsNext": {
+          "title": "🚀 次は何か",
+          "description1": "私たちはあなたのようなコミュニティのフィードバックと提案に基づいて常に進化しています。",
+          "description2": "今後の機能には次のものが含まれます:",
+          "features": {
+            "ai": "高度なAI駆動のガイダンスシステム",
+            "workshops": "インタラクティブなワークショップとウェビナー",
+            "mobile": "外出先でのサポートのためのモバイルアプリケーション",
+            "integration": "専門能力開発ツールとの統合"
+          }
+        }
+      },
+      "cta": {
+        "title": "旅を始める準備はできていますか?",
+        "message": "すでにコミュニティ主導の成長の力を体験している何千人もの人々に参加してください。",
+        "explore": "Drishiqを探索",
+        "readStories": "成功事例を読む"
+      },
+      "youtube": {
+        "title": "Drishiqユーザーの実際のストーリーを見る"
+      }
+    }
+  },
+  "home": {
+    "focusToday": "今日の焦点:",
+    "nudge": "リマインダー: 1行を共有するかライブルームに参加",
+    "postMorningThought": "朝の思考を投稿",
+    "joinLiveRoom": "ライブルームに参加",
+    "latestTrack": "最新のトラック:",
+    "viewComments": "コメントを表示",
+    "motivation": "🔥 午前9時のモチベーション",
+    "innerClarity": "✨ 内なる明晰さが目覚める",
+    "clarityQuote": "\"あなたが求めている明晰さはすでにあなたの中にあります - それは話す空間を待っています。\"",
+    "listenToMusic": "🎵 音楽を聴く",
+    "watchVideo": "📽️ ビデオを見る",
+    "readStory": "📖 ストーリーを読む",
+    "postThought": "📝 思考を投稿",
+    "feelingInspired": "インスピレーションを感じていますか? あなた自身のビート、声、またはバイブを共有してください - 誰かがあなたのリズムを必要としているかもしれません。",
+    "musicPicks": "🎵 あなたのための音楽ピック",
+    "topMusicContributors": "トップ音楽貢献者",
+    "videosEnjoy": "📽️ 楽しめるかもしれないビデオ",
+    "topVideoCreators": "トップビデオクリエイター",
+    "gotMessage": "🎥 共有するメッセージやキャプチャする価値のある瞬間はありますか? ビデオをアップロードして、誰かの笑顔の理由になりましょう。",
+    "realStories": "📚 実際のストーリー",
+    "topStorytellers": "トップストーリーテラー",
+    "gotSomething": "心に何かありますか? 創造性、ストーリー、または思考を共有してください - あなたの声が誰かの明晰さを点火するかもしれません。",
+    "creativeSpace": "🎨 クリエイティブスペース",
+    "topCreators": "トップクリエイター",
+    "unleashCreativity": "🎨 創造性を解放しましょう! スケッチ、レシピ、または詩的な思考であろうと - あなたの表現が誰かの世界を彩るかもしれません。",
+    "peopleSeekingHelp": "🆘 助けを求めている人々",
+    "topSupporters": "トップサポーター",
+    "notAlone": "🤝 あなたは一人ではありません。苦労を共有するか、親切な言葉を提供してください - あなたの存在が誰かのターニングポイントになるかもしれません。",
+    "eventsLike": "📅 好きかもしれないイベント",
+    "gotInterests": "📅 興味や情熱はありますか? あなたのバイブに合ったイベントを探索してください - そして次のターニングポイントを見つけるかもしれません。",
+    "askQuestion": "質問をする",
+    "whatsOnMind": "何を考えていますか?",
+    "tuneRecommendations": "推奨事項を調整",
+    "adjustWeights": "フィードをあなたのバイブに合わせるために重みとフィルターを調整します。",
+    "musicWeight": "音楽の重み",
+    "videoWeight": "ビデオの重み",
+    "storiesWeight": "ストーリーの重み",
+    "calm": "穏やか",
+    "energy": "エネルギー",
+    "focus": "集中",
+    "english": "英語",
+    "hindi": "ヒンディー語",
+    "puzzlesMindGames": "🧠 パズルと頭脳ゲーム",
+    "riddleOfDay": "今日の謎",
+    "logicChallenge": "論理チャレンジ",
+    "yourAnswer": "あなたの答え",
+    "reveal": "明らかにする",
+    "showAnswer": "答えを表示"
+  },
+  "tickers": {
+    "career": "☀️ キャリア: 機会が開かれています",
+    "love": "☀️ 愛: 正直な会話が魔法を目覚めさせる",
+    "health": "☀️ 健康: デトックスの時間",
+    "finance": "☀️ 財務: 投資を再評価",
+    "life": "☀️ 人生: コントロールではなく、明晰さを求める",
+    "moonInsight": "🌙 月の洞察: 毎日の感情的なガイダンスのために、生年月日、時刻、場所を共有してください",
+    "tip": "💬 ヒント: 今日は1行のジャーナルをつける",
+    "focus": "🧘 集中: 難しい電話の前にゆっくり息を吐く"
+  }
+}

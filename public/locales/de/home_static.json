@@ -1,0 +1,150 @@
+{
+  "about": {
+    "heading": "Über DrishiQ",
+    "description1": "DrishiQ ist eine Plattform, die dir hilft, die Herausforderungen des Lebens mit Klarheit und Selbstvertrauen zu meistern.",
+    "description2": "Wir bieten persönliche Beratung, Unterstützung und Ressourcen, damit du fundierte Entscheidungen treffen und wachsen kannst.",
+    "description3": {
+      "prefix": "Bereit, deine Reise zu beginnen?"
+    },
+    "join_button": "Jetzt beitreten",
+    "tagline": "Reflektieren. Entscheiden. Wachsen."
+  },
+  "hero": {
+    "message1": {
+      "title": "Etwas fühlt sich nicht richtig an — aber du kannst es nicht benennen",
+      "subtitle": "Entdecke mit DrishiQ die Räume, die noch unerforscht geblieben sind",
+      "button": "🔍 Schau genauer hin"
+    },
+    "message2": {
+      "title": "Das Problem ist klar, der Weg nicht",
+      "subtitle": "Erkenne die nebligen Teile. DrishiQ geht an deiner Seite",
+      "button": "Erleben"
+    },
+    "message3": {
+      "title": "Du bist müde, so zu tun, als wäre alles in Ordnung",
+      "subtitle": "Du musst die Last nicht allein tragen. DrishiQ trifft dich dort, wo du gerade bist",
+      "button": "👤 Begegne dir selbst"
+    },
+    "message4": {
+      "title": "Du brauchst keine Reparatur — nur einen Moment, der dich wirklich sieht",
+      "subtitle": "Arbeite mit DrishiQ, damit du gesehen wirst — nicht repariert, nicht verurteilt",
+      "button": "💪 Steh aufrecht"
+    },
+    "message5": {
+      "title": "Lass uns beginnen — sanft",
+      "subtitle": "Es ist kein Sprung. Nur ein stiller Schritt — wenn du bereit bist",
+      "button": "🚀 Lass uns anfangen"
+    },
+    "message6": {
+      "title": "Du versuchst es, aber bist nicht überzeugt",
+      "subtitle": "Manchmal ist es ein Hindernis. Manchmal ein Mangel an Fähigkeiten. Manchmal nur eine kleine Unterstützung.",
+      "button": "🤝 DrishiQ kann helfen"
+    }
+  },
+  "choose_path": {
+    "title": "Wähle deinen Weg",
+    "description": "Gehe durch die Tür, die sich richtig anfühlt — baue, erkunde, verschenke oder unterstütze. Jede Tür öffnet sich zur Hoffnung.",
+    "cards": {
+      "build": {
+        "title": "Baue mit uns",
+        "subtitle": "Co-Kreation / Zusammenarbeit",
+        "hover_message": "Deine Ideen und Energie können helfen, DrishiQ für alle zu gestalten."
+      },
+      "early_access": {
+        "title": "Früher Zugang",
+        "subtitle": "Probiere zuerst / entdecke neue Werkzeuge",
+        "hover_message": "Sei einer der Ersten, die ausprobieren, was wir bauen."
+      },
+      "support": {
+        "title": "Unterstütze andere",
+        "subtitle": "Community-Unterstützung",
+        "hover_message": "Hilf, Sitzungen für Menschen zu finanzieren, die sie sich nicht leisten können."
+      },
+      "gift": {
+        "title": "Schenke Klarheit",
+        "subtitle": "Für jemanden, der dir wichtig ist",
+        "hover_message": "Schenke Klarheit an jemanden, an den du glaubst."
+      }
+    }
+  },
+  "features": {
+    "heading_features": {
+      "title": "Funktionen",
+      "line1": "DrishiQ ist nicht nur ein Werkzeug — es ist ein Begleiter. Jede Funktion ist darauf ausgelegt, den Lärm zu beruhigen, Reflexion auszulösen und dich zu dem zurückzuführen, was zählt."
+    },
+    "card1": {
+      "title": "🧠 Frei von Urteilen",
+      "bullet1": "Reflektierter, intelligenter Dialog, der dich dort abholt, wo du stehst",
+      "bullet2": "Sicherer Raum für mentale Klarheit — keine vorgefertigten Ratschläge",
+      "quote": "💬 \"Endlich etwas, das zuhört, ohne vorschnell Schlüsse zu ziehen.\""
+    },
+    "card2": {
+      "title": "🌍 Global Native",
+      "bullet1": "Vollständige mehrsprachige Unterstützung",
+      "bullet2": "Für echte Menschen entwickelt, Phase 1 deckt 85 % der Weltbevölkerung ab",
+      "quote": "🌐 \"Es fühlt sich an, als wäre es für mich gemacht — in meiner Sprache, auf meine Weise.\""
+    },
+    "card3": {
+      "title": "🗣️ Bequeme App",
+      "bullet1": "Sprich natürlich — DrishiQ hört aufmerksam zu",
+      "bullet2": "Verwandelt deine Verwirrung in eine visuelle Klarheitskarte",
+      "quote": "🎧 \"Es verstand, was ich nicht einmal in Worte fassen konnte.\""
+    },
+    "card4": {
+      "title": "🤝 Inklusives Design",
+      "bullet1": "Sponsere eine Sitzung, fordere eine an oder gib etwas weiter",
+      "bullet2": "Ein gemeinsamer Kreis von Suchenden und Unterstützern",
+      "quote": "❤️ \"Selbst als ich nicht zahlen konnte, stand jemand hinter mir.\""
+    },
+    "cta": {
+      "description": "DrishiQ ist hier, um dir zu helfen, innezuhalten, zu reflektieren und voranzukommen — egal wer du bist oder woher du kommst."
+    },
+    "try_now": {
+      "button": "Jetzt ausprobieren"
+    },
+    "heading_bridge": "Menschliche Verbindung",
+    "description": "Hoffnung ist das Erste, was wir im Schmerz verlieren — und das größte Geschenk, das wir geben können. DrishiQ ist die Brücke, die verhindert, dass sich jemand leer fühlt.",
+    "giver_card": {
+      "title": "🎁 Wenn du geben kannst",
+      "text_lines": [
+        "Deine Unterstützung verwandelt Zögern in Hoffnung.",
+        "Eine von dir gesponserte Sitzung kann für jemand anderen lebensrettend sein.",
+        "Keine Wohltätigkeit, sondern Verbindung.",
+        "Keine Almosen, sondern eine feste Hand."
+      ],
+      "button": "🎁 Eine Sitzung sponsern"
+    },
+    "needy_card": {
+      "title": "🌱 Wenn du Hilfe brauchst",
+      "text_lines": [
+        "Fragen ist Stärke, keine Schwäche.",
+        "Wenn die Kosten dich aufhalten, erzähle uns deine Geschichte. Wir versuchen, dich mit einem fürsorglichen Anbieter zu verbinden.",
+        "Wir sorgen dafür, dass du Raum hast, Klarheit zu finden,",
+        "und den Mut, deinen nächsten Schritt zu gehen."
+      ],
+      "button": "✍️ Teile deine Herausforderung"
+    },
+    "footer_text": "Eine bessere Welt beginnt, wenn Geben und Empfangen denselben Raum teilen."
+  },
+  "grow_with_us": {
+    "title": "Wachse mit uns",
+    "subtitle": "Schließe dich unserer Mission an, persönliches Wachstum für alle zugänglich zu machen",
+    "roles": {
+      "investor": { "title": "Investor", "description": "Unterstütze unsere Mission finanziell", "icon": "💰" },
+      "promoter": { "title": "Promoter", "description": "Verbreite unsere Botschaft", "icon": "📣" },
+      "ambassador": { "title": "Botschafter", "description": "Vertrete uns in deiner Gemeinschaft", "icon": "🌍" },
+      "creator": { "title": "Schöpfer", "description": "Erschaffe und kollaboriere", "icon": "✨" },
+      "affiliate": { "title": "Affiliate", "description": "Mach bei unserem Partnerprogramm mit", "icon": "🌱" },
+      "referral": { "title": "Empfehlungspartner", "description": "Teile und empfehle andere", "icon": "🔗" }
+    },
+    "cards_cta": "Jede Rolle zählt. Wähle den Weg, der sich richtig anfühlt — und lass uns gemeinsam Klarheit schaffen.",
+    "join_button": "🎁 Schließe dich unserer Bewegung an",
+    "learn_more": "Mehr erfahren"
+  },
+  "mental_fog": {
+    "title": "Bereit, den mentalen Nebel zu lichten?",
+    "description": "Starte eine Sitzung mit DrishiQ und erlebe Klarheit durch intelligente Reflexion.",
+    "button": "🚀 Sitzung starten"
+  },
+  "tagline": "Reflektieren. Entscheiden. Wachsen."
+}

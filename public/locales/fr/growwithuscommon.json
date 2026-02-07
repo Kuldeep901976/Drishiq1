@@ -1,0 +1,284 @@
+{
+  "main_page": {
+    "hero": {
+      "badge": "Grandir avec Drishique",
+      "title": "🌱 Ensemble, nous nous élevons",
+      "description": "Que vous soyez affilié, investisseur, créateur ou voix communautaire, il y a un rôle pour vous dans la construction d'une plateforme sereine et axée sur la clarté qui grandit avec les gens, pas avec la pression.",
+      "stir_lines": {
+        "choose_lane": "Choisissez votre voie. Nous construirons la route avec vous.",
+        "share_earn": "Partagez ce que vous aimez. Gagnez ce que vous construisez.",
+        "belief_momentum": "Transformez la croyance en dynamique.",
+        "collaborate": "Collaborez sans chaos.",
+        "early_seen_useful": "Soyez précoce. Soyez visible. Soyez utile."
+      },
+      "cta": {
+        "explore_paths": "Explorez les 6 chemins",
+        "tell_interest": "Dites-nous votre intérêt"
+      },
+      "visual": {
+        "title": "Un arbre de croissance vivant avec six branches lumineuses",
+        "description": "Chaque branche représente un chemin pour grandir avec Drishique, avec de l'énergie qui s'écoule vers et depuis notre plateforme – la co-croissance en action."
+      }
+    },
+    "why_Drishique": {
+      "title": "Pourquoi grandir avec une plateforme axée sur la clarté ?",
+      "description": "Drishique aide les gens à transformer le brouillard en petites étapes honnêtes – à leur rythme. Les partenaires nous aident à atteindre, enseigner et soutenir cette mission. Vous apportez vos forces. Nous partageons nos outils, notre audience et nos ressources.",
+      "growth_loop": {
+        "title": "Ensemble, nous créons une boucle de croissance plus saine",
+        "steps": ["Valeur", "Confiance", "Portée", "Revenu", "Réinvestissement"]
+      },
+      "features": {
+        "transparent_terms": {
+          "title": "Conditions transparentes",
+          "description": "Attribution claire et rapports honnêtes"
+        },
+        "co_created_launches": {
+          "title": "Lancements co-créés",
+          "description": "Pas des rafales ponctuelles, mais des partenariats significatifs"
+        },
+        "practical_assets": {
+          "title": "Actifs pratiques",
+          "description": "Kits de copie, suivi, tableaux de bord"
+        },
+        "recognition_loops": {
+          "title": "Boucles de reconnaissance",
+          "description": "Mentions, fonctionnalités, études de cas"
+        }
+      }
+    },
+    "six_paths": {
+      "title": "Les six chemins",
+      "description": "Choisissez votre voie – nous construirons la dynamique ensemble",
+      "learn_more": "En savoir plus"
+    },
+    "roles": {
+      "affiliates": {
+        "title": "Affiliés",
+        "description": "Gagnez en partageant un produit auquel vous croyez."
+      },
+      "referrals": {
+        "title": "Parrainage",
+        "description": "Invitez quelqu'un qui aimera Drishique et recevez une récompense."
+      },
+      "investors": {
+        "title": "Investisseurs",
+        "description": "Financez une plateforme centrée sur les gens avec des jalons clairs."
+      },
+      "ambassadors": {
+        "title": "Ambassadeurs",
+        "description": "Soyez la voix de Drishique dans votre cercle ou votre ville."
+      },
+      "collaborators": {
+        "title": "Créateurs / Collaborateurs",
+        "description": "Créez du contenu, des fonctionnalités et des expériences – ensemble."
+      },
+      "promoters": {
+        "title": "Promoteurs",
+        "description": "Amplifiez les lancements et les histoires sur les canaux que vous utilisez déjà."
+      }
+    },
+    "shared_impact": {
+      "title": "Ce que nous construisons avec les partenaires",
+      "description": "Ensemble, nous créons un impact significatif qui dure"
+    }
+  },
+  
+  "interest": {
+    "role_copy": {
+      "investor": {
+        "title": "✨ Investissez dans la clarté",
+        "tagline": "Partagez vos détails et explorons comment votre investissement peut façonner la clarté."
+      },
+      "investors": {
+        "title": "✨ Investissez dans la clarté",
+        "tagline": "Partagez vos détails et explorons comment votre investissement peut façonner la clarté."
+      },
+      "promoter": {
+        "title": "📣 Utilisez votre voix pour amplifier la clarté",
+        "tagline": "Parlez-nous de votre plateforme et de comment vous aimeriez amplifier la clarté."
+      },
+      "promoters": {
+        "title": "📣 Utilisez votre voix pour amplifier la clarité",
+        "tagline": "Parlez-nous de votre plateforme et de comment vous aimeriez amplifier la clarté."
+      },
+      "ambassador": {
+        "title": "🌍 Soyez le visage de la clarté dans votre monde",
+        "tagline": "Faites-nous connaître votre communauté et comment vous aimeriez représenter la clarté."
+      },
+      "ambassadors": {
+        "title": "🌍 Soyez le visage de la clarté dans votre monde",
+        "tagline": "Faites-nous connaître votre communauté et comment vous aimeriez représenter la clarté."
+      },
+      "creator": {
+        "title": "✨ Créez pour la clarté. Collaborez pour le changement.",
+        "tagline": "Montrez-nous votre art et comment vous aimeriez contribuer avec votre créativité."
+      },
+      "collaborators": {
+        "title": "✨ Créez pour la clarité. Collaborez pour le changement.",
+        "tagline": "Montrez-nous votre art et comment vous aimeriez contribuer avec votre créativité."
+      },
+      "affiliate": {
+        "title": "🌱 Rejoignez le cercle du changement",
+        "tagline": "Dites-nous comment vous allez partager Drishique et faites partie de notre cercle d'affiliés."
+      },
+      "affiliates": {
+        "title": "🌱 Rejoignez le cercle du changement",
+        "tagline": "Dites-nous comment vous allez partager Drishique et faites partie de notre cercle d'affiliés."
+      },
+      "referral": {
+        "title": "🔗 Partagez la clarté, partagez la bienveillance",
+        "tagline": "Dites-nous qui vous aimeriez inviter ou comment vous prévoyez d'utiliser le parrainage pour aider les autres."
+      },
+      "referrals": {
+        "title": "🔗 Partagez la clarté, partagez la bienveillance",
+        "tagline": "Dites-nous qui vous aimeriez inviter ou comment vous prévoyez d'utiliser le parrainage pour aider les autres."
+      }
+    },
+    
+    "form": {
+      "name_label": "Nom complet",
+      "name_placeholder": "Entrez votre nom complet",
+      "email_label": "Adresse e-mail",
+      "email_placeholder": "your@email.com",
+      "phone_label": "Numéro de téléphone",
+      "phone_placeholder": "1234567890",
+      "notes_label": "Y a-t-il quelque chose que vous aimeriez partager ?",
+      "notes_placeholder": "Contexte, objectifs ou liens que vous souhaitez que nous voyions",
+      "privacy_notice": "Nous ne partagerons jamais vos détails. Vos informations sont sûres et privées.",
+      "submit_button": "Soumettre",
+      
+      "investor_details": "Détails d'investissement",
+      "investment_stage": "Stade d'investissement",
+      "investment_stage_placeholder": "Amorce, Série A, Croissance, etc.",
+      "ticket_size": "Montant d'investissement",
+      "ticket_size_placeholder": "$50K, $100K, $500K+",
+      "invest_timeline": "Calendrier d'investissement",
+      "invest_timeline_placeholder": "Immédiat, 3-6 mois, en exploration",
+      
+      "promoter_details": "Détails du promoteur",
+      "platforms": "Plateformes",
+      "platforms_placeholder": "Instagram, YouTube, Blog, Newsletter",
+      "audience": "Taille de l'audience",
+      "audience_placeholder": "10K, 50K, 100K+ followers/subscribers",
+      "sample_links": "Liens d'exemple",
+      "sample_links_placeholder": "Liens vers votre meilleur contenu promotionnel",
+      
+      "ambassador_details": "Détails de l'ambassadeur",
+      "community": "Communauté",
+      "community_placeholder": "Étudiants, professionnels, groupes locaux",
+      "region": "Région",
+      "region_placeholder": "Ville, État ou communautés en ligne",
+      "activities": "Activités",
+      "activities_placeholder": "Événements, ateliers, rencontres que vous organisez",
+      
+      "creator_details": "Détails du créateur",
+      "craft_area": "Domaine de création",
+      "craft_area_placeholder": "Écriture, design, vidéo, audio, etc.",
+      "portfolio": "Portfolio",
+      "portfolio_placeholder": "Liens vers votre meilleur travail ou portfolio",
+      
+      "affiliate_details": "Détails de l'affilié",
+      "affiliate_channels": "Canaux d'affiliation",
+      "affiliate_channels_placeholder": "Site web, réseaux sociaux, liste d'e-mails",
+      "traffic_estimate": "Estimation du trafic",
+      "traffic_estimate_placeholder": "Visiteurs mensuels, followers, abonnés",
+      "payout_preference": "Préférence de paiement",
+      "payout_preference_placeholder": "PayPal, bank transfer, crypto, etc.",
+      
+      "referral_details": "Détails de parrainage",
+      "person_name": "Nom de la personne",
+      "person_name_placeholder": "Qui recommandez-vous ?",
+      "person_email": "E-mail de la personne (optionnel)",
+      "person_email_placeholder": "their@email.com",
+      "relationship": "Relation",
+      "relationship_placeholder": "Ami, collègue, famille, autre"
+    },
+    
+    "otp": {
+      "title": "📱 Vérifiez votre téléphone",
+      "message": "Nous avons envoyé un code à 6 chiffres à",
+      "placeholder": "Entrez le code à 6 chiffres",
+      "verify_button": "Vérifier le code",
+      "verifying": "Vérification en cours..."
+    },
+    
+    "success": {
+      "investor": "Merci d'avoir investi dans la clarté !",
+      "promoter": "Merci d'avoir amplifié la clarité !",
+      "ambassador": "Merci de représenter la clarté !",
+      "creator": "Merci d'avoir créé pour la clarté !",
+      "affiliate": "Merci d'avoir rejoint notre cercle !",
+      "referral": "Merci de partager la clarté !",
+      "message": "Nous avons envoyé un code de vérification à votre téléphone. Veuillez vérifier vos messages et entrer le code pour terminer votre demande."
+    }
+  },
+  
+  "success": {
+    "next_steps_title": "Que se passe-t-il ensuite ?",
+    "email_confirmation_title": "Confirmation par e-mail",
+    "email_confirmation_desc": "Vous recevrez bientôt un e-mail de confirmation avec tous les détails de votre demande.",
+    "phone_verification_title": "Vérification téléphonique",
+    "phone_verification_desc": "Votre numéro de téléphone a été vérifié et sera utilisé pour les communications futures.",
+    "questions_text": "Des questions ? Contactez-nous à",
+    
+    "investor": {
+      "title": "Demande d'investissement complétée !",
+      "description": "Votre demande d'investissement a été soumise et vérifiée avec succès. Notre équipe examinera vos détails et vous contactera dans les 24 à 48 heures.",
+      "next_step_1": "Notre équipe d'investissement examinera votre demande",
+      "next_step_2": "Nous planifierons un appel pour discuter de votre thèse d'investissement",
+      "next_step_3": "Vous recevrez des informations détaillées sur nos tours de financement",
+      "next_step_4": "Nous vous tiendrons informé de nos jalons de croissance",
+      "cta_text": "Explorez notre vision"
+    },
+    
+    "promoter": {
+      "title": "Demande de promoteur complétée !",
+      "description": "Votre demande de promoteur a été soumise et vérifiée avec succès. Notre équipe examinera les détails de votre plateforme et vous contactera dans les 24 à 48 heures.",
+      "next_step_1": "Notre équipe marketing examinera les détails de votre plateforme",
+      "next_step_2": "Nous discuterons des opportunités de collaboration et des conditions",
+      "next_step_3": "Vous recevrez des matériaux et directives promotionnels",
+      "next_step_4": "Nous configurerons le suivi de vos activités promotionnelles",
+      "cta_text": "Voir nos produits"
+    },
+    
+    "ambassador": {
+      "title": "Demande d'ambassadeur complétée !",
+      "description": "Votre demande d'ambassadeur a été soumise et vérifiée avec succès. Notre équipe examinera les détails de votre communauté et vous contactera dans les 24 à 48 heures.",
+      "next_step_1": "Notre équipe communautaire examinera votre demande",
+      "next_step_2": "Nous discuterons de votre rôle et vos responsabilités",
+      "next_step_3": "Vous recevrez des matériaux et directives d'ambassadeur",
+      "next_step_4": "Nous vous mettrons en contact avec d'autres ambassadeurs",
+      "cta_text": "Rejoignez notre communauté"
+    },
+    
+    "creator": {
+      "title": "Demande de créateur complétée !",
+      "description": "Votre demande de créateur a été soumise et vérifiée avec succès. Notre équipe examinera votre portfolio et vous contactera dans les 24 à 48 heures.",
+      "next_step_1": "Notre équipe créative examinera votre portfolio",
+      "next_step_2": "Nous discuterons des opportunités de collaboration",
+      "next_step_3": "Vous recevrez des briefs créatifs et directives",
+      "next_step_4": "Nous configurerons un espace de travail pour vos projets",
+      "cta_text": "Voir nos travaux"
+    },
+    
+    "affiliate": {
+      "title": "Demande d'affilié complétée !",
+      "description": "Votre demande d'affilié a été soumise et vérifiée avec succès. Notre équipe examinera vos détails et vous contactera dans les 24 à 48 heures.",
+      "next_step_1": "Notre équipe d'affiliation examinera votre demande",
+      "next_step_2": "Nous discuterons des taux de commission et des conditions",
+      "next_step_3": "Vous recevrez des liens et matériaux d'affiliation",
+      "next_step_4": "Nous configurerons le suivi de vos références",
+      "cta_text": "Commencez à gagner"
+    },
+    
+    "referral": {
+      "title": "Demande de parrainage complétée !",
+      "description": "Votre demande de parrainage a été soumise et vérifiée avec succès. Notre équipe examinera vos détails et vous contactera dans les 24 à 48 heures.",
+      "next_step_1": "Notre équipe de parrainage examinera votre demande",
+      "next_step_2": "Nous discuterons des conditions de parrainage et des récompenses",
+      "next_step_3": "Vous recevrez des liens et matériaux de parrainage",
+      "next_step_4": "Nous suivrons vos activités de parrainage",
+      "cta_text": "Partagez Drishique"
+    }
+  }
+}

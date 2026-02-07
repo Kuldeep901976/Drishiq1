@@ -1,0 +1,418 @@
+{
+  "solo": {
+    "topband": {
+      "label": "Solo, pas seulement seul — histoires de visages familiers"
+    },
+    "hero": {
+      "title": "Solo, pas silencieux",
+      "subtitle": "Vous aimez la liberté. Vous ressentez la paix. Et certaines nuits, le calme semble un peu plus fort.",
+      "cta": {
+        "primary": "Vérifiez avec vous-même — ici",
+        "secondary": "Comment Drisheeq aide"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Votre espace est-il calme — ou simplement vide?",
+        "1": "Qui entend vos petites victoires aujourd'hui?",
+        "2": "La routine vous dirige-t-elle — ou vous aide-t-elle?",
+        "3": "Quand avez-vous ressenti pour la dernière fois d'être pleinement vu?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Liberté",
+        "subtitle": "Vos règles, votre rythme"
+      },
+      "1": {
+        "title": "Paix",
+        "subtitle": "Le silence qui guérit"
+      },
+      "2": {
+        "title": "Espace",
+        "subtitle": "Place pour grandir"
+      },
+      "3": {
+        "title": "Solitude",
+        "subtitle": "Les bords qui piquent"
+      },
+      "4": {
+        "title": "Bloqué",
+        "subtitle": "Routine en boucle"
+      },
+      "5": {
+        "title": "Prêt",
+        "subtitle": "Pour un changement doux"
+      }
+    },
+    "emotions": {
+      "label": "Comment la vie solo peut se sentir"
+    },
+    "celeb": {
+      "0": {
+        "name": "Serena Williams",
+        "profession": "Joueuse de tennis",
+        "quote": "\"La concentration calme avant le match est cruciale.\""
+      },
+      "1": {
+        "name": "Steve Jobs",
+        "profession": "Entrepreneur",
+        "quote": "\"Votre temps est limité, alors ne le gaspillez pas à vivre la vie de quelqu'un d'autre.\""
+      },
+      "2": {
+        "name": "Emma Watson",
+        "profession": "Actrice",
+        "quote": "\"Je ne me suis jamais sentie aussi forte que lorsque je suis seule.\""
+      },
+      "3": {
+        "name": "A.P.J. Abdul Kalam",
+        "profession": "Scientifique",
+        "quote": "\"L'homme a besoin de difficultés car elles sont nécessaires pour profiter du succès.\""
+      },
+      "4": {
+        "name": "Mary Kom",
+        "profession": "Boxeuse",
+        "quote": "\"Ne laissez personne vous dire que vous ne pouvez pas.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Premier appartement en solo",
+        "line": "Le rêve devenu réalité. L'écho est venu avec.",
+        "body": "Vous avez enfin un endroit qui respire comme vous. Mais les premières nuits semblent plus grandes que votre voix. La liberté est réelle — et le calme que personne ne voit aussi.",
+        "bullet": {
+          "0": "Vous allumez des émissions pour la compagnie, pas pour l'histoire.",
+          "1": "Le dîner est rapide; la chaise en face reste inutilisée.",
+          "2": "Les bonnes nouvelles semblent petites quand il n'y a pas de témoin."
+        },
+        "nudge": "Formalisez un moment: servez la nourriture, allumez une bougie, dites une ligne de gratitude à voix haute — apprenez à la pièce votre voix.",
+        "frame": {
+          "0": {
+            "h": "Nuit de liberté",
+            "p": "Vos règles. Votre playlist. Les lumières comme vous voulez."
+          },
+          "1": {
+            "h": "Écho au dîner",
+            "p": "Chaise que personne ne tire. Nouvelles sans place."
+          },
+          "2": {
+            "h": "Petit rituel",
+            "p": "Posez une assiette. Allumez une bougie. Faites-en le vôtre."
+          }
+        },
+        "cta": "Essayez avec Drisheeq →"
+      },
+      "1": {
+        "title": "Loin de la maison",
+        "line": "L'éclat de la nouvelle ville. La douleur du dimanche.",
+        "body": "Vous avez déménagé pour une raison — croissance, une chance, une réinitialisation. Les jours de semaine sont assez occupés. Les dimanches peuvent s'étirer comme un retard d'aéroport dans votre propre chambre.",
+        "bullet": {
+          "0": "Vous reportez les appels parce qu'il n'y a 'rien à dire'.",
+          "1": "Vous travaillez toute la journée mais ne remplissez pas.",
+          "2": "Les fenêtres montrent la vie en cours et vous regardez."
+        },
+        "nudge": "Envoyez cette phrase à quelqu'un 'Je pense à toi, pas besoin de répondre.' Puis sortez pour un repère — arbre, café, coin — et appelez-le vôtre.",
+        "frame": {
+          "0": {
+            "h": "Éclat de la nouvelle ville",
+            "p": "Lessive, courses, pensées qui restent."
+          },
+          "1": {
+            "h": "Calme du dimanche",
+            "p": "Dites bonjour, vous n'avez pas besoin de raison"
+          },
+          "2": {
+            "h": "Appel à la maison",
+            "p": "Dites bonjour. Vous n'avez pas besoin de raison."
+          }
+        },
+        "cta": "Créez un petit repère →"
+      },
+      "2": {
+        "title": "Routine sans fin",
+        "line": "Être efficace n'est pas être nourri.",
+        "body": "Votre journée fonctionne comme une application de liste de tâches — cloches satisfaisantes, couleur minimale. La machine fonctionne. La personne à l'intérieur veut quelque chose de plus doux.",
+        "bullet": {
+          "0": "Vous oubliez quand vous avez ri à voix haute seul pour la dernière fois.",
+          "1": "Vous faites défiler pour dormir et vous réveillez fatigué.",
+          "2": "Vous annulez de petits plans avec le vous futur."
+        },
+        "nudge": "Ajoutez une chose nourrissante que vous pouvez faire en quelques minutes: s'étirer sur le sol, appeler un cousin, faire des œufs attentivement.",
+        "frame": {
+          "0": {
+            "h": "Victoires sur pilote automatique",
+            "p": "Gym ✔ Travail ✔ Préparation ✔"
+          },
+          "1": {
+            "h": "Moments silencieux",
+            "p": "Bonnes nouvelles, personne pour pousser."
+          },
+          "2": {
+            "h": "Ajouter une chose",
+            "p": "Une promenade. Un texte. Une pause fenêtre."
+          }
+        },
+        "cta": "Ajoutez quelque chose de nourrissant →"
+      },
+      "3": {
+        "title": "Victoire solo",
+        "line": "Quand la pièce reste petite et la victoire grande.",
+        "body": "Vous l'avez fait. L'écran brille, le chat ping, et puis il n'y a que vous et l'air. La joie sans témoins compte aussi — c'est la vôtre.",
+        "bullet": {
+          "0": "Vous voulez partager mais ne voulez pas paraître nécessiteux.",
+          "1": "La victoire dans une pièce vide semble petite.",
+          "2": "Vous vous demandez si cela compte quand personne ne regarde."
+        },
+        "nudge": "Prenez une photo du moment. Écrivez trois mots qui décrivent ce que cela fait. C'est votre histoire à raconter.",
+        "frame": {
+          "0": {
+            "h": "Éclat de l'écran",
+            "p": "Notification. Réalisation. Vous."
+          },
+          "1": {
+            "h": "Pièce vide",
+            "p": "Écho du succès. Personne pour toper."
+          },
+          "2": {
+            "h": "Capturez-le",
+            "p": "Photo. Mots. Votre histoire."
+          }
+        },
+        "cta": "Capturez votre victoire →"
+      }
+    },
+    "how": {
+      "title": "Comment Drisheeq fait la différence",
+      "0": {
+        "h": "Clarté solo",
+        "d": "Voyez vos modèles clairement, sans jugement."
+      },
+      "1": {
+        "h": "Coups de pouce doux",
+        "d": "Petits pas qui s'adaptent à votre rythme solo."
+      },
+      "2": {
+        "h": "Espace pour respirer",
+        "d": "Outils pour créer une solitude significative."
+      },
+      "3": {
+        "h": "Choix de connexion",
+        "d": "Décidez quand et comment vous connecter."
+      }
+    },
+    "nudge": {
+      "label": "Essayez ceci:"
+    }
+  },
+  "giving_beyond": {
+    "topband": {
+      "label": "Au-delà du don, pas seulement généreux — histoires de visages familiers"
+    },
+    "hero": {
+      "title": "Donner au-delà de soi",
+      "subtitle": "Votre cœur est si grand que vous oubliez souvent de garder un peu d'amour pour vous-même. Vous voyez des besoins partout et vous vous sentez obligé de les satisfaire, même si cela vous coûte tout.",
+      "cta": {
+        "primary": "Trouvez votre équilibre du don →",
+        "secondary": "Comment Drisheeq aide?"
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Donnez-vous jusqu'à ce qu'il ne vous reste rien pour vous-même?",
+        "1": "Ressentez-vous de la culpabilité lorsque vous ne pouvez pas aider quelqu'un?",
+        "2": "Mettez-vous constamment les besoins des autres avant les vôtres?",
+        "3": "Ressentez-vous du ressentiment lorsque votre don n'est pas apprécié?",
+        "4": "À quoi ressemblerait donner à partir d'un lieu d'abondance plutôt que de vide?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Généreux",
+        "subtitle": "Toujours prêt à donner"
+      },
+      "1": {
+        "title": "Épuisé",
+        "subtitle": "Donner jusqu'au vide"
+      },
+      "2": {
+        "title": "Amer",
+        "subtitle": "Quand le don n'est pas rendu"
+      },
+      "3": {
+        "title": "Coupable",
+        "subtitle": "Quand vous ne pouvez pas aider"
+      },
+      "4": {
+        "title": "Invisible",
+        "subtitle": "Vos besoins sont négligés"
+      },
+      "5": {
+        "title": "Sage",
+        "subtitle": "Apprendre à donner sagement"
+      }
+    },
+    "emotions": {
+      "label": "Comment au-delà du don peut se sentir"
+    },
+    "celeb": {
+      "0": {
+        "name": "Mère Teresa",
+        "profession": "Humanitaire",
+        "quote": "\"Ce n'est pas combien nous donnons mais combien d'amour nous mettons dans le don qui compte.\""
+      },
+      "1": {
+        "name": "Martin Luther King Junior",
+        "profession": "Leader des droits civiques",
+        "quote": "\"La question la plus persistante et urgente de la vie est: 'Que faites-vous pour les autres?'\""
+      },
+      "2": {
+        "name": "Nelson Mandela",
+        "profession": "Leader",
+        "quote": "\"Ce qui compte dans la vie n'est pas le simple fait que nous ayons vécu. C'est la différence que nous avons faite dans la vie des autres.\""
+      },
+      "3": {
+        "name": "Malala Yousafzai",
+        "profession": "Militante",
+        "quote": "\"Lorsque le monde entier est silencieux, même une seule voix devient puissante.\""
+      },
+      "4": {
+        "name": "Oprah Winfrey",
+        "profession": "Leader médiatique",
+        "quote": "\"La plus grande aventure que vous puissiez entreprendre est de vivre la vie de vos rêves.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Donner au-delà de vos limites",
+        "line": "Vous donnez jusqu'à ce qu'il ne reste rien à donner.",
+        "body": "Votre cœur est si grand que vous oubliez souvent de garder un peu d'amour pour vous-même. Vous voyez des besoins partout et vous vous sentez obligé de les satisfaire, même si cela vous coûte tout.",
+        "bullet": {
+          "0": "Vous mettez constamment les besoins des autres avant les vôtres.",
+          "1": "Vous ressentez de la culpabilité lorsque vous ne pouvez pas aider quelqu'un.",
+          "2": "Vous demandez rarement de l'aide, même lorsque vous en avez désespérément besoin."
+        },
+        "nudge": "Aujourd'hui, identifiez une petite façon de prendre soin de vous sans culpabilité.",
+        "frame": {
+          "0": {
+            "h": "Main secourable",
+            "p": "Toujours tendre la main"
+          },
+          "1": {
+            "h": "Tasse vide",
+            "p": "Courir à vide"
+          },
+          "2": {
+            "h": "Cœur d'or",
+            "p": "Intentions pures"
+          }
+        },
+        "cta": "Apprenez à donner de manière durable →"
+      },
+      "1": {
+        "title": "Équilibre du service",
+        "line": "Le vrai service inclut prendre soin du serveur.",
+        "body": "Les aidants les plus efficaces sont ceux qui maintiennent leur propre bien-être. Lorsque vous êtes vide, vous ne pouvez donner votre meilleur à personne.",
+        "bullet": {
+          "0": "Vous négligez régulièrement votre santé et vos besoins.",
+          "1": "Vous sentez que vous n'en faites jamais assez, peu importe combien vous donnez.",
+          "2": "Vous avez du mal à établir des limites avec ceux que vous aidez."
+        },
+        "nudge": "Cette semaine, établissez une limite: dites 'Je peux aider, mais pas maintenant' à une demande.",
+        "frame": {
+          "0": {
+            "h": "Balances équilibrées",
+            "p": "Trouver l'équilibre"
+          },
+          "1": {
+            "h": "Soins personnels",
+            "p": "Se recharger"
+          },
+          "2": {
+            "h": "Limites saines",
+            "p": "Protéger votre énergie"
+          }
+        },
+        "cta": "Construire des habitudes de don durables →"
+      },
+      "2": {
+        "title": "Le cycle du vide",
+        "line": "Donner sans recevoir crée un cycle insoutenable.",
+        "body": "Lorsque vous ne faites que donner et ne recevez jamais, vous créez un flux à sens unique qui mène finalement à l'épuisement. Le don sain implique à la fois donner et recevoir.",
+        "bullet": {
+          "0": "Vous vous sentez mal à l'aise lorsque d'autres essaient de vous aider.",
+          "1": "Vous croyez que demander de l'aide fait de vous un fardeau.",
+          "2": "Vous avez oublié comment recevoir avec grâce."
+        },
+        "nudge": "Pratiquez la réception: cette semaine, acceptez une petite offre d'aide sans expliquer pourquoi vous en avez besoin.",
+        "frame": {
+          "0": {
+            "h": "Cycle du don",
+            "p": "Flux continu"
+          },
+          "1": {
+            "h": "Recevoir de l'aide",
+            "p": "Apprendre à accepter"
+          },
+          "2": {
+            "h": "Renouvellement",
+            "p": "Trouver l'équilibre"
+          }
+        },
+        "cta": "Brisez le cycle du vide →"
+      },
+      "3": {
+        "title": "Impact durable",
+        "line": "Le don le plus puissant vient d'un cœur plein.",
+        "body": "Lorsque vous prenez soin de vous tout en prenant soin des autres, votre impact se multiplie. Vous devenez une force durable pour le bien dans le monde.",
+        "bullet": {
+          "0": "Vous voulez faire une différence durable dans le monde.",
+          "1": "Vous êtes prêt à apprendre des pratiques de don durables.",
+          "2": "Vous voulez inspirer les autres par votre exemple."
+        },
+        "nudge": "Partagez votre parcours de don avec quelqu'un qui pourrait bénéficier de votre expérience.",
+        "frame": {
+          "0": {
+            "h": "Effet d'entraînement",
+            "p": "Créer un impact durable"
+          },
+          "1": {
+            "h": "Inspirer les autres",
+            "p": "Diriger par l'exemple"
+          },
+          "2": {
+            "h": "Don durable",
+            "p": "Impact à long terme"
+          }
+        },
+        "cta": "Créer un impact durable →"
+      }
+    },
+    "how": {
+      "title": "Comment Drisheeq fait la différence",
+      "0": {
+        "h": "Suivi de l'équilibre du don",
+        "d": "Voyez où et combien vous donnez."
+      },
+      "1": {
+        "h": "Outils de repos et de renouvellement",
+        "d": "Intégrez le réapprovisionnement dans votre routine."
+      },
+      "2": {
+        "h": "Coaching des limites",
+        "d": "Apprenez à dire oui sans vous perdre."
+      },
+      "3": {
+        "h": "Planification de l'impact",
+        "d": "Concentrez-vous sur le don qui dure."
+      }
+    },
+    "nudge": {
+      "label": "Essayez ceci:"
+    },
+    "bridge": {
+      "title": "Vous pouvez donner sans perdre votre lumière.",
+      "body": "Drisheeq aide les donneurs à trouver l'équilibre entre la générosité et la durabilité personnelle, afin que votre gentillesse devienne une force pour toute une vie.",
+      "cta": "Commencez votre vérification de clarté →"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "drishiq-chatmodule",
+  "version": "1.0.0",
+  "description": "DrishiQ ChatModule - AI-powered conversational interface with Trishek Green UI",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=packages/contracts --workspace=packages/core --workspace=packages/llm --workspace=packages/policy --workspace=packages/ui --workspace=packages/worker && next build",
+    "dev": "npm run dev --workspaces",
+    "lint": "npm run lint --workspaces",
+    "type-check": "npm run type-check --workspaces",
+    "clean": "npm run clean --workspaces",
+    "chat:dev": "cd apps/chat && npm run dev",
+    "admin:dev": "cd apps/admin && npm run dev",
+    "chat:build": "cd apps/chat && npm run build",
+    "admin:build": "cd apps/admin && npm run build"
+  },
+  "keywords": [
+    "drishiq",
+    "chat",
+    "ai",
+    "conversational",
+    "trishek-green",
+    "chatmodule"
+  ],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

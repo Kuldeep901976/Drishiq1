@@ -1,0 +1,31 @@
+--- a/lib/ddsa/db-adapters.ts
++++ b/lib/ddsa/db-adapters.ts
+@@ -231,9 +231,10 @@ export async function getRecentMessages(
+ /**
+  * Insert AI response into ai_responses table
++ * Uses upsert to handle conflicts gracefully
+  */
+ export async function insertAiResponse(payload: AiResponseInsert): Promise<any | null> {
+   try {
+     const supabase = createServiceClient();
+     
+-    const { data, error } = await supabase
++    // Use upsert to handle duplicate response_id conflicts
++    const { data, error } = await supabase
+       .from('ai_responses')
+-      .insert({
++      .upsert({
+         response_id: payload.response_id,
+         thread_id: payload.thread_id,
+@@ -251,7 +252,8 @@ export async function insertAiResponse(payload: AiResponseInsert): Promise<any
+       })
+       .select()
+       .single();
+ 
+-    if (error) {
++    // On conflict, return existing row instead of error
++    if (error && !error.message?.includes('duplicate') && !error.message?.includes('conflict')) {
+       console.error('❌ Error inserting AI response:', error);
+       return null;
+     }
+

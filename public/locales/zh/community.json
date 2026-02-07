@@ -1,0 +1,210 @@
+{
+  "suggestions": {
+    "title": "💡 社区建议",
+    "subtitle": "帮助我们打造更好的德瑞希克！分享您对新功能、设计优化、内容模块以及任何能让平台对您更有价值的想法。",
+    "successTitle": "建议提交成功！",
+    "successMessage": "感谢您的反馈。我们的团队会审核您的建议，并在未来更新中进行参考。",
+    "errorTitle": "提交失败",
+    "errorMessage": "提交您的建议时出现错误，请重试或联系支持团队。",
+    "form": {
+      "categoryLabel": "这属于哪种类型的建议？ *",
+      "categoryPlaceholder": "选择类别",
+      "otherCategoryLabel": "请填写您的类别 *",
+      "otherCategoryPlaceholder": "输入自定义类别",
+      "titleLabel": "为您的建议填写一个简短标题 *",
+      "titlePlaceholder": "例如：添加深色模式开关、改进移动端导航、创建新的内容模块",
+      "descriptionLabel": "详细描述您的建议 *",
+      "descriptionPlaceholder": "告诉我们您想看到什么、为什么有帮助、它可能如何运作…",
+      "priorityLabel": "这对您来说有多重要？ *",
+      "priorityPlaceholder": "选择优先级",
+      "impactLabel": "谁会从中受益？ *",
+      "impactPlaceholder": "选择影响范围",
+      "additionalDetailsLabel": "更多背景或示例（可选）",
+      "additionalDetailsPlaceholder": "分享更多想法、示例或背景信息，以帮助我们更好理解您的建议…",
+      "aboutYouTitle": "关于您",
+      "submitterTypeLabel": "我属于： *",
+      "submitterNameLabel": "您的名字（可选）",
+      "submitterNamePlaceholder": "您的名字",
+      "allowContactLabel": "允许我们就此建议向您提问并联系您",
+      "emailLabel": "邮箱地址（可选）",
+      "emailPlaceholder": "your.email@example.com",
+      "cancel": "取消",
+      "submit": "提交建议",
+      "submitting": "提交中..."
+    },
+    "categories": {
+      "communityPageDesign": "社区页面设计",
+      "ux": "用户体验（UX）",
+      "module": "模块",
+      "features": "功能",
+      "other": "其他"
+    },
+    "priorities": {
+      "low": "低 - 有更好",
+      "medium": "中 - 能提升使用体验",
+      "high": "高 - 大幅提升可用性",
+      "critical": "紧急 - 阻碍核心功能"
+    },
+    "impacts": {
+      "individual": "单个用户",
+      "smallGroups": "小型群体",
+      "largeCommunity": "大型社区",
+      "allUsers": "所有用户",
+      "businessOps": "业务运营"
+    },
+    "submitterTypes": {
+      "guest": "访客用户",
+      "registered": "注册用户",
+      "anonymous": "匿名"
+    },
+    "howWeUse": {
+      "title": "💭 我们如何使用您的建议",
+      "analysis": {
+        "title": "📊 分析与优先级",
+        "description": "我们会审核所有建议，并根据社区影响、可行性与平台愿景匹配度进行优先排序。"
+      },
+      "planning": {
+        "title": "🔄 开发计划",
+        "description": "优先建议将被加入我们的开发路线图和功能规划周期中。"
+      },
+      "updates": {
+        "title": "📢 社区更新",
+        "description": "我们会向社区更新哪些建议正在开发，何时上线。"
+      },
+      "collaboration": {
+        "title": "🤝 协作完善",
+        "description": "对于复杂功能，我们可能会联系您收集更多需求与反馈。"
+      }
+    },
+    "successPage": {
+      "title": "感谢您的建议！",
+      "message": "您的反馈已成功提交。我们的团队会审核并在未来更新中参考。感谢您帮助我们打造更好的德瑞希克！",
+      "submitAnother": "再提交一个建议",
+      "backToHome": "返回首页",
+      "tabs": {
+        "services": "🚀 德瑞希克服务",
+        "about": "💡 关于德瑞希克"
+      },
+      "services": {
+        "title": "探索德瑞希克能为您做什么",
+        "subtitle": "查看我们为帮助您在个人和职场道路上获得清晰、成长和成功而打造的服务。",
+        "careerGuidance": {
+          "title": "职业指导",
+          "description": "获取个性化职业咨询、能力评估和发展规划，帮助您实现职业目标。"
+        },
+        "personalDevelopment": {
+          "title": "个人成长",
+          "description": "培养关键生活技能、提升效率，并建立持续成长的心态。"
+        },
+        "communitySupport": {
+          "title": "社区支持",
+          "description": "与志同道合的人建立联系，分享经验并获得支持。"
+        }
+      },
+      "about": {
+        "title": "关于德瑞希克",
+        "subtitle": "我们正在打造一个超越传统咨询的平台——一个让每段经历都能促进集体成长的社区。",
+        "mission": {
+          "title": "🎯 我们的使命",
+          "description1": "提供智能、个性化的指导，帮助人们应对生活挑战，发挥完整潜力。",
+          "description2": "我们相信每个人都有独特的洞察与经验，可以帮助他人。我们的平台让这些知识得以分享和放大。"
+        },
+        "vision": {
+          "title": "🌱 我们的愿景",
+          "description1": "一个让每个人都能轻松获得个人成长机会的世界。",
+          "description2": "我们不仅在构建平台，更在培养一个真正理解并支持彼此旅程的社区。"
+        },
+        "approach": {
+          "title": "💡 我们的方式",
+          "description": "我们结合先进技术与真实的人类智慧，打造独特的指导体验。",
+          "points": {
+            "personalized": "基于您情况的个性化建议",
+            "community": "社区驱动的洞察和真实故事",
+            "learning": "持续学习并根据您的需求调整",
+            "safe": "安全、支持性的成长环境"
+          }
+        },
+        "whatsNext": {
+          "title": "🚀 接下来会有什么",
+          "description1": "我们根据社区反馈不断进化，包括您的建议。",
+          "description2": "即将推出的功能包括：",
+          "features": {
+            "ai": "更先进的 AI 指导系统",
+            "workshops": "互动式工作坊与直播课程",
+            "mobile": "随时可用的移动应用",
+            "integration": "与职业发展工具的集成"
+          }
+        }
+      },
+      "cta": {
+        "title": "准备好开启你的旅程了吗？",
+        "message": "加入已经体验到社区驱动成长力量的数万人。",
+        "explore": "探索德瑞希克",
+        "readStories": "阅读成功故事"
+      },
+      "youtube": {
+        "title": "观看德瑞希克用户的真实故事"
+      }
+    }
+  },
+  "home": {
+    "focusToday": "您今天的关注点：",
+    "nudge": "提示：发一条一句话的想法或加入直播房间",
+    "postMorningThought": "发布晨间想法",
+    "joinLiveRoom": "加入直播房间",
+    "latestTrack": "您的最新曲目：",
+    "viewComments": "查看评论",
+    "motivation": "🔥 早上 9 点激励提示",
+    "innerClarity": "✨ 内在清晰正在觉醒",
+    "clarityQuote": "\"你寻找的清晰已经在你内心，只是需要空间被听见。\"",
+    "listenToMusic": "🎵 听音乐",
+    "watchVideo": "📽️ 看视频",
+    "readStory": "📖 阅读故事",
+    "postThought": "📝 发布您的想法",
+    "feelingInspired": "灵感来了？分享您的节奏、声音或心情——可能有人正需要它。",
+    "musicPicks": "🎵 为您推荐的音乐",
+    "topMusicContributors": "热门音乐贡献者",
+    "videosEnjoy": "📽️ 您可能喜欢的视频",
+    "topVideoCreators": "热门视频创作者",
+    "gotMessage": "🎥 有想说的话或珍贵瞬间吗？上传您的视频，成为别人微笑的原因。",
+    "realStories": "📚 真实故事",
+    "topStorytellers": "热门故事讲述者",
+    "gotSomething": "心里有什么吗？分享您的创造、故事或想法——它可能点亮别人的内心。",
+    "creativeSpace": "🎨 创意空间",
+    "topCreators": "热门创作者",
+    "unleashCreativity": "🎨 释放您的创造力！无论是一幅画、一道菜或一段文字——您的表达可能为别人带来色彩。",
+    "peopleSeekingHelp": "🆘 需要帮助的人",
+    "topSupporters": "热门支持者",
+    "notAlone": "🤝 您不是一个人。说出您的困境或向他人提供一句暖心的话——这可能是他们的转折点。",
+    "eventsLike": "📅 您可能喜欢的活动",
+    "gotInterests": "📅 有兴趣爱好吗？探索符合您心情的活动，也许会找到新的方向。",
+    "askQuestion": "提一个问题",
+    "whatsOnMind": "您在想什么？",
+    "tuneRecommendations": "调整您的推荐内容",
+    "adjustWeights": "调整权重和筛选项，使内容更符合您的状态。",
+    "musicWeight": "音乐权重",
+    "videoWeight": "视频权重",
+    "storiesWeight": "故事权重",
+    "calm": "平静",
+    "energy": "能量",
+    "focus": "专注",
+    "english": "英语",
+    "hindi": "印地语",
+    "puzzlesMindGames": "🧠 谜题与脑力游戏",
+    "riddleOfDay": "今日谜题",
+    "logicChallenge": "逻辑挑战",
+    "yourAnswer": "您的答案",
+    "reveal": "显示",
+    "showAnswer": "显示答案"
+  },
+  "tickers": {
+    "career": "☀️ 职业：机会正在打开",
+    "love": "☀️ 爱情：真诚的对话能带来奇迹",
+    "health": "☀️ 健康：是时候排毒了",
+    "finance": "☀️ 财务：重新评估投资",
+    "life": "☀️ 生活：追求清晰，而不是控制",
+    "moonInsight": "🌙 月亮洞察：分享您的生日、时间和地点以获取每日情绪指引",
+    "tip": "💬 小提示：写下一句今天的心情",
+    "focus": "🧘 专注：困难电话前先慢慢呼一口气"
+  }
+}

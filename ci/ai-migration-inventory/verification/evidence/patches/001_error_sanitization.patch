@@ -1,0 +1,29 @@
+--- a/app/api/ai/call-v2/route.ts
++++ b/app/api/ai/call-v2/route.ts
+@@ -252,7 +252,14 @@ export async function POST(request: NextRequest) {
+ 
+   } catch (error: any) {
+-    console.error('❌ Error in /api/ai/call-v2:', error);
++    // Sanitize error messages - don't expose secrets or stack traces in production
++    const errorMessage = error.message || 'Internal server error';
++    const sanitizedError = errorMessage
++      .replace(/sk-[a-zA-Z0-9]{20,}/g, '[REDACTED]')
++      .replace(/key-[a-zA-Z0-9]{20,}/g, '[REDACTED]');
++    
++    console.error('❌ Error in /api/ai/call-v2:', sanitizedError);
+     
+     return NextResponse.json(
+       { 
+         ok: false,
+-        error: error.message || 'Internal server error',
+-        details: process.env.NODE_ENV === 'development' ? error.stack : undefined
++        error: sanitizedError,
++        details: process.env.NODE_ENV === 'development' 
++          ? error.stack?.replace(/sk-[a-zA-Z0-9]{20,}/g, '[REDACTED]') 
++          : undefined
+       },
+       { status: 500 }
+     );
+   }
+ }
+

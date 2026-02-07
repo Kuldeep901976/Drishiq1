@@ -1,0 +1,56 @@
+# Render Deployment Ignore File
+# Note: Render deploys from Git, so .gitignore controls what gets deployed
+# Files already in Git will be deployed unless removed from Git tracking
+
+# Documentation (already ignored by .gitignore)
+*.md
+!README.md
+
+# Test files
+__tests__/
+*.test.*
+*.spec.*
+test-results/
+playwright-report/
+
+# Development scripts
+scripts/
+*.sh
+*.bat
+*.ps1
+deploy*.sh
+deploy*.bat
+
+# Reports and logs
+reports/
+*.log
+*-report-*.json
+
+# Database scripts
+*.sql
+migrations/
+database/
+
+# Development tools
+cli/
+admin-auth/
+examples/
+infra/
+
+# Debug and test files
+debug-*.js
+check-*.js
+fix-*.js
+*.backup
+
+# This file is for reference only
+# Actual filtering is done by .gitignore
+
+
+
+
+
+
+
+
+

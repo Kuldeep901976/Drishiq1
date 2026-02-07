@@ -1,0 +1,141 @@
+{
+  "edges": [
+    {
+      "from": "greeting",
+      "to": "cfq",
+      "type": "explicit",
+      "evidence": "lib/ddsa/stages/greeting-stage.ts:112-114: return { status: 'ok', nextStage: 'cfq', ... }",
+      "condition": "Challenge identified or maxRounds reached"
+    },
+    {
+      "from": "cfq",
+      "to": "intent",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:64: requires: ['greeting'] for intent stage",
+      "condition": "CFQ answered"
+    },
+    {
+      "from": "intent",
+      "to": "rapid_triage",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:75: requires: ['intent'] for rapid_triage",
+      "condition": "Intent confirmed"
+    },
+    {
+      "from": "rapid_triage",
+      "to": "expert_selection",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:85: requires: ['rapid_triage'] for expert_selection",
+      "condition": "Triage complete"
+    },
+    {
+      "from": "expert_selection",
+      "to": "bundled_intake",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:95: requires: ['expert_selection'] for bundled_intake",
+      "condition": "Expert selected"
+    },
+    {
+      "from": "bundled_intake",
+      "to": "stakeholders",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:105: requires: ['bundled_intake'] for stakeholders",
+      "condition": "Intake completed"
+    },
+    {
+      "from": "bundled_intake",
+      "to": "history",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:115: requires: ['bundled_intake'] for history",
+      "condition": "Intake completed (parallel)"
+    },
+    {
+      "from": "bundled_intake",
+      "to": "assumptions",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:125: requires: ['bundled_intake'] for assumptions",
+      "condition": "Intake completed (parallel)"
+    },
+    {
+      "from": "expert_selection",
+      "to": "core_problem",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:135: requires: ['expert_selection'] for core_problem",
+      "condition": "Expert selected"
+    },
+    {
+      "from": "core_problem",
+      "to": "options",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:146: requires: ['core_problem'] for options",
+      "condition": "Core problem confirmed"
+    },
+    {
+      "from": "options",
+      "to": "plan",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:166: requires: ['options', 'core_problem'] for plan",
+      "condition": "Options presented"
+    },
+    {
+      "from": "plan",
+      "to": "feedback_final",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:176: requires: ['plan'] for feedback_final",
+      "condition": "Plan generated"
+    },
+    {
+      "from": "expert_selection",
+      "to": "enrichment",
+      "type": "inferred",
+      "inferred": true,
+      "evidence": "lib/ddsa/stageManifest.ts:156: requires: ['expert_selection'] for enrichment",
+      "condition": "Expert selected (parallel background)"
+    }
+  ],
+  "parallelStages": [
+    {
+      "stage": "stakeholders",
+      "canRunParallel": true,
+      "evidence": "lib/ddsa/stageManifest.ts:107: parallelSafe: true"
+    },
+    {
+      "stage": "history",
+      "canRunParallel": true,
+      "evidence": "lib/ddsa/stageManifest.ts:117: parallelSafe: true"
+    },
+    {
+      "stage": "assumptions",
+      "canRunParallel": true,
+      "evidence": "lib/ddsa/stageManifest.ts:127: parallelSafe: true"
+    },
+    {
+      "stage": "options",
+      "canRunParallel": true,
+      "evidence": "lib/ddsa/stageManifest.ts:148: parallelSafe: true"
+    },
+    {
+      "stage": "enrichment",
+      "canRunParallel": true,
+      "evidence": "lib/ddsa/stageManifest.ts:158: parallelSafe: true"
+    }
+  ],
+  "dynamicSelection": {
+    "file": "lib/ddsa/dynamic-stage-selector.ts",
+    "function": "selectNextStage",
+    "usesOrchestrator": true,
+    "evidence": "Uses questioning_orchestrator.generate() to select optimal next question/stage"
+  }
+}
+

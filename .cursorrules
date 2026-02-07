@@ -1,0 +1,109 @@
+# Affiliate System - Cursor Workspace Context
+
+This workspace contains a full affiliate tracking system with the following structure:
+
+## Database Schema
+- **Location**: `database/affiliate-system-schema.sql`
+- **Tables**: affiliates, affiliate_clicks, affiliate_earnings, affiliate_payouts, affiliate_audit_log, fraud_detection_rules
+- **Functions**: calculate_affiliate_earnings(), get_affiliate_stats()
+- **Features**: RLS policies, indexes, triggers
+
+## Core Utilities
+- **Location**: `lib/affiliate-utils.ts`
+- **Functions**: Cookie management, earnings calculation, UTM extraction, self-referral detection
+- **Dependencies**: Next.js cookies API
+
+## Middleware
+- **Location**: `middleware.ts`
+- **Features**: 
+  - Affiliate link tracking (`/r/:code` and `?ref=code`)
+  - Admin route protection (`/admin/*` and `/api/admin/*`)
+  - Cookie setting for attribution
+
+## API Routes
+
+### Public Routes
+- `app/api/affiliate/track-click/route.ts` - Track affiliate clicks
+- `app/api/affiliate/attribute/route.ts` - Attribute conversions
+- `app/api/webhooks/payment/route.ts` - Payment webhook handler
+
+### Admin Routes (Protected)
+- `app/api/admin/affiliates/route.ts` - CRUD operations
+- `app/api/admin/affiliates/[id]/route.ts` - Update/Delete
+- `app/api/admin/affiliates/[id]/stats/route.ts` - Statistics
+- `app/api/admin/earnings/route.ts` - Earnings ledger
+- `app/api/admin/payouts/route.ts` - Payout management
+- `app/api/admin/payouts/[id]/route.ts` - Update payouts
+- `app/api/admin/export/route.ts` - CSV export
+
+## Admin Dashboard
+- `app/admin/affiliates/page.tsx` - Affiliates list
+- `app/admin/affiliates/[id]/page.tsx` - Affiliate detail with charts
+- `app/admin/affiliates/[id]/edit/page.tsx` - Edit affiliate
+- `app/admin/payouts/page.tsx` - Payouts management
+
+## Chart Components
+- `components/charts/TimeSeriesChart.tsx` - Single series chart
+- `components/charts/MultiSeriesChart.tsx` - Multi series chart
+
+## Authentication
+- Uses Supabase for user authentication
+- Admin role checked via `users.role = 'admin'`
+- Middleware protects `/admin/*` routes
+- Helper: `lib/admin-auth.ts` for server-side admin checks
+
+## Completed Features
+✅ Database schema with all tables
+✅ Utility functions
+✅ Middleware for tracking and protection
+✅ All API routes (CRUD, stats, payouts, export)
+✅ Admin dashboard UI pages
+✅ CSV export functionality
+✅ Responsive design
+✅ Chart components
+✅ Edit affiliate page
+
+## Completed Features (All)
+✅ Database schema with all tables
+✅ Utility functions
+✅ Middleware for tracking and protection
+✅ All API routes (CRUD, stats, payouts, export)
+✅ Admin dashboard UI pages
+✅ CSV export functionality
+✅ Responsive design
+✅ Chart components
+✅ Edit affiliate page
+✅ Rate limiting with Redis (lib/redis.ts)
+✅ Signup/payment attribution integration
+✅ Unit tests (tests/unit/affiliate-utils.test.ts)
+✅ Integration tests (tests/integration/affiliate-attribution.test.ts)
+✅ E2E tests (tests/e2e/affiliate-flow.spec.ts)
+✅ JWT authentication setup
+✅ Admin route protection
+
+## Optional Enhancements (Future)
+- [ ] Enhanced fraud detection UI
+- [ ] Payout automation (Stripe Connect/Razorpay)
+- [ ] Advanced analytics dashboard
+- [ ] Fraud review workflow UI
+
+## Key Patterns
+- All admin API routes check for admin role
+- Affiliate attribution uses cookies
+- Earnings calculated based on payout_type (percentage/fixed)
+- Fraud detection via rate limiting and heuristics
+- Audit logging for all admin actions
+- ISO timestamps for CSV exports
+
+## Environment Variables Required
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `PAYMENT_WEBHOOK_SECRET`
+- `JWT_SECRET` (for admin auth)
+- `REDIS_URL` (for rate limiting)
+
+## Testing Strategy
+- Unit tests: Utility functions
+- Integration tests: API routes
+- E2E tests: Full attribution flow
+

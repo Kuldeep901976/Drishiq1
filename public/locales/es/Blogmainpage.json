@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Blog & Insights",
+    "subtitle": "Discover stories, strategies, and wisdom to navigate life's challenges with clarity and confidence.",
+    "write_post_button": "Write a Blog Post"
+  },
+  "featured": {
+    "label": "Featured",
+    "read_article_button": "Read the article",
+    "by_author": "By",
+    "loading_message": "Loading featured article..."
+  },
+  "categories": {
+    "view_all": "View all →",
+    "read_button": "Read →"
+  },
+  "sidebar": {
+    "services_title": "Explore DrishiQ Services",
+    "join_title": "Join DrishiQ",
+    "join_subtitle": "Get your clarity check, weekly tips, and early features.",
+    "create_account_button": "Create free account",
+    "already_member": "Already a member?",
+    "sign_in_link": "Sign in"
+  },
+  "floating_button": {
+    "title": "Write a blog post"
+  }
+}

@@ -1,0 +1,424 @@
+--- /dev/null
++++ b/lib/agent/runtime.ts
+@@ -0,0 +1,350 @@
++/**
++ * Agent Runtime - OpenAI Agent SDK integration for DDSA pipeline
++ * 
++ * Provides agentRun() function that can be called from pipeline executor
++ * for stages with agent_enabled flag.
++ */
++
++import OpenAI from 'openai';
++import { 
++  getStageById, 
++  getStageByName,
++  getInstructionSetById, 
++  getRecentMessages, 
++  insertAiResponse 
++} from '../ddsa/db-adapters';
++import { loadSession, saveSession } from './memory';
++import { selectModel } from './modelSelector';
++
++// Mock mode for local testing without OpenAI
++const MOCK_MODE = process.env.MOCK_MODE === 'true' || !process.env.OPENAI_RESPONSES_KEY && !process.env.OPENAI_API_KEY;
++
++export interface AgentRunInput {
++  sessionId: string;
++  stage: string | { id: string; name?: string; config?: any };
++  threadId: string;
++  input: string;
++  context?: {
++    ddsState?: any;
++    userProfile?: any;
++    previousStakeholders?: any[];
++  };
++}
++
++export interface AgentResult {
++  action: 'confirm' | 'continue' | 'ask';
++  payload: {
++    message?: string;
++    data?: any;
++    confidence?: number;
++  };
++  stakeholders_found?: Stakeholder[];
++  usage?: {
++    tokens_in: number;
++    tokens_out: number;
++    total_tokens: number;
++  };
++  response_id?: string;
++}
++
++export interface Stakeholder {
++  id?: string;
++  name?: string;
++  role?: string;
++  frequency?: string;
++  contribution?: string;
++  classification: 'Key' | 'CloselyCoupled' | 'LooselyCoupled' | 'Systemic' | 'Dynamic';
++  domains: {
++    emotional: number;
++    financial: number;
++    health: number;
++    operational: number;
++    social: number;
++  };
++}
++
++// Initialize OpenAI client
++function getOpenAIClient(): OpenAI | null {
++  if (MOCK_MODE) {
++    return null; // Will use mock responses
++  }
++  
++  const apiKey = process.env.OPENAI_RESPONSES_KEY || process.env.OPENAI_API_KEY;
++  if (!apiKey) {
++    console.warn('⚠️ No OpenAI API key found, using MOCK_MODE');
++    return null;
++  }
++  
++  return new OpenAI({ apiKey });
++}
++
++// Mock response generator for testing
++function generateMockResponse(input: AgentRunInput): AgentResult {
++  const stageName = typeof input.stage === 'string' ? input.stage : input.stage.name || input.stage.id;
++  
++  if (stageName === 'stakeholders' || stageName.includes('stakeholder')) {
++    // Mock stakeholder discovery
++    return {
++      action: 'confirm',
++      payload: {
++        message: 'I\'ve identified key stakeholders in your situation.',
++        confidence: 0.85
++      },
++      stakeholders_found: [
++        {
++          name: 'Partner',
++          role: 'Family member',
++          classification: 'Key',
++          domains: { emotional: 0.9, financial: 0.7, health: 0.3, operational: 0.5, social: 0.8 }
++        },
++        {
++          name: 'Parent',
++          role: 'Family member',
++          classification: 'Key',
++          domains: { emotional: 0.8, financial: 0.4, health: 0.9, operational: 0.3, social: 0.6 }
++        }
++      ],
++      usage: {
++        tokens_in: 150,
++        tokens_out: 200,
++        total_tokens: 350
++      },
++      response_id: `mock_${Date.now()}`
++    };
++  }
++  
++  // Default mock response
++  return {
++    action: 'continue',
++    payload: {
++      message: `Agent processed ${stageName} stage successfully.`,
++      confidence: 0.8
++    },
++    usage: {
++      tokens_in: 100,
++      tokens_out: 150,
++      total_tokens: 250
++    },
++    response_id: `mock_${Date.now()}`
++  };
++}
++
++/**
++ * Main agent runtime function
++ * Called from pipeline executor for agent-enabled stages
++ */
++export async function agentRun(input: AgentRunInput): Promise<AgentResult> {
++  const startTime = Date.now();
++  const sessionId = input.sessionId;
++  const threadId = input.threadId;
++  
++  try {
++    // Load session data
++    const session = await loadSession(sessionId);
++    
++    // Resolve stage configuration
++    let stageConfig: any = null;
++    if (typeof input.stage === 'string') {
++      stageConfig = await getStageById(input.stage) || await getStageByName(input.stage);
++    } else {
++      stageConfig = input.stage;
++    }
++    
++    if (!stageConfig) {
++      throw new Error(`Stage not found: ${typeof input.stage === 'string' ? input.stage : input.stage.id}`);
++    }
++    
++    // Check if agent is enabled for this stage
++    const agentEnabled = stageConfig.config?.agent_enabled === true;
++    if (!agentEnabled) {
++      // Agent not enabled, return continue action
++      return {
++        action: 'continue',
++        payload: { message: 'Agent not enabled for this stage' }
++      };
++    }
++    
++    // Resolve instruction set
++    let instructionSet = null;
++    if (stageConfig.instruction_set_id) {
++      instructionSet = await getInstructionSetById(stageConfig.instruction_set_id);
++    }
++    
++    // Get recent messages for context
++    const recentMessages = await getRecentMessages(threadId, 8);
++    
++    // Select model
++    const modelInfo = selectModel(stageConfig);
++    const model = stageConfig.model || modelInfo.modelName;
++    
++    // Build agent prompt
++    const systemPrompt = instructionSet?.system_prompt || 
++      `You are DrishiQ, an empathetic AI assistant helping users solve complex challenges.
++      
++Current stage: ${stageConfig.name}
++Stage ID: ${stageConfig.id}
++
++Your task is to process the user's input and provide helpful guidance.`;
++
++    // Assemble messages
++    const messages: any[] = [
++      { role: 'system', content: systemPrompt }
++    ];
++    
++    // Add few-shot examples if available
++    if (instructionSet?.few_shot_examples) {
++      for (const example of instructionSet.few_shot_examples) {
++        if (example.user) messages.push({ role: 'user', content: example.user });
++        if (example.assistant) messages.push({ role: 'assistant', content: example.assistant });
++      }
++    }
++    
++    // Add recent conversation
++    for (const msg of recentMessages) {
++      messages.push({
++        role: msg.role,
++        content: msg.content
++      });
++    }
++    
++    // Add current input
++    messages.push({
++      role: 'user',
++      content: input.input
++    });
++    
++    // Add context metadata
++    if (input.context) {
++      messages.push({
++        role: 'system',
++        content: `Context: ${JSON.stringify({
++          ddsState: input.context.ddsState,
++          userProfile: input.context.userProfile,
++          previousStakeholders: input.context.previousStakeholders
++        })}`
++      });
++    }
++    
++    // Call OpenAI or use mock
++    const openai = getOpenAIClient();
++    let response: any;
++    let assistantMessage = '';
++    let responseId = '';
++    let tokensIn = 0;
++    let tokensOut = 0;
++    let totalTokens = 0;
++    
++    if (MOCK_MODE || !openai) {
++      // Use mock response
++      const mockResult = generateMockResponse(input);
++      
++      // Log agent event
++      logAgentEvent({
++        sessionId,
++        stage: stageConfig.id,
++        eventType: 'agent_run_mock',
++        payload: { input: input.input, mock: true }
++      });
++      
++      return mockResult;
++    }
++    
++    // Try Responses API first, fallback to chat.completions
++    try {
++      if (typeof (openai as any).responses?.create === 'function') {
++        response = await (openai as any).responses.create({
++          model,
++          input: messages,
++          max_tokens: stageConfig.max_tokens || 2000,
++          temperature: stageConfig.temperature ?? 0.7
++        });
++        
++        assistantMessage = response.choices?.[0]?.text || response.choices?.[0]?.message?.content || '';
++        responseId = response.id || `resp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
++        const usage = response.usage || {};
++        tokensIn = usage.prompt_tokens || 0;
++        tokensOut = usage.completion_tokens || 0;
++        totalTokens = usage.total_tokens || (tokensIn + tokensOut);
++      } else {
++        throw new Error('Responses API not available');
++      }
++    } catch (responsesError: any) {
++      // Fallback to chat.completions
++      console.log('⚠️ Responses API not available, using chat.completions fallback');
++      
++      response = await openai.chat.completions.create({
++        model,
++        messages,
++        max_tokens: stageConfig.max_tokens || 2000,
++        temperature: stageConfig.temperature ?? 0.7
++      });
++      
++      assistantMessage = response.choices[0]?.message?.content || '';
++      responseId = response.id || `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
++      const usage = response.usage || {};
++      tokensIn = usage.prompt_tokens || 0;
++      tokensOut = usage.completion_tokens || 0;
++      totalTokens = usage.total_tokens || (tokensIn + tokensOut);
++    }
++    
++    // Parse agent response
++    let parsedResponse: any = {};
++    try {
++      parsedResponse = JSON.parse(assistantMessage);
++    } catch {
++      // Not JSON, treat as plain text
++      parsedResponse = { message: assistantMessage };
++    }
++    
++    // Extract stakeholders if present
++    const stakeholders_found = parsedResponse.stakeholders || 
++      (parsedResponse.stakeholders_found ? JSON.parse(parsedResponse.stakeholders_found) : undefined);
++    
++    // Determine action
++    const action = parsedResponse.action || 
++      (parsedResponse.message && parsedResponse.message.includes('?') ? 'ask' : 'continue');
++    
++    // Store AI response
++    await insertAiResponse({
++      response_id: responseId,
++      thread_id: threadId,
++      thread_type: 'chat',
++      model,
++      stage_ref: stageConfig.id,
++      instruction_set_id: instructionSet?.id,
++      request_payload: { model, messages, max_tokens: stageConfig.max_tokens, temperature: stageConfig.temperature },
++      response_payload: response,
++      tokens_in: tokensIn,
++      tokens_out: tokensOut,
++      total_tokens: totalTokens,
++      estimated_cost: (totalTokens / 1000) * (model.includes('gpt-4') ? 0.01 : 0.001),
++      schema_validated: instructionSet?.output_schema ? 
++        validateSchema(assistantMessage, instructionSet.output_schema) : null
++    });
++    
++    // Log agent event
++    logAgentEvent({
++      sessionId,
++      stage: stageConfig.id,
++      eventType: 'agent_run_complete',
++      payload: {
++        action,
++        response_id: responseId,
++        tokens: totalTokens
++      }
++    });
++    
++    // Save session
++    await saveSession(sessionId, {
++      ...session,
++      lastStage: stageConfig.id,
++      lastResponseId: responseId,
++      updatedAt: new Date().toISOString()
++    });
++    
++    return {
++      action: action as 'confirm' | 'continue' | 'ask',
++      payload: {
++        message: parsedResponse.message || assistantMessage,
++        data: parsedResponse.data,
++        confidence: parsedResponse.confidence || 0.8
++      },
++      stakeholders_found,
++      usage: {
++        tokens_in: tokensIn,
++        tokens_out: tokensOut,
++        total_tokens: totalTokens
++      },
++      response_id: responseId
++    };
++    
++  } catch (error: any) {
++    // Sanitize error
++    const errorMessage = error.message || 'Internal server error';
++    const sanitizedError = errorMessage
++      .replace(/sk-[a-zA-Z0-9]{20,}/g, '[REDACTED]')
++      .replace(/key-[a-zA-Z0-9]{20,}/g, '[REDACTED]');
++    
++    console.error('❌ Agent runtime error:', sanitizedError);
++    
++    // Log error event
++    logAgentEvent({
++      sessionId,
++      stage: typeof input.stage === 'string' ? input.stage : input.stage.id,
++      eventType: 'agent_run_error',
++      payload: { error: sanitizedError }
++    });
++    
++    // Return fallback
++    return {
++      action: 'ask',
++      payload: {
++        message: 'I encountered an issue processing your request. Could you please rephrase or provide more details?',
++        confidence: 0.0
++      }
++    };
++  }
++}
++
++// Schema validation helper
++function validateSchema(content: string, schema: any): boolean {
++  try {
++    const parsed = JSON.parse(content);
++    // Simple validation - in production, use Ajv
++    return typeof parsed === 'object';
++  } catch {
++    return false;
++  }
++}
++
++// Agent event logging
++interface AgentEvent {
++  timestamp: string;
++  sessionId: string;
++  stage: string;
++  eventType: string;
++  payload: any;
++}
++
++function logAgentEvent(event: Omit<AgentEvent, 'timestamp'>): void {
++  const fullEvent: AgentEvent = {
++    timestamp: new Date().toISOString(),
++    ...event
++  };
++  
++  // Structured logging (can be sent to telemetry service)
++  console.log('agent.event', JSON.stringify(fullEvent));
++  
++  // In production, send to telemetry/analytics service
++  // telemetryService.track('agent.event', fullEvent);
++}
+

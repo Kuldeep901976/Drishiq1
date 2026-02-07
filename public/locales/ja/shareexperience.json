@@ -1,0 +1,407 @@
+{
+  "hero": {
+    "authenticated": {
+      "badge": "あなたの体験談を共有する",
+      "title": "あなたの体験談は大切です。",
+      "subtitle": "他の人がドリシクを見つける手助けをしましょう。",
+      "description": "ドリシクでのあなたのリアルな体験を共有してください。あなたの体験談が、他の人が私たちがどのように人生を変えられるかを知る助けになります。"
+    },
+    "guest": {
+      "badge": "あなたのユニークな課題を共有する",
+      "title": "あなたのユニークな課題を共有してください。",
+      "subtitle": "それが本当にユニークであれば、私たちが提案します。",
+      "description": "あなたのユニークな課題について教えてください。それが本当にユニークであれば、克服するための個別のソリューションを提供します。"
+    }
+  },
+  "form": {
+    "title": {
+      "authenticated": "あなたの体験談を共有する",
+      "guest": "あなたのユニークな課題を共有する"
+    },
+    "subtitle": {
+      "authenticated": "あなたの実体験を共有することで、ドリシクがどのように人生を変えられるかを他の人が知る手助けになります。",
+      "guest": "あなたのユニークな課題について教えてください。本当にユニークであれば、個別のソリューションを提供します。"
+    },
+    "personal_info": {
+      "title": "あなたの情報",
+      "fields": {
+        "name": {
+          "label": "氏名 *",
+          "placeholder": "氏名を入力してください"
+        },
+        "email": {
+          "label": "メールアドレス *",
+          "placeholder": "your.email@example.com"
+        },
+        "phone": {
+          "label": "電話番号 *",
+          "placeholder": "電話番号を入力してください"
+        },
+        "profession": {
+          "label": "職業 / 役割",
+          "placeholder": "例：ソフトウェアエンジニア、学生、起業家"
+        },
+        "preferred_language": {
+          "label": "希望言語 *",
+          "placeholder": "希望する言語を選択してください"
+        }
+      }
+    },
+    "story_section": {
+      "title": {
+        "authenticated": "あなたの体験談",
+        "guest": "あなたのユニークな課題"
+      },
+      "rating": {
+        "label": "評価 *",
+        "excellent": "⭐ 優秀",
+        "very_good": "👍 とても良い",
+        "good": "👍 良い",
+        "fair": "👌 普通",
+        "poor": "👌 良くない"
+      },
+      "role": {
+        "label": "あなたの役割 *",
+        "placeholder": "例：ソフトウェアエンジニア、学生、起業家など"
+      },
+      "story": {
+        "placeholder": {
+          "authenticated": "ドリシクでのあなたのリアルな体験を共有してください。どのように助けられましたか？どんな課題を克服しましたか？他の人に何を伝えたいですか？",
+          "guest": "あなたのユニークな課題を詳しく説明してください。それをユニークにしているものは何ですか？今まで何を試しましたか？どんな具体的な支援を求めていますか？"
+        },
+        "hint": {
+          "authenticated": "最低100文字。他の人の助けになるよう、詳細に記述してください。",
+          "guest": "最低100文字。あなたの課題をユニークにしている点を具体的に書いてください。"
+        },
+        "character_count": "{count}/1000"
+      },
+      "image_upload": {
+        "label": "クリックして写真をアップロード",
+        "hint": "JPG, PNG 最大5MB",
+        "change": "変更"
+      }
+    },
+    "phone_verification": {
+      "title": "電話番号の確認が必要です",
+      "description": {
+        "frozen": "認証コードを受け取るために、電話番号を確認してください",
+        "otp": "電話に送信されたOTPコードを入力してください"
+      },
+      "phone_label": "電話番号",
+      "phone_locked_hint": "この番号は認証用にロックされています。変更が必要な場合はサポートにご連絡ください。",
+      "phone_verify_hint": "この電話番号を確認すると、あなたのストーリーを送信できます。",
+      "otp_label": "6桁のコードを入力",
+      "otp_placeholder": "000000",
+      "otp_sent_to": "OTPが {phone} に送信されました",
+      "buttons": {
+        "send_otp": "認証コードを送信",
+        "sending": "OTPを送信中...",
+        "verify_submit": "確認してストーリーを送信",
+        "verifying": "確認中...",
+        "resend": "🔄 OTPを再送する（ここをクリック）",
+        "resend_countdown": "OTP再送 ({count}s)",
+        "back_to_form": "← フォームに戻る"
+      },
+      "errors": {
+        "phone_required": "電話番号を入力し、国番号を選択してください",
+        "otp_invalid": "有効な6桁のOTPを入力してください",
+        "otp_expired": "OTPセッションが期限切れです。新しいコードをリクエストしてください。",
+        "otp_wrong": "無効なOTPコードです。確認して再試行してください。",
+        "otp_expired_code": "OTPコードが期限切れです。新しいコードをリクエストしてください。",
+        "verification_failed": "OTPの送信に失敗しました。再試行してください。",
+        "system_not_ready": "認証システムが準備できていません。更新してもう一度お試しください。"
+      }
+    },
+    "info_note": {
+      "title": "次に何が起こりますか？",
+      "description": "あなたはログインしていないため、本人確認のため電話番号を認証します。認証後、あなたの課題はチームによりレビューされます。本当にユニークであれば、個別のソリューションを提供します。"
+    },
+    "guidelines": {
+      "title": "ストーリーのガイドライン",
+      "subtitle": "体験を共有するためのヒント",
+      "tips": [
+        "直面した課題について具体的に書いてください",
+        "ドリシクがどのようにあなたの明確さを助けたかを説明してください",
+        "あなたが経験したポジティブな変化を共有してください",
+        "あなた自身の言葉で、自然な声で書いてください",
+        "あなたのストーリーが他の人をどう助けられるかを考えてみてください"
+      ]
+    },
+    "impact_stats": {
+      "title": "あなたのストーリーは価値があります",
+      "description": "あなたのようなストーリーが、何千人もの人が最初の一歩を踏み出す助けになっています",
+      "stories_shared": "共有されたストーリー数",
+      "people_inspired": "インスパイアされた人々"
+    },
+    "buttons": {
+      "back_to_stories": "ストーリー一覧に戻る",
+      "submit_testimonial": "体験談を送信",
+      "share_challenge": "私の課題を共有する",
+      "submitting": "送信中..."
+    },
+    "validation": {
+      "image_size": "画像サイズは5MB未満である必要があります。小さい画像を選択してください。",
+      "image_type": "有効な画像ファイル（JPG, PNG, WEBP）をアップロードしてください。",
+      "story_min": "少なくとも100文字記入してください",
+      "required": "この項目は必須です"
+    },
+    "errors": {
+      "submission_failed": "体験の送信中にエラーが発生しました。再試行してください。",
+      "user_not_found": "ユーザーがユーザー表に見つかりませんでした",
+      "api_error": "ストーリーの送信に失敗しました。再試行するか、サポートにお問い合わせください。"
+    },
+    "success_alert": {
+      "authenticated": "体験談を共有してくださりありがとうございます！内容をレビューし、追ってご連絡いたします。"
+    }
+  },
+  "thank_you": {
+    "title": "ありがとうございます！🙏",
+    "subtitle": "あなたのストーリーは正常に送信されました",
+    "description": {
+      "main": "あなたのユニークな課題を受け取りました。弊社チームが慎重にレビューします。",
+      "sub": "課題が本当にユニークであれば、それを解決するための個別ソリューションをご連絡します。"
+    },
+    "what_happens_next": {
+      "title": "次に何が起こりますか？",
+      "steps": {
+        "review": {
+          "number": "1️⃣",
+          "title": "レビュー工程",
+          "description": "チームがあなたの提出内容を慎重に確認します"
+        },
+        "evaluation": {
+          "number": "2️⃣",
+          "title": "評価",
+          "description": "あなたの課題がユニークであり、特別なアプローチを必要とするかどうかを判断します"
+        },
+        "contact": {
+          "number": "3️⃣",
+          "title": "連絡",
+          "description": "承認された場合、次のステップをご案内するメールをお送りします"
+        }
+      }
+    },
+    "video": {
+      "title": "最新の動画をご覧ください",
+      "playlist_link": "プレイリスト全体を見る →"
+    },
+    "buttons": {
+      "go_home": "🏠 ホームに戻る",
+      "read_blogs": "📖 ブログを読む・共有する"
+    }
+  },
+  "testimonial_form": {
+    "title": {
+      "label": "ストーリーのタイトル",
+      "placeholder": "あなたのストーリーに魅力的なタイトルを付けてください（任意）...",
+      "hint": "タイトルがあると、他の人があなたのストーリーを見つけやすく、理解しやすくなります"
+    },
+    "content": {
+      "label": "あなたのストーリー *",
+      "placeholder": "ドリシクでのあなたの体験を共有してください。どんな課題に直面しましたか？ドリシクはどのように役立ちましたか？どんな変化が起こりましたか？"
+    },
+    "rating": {
+      "label": "評価 *",
+      "excellent": "優秀",
+      "very_good": "とても良い",
+      "good": "良い",
+      "fair": "普通",
+      "poor": "悪い"
+    },
+    "category": {
+      "label": "カテゴリー",
+      "placeholder": "カテゴリーを選択（任意）",
+      "custom": {
+        "label": "カテゴリーを指定してください *",
+        "placeholder": "具体的なカテゴリーを入力（例：健康・ウェルネス、資金計画など）",
+        "hint": "あなたの体験を最もよく表すカテゴリーを入力してください"
+      }
+    },
+    "anonymous": {
+      "label": "匿名で送信する",
+      "user_info": {
+        "title": "あなたの体験談は次の形式で送信されます：",
+        "name": "名前：",
+        "email": "メール："
+      },
+      "fields": {
+        "display_name": {
+          "label": "表示名",
+          "placeholder": "例：ジョン D."
+        },
+        "role": {
+          "label": "役割/職業",
+          "placeholder": "例：ソフトウェアエンジニア"
+        },
+        "location": {
+          "label": "所在地",
+          "placeholder": "例：ニューヨーク、アメリカ"
+        }
+      }
+    },
+    "profile_image": {
+      "label": "プロフィール画像",
+      "upload": {
+        "label": "画像をアップロード",
+        "remove": "削除"
+      },
+      "avatar": {
+        "label": "または、アバターから選択",
+        "placeholder": "アバターを選択（任意）",
+        "selected": "✓ 選択済みアバター",
+        "change": "変更"
+      }
+    },
+    "buttons": {
+      "cancel": "キャンセル",
+      "submit": "体験談を送信",
+      "submitting": "送信中..."
+    },
+    "errors": {
+      "login_required": "体験談を送信するにはログインしてください。ログインしない場合は「匿名で送信」をチェックしてください。",
+      "submission_failed": "体験談の送信に失敗しました"
+    },
+    "success": {
+      "title": "ありがとうございます！",
+      "message": "あなたの体験談は正常に送信され、承認待ちです。まもなく体験談ページへリダイレクトされます。"
+    }
+  },
+  "testimonial_success": {
+    "title": "🎉 ストーリーを共有していただきありがとうございます！",
+    "message": "あなたの体験談は正常に送信され、現在レビュー待ちです。コミュニティと経験を共有していただき感謝します。",
+    "what_happens_next": {
+      "title": "次に何が起こりますか？",
+      "review": {
+        "title": "レビュー工程",
+        "description": "チームが24〜48時間以内にあなたの提出内容を確認します"
+      },
+      "featured": {
+        "title": "特集ストーリー",
+        "description": "優れたストーリーは、ホームページで紹介される場合があります"
+      },
+      "community": {
+        "title": "コミュニティへの影響",
+        "description": "あなたのストーリーは、明確さを求めている他の人を励ますことができます"
+      }
+    },
+    "buttons": {
+      "go_home": "🏠 ホームに戻る",
+      "submit_another": "📝 別のストーリーを送信"
+    },
+    "community_feedback": {
+      "title": "💭 より良いコミュニティづくりにご協力ください",
+      "vision_title": "🌟 私たちのビジョンに参加：経験を共有するコミュニティ",
+      "vision_description": "私たちは単なるプラットフォーム以上のものを作っています。これは、あなたの痛み、喜び、失敗、成功を共有する人々がつながり、支え合い、ともに成長できるコミュニティの基盤です。あなたのフィードバックがこの重要な使命を形づくります。",
+      "pipeline_vision": "私たちのビジョン：あなたのストーリーが誰かの希望に、共有された困難が集合的な力に、そしてすべての経験が本当に理解し合えるコミュニティを築く力になります。",
+      "buttons": {
+        "share_vision": "💬 ビジョンを共有する",
+        "join_movement": "🌱 ムーブメントに参加"
+      }
+    },
+    "bottom_cta": {
+      "title": "次の明確化セッションの準備はできていますか？",
+      "description": "ドリシクと共に自己探求の旅を続けましょう",
+      "buttons": {
+        "start_session": "💬 新しいセッションを開始",
+        "return_home": "🏠 ホームに戻る"
+      }
+    }
+  },
+  "submit": {
+    "title": "あなたの体験談を共有する",
+    "subtitle": "あなたの経験は、他の人を励ます力があります。ドリシクがあなたの人生にどのような影響を与えたか教えてください。",
+    "success_page": {
+      "title": "🎉 ストーリーを共有していただきありがとうございます！",
+      "message": "あなたの体験談は正常に送信され、現在レビュー待ちです。コミュニティと経験を共有していただき感謝しています。",
+      "go_home": "🏠 ホームへ戻る"
+    }
+  },
+  "success_page": {
+    "what_happens_next": {
+      "title": "次に何が起こる？"
+    },
+    "review_process": "レビュー工程",
+    "review_description": "チームが24〜48時間以内にあなたの提出内容を確認します",
+    "featured_stories": "特集ストーリー",
+    "featured_description": "特に優れたストーリーはホームページで紹介されることがあります",
+    "community_impact": "コミュニティへの影響",
+    "community_description": "あなたのストーリーは、明確さを求める他の人を励ますことができます",
+    "submit_another": "📝 別のストーリーを送信",
+    "help_community": "💭 より良いコミュニティづくりにご協力ください",
+    "join_vision": "🌟 私たちのビジョンに参加：経験を共有するコミュニティ",
+    "vision_description": "私たちは単なるプラットフォームではなく、痛み、喜び、失敗、成功を共有する人々がつながり合い、支え合い、成長することのできるコミュニティの基盤を築いています。あなたの意見は、この重要な使命を形成します。",
+    "pipeline_vision": "私たちのビジョン：あなたのストーリーが誰かの希望となり、共有された困難が集合的な強さとなり、すべての経験が真に理解し合えるコミュニティの構築に貢献します。",
+    "share_vision": "💬 ビジョンを共有する",
+    "join_movement": "🌱 ムーブメントに参加する",
+    "next_clarity": "次の明確化セッションの準備はできていますか？",
+    "continue_journey": "ドリシクと共に自己発見の旅を続けましょう",
+    "start_session": "💬 新しいセッションを開始する",
+    "return_home": "🏠 ホームへ戻る"
+  },
+  "ui_elements": {
+    "hero": {
+      "title": "本物の人々の、本物のストーリー",
+      "subtitle": "ドリシクがどのように人生を変えたのかを知りましょう。すべてのストーリーがユニークです。",
+      "cta_button": "✨ ストーリーを共有する"
+    },
+    "filters": {
+      "search_placeholder": "体験談を検索...",
+      "category_label": "すべてのカテゴリー",
+      "rating_label": "すべての評価",
+      "featured_label": "特集のみ",
+      "sort_label": "並び替え：",
+      "sort_options": {
+        "date": "日付",
+        "rating": "評価",
+        "likes": "いいね",
+        "comments": "コメント"
+      }
+    },
+    "badges": {
+      "featured_story": "🌟 特集ストーリー",
+      "user_story": "✨ ユーザーストーリー"
+    },
+    "messages": {
+      "loading": "体験談を読み込み中...",
+      "no_results": "体験談が見つかりませんでした。まずはあなたが最初にストーリーを共有しましょう！",
+      "error": "体験談の取得中にエラーが発生しました"
+    },
+    "pagination": {
+      "previous": "前へ",
+      "next": "次へ"
+    }
+  },
+  "loading": "読み込み中...",
+  "categories": {
+    "career_development": "キャリア開発",
+    "life_coaching": "ライフコーチング",
+    "business_consulting": "ビジネスコンサルティング",
+    "educational_consulting": "教育コンサルティング",
+    "content_marketing": "コンテンツマーケティング",
+    "change_management": "チェンジマネジメント",
+    "management_consulting": "マネジメントコンサルティング",
+    "marketing_consulting": "マーケティングコンサルティング",
+    "customer_service": "カスタマーサービス",
+    "customer_support": "カスタマーサポート",
+    "life_path_choices": "人生の選択と方向性",
+    "confidence_presence": "自信と存在感",
+    "growth_capability": "成長と能力開発",
+    "relationship_social": "人間関係と社会的バランス",
+    "clarity_mental": "明確さとメンタルレジリエンス",
+    "others": "その他"
+  },
+  "languages": {
+    "english": "English",
+    "hindi": "हिन्दी",
+    "arabic": "العربية",
+    "german": "Deutsch",
+    "spanish": "Español",
+    "french": "Français",
+    "chinese": "中文",
+    "japanese": "日本語",
+    "russian": "Русский",
+    "portugese": "Português",
+    "bangla": "বাংলা",
+    "tamil": "தமிழ்"
+  }
+}

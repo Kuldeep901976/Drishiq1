@@ -1,0 +1,288 @@
+{
+  "auditDate": "2025-01-XX",
+  "scope": "DDSA Multi-Tenant Implementation - Final Audit",
+  "summary": {
+    "status": "MERGE_WITH_CAUTIONS",
+    "blockers": 4,
+    "mediumPriority": 4,
+    "securityFindings": 3
+  },
+  "orchestrators": {
+    "main": {
+      "path": "lib/ddsa/questioning_orchestrator.ts",
+      "status": "clean",
+      "tenantAware": true,
+      "description": "Single source of truth - QOL with tenant support"
+    },
+    "shim": {
+      "path": "lib/ddsa/question-orchestrator.ts",
+      "status": "deprecated",
+      "tenantAware": true,
+      "description": "Shim that proxies to questioning_orchestrator.generate()",
+      "action": "Remove after all call sites migrated"
+    },
+    "orphans": [
+      {
+        "path": "packages/core/orchestrator.ts",
+        "status": "unknown",
+        "action": "Verify usage and remove if orphaned"
+      }
+    ]
+  },
+  "aiClients": {
+    "tenantAware": [
+      {
+        "path": "lib/ai/tenant-client.ts",
+        "function": "createTenantResponsesClient()",
+        "status": "clean",
+        "issue": "Does not pass tenantId to createResponse() - see Patch 2"
+      },
+      {
+        "path": "lib/responses/responsesClient.ts",
+        "function": "createResponse(req, tenantId?)",
+        "status": "clean"
+      }
+    ],
+    "legacy": [
+      {
+        "path": "lib/ai/client.ts",
+        "functions": ["getAIClient()", "createAIClient()"],
+        "status": "blocking",
+        "issue": "Uses process.env.OPENAI_API_KEY directly",
+        "action": "Migrate to createTenantResponsesClient()"
+      },
+      {
+        "path": "app/api/chat/route.ts",
+        "function": "getOpenAIClient()",
+        "status": "blocking",
+        "issue": "Uses process.env.OPENAI_RESPONSES_KEY || OPENAI_API_KEY",
+        "action": "Replace with createTenantResponsesClient()"
+      },
+      {
+        "path": "app/api/ai/call-v2/route.ts",
+        "function": "getAPIClient()",
+        "status": "blocking",
+        "issue": "Uses process.env.OPENAI_API_KEY",
+        "action": "Replace with createTenantResponsesClient()"
+      }
+    ]
+  },
+  "rlsHelpers": {
+    "implemented": [
+      {
+        "path": "lib/db/rls-session.ts",
+        "functions": ["setPostgresTenant()", "clearPostgresTenant()"],
+        "status": "clean",
+        "type": "Supabase RPC"
+      },
+      {
+        "path": "lib/db/postgres-pool.ts",
+        "functions": ["withTenantContext()", "queryWithTenantContext()"],
+        "status": "clean",
+        "type": "Direct Postgres"
+      },
+      {
+        "path": "app/api/middleware/tenant.ts",
+        "function": "setTenantRLS()",
+        "status": "clean",
+        "type": "Middleware"
+      }
+    ],
+    "missingIntegration": [
+      {
+        "path": "lib/dds-state.ts",
+        "functions": ["saveDdsState()", "loadDdsState()"],
+        "status": "blocking",
+        "issue": "Does not set tenant context",
+        "action": "See Patch 1"
+      },
+      {
+        "path": "app/api/chat/route.ts",
+        "status": "blocking",
+        "issue": "Does not resolve or pass tenantId",
+        "action": "See Patch 3"
+      },
+      {
+        "path": "lib/ddsa/pipeline-executor.ts",
+        "status": "blocking",
+        "issue": "Does not pass tenantId to stages",
+        "action": "Ensure input.tenantId is passed"
+      }
+    ]
+  },
+  "backgroundJobs": {
+    "tenantAware": [
+      {
+        "path": "lib/ddsa/backgroundScheduler.ts",
+        "status": "clean",
+        "description": "Sets tenant context before execution"
+      },
+      {
+        "path": "lib/ddsa/getNextStageMessage.ts",
+        "status": "clean",
+        "description": "Passes tenantId to scheduler"
+      }
+    ],
+    "missingTenantContext": [
+      {
+        "path": "jobs/threadPersistenceWorker.ts",
+        "status": "blocking",
+        "action": "Add tenant context resolution and setting"
+      },
+      {
+        "path": "scripts/scheduler-tracker-worker.js",
+        "status": "blocking",
+        "action": "Add tenant context resolution and setting"
+      }
+    ]
+  },
+  "stages": {
+    "tenantAware": [
+      {
+        "path": "lib/ddsa/stages/cfq-stage.ts",
+        "status": "clean",
+        "description": "Passes tenantId to QOL"
+      },
+      {
+        "path": "lib/ddsa/stages/options.ts",
+        "status": "clean",
+        "description": "Uses getTenantConfig() for Kind Honesty"
+      },
+      {
+        "path": "lib/ddsa/stages/plan-stage.ts",
+        "status": "clean",
+        "description": "Uses getTenantConfig() for Kind Honesty"
+      },
+      {
+        "path": "lib/ddsa/stages/greeting-stage.ts",
+        "status": "clean",
+        "description": "Uses tenant-aware createResponse()"
+      }
+    ],
+    "unknown": {
+      "count": "~20+ other stages",
+      "action": "Audit all stages for tenant awareness"
+    }
+  },
+  "auditLogging": {
+    "piiRedaction": {
+      "implemented": true,
+      "path": "lib/utils/log-redaction.ts",
+      "status": "clean"
+    },
+    "missingTenantId": [
+      {
+        "path": "lib/ddsa/stages/cfq-stage.ts",
+        "line": 93,
+        "action": "Add tenantId parameter"
+      },
+      {
+        "path": "app/api/chat/route.ts",
+        "count": "multiple",
+        "action": "Add tenantId to all audit.log() calls"
+      }
+    ]
+  },
+  "blockingIssues": [
+    {
+      "id": "BLOCKER-1",
+      "severity": "CRITICAL",
+      "title": "saveDdsState() and loadDdsState() Do Not Set Tenant Context",
+      "path": "lib/dds-state.ts",
+      "description": "These functions directly query Supabase without setting app.tenant_id session variable. RLS policies cannot filter by tenant.",
+      "fix": "Patch 1"
+    },
+    {
+      "id": "BLOCKER-2",
+      "severity": "HIGH",
+      "title": "Legacy AI Clients Still in Use",
+      "paths": [
+        "app/api/chat/route.ts",
+        "app/api/ai/call-v2/route.ts",
+        "lib/ai/client.ts"
+      ],
+      "description": "These functions use process.env.OPENAI_API_KEY directly, bypassing tenant-specific API key resolution.",
+      "fix": "Migrate to createTenantResponsesClient()"
+    },
+    {
+      "id": "BLOCKER-3",
+      "severity": "MEDIUM",
+      "title": "createTenantResponsesClient().respond() Does Not Pass tenantId",
+      "path": "lib/ai/tenant-client.ts:90",
+      "description": "Calls createResponse() without passing tenantId, bypassing tenant-specific API key resolution.",
+      "fix": "Patch 2"
+    },
+    {
+      "id": "BLOCKER-4",
+      "severity": "HIGH",
+      "title": "Background Workers Missing Tenant Context",
+      "paths": [
+        "jobs/threadPersistenceWorker.ts",
+        "scripts/scheduler-tracker-worker.js"
+      ],
+      "description": "Background workers do not set tenant context before database operations.",
+      "fix": "Add tenant context resolution and setting"
+    }
+  ],
+  "mediumPriorityIssues": [
+    {
+      "id": "MEDIUM-1",
+      "title": "app/api/chat/route.ts Does Not Resolve or Pass tenantId",
+      "path": "app/api/chat/route.ts",
+      "fix": "Patch 3"
+    },
+    {
+      "id": "MEDIUM-2",
+      "title": "Audit Logging Missing tenantId in Some Places",
+      "paths": [
+        "lib/ddsa/stages/cfq-stage.ts",
+        "lib/ddsa/stages/options.ts",
+        "lib/ddsa/stages/plan-stage.ts"
+      ],
+      "fix": "Patch 4"
+    },
+    {
+      "id": "MEDIUM-3",
+      "title": "pipeline-executor.ts Does Not Pass tenantId to Stages",
+      "path": "lib/ddsa/pipeline-executor.ts",
+      "fix": "Ensure input.tenantId is explicitly passed"
+    },
+    {
+      "id": "MEDIUM-4",
+      "title": "RLS Policies May Not Be Enforced",
+      "description": "RLS policies depend on app.tenant_id session variable, but saveDdsState() does not set it.",
+      "fix": "Verify RLS policies are enabled and test cross-tenant access denial"
+    }
+  ],
+  "securityFindings": [
+    {
+      "id": "SEC-1",
+      "severity": "MEDIUM",
+      "title": "API Keys in Environment Variables",
+      "description": "Tenant-specific API keys are resolved from environment variables (stub), not from secret manager.",
+      "action": "Implement actual secret manager integration"
+    },
+    {
+      "id": "SEC-2",
+      "severity": "HIGH",
+      "title": "RLS Policies May Not Be Enforced",
+      "description": "RLS policies may not be enabled or may not work correctly with Supabase service role key.",
+      "action": "Run RLS_VERIFICATION_PLAN.md"
+    },
+    {
+      "id": "SEC-3",
+      "severity": "LOW",
+      "title": "PII Redaction Not Applied to All Logs",
+      "description": "Not all audit.log() calls pass tenantId, so redaction may not be applied.",
+      "action": "Add tenantId to all audit.log() calls"
+    }
+  ],
+  "unverified": [
+    "Database RLS policies are actually enabled",
+    "Secret manager integration works",
+    "Background job payloads include tenantId",
+    "All stage files are tenant-aware",
+    "Legacy code paths (packages/core/orchestrator.ts) are still used",
+    "Tenant config loading and caching works correctly"
+  ]
+}

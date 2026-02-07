@@ -1,0 +1,15 @@
+ACTION_PACKET:
+{
+  "problem": {
+    "summary": "Test",
+    "metadata": {"nested": {"deep": true}}
+  },
+  "actions": [{
+    "event_name": "Test",
+    "metric": {"complex": {"value": 123, "array": [1,2,3]}}
+  }]
+}
+END_ACTION_PACKET
+
+---END---
+MACHINE_OK

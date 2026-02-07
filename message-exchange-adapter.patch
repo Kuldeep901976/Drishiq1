@@ -1,0 +1,236 @@
+diff --git a/lib/ddsa/messageExchangeAdapter.ts b/lib/ddsa/messageExchangeAdapter.ts
+new file mode 100644
+index 0000000..1234567
+--- /dev/null
++++ b/lib/ddsa/messageExchangeAdapter.ts
+@@ -0,0 +1,147 @@
++/**
++ * Message Exchange Adapter
++ *
++ * Thin adapter that provides familiar helper functions previously
++ * supplied by MessageExchangeLayer (Assistants API). Internally this
++ * uses the Responses API via lib/responses/responsesClient.createResponse
++ * and writes assistant messages into chat_messages via the thread manager.
++ *
++ * Purpose:
++ * - Provide backward-compatible function names for callers
++ * - Ensure provider_response_id, prompt_hash, response_hash are propagated
++ * - Keep prompt-building logic in one place
++ *
++ * NOTE: This adapter is intentionally minimal. It expects callers to
++ * pass `threadId` (app-managed UUID) and will persist the assistant
++ * message using persistent-thread-manager.addMessage().
++ */
++
++import { createResponse, normalizeResponse } from '@/lib/responses/responsesClient';
++import { PersistentThreadManager } from '@/packages/core/persistent-thread-manager';
++import { insertAiResponse } from '@/lib/db/aiResponses';
++import { createHash } from 'crypto';
++
++export interface CreateMessageResult {
++  providerResponseId?: string | null;
++  promptHash?: string | null;
++  responseHash?: string | null;
++  content?: string | null;
++  raw?: any;
++}
++
++/**
++ * Build a plain-text prompt using system + context + user input.
++ */
++function buildPrompt(systemBrief: string | undefined, userContent: string, contextSummary?: string | null): Array<{ role: string; content: string }> {
++  const input: Array<{ role: string; content: string }> = [];
++  
++  if (systemBrief) {
++    input.push({ role: 'system', content: systemBrief });
++  }
++  
++  if (contextSummary) {
++    input.push({ role: 'system', content: `Context: ${contextSummary}` });
++  }
++  
++  input.push({ role: 'user', content: userContent });
++  
++  return input;
++}
++
++/**
++ * Create an assistant response via Responses API and persist it.
++ */
++export async function createAssistantMessage(opts: {
++  systemBrief?: string;
++  userContent: string;
++  threadId: string;
++  tenantId?: string | null;
++  model?: string;
++  stageRef?: string | null;
++  contextSummary?: string | null;
++}): Promise<CreateMessageResult> {
++  const { systemBrief, userContent, threadId, tenantId, model, stageRef, contextSummary } = opts;
++
++  // Build input array for Responses API
++  const inputArray = buildPrompt(systemBrief, userContent, contextSummary ?? null);
++
++  // POST to Responses API
++  const requestBody = {
++    model: model || 'gpt-4-turbo',
++    input: inputArray,
++    max_tokens: 2000,
++    temperature: 0.7,
++    metadata: { 
++      thread_id: threadId, 
++      stage: stageRef ?? null,
++      tenant_id: tenantId ?? null
++    }
++  };
++
++  const resp = await createResponse(requestBody, tenantId ?? undefined);
++
++  // Normalize response to extract content
++  const normalized = normalizeResponse(resp);
++  const normalizedContent: string = normalized.content || '';
++
++  // Extract metadata
++  const providerResponseId = normalized.id ?? resp?.id ?? null;
++  const promptHash = resp?._prompt_hash ?? (() => { 
++    try { 
++      return createHash('sha256').update(JSON.stringify(inputArray)).digest('hex'); 
++    } catch { 
++      return null; 
++    } 
++  })();
++  const responseHash = resp?._response_hash ?? (() => { 
++    try { 
++      return createHash('sha256').update(JSON.stringify(resp)).digest('hex'); 
++    } catch { 
++      return null; 
++    } 
++  })();
++
++  // Persist assistant message into chat_messages via threadManager
++  const threadManager = new PersistentThreadManager();
++  try {
++    await threadManager.addMessage(threadId, {
++      id: `assistant_${Date.now()}`,
++      threadId,
++      role: 'assistant',
++      content: normalizedContent,
++      messageType: 'text',
++      tags: [],
++      metadata: {
++        provider_response_id: providerResponseId,
++        prompt_hash: promptHash,
++        response_hash: responseHash,
++        model: model || 'gpt-4-turbo',
++        stageRef
++      },
++      createdAt: new Date(),
++      processingTimeMs: 0
++    });
++  } catch (err) {
++    console.warn('⚠️ [messageExchangeAdapter] Failed to persist assistant message:', err);
++  }
++
++  // Persist ai_responses row for observability (best-effort)
++  try {
++    await insertAiResponse({
++      responseId: providerResponseId ?? undefined,
++      threadId,
++      tenantId: tenantId ?? undefined,
++      stageRef: stageRef ?? undefined,
++      model: model ?? undefined,
++      requestPayload: { input: inputArray },
++      responsePayload: resp,
++      promptHash: promptHash ?? undefined,
++      responseHash: responseHash ?? undefined,
++      tokensIn: resp?.usage?.prompt_tokens ?? normalized.usage?.prompt_tokens ?? null,
++      tokensOut: resp?.usage?.completion_tokens ?? normalized.usage?.completion_tokens ?? null,
++      totalTokens: resp?.usage?.total_tokens ?? normalized.usage?.total_tokens ?? null,
++      latencyMs: null
++    });
++  } catch (err) {
++    console.warn('⚠️ [messageExchangeAdapter] Failed to insertAiResponse:', err);
++  }
++
++  return {
++    providerResponseId,
++    promptHash,
++    responseHash,
++    content: normalizedContent,
++    raw: resp
++  };
++}
++
++/**
++ * Helper compatible function replacing MessageExchangeLayer.getLatestAssistantMessage
++ * Returns last N assistant messages (text only)
++ */
++export async function getLatestAssistantMessages(threadId: string, limit = 5): Promise<string[]> {
++  try {
++    const threadManager = new PersistentThreadManager();
++    const messages = await threadManager.getMessages(threadId, limit);
++    
++    // Filter for assistant messages and return content
++    return messages
++      .filter(msg => msg.role === 'assistant')
++      .slice(0, limit)
++      .map(msg => msg.content);
++  } catch (err) {
++    console.warn('⚠️ [messageExchangeAdapter] Failed to get latest assistant messages:', err);
++    return [];
++  }
++}
++
++export default {
++  createAssistantMessage,
++  getLatestAssistantMessages
++};
++
++diff --git a/lib/ddsa/stages/intent-stage.ts b/lib/ddsa/stages/intent-stage.ts
++index 1234567..abcdefg 100644
++--- a/lib/ddsa/stages/intent-stage.ts
+++++ b/lib/ddsa/stages/intent-stage.ts
++@@ -17,6 +17,7 @@ import { getUserName } from './user-name-helper';
++ import { handleConfirmReply, generate as generateWithQOL } from '../questioning_orchestrator';
++ import audit from '../../audit';
++ 
+++import MessageExchangeAdapter from '../messageExchangeAdapter';
++
++ export async function execute(input: StageInput): Promise<StageResult> {
++   const startTime = Date.now();
++   const threadId = input.threadId;
++@@ -485,11 +486,24 @@ export async function execute(input: StageInput): Promise<StageResult> {
++       // Fallback: use MessageExchangeLayer if QOL fails
++       try {
++         console.log('⚠️ [Intent Stage] QOL failed, falling back to MessageExchangeLayer');
++-        const { getMessageExchangeLayer } = await import('../message-exchange-layer');
++-        const exchangeLayer = getMessageExchangeLayer();
++-        const runResult = await exchangeLayer.createRun(threadId, process.env.PRIMARY_ASSISTANT_ID || '');
++-        const latestAssistant = await exchangeLayer.getLatestAssistantMessage(threadId);
++-        intentQuestion = latestAssistant || 'I need more information to understand your situation.';
+++        
+++        // Using new Responses API adapter
+++        const adapterResult = await MessageExchangeAdapter.createAssistantMessage({
+++          systemBrief: 'You are a helpful assistant that asks clarifying questions to understand user intent.',
+++          userContent: 'Please ask a question to understand the user\'s intent.',
+++          threadId,
+++          tenantId: input.tenantId,
+++          model: 'gpt-4-turbo',
+++          stageRef: 'intent',
+++          contextSummary: ddsState?.shortSummary ?? null
+++        });
+++
+++        // Extract assistant text and metadata
+++        intentQuestion = adapterResult.content || 'I need more information to understand your situation.';
+++        const providerResponseId = adapterResult.providerResponseId;
+++        
+++        // Log for debugging
+++        console.log('✅ [Intent Stage] Adapter response:', {
+++           hasContent: !!adapterResult.content,
+++           providerResponseId,
+++           hasHashes: !!(adapterResult.promptHash && adapterResult.responseHash)
+++        });
++       } catch (fallbackError: any) {
++         console.error('❌ [Intent Stage] Fallback also failed:', fallbackError);
++         intentQuestion = 'I need more information to understand your situation.';
+

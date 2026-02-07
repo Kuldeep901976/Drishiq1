@@ -1,0 +1,30 @@
+--- app/api/ai/call/route.ts (Current Implementation)
++++ app/api/ai/call/route.ts (Expected for Responses API)
+@@ -104,7 +104,7 @@
+-    // Call OpenAI Responses API
++    // Call OpenAI Chat Completions API (NOT Responses API)
+     const openaiApiKey = process.env.OPENAI_API_KEY;
+     if (!openaiApiKey) {
+       return NextResponse.json(
+@@ -125,7 +125,7 @@
+-    const openaiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
++    const openaiResponse = await fetch('https://api.openai.com/v1/responses', {
+       method: 'POST',
+       headers: {
+         'Authorization': `Bearer ${openaiApiKey}`,
+@@ -113,6 +113,10 @@
+     const requestBody: any = {
+       model,
+       messages: enhancedInput,
++      instruction_set_id: stage?.instruction_set_id || null,
++      previous_response_id: previousResponseId || null,
+       max_tokens: maxTokens,
+       temperature
+     };
+
+FINDINGS:
+- Comment says "Responses API" but actually calls /v1/chat/completions
+- No instruction_set_id in request body
+- No previous_response_id in request body
+- Uses old Chat Completions API format
+

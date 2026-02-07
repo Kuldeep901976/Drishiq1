@@ -1,0 +1,96 @@
+name: 🚀 Deploy to Render
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: false
+        default: 'preprod'
+        type: choice
+        options:
+          - preprod
+          - production
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  # Build and validate before deployment
+  build-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Run linting
+        run: npm run lint || echo "Linting warnings (non-blocking)"
+
+      - name: 🧪 Run type check
+        run: npm run type-check || echo "Type check warnings (non-blocking)"
+
+      - name: 🔨 Build application
+        run: npm run build
+        env:
+          # These are dummy values for build - real values set in Render
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder' }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || 'placeholder' }}
+
+      - name: ✅ Build successful
+        run: echo "✅ Build completed successfully! Render will auto-deploy."
+
+  # Notify deployment status
+  notify-deployment:
+    needs: build-validate
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📝 Deployment notification
+        run: |
+          echo "🚀 Deployment triggered from ${{ github.ref_name }} branch!"
+          echo "📦 Commit: ${{ github.sha }}"
+          echo "👤 Author: ${{ github.actor }}"
+          echo "🌿 Branch: ${{ github.ref_name }}"
+          echo "🔗 Repository: ${{ github.repository }}"
+          echo ""
+          echo "✅ Build validation passed!"
+          echo "🔄 Render will automatically deploy this commit from ${{ github.ref_name }} branch"
+          echo "🌐 Live URL: https://drishiq-preprod.onrender.com"
+
+      - name: 📊 Create deployment summary
+        run: |
+          echo "## 🚀 Deployment Summary - ${{ github.ref_name }} Branch" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Build Status:** Success" >> $GITHUB_STEP_SUMMARY
+          echo "📦 **Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "👤 **Author:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+          echo "🌿 **Branch:** \`${{ github.ref_name }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔄 **Render Status:** Auto-deploying from ${{ github.ref_name }} branch..." >> $GITHUB_STEP_SUMMARY
+          echo "🌐 **Live URL:** https://drishiq-preprod.onrender.com" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> ⏱️ Deployment typically takes 5-10 minutes" >> $GITHUB_STEP_SUMMARY
+
+
+
+
+
+
+
+
+

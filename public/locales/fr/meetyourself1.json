@@ -1,0 +1,712 @@
+{
+  "builder": {
+    "hero": {
+      "subtitle": "Bâtisseurs, pas seulement occupés — Histoires de visages connus",
+      "title": "Toujours en train de construire",
+      "description": "Votre regard est sur la prochaine étape avant que votre pied ne touche la dernière. Vous prospérez dans le mouvement, mais quand vous arrêtez-vous et êtes-vous simplement?",
+      "cta": {
+        "primary": "Voir vos modèles de construction →",
+        "secondary": {
+          "label": "Comment Drishik aide-t-il?",
+          "sentence": "Clarifiez votre vision. Équilibrez votre rythme."
+        }
+      }
+    },
+    "stir": {
+      "line": {
+        "0": "Y a-t-il toujours 'une chose de plus' que vous voulez terminer avant de vous reposer?",
+        "1": "Avez-vous du mal à ralentir, même quand vous le voulez?",
+        "2": "Vos relations s'adaptent-elles souvent autour de vos projets?",
+        "3": "Sentez-vous que votre identité est liée à ce que vous construisez ou accomplissez?",
+        "4": "Vous êtes-vous déjà demandé: Et si j'arrêtais de construire?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Inspiré",
+        "subtitle": "Animé par un but"
+      },
+      "1": {
+        "title": "Fatigué",
+        "subtitle": "Toujours en mouvement"
+      },
+      "2": {
+        "title": "Fier",
+        "subtitle": "Le voir prendre forme"
+      },
+      "3": {
+        "title": "Isolé",
+        "subtitle": "Peu comprennent le rythme"
+      },
+      "4": {
+        "title": "Surchargé",
+        "subtitle": "Trop de piliers à la fois"
+      },
+      "5": {
+        "title": "Satisfait",
+        "subtitle": "Construire quelque chose de significatif"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Elon Musk",
+        "profession": "Entrepreneur",
+        "quote": "Quand quelque chose est assez important, vous le faites même si les chances ne sont pas en votre faveur."
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Leader médiatique",
+        "quote": "Faire de votre mieux en ce moment vous place dans la meilleure position pour le moment suivant."
+      },
+      "2": {
+        "name": "J.R.R. Tolkien",
+        "profession": "Auteur",
+        "quote": "Lentement, on voyage très loin."
+      },
+      "3": {
+        "name": "Jane Goodall",
+        "profession": "Scientifique",
+        "quote": "Ce que vous faites fait une différence, et vous devez décider quel type de différence vous voulez faire."
+      },
+      "4": {
+        "name": "Howard Schultz",
+        "profession": "Leader d'entreprise",
+        "quote": "Rêvez plus que les autres. Attendez-vous à plus que ce que les autres pensent possible."
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Le besoin de construire",
+        "line": "Vous voyez des possibilités partout.",
+        "body": "Là où d'autres voient un espace vide, vous voyez une fondation. Là où d'autres voient 'assez', vous voyez 'plus à faire'. Votre imagination et votre capacité à construire sont votre don — mais elles sont aussi votre fardeau.",
+        "bullet": {
+          "0": "Vous avez toujours plusieurs projets en cours.",
+          "1": "Vous vous sentez agité sans objectif ou plan.",
+          "2": "Vous liez la productivité à l'estime de soi."
+        },
+        "nudge": "Écrivez vos projets actuels et marquez ceux qui s'alignent vraiment avec vos valeurs — pas seulement vos habitudes.",
+        "frame": {
+          "0": {
+            "h": "Plan",
+            "p": "Planifier l'avenir"
+          },
+          "1": {
+            "h": "Marteau et clou",
+            "p": "Façonner activement"
+          },
+          "2": {
+            "h": "Structure croissante",
+            "p": "Voir les progrès"
+          }
+        },
+        "cta": "Alignez votre construction avec vos valeurs →"
+      },
+      "1": {
+        "title": "Quand la structure devient votre maître",
+        "line": "Toute construction ne vaut pas son poids.",
+        "body": "Parfois, ce que vous construisez commence à vous façonner — dirigeant votre temps, vos choix et même votre santé.",
+        "bullet": {
+          "0": "Vos projets dévorent votre temps personnel.",
+          "1": "Vous vous sentez coupable de vous éloigner.",
+          "2": "Vous restez avec une idée longtemps après que sa valeur se soit estompée."
+        },
+        "nudge": "Demandez: 'Si je lâche cela aujourd'hui, qu'est-ce que je récupère en temps, santé ou joie?'",
+        "frame": {
+          "0": {
+            "h": "Tour fissurée",
+            "p": "Signes de tension"
+          },
+          "1": {
+            "h": "Horloge sans aiguilles",
+            "p": "Le temps s'échappe"
+          },
+          "2": {
+            "h": "Figure liée",
+            "p": "Lié au travail"
+          }
+        },
+        "cta": "Libérez-vous de la construction instable →"
+      },
+      "2": {
+        "title": "Équilibrer briques et souffle",
+        "line": "Chaque structure solide repose sur une fondation solide — et c'est vous.",
+        "body": "Plus vous êtes fort, plus vos créations peuvent l'être. Construire avec équilibre signifie faire de la place pour le repos, la réflexion et les relations.",
+        "bullet": {
+          "0": "Vous négligez les besoins personnels pour les délais.",
+          "1": "Vous n'avez pas pris de pause intentionnelle depuis des années.",
+          "2": "Vous sentez votre passion se transformer en pression."
+        },
+        "nudge": "Réservez du temps non négociable chaque semaine pour quelque chose sans rapport avec vos projets.",
+        "frame": {
+          "0": {
+            "h": "Pierres équilibrées",
+            "p": "Stabilité et force"
+          },
+          "1": {
+            "h": "Champ ouvert",
+            "p": "Espace pour respirer"
+          },
+          "2": {
+            "h": "Mains tenant une plante",
+            "p": "Nourrir à la fois vous et votre travail"
+          }
+        },
+        "cta": "Construisez sans vous briser →"
+      },
+      "3": {
+        "title": "Construire au-delà de soi",
+        "line": "Les constructions les plus significatives restent après votre départ.",
+        "body": "Un vrai bâtisseur sait quand passer les outils. Enseigner, déléguer et partager le processus peut rendre votre travail plus grand que vous-même.",
+        "bullet": {
+          "0": "Vous voulez que votre travail soit un héritage.",
+          "1": "Vous êtes prêt pour plus de collaboration.",
+          "2": "Vous voulez que vos constructions servent au-delà de vous."
+        },
+        "nudge": "Choisissez une personne à mentorer ou à impliquer dans votre projet actuel.",
+        "frame": {
+          "0": {
+            "h": "Porte ouverte",
+            "p": "Inviter les autres"
+          },
+          "1": {
+            "h": "Mains passant une plante",
+            "p": "Partager les compétences"
+          },
+          "2": {
+            "h": "Bâtiment achevé au soleil",
+            "p": "Héritage établi"
+          }
+        },
+        "cta": "Créez un impact durable →"
+      }
+    },
+    "cta": {
+      "how": {
+        "label": "Comment Drishik aide",
+        "sentence": "Clarifiez votre vision. Équilibrez votre rythme."
+      }
+    },
+    "try_this": "Essayez ceci:",
+    "bridge": {
+      "title": "Prêt à façonner l'avenir?",
+      "body": "Drishik aide les bâtisseurs à trouver l'équilibre entre construction et soin de soi, garantissant que votre énergie, votre santé et votre clarté grandissent avec votre travail.",
+      "cta": "Commencez votre vérification de clarté →"
+    },
+    "how": {
+      "title": "Comment Drishik fait la différence",
+      "0": {
+        "h": "Carte Construction-Valeur",
+        "d": "Drishik vous aide à voir quels projets s'alignent vraiment avec vos valeurs."
+      },
+      "1": {
+        "h": "Réinitialisation du rythme",
+        "d": "Drishik vous fournit de vrais outils et stratégies pour ralentir sans perdre d'élan."
+      },
+      "2": {
+        "h": "Pratiques d'équilibre",
+        "d": "Drishik partage avec vous des pratiques quotidiennes qui privilégient le repos, la réflexion et les relations."
+      },
+      "3": {
+        "h": "Bâtisseur d'héritage",
+        "d": "Drishik conçoit votre impact pour servir au-delà de vous et créer une signification à long terme."
+      }
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"connector": {
+    "section": {
+      "0": {
+        "title": "Le don des ponts",
+        "line": "Vous voyez où les gens devraient se rencontrer.",
+        "body": "Vous êtes le fil entre les histoires, le lien entre les idées isolées, l'étincelle qui rend les choses possibles. Le monde a besoin de votre ouverture — et de votre capacité à rassembler le monde.",
+        "bullet": {
+          "0": "Vous présentez intuitivement des personnes qui peuvent s'entraider.",
+          "1": "Vous ne pouvez pas supporter de laisser quelqu'un de côté.",
+          "2": "Vous êtes dynamisé en voyant des relations se former."
+        },
+        "nudge": "Listez trois connexions que vous avez créées récemment qui semblaient vraiment significatives — pas seulement pratiques.",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+            "h": "Connecter les gens.",
+            "p": "Connecter les gens."
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Holding groups together..jpg",
+            "h": "Maintenir les groupes ensemble.",
+            "p": "Maintenir les groupes ensemble."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/top/Connecting people..jpeg",
+            "h": "Connecter les gens.",
+            "p": "Connecter les gens."
+          }
+        },
+        "cta": "Connectez là où c'est le plus important →"
+      },
+      "1": {
+        "title": "Tenir trop de fils",
+        "line": "Même le filet le plus solide peut s'effilocher sous la tension.",
+        "body": "Quand vous êtes la colle dans la vie de tout le monde, il peut sembler que rien ne fonctionne sans vous — et cela peut vous épuiser silencieusement.",
+        "bullet": {
+          "0": "Vous vous sentez coupable si vous ne pouvez pas aller à chaque événement.",
+          "1": "Votre boîte de réception ou vos messages sont toujours pleins de demandes.",
+          "2": "Vous trouvez difficile de dire 'non' sans explication."
+        },
+        "nudge": "Faites une pause avant de répondre à une demande. Demandez: 'Est-ce le mien?'",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+            "h": "Briser la glace.",
+            "p": "Briser la glace."
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Bringing teams together..jpg",
+            "h": "Rassembler les équipes.",
+            "p": "Rassembler les équipes."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/medium/Breaking the ice..jpeg",
+            "h": "Briser la glace.",
+            "p": "Briser la glace."
+          }
+        },
+        "cta": "Protégez votre espace sans rompre les connexions →"
+      },
+      "2": {
+        "title": "Trouver votre place dans le réseau",
+        "line": "La connexion est plus forte quand vous en faites partie.",
+        "body": "Il est facile de devenir le centre silencieux que personne ne remarque — parce que vous êtes occupé à vous assurer que les autres sont remarqués. Mais votre voix et vos besoins méritent un espace égal.",
+        "bullet": {
+          "0": "Les gens vous connaissent comme 'connecteur' mais pas profondément comme personne.",
+          "1": "Vos propres jalons passent souvent inaperçus.",
+          "2": "Vous hésitez à demander de l'aide."
+        },
+        "nudge": "Partagez un objectif personnel ou un défi avec quelqu'un en qui vous avez confiance cette semaine.",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+            "h": "Construire l'harmonie",
+            "p": "Construire l'harmonie"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Creating safe spaces..jpg",
+            "h": "Créer des espaces sûrs.",
+            "p": "Créer des espaces sûrs."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lower/Building harmony.jpg",
+            "h": "Construire l'harmonie",
+            "p": "Construire l'harmonie"
+          }
+        },
+        "cta": "Entrez dans le cercle que vous avez créé →"
+      },
+      "3": {
+        "title": "Connecter pour la transformation",
+        "line": "Les ponts les plus puissants ne connectent pas seulement les gens — ils transforment les vies.",
+        "body": "Quand vos connexions sont construites avec intention et soin, elles créent des vagues vers l'extérieur, façonnent des communautés et créent un impact qui reste au-delà de vous.",
+        "bullet": {
+          "0": "Vous voulez que votre réseau ait un but au-delà des liens sociaux.",
+          "1": "Vous rêvez de lancer des initiatives qui aident plus de gens.",
+          "2": "Vous voyez du potentiel chez les gens que d'autres négligent."
+        },
+        "nudge": "Choisissez une relation ou un groupe dans lequel investir profondément — pas plus de largeur, mais plus de profondeur.",
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+            "h": "Créer des liens durables.",
+            "p": "Créer des liens durables."
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Everyone belongs..jpg",
+            "h": "Tout le monde appartient.",
+            "p": "Tout le monde appartient."
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/connector/right slider/lowest/Creating lasting bonds..jpg",
+            "h": "Créer des liens durables.",
+            "p": "Créer des liens durables."
+          }
+        },
+        "cta": "Faites compter vos connexions →"
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Carte de connexion",
+        "d": "Voyez où va votre énergie."
+      },
+      "1": {
+        "h": "Outils de limites",
+        "d": "Apprenez à dire oui sans excès."
+      },
+      "2": {
+        "h": "Pratiques de réciprocité",
+        "d": "Construisez des relations équilibrées."
+      },
+      "3": {
+        "h": "Chemin de but",
+        "d": "Alignez la connexion avec ce qui compte le plus pour vous."
+      },
+      "title": "Comment Drishik fait la différence"
+    },
+    "hero": {
+      "title": "Tenir les voix ensemble",
+      "subtitle": "Vous connectez les gens, créez des opportunités et transformez les étrangers en collaborateurs. Mais en gardant tout le monde connecté, vous sentez-vous toujours vu?"
+    },
+    "stir": {
+      "line": {
+        "0": "Connaissez-vous souvent l'histoire de tout le monde mais partagez rarement la vôtre?",
+        "1": "Êtes-vous la première personne à qui les gens demandent 'à qui parler'?",
+        "2": "Vous sentez-vous responsable de maintenir la communauté ensemble?",
+        "3": "Vous êtes-vous senti seul au milieu de votre propre réseau?",
+        "4": "Comment serait-ce de se connecter de l'intérieur d'abord avant l'extérieur?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Chaleureux",
+        "subtitle": "Chez soi dans n'importe quelle foule"
+      },
+      "1": {
+        "title": "Surchargé",
+        "subtitle": "Trop de fils à tenir"
+      },
+      "2": {
+        "title": "Valorisé",
+        "subtitle": "Les autres comptent sur vous"
+      },
+      "3": {
+        "title": "Invisible",
+        "subtitle": "Votre histoire prend le siège arrière"
+      },
+      "4": {
+        "title": "Fier",
+        "subtitle": "Construire des ponts dont les autres avaient besoin"
+      },
+      "5": {
+        "title": "Épuisé",
+        "subtitle": "Énergie trop dispersée"
+      },
+      "header": "Comment la connexion peut se sentir"
+    },
+    "celeb": {
+      "items": [
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/maya_angelou.jpg",
+          "name": "Maya Angelou",
+          "profession": "Poète",
+          "source": "Citation",
+          "quote": "\"Nous sommes plus semblables, mes amis, que nous sommes différents.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Howard_Schultz.jpg",
+          "name": "Howard Schultz",
+          "profession": "Leader d'entreprise",
+          "source": "Citation",
+          "quote": "\"Dans la vie, vous ne pouvez pas tout être. Mais vous pouvez être les choses qui comptent vraiment.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Malala_Yousafzai.jpg",
+          "name": "Malala Yousafzai",
+          "profession": "Militante",
+          "source": "Citation",
+          "quote": "\"Quand le monde entier est silencieux, même une voix devient puissante.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Desmond_Tutu.jpg",
+          "name": "Desmond Tutu",
+          "profession": "Leader",
+          "source": "Citation",
+          "quote": "\"Faites votre petit peu de bien là où vous êtes; ce sont ces petits morceaux de bien qui submergent le monde.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/connector/celebs/Fred_Rogers.jpg",
+          "name": "Fred Rogers",
+          "profession": "Éducateur",
+          "source": "Citation",
+          "quote": "\"Les relations de soins mutuels nécessitent de la gentillesse, de la patience et de la compréhension.\""
+        }
+      ]
+    },
+    "bridge": {
+      "title": "Prêt à vous connecter avec clarté?",
+      "body": "Drishik aide les connecteurs à comprendre où leur énergie circule et quelles relations comptent vraiment. Parce que les meilleures relations sont celles qui ne vous laissent pas vide.",
+      "cta": "Cartographiez vos connexions →"
+    },
+    "topband": {
+      "label": "Connecteur, pas seulement networker — Histoires de visages connus"
+    },
+    "cta": {
+      "early_access": "Découvrez vos modèles de connexion →",
+      "how": {
+        "label": "Comment Drishik aide",
+        "sentence": "Comprenez votre énergie. Équilibrez vos relations."
+      }
+    },
+    "btn": {
+      "early_access": "Commencez votre vérification de clarté →"
+    }
+  },
+"dependent": {
+    "hero": {
+      "title": "Dépendant par conception",
+      "subtitle": "L'interdépendance n'est pas un défaut. C'est ainsi que les humains se déplacent — ensemble. L'art est de savoir quels liens vous élèvent et lesquels vous lient silencieusement."
+    },
+    "stir": {
+      "line": {
+        "0": "Qui vous stabilise — et qui vous dirige?",
+        "1": "Vos oui sont-ils choisis ou automatiques?",
+        "2": "Où le soin semble-t-il lourd?",
+        "3": "Quelle limite vous rendrait plus gentil?",
+        "4": "Quel soutien alimente la vraie croissance?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Soutien",
+        "subtitle": "Mains qui stabilisent"
+      },
+      "1": {
+        "title": "Confiance",
+        "subtitle": "Construite dans de petits actes"
+      },
+      "2": {
+        "title": "Espace",
+        "subtitle": "Amour avec air"
+      },
+      "3": {
+        "title": "Limites",
+        "subtitle": "Gentilles et claires"
+      },
+      "4": {
+        "title": "Gratitude",
+        "subtitle": "Merci, pas dette"
+      },
+      "5": {
+        "title": "Croissance",
+        "subtitle": "Courant ascendant ensemble"
+      },
+      "header": "Comment la dépendance peut se sentir"
+    },
+    "celeb": {
+      "items": [
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/maya_angelou.jpg",
+          "name": "Maya Angelou",
+          "profession": "Poète",
+          "source": "Interview",
+          "quote": "\"Personne, mais personne, ne peut s'en sortir ici seul.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Steve_Jobs.jpg",
+          "name": "Steve Jobs",
+          "profession": "Entrepreneur",
+          "source": "Conversation",
+          "quote": "\"Les grandes choses dans les affaires ne sont jamais faites par une seule personne.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Priyanka-chopra.jpg",
+          "name": "Priyanka Chopra Jonas",
+          "profession": "Actrice",
+          "source": "TEDx",
+          "quote": "\"S'appuyer sur les autres ne vous rend pas moins — cela vous rend humain.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Stephen_Hawking.jpg",
+          "name": "Stephen Hawking",
+          "profession": "Physicien",
+          "source": "Conférence",
+          "quote": "\"Nous sommes tous maintenant connectés, comme des neurones dans un cerveau géant.\""
+        },
+        {
+          "img": "/assets/images/meet-yourself/dependent/celebs/Sachin_Tendulkar.jpg",
+          "name": "Sachin Tendulkar",
+          "profession": "Joueur de cricket",
+          "source": "Presse",
+          "quote": "\"Je dois mon succès aux personnes qui se sont tenues à mes côtés.\""
+        }
+      ]
+    },
+    "bridge": {
+      "title": "L'interdépendance peut être votre force",
+      "body": "Drishik vous aide à reconnaître le soutien qui vous responsabilise — pas les relations qui vous lient. Parce que l'interdépendance saine signifie compter sur les autres mais sans vous perdre.",
+      "cta": "Commencez votre voyage de clarté →"
+    },
+    "topband": {
+      "label": "Dépendant, pas moindre — Histoires de visages connus"
+    },
+    "cta": {
+      "early_access": "Vérifiez votre carte de dépendance →",
+      "how": "Comment Drishik aide"
+    },
+    "btn": {
+      "early_access": "Vérifiez votre carte de dépendance"
+    },
+    "section": {
+      "0": {
+        "title": "Le confort de la connexion",
+        "line": "Chaleur qui stabilise. Routines qui enracinent.",
+        "body": "Routines partagées, blagues internes, s'enregistrer avec quelqu'un en fin de journée — ces liens vous gardent ancré. Mais le confort peut aussi devenir un bouclier qui vous empêche de grandir.",
+        "bullet": {
+          "0": "Vous comptez sur un petit cercle pour la plupart des décisions.",
+          "1": "Vous vous sentez ancré — et parfois réticent à prendre des risques.",
+          "2": "Vous cédez pour garder la paix."
+        },
+        "nudge": "Listez deux soutiens qui vous dynamisent et un qui vous tire silencieusement vers le bas. Gardez les deux premiers près; repensez le troisième.",
+        "cta": {
+          "label": "Cartographiez le soutien énergisant →",
+          "sentence": "Certaines mains vous aident à grandir, certaines vous maintiennent immobile. Connaissez la différence."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+            "h": "Leur rocher dans les tempêtes",
+            "p": "Leur rocher dans les tempêtes"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/You hold others up..jpg",
+            "h": "Vous soutenez les autres",
+            "p": "Vous soutenez les autres"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/top/Their rock in storms.jpeg",
+            "h": "Leur rocher dans les tempêtes",
+            "p": "Leur rocher dans les tempêtes"
+          }
+        }
+      },
+      "1": {
+        "title": "Limites au sein des liens",
+        "line": "Proximité avec air. Amour avec espace.",
+        "body": "Chaque dépendance saine a des lignes invisibles. Trop de dépendance peut les brouiller, trop de distance peut les briser. Redessiner les lignes avec clarté empêche la confiance de se transformer en tension.",
+        "bullet": {
+          "0": "Vous vous excusez de prendre du temps pour vous.",
+          "1": "Vous partagez des mots de passe, des calendriers, des plans par habitude.",
+          "2": "Dire 'non' semble être une menace pour la relation."
+        },
+        "nudge": "Écrivez une limite comme une promesse gentille: 'Je répondrai après 19h demain. Je veux donner mon meilleur esprit.'",
+        "cta": {
+          "label": "Écrivez une limite gentille →",
+          "sentence": "Les limites ne détruisent pas l'amour. Elles le purifient."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+            "h": "Les garder en sécurité",
+            "p": "Les garder en sécurité"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Their success is yours..png",
+            "h": "Leur succès est le vôtre",
+            "p": "Leur succès est le vôtre"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/medium/Keeping them safe..jpeg",
+            "h": "Les garder en sécurité",
+            "p": "Les garder en sécurité"
+          }
+        }
+      },
+      "2": {
+        "title": "Le poids des attentes",
+        "line": "La gratitude n'est pas un contrat.",
+        "body": "Parfois, le soutien vient avec des conditions — des obligations que vous n'avez pas signées. Ce n'est pas égoïste de savoir où le don se termine et où la vie commence.",
+        "bullet": {
+          "0": "Vous gardez un compte des faveurs (les leurs ou les vôtres).",
+          "1": "Vous vous excusez pour des besoins qui sont humains.",
+          "2": "Vous craignez que l'amour soit retiré si vous fixez des limites."
+        },
+        "nudge": "Écrivez un remerciement qui ne promet pas de retour: 'Merci. Cela signifiait beaucoup.' Point.",
+        "cta": {
+          "label": "Pratiquez la gratitude propre →",
+          "sentence": "La gratitude n'est pas une dette. C'est une respiration profonde."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+            "h": "Trouver vos limites",
+            "p": "Trouver vos limites"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Love with wisdom..jpg",
+            "h": "Amour avec sagesse",
+            "p": "Amour avec sagesse"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lower/Finding your limits..jpeg",
+            "h": "Trouver vos limites",
+            "p": "Trouver vos limites"
+          }
+        }
+      },
+      "3": {
+        "title": "Croissance mutuelle",
+        "line": "Dépendance qui devient résilience.",
+        "body": "La dépendance peut être une rampe de lancement lorsqu'elle est construite sur le respect et le progrès partagé. Quand vous grandissez, vos connexions grandissent aussi.",
+        "bullet": {
+          "0": "Vous célébrez les compétences, pas seulement les faveurs.",
+          "1": "Vous demandez 'Qu'est-ce qui aide?' aussi souvent que 'Pouvez-vous aider?'.",
+          "2": "Vous transformez le soutien en élan partagé."
+        },
+        "nudge": "Demandez à quelqu'un cette semaine: 'De quelle petite manière puis-je soutenir votre objectif?' Puis faites-le.",
+        "cta": {
+          "label": "Créez une croissance mutuelle →",
+          "sentence": "La vraie force n'est pas ce que vous pouvez construire seul. C'est ce que vous pouvez devenir ensemble."
+        },
+        "frame": {
+          "0": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+            "h": "Plus fort en équipe",
+            "p": "Plus fort en équipe"
+          },
+          "1": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Walking side by side..jpg",
+            "h": "Marcher côte à côte",
+            "p": "Marcher côte à côte"
+          },
+          "2": {
+            "img": "/assets/images/meet-yourself/dependent/right slider/lowest/Stronger as a team..jpg",
+            "h": "Plus fort en équipe",
+            "p": "Plus fort en équipe"
+          }
+        }
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Conversations de clarté",
+        "d": "Drishik vous guide à travers des invites douces qui transforment le flou en choix clairs."
+      },
+      "1": {
+        "h": "Plans à votre rythme",
+        "d": "Drishik partage de petites actions empilables pour que vous puissiez avancer sans pression."
+      },
+      "2": {
+        "h": "Détecteur de motifs",
+        "d": "Drishik vous aide à voir qui et quoi vous alimente vraiment."
+      },
+      "3": {
+        "h": "Suivi attentionné",
+        "d": "Drishik envoie des rappels humains pour que votre croissance se sente soutenue, pas surveillée."
+      },
+      "title": "Comment Drishik fait la différence"
+    }
+  }
+}

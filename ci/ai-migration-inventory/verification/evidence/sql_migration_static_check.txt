@@ -1,0 +1,37 @@
+Migration File Static Verification
+===================================
+File: database/migrations/20251110_add_instruction_sets_and_ai_responses.sql
+SHA256: 4c06f9e9ec7fadb6a1a072ee88577d32915bdad16530a7f2fc850038187c82f5
+
+IDEMPOTENCY CHECK: ✅ PASS
+- Uses CREATE TABLE IF NOT EXISTS for instruction_sets
+- Uses CREATE TABLE IF NOT EXISTS for ai_responses
+- Uses DO $$ blocks with IF EXISTS checks for ALTER TABLE operations
+- Uses CREATE INDEX IF NOT EXISTS for all indexes
+- Uses CREATE EXTENSION IF NOT EXISTS for pgcrypto
+- Foreign key constraints are dropped before adding (idempotent)
+
+UUID EXTENSION: ✅ PASS
+- Line 12: CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+- Line 16: Uses gen_random_uuid() for primary key default
+
+ROLLBACK INSTRUCTIONS: ✅ PASS
+- Comments at top of file (lines 4-7) provide rollback SQL:
+  - DROP TABLE IF EXISTS ai_responses;
+  - DROP TABLE IF EXISTS instruction_sets;
+  - DROP EXTENSION IF EXISTS "pgcrypto";
+
+SAFETY CHECKS: ✅ PASS
+- All ALTER TABLE operations wrapped in DO $$ blocks with existence checks
+- Foreign key constraints check for table existence before adding
+- No DROP CASCADE operations that could cause data loss
+- Uses IF NOT EXISTS patterns throughout
+
+SCHEMA VALIDATION: ✅ PASS
+- instruction_sets table has required fields: id, name, system_prompt
+- ai_responses table has required fields: response_id, thread_id, model
+- Proper indexes created for common query patterns
+- Foreign key relationships properly defined
+
+CONCLUSION: Migration file is idempotent and safe to run multiple times.
+

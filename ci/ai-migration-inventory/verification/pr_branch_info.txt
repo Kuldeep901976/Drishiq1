@@ -1,0 +1,30 @@
+Branch: feature/responses-adapt
+PR Status: DRAFT (to be created)
+PR Title: feat: Add Responses API scaffolding (instruction_sets, ai_responses, call-v2)
+
+Files Changed:
+- database/migrations/20251110_add_instruction_sets_and_ai_responses.sql (NEW)
+- lib/ddsa/db-adapters.ts (NEW)
+- app/api/ai/call-v2/route.ts (NEW)
+- app/api/admin/ddsa/stages/route.ts (MODIFIED - POST accepts instruction_set_id)
+- app/api/admin/ddsa/stages/[id]/route.ts (MODIFIED - PUT accepts instruction_set_id)
+- scripts/smoke_responses_call.js (NEW)
+- render.yaml (MODIFIED - added env vars)
+- ci/ai-migration-inventory/verification/mapping_document.json (NEW)
+- ci/ai-migration-inventory/verification/verification_checklist.json (UPDATED)
+- ci/ai-migration-inventory/verification/gaps_report.md (UPDATED)
+
+Migration Command (for Ops):
+psql $STAGING_DB_CONN -f database/migrations/20251110_add_instruction_sets_and_ai_responses.sql
+
+Rollback Command:
+See migration file comments for rollback SQL
+
+Smoke Test Command:
+node scripts/smoke_responses_call.js [staging_url]
+
+Environment Variables to Set in Render:
+- OPENAI_RESPONSES_KEY (if different from OPENAI_API_KEY)
+- OPENAI_RESPONSES_MODEL (default: "gpt-5-mini")
+- DRISHIQ_AI_MODE (default: "responses")
+

@@ -1,0 +1,407 @@
+{
+  "hero": {
+    "authenticated": {
+      "badge": "分享您的推荐语",
+      "title": "您的推荐语很重要。",
+      "subtitle": "帮助他人发现 德瑞希克。",
+      "description": "分享您与 德瑞希克 的真实体验。您的推荐语将帮助他人了解我们如何改变他们的生活。"
+    },
+    "guest": {
+      "badge": "分享您的独特挑战",
+      "title": "分享您的独特挑战。",
+      "subtitle": "如果它真的独特，我们将提出方案。",
+      "description": "告诉我们您的独特挑战。如果它确实独特，我们将为您提供一个个性化的解决方案来帮助您克服它。"
+    }
+  },
+  "form": {
+    "title": {
+      "authenticated": "分享您的推荐语",
+      "guest": "分享您的独特挑战"
+    },
+    "subtitle": {
+      "authenticated": "通过分享您的真实体验，帮助他人了解 德瑞希克 如何改变他们的生活。",
+      "guest": "告诉我们您的独特挑战。如果它确实独特，我们将为您提供个性化的解决方案。"
+    },
+    "personal_info": {
+      "title": "您的信息",
+      "fields": {
+        "name": {
+          "label": "全名 *",
+          "placeholder": "请输入您的全名"
+        },
+        "email": {
+          "label": "电子邮箱地址 *",
+          "placeholder": "your.email@example.com"
+        },
+        "phone": {
+          "label": "手机号码 *",
+          "placeholder": "请输入手机号码"
+        },
+        "profession": {
+          "label": "职业 / 角色",
+          "placeholder": "例如：软件工程师、学生、企业家"
+        },
+        "preferred_language": {
+          "label": "偏好语言 *",
+          "placeholder": "请选择您偏好的语言"
+        }
+      }
+    },
+    "story_section": {
+      "title": {
+        "authenticated": "您的推荐语",
+        "guest": "您的独特挑战"
+      },
+      "rating": {
+        "label": "评分 *",
+        "excellent": "⭐ 卓越",
+        "very_good": "👍 非常好",
+        "good": "👍 好",
+        "fair": "👌 一般",
+        "poor": "👌 差"
+      },
+      "role": {
+        "label": "您的角色 *",
+        "placeholder": "例如：软件工程师、学生、企业家等"
+      },
+      "story": {
+        "placeholder": {
+          "authenticated": "分享您与 德瑞希克 的真实体验。它如何帮助了您？帮助您克服了哪些挑战？您会对其他人说些什么？",
+          "guest": "详细描述您的独特挑战。是什么让它独特？您已经尝试了什么？您正在寻找什么具体帮助？"
+        },
+        "hint": {
+          "authenticated": "至少 100 个字符。尽量详细，以帮助更多人。",
+          "guest": "至少 100 个字符。请清晰说明是什么让您的挑战独特。"
+        },
+        "character_count": "{count}/1000"
+      },
+      "image_upload": {
+        "label": "点击上传照片",
+        "hint": "JPG、PNG 最大 5MB",
+        "change": "更换"
+      }
+    },
+    "phone_verification": {
+      "title": "需要手机验证",
+      "description": {
+        "frozen": "请确认您的手机号码以接收验证码",
+        "otp": "请输入发送到您手机的 OTP 验证码"
+      },
+      "phone_label": "手机号码",
+      "phone_locked_hint": "此号码已锁定用于验证。如需更改请联系支持团队。",
+      "phone_verify_hint": "请验证该手机号码以提交您的故事。",
+      "otp_label": "输入 6 位验证码",
+      "otp_placeholder": "000000",
+      "otp_sent_to": "OTP 已发送至 {phone}",
+      "buttons": {
+        "send_otp": "发送验证码",
+        "sending": "正在发送 OTP...",
+        "verify_submit": "验证并提交故事",
+        "verifying": "正在验证...",
+        "resend": "🔄 重新发送 OTP（点击这里）",
+        "resend_countdown": "重新发送 OTP（{count}s）",
+        "back_to_form": "← 返回表单"
+      },
+      "errors": {
+        "phone_required": "请输入您的手机号码并选择国家区号",
+        "otp_invalid": "请输入有效的 6 位 OTP",
+        "otp_expired": "OTP 会话已过期，请重新请求验证码。",
+        "otp_wrong": "无效的 OTP，请检查后重试。",
+        "otp_expired_code": "OTP 已过期，请重新请求。",
+        "verification_failed": "发送 OTP 失败，请重试。",
+        "system_not_ready": "验证系统尚未准备好，请刷新后再试。"
+      }
+    },
+    "info_note": {
+      "title": "接下来会发生什么？",
+      "description": "由于您尚未登录，我们将验证您的手机号码以确保真实性。验证完成后，我们的团队将审核您的挑战。如果真正独特，我们将为您提供个性化的解决方案。"
+    },
+    "guidelines": {
+      "title": "故事指南",
+      "subtitle": "分享您体验的建议",
+      "tips": [
+        "清晰说明您面临的挑战",
+        "描述 德瑞希克 如何帮助您获得清晰方向",
+        "分享您经历的积极变化",
+        "使用您自己的语言与真实表达",
+        "思考您的故事如何帮助其他人"
+      ]
+    },
+    "impact_stats": {
+      "title": "您的故事很重要",
+      "description": "像您这样的故事已经帮助成千上万的人迈出了第一步",
+      "stories_shared": "已分享的故事",
+      "people_inspired": "受到启发的人数"
+    },
+    "buttons": {
+      "back_to_stories": "返回故事列表",
+      "submit_testimonial": "提交推荐语",
+      "share_challenge": "分享我的挑战",
+      "submitting": "正在提交..."
+    },
+    "validation": {
+      "image_size": "图片大小需小于 5MB，请选择较小的图片。",
+      "image_type": "请上传有效的图片文件（JPG、PNG 或 WEBP）。",
+      "story_min": "请至少输入 100 个字符",
+      "required": "此字段为必填项"
+    },
+    "errors": {
+      "submission_failed": "提交您的体验时发生错误，请重试。",
+      "user_not_found": "用户在用户表中不存在",
+      "api_error": "提交您的故事失败，请重试或联系支持团队。"
+    },
+    "success_alert": {
+      "authenticated": "感谢分享您的推荐语！我们会审核并尽快与您联系。"
+    }
+  },
+  "thank_you": {
+    "title": "谢谢！🙏",
+    "subtitle": "您的故事已成功提交",
+    "description": {
+      "main": "我们已收到您的独特挑战，我们的团队将认真审核。",
+      "sub": "如果您的挑战确实独特，我们将与您联系并提供个性化解决方案。"
+    },
+    "what_happens_next": {
+      "title": "接下来会发生什么？",
+      "steps": {
+        "review": {
+          "number": "1️⃣",
+          "title": "审核流程",
+          "description": "我们的团队将认真审核您的提交内容"
+        },
+        "evaluation": {
+          "number": "2️⃣",
+          "title": "评估",
+          "description": "我们将评估您的挑战是否独特并需要我们的特别方法"
+        },
+        "contact": {
+          "number": "3️⃣",
+          "title": "联系",
+          "description": "如果通过，我们将通过邮箱向您发送下一步指引"
+        }
+      }
+    },
+    "video": {
+      "title": "观看我们的最新视频",
+      "playlist_link": "查看完整播放列表 →"
+    },
+    "buttons": {
+      "go_home": "🏠 返回首页",
+      "read_blogs": "📖 阅读并分享博客"
+    }
+  },
+  "testimonial_form": {
+    "title": {
+      "label": "故事标题",
+      "placeholder": "为您的故事添加一个吸引人的标题（可选）...",
+      "hint": "标题可以帮助他人更容易找到并理解您的故事"
+    },
+    "content": {
+      "label": "您的故事 *",
+      "placeholder": "分享您与 德瑞希克 的体验。您遇到了哪些挑战？德瑞希克 如何帮助了您？您的生活发生了哪些变化？"
+    },
+    "rating": {
+      "label": "评分 *",
+      "excellent": "优秀",
+      "very_good": "很好",
+      "good": "好",
+      "fair": "一般",
+      "poor": "差"
+    },
+    "category": {
+      "label": "分类",
+      "placeholder": "选择一个分类（可选）",
+      "custom": {
+        "label": "指定您的分类 *",
+        "placeholder": "请输入您的具体分类（例如：健康与养生、财务规划等）",
+        "hint": "请提供一个最能描述您体验的具体分类"
+      }
+    },
+    "anonymous": {
+      "label": "匿名提交",
+      "user_info": {
+        "title": "您的推荐语将以以下形式提交：",
+        "name": "姓名：",
+        "email": "邮箱："
+      },
+      "fields": {
+        "display_name": {
+          "label": "显示名称",
+          "placeholder": "例如：John D."
+        },
+        "role": {
+          "label": "角色/职业",
+          "placeholder": "例如：软件工程师"
+        },
+        "location": {
+          "label": "所在地",
+          "placeholder": "例如：纽约，美国"
+        }
+      }
+    },
+    "profile_image": {
+      "label": "头像图片",
+      "upload": {
+        "label": "上传您的图片",
+        "remove": "删除"
+      },
+      "avatar": {
+        "label": "或从我们的头像中选择",
+        "placeholder": "选择一个头像（可选）",
+        "selected": "✓ 已选择头像",
+        "change": "更换"
+      }
+    },
+    "buttons": {
+      "cancel": "取消",
+      "submit": "提交推荐语",
+      "submitting": "正在提交..."
+    },
+    "errors": {
+      "login_required": "请登录以提交推荐语，或勾选“匿名提交”以无需登录提交。",
+      "submission_failed": "提交推荐语失败"
+    },
+    "success": {
+      "title": "谢谢！",
+      "message": "您的推荐语已成功提交，正在等待审核。您将很快被重定向到推荐语页面。"
+    }
+  },
+  "testimonial_success": {
+    "title": "🎉 感谢您分享您的故事！",
+    "message": "您的推荐语已成功提交，正在等待审核。感谢您抽出时间与我们的社区分享您的经历。",
+    "what_happens_next": {
+      "title": "接下来会发生什么？",
+      "review": {
+        "title": "审核流程",
+        "description": "我们的团队将在 24-48 小时内审核您的提交内容"
+      },
+      "featured": {
+        "title": "精选故事",
+        "description": "优秀故事可能会展示在我们的首页"
+      },
+      "community": {
+        "title": "社区影响",
+        "description": "您的故事可能会启发正在寻找清晰方向的其他人"
+      }
+    },
+    "buttons": {
+      "go_home": "🏠 返回首页",
+      "submit_another": "📝 再提交一个故事"
+    },
+    "community_feedback": {
+      "title": "💭 帮助我们打造更好的社区",
+      "vision_title": "🌟 加入我们的愿景：一个分享真实体验的社区",
+      "vision_description": "我们正在构建的不只是一个平台，而是一座连接社区的桥梁。在这里，理解痛苦、快乐、失败与成功的人们能够相互支持、共同成长。您的反馈塑造着这个重要的使命。",
+      "pipeline_vision": "我们的愿景：让您的故事成为他人的希望，让共同的挑战变成集体的力量，让每一次经历都为构建真正理解彼此的社区贡献价值。",
+      "buttons": {
+        "share_vision": "💬 分享您的愿景",
+        "join_movement": "🌱 加入这个行动"
+      }
+    },
+    "bottom_cta": {
+      "title": "准备好开始您的下一次清晰探索了吗？",
+      "description": "继续与 德瑞希克 一起展开自我探索之旅",
+      "buttons": {
+        "start_session": "💬 开始新的会话",
+        "return_home": "🏠 返回首页"
+      }
+    }
+  },
+  "submit": {
+    "title": "分享您的推荐语",
+    "subtitle": "您的体验可以激励他人。告诉我们 德瑞希克 如何影响了您的生活。",
+    "success_page": {
+      "title": "🎉 感谢您分享您的故事！",
+      "message": "您的推荐语已成功提交并正在审核中。感谢您抽出时间与我们的社区分享您的经历。",
+      "go_home": "🏠 返回首页"
+    }
+  },
+  "success_page": {
+    "what_happens_next": {
+      "title": "接下来会发生什么？"
+    },
+    "review_process": "审核流程",
+    "review_description": "我们的团队将在 24–48 小时内审核您的提交内容",
+    "featured_stories": "精选故事",
+    "featured_description": "优秀故事可能会展示在我们的首页",
+    "community_impact": "社区影响",
+    "community_description": "您的故事可能会启发正在寻找清晰方向的其他人",
+    "submit_another": "📝 再提交一个故事",
+    "help_community": "💭 帮助我们打造更好的社区",
+    "join_vision": "🌟 加入我们的愿景：分享体验的社区",
+    "vision_description": "我们正在打造的不仅仅是一个平台，而是一个社区基础，在这里，人们可以分享痛苦、快乐、失败和成功，互相支持并一起成长。您的反馈正在塑造这个重要的使命。",
+    "pipeline_vision": "我们的愿景：让您的故事成为他人的希望，让共同的挣扎成为集体力量，让每一次经历都能为一个真正理解彼此的社区贡献力量。",
+    "share_vision": "💬 分享您的愿景",
+    "join_movement": "🌱 加入行动",
+    "next_clarity": "准备好开始您的下一次清晰会话了吗？",
+    "continue_journey": "继续与 德瑞希克 一起探索自我",
+    "start_session": "💬 开始新的会话",
+    "return_home": "🏠 返回首页"
+  },
+  "ui_elements": {
+    "hero": {
+      "title": "真实用户的真实故事",
+      "subtitle": "了解 德瑞希克 如何改变了他们的生活。每个故事都独一无二。",
+      "cta_button": "✨ 分享您的故事"
+    },
+    "filters": {
+      "search_placeholder": "搜索推荐语...",
+      "category_label": "所有分类",
+      "rating_label": "所有评分",
+      "featured_label": "仅显示精选",
+      "sort_label": "排序：",
+      "sort_options": {
+        "date": "日期",
+        "rating": "评分",
+        "likes": "点赞",
+        "comments": "评论"
+      }
+    },
+    "badges": {
+      "featured_story": "🌟 精选故事",
+      "user_story": "✨ 用户故事"
+    },
+    "messages": {
+      "loading": "推荐语加载中...",
+      "no_results": "未找到任何推荐语。快来分享您的故事吧！",
+      "error": "加载推荐语时出现错误"
+    },
+    "pagination": {
+      "previous": "上一页",
+      "next": "下一页"
+    }
+  },
+  "loading": "加载中...",
+  "categories": {
+    "career_development": "职业发展",
+    "life_coaching": "生活指导",
+    "business_consulting": "商业咨询",
+    "educational_consulting": "教育咨询",
+    "content_marketing": "内容营销",
+    "change_management": "变革管理",
+    "management_consulting": "管理咨询",
+    "marketing_consulting": "市场咨询",
+    "customer_service": "客户服务",
+    "customer_support": "客户支持",
+    "life_path_choices": "人生方向与选择",
+    "confidence_presence": "自信与存在感",
+    "growth_capability": "成长与能力建设",
+    "relationship_social": "关系与社交平衡",
+    "clarity_mental": "清晰与心理韧性",
+    "others": "其他"
+  },
+  "languages": {
+    "english": "English",
+    "hindi": "हिन्दी",
+    "arabic": "العربية",
+    "german": "Deutsch",
+    "spanish": "Esppañol",
+    "french": "Français",
+    "chinese": "中文",
+    "japanese": "日本語",
+    "russian": "Русский",
+    "portugese": "Português",
+    "bangla": "বাংলা",
+    "tamil": "தமிழ்"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "banner": {
+    "0": {
+      "title": "🧠 Get Unstuck. Get Clarity",
+      "text": "Feeling foggy, overwhelmed, or torn between choices?\nDrishiQ helps you organize your thoughts, reflect deeply, and make wiser decisions — through emotionally intelligent, AI-powered conversations.",
+      "cta": "🎯 Start Your Clarity Session"
+    },
+    "1": {
+      "title": "💬 Can't Pay? Your Challenge Still Matters",
+      "text": "Struggling to figure things out but can't afford a session?\nWe hear you. At DrishiQ, no voice goes unheard. Share your challenge — and we'll try to connect you with a sponsored session.",
+      "cta": "📝 Submit Your Challenge for Support"
+    },
+    "2": {
+      "title": "💚 Give the Gift of Clarity",
+      "text": "A single conversation can shift someone's world.\nDonate a session to help someone move from confusion to confidence. Your kindness could be the turning point in their journey.",
+      "cta": "🌟 Sponsor a Session Now"
+    },
+    "3": {
+      "title": "🔄 Share to Inspire. Earn Credits",
+      "text": "Did DrishiQ help you solve a challenge or gain emotional clarity?\nYour story could inspire someone else — and earn you session credits in return.",
+      "cta": "📣 Share Your Story"
+    },
+    "4": {
+      "title": "🌍 One Platform. Many Journeys",
+      "text": "Every journey to clarity is different. Some seek guidance, others offer support.\nDrishiQ brings it all together — powered by insight, empathy, and shared human growth.",
+      "cta": "🧭 Explore the DrishiQ Experience"
+    }
+  },
+  "areas": {
+    "heading": "Areas We Help",
+    "subtitle": "Every challenge is unique, but the path to clarity isn't. We help you navigate through life's most common yet complex situations.",
+    "areas_subtitle_long": "Every challenge is unique, but the path to clarity isn't. We help you navigate through life's most common yet complex situations with personalized AI-powered conversations that understand your context and provide actionable insights.",
+    "not_seeing_challenge": "Don't see your challenge here?",
+    "start_now": "Start Now",
+    "count": "7",
+    "card1": {
+      "title": "Mental Clarity & Overwhelm",
+      "icon": "🧠",
+      "quote1": "I keep overthinking everything — and end up doing nothing",
+      "quote2": "My mind feels cluttered all the time",
+      "quote3": "I don't know what matters to me anymore",
+      "quote4": "Every decision feels like it could change my entire life",
+      "quote5": "I'm paralyzed by all the possibilities and what-ifs",
+      "quote6": "Sometimes I wish someone would just tell me what to do",
+      "back1": "Clarity comes from action, not endless thinking",
+      "back2": "Your intuition knows more than your overthinking mind",
+      "back3": "Perfect is the enemy of progress — start with good enough",
+      "back4": "Most decisions are reversible — you can always adjust course",
+      "back5": "Focus on the next small step, not the entire journey",
+      "back6": "Overwhelm is often a sign that you're trying to control too much",
+      "back7": "Take breaks — your mind needs rest to process and clear",
+      "back8": "Write down your thoughts — externalizing helps organize them"
+    },
+    "card2": {
+      "title": "Direction & Purpose",
+      "icon": "🧭",
+      "quote1": "I'm not sure what I want in life",
+      "quote2": "I'm good at a few things, but I don't know which path to take",
+      "quote3": "Everyone expects something different from me — I feel pulled apart",
+      "quote4": "I'm doing okay, but something feels off",
+      "quote5": "I see others with clear goals and I feel lost",
+      "quote6": "What if I choose wrong and waste years of my life?",
+      "back1": "Purpose emerges from doing, not from thinking about doing",
+      "back2": "Your values are your compass — what truly matters to you?",
+      "back3": "Comparison is the thief of joy — your path is uniquely yours",
+      "back4": "Every experience teaches you something about what you want",
+      "back5": "It's okay to change direction — that's how you find your way",
+      "back6": "Look for what energizes you — that's often your calling",
+      "back7": "Start with what you're curious about, not what you think you should do",
+      "back8": "Your purpose can evolve — it doesn't have to be fixed forever"
+    },
+    "card3": {
+      "title": "Emotional Expression & Judgment",
+      "icon": "💚",
+      "quote1": "I can't talk without feeling judged",
+      "quote2": "People don't really listen — they just give advice",
+      "quote3": "I smile outside, but I'm overwhelmed inside",
+      "quote4": "I feel like I'm always performing, never being real",
+      "quote5": "When I try to open up, people either fix me or dismiss me",
+      "quote6": "I'm tired of pretending I have it all together",
+      "back1": "Your feelings are valid — you don't need permission to feel them",
+      "back2": "Vulnerability is courage, not weakness",
+      "back3": "Find your tribe — people who listen without fixing",
+      "back4": "Authenticity attracts the right people into your life",
+      "back5": "You deserve to be heard and understood, not fixed",
+      "back6": "Judgment from others often reflects their own insecurities",
+      "back7": "Practice expressing yourself in safe spaces first",
+      "back8": "Your emotional truth is your superpower, not your weakness"
+    },
+    "card4": {
+      "title": "Performance & Confidence",
+      "icon": "🎯",
+      "quote1": "I freeze during important moments — even when I'm prepared",
+      "quote2": "Preparing for a senior job interview… and freaking out inside",
+      "quote3": "I know my subject, but I struggle to speak with confidence",
+      "quote4": "My mind goes blank when I need to perform under pressure",
+      "quote5": "I rehearse everything but still feel like I'm not good enough",
+      "quote6": "What if they see through me and realize I'm not qualified?",
+      "back1": "Confidence is built through action, not preparation",
+      "back2": "You are more qualified than you think — trust your knowledge",
+      "back3": "Nervousness is normal — it shows you care about doing well",
+      "back4": "Focus on serving others, not impressing them",
+      "back5": "Your worth isn't determined by one performance or outcome",
+      "back6": "Practice breathing techniques to calm your nervous system",
+      "back7": "Remember past successes — you've overcome challenges before",
+      "back8": "Confidence grows with each small step you take"
+    },
+    "card5": {
+      "title": "Skill Improvement",
+      "icon": "📈",
+      "quote1": "I'm stuck in a plateau with my tennis forehand",
+      "quote2": "I want to improve, but I don't know what's holding me back",
+      "quote3": "I've practiced, but something's not clicking",
+      "quote4": "I watch others excel while I stay stuck at the same level",
+      "quote5": "Maybe I'm just not naturally talented enough",
+      "quote6": "I'm afraid I've hit my ceiling and this is as good as I'll get",
+      "back1": "Plateaus are part of the learning process — not the end",
+      "back2": "Break down the skill into smaller, specific components",
+      "back3": "Get feedback from someone who can see what you can't",
+      "back4": "Sometimes you need to unlearn before you can relearn",
+      "back5": "Progress isn't always linear — trust the process",
+      "back6": "Focus on deliberate practice, not just repetition",
+      "back7": "Record yourself to see what you can't feel",
+      "back8": "Take breaks — your brain consolidates learning during rest"
+    },
+    "card6": {
+      "title": "Relationship Confusion",
+      "icon": "💞",
+      "quote1": "Not sure if I should continue my marriage",
+      "quote2": "We argue often — but I don't know what we're really fighting about",
+      "quote3": "I feel disconnected in my relationship but can't explain why",
+      "quote4": "I love them, but I don't feel like myself around them anymore",
+      "quote5": "Every conversation turns into a battle I didn't mean to start",
+      "quote6": "I'm scared of being alone, but I'm lonely even when we're together",
+      "back1": "Healthy relationships require both people to show up authentically",
+      "back2": "Communication is about understanding, not being right",
+      "back3": "Sometimes love isn't enough — compatibility and growth matter too",
+      "back4": "You can love someone and still need to let them go",
+      "back5": "Being alone is better than being lonely in a relationship",
+      "back6": "Pay attention to patterns — they reveal the truth about your relationship",
+      "back7": "Couples therapy isn't a last resort — it's a tool for growth",
+      "back8": "Your happiness matters — don't sacrifice it for the relationship"
+    },
+    "card7": {
+      "title": "Young Adult Dilemmas",
+      "icon": "🎓",
+      "quote1": "I'm good at science, but don't know what's next",
+      "quote2": "I'm graduating soon — and I feel lost",
+      "quote3": "My parents want one thing, but I want something else",
+      "quote4": "Everyone else seems to have their life figured out except me",
+      "quote5": "I'm terrified of making the wrong choice and ruining my future",
+      "quote6": "What if I'm not smart enough or good enough for what I want to do?",
+      "back1": "Your twenties are for exploration, not having it all figured out",
+      "back2": "Follow your curiosity — it will lead you to your passion",
+      "back3": "It's your life to live, not your parents' to design",
+      "back4": "Everyone is figuring it out as they go — you're not behind",
+      "back5": "The best decisions come from following your values, not others' expectations",
+      "back6": "Internships and side projects teach you more than any degree",
+      "back7": "Network with people who inspire you — they'll open doors",
+      "back8": "Mistakes in your twenties are investments in your future wisdom"
+    }
+  },
+  "blog": {
+    "heading": "Featured Blog Posts",
+    "subtitle": "Insights, stories, and guidance to help you navigate life's challenges with clarity and confidence.",
+    "read_more_button": "Read More Blog Posts"
+  },
+  "testimonials": {
+    "heading": "Real Stories, Real Impact",
+    "subtitle": "Hear from people who've found clarity and direction through DrishiQ.",
+    "real_stories": "Real Stories",
+    "real_stories_suffix": " from real people",
+    "one_story": "Every story matters — including yours",
+    "share_story": "Share Your Story",
+    "default_content": "DrishiQ helped me see through my challenges and find a clear path forward. The AI-powered conversations were surprisingly insightful and supportive.",
+    "featured_story": "🌟 Featured Story",
+    "user_story": "✨ User Story"
+  }
+}

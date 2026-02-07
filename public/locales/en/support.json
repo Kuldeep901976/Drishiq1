@@ -1,0 +1,260 @@
+{
+  "title": "Support",
+  "hero": {
+    "title": "Fuel a Session, Fuel a Life",
+    "subtitle": "Your contribution helps someone pause, breathe, and rediscover their way forward. Every amount makes a difference.",
+    "badge": "Support Details"
+  },
+  "supportOptions": {
+    "gentleNudge": {
+      "title": "One Gentle Nudge",
+      "emotionLabel": "Gift one quiet moment",
+      "sessions": "1 session",
+      "validity": "2 weeks",
+      "description": "Perfect for someone who needs a gentle push toward clarity"
+    },
+    "shiftForward": {
+      "title": "A Shift Forward",
+      "emotionLabel": "Support someone's next honest step",
+      "sessions": "2 sessions",
+      "validity": "1 month",
+      "description": "Give someone the space to take their next meaningful step"
+    },
+    "deeperSpace": {
+      "title": "Deeper Space",
+      "emotionLabel": "Let them sit with it longer",
+      "sessions": "5 sessions",
+      "validity": "2 months",
+      "description": "Create space for deeper exploration and understanding"
+    },
+    "heart": {
+      "title": "Heart Donation",
+      "emotionLabel": "Give from the heart",
+      "sessions": "Flexible",
+      "validity": "Flexible",
+      "description": "Contribute any amount to help us keep DrishiQ accessible for everyone who needs it"
+    }
+  },
+  "form": {
+    "heading": {
+      "title": "Complete Your Support Details",
+      "subtitle": "Fill in the information below to complete your support contribution"
+    },
+    "personal_info": {
+      "title": "👤 Personal Information",
+      "anonymous_toggle": "Contribute Anonymously",
+      "anonymous_hint": "Your contribution will be anonymous, but we'll still process your payment securely"
+    },
+    "fields": {
+      "full_name": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "your.email@example.com"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "+91 1234567890"
+      }
+    },
+    "cause": {
+      "title": "🎯 Cause Selection",
+      "description": "Choose where you'd like your support to be allocated, or let us decide where it's needed most.",
+      "share_instead_label": "Let DrishiQ allocate where needed most (recommended)"
+    },
+    "message": {
+      "title": "💌 Personal Message",
+      "optional": "Optional",
+      "hint": "Share a message of encouragement or let the recipient know why you're supporting them (optional).",
+      "placeholder": "Write your message here...",
+      "footer_hint": "Your message will be shared with the recipient (if not anonymous)"
+    },
+    "buttons": {
+      "back_to_options": "← Back to Options",
+      "processing": "Processing...",
+      "complete_support": "💚 Complete Support"
+    }
+  },
+  "options": {
+    "title": "Support Options",
+    "custom": "Custom",
+    "placeholder_enter_amount": "Enter amount"
+  },
+  "trust": {
+    "secure_title": "🔒 Secure & Transparent",
+    "secure_text": "Your payment is processed securely with industry-standard encryption. All transactions are transparent and tracked.",
+    "ssl_encryption": "SSL Encryption",
+    "transparent": "Transparent"
+  },
+  "support_payment": {
+    "redirecting": "Redirecting to support section...",
+    "loading": "Loading..."
+  },
+  "payment": {
+    "page": {
+      "header": {
+        "title": "DrishiQ Payment",
+        "backToPlans": "← Back to Plans"
+      },
+      "planSummary": {
+        "title": "Plan Summary",
+        "planPrice": "Plan Price",
+        "tax": "Tax",
+        "totalAmount": "Total Amount",
+        "location": "Location",
+        "pricingCategory": "Pricing Category",
+        "credits": "credits"
+      },
+      "paymentMethods": {
+        "title": "Choose Payment Method",
+        "cashfree": {
+          "name": "Cashfree",
+          "description": "Cards, UPI, Net Banking, Wallets"
+        },
+        "paypal": {
+          "name": "PayPal",
+          "description": "PayPal, Credit/Debit Cards"
+        },
+        "proceed": "Proceed to Payment",
+        "selectMethod": "Select Payment Method",
+        "securityNotice": "Your payment is secured with 256-bit SSL encryption"
+      },
+      "error": {
+        "title": "Payment Error",
+        "backToPlans": "Back to Plans",
+        "planNotFound": "Plan Not Found",
+        "planNotFoundMessage": "The selected plan could not be found.",
+        "loading": "Loading payment details..."
+      }
+    },
+    "process": {
+      "title": "Complete Your Payment",
+      "subtitle": "Secure payment processing with multiple payment options",
+      "serviceDetails": "Service Details",
+      "service": "Service",
+      "amount": "Amount",
+      "credits": "Credits",
+      "currency": "Currency",
+      "paymentMethodsAvailable": "Payment Methods Available",
+      "paypal": {
+        "name": "PayPal",
+        "description": "Global payments"
+      },
+      "cashfree": {
+        "name": "Cashfree",
+        "description": "Indian payments"
+      },
+      "phonepe": {
+        "name": "PhonePe",
+        "description": "UPI payments"
+      },
+      "paymentError": "Payment Error",
+      "proceedToPayment": "Proceed to Payment",
+      "processing": "Processing...",
+      "security": "🔒 Your payment is secured with industry-standard encryption",
+      "loading": "Loading payment details...",
+      "error": "Error",
+      "invalidDetails": "Invalid payment details"
+    },
+    "failure": {
+      "title": "Payment Not Processed",
+      "subtitle": "We couldn't complete your payment",
+      "transactionFailed": "⚠️ Transaction Failed",
+      "notCharged": "Don't worry! Your card was not charged.",
+      "possibleReasons": "Possible Reasons",
+      "reasons": {
+        "insufficientFunds": "Insufficient funds in your account",
+        "incorrectCard": "Incorrect card information",
+        "bankDeclined": "Bank declined the transaction",
+        "networkIssues": "Network connectivity issues",
+        "cardExpired": "Card expired or invalid"
+      },
+      "tryAgain": "Try Again 🔄",
+      "backToPlans": "Back to Plans",
+      "contactSupport": "Contact Support",
+      "needHelp": "Need Help?",
+      "helpMessage": "If this issue persists, please contact our support team.",
+      "supportEmail": "support@drishiq.com"
+    },
+    "success": {
+      "title": "Payment Successful",
+      "subtitle": "Your payment has been processed successfully",
+      "message": "Thank you for your payment. You will receive a confirmation email shortly.",
+      "continue": "Continue"
+    },
+    "successPage": {
+      "processing": "Processing your payment...",
+      "creditsAdded": "✓ Credits added to your account",
+      "processingError": "Processing Error",
+      "backToPlans": "Back to Plans",
+      "paymentDataNotFound": "Payment Data Not Found",
+      "unableToLoad": "Unable to load payment details.",
+      "paymentConfirmation": "Payment Confirmation",
+      "plan": "Plan",
+      "creditsAddedLabel": "Credits Added",
+      "amountPaid": "Amount Paid",
+      "transactionId": "Transaction ID",
+      "status": "Status",
+      "paymentSuccessful": "Payment Successful",
+      "whatsNext": "What's Next?",
+      "creditsAddedToAccount": "Credits added to your account",
+      "startFirstSession": "• Start your first clarity session",
+      "checkEmail": "• Check your email for confirmation",
+      "shareGift": "• Share the gift with your recipient",
+      "goToChat": "Go to Chat Now →",
+      "viewAllPlans": "View All Plans",
+      "shareJourney": "Share your journey with DrishiQ",
+      "shareTwitter": "Share on Twitter",
+      "shareLinkedIn": "Share on LinkedIn",
+      "categories": {
+        "prelaunch": {
+          "title": "🎉 Welcome to the DrishiQ Family!",
+          "subtitle": "You're an Early Believer",
+          "message": "Thank you for believing in DrishiQ's vision and strengthening our foundation. Your early support helps us build something truly meaningful for everyone seeking clarity.",
+          "badge": "Early Believer"
+        },
+        "postlaunch": {
+          "title": "✨ Your Journey to Clarity Begins!",
+          "subtitle": "Welcome to DrishiQ",
+          "message": "Thank you for choosing DrishiQ. You've taken the first step towards greater self-awareness and clarity. Your journey of discovery starts now.",
+          "badge": "Clarity Seeker"
+        },
+        "gift": {
+          "title": "🎁 Your Gift of Clarity is Ready!",
+          "subtitle": "Spreading the Light",
+          "message": "Thank you for gifting clarity to someone special. Your thoughtful gesture will help them pause, breathe, and rediscover their way forward.",
+          "badge": "Clarity Giver"
+        },
+        "support": {
+          "title": "🕊️ Thank You for Your Compassion!",
+          "subtitle": "Making a Difference",
+          "message": "Your support opens doors for someone in need to find clarity and strength. You're helping us make DrishiQ accessible to everyone who needs it.",
+          "badge": "Compassion Keeper",
+          "downloadBadge": "🎖️ Download Your Badge",
+          "badgeDescription": "Show your support with this special badge",
+          "downloadButton": "Download Badge"
+        }
+      }
+    },
+    "thankYou": {
+      "title": "Thank You! 🙏",
+      "subtitle": "Your payment has been processed successfully",
+      "creditsAdded": "✅ Credits Added to Your Account",
+      "creditsReady": "+{credits} Credits Ready to Use",
+      "whatsNext": "What's Next?",
+      "creditsAvailable": "Your credits are now available! You can start your first conversation or explore other features.",
+      "startConversation": "Start Your First Conversation 🚀",
+      "viewDashboard": "View My Dashboard",
+      "purchaseMore": "Purchase More Credits",
+      "needHelp": "Need help? Contact our support team",
+      "supportEmail": "support@drishiq.com"
+    }
+  },
+  "errors": {
+    "submissionFailed": "Error submitting your support details. Please try again.",
+    "paymentInitializationFailed": "Payment initialization failed. Please try again.",
+    "paymentFailed": "Payment failed. Please try again."
+  }
+}

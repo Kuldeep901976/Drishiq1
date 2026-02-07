@@ -1,0 +1,26 @@
+{
+  "name": "@drishiq/policy",
+  "version": "1.0.0",
+  "description": "Policy engine for decision making and validation in DrishiQ ChatModule",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint . --ext .ts",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["drishiq", "chat", "policy", "validation"],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "dependencies": {
+    "@drishiq/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
+
+
+

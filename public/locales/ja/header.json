@@ -1,0 +1,116 @@
+{
+  "logo_alt": "ドリシーク ロゴ",
+
+  "meet_yourself": {
+    "label": "自分と出会う",
+    "types_label": "性格タイプ",
+    "types": {
+      "builder": "ビルダー",
+      "builder_hover": "創造し、構築し、主体的に行動する人",
+      "seeker": "探求者",
+      "seeker_hover": "意味や新しい視点を探し求める人",
+      "giver": "ギバー",
+      "giver_hover": "他者を助け、サポートを提供する人",
+      "connector": "コネクター",
+      "connector_hover": "人と人をつなぐ役割の人",
+      "dependent": "依存タイプ",
+      "dependent_hover": "支えを求めて他者に頼りがちな人",
+      "escaper": "逃避者",
+      "escaper_hover": "ストレスから逃れようとする、または距離を置こうとする人",
+      "giving_beyond": "限界を超えて与える",
+      "giving_beyond_hover": "個人の貢献を超えた行動",
+      "problem_carrier": "問題抱え手",
+      "problem_carrier_hover": "他人の問題を自分で抱えてしまう人",
+      "rebooter": "リブーター",
+      "rebooter_hover": "状況を再スタートし、再定義する人",
+      "solo": "ソロタイプ",
+      "solo_hover": "自立と孤独を大切にする人"
+    }
+  },
+
+  "drishiq": "ドリシーク",
+  "drishiq_hover": "ドリシークのホームページへ",
+
+  "blog": "ブログ",
+  "blog_hover": "記事・ストーリー・考えを読む",
+
+  "voice": "ボイス",
+  "voice_hover": "視点やオーディオコンテンツを聴く",
+
+  "grow": "成長",
+  "grow_hover": "学習・協力・拡大の機会",
+
+  "bridge": "ブリッジ",
+  "bridge_hover": "他者とつながり、コミュニティを築く",
+
+  "your_path_label": "あなたの道",
+  "your_path": {
+    "your_clarity_pass": "クラリティパス",
+    "your_clarity_pass_hover": "クラリティパスを取得する",
+    "co_create": "共創",
+    "co_create_hover": "他者と共にあなたの体験を形づくる",
+    "get_first_light": "最初の光を得る",
+    "get_first_light_hover": "初回クラリティセッションから始める",
+    "fuel_a_journey": "旅に力を与える",
+    "fuel_a_journey_hover": "誰かの自己成長の旅を支援する",
+    "gift_a_spark": "ひらめきを贈る",
+    "gift_a_spark_hover": "初回クラリティセッションをギフトする",
+    "spread_the_light": "光を広げる",
+    "spread_the_light_hover": "ドリシークをネットワークで共有し、コミュニティを広げる"
+  },
+
+  "language_button_label": "言語",
+
+  "languages": {
+    "en": "English",
+    "hi": "हिन्दी",
+    "bn": "বাংলা",
+    "zh": "中文",
+    "ja": "日本語",
+    "ru": "Русский",
+    "es": "Español",
+    "de": "Deutsch",
+    "fr": "Français",
+    "ta": "தமிழ்",
+    "pt": "Português",
+    "ar": "العربية"
+  },
+
+  "profile_options_label": "プロフィールオプション",
+  "profile_options": {
+    "got_an_invitation": "招待がありますか？",
+    "got_an_invitation_hover": "招待コードを入力してアクセスを解除",
+    "reserve_my_spot": "席を確保する",
+    "reserve_my_spot_hover": "支払いと連絡先で席を確定",
+    "request_an_invitation": "招待をリクエスト",
+    "request_an_invitation_hover": "早期アクセスのために情報を共有する",
+    "gift_clarity": "クラリティを贈る",
+    "gift_clarity_hover": "クラリティセッションまたは招待を贈る",
+    "grow_with_us": "私たちと共に成長する",
+    "grow_with_us_hover": "アンバサダー・アフィリエイト・コラボレーターになる"
+  },
+
+  "profile": {
+    "user_fallback": "ユーザー",
+    "welcome_back": "お帰りなさい！",
+    "dashboard": "ダッシュボード",
+    "user_profile": "ユーザープロフィール",
+    "settings": "プロフィール設定",
+    "sign_out": "サインアウト",
+    "sign_in": "サインイン",
+    "sign_up": "サインアップ",
+    "log_out": "ログアウト",
+    "search": "検索",
+    "light_mode": "ライトモード",
+    "dark_mode": "ダークモード",
+    "about": "ドリシークについて",
+    "terms_conditions": "利用規約",
+    "years": "年",
+    "scan_to_sign_up": "スキャンしてサインアップ",
+    "qr_scan_instruction": "スマートフォンのカメラでQRコードをスキャンしてください",
+    "qr_enlarge_hover": "クリックしてQRコードを拡大",
+    "dashboard_hover": "ダッシュボードを表示",
+    "settings_hover": "プロフィール設定を管理",
+    "sign_out_hover": "アカウントからサインアウト"
+  }
+}

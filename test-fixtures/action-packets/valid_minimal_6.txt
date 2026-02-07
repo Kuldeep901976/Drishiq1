@@ -1,0 +1,6 @@
+ACTION_PACKET:
+{"problem":{"summary":"Minimal test 6"},"actions":[{"event_name":"Action 6"}]}
+END_ACTION_PACKET
+
+---END---
+MACHINE_OK

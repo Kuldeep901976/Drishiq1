@@ -1,0 +1,53 @@
+#!/bin/sh
+# Husky pre-commit hook for path protection
+# Prevents commits that modify protected files outside AI-allowed paths
+
+echo "🔍 Checking for protected file modifications..."
+
+# Define AI-allowed paths (paths that can be modified without human review)
+AI_ALLOWED_PATHS="apps/chat packages/core packages/ui components/BlogTTSPlayer.tsx components/Header.tsx lib/drishiq-i18n.tsx app/blog app/meet-yourself app/grow-with-us public/locales"
+
+# Get list of staged files
+STAGED_FILES=$(git diff --cached --name-only)
+
+# Check if any staged files are outside AI-allowed paths
+PROTECTED_FILES=""
+for file in $STAGED_FILES; do
+    # Skip if file is in AI-allowed paths
+    ALLOWED=false
+    for allowed_path in $AI_ALLOWED_PATHS; do
+        if echo "$file" | grep -q "^$allowed_path"; then
+            ALLOWED=true
+            break
+        fi
+    done
+    
+    # If not allowed, add to protected files list
+    if [ "$ALLOWED" = false ]; then
+        PROTECTED_FILES="$PROTECTED_FILES $file"
+    fi
+done
+
+# If protected files found, block the commit
+if [ -n "$PROTECTED_FILES" ]; then
+    echo "❌ COMMIT BLOCKED: Protected files detected!"
+    echo ""
+    echo "The following files are outside AI-allowed paths and require human review:"
+    for file in $PROTECTED_FILES; do
+        echo "  - $file"
+    done
+    echo ""
+    echo "AI-allowed paths:"
+    for path in $AI_ALLOWED_PATHS; do
+        echo "  - $path"
+    done
+    echo ""
+    echo "To proceed:"
+    echo "1. Create a PR for human review, OR"
+    echo "2. Remove these files from staging: git reset HEAD <file>"
+    echo "3. Add them to AI-allowed paths in this hook if appropriate"
+    exit 1
+fi
+
+echo "✅ All staged files are in AI-allowed paths"
+exit 0

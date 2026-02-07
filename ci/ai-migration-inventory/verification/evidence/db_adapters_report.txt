@@ -1,0 +1,67 @@
+DB Adapters Static Analysis Report
+===================================
+File: lib/ddsa/db-adapters.ts
+Date: 2025-01-10
+
+SERVICE CLIENT USAGE:
+✅ PASS: All functions use createServiceClient() from '../supabase'
+✅ PASS: createServiceClient() uses SUPABASE_SERVICE_ROLE_KEY (server-side only)
+⚠️  NOTE: Uses .or() query in getStageById (line 79) - may be ambiguous, but acceptable
+
+REQUIRED FUNCTIONS PRESENCE:
+✅ PASS: getStageById(stageId: string) - Lines 71-113
+✅ PASS: getStageByName(stageName: string) - Lines 118-152
+✅ PASS: getInstructionSetById(instructionSetId: string) - Lines 157-191
+✅ PASS: getRecentMessages(threadId: string, limit: number) - Lines 196-229
+✅ PASS: insertAiResponse(payload: AiResponseInsert) - Lines 234-268
+✅ PASS: saveInstructionSet(payload: {...}) - Lines 273-315
+
+TABLE MAPPINGS:
+✅ PASS: getStageById/getStageByName → ddsa_stage_config table
+✅ PASS: getRecentMessages → chat_messages table
+✅ PASS: getInstructionSetById → instruction_sets table
+✅ PASS: insertAiResponse → ai_responses table
+✅ PASS: saveInstructionSet → instruction_sets table
+
+QUERY PATTERNS:
+✅ PASS: Uses .eq() for exact matches
+⚠️  WARNING: getStageById uses .or() query (line 79) - could be ambiguous
+   - Pattern: .or(`stage_id.eq.${stageId},id.eq.${stageId}`)
+   - Recommendation: Consider separate queries for deterministic behavior
+✅ PASS: Uses .maybeSingle() for optional results
+✅ PASS: Uses .order() and .limit() for getRecentMessages
+✅ PASS: Error handling present in all functions
+
+NORMALIZATION:
+✅ PASS: getStageById normalizes ddsa_stage_config to NormalizedStage interface
+✅ PASS: Extracts config from JSONB (data.config)
+✅ PASS: Extracts metadata from JSONB (data.metadata)
+✅ PASS: Maps instruction_set_id from metadata.instruction_set_id || config.instruction_set_id
+✅ PASS: Maps is_active → enabled
+✅ PASS: Maps stage_id/id → id
+✅ PASS: Maps stage_name → name
+
+DATA TYPES:
+✅ PASS: Thread IDs handled as UUID (matches chat_threads.id)
+✅ PASS: Response IDs handled as TEXT (matches ai_responses.response_id)
+✅ PASS: Instruction set IDs handled as UUID (matches instruction_sets.id)
+
+ERROR HANDLING:
+✅ PASS: All functions wrapped in try/catch
+✅ PASS: Console errors logged with ❌ prefix
+✅ PASS: Returns null on error (graceful degradation)
+
+INSERT OPERATIONS:
+✅ PASS: insertAiResponse uses .insert() with .select().single()
+⚠️  NOTE: Does not use upsert - may fail on duplicate response_id
+   - Recommendation: Consider using .upsert() with onConflict for idempotency
+
+INTERFACE COMPLIANCE:
+✅ PASS: All functions match expected TypeScript interfaces
+✅ PASS: Return types match documented interfaces
+
+OVERALL ASSESSMENT: ✅ MOSTLY VALID
+- All required functions present
+- Correct table mappings
+- Minor improvement: Consider deterministic queries and upsert for insertAiResponse
+

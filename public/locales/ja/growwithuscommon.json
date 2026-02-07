@@ -1,0 +1,284 @@
+{
+  "main_page": {
+    "hero": {
+      "badge": "ドリシクと一緒に成長する",
+      "title": "🌱 一緒に立ち上がろう",
+      "description": "アフィリエイト、投資家、クリエイター、またはコミュニティの声のいずれであろうと、圧力ではなく人々と共に成長する、静かで明確さを優先するプラットフォームの構築に参加する役割があります。",
+      "stir_lines": {
+        "choose_lane": "あなたの道を選んでください。私たちがあなたと一緒に道を広げます。",
+        "share_earn": "あなたが愛するものを共有してください。あなたが構築したものを獲得してください。",
+        "belief_momentum": "信念を勢いに変えてください。",
+        "collaborate": "混乱なく協力してください。",
+        "early_seen_useful": "早くいてください。目に見えてください。有用でいてください。"
+      },
+      "cta": {
+        "explore_paths": "6つのパスを探索する",
+        "tell_interest": "あなたの興味を教えてください"
+      },
+      "visual": {
+        "title": "6つの輝く枝を持つ生きた成長の木",
+        "description": "各枝はドリシクと共に成長するためのパスを表し、私たちのプラットフォームに向かう、そしてプラットフォームから流れ出すエネルギー—実行中の共成長。"
+      }
+    },
+    "why_ドリシク": {
+      "title": "なぜ明確さ優先のプラットフォームと共に成長するのか?",
+      "description": "ドリシクは人々が霧を小さな、正直なステップに変えるのを助けます—彼らのペースで。パートナーは私たちがその使命に到達し、教え、維持するのを助けます。あなたはあなたの強みをもたらします。私たちはあなたのツール、オーディエンス、リソースを共有します。",
+      "growth_loop": {
+        "title": "一緒に、より健康な成長ループを作ります",
+        "steps": ["価値", "信頼", "リーチ", "収益", "再投資"]
+      },
+      "features": {
+        "transparent_terms": {
+          "title": "透明な条件",
+          "description": "明確な帰属と正直なレポート"
+        },
+        "co_created_launches": {
+          "title": "共同作成されたローンチ",
+          "description": "1回限りのブラストではなく、意味のあるパートナーシップ"
+        },
+        "practical_assets": {
+          "title": "実用的な資産",
+          "description": "コピーキット、トラッカー、ダッシュボード"
+        },
+        "recognition_loops": {
+          "title": "認識ループ",
+          "description": "シャウトアウト、フィーチャー、ケーススタディ"
+        }
+      }
+    },
+    "six_paths": {
+      "title": "6つのパス",
+      "description": "あなたのレーンを選んでください—一緒に勢いを作ります",
+      "learn_more": "詳細を見る"
+    },
+    "roles": {
+      "affiliates": {
+        "title": "アフィリエイト",
+        "description": "あなたが信じている製品を共有しながら稼いでください。"
+      },
+      "referrals": {
+        "title": "紹介",
+        "description": "ドリシクを愛するであろう誰かを招待して報酬を獲得してください。"
+      },
+      "investors": {
+        "title": "投資家",
+        "description": "明確なマイルストーンを備えた、人を中心としたプラットフォームに資金を提供してください。"
+      },
+      "ambassadors": {
+        "title": "アンバサダー",
+        "description": "あなたのサークルまたは都市でドリシクの声になってください。"
+      },
+      "collaborators": {
+        "title": "クリエイター / コラボレーター",
+        "description": "コンテンツ、機能、エクスペリエンスを作成してください—一緒に。"
+      },
+      "promoters": {
+        "title": "プロモーター",
+        "description": "すでに使用しているチャネル全体でローンチとストーリーを増幅してください。"
+      }
+    },
+    "shared_impact": {
+      "title": "パートナーと共に構築するもの",
+      "description": "一緒に、持続する意味のある影響を作成します"
+    }
+  },
+  
+  "interest": {
+    "role_copy": {
+      "investor": {
+        "title": "✨ 明確さに投資する",
+        "tagline": "あなたの詳細を共有して、あなたの投資がどのように明確さを形作ることができるかを探ってみましょう。"
+      },
+      "investors": {
+        "title": "✨ 明確さに投資する",
+        "tagline": "あなたの詳細を共有して、あなたの投資がどのように明確さを形作ることができるかを探ってみましょう。"
+      },
+      "promoter": {
+        "title": "📣 あなたの声を使って明確さを増幅する",
+        "tagline": "あなたのプラットフォームについて、そしてどのように明確さを増幅したいかを教えてください。"
+      },
+      "promoters": {
+        "title": "📣 あなたの声を使って明確さを増幅する",
+        "tagline": "あなたのプラットフォームについて、そしてどのように明確さを増幅したいかを教えてください。"
+      },
+      "ambassador": {
+        "title": "🌍 あなたの世界における明確さの顔になる",
+        "tagline": "あなたのコミュニティを知らせてください、そしてどのように明確さを表したいかを教えてください。"
+      },
+      "ambassadors": {
+        "title": "🌍 あなたの世界における明確さの顔になる",
+        "tagline": "あなたのコミュニティを知らせてください、そしてどのように明確さを表したいかを教えてください。"
+      },
+      "creator": {
+        "title": "✨ 明確さのために作成してください。変化のために協力してください。",
+        "tagline": "あなたの工芸と、どのようにあなたの創造性を貢献したいかを私たちに見せてください。"
+      },
+      "collaborators": {
+        "title": "✨ 明確さのために作成してください。変化のために協力してください。",
+        "tagline": "あなたの工芸と、どのようにあなたの創造性を貢献したいかを私たちに見せてください。"
+      },
+      "affiliate": {
+        "title": "🌱 変化の円に参加する",
+        "tagline": "あなたがドリシクをどのように共有するかを教えてください、そして私たちのアフィリエイト円の一部になってください。"
+      },
+      "affiliates": {
+        "title": "🌱 変化の円に参加する",
+        "tagline": "あなたがドリシクをどのように共有するかを教えてください、そして私たちのアフィリエイト円の一部になってください。"
+      },
+      "referral": {
+        "title": "🔗 明確さを共有してください、ケアを共有してください",
+        "tagline": "誰を招待したいか、または他の人をサポートするために紹介をどのように使用する予定かを教えてください。"
+      },
+      "referrals": {
+        "title": "🔗 明確さを共有してください、ケアを共有してください",
+        "tagline": "誰を招待したいか、または他の人をサポートするために紹介をどのように使用する予定かを教えてください。"
+      }
+    },
+    
+    "form": {
+      "name_label": "フルネーム",
+      "name_placeholder": "あなたのフルネームを入力してください",
+      "email_label": "メールアドレス",
+      "email_placeholder": "your@email.com",
+      "phone_label": "電話番号",
+      "phone_placeholder": "1234567890",
+      "notes_label": "共有したいことはありますか？",
+      "notes_placeholder": "コンテキスト、目標、または私たちが見たいリンク",
+      "privacy_notice": "あなたの詳細を共有することはありません。あなたの情報は安全でプライベートです。",
+      "submit_button": "送信",
+      
+      "investor_details": "投資の詳細",
+      "investment_stage": "投資段階",
+      "investment_stage_placeholder": "シード、シリーズA、成長など",
+      "ticket_size": "チケットサイズ",
+      "ticket_size_placeholder": "$50K、$100K、$500K+",
+      "invest_timeline": "投資タイムライン",
+      "invest_timeline_placeholder": "即座、3-6ヶ月、探索中",
+      
+      "promoter_details": "プロモーターの詳細",
+      "platforms": "プラットフォーム",
+      "platforms_placeholder": "Instagram、YouTube、Blog、Newsletter",
+      "audience": "オーディエンスサイズ",
+      "audience_placeholder": "10K、50K、100K+フォロワー/購読者",
+      "sample_links": "サンプルリンク",
+      "sample_links_placeholder": "最高のプロモーションコンテンツへのリンク",
+      
+      "ambassador_details": "アンバサダーの詳細",
+      "community": "コミュニティ",
+      "community_placeholder": "学生、専門家、地元グループ",
+      "region": "地域",
+      "region_placeholder": "市、州、またはオンラインコミュニティ",
+      "activities": "活動",
+      "activities_placeholder": "開催するイベント、ワークショップ、ミートアップ",
+      
+      "creator_details": "クリエイターの詳細",
+      "craft_area": "工芸分野",
+      "craft_area_placeholder": "執筆、デザイン、ビデオ、オーディオなど",
+      "portfolio": "ポートフォリオ",
+      "portfolio_placeholder": "最高の作品またはポートフォリオへのリンク",
+      
+      "affiliate_details": "アフィリエイトの詳細",
+      "affiliate_channels": "アフィリエイトチャネル",
+      "affiliate_channels_placeholder": "ウェブサイト、ソーシャルメディア、メールリスト",
+      "traffic_estimate": "トラフィック推定",
+      "traffic_estimate_placeholder": "月間訪問者、フォロワー、購読者",
+      "payout_preference": "支払い設定",
+      "payout_preference_placeholder": "PayPal、bank transfer、crypto、etc.",
+      
+      "referral_details": "紹介の詳細",
+      "person_name": "人物の名前",
+      "person_name_placeholder": "誰を紹介していますか？",
+      "person_email": "人物のメール(オプション)",
+      "person_email_placeholder": "their@email.com",
+      "relationship": "関係",
+      "relationship_placeholder": "友達、同僚、家族、その他"
+    },
+    
+    "otp": {
+      "title": "📱 あなたの電話を確認する",
+      "message": "6桁のコードを送信しました",
+      "placeholder": "6桁のコードを入力してください",
+      "verify_button": "コードを確認",
+      "verifying": "確認中..."
+    },
+    
+    "success": {
+      "investor": "明確さに投資してくれてありがとう!",
+      "promoter": "明確さを増幅してくれてありがとう!",
+      "ambassador": "明確さを表してくれてありがとう!",
+      "creator": "明確さのために作成してくれてありがとう!",
+      "affiliate": "私たちのサークルに参加してくれてありがとう!",
+      "referral": "明確さを前に共有してくれてありがとう!",
+      "message": "あなたの電話に確認コードを送信しました。メッセージをご確認いただき、アプリケーションを完成させるためにコードを入力してください。"
+    }
+  },
+  
+  "success": {
+    "next_steps_title": "次はどうなるの？",
+    "email_confirmation_title": "メール確認",
+    "email_confirmation_desc": "まもなく、申請書のすべての詳細を含む確認メールが届きます。",
+    "phone_verification_title": "電話確認",
+    "phone_verification_desc": "あなたの電話番号が確認されました。今後の通信に使用されます。",
+    "questions_text": "質問？お問い合わせください",
+    
+    "investor": {
+      "title": "投資申請が完了しました!",
+      "description": "あなたの投資申請が正常に送信され、確認されました。私たちのチームがあなたの詳細を確認し、24〜48時間以内にご連絡します。",
+      "next_step_1": "当社の投資チームがあなたの申請を確認します",
+      "next_step_2": "あなたの投資論文を議論するための通話をスケジュールします",
+      "next_step_3": "資金調達ラウンドに関する詳細情報を受け取ります",
+      "next_step_4": "成長のマイルストーンについてあなたを更新し続けます",
+      "cta_text": "私たちのビジョンを探索する"
+    },
+    
+    "promoter": {
+      "title": "プロモーター申請が完了しました!",
+      "description": "プロモーター申請が正常に送信され、確認されました。私たちのチームがプラットフォームの詳細を確認し、24〜48時間以内にご連絡します。",
+      "next_step_1": "当社のマーケティングチームがプラットフォームの詳細を確認します",
+      "next_step_2": "コラボレーション機会と利用規約について説明します",
+      "next_step_3": "プロモーション資料とガイドラインを受け取ります",
+      "next_step_4": "プロモーション活動の追跡を設定します",
+      "cta_text": "当社の製品を見る"
+    },
+    
+    "ambassador": {
+      "title": "アンバサダー申請が完了しました!",
+      "description": "アンバサダー申請が正常に送信され、確認されました。私たちのチームがコミュニティの詳細を確認し、24〜48時間以内にご連絡します。",
+      "next_step_1": "当社のコミュニティチームがあなたの申請を確認します",
+      "next_step_2": "あなたの役割と責任について議論します",
+      "next_step_3": "アンバサダーの資料とガイドラインを受け取ります",
+      "next_step_4": "他のアンバサダーとあなたを繋ぎます",
+      "cta_text": "当社のコミュニティに参加する"
+    },
+    
+    "creator": {
+      "title": "クリエイター申請が完了しました!",
+      "description": "クリエイター申請が正常に送信され、確認されました。私たちのチームがあなたのポートフォリオを確認し、24〜48時間以内にご連絡します。",
+      "next_step_1": "当社のクリエイティブチームがあなたのポートフォリオを確認します",
+      "next_step_2": "コラボレーション機会について議論します",
+      "next_step_3": "クリエイティブブリーフとガイドラインを受け取ります",
+      "next_step_4": "プロジェクト用のワークスペースをセットアップします",
+      "cta_text": "当社の作品を見る"
+    },
+    
+    "affiliate": {
+      "title": "アフィリエイト申請が完了しました!",
+      "description": "アフィリエイト申請が正常に送信され、確認されました。私たちのチームがあなたの詳細を確認し、24〜48時間以内にご連絡します。",
+      "next_step_1": "当社のアフィリエイトチームがあなたの申請を確認します",
+      "next_step_2": "手数料率と利用規約について議論します",
+      "next_step_3": "アフィリエイトリンクと資料を受け取ります",
+      "next_step_4": "紹介の追跡を設定します",
+      "cta_text": "稼ぎ始める"
+    },
+    
+    "referral": {
+      "title": "紹介申請が完了しました!",
+      "description": "紹介申請が正常に送信され、確認されました。私たちのチームがあなたの詳細を確認し、24〜48時間以内にご連絡します。",
+      "next_step_1": "当社の紹介チームがあなたの申請を確認します",
+      "next_step_2": "紹介利用規約と報酬について議論します",
+      "next_step_3": "紹介リンクと資料を受け取ります",
+      "next_step_4": "紹介活動を追跡します",
+      "cta_text": "ドリシクを共有する"
+    }
+  }
+}

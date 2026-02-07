@@ -1,0 +1,436 @@
+{
+  "rebooter": {
+    "topband": {
+      "label": "Reiniciador, no roto — Historias de rostros conocidos"
+    },
+    "hero": {
+      "title": "Reiniciar. Reanudar. Renovar.",
+      "subtitle": "Has cerrado un capítulo — tal vez por elección, tal vez no — y ahora miras fijamente una pantalla en blanco llamada \"Siguiente\"."
+    },
+    "cta": {
+      "early_access": "Descubre qué impulsa tu reinicio →",
+      "how": "¿Cómo ayuda DrishiQ?"
+    },
+    "stir": {
+      "line": {
+        "0": "¿Sientes alivio y miedo a partes iguales?",
+        "1": "¿Este reinicio se siente más pesado que tu primer comienzo?",
+        "2": "¿Llevas lecciones — o equipaje — del pasado?",
+        "3": "¿Te sigues preguntando '¿Realmente puedo hacer esto de nuevo?'",
+        "4": "¿Qué pasaría si tu próxima construcción pudiera ser más ligera, más rápida y más verdadera?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Libre",
+        "subtitle": "Dejar ir lo que te estaba vaciando"
+      },
+      "1": {
+        "title": "Incierto",
+        "subtitle": "Enfrentando lo desconocido"
+      },
+      "2": {
+        "title": "Experimentado",
+        "subtitle": "Conoces las trampas"
+      },
+      "3": {
+        "title": "Cansado",
+        "subtitle": "Empezar de nuevo requiere energía"
+      },
+      "4": {
+        "title": "Enfocado",
+        "subtitle": "Claridad sobre lo que importa ahora"
+      },
+      "5": {
+        "title": "Cauteloso",
+        "subtitle": "Protegiéndose de errores pasados"
+      }
+    },
+    "emotions": {
+      "label": "Cómo puede sentirse reiniciar"
+    },
+    "celeb": {
+      "0": {
+        "name": "Steve Jobs",
+        "profession": "Emprendedor",
+        "source": "Cita",
+        "quote": "\"Mantente hambriento. Mantente tonto.\""
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Líder de medios",
+        "source": "Cita",
+        "quote": "\"Convierte tus heridas en sabiduría.\""
+      },
+      "2": {
+        "name": "J.K. Rowling",
+        "profession": "Escritora",
+        "source": "Cita",
+        "quote": "\"El fondo se convirtió en la base sólida sobre la que reconstruí mi vida.\""
+      },
+      "3": {
+        "name": "Elon Musk",
+        "profession": "Emprendedor",
+        "source": "Cita",
+        "quote": "\"El fracaso es una opción. Si las cosas no están fallando, no estás innovando lo suficiente.\""
+      },
+      "4": {
+        "name": "Maya Angelou",
+        "profession": "Poeta",
+        "source": "Cita",
+        "quote": "\"Intenta ser un arcoíris en la nube de alguien.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Pausa antes del reinicio",
+        "line": "No solo apagaste el sistema antiguo.",
+        "body": "Ya sea un cambio de carrera, el final de una asociación o alejarse de un sueño, esto no es solo una pausa. Es la calma entre tormentas — donde tu próxima elección definirá el próximo capítulo.",
+        "bullet": {
+          "0": "Te alejaste de algo que parecía bien desde afuera.",
+          "1": "Estás tomando tiempo deliberado antes de tu próximo paso.",
+          "2": "Estás emocionado y exhausto al mismo tiempo."
+        },
+        "nudge": "Escribe tres cosas no negociables para tu próximo capítulo y mantenlas a la vista.",
+        "frame": {
+          "0": {
+            "h": "Pausa antes del reinicio",
+            "p": "Símbolo de reinicio"
+          },
+          "1": {
+            "h": "Listo para reiniciar",
+            "p": "Nuevo comienzo"
+          },
+          "2": {
+            "h": "Pausa antes del reinicio",
+            "p": "Listo para cargar nuevo programa"
+          }
+        },
+        "cta": "Define tu reinicio tú mismo antes de que el mundo lo haga →"
+      },
+      "1": {
+        "title": "Llevar lecciones, no equipaje",
+        "line": "Tu pasado es una biblioteca, no una prisión.",
+        "body": "Cada final te deja con historias, cicatrices y estrategias. El desafío es saber qué guardar y qué dejar ir.",
+        "bullet": {
+          "0": "Comienzas a revivir tus errores.",
+          "1": "Dudas en confiar en tus decisiones.",
+          "2": "Sabes lo que no quieres, pero aún no sabes lo que quieres."
+        },
+        "nudge": "Escribe una lección dura — y un miedo que puedas dejar ir con ella.",
+        "frame": {
+          "0": {
+            "h": "Llevar lecciones, no equipaje",
+            "p": "Dejar ir"
+          },
+          "1": {
+            "h": "Libertad de patrones antiguos",
+            "p": "Lecciones almacenadas"
+          },
+          "2": {
+            "h": "Llevar lecciones, no equipaje",
+            "p": "Libertad de patrones antiguos"
+          }
+        },
+        "cta": "Avanza más ligero →"
+      },
+      "2": {
+        "title": "Construyendo tu próxima versión",
+        "line": "Esto no es repetición — es una actualización.",
+        "body": "La belleza de empezar de nuevo es que realmente no estás comenzando desde cero. Tienes marcos, resiliencia y claridad que solo viene con la experiencia.",
+        "bullet": {
+          "0": "Estás mezclando habilidades antiguas con ideas nuevas.",
+          "1": "Estás diseñando tu próxima vida basada en quién eres ahora.",
+          "2": "Te sientes listo para tomar riesgos calculados."
+        },
+        "nudge": "Crea un tablero de visión 'Versión 2.0' — no con palabras, sino con imágenes.",
+        "frame": {
+          "0": {
+            "h": "Planificando con intención",
+            "p": "Planificando con intención"
+          },
+          "1": {
+            "h": "Construyendo tu próxima versión",
+            "p": "Acción audaz"
+          },
+          "2": {
+            "h": "Planificando con intención",
+            "p": "Sistema en movimiento"
+          }
+        },
+        "cta": "Construye el reinicio que estás soñando →"
+      },
+      "3": {
+        "title": "Prosperando después del reinicio",
+        "line": "El reinicio no es el final — es el campo de entrenamiento.",
+        "body": "Una vez que encuentras tu equilibrio, puedes usar tu reinicio para construir una vida más alineada, resiliente y satisfactoria que antes.",
+        "bullet": {
+          "0": "Realmente quieres apegarte a esto esta vez.",
+          "1": "Estás aconsejando a otros que están reiniciando.",
+          "2": "Te sientes orgulloso de lo lejos que has llegado."
+        },
+        "nudge": "Comparte tu historia de reinicio con alguien que acaba de empezar.",
+        "frame": {
+          "0": {
+            "h": "Pausa antes del reinicio",
+            "p": "Logro"
+          },
+          "1": {
+            "h": "Ayudando a otros a reiniciar",
+            "p": "Ayudando a otros a reiniciar"
+          },
+          "2": {
+            "h": "Prosperando después del reinicio",
+            "p": "Avanzando"
+          }
+        },
+        "cta": "Convierte tu reinicio en un legado →"
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Mapa de reinicio",
+        "d": "Ve dónde estás y hacia dónde vas."
+      },
+      "1": {
+        "h": "Herramienta de filtrado de lecciones",
+        "d": "Guarda el conocimiento, deja el peso."
+      },
+      "2": {
+        "h": "Constructor de versiones",
+        "d": "Diseña tu vida mejorada paso a paso."
+      },
+      "3": {
+        "h": "Acceso a red de apoyo",
+        "d": "Conéctate con otros que están reiniciando."
+      }
+    },
+    "bridge": {
+      "title": "Cada reinicio no es un paso atrás, sino adelante.",
+      "body": "DrishiQ te ayuda a ver tu reinicio como oportunidades de crecimiento, aprender de experiencias pasadas y construir algo más fuerte cada vez.",
+      "cta": "Comienza tu chequeo de claridad →"
+    },
+    "nudge": {
+      "label": "Prueba esto:"
+    }
+  },
+  "seeker": {
+    "topband": {
+      "label": "Buscador, no perdido — Historias de rostros conocidos"
+    },
+    "hero": {
+      "title": "Explorando nuevos horizontes",
+      "subtitle": "Has leído, explorado, preguntado, y aún así las piezas no encajan del todo. Aquí hay un lugar para detener la persecución y escuchar adentro.",
+      "cta": {
+        "primary": "Explora tu mapa de buscador →",
+        "secondary": "¿Cómo ayuda DrishiQ?"
+      }
+    },
+    "cta": {
+      "early_access": "Mapea tu viaje de búsqueda →",
+      "how": "Cómo hace la diferencia DrishiQ"
+    },
+    "stir": {
+      "line": {
+        "0": "¿Sientes que siempre estás 'al borde' de encontrar tu respuesta?",
+        "1": "¿Has explorado muchos caminos pero no te has establecido en ninguno?",
+        "2": "¿Te sientes atraído a la siguiente posibilidad antes de terminar la última?",
+        "3": "¿Estás buscando alivio más que dirección?",
+        "4": "¿Qué pasaría si la respuesta no estuviera 'allá afuera' sino que ya estuviera adentro?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Inquieto",
+        "subtitle": "Buscando más"
+      },
+      "1": {
+        "title": "Curioso",
+        "subtitle": "Las preguntas nunca terminan"
+      },
+      "2": {
+        "title": "Esperanzado",
+        "subtitle": "Cada nueva puerta podría ser 'esto'"
+      },
+      "3": {
+        "title": "Frustrado",
+        "subtitle": "La claridad se escapa"
+      },
+      "4": {
+        "title": "Inspirado",
+        "subtitle": "Chispas en muchas direcciones"
+      },
+      "5": {
+        "title": "Inestable",
+        "subtitle": "Todavía no donde estás"
+      }
+    },
+    "emotions": {
+      "label": "Cómo puede sentirse buscar"
+    },
+    "celeb": {
+      "0": {
+        "name": "Rumi",
+        "profession": "Poeta",
+        "source": "Cita",
+        "quote": "\"Lo que buscas te está buscando.\""
+      },
+      "1": {
+        "name": "Oprah Winfrey",
+        "profession": "Presentadora",
+        "source": "Cita",
+        "quote": "\"La mayor aventura que puedes emprender es vivir la vida de tus sueños.\""
+      },
+      "2": {
+        "name": "David Attenborough",
+        "profession": "Naturalista",
+        "source": "Cita",
+        "quote": "\"La comprensión del mundo natural es una fuente de curiosidad y satisfacción.\""
+      },
+      "3": {
+        "name": "J.K. Rowling",
+        "profession": "Escritora",
+        "source": "Cita",
+        "quote": "\"Es imposible vivir sin fallar en algo...\""
+      },
+      "4": {
+        "name": "Elon Musk",
+        "profession": "Emprendedor",
+        "source": "Cita",
+        "quote": "\"La gente ordinaria puede elegir ser extraordinaria.\""
+      }
+    },
+    "section": {
+      "0": {
+        "title": "Emoción y agotamiento",
+        "line": "Buscar puede ser un regalo, pero también un bucle.",
+        "body": "Amas la persecución — la chispa de una nueva idea, el tirón de un camino fresco. Pero con cada giro, el destino cambia. Es emocionante... y agotador.",
+        "bullet": {
+          "0": "A menudo comienzas muchas cosas pero terminas pocas.",
+          "1": "Te sientes inquieto cuando no estás persiguiendo algo.",
+          "2": "Has perdido la cuenta de cuántas 'próximas grandes cosas' has probado."
+        },
+        "nudge": "Enumera tus últimas cinco búsquedas. Marca cuáles realmente quieres terminar — y por qué.",
+        "frame": {
+          "0": {
+            "h": "Puerta abierta",
+            "p": "Otra posibilidad"
+          },
+          "1": {
+            "h": "Brújula girando",
+            "p": "Cambiando direcciones"
+          },
+          "2": {
+            "h": "Ciclo de mapa",
+            "p": "De vuelta a ti mismo"
+          }
+        },
+        "cta": "Detente y verifica tu mapa →"
+      },
+      "1": {
+        "title": "Miedo a perder el camino correcto",
+        "line": "Cuando cada opción parece urgente.",
+        "body": "A veces persigues porque temes que 'lo correcto' pueda pasarte de largo. Pero al intentar todo, rara vez te quedas el tiempo suficiente para echar raíces.",
+        "bullet": {
+          "0": "Te preocupa arrepentirte de no intentar algo.",
+          "1": "Te sientes ansioso por hacer compromisos.",
+          "2": "Buscas señales de que estás 'hecho' para algo."
+        },
+        "nudge": "Pregúntate: '¿Qué temo que suceda si elijo un camino?'",
+        "frame": {
+          "0": {
+            "h": "Señales por todas partes",
+            "p": "Demasiadas direcciones"
+          },
+          "1": {
+            "h": "Tienda sobre ruedas",
+            "p": "Nunca quedarse mucho tiempo"
+          },
+          "2": {
+            "h": "Un camino adelante",
+            "p": "Eligiendo comprometerse"
+          }
+        },
+        "cta": "Elige un paso adelante →"
+      },
+      "2": {
+        "title": "Buscar para evitar sentarse tranquilo",
+        "line": "La quietud puede sentirse más aterradora que la confusión.",
+        "body": "Para algunos buscadores, el movimiento es una forma de evitar enfrentar la incertidumbre o el dolor. Es más fácil correr hacia algo que sentarse con lo que es.",
+        "bullet": {
+          "0": "Llenas tu calendario para evitar la reflexión.",
+          "1": "Persigues ideas cuando estás ansioso.",
+          "2": "Te sientes 'vacío' cuando no hay nada nuevo que perseguir."
+        },
+        "nudge": "Pasa 15 minutos en completo silencio hoy — sin pantallas, sin planes. Mira qué sale a la superficie.",
+        "frame": {
+          "0": {
+            "h": "Banco tranquilo",
+            "p": "Sentarse sin agenda"
+          },
+          "1": {
+            "h": "Lago tranquilo",
+            "p": "Viendo qué hay debajo"
+          },
+          "2": {
+            "h": "Cielo abierto",
+            "p": "Libertad en paz"
+          }
+        },
+        "cta": "Prueba la paz una vez →"
+      },
+      "3": {
+        "title": "Descubrir mientras buscas",
+        "line": "El viaje mismo podría ser la respuesta.",
+        "body": "No toda búsqueda se trata de llegar. Algunas se tratan de convertirse. Pero para convertirte, debes dejar que algunas búsquedas aterricen y te moldeen antes de seguir adelante.",
+        "bullet": {
+          "0": "Tienes conocimiento pero no lo aplicas.",
+          "1": "Pasas rápidamente de pequeñas victorias a la siguiente persecución.",
+          "2": "Quieres que tu búsqueda se sienta más satisfactoria."
+        },
+        "nudge": "Nombra una lección de tu última búsqueda y decide cómo vivirla durante el próximo mes.",
+        "frame": {
+          "0": {
+            "h": "Libro abierto",
+            "p": "Lecciones recopiladas"
+          },
+          "1": {
+            "h": "Raíces creciendo",
+            "p": "Quedarse el tiempo suficiente para crecer"
+          },
+          "2": {
+            "h": "Camino del amanecer",
+            "p": "Avanzando con claridad"
+          }
+        },
+        "cta": "Deja que una percepción permanezca →"
+      }
+    },
+    "bridge": {
+      "title": "La respuesta podría no estar donde estás buscando.",
+      "body": "DrishiQ ayuda a buscadores como tú a transformar el movimiento inquieto en dirección fundamentada. Tus preguntas importan — y también tu capacidad de descansar en las respuestas que ya tienes.",
+      "cta": "Comienza tu chequeo de claridad →"
+    },
+    "how": {
+      "0": {
+        "h": "Mapa del buscador",
+        "d": "Presenta tus búsquedas y ve patrones."
+      },
+      "1": {
+        "h": "Brújula de prioridades",
+        "d": "Filtra ideas a través de lo más importante."
+      },
+      "2": {
+        "h": "Prácticas de enraizamiento",
+        "d": "Quédate con una opción el tiempo suficiente para crecer desde ella."
+      },
+      "3": {
+        "h": "Puntos de reflexión",
+        "d": "Nota cuánto progreso ya has hecho."
+      }
+    },
+    "nudge": {
+      "label": "Prueba esto:"
+    }
+  }
+}

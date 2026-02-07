@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/packages/*": [
+        "./packages/*"
+      ],
+      "@/apps/*": [
+        "./apps/*"
+      ]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "jest.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next/**/*",
+    "patches/**/*",
+    "archive/**/*",
+    "backup_empty_files/**/*",
+    "**/__tests__/**/*",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/__tests__/**",
+    "__tests__/**/*"
+  ],
+  "types": ["jest", "node"]
+}

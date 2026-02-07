@@ -1,0 +1,281 @@
+{
+  "hero": {
+    "title": "Histórias reais de pessoas reais",
+    "subtitle": "Descubra como o Drishiq transformou vidas. Cada história é única.",
+    "cta_button": "✨ Compartilhe sua história",
+    "cta_link": "/testimonials/submit"
+  },
+  "filters": {
+    "search_placeholder": "Buscar depoimentos...",
+    "category_all": "Todas as categorias",
+    "categories": {
+      "career_development": "Desenvolvimento de carreira",
+      "life_coaching": "Life coaching",
+      "business_consulting": "Consultoria empresarial",
+      "educational_consulting": "Consultoria educacional",
+      "content_marketing": "Marketing de conteúdo",
+      "change_management": "Gestão de mudanças",
+      "clarity_mental_resilience": "Clareza e resiliência mental"
+    },
+    "rating_all": "Todas as avaliações",
+    "rating_five": "5 estrelas",
+    "rating_four_plus": "4+ estrelas",
+    "rating_three_plus": "3+ estrelas",
+    "featured_only": "Somente destaque",
+    "sort_label": "Ordenar por:",
+    "sort_date": "Data",
+    "sort_rating": "Avaliação",
+    "sort_likes": "Curtidas",
+    "sort_comments": "Comentários",
+    "sort_asc": " ↑",
+    "sort_desc": " ↓"
+  },
+  "loading": {
+    "message": "Carregando depoimentos..."
+  },
+  "error": {
+    "message": "Ocorreu um erro ao carregar os depoimentos"
+  },
+  "testimonials_list": {
+    "no_results": "Nenhum depoimento encontrado. Seja a primeira pessoa a compartilhar uma história!",
+    "share_story_button": "Compartilhar sua história",
+    "read_more": "Leia mais →",
+    "featured_badge": "⭐ Destaque",
+    "anonymous": "Anônimo",
+    "user": "Usuário",
+    "back_to_testimonials": "← Voltar aos depoimentos",
+    "share_testimonial": "Compartilhar este depoimento",
+    "like_testimonial": "Curtir este depoimento",
+    "comment_testimonial": "Comentar este depoimento"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Próximo"
+  },
+  "sidebar": {
+    "title": "💭 Ajude-nos a construir uma comunidade melhor",
+    "vision_title": "🌟 Junte-se à nossa visão",
+    "vision_description": "Estamos construindo uma comunidade onde desafios compartilhados se transformam em força coletiva.",
+    "pipeline_vision": "Nossa visão: um espaço onde sua história pode virar a esperança de alguém.",
+    "buttons": {
+      "share_story": "💬 Compartilhar história",
+      "write_blog": "✍️ Escrever postagem no blog",
+      "share_suggestions": "💡 Enviar sugestões"
+    },
+    "links": {
+      "share_story": "/testimonials/submit",
+      "write_blog": "/blog/create",
+      "share_suggestions": "/community/suggestions"
+    },
+    "playlist": {
+      "title": "📺 Assista nossas histórias"
+    }
+  },
+  "services_section": {
+    "title": "Explore os serviços do Drishiq",
+    "description": "Saiba como nossos serviços podem ajudar você a conquistar clareza e crescimento"
+  },
+  "form": {
+    "title": "Compartilhe sua história",
+    "subtitle": "Sua experiência pode inspirar outras pessoas. Conte como o Drishiq impactou sua vida.",
+    "fields": {
+      "name": {
+        "label": "Seu nome",
+        "placeholder": "Digite seu nome completo",
+        "required": true
+      },
+      "email": {
+        "label": "Endereço de e-mail",
+        "placeholder": "your.email@example.com",
+        "required": true
+      },
+      "role": {
+        "label": "Sua função/profissão",
+        "placeholder": "Ex.: gerente de marketing, empreendedor, estudante",
+        "required": false
+      },
+      "location": {
+        "label": "Localização",
+        "placeholder": "Cidade, país",
+        "required": false
+      },
+      "category": {
+        "label": "Categoria",
+        "placeholder": "Selecione uma categoria (opcional)",
+        "required": false,
+        "options": {
+          "career_development": "Desenvolvimento de carreira",
+          "life_coaching": "Life coaching",
+          "business_consulting": "Consultoria empresarial",
+          "educational_consulting": "Consultoria educacional",
+          "content_marketing": "Marketing de conteúdo",
+          "change_management": "Gestão de mudanças",
+          "management_consulting": "Consultoria em gestão",
+          "marketing_consulting": "Consultoria de marketing",
+          "customer_service": "Atendimento ao cliente",
+          "customer_support": "Suporte ao cliente",
+          "life_path_choices": "Caminhos e escolhas de vida",
+          "confidence_presence": "Confiança e presença",
+          "growth_capability": "Crescimento e desenvolvimento de habilidades",
+          "relationship_social": "Relacionamentos e equilíbrio social",
+          "clarity_mental_resilience": "Clareza e resiliência mental",
+          "others": "Outros"
+        }
+      },
+      "rating": {
+        "label": "Avaliação",
+        "required": true
+      },
+      "title": {
+        "label": "Título da história",
+        "placeholder": "Dê um título interessante para sua história (opcional)...",
+        "help": "Um bom título ajuda outras pessoas a encontrar e entender sua história",
+        "required": false
+      },
+      "content": {
+        "label": "Sua história",
+        "placeholder": "Compartilhe sua experiência com o Drishiq. Quais desafios você enfrentou? Como o Drishiq ajudou você? O que mudou na sua vida?",
+        "required": true
+      },
+      "custom_category": {
+        "label": "Especifique sua categoria",
+        "placeholder": "Digite sua categoria específica (ex.: saúde e bem-estar, planejamento financeiro etc.)",
+        "help": "Por favor, escolha uma categoria que descreva melhor a sua experiência"
+      },
+      "display_name": {
+        "label": "Nome exibido",
+        "placeholder": "Ex.: João D."
+      },
+      "user_info": {
+        "title": "Seu depoimento será enviado como:",
+        "name_label": "Nome:",
+        "email_label": "Email:",
+        "name_default": "Seu nome",
+        "email_default": "Seu email"
+      },
+      "profile_image": {
+        "label": "Imagem de perfil"
+      },
+      "upload_image": {
+        "label": "Enviar imagem"
+      },
+      "choose_avatar": {
+        "label": "Ou escolha um dos nossos avatares"
+      },
+      "avatar_placeholder": "Escolha um avatar (opcional)",
+      "avatar_selected": "✓ Avatar selecionado",
+      "remove_button": "Remover",
+      "change_button": "Alterar",
+      "tags": {
+        "label": "Tags (opcional)",
+        "placeholder": "Adicione tags separadas por vírgula",
+        "help": "Ex.: liderança, crescimento, clareza, mudança"
+      },
+      "anonymous": {
+        "label": "Enviar anonimamente",
+        "description": "Marque esta opção se você não quiser que seu nome seja exibido publicamente"
+      },
+      "featured": {
+        "label": "Permitir destaque",
+        "description": "Permita que seu depoimento seja exibido na página inicial"
+      }
+    },
+    "buttons": {
+      "submit": "Enviar depoimento",
+      "submitting": "Enviando...",
+      "cancel": "Cancelar",
+      "draft": "Salvar como rascunho"
+    },
+    "validation": {
+      "required": "Este campo é obrigatório",
+      "email_invalid": "Digite um endereço de e-mail válido",
+      "rating_required": "Selecione uma avaliação",
+      "content_min": "Escreva pelo menos 50 caracteres",
+      "content_max": "Limite a mensagem a menos de 2000 caracteres",
+      "login_required": "Faça login para enviar um depoimento ou marque \"Enviar anonimamente\" para enviar sem login."
+    },
+    "success": {
+      "title": "Obrigado!",
+      "message": "Seu depoimento foi enviado com sucesso e está aguardando aprovação. Você será redirecionado para a página de depoimentos em breve.",
+      "cta": "Ver todos os depoimentos"
+    },
+    "error": {
+      "title": "Erro no envio",
+      "message": "Ocorreu um erro ao enviar seu depoimento. Tente novamente.",
+      "retry": "Tentar novamente"
+    }
+  },
+  "ratings": {
+    "1": "Ruim",
+    "2": "Regular",
+    "3": "Bom",
+    "4": "Muito bom",
+    "5": "Excelente"
+  },
+  "social_sharing": {
+    "title": "Compartilhe este depoimento",
+    "platforms": {
+      "facebook": "Compartilhar no Facebook",
+      "twitter": "Compartilhar no Twitter",
+      "linkedin": "Compartilhar no LinkedIn",
+      "whatsapp": "Compartilhar no WhatsApp",
+      "copy_link": "Copiar link"
+    }
+  },
+  "success_page": {
+    "hero": {
+      "title": "🎉 Sua história foi enviada!",
+      "message": "Obrigado por compartilhar sua experiência com a comunidade Drishiq. Sua história será analisada pela nossa equipe e poderá ser publicada para inspirar outras pessoas."
+    },
+    "what_happens_next": {
+      "title": "O que acontece agora?",
+      "steps": [
+        {
+          "icon": "review",
+          "title": "Processo de análise",
+          "description": "Nossa equipe revisará seu envio dentro de 24–48 horas"
+        },
+        {
+          "icon": "featured",
+          "title": "Histórias em destaque",
+          "description": "Histórias excepcionais podem aparecer na nossa página inicial"
+        },
+        {
+          "icon": "community",
+          "title": "Impacto na comunidade",
+          "description": "Sua história pode inspirar outras pessoas que buscam clareza"
+        }
+      ]
+    },
+    "action_buttons": {
+      "go_home": "🏠 Ir para a página inicial",
+      "submit_another": "📝 Enviar outra história"
+    },
+    "community_feedback": {
+      "title": "💭 Ajude-nos a construir uma comunidade melhor",
+      "vision_title": "🌟 Junte-se à nossa visão: uma comunidade de experiências compartilhadas",
+      "vision_description": "Estamos construindo algo maior do que uma plataforma — estamos criando uma comunidade onde dores, alegrias, falhas e conquistas são compartilhadas. Onde todos podem se conectar, apoiar uns aos outros e crescer juntos. Seu feedback ajuda a moldar essa missão.",
+      "pipeline_vision": "Nossa visão: um espaço onde sua história vira esperança para outra pessoa, onde desafios compartilhados viram força coletiva, e onde cada experiência contribui para uma comunidade que realmente entende você.",
+      "buttons": {
+        "share_vision": "💬 Compartilhar sua visão",
+        "join_movement": "🌱 Entrar para o movimento"
+      },
+      "links": {
+        "share_vision": "/support-details",
+        "join_movement": "/community"
+      }
+    },
+    "bottom_cta": {
+      "title": "Pronto para sua próxima sessão de clareza?",
+      "description": "Continue sua jornada de autodescoberta com o Drishiq",
+      "buttons": {
+        "start_session": "💬 Iniciar uma nova sessão",
+        "return_home": "🏠 Voltar para a página inicial"
+      },
+      "links": {
+        "start_session": "/user/chat",
+        "return_home": "/"
+      }
+    }
+  }
+}

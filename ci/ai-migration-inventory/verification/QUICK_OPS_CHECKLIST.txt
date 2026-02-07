@@ -1,0 +1,28 @@
+QUICK OPS CHECKLIST - Responses API Migration
+==============================================
+
+1. RUN MIGRATION
+   psql "$STAGING_DB_CONN" -f database/migrations/20251110_add_instruction_sets_and_ai_responses.sql
+
+2. SET RENDER ENV VARS
+   - OPENAI_RESPONSES_KEY = [REDACTED]
+   - OPENAI_RESPONSES_MODEL = gpt-5-mini
+   - DRISHIQ_AI_MODE = responses
+
+3. DEPLOY BRANCH
+   - Branch: feature/responses-adapt
+   - Render will auto-deploy on push
+
+4. RUN SMOKE TEST
+   OPENAI_RESPONSES_KEY=$OPENAI_RESPONSES_KEY node scripts/smoke_responses_call.js $STAGING_URL
+
+5. VERIFY INSERTION
+   SELECT * FROM ai_responses ORDER BY created_at DESC LIMIT 5;
+
+6. POST RESULTS TO PR
+   - Migration output
+   - Smoke test results
+   - Verification SQL results
+
+Full runbook: ci/ai-migration-inventory/verification/ops_runbook.md
+

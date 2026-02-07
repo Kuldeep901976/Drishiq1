@@ -1,0 +1,58 @@
+[33mae21733[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m Add locales and og images from ../public folder
+[33m8b0b0c5[m Fix userName consistency and add extended text box to multiple choice questions
+[33m0062e29[m Add build artifacts (excluding cache)
+[33mc9def74[m Build: commit latest changes and updates
+[33mffbb6c3[m Fix payment flow and phone verification: Remove unused place_of_birth fields, fix phone verification logic, add priceplan guards, and ensure complete signup flow
+[33m9580807[m Fix payment flow: sync profile data, gender constraint, and credits balance
+[33m680af98[m Fix language switching and testimonials API language support
+[33m918e4cd[m Improve language change handler: use router.replace instead of reload for smoother UX
+[33m897108f[m Fix: Lazy initialize OpenAI client to prevent build-time errors on Render
+[33m0645c30[m Fix: Lazy initialize OpenAI client to prevent build-time errors on Render
+[33m8268fc4[m fix: update render.yaml to use npm instead of yarn
+[33mf4d5312[m chore: update render.yaml with GitHub repo and fix .gitignore merge conflict
+[33m1a07fd6[m fix: lazy initialize OpenAI client in reset-thread route to prevent build errors
+[33m8162381[m fix: use npm start to match Render dashboard configuration
+[33me49bb7b[m fix: update render.yaml to use yarn and include build step
+[33mc633397[m chore: update render.yaml for test deployment and update .gitignore
+[33m9516929[m feat: add GitHub Actions deployment workflow and update Render configuration
+[33m97e55a2[m trying to implement chat
+[33m52c6fa2[m refactor: Resolve hydration errors in client-side components
+[33m0610df9[m feat: refactor blog pages with enhanced internationalization and dynamic content loading
+[33m3857d5d[m chore(aider): ignore runtime files, keep config
+[33m909e585[m chore(vscode/ts): Prettier on save, ESLint fixes, TS Bundler resolution
+[33m2a40bd4[m Update pre-production configuration
+[33m1d4a3f2[m Update configuration for pre-production environment
+[33m501302b[m Resolve merge conflicts and fix .gitignore
+[33med83069[m Resolve merge conflicts
+[33mad5e60f[m Fix .gitignore formatting for deployment folder
+[33mecd8786[m Remove deployment folder from main repository - now used for pre-production
+[33me863185[m Fix prerendering errors: wrap useSearchParams components in Suspense boundaries
+[33mfd1f1d3[m Fix build errors: correct 'use client' directive placement and update Next.js config
+[33mda50f53[m FIX: Resolve build errors - fix 'use client' directive placement and remove problematic webpack config
+[33m8af0255[m FIX: Simplify build script to just remove supabase functions directory
+[33m3db07a1[m FIX: Update build script to use cross-platform Node.js commands for Linux deployment
+[33m512d175[m FIX: Resolve all merge conflicts and update build script for renamed supabase functions
+[33m40cbd4a[m FIX: Use move instead of delete for supabase functions during build
+[33mcadb2f0[m FIX: Move supabase functions out of build path
+[33m72b53f5[m FIX: Simplify build script to directly remove supabase directory
+[33mcc6d64f[m FORCE: New deployment with supabase directory removal fix
+[33m4ed985e[m FIX: Remove supabase directory before build to prevent Deno import errors
+[33m29f6950[m FIX: More specific TypeScript includes to exclude supabase functions
+[33m9125a49[m FIX: Add supabase/functions exclusion to .gitignore
+[33m03f79ed[m FIX: Exclude entire supabase/functions directory from TypeScript compilation
+[33md21c86c[m FIX: Exclude Supabase Edge Functions from Next.js build
+[33m8cba766[m FIX: Add missing Image import in create-password page
+[33md3fb044[m FIX: Add missing supabase import in create-password page
+[33m24e3657[m FIX: Add missing flowController import in create-password page
+[33mc4e4cd9[m FIX: Correct 'use client' directive placement in all pages
+[33m58f070b[m FIX: Correct 'use client' directive placement and simplify component structure
+[33mc0abb65[m FIX: Simplified Next.js config with debug logs and SSR-safe auth
+[33m40aca21[m FIX: Add dynamic rendering and fix auth SSR errors
+[33m01f47d4[m NUCLEAR APPROACH: Completely disable static generation and fix auth SSR errors
+[33m4e1ccc8[m Add npm registry configuration to handle network issues
+[33m909056c[m NUCLEAR APPROACH: Complete static generation disable with render.yaml
+[33mbd73caf[m Complete SSR fix: disable static generation + fix auth context
+[33m7220367[m Add revalidate=0 to all auth pages for complete dynamic rendering
+[33m9a95427[m Fix prerendering errors: Disable static export and use server-side rendering
+[33m83ab45e[m Add deployment configuration with prerendering fixes
+[33m83a679c[m Deploy to Render with all fixes

@@ -1,0 +1,77 @@
+SQL Migration Validation Report
+================================
+File: database/migrations/20251110_add_instruction_sets_and_ai_responses.sql
+Date: 2025-01-10
+
+IDEMPOTENCY CHECKS:
+✅ PASS: Uses CREATE TABLE IF NOT EXISTS for instruction_sets
+✅ PASS: Uses CREATE TABLE IF NOT EXISTS for ai_responses
+✅ PASS: Uses CREATE EXTENSION IF NOT EXISTS for pgcrypto
+✅ PASS: Uses DO $$ blocks with IF EXISTS checks for column additions
+✅ PASS: Uses CREATE INDEX IF NOT EXISTS for all indexes
+✅ PASS: Foreign key constraints wrapped in DO $$ blocks with existence checks
+
+UUID GENERATION:
+✅ PASS: Uses gen_random_uuid() from pgcrypto extension
+✅ PASS: Extension created before table creation
+
+ROLLBACK INSTRUCTIONS:
+✅ PASS: Rollback comments present at top of file:
+   - DROP TABLE IF EXISTS ai_responses;
+   - DROP TABLE IF EXISTS instruction_sets;
+   - DROP EXTENSION IF EXISTS "pgcrypto";
+
+SAFETY CHECKS:
+✅ PASS: All ALTER TABLE statements wrapped in IF NOT EXISTS checks
+✅ PASS: Foreign key constraints check for table existence before adding
+✅ PASS: Constraint dropping before re-adding (idempotent)
+✅ PASS: Uses BEGIN/COMMIT transaction wrapper
+
+TABLE STRUCTURE:
+✅ PASS: instruction_sets table has all required columns:
+   - id (UUID PRIMARY KEY)
+   - name (TEXT UNIQUE)
+   - system_prompt (TEXT)
+   - few_shot_examples (JSONB)
+   - output_schema (JSONB)
+   - metadata (JSONB)
+   - version (INT)
+   - created_at, updated_at (TIMESTAMPTZ)
+
+✅ PASS: ai_responses table has all required columns:
+   - response_id (TEXT PRIMARY KEY)
+   - thread_id (UUID NOT NULL)
+   - thread_type (TEXT DEFAULT 'chat')
+   - model (TEXT NOT NULL)
+   - stage_ref (TEXT)
+   - instruction_set_id (UUID)
+   - request_payload, response_payload (JSONB)
+   - tokens_in, tokens_out, total_tokens (INTEGER)
+   - estimated_cost (NUMERIC)
+   - schema_validated (BOOLEAN)
+   - created_at (TIMESTAMPTZ)
+
+INDEXES:
+✅ PASS: Indexes created with IF NOT EXISTS:
+   - idx_ai_responses_thread_id
+   - idx_ai_responses_created_at
+   - idx_ai_responses_instruction_set_id
+   - idx_ai_responses_stage_ref
+   - idx_ddsa_stage_config_metadata (GIN index for JSONB)
+
+FOREIGN KEYS:
+✅ PASS: Foreign key to instruction_sets(id) with ON DELETE SET NULL
+✅ PASS: Foreign key to chat_threads(id) with ON DELETE CASCADE
+✅ PASS: Both wrapped in existence checks
+
+OPTION B MAPPING COMPLIANCE:
+✅ PASS: Adds metadata column to ddsa_stage_config (for instruction_set_id storage)
+✅ PASS: No attempt to modify non-existent 'stages' table
+✅ PASS: Uses ddsa_stage_config as per mapping document
+
+DEFENSIVE COLUMN ADDITIONS:
+✅ PASS: Checks for existing ai_responses table and adds missing columns
+✅ PASS: Handles partial migration scenarios gracefully
+
+OVERALL ASSESSMENT: ✅ VALID - Migration is idempotent, safe, and follows Option B mapping
+

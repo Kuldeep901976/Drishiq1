@@ -1,0 +1,23 @@
+[
+  {
+    "producerFile": "lib/ddsa/getNextStageMessage.ts",
+    "workerFile": "lib/ddsa/backgroundScheduler.ts",
+    "includesTenantIdInPayload": "YES",
+    "workerSetsRLS": "YES",
+    "notes": "getNextStageMessage calls scheduleBackgroundStages which sets RLS via setPostgresTenant or withTenantContext"
+  },
+  {
+    "producerFile": "lib/ddsa/pipeline-executor.ts",
+    "workerFile": "lib/ddsa/backgroundScheduler.ts",
+    "includesTenantIdInPayload": "YES",
+    "workerSetsRLS": "YES",
+    "notes": "Pipeline executor passes input.tenantId to background scheduler which sets RLS before executing stages"
+  },
+  {
+    "producerFile": "app/api/chat/route.ts",
+    "workerFile": "jobs/threadPersistenceWorker.ts",
+    "includesTenantIdInPayload": "UNKNOWN",
+    "workerSetsRLS": "YES",
+    "notes": "Worker sets RLS when tenantId is present in job.metadata.tenantId. Producer may not always include tenantId in payload."
+  }
+]

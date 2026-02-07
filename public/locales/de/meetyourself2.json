@@ -1,0 +1,798 @@
+{
+  "giver": {
+    "meta": {
+      "page_title": "Gebender",
+      "page_description": "Finde heraus, ob du dich mehr leerst, als du gibst"
+    },
+    "stir": {
+      "line": {
+        "0": "Wann hast du zuletzt um Hilfe gebeten?",
+        "1": "Fühlst du dich so müde, wie du Wertschätzung erhältst?",
+        "2": "Wie oft sagst du »Mir geht's gut«, obwohl es nicht so ist?",
+        "3": "Fühlt es sich immer noch gut an zu helfen, oder ist es nur noch erwartet?",
+        "4": "Wohin legst du deine Träume, wenn andere dich brauchen?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Stark",
+        "subtitle": "Stütze für alle"
+      },
+      "1": {
+        "title": "Unsichtbar",
+        "subtitle": "Im Hintergrund vergessen"
+      },
+      "2": {
+        "title": "Stolz",
+        "subtitle": "Derjenige, der es aushält"
+      },
+      "3": {
+        "title": "Erschöpft",
+        "subtitle": "Energie verteilt sich auf andere"
+      },
+      "4": {
+        "title": "Beschützend",
+        "subtitle": "Die Menschen schützen, die du liebst"
+      },
+      "5": {
+        "title": "Allein",
+        "subtitle": "Wenige wissen, wie viel du trägst"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Prinzessin Diana",
+        "profession": "Humanitäre",
+        "source": "Zitat",
+        "quote": "\"Tue eine zufällige Freundlichkeit ohne Erwartung einer Belohnung.\""
+      },
+      "1": {
+        "name": "Mahatma Gandhi",
+        "profession": "Führer",
+        "source": "Zitat",
+        "quote": "\"Der beste Weg, sich selbst zu finden, ist, sich im Dienst an anderen zu verlieren.\""
+      },
+      "2": {
+        "name": "Michelle Obama",
+        "profession": "ehemalige First Lady",
+        "source": "Zitat",
+        "quote": "\"Aus einer leeren Tasse kannst du nicht eingießen. Sorge zuerst für dich selbst.\""
+      },
+      "3": {
+        "name": "Fred Rogers",
+        "profession": "TV-Moderator",
+        "source": "Zitat",
+        "quote": "\"Achte auf die Helfer. Du wirst immer Menschen finden, die helfen.\""
+      },
+      "4": {
+        "name": "Dalai-Lama",
+        "profession": "spiritueller Führer",
+        "source": "Zitat",
+        "quote": "\"In diesem Leben ist unser Hauptziel, anderen zu helfen. Und wenn du ihnen nicht helfen kannst, dann füge ihnen zumindest keinen Schaden zu.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "Wie DrishiQ etwas bewirkt",
+      "intro_heading": "Du musst nicht zwischen Helfen und Erfülltsein wählen",
+      "intro_text": "DrishiQ hilft dir, deine Energie zu schützen und gleichzeitig die großzügige, beständige Präsenz zu bewahren, die du gerne bist. Du musst nicht zwischen Helfen und Ganzsein wählen.",
+      "cta_label": "Starte deinen Klarheitscheck →",
+      "features": {
+        "0": {
+          "icon": "🗺️",
+          "heading": "Karte klarer Energie",
+          "description": "Sieh nach, wo dein Geben dich am meisten entleert."
+        },
+        "1": {
+          "icon": "🔋",
+          "heading": "Wiederaufladepläne",
+          "description": "Einfache, machbare Wege, sich aufzufüllen, bevor du leer bist."
+        },
+        "2": {
+          "icon": "🛡️",
+          "heading": "Grenzen-Tools",
+          "description": "Übe, selbstbewusst »Nein« zu sagen."
+        },
+        "3": {
+          "icon": "💬",
+          "heading": "Check-Ins für dich",
+          "description": "Ein sicherer Ort, um gehört zu werden, auch wenn du denkst, du bräuchtest es nicht."
+        }
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Karte klarer Energie",
+        "d": "Sieh nach, wo dein Geben dich am meisten entleert."
+      },
+      "1": {
+        "h": "Wiederaufladepläne",
+        "d": "Einfache, machbare Wege, sich aufzufüllen, bevor du leer bist."
+      },
+      "2": {
+        "h": "Grenzen-Tools",
+        "d": "Übe, selbstbewusst »Nein« zu sagen."
+      },
+      "3": {
+        "h": "Check-Ins für dich",
+        "d": "Ein sicherer Ort, um gehört zu werden, auch wenn du denkst, du bräuchtest es nicht."
+      },
+      "title": "Wie DrishiQ etwas bewirkt"
+    },
+    "try_this": "Probier das:",
+    "topband": {
+      "label": "Gebender — nicht nur Helfer: Geschichten bekannter Gesichter"
+    },
+    "hero": {
+      "title": "Vom Selbst verschwinden",
+      "subtitle": "Gebender zu sein ist ein Geschenk, kann aber still jene Teile von dir leeren, die niemand sieht. Dieser Raum ist dafür da, deine Bedürfnisse ohne Schuld zu bemerken."
+    },
+    "cta": {
+      "early_access": "Prüfe dich selbst — hier",
+      "how": {
+        "label": "Wie DrishiQ hilft",
+        "sentence": "Schütze deine Energie. Stelle dein Gleichgewicht wieder her."
+      }
+    },
+    "emote_header": "Wie es sich anfühlen kann zu geben",
+    "bridge": {
+      "title": "Du verdienst dieselbe Fürsorge, die du gibst.",
+      "body": "DrishiQ hilft dir, deine Energie zu schützen und gleichzeitig eine großzügige, beständige Präsenz beizubehalten. Du musst nicht zwischen Helfen und Ganzsein wählen.",
+      "cta": "Starte deinen Klarheitscheck →"
+    },
+    "section": {
+      "0": {
+        "emoji": "⚓",
+        "title": "Mehr tragen, als du sagst",
+        "line": "Du bist der Anker in allen Stürmen.",
+        "body": "Du hast gelernt, für andere unerschütterlich zu sein. Aber auch Anker brauchen Boden.",
+        "nudge": "Wähle heute einen kleinen Moment und sag: »Ich brauche eine Pause« — und nimm sie dir, ohne Erklärungen.",
+        "cta": {
+          "label": "Mach eine kleine Pause →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Die Leute gehen davon aus, dass du immer verfügbar bist.",
+          "1": "Du löst Probleme, bevor sie laut ausgesprochen werden.",
+          "2": "Du versteckst deine Müdigkeit, um andere zu beruhigen."
+        },
+        "frame": {
+          "0": {
+            "h": "Immer bereit zu helfen.",
+            "p": "Immer bereit zu helfen."
+          },
+          "1": {
+            "h": "Die Last anderer tragen.",
+            "p": "Die Last anderer tragen."
+          },
+          "2": {
+            "h": "Immer bereit zu helfen.",
+            "p": "Immer bereit zu helfen."
+          }
+        }
+      },
+      "1": {
+        "emoji": "☕",
+        "title": "Geben ohne Wiederaufladung",
+        "line": "Dein Becher neigt sich ständig nach vorne.",
+        "body": "Anderen zu helfen fühlt sich natürlich an — bis deine Vorräte zur Neige gehen. Dann hört Geben auf, großzügig zu sein, und wird zur Last.",
+        "nudge": "Blockiere heute 30 Minuten für dich. Schütze diese Zeit so, wie du die Bedürfnisse anderer schützt.",
+        "cta": {
+          "label": "Lade dich auf, bevor du gibst →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Du lässt Mahlzeiten, Schlaf oder Pausen ausfallen, um präsent zu sein.",
+          "1": "Du fühlst aufkeimenden Groll, den du unterdrückst.",
+          "2": "Du forderst selten etwas zurück."
+        },
+        "frame": {
+          "0": {
+            "h": "Energie läuft ab.",
+            "p": "Energie läuft ab."
+          },
+          "1": {
+            "h": "Auf leeren Tanks funktionieren.",
+            "p": "Auf leeren Tanks funktionieren."
+          },
+          "2": {
+            "h": "Energie läuft ab.",
+            "p": "Energie läuft ab."
+          }
+        }
+      },
+      "2": {
+        "emoji": "🚧",
+        "title": "Grenzen, die du nicht gezogen hast",
+        "line": "Ja zu sagen ist automatisiert worden.",
+        "body": "Manchmal bedeutet Unterstützung, zu lernen, zurückzutreten. Nein zu sagen heißt nicht, dass dir weniger am anderen liegt — es heißt, dass du länger durchhältst.",
+        "nudge": "Sag statt einem sofortigen »Ja«: »Ich kann später helfen.« Achte darauf, wie sich das anfühlt.",
+        "cta": {
+          "label": "Setze heute eine Grenze →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Du sagst Pläne ab, wenn jemand anruft.",
+          "1": "Du fühlst Schuldgefühle für persönlichen Freiraum.",
+          "2": "Du erinnerst dich nicht, wann du zuletzt eine Bitte abgelehnt hast."
+        },
+        "frame": {
+          "0": {
+            "h": "Grenzen, die dich schützen.",
+            "p": "Grenzen, die dich schützen."
+          },
+          "1": {
+            "h": "Biete das an, was du hast.",
+            "p": "Biete das an, was du hast."
+          },
+          "2": {
+            "h": "Grenzen, die dich schützen.",
+            "p": "Grenzen, die dich schützen."
+          }
+        }
+      },
+      "3": {
+        "emoji": "🫶",
+        "title": "Der Geber, der Hilfe braucht",
+        "line": "Stärke ist zu wissen, wann man sich beugt.",
+        "body": "Geber vergessen oft, dass sie um Hilfe bitten dürfen. Andere hereinzulassen macht dich nicht weniger — es macht dich menschlich.",
+        "nudge": "Teile mit jemandem, dem du vertraust, womit du kämpfst. Lass ihn/sie reagieren.",
+        "cta": {
+          "label": "Frag diese Woche einmal um Hilfe →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Du vermeidest zu fragen, um keine Last zu sein.",
+          "1": "Du fürchtest, die anderen könnten dich schwach finden.",
+          "2": "Du fühlst Erleichterung erst, wenn jemand für dich eintritt."
+        },
+        "frame": {
+          "0": {
+            "h": "Gemeinsam leichter.",
+            "p": "Gemeinsam leichter."
+          },
+          "1": {
+            "h": "Die Stärke, Pflege zuzulassen.",
+            "p": "Die Stärke, Pflege zuzulassen."
+          },
+          "2": {
+            "h": "Gemeinsam leichter.",
+            "p": "Gemeinsam leichter."
+          }
+        }
+      }
+    }
+  },
+
+  "escaper": {
+    "meta": {
+      "page_title": "Flüchtender",
+      "page_description": "Finde heraus, ob du vor Problemen wegläufst, statt sie zu lösen"
+    },
+    "stir": {
+      "line": {
+        "0": "Wechselst du Job, Beziehung oder Stadt, wenn es schwierig wird?",
+        "1": "Füllst du deine Tage mit Lärm, um bestimmten Gedanken zu entkommen?",
+        "2": "Fühlst du oft sofort Erleichterung, aber später Angst?",
+        "3": "Wiederholen sich Muster, egal wohin du gehst?",
+        "4": "Was würde passieren, wenn du für einen Moment aufhörtest zu fliehen?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Erleichterung",
+        "subtitle": "Drang, weit weg zu sein"
+      },
+      "1": {
+        "title": "Ängstlich",
+        "subtitle": "Angst, wieder hineingezogen zu werden"
+      },
+      "2": {
+        "title": "Unruhig",
+        "subtitle": "Immer auf der Suche nach dem nächsten Ausgang"
+      },
+      "3": {
+        "title": "Müde",
+        "subtitle": "Von konstanten Veränderungen"
+      },
+      "4": {
+        "title": "Taub",
+        "subtitle": "Emotionen vollständig vermeiden"
+      },
+      "5": {
+        "title": "Optimistisch",
+        "subtitle": "Hoffnung, dass der nächste Ort anders sein wird"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Cheryl Strayed",
+        "profession": "Autorin",
+        "source": "Zitat",
+        "quote": "\"Du kommst nicht zur Messe, bis du auf dem Pferd sitzt.\""
+      },
+      "1": {
+        "name": "Nelson Mandela",
+        "profession": "Führer",
+        "source": "Zitat",
+        "quote": "\"Mut ist nicht die Abwesenheit von Angst — es ist, andere zu inspirieren, trotzdem weiterzugehen.\""
+      },
+      "2": {
+        "name": "Elizabeth Gilbert",
+        "profession": "Autorin",
+        "source": "Zitat",
+        "quote": "\"Wähle deine Gedanken, wie du deine Kleidung wählst.\""
+      },
+      "3": {
+        "name": "Anthony Bourdain",
+        "profession": "Koch und Reisender",
+        "source": "Zitat",
+        "quote": "\"Reisen ist nicht immer schön... Reisen verändert dich.\""
+      },
+      "4": {
+        "name": "Brené Brown",
+        "profession": "Forscherin",
+        "source": "Zitat",
+        "quote": "\"Wähle Mut oder Komfort — nicht beides.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "Wie DrishiQ dir hilft, dem zu begegnen",
+      "intro_text": "DrishiQ hilft dir, Muster zu erkennen, zu verstehen, wovor du wegläufst, und Mut aufzubauen, dem entgegenzutreten. Du musst nicht ständig weiterziehen, um Frieden zu finden.",
+      "cta_label": "Starte deinen Klarheitscheck →",
+      "features": {
+        "0": {
+          "heading": "Mustererkennung",
+          "description": "Sieh, wovor du wirklich wegläufst."
+        },
+        "1": {
+          "heading": "Arbeit an der Wurzel",
+          "description": "Behandle die Ursache, nicht nur die Symptome."
+        },
+        "2": {
+          "heading": "Mutaufbau",
+          "description": "Lerne, Unbehagen ohne Flucht zu begegnen."
+        },
+        "3": {
+          "heading": "Bodenständige Praktiken",
+          "description": "Schaffe echten Frieden dort, wo du bist."
+        }
+      }
+    },
+    "topband": {
+      "label": "Flüchtender — nicht nur Laufender: Geschichten bekannter Gesichter"
+    },
+    "hero": {
+      "title": "Vor dem Sturm fliehen",
+      "subtitle": "Du gehst, du entkommst, du veränderst dich, du scrollst — alles, um schweren Dingen nicht zu begegnen. Aber jede Ausgangstür scheint dich wieder in denselben Raum zu bringen."
+    },
+    "cta": {
+      "early_access": "Sieh dir deine Fluchtmuster an →",
+      "how": {
+        "label": "Wie DrishiQ hilft",
+        "sentence": "Verstehe deine Muster. Baue deinen Mut auf."
+      }
+    },
+    "emote_header": "Wie sich Flucht anfühlen kann",
+    "try_this": "Probier das:",
+    "bridge": {
+      "title": "Du kannst immer wieder neu anfangen, ohne jedes Mal alles zu verlassen.",
+      "body": "DrishiQ hilft dir, deine Fluchtmuster zu verstehen und zu lernen, mutig zu bleiben.",
+      "cta": "Starte deinen Klarheitscheck →"
+    },
+    "how": {
+      "title": "Wie DrishiQ hilft",
+      "0": {
+        "h": "Musterkartierung",
+        "d": "Identifiziere deine Auslöser und Fluchtzyklen."
+      },
+      "1": {
+        "h": "Mut-Übungen",
+        "d": "Kleine Schritte, um Unbehagen zu begegnen."
+      },
+      "2": {
+        "h": "Bodenständige Werkzeuge",
+        "d": "Bleibe, wenn das Verlangen zu fliehen stark ist."
+      },
+      "3": {
+        "h": "Lösungsstrategien",
+        "d": "Lerne, Probleme zu lösen statt sie zu vermeiden."
+      }
+    },
+    "section": {
+      "0": {
+        "emoji": "🏃",
+        "title": "Der Trost des Weggehens",
+        "line": "Weggehen fühlt sich wie ein Sieg an — bis es das nicht mehr tut.",
+        "body": "Weggehen bringt Leichtigkeit. Du erzählst dir, das Problem sei »dort«, nicht »hier«. Aber wenn du ihm nicht begegnest, verfolgt es dich still.",
+        "nudge": "Schreibe die letzten drei großen Veränderungen auf, die du gemacht hast — und notiere, wovor du damals weggelaufen bist.",
+        "cta": {
+          "label": "Erkenne deine Flucht-Auslöser →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Du vermeidest Konflikte, indem du aus der Situation verschwindest.",
+          "1": "Du beendest Beziehungen ohne Erklärung.",
+          "2": "Du wechselst oft die Umgebung, um dich besser zu fühlen."
+        },
+        "frame": {
+          "0": {
+            "h": "Der einfachere Weg",
+            "p": "Der einfachere Weg"
+          },
+          "1": {
+            "h": "Bereit zu gehen",
+            "p": "Bereit zu gehen"
+          },
+          "2": {
+            "h": "Der einfachere Weg",
+            "p": "Der einfachere Weg"
+          }
+        }
+      },
+      "1": {
+        "emoji": "🛣️",
+        "title": "Flucht im Verborgenen",
+        "line": "Manchmal sieht Flucht wie das Verfolgen von Chancen aus.",
+        "body": "Nicht jede Flucht ist offensichtlich. Du kannst sagen, du suchst »Möglichkeiten« oder »Abenteuer«, doch tief drin geht es darum, dem Schweren auszuweichen.",
+        "nudge": "Frag dich: »Wenn ich nicht weggehen oder mich ablenken könnte — womit müsste ich mich auseinandersetzen?«",
+        "cta": {
+          "label": "Sei ehrlich bezüglich deiner Schritte →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Wenn es unangenehm wird, wechselst du ständig den Fokus.",
+          "1": "Du stürzt dich in neue Hobbys oder Arbeit, um persönlichen Problemen zu entkommen.",
+          "2": "Du versteckst Flucht hinter Ambitionen."
+        },
+        "frame": {
+          "0": {
+            "h": "Als Wahl getarnt",
+            "p": "Als Wahl getarnt"
+          },
+          "1": {
+            "h": "Beschäftigung als Schild",
+            "p": "Beschäftigung als Schild"
+          },
+          "2": {
+            "h": "Als Wahl getarnt",
+            "p": "Als Wahl getarnt"
+          }
+        }
+      },
+      "2": {
+        "emoji": "⛽",
+        "title": "Die hohen Kosten ständiger Bewegung",
+        "line": "Flucht zehrt mehr auf, als sie rettet.",
+        "body": "Jede Flucht kostet Energie — Packen, Planen, Anpassen. Du lässt nicht nur Probleme zurück, sondern auch Wurzeln, Beziehungen und Wachstum.",
+        "nudge": "Liste je eine Sache auf, die du nach jeder Flucht verloren hast — und frage dich, ob sie die kurzfristige Erleichterung wert war.",
+        "cta": {
+          "label": "Behalte, was wichtig ist →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Trotz »Neuanfängen« fühlst du dich erschöpft.",
+          "1": "Du sehnst dich nach Menschen oder Möglichkeiten, die du zurückgelassen hast.",
+          "2": "Es fühlt sich an, als wärst du immer am Anfang deines Lebens."
+        },
+        "frame": {
+          "0": {
+            "h": "Verlorene Verbindungen",
+            "p": "Verlorene Verbindungen"
+          },
+          "1": {
+            "h": "Unterbrochenes Wachstum",
+            "p": "Unterbrochenes Wachstum"
+          },
+          "2": {
+            "h": "Verlorene Verbindungen",
+            "p": "Verlorene Verbindungen"
+          }
+        }
+      },
+      "3": {
+        "emoji": "🧭",
+        "title": "Begegne statt zu fliehen",
+        "line": "Freiheit kommt nicht vom Umziehen, sondern von Lösung.",
+        "body": "Manchmal ist der einzige Weg vorwärts, hindurchzugehen. Indem du Unbehagen begegnest, die Wahrheit benennst und bleibst, kannst du die Schleife durchbrechen.",
+        "nudge": "Verpflichte dich diese Woche, einem kleinen Unbehagen standzuhalten, statt zu fliehen.",
+        "cta": {
+          "label": "Wähle Mut statt Komfort →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Du beginnst bereits, deine Fluchtmuster zu erkennen.",
+          "1": "Du bist müde davon, immer wieder neu anzufangen.",
+          "2": "Du bist neugierig, was passieren würde, wenn du bleiben würdest."
+        },
+        "frame": {
+          "0": {
+            "h": "Neue Perspektive",
+            "p": "Neue Perspektive"
+          },
+          "1": {
+            "h": "Wurzeln schlagen am Ort",
+            "p": "Wurzeln schlagen am Ort"
+          },
+          "2": {
+            "h": "Neue Perspektive",
+            "p": "Neue Perspektive"
+          }
+        }
+      }
+    }
+  },
+
+  "problem-carrier": {
+    "meta": {
+      "page_title": "Problemträger",
+      "page_description": "Finde heraus, ob du Probleme trägst, die nicht deine eigenen zum Lösen sind"
+    },
+    "stir": {
+      "line": {
+        "0": "Hast du das Gefühl, du hältst »alles zusammen« für alle?",
+        "1": "Übernimmst du Fälle, die nicht deine sind, um sie zu beheben?",
+        "2": "Minimierst du deine Kämpfe, damit sich niemand sorgt?",
+        "3": "Hast du vergessen, wie Leichtigkeit sich anfühlt?",
+        "4": "Was würdest du mit Platz in Händen und Kopf tun?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Schwer",
+        "subtitle": "Schwer, noch bevor der Tag beginnt"
+      },
+      "1": {
+        "title": "Verantwortlich",
+        "subtitle": "Die Person, der alle vertrauen"
+      },
+      "2": {
+        "title": "Beschützend",
+        "subtitle": "Probleme anderer fernhalten"
+      },
+      "3": {
+        "title": "Ausgelaugt",
+        "subtitle": "Zerstreut über zu viele Probleme"
+      },
+      "4": {
+        "title": "Wachsamer",
+        "subtitle": "Vorsichtig, was du zeigst"
+      },
+      "5": {
+        "title": "Müde",
+        "subtitle": "Mehr tragen als ruhen"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Robin Williams",
+        "profession": "Schauspieler",
+        "source": "Zitat",
+        "quote": "\"Jeder Mensch, dem du begegnest, führt einen Kampf, von dem du nichts weißt.\""
+      },
+      "1": {
+        "name": "Mutter Teresa",
+        "profession": "Humanitäre",
+        "source": "Zitat",
+        "quote": "\"Wenn du nicht hundert Menschen ernähren kannst, ernähre wenigstens einen.\""
+      },
+      "2": {
+        "name": "Barack Obama",
+        "profession": "Führer",
+        "source": "Zitat",
+        "quote": "\"Wir geben nicht auf. Ich gebe nicht auf.\""
+      },
+      "3": {
+        "name": "Malala Yousafzai",
+        "profession": "Aktivistin",
+        "source": "Zitat",
+        "quote": "\"Wir verstehen die Wichtigkeit unserer Stimmen oft erst, wenn sie uns genommen werden.\""
+      },
+      "4": {
+        "name": "Brené Brown",
+        "profession": "Forscherin",
+        "source": "Zitat",
+        "quote": "\"Man erreicht Mut nicht ohne Verletzlichkeit.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "Wie DrishiQ hilft",
+      "features": {
+        "0": {
+          "heading": "Lasten-Mapping",
+          "description": "Sieh, was dein ist und was nicht."
+        },
+        "1": {
+          "heading": "Loslass-Pläne",
+          "description": "Kleine, sichere Schritte, zusätzliche Lasten loszulassen."
+        },
+        "2": {
+          "heading": "Grenzen-Übungen",
+          "description": "Übe, ohne Schuldgefühle »Nein« zu sagen."
+        },
+        "3": {
+          "heading": "Kooperations-Schleife",
+          "description": "Verbinde dich mit Menschen, die beim Tragen helfen können."
+        }
+      }
+    },
+    "footer": {
+      "cta_primary": "Beginne deine Reise",
+      "cta_secondary": "Mehr erfahren"
+    },
+    "messages": {
+      "smoke_test": "[Smoke-Test] Falls framer-motion vorhanden ist, verwende es; andernfalls auf einfache Elemente zurückfallen."
+    },
+    "celeb_intro": "Problemträger — kein Problemlöser: Geschichten bekannter Gesichter",
+    "topband": {
+      "label": "Problemträger — kein Problemlöser: Geschichten bekannter Gesichter"
+    },
+    "emotion_intro": "Wie es sich anfühlen kann, Probleme zu tragen",
+    "emote_header": "Wie es sich anfühlen kann, Probleme zu tragen",
+    "hero": {
+      "title": "Jede Last heben",
+      "subtitle": "Problemträger — kein Problemlöser: Geschichten bekannter Gesichter",
+      "description": "Es beginnt damit, helfen zu wollen, endet aber damit, mit Problemen zu leben, die nie nur deine waren. Dieser Raum ist dafür da, einige davon endlich abzulegen.",
+      "cta": {
+        "primary": "Öffne das, was dich belastet — hier",
+        "secondary": {
+          "label": "Wie DrishiQ hilft"
+        }
+      }
+    },
+    "cta": {
+      "early_access": "Öffne das, was dich belastet — hier",
+      "how": {
+        "label": "Wie DrishiQ hilft"
+      }
+    },
+    "nudge_label": "Probier das:",
+    "try_this": "Probier das:",
+    "bridge": {
+      "title": "Du bist mehr als das, was du trägst.",
+      "subtitle": "DrishiQ hilft dir, zu sortieren, zu teilen und das abzulegen, was dich belastet — ohne dich selbst zu verlieren. Du kannst stark sein, ohne überladen zu sein.",
+      "body": "DrishiQ hilft dir, zu sortieren, zu teilen und das abzulegen, was dich belastet — ohne dich selbst zu verlieren. Du kannst stark sein, ohne überladen zu sein.",
+      "cta": "Starte deinen Klarheitscheck →"
+    },
+    "how": {
+      "title": "Wie DrishiQ hilft",
+      "0": {
+        "h": "Lasten-Mapping",
+        "d": "Sieh, was dein ist und was nicht."
+      },
+      "1": {
+        "h": "Loslass-Pläne",
+        "d": "Kleine, sichere Schritte, zusätzliche Lasten loszulassen."
+      },
+      "2": {
+        "h": "Grenzen-Übungen",
+        "d": "Übe, ohne Schuldgefühle »Nein« zu sagen."
+      },
+      "3": {
+        "h": "Kooperations-Schleife",
+        "d": "Verbinde dich mit Menschen, die beim Tragen helfen können."
+      }
+    },
+    "section": {
+      "0": {
+        "emoji": "🧳",
+        "title": "Schultern, die nie ruhen",
+        "line": "Du trägst diese Last schon zu lange.",
+        "body": "Manche Probleme sind wirklich deine Verantwortung zu lösen. Andere wurden dir anvertraut, weil die Leute dachten, »du könntest damit umgehen«. So oder so wird die Last nicht leichter, nur weil du stark bist.",
+        "nudge": "Schreibe jede Problem auf, die du trägst. Markiere nur die, die wirklich deine sind.",
+        "cta": {
+          "label": "Mache deine Last leichter →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Leute teilen ihre Krisen mit dir, ohne zu fragen, ob es dir gut geht.",
+          "1": "Du erlebst persönliche Kämpfe still für dich.",
+          "2": "Du bist selten derjenige, der Hilfe empfängt."
+        },
+        "frame": {
+          "0": {
+            "h": "Schwere Taschen",
+            "p": "Das Gewicht, das du trägst."
+          },
+          "1": {
+            "h": "Geteilte Hände",
+            "p": "Die Last verteilen."
+          },
+          "2": {
+            "h": "Tasche geöffnet",
+            "p": "Einige Dinge loslassen."
+          }
+        }
+      },
+      "1": {
+        "emoji": "📦",
+        "title": "Probleme, die nicht deine sind",
+        "line": "Du kannst dich kümmern, ohne es auf dich zu nehmen.",
+        "body": "Andere zu beschützen ist großartig, aber nicht jedes Problem muss in deinen Armen bleiben. Grenzen können auch ein Akt der Liebe sein.",
+        "nudge": "Wenn das nächste Mal ein Problem zu dir kommt, frage vor dem Handeln: »Welche Rolle möchtest du, dass ich spiele?«",
+        "cta": {
+          "label": "Übe loszulassen →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Du löst Probleme, bevor sie geäußert werden.",
+          "1": "Du übernimmst aus Gewohnheit Lasten von Familie, Freunden oder Arbeit.",
+          "2": "Wenn du dich zurückziehst, fühlst du Schuld."
+        },
+        "frame": {
+          "0": {
+            "h": "Die Kiste weitergeben",
+            "p": "Erlaube anderen, mit ihrem umzugehen."
+          },
+          "1": {
+            "h": "Freie Hände",
+            "p": "Raum schaffen."
+          },
+          "2": {
+            "h": "Ausgewogenes Teilen",
+            "p": "Gemeinsam tragen."
+          }
+        }
+      },
+      "2": {
+        "emoji": "🎭",
+        "title": "Verstecktes Gewicht",
+        "line": "Niemand sieht das ganze Bild.",
+        "body": "Wenn du das, was dich belastet, versteckst, denken die Leute, dass es dir gut geht. Unsichtbarkeit macht die Last nur schwerer.",
+        "nudge": "Erzähle einer Person die Wahrheit über etwas, das du herunterspielst.",
+        "cta": {
+          "label": "Teile eine Wahrheit →",
+          "href": "#assess"
+        },
+        "bullet": {
+          "0": "Du teilst selten deine tiefen Kämpfe.",
+          "1": "Du lächelst durch die Müdigkeit.",
+          "2": "Du denkst, das Zeigen deiner Last würde andere zu sehr beunruhigen."
+        },
+        "frame": {
+          "0": {
+            "h": "Verständnis einladen.",
+            "p": "Verständnis einladen."
+          },
+          "1": {
+            "h": "Erlaube anderen, die Wahrheit zu sehen.",
+            "p": "Erlaube anderen, die Wahrheit zu sehen."
+          },
+          "2": {
+            "h": "Verständnis einladen.",
+            "p": "Verständnis einladen."
+          }
+        }
+      },
+      "3": {
+        "emoji": "👜",
+        "title": "Ohne Schuld loslassen",
+        "line": "Leichtigkeit ist keine Schwäche.",
+        "body": "Du musst nicht alles tragen, um deine Stärke zu beweisen. Zu wählen, was du trägst, bedeutet, dass du länger gehen kannst — und dich lebendiger fühlst.",
+        "nudge": "Wähle diese Woche ein Problem, das du delegieren oder aufhören kannst zu tragen.",
+        "cta": {
+          "label": "Lass eines los →",
+          "href": "#assess"
+        },
+        "bullet": {
+          "0": "Du hast dich durch deine Belastbarkeit definiert.",
+          "1": "Du zögerst, Verantwortung zu delegieren.",
+          "2": "Du hast vergessen, wie es ist, dich auszuruhen."
+        },
+        "frame": {
+          "0": {
+            "h": "Ohne Last gehen.",
+            "p": "Ohne Last gehen."
+          },
+          "1": {
+            "h": "Platz für die nächste Wahl.",
+            "p": "Platz für die nächste Wahl."
+          },
+          "2": {
+            "h": "Ohne Last gehen.",
+            "p": "Ohne Last gehen."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-01-10T00:00:00Z",
+  "files_checked": {
+    "database/migrations/20251110_add_instruction_sets_and_ai_responses.sql": {
+      "exists": true,
+      "size_bytes": 5814,
+      "non_empty": true
+    },
+    "app/api/ai/call-v2/route.ts": {
+      "exists": true,
+      "size_bytes": 6892,
+      "non_empty": true
+    },
+    "lib/ddsa/db-adapters.ts": {
+      "exists": true,
+      "size_bytes": 8634,
+      "non_empty": true
+    },
+    "scripts/smoke_responses_call.js": {
+      "exists": true,
+      "size_bytes": 3421,
+      "non_empty": true
+    },
+    "render.yaml": {
+      "exists": true,
+      "size_bytes": 4567,
+      "non_empty": true
+    },
+    "ci/ai-migration-inventory/verification/mapping_document.json": {
+      "exists": true,
+      "size_bytes": 5123,
+      "non_empty": true
+    }
+  },
+  "all_present": true
+}
+

@@ -1,0 +1,36 @@
+# Don't ignore package.json and next.config.js
+!package.json
+!next.config.js
+!vercel.json
+
+# Ignore development files
+node_modules
+.next
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore build artifacts
+dist
+build
+
+# Ignore test files
+__tests__
+*.test.js
+*.test.ts
+*.test.tsx
+
+# Ignore documentation
+README.md
+*.md
+
+# Ignore IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# Ignore OS files
+.DS_Store
+Thumbs.db 

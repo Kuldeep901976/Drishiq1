@@ -1,0 +1,796 @@
+{
+  "giver": {
+    "meta": {
+      "page_title": "Doante",
+      "page_description": "Descubra se você está ficando mais vazio do que dá"
+    },
+    "stir": {
+      "line": {
+        "0": "Quando foi a última vez que você pediu ajuda?",
+        "1": "Você se sente tão cansado quanto é reconhecido?",
+        "2": "Com que frequência você diz 'estou bem' quando não está realmente bem?",
+        "3": "Ajudar ainda te faz bem, ou virou apenas algo esperado?",
+        "4": "Onde você coloca seus sonhos quando os outros precisam de você?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Forte",
+        "subtitle": "Estável para todos"
+      },
+      "1": {
+        "title": "Invisível",
+        "subtitle": "Esquecido nos bastidores"
+      },
+      "2": {
+        "title": "Orgulhoso",
+        "subtitle": "Aquele que consegue lidar"
+      },
+      "3": {
+        "title": "Esgotado",
+        "subtitle": "Energia espalhada entre os outros"
+      },
+      "4": {
+        "title": "Protetor",
+        "subtitle": "Proteger as pessoas que você ama"
+      },
+      "5": {
+        "title": "Solitário",
+        "subtitle": "Poucos sabem quanto você carrega"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Princesa Diana",
+        "profession": "humanitária",
+        "source": "citação",
+        "quote": "\"Faça um ato de bondade aleatório sem esperar recompensa.\""
+      },
+      "1": {
+        "name": "Mahatma Gandhi",
+        "profession": "líder",
+        "source": "citação",
+        "quote": "\"A melhor maneira de se encontrar é se perder no serviço aos outros.\""
+      },
+      "2": {
+        "name": "Michelle Obama",
+        "profession": "ex-primeira-dama",
+        "source": "citação",
+        "quote": "\"Você não pode derramar de um copo vazio. Cuide-se primeiro.\""
+      },
+      "3": {
+        "name": "Fred Rogers",
+        "profession": "apresentador de TV",
+        "source": "citação",
+        "quote": "\"Observe os que ajudam. Você sempre encontrará pessoas que estão ajudando.\""
+      },
+      "4": {
+        "name": "Dalai Lama",
+        "profession": "líder espiritual",
+        "source": "citação",
+        "quote": "\"Nesta vida, nosso objetivo principal é ajudar os outros. E se você não pode ajudá-los, pelo menos não os prejudique.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "Como o DrishiQ faz diferença",
+      "intro_heading": "Você não precisa escolher entre ajudar e estar completo",
+      "intro_text": "O DrishiQ ajuda a proteger sua energia enquanto você mantém aquela presença generosa e estável que você gosta de ter. Você não precisa escolher entre ajudar e estar completo.",
+      "cta_label": "Comece sua verificação de clareza →",
+      "features": {
+        "0": {
+          "icon": "🗺️",
+          "heading": "Mapa claro de energia",
+          "description": "Veja onde seu dar mais te esvazia."
+        },
+        "1": {
+          "icon": "🔋",
+          "heading": "Planos de recarga",
+          "description": "Maneiras simples e possíveis de se reabastecer antes de esgotar."
+        },
+        "2": {
+          "icon": "🛡️",
+          "heading": "Ferramentas de limites",
+          "description": "Pratique dizer 'não' com confiança."
+        },
+        "3": {
+          "icon": "💬",
+          "heading": "Check-ins para você",
+          "description": "Um lugar seguro para ser ouvido mesmo quando você acha que não precisa."
+        }
+      }
+    },
+    "how": {
+      "0": {
+        "h": "Mapa claro de energia",
+        "d": "Veja onde seu dar mais te esvazia."
+      },
+      "1": {
+        "h": "Planos de recarga",
+        "d": "Maneiras simples e possíveis de se reabastecer antes de esgotar."
+      },
+      "2": {
+        "h": "Ferramentas de limites",
+        "d": "Pratique dizer 'não' com confiança."
+      },
+      "3": {
+        "h": "Check-ins para você",
+        "d": "Um lugar seguro para ser ouvido mesmo quando você acha que não precisa."
+      },
+      "title": "Como o DrishiQ faz diferença"
+    },
+    "try_this": "Tente isto:",
+    "topband": {
+      "label": "Doante, não apenas ajudante — histórias de rostos conhecidos"
+    },
+    "hero": {
+      "title": "Desaparecendo de si mesmo",
+      "subtitle": "Ser alguém que dá é um presente, mas pode esvaziar silenciosamente partes suas que ninguém vê. Este é um lugar para notar suas necessidades sem culpa."
+    },
+    "cta": {
+      "early_access": "Confira-se — aqui",
+      "how": {
+        "label": "Como o DrishiQ ajuda",
+        "sentence": "Proteja sua energia. Restaure seu equilíbrio."
+      }
+    },
+    "emote_header": "Como pode ser sentir-se um doador",
+    "bridge": {
+      "title": "Você merece o mesmo cuidado que oferece.",
+      "body": "O DrishiQ ajuda você a proteger sua energia enquanto mantém uma presença generosa e estável. Você não precisa escolher entre ajudar e estar completo.",
+      "cta": "Comece sua verificação de clareza →"
+    },
+    "section": {
+      "0": {
+        "emoji": "⚓",
+        "title": "Carregar mais do que você diz",
+        "line": "Você é a âncora na tempestade de todos.",
+        "body": "Você aprendeu a ser inabalável para os outros. Mas âncoras também precisam de terra.",
+        "nudge": "Escolha um pequeno momento hoje e diga 'preciso de uma pausa' — e a faça, sem explicações.",
+        "cta": {
+          "label": "Faça uma pequena pausa →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "As pessoas assumem que você está sempre disponível.",
+          "1": "Você resolve problemas antes mesmo que sejam pedidos em voz alta.",
+          "2": "Você esconde seu cansaço para manter os outros calmos."
+        },
+        "frame": {
+          "0": {
+            "h": "Sempre pronto para ajudar.",
+            "p": "Sempre pronto para ajudar."
+          },
+          "1": {
+            "h": "Carregando o fardo dos outros.",
+            "p": "Carregando o fardo dos outros."
+          },
+          "2": {
+            "h": "Sempre pronto para ajudar.",
+            "p": "Sempre pronto para ajudar."
+          }
+        }
+      },
+      "1": {
+        "emoji": "☕",
+        "title": "Dar sem recarregar",
+        "line": "Seu copo está sempre inclinando para frente.",
+        "body": "Ajudar os outros parece natural — até que seus recursos acabem. Então dar deixa de parecer generoso e começa a pesar.",
+        "nudge": "Reserve 30 minutos hoje para você. Proteja esse tempo como protege as necessidades dos outros.",
+        "cta": {
+          "label": "Recarregue antes de dar →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Você perde refeições, sono ou pausas para estar presente.",
+          "1": "Você sente uma irritação que costuma reprimir.",
+          "2": "Você raramente pede algo em troca."
+        },
+        "frame": {
+          "0": {
+            "h": "Energia escapando.",
+            "p": "Energia escapando."
+          },
+          "1": {
+            "h": "Operando vazio.",
+            "p": "Operando vazio."
+          },
+          "2": {
+            "h": "Energia escapando.",
+            "p": "Energia escapando."
+          }
+        }
+      },
+      "2": {
+        "emoji": "🚧",
+        "title": "Limites que você não traçou",
+        "line": "Dizer 'sim' virou automático.",
+        "body": "Às vezes, apoiar os outros significa aprender a recuar. Dizer 'não' não significa que você se importa menos — significa que você pode durar mais.",
+        "nudge": "Ao invés de um 'sim' imediato, diga 'posso ajudar mais tarde'. Observe como isso soa.",
+        "cta": {
+          "label": "Estabeleça um limite hoje →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Você cancela seus planos quando alguém liga.",
+          "1": "Você sente culpa por precisar de tempo pessoal.",
+          "2": "Você não lembra da última vez que disse não a um pedido."
+        },
+        "frame": {
+          "0": {
+            "h": "Limites que te protegem.",
+            "p": "Limites que te protegem."
+          },
+          "1": {
+            "h": "Ofereça o que resta.",
+            "p": "Ofereça o que resta."
+          },
+          "2": {
+            "h": "Limites que te protegem.",
+            "p": "Limites que te protegem."
+          }
+        }
+      },
+      "3": {
+        "emoji": "🫶",
+        "title": "O doador que precisa de ajuda",
+        "line": "A força é saber quando se inclinar.",
+        "body": "Doadores frequentemente esquecem que é permitido pedir ajuda. Deixar os outros entrarem não te diminui — te humaniza.",
+        "nudge": "Compartilhe com alguém de confiança o que você está enfrentando. Deixe que respondam.",
+        "cta": {
+          "label": "Peça ajuda esta semana →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Você evita pedir para não ser um peso.",
+          "1": "Você teme que os outros te considerem fraco.",
+          "2": "Você só se sente aliviado quando alguém aparece por você."
+        },
+        "frame": {
+          "0": {
+            "h": "Mais leve junto.",
+            "p": "Mais leve junto."
+          },
+          "1": {
+            "h": "A força de permitir cuidado.",
+            "p": "A força de permitir cuidado."
+          },
+          "2": {
+            "h": "Mais leve junto.",
+            "p": "Mais leve junto."
+          }
+        }
+      }
+    }
+  },
+  "escaper": {
+    "meta": {
+      "page_title": "Fugitivo",
+      "page_description": "Descubra se você está fugindo dos problemas em vez de resolvê-los"
+    },
+    "stir": {
+      "line": {
+        "0": "Você troca de emprego, relacionamento ou cidade quando as coisas ficam difíceis?",
+        "1": "Você enche seus dias de barulho para evitar certos pensamentos?",
+        "2": "Você frequentemente sente alívio no momento, mas depois medo?",
+        "3": "Os padrões se repetem onde quer que você vá?",
+        "4": "O que aconteceria se você parasse de fugir por um momento?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Alívio",
+        "subtitle": "Desejo urgente de estar distante"
+      },
+      "1": {
+        "title": "Ansioso",
+        "subtitle": "Medo de ser puxado de volta"
+      },
+      "2": {
+        "title": "Inquieto",
+        "subtitle": "Sempre à procura da próxima saída"
+      },
+      "3": {
+        "title": "Cansado",
+        "subtitle": "Pelas mudanças constantes"
+      },
+      "4": {
+        "title": "Entorpecido",
+        "subtitle": "Evitando emoções completamente"
+      },
+      "5": {
+        "title": "Esperançoso",
+        "subtitle": "Esperando que o próximo lugar seja diferente"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Cheryl Strayed",
+        "profession": "escritora",
+        "source": "citação",
+        "quote": "\"Você não chega à feira até subir no cavalo.\""
+      },
+      "1": {
+        "name": "Nelson Mandela",
+        "profession": "líder",
+        "source": "citação",
+        "quote": "\"Coragem não é ausência de medo — é inspirar outros a seguirem adiante apesar do medo.\""
+      },
+      "2": {
+        "name": "Elizabeth Gilbert",
+        "profession": "escritora",
+        "source": "citação",
+        "quote": "\"Escolha seus pensamentos como escolhe suas roupas.\""
+      },
+      "3": {
+        "name": "Anthony Bourdain",
+        "profession": "chefe e viajante",
+        "source": "citação",
+        "quote": "\"A viagem nem sempre é bonita... a viagem te muda.\""
+      },
+      "4": {
+        "name": "Brené Brown",
+        "profession": "pesquisadora",
+        "source": "citação",
+        "quote": "\"Escolha coragem ou conforto — não os dois.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "Como o DrishiQ ajuda você a enfrentar isso",
+      "intro_text": "O DrishiQ ajuda a identificar padrões, entender do que você está fugindo e construir a coragem necessária para encarar. Você não precisa se mover constantemente para encontrar paz.",
+      "cta_label": "Comece sua verificação de clareza →",
+      "features": {
+        "0": {
+          "heading": "Reconhecimento de padrões",
+          "description": "Veja do que você realmente está fugindo."
+        },
+        "1": {
+          "heading": "Trabalho de raiz",
+          "description": "Trate a raiz, não apenas os sintomas."
+        },
+        "2": {
+          "heading": "Construção de coragem",
+          "description": "Aprenda a enfrentar o desconforto sem fugir."
+        },
+        "3": {
+          "heading": "Práticas aterradas",
+          "description": "Crie paz real onde você está."
+        }
+      }
+    },
+    "topband": {
+      "label": "Fugitivo, não apenas corredor — histórias de rostos conhecidos"
+    },
+    "hero": {
+      "title": "Fugir da tempestade",
+      "subtitle": "Você sai, evita, muda, rola — qualquer coisa para não enfrentar o que é pesado. Mas cada saída parece te trazer de volta ao mesmo quarto."
+    },
+    "cta": {
+      "early_access": "Veja seus padrões de fuga →",
+      "how": {
+        "label": "Como o DrishiQ ajuda",
+        "sentence": "Entenda seus padrões. Construa sua coragem."
+      }
+    },
+    "emote_header": "Como pode ser sentir-se um fugitivo",
+    "try_this": "Tente isto:",
+    "bridge": {
+      "title": "Você pode começar fresco sem sair toda vez.",
+      "body": "O DrishiQ ajuda a entender seus padrões de fuga e a aprender a ficar com coragem.",
+      "cta": "Comece sua verificação de clareza →"
+    },
+    "how": {
+      "title": "Como o DrishiQ ajuda",
+      "0": {
+        "h": "Mapeamento de padrões",
+        "d": "Identifique gatilhos e ciclos que levam você a fugir."
+      },
+      "1": {
+        "h": "Práticas de coragem",
+        "d": "Pequenos passos para enfrentar o desconforto."
+      },
+      "2": {
+        "h": "Ferramentas aterradas",
+        "d": "Fique onde está quando a vontade de fugir for forte."
+      },
+      "3": {
+        "h": "Estratégias de resolução",
+        "d": "Aprenda a resolver problemas em vez de evitá-los."
+      }
+    },
+    "section": {
+      "0": {
+        "emoji": "🏃",
+        "title": "O consolo de partir",
+        "line": "Ir embora parece vitória — até deixar de ser.",
+        "body": "Partir traz leveza. Você diz a si mesmo que o problema estava 'lá', não 'aqui'. Mas sem enfrentá-lo, ele silenciosamente te persegue.",
+        "nudge": "Escreva as três últimas grandes mudanças que você fez — e anote do que estava fugindo na época.",
+        "cta": {
+          "label": "Identifique seus gatilhos de fuga →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Você evita conflitos desaparecendo da situação.",
+          "1": "Você termina relacionamentos sem explicação.",
+          "2": "Você frequentemente muda de ambiente para se sentir melhor."
+        },
+        "frame": {
+          "0": {
+            "h": "Caminho mais fácil",
+            "p": "Caminho mais fácil"
+          },
+          "1": {
+            "h": "Pronto para partir",
+            "p": "Pronto para partir"
+          },
+          "2": {
+            "h": "Caminho mais fácil",
+            "p": "Caminho mais fácil"
+          }
+        }
+      },
+      "1": {
+        "emoji": "🛣️",
+        "title": "Fuga disfarçada",
+        "line": "Às vezes fugir parece perseguir oportunidades.",
+        "body": "Nem toda fuga é óbvia. Você pode dizer que busca 'oportunidades' ou 'aventura', mas, no fundo, está evitando o difícil.",
+        "nudge": "Pergunte a si mesmo: 'Se eu não puder partir ou me distrair, com o que terei que lidar?'",
+        "cta": {
+          "label": "Seja honesto sobre seus movimentos →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Quando as coisas ficam desconfortáveis, você muda de foco constantemente.",
+          "1": "Você se afunda em novos hobbies ou trabalho para se distrair de questões pessoais.",
+          "2": "Você esconde a fuga por trás da ambição."
+        },
+        "frame": {
+          "0": {
+            "h": "Disfarçado de escolha",
+            "p": "Disfarçado de escolha"
+          },
+          "1": {
+            "h": "Ocupação como escudo",
+            "p": "Ocupação como escudo"
+          },
+          "2": {
+            "h": "Disfarçado de escolha",
+            "p": "Disfarçado de escolha"
+          }
+        }
+      },
+      "2": {
+        "emoji": "⛽",
+        "title": "O alto custo do movimento constante",
+        "line": "Fugir esgota mais do que salva.",
+        "body": "Cada fuga consome energia — empacotar, planejar, ajustar. Você não apenas deixa para trás problemas, mas também raízes, relacionamentos e crescimento.",
+        "nudge": "Liste uma coisa que você perdeu após cada fuga — e pergunte se valia o alívio momentâneo.",
+        "cta": {
+          "label": "Mantenha o que importa →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Mesmo com 'recomeços', você se sente exausto.",
+          "1": "Você sente falta das pessoas ou oportunidades que deixou.",
+          "2": "Parece que você está sempre no começo da vida."
+        },
+        "frame": {
+          "0": {
+            "h": "Conexões perdidas",
+            "p": "Conexões perdidas"
+          },
+          "1": {
+            "h": "Crescimento interrompido",
+            "p": "Crescimento interrompido"
+          },
+          "2": {
+            "h": "Conexões perdidas",
+            "p": "Conexões perdidas"
+          }
+        }
+      },
+      "3": {
+        "emoji": "🧭",
+        "title": "Enfrente em vez de fugir",
+        "line": "Liberdade não vem da mudança de lugar, vem da solução.",
+        "body": "Às vezes a única maneira de seguir em frente é passando por isso. Encarar o desconforto, nomear a verdade e escolher ficar pode quebrar o ciclo.",
+        "nudge": "Comprometa-se esta semana a enfrentar um pequeno desconforto em vez de fugir.",
+        "cta": {
+          "label": "Escolha coragem em vez de conforto →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Você já começou a ver seus padrões de fuga.",
+          "1": "Você está cansado de sempre recomeçar.",
+          "2": "Você está curioso sobre o que aconteceria se você ficasse."
+        },
+        "frame": {
+          "0": {
+            "h": "Nova perspectiva",
+            "p": "Nova perspectiva"
+          },
+          "1": {
+            "h": "Enraizar-se no lugar",
+            "p": "Enraizar-se no lugar"
+          },
+          "2": {
+            "h": "Nova perspectiva",
+            "p": "Nova perspectiva"
+          }
+        }
+      }
+    }
+  },
+  "problem-carrier": {
+    "meta": {
+      "page_title": "Portador de problemas",
+      "page_description": "Descubra se você está carregando problemas que não são seus para resolver"
+    },
+    "stir": {
+      "line": {
+        "0": "Você sente que está sempre 'mantendo tudo junto' para todos?",
+        "1": "Você está lidando com questões que não são suas para consertar?",
+        "2": "Você minimiza suas lutas para que ninguém se preocupe?",
+        "3": "Você esqueceu como é sentir leveza?",
+        "4": "O que você faria com espaço nas suas mãos e na sua cabeça?"
+      }
+    },
+    "emote": {
+      "0": {
+        "title": "Sobrecarregado",
+        "subtitle": "Pesado antes mesmo do dia começar"
+      },
+      "1": {
+        "title": "Responsável",
+        "subtitle": "A pessoa em quem todos confiam"
+      },
+      "2": {
+        "title": "Protetor",
+        "subtitle": "Mantendo os problemas dos outros afastados"
+      },
+      "3": {
+        "title": "Esticado",
+        "subtitle": "Espalhado demais entre problemas"
+      },
+      "4": {
+        "title": "Alerta",
+        "subtitle": "Cauteloso com o que revela"
+      },
+      "5": {
+        "title": "Cansado",
+        "subtitle": "Carregando mais do que descansa"
+      }
+    },
+    "celeb": {
+      "0": {
+        "name": "Robin Williams",
+        "profession": "ator",
+        "source": "citação",
+        "quote": "\"Cada pessoa que você encontra está lutando uma batalha da qual você não sabe nada.\""
+      },
+      "1": {
+        "name": "Madre Teresa",
+        "profession": "humanitária",
+        "source": "citação",
+        "quote": "\"Se você não pode alimentar cem pessoas, alimente uma.\""
+      },
+      "2": {
+        "name": "Barack Obama",
+        "profession": "líder",
+        "source": "citação",
+        "quote": "\"Nós não desistimos. Eu não desisto.\""
+      },
+      "3": {
+        "name": "Malala Yousafzai",
+        "profession": "ativista",
+        "source": "citação",
+        "quote": "\"Só entendemos a importância de nossas vozes quando somos silenciados.\""
+      },
+      "4": {
+        "name": "Brené Brown",
+        "profession": "pesquisadora",
+        "source": "citação",
+        "quote": "\"Você não chega à coragem sem passar pela vulnerabilidade.\""
+      }
+    },
+    "how_drishiq_helps": {
+      "title": "Como o DrishiQ ajuda",
+      "features": {
+        "0": {
+          "heading": "Mapeamento de carga",
+          "description": "Veja o que é seu e o que não é."
+        },
+        "1": {
+          "heading": "Planos de soltura",
+          "description": "Pequenos passos seguros para deixar cargas extras."
+        },
+        "2": {
+          "heading": "Prática de limites",
+          "description": "Pratique dizer 'não' sem culpa."
+        },
+        "3": {
+          "heading": "Ciclo de colaboração",
+          "description": "Conecte-se com pessoas que podem ajudar a carregar."
+        }
+      }
+    },
+    "footer": {
+      "cta_primary": "Comece sua jornada",
+      "cta_secondary": "Saiba mais"
+    },
+    "messages": {
+      "smoke_test": "[teste rápido] use framer-motion se presente; caso contrário retorne a elementos simples."
+    },
+    "celeb_intro": "Portador de problemas, não solucionador — histórias de rostos conhecidos",
+    "topband": {
+      "label": "Portador de problemas, não solucionador — histórias de rostos conhecidos"
+    },
+    "emotion_intro": "Como pode ser carregar problemas",
+    "emote_header": "Como pode ser carregar problemas",
+    "hero": {
+      "title": "Carregar cada peso",
+      "subtitle": "Portador de problemas, não solucionador — histórias de rostos conhecidos",
+      "description": "Começa como querer ajudar, mas termina coexistindo com problemas que nunca foram só seus. Este é um lugar para, finalmente, deixar alguns deles para baixo.",
+      "cta": {
+        "primary": "Abra o que pesa sobre você — aqui",
+        "secondary": {
+          "label": "Como o DrishiQ ajuda"
+        }
+      }
+    },
+    "cta": {
+      "early_access": "Abra o que pesa sobre você — aqui",
+      "how": {
+        "label": "Como o DrishiQ ajuda"
+      }
+    },
+    "nudge_label": "Tente isto:",
+    "try_this": "Tente isto:",
+    "bridge": {
+      "title": "Você é mais do que o que carrega.",
+      "subtitle": "O DrishiQ ajuda a classificar, compartilhar e deixar de lado o que pesa sobre você — sem perder quem você é. Você ainda pode ser forte sem ficar sobrecarregado.",
+      "body": "O DrishiQ ajuda a classificar, compartilhar e deixar de lado o que pesa sobre você — sem perder quem você é. Você ainda pode ser forte sem ficar sobrecarregado.",
+      "cta": "Comece sua verificação de clareza →"
+    },
+    "how": {
+      "title": "Como o DrishiQ ajuda",
+      "0": {
+        "h": "Mapeamento de carga",
+        "d": "Veja o que é seu e o que não é."
+      },
+      "1": {
+        "h": "Planos de soltura",
+        "d": "Pequenos passos seguros para deixar cargas extras."
+      },
+      "2": {
+        "h": "Prática de limites",
+        "d": "Pratique dizer 'não' sem culpa."
+      },
+      "3": {
+        "h": "Ciclo de colaboração",
+        "d": "Conecte-se com pessoas que podem ajudar a carregar."
+      }
+    },
+    "section": {
+      "0": {
+        "emoji": "🧳",
+        "title": "Ombros que nunca descansam",
+        "line": "Você tem carregado esse peso por tempo demais.",
+        "body": "Alguns problemas são realmente responsabilidade sua para resolver. Outros foram colocados em você porque as pessoas pensavam 'você pode lidar com isso'. De qualquer forma, o fardo não fica mais leve só porque você é forte.",
+        "nudge": "Escreva cada problema que você está lidando. Circule apenas aqueles que são realmente seus.",
+        "cta": {
+          "label": "Alivie seu peso →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "As pessoas compartilham suas crises com você sem perguntar se você está bem.",
+          "1": "Você passa por lutas pessoais em silêncio.",
+          "2": "Você raramente está do lado que recebe ajuda."
+        },
+        "frame": {
+          "0": {
+            "h": "Bolsas pesadas",
+            "p": "O peso que você carrega."
+          },
+          "1": {
+            "h": "Mãos compartilhadas",
+            "p": "Distribuir o fardo."
+          },
+          "2": {
+            "h": "Bolsa aberta",
+            "p": "Deixar algumas coisas irem."
+          }
+        }
+      },
+      "1": {
+        "emoji": "📦",
+        "title": "Problemas que não são seus",
+        "line": "Você pode se importar sem carregar.",
+        "body": "Proteger os outros é bom, mas nem todo problema precisa ficar em seus braços. Limites também podem ser atos de amor.",
+        "nudge": "Na próxima vez que um problema vier até você, antes de agir pergunte: 'Que papel você quer que eu desempenhe?'",
+        "cta": {
+          "label": "Pratique soltar →",
+          "href": "/signup"
+        },
+        "bullet": {
+          "0": "Você resolve problemas antes que sejam pedidos.",
+          "1": "Por hábito, você assume os fardos da família, amigos ou trabalho.",
+          "2": "Quando você se afasta, sente culpa."
+        },
+        "frame": {
+          "0": {
+            "h": "Passar a caixa",
+            "p": "Permitir que outros lidem com o deles."
+          },
+          "1": {
+            "h": "Mãos livres",
+            "p": "Criar espaço."
+          },
+          "2": {
+            "h": "Compartilhamento equilibrado",
+            "p": "Carregar juntos."
+          }
+        }
+      },
+      "2": {
+        "emoji": "🎭",
+        "title": "Peso oculto",
+        "line": "Ninguém vê o quadro completo.",
+        "body": "Quando você esconde o que pesa, as pessoas assumem que você está bem. Mas a invisibilidade apenas torna o fardo mais pesado.",
+        "nudge": "Conte a uma pessoa a verdade sobre algo que você tem minimizado.",
+        "cta": {
+          "label": "Compartilhe uma verdade →",
+          "href": "#assess"
+        },
+        "bullet": {
+          "0": "Você raramente compartilha suas lutas profundas.",
+          "1": "Você sorri através do cansaço.",
+          "2": "Você acredita que mostrar o peso faria os outros se preocupar demais."
+        },
+        "frame": {
+          "0": {
+            "h": "Convidar compreensão.",
+            "p": "Convidar compreensão."
+          },
+          "1": {
+            "h": "Permitir que outros vejam a verdade.",
+            "p": "Permitir que outros vejam a verdade."
+          },
+          "2": {
+            "h": "Convidar compreensão.",
+            "p": "Convidar compreensão."
+          }
+        }
+      },
+      "3": {
+        "emoji": "👜",
+        "title": "Deixar ir sem culpa",
+        "line": "Leveza não é fraqueza.",
+        "body": "Você não precisa pegar tudo para provar sua força. Escolher o que carregar significa que você pode ir mais longe — e se sentir mais vivo.",
+        "nudge": "Escolha esta semana um problema que você pode delegar ou parar de carregar.",
+        "cta": {
+          "label": "Deixe um ir →",
+          "href": "#assess"
+        },
+        "bullet": {
+          "0": "Você se definiu pela sua resistência.",
+          "1": "Você hesita em delegar responsabilidades.",
+          "2": "Você esqueceu como é descansar."
+        },
+        "frame": {
+          "0": {
+            "h": "Andar sem carga.",
+            "p": "Andar sem carga."
+          },
+          "1": {
+            "h": "Espaço para a próxima escolha.",
+            "p": "Espaço para a próxima escolha."
+          },
+          "2": {
+            "h": "Andar sem carga.",
+            "p": "Andar sem carga."
+          }
+        }
+      }
+    }
+  }
+}

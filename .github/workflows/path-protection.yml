@@ -1,0 +1,113 @@
+name: Path Protection Guard
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main, master]
+
+jobs:
+  path-protection:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Check for protected file modifications
+      run: |
+        echo "🔍 Checking for protected file modifications..."
+        
+        # Define AI-allowed paths
+        # Core application paths
+        AI_ALLOWED_PATHS="apps/chat packages/core packages/ui components/BlogTTSPlayer.tsx components/Header.tsx lib/drishiq-i18n.tsx app/blog app/meet-yourself app/grow-with-us public/locales"
+        
+        # Critical build files (error pages, middleware, package files, critical API routes)
+        AI_ALLOWED_PATHS="$AI_ALLOWED_PATHS app/error.tsx app/global-error.tsx app/not-found.tsx lib/middleware package.json package-lock.json app/api/reset-thread"
+        
+        # Get list of changed files (only added/modified, exclude deleted files)
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          CHANGED_FILES=$(git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
+        else
+          CHANGED_FILES=$(git diff --name-only --diff-filter=ACMR HEAD~1 HEAD)
+        fi
+        
+        echo "Changed files:"
+        echo "$CHANGED_FILES"
+        
+        # Skip if no files changed (only deletions)
+        if [ -z "$CHANGED_FILES" ]; then
+          echo "✅ No files added or modified, only deletions - skipping path protection check"
+          exit 0
+        fi
+        
+        # Check if any changed files are outside AI-allowed paths
+        # Use process substitution to avoid subshell issues
+        PROTECTED_FILES=""
+        while IFS= read -r file; do
+          if [ -z "$file" ]; then
+            continue
+          fi
+          # Skip if file is in AI-allowed paths
+          ALLOWED=false
+          for allowed_path in $AI_ALLOWED_PATHS; do
+            if echo "$file" | grep -q "^$allowed_path"; then
+              ALLOWED=true
+              break
+            fi
+          done
+          
+          # If not allowed, add to protected files list
+          if [ "$ALLOWED" = false ]; then
+            if [ -z "$PROTECTED_FILES" ]; then
+              PROTECTED_FILES="$file"
+            else
+              PROTECTED_FILES="$PROTECTED_FILES"$'\n'"$file"
+            fi
+          fi
+        done < <(echo "$CHANGED_FILES")
+        
+        # If protected files found, fail the build
+        if [ -n "$PROTECTED_FILES" ]; then
+          echo "❌ BUILD FAILED: Protected files detected!"
+          echo ""
+          echo "The following files are outside AI-allowed paths and require human review:"
+          echo "$PROTECTED_FILES" | while IFS= read -r file; do
+            if [ -n "$file" ]; then
+            echo "  - $file"
+            fi
+          done
+          echo ""
+          echo "AI-allowed paths:"
+          for path in $AI_ALLOWED_PATHS; do
+            echo "  - $path"
+          done
+          echo ""
+          echo "Please create a separate PR for human review of these files."
+          exit 1
+        fi
+        
+        echo "✅ All changed files are in AI-allowed paths"
+    
+    - name: Generate Change Report
+      run: |
+        echo "📋 Change Report:" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }})
+        else
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD)
+        fi
+        
+        echo "**Modified Files:**" >> $GITHUB_STEP_SUMMARY
+        for file in $CHANGED_FILES; do
+          echo "- $file" >> $GITHUB_STEP_SUMMARY
+        done
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Total files changed:** $(echo "$CHANGED_FILES" | wc -l)" >> $GITHUB_STEP_SUMMARY
+
+
+

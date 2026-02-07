@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-01-10T00:00:00.000Z",
+  "branch": "feature/responses-adapt",
+  "files": {
+    "database/migrations/20251110_add_instruction_sets_and_ai_responses.sql": {
+      "exists": true,
+      "sha256": "4c06f9e9ec7fadb6a1a072ee88577d32915bdad16530a7f2fc850038187c82f5",
+      "size": 6551
+    },
+    "app/api/ai/call-v2/route.ts": {
+      "exists": true,
+      "sha256": "28ae439f6f5c37b43981fdb0742c0de9e370fe795316872984018d786056fef9",
+      "size": 7543
+    },
+    "lib/ddsa/db-adapters.ts": {
+      "exists": true,
+      "sha256": "a444ea364edc3d73f47e7c34366f38fb9c0821976d7445feec975e6b9058dcca",
+      "size": 9135
+    },
+    "scripts/smoke_responses_call.js": {
+      "exists": true,
+      "sha256": "817f1e3b244442b469bd80e2c58b2f78ceb02c41cbaeb0a614afb717430c53db",
+      "size": 3805
+    },
+    "render.yaml": {
+      "exists": true,
+      "sha256": "d56f285200edf5175cf55625edff9f2562a4bbdb70ce9fa854dc979b1dd9c6c7",
+      "size": 4803
+    }
+  }
+}
+

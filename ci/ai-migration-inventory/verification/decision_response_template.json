@@ -1,0 +1,51 @@
+{
+  "next_action_needed": "choice_needed",
+  "choices": ["create_tables", "adapt_code"],
+  "instructions": "Present the two options above to the engineering lead. Respond with the chosen option and required credentials/approvals.",
+  "required_items_if_create_tables": [
+    "staging_db_conn",
+    "openai_responses_key",
+    "ops_approver_handle",
+    "top3_stages",
+    "permission_to_create_pr",
+    "staging_approver",
+    "production_approver",
+    "rollback_policy",
+    "model_whitelist",
+    "max_tokens",
+    "assistants_fallback_days",
+    "render_staging_url",
+    "pr_reviewers",
+    "permission_run_migration"
+  ],
+  "required_items_if_adapt_code": [
+    "mapping_json",
+    "openai_responses_key",
+    "ops_approver_handle",
+    "top3_stages",
+    "permission_to_create_pr",
+    "render_staging_url",
+    "pr_reviewers",
+    "permission_run_migration"
+  ],
+  "human_readable_checklist": {
+    "common_items": {
+      "openai_access": "Staging OpenAI Responses Key OR confirmation to use OPENAI_API_KEY",
+      "deployment_info": "Render staging URL and ops contact",
+      "testing": "Top-3 priority stage IDs/names and test vectors (or permission to auto-generate)",
+      "review_approval": "PR reviewers (at least 2) and permission to create branch/PR",
+      "migration_execution": "Permission for Cursor to run migration on staging (yes/no)"
+    },
+    "option_a_create_tables": {
+      "database_access": "Staging DB connection string (read+write)",
+      "approval_chain": "Staging and production migration approvers",
+      "rollback_policy": "How long to hold before applying to prod (e.g., 72 hours)",
+      "production_config": "Model whitelist, per-call token limit, Assistants fallback policy"
+    },
+    "option_b_adapt_code": {
+      "mapping_document": "JSON describing field mappings (stages→ddsa_stage_config, threads→chat_threads, etc.)",
+      "code_change_approval": "Scope of changes approved, field mapping rules confirmed"
+    }
+  }
+}
+
