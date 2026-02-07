@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/lib/drishiq-i18n';
-import { getAllAvailableLanguages, type LanguageOption } from '@/lib/onboarding-concierge/regional-languages';
+import { getAllAvailableLanguages, type LanguageOption } from '../../lib/onboarding-concierge/regional-languages';
 import type { OnboardingSnapshot } from '@/lib/onboarding-concierge/types';
 
 export interface UseLanguageAndLocationParams {
@@ -12,10 +12,14 @@ export interface UseLanguageAndLocationParams {
 
 export function useLanguageAndLocation({ setSnapshot, isOpen }: UseLanguageAndLocationParams) {
   const { language, setLanguage } = useLanguage(['common', 'chat']);
+
   const [detectedLocation, setDetectedLocation] = useState<{
     country?: string;
     city?: string;
+    country_code?: string;
+    region_code?: string;
   } | null>(null);
+
   const [availableLanguages, setAvailableLanguages] = useState<LanguageOption[]>(getAllAvailableLanguages());
   const [isDetectingLocation, setIsDetectingLocation] = useState(false);
   const [showVpnHint, setShowVpnHint] = useState(false);
@@ -29,13 +33,36 @@ export function useLanguageAndLocation({ setSnapshot, isOpen }: UseLanguageAndLo
   };
 
   const detectLocationAndSetLanguages = async () => {
-    if (isDetectingLocation) {
-      console.log('⚠️ [Onboarding] Location detection already in progress, skipping');
-      return;
-    }
+    if (isDetectingLocation) return;
 
     setIsDetectingLocation(true);
+
     try {
+      // ------------------------------------------------
+      // 🔴 MANUAL GEO OVERRIDE FOR TESTING
+      // Set in browser console:
+      // localStorage.setItem('geo_override', JSON.stringify({ country:'Canada', city:'Toronto' }))
+      // localStorage.removeItem('geo_override') to reset
+      // ------------------------------------------------
+      if (typeof window !== 'undefined') {
+        const overrideRaw = localStorage.getItem('geo_override');
+        if (overrideRaw) {
+          try {
+            const override = JSON.parse(overrideRaw);
+            if (override?.country || override?.city) {
+              console.log('🧪 [Onboarding] Using GEO override:', override);
+              setDetectedLocation({
+                country: override.country,
+                city: override.city,
+              });
+              setAvailableLanguages(getAllAvailableLanguages());
+              setIsDetectingLocation(false);
+              return;
+            }
+          } catch {}
+        }
+      }
+
       const response = await fetch('/api/detect-location', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
@@ -44,11 +71,13 @@ export function useLanguageAndLocation({ setSnapshot, isOpen }: UseLanguageAndLo
 
       if (response.ok) {
         const data = await response.json();
-        const countryCode = data.country;
+        const country = data.country;
         const city = data.city;
+        const country_code = data.country_code;
+        const region_code = data.region_code;
         const potentialVpn = data.potentialVpn;
 
-        console.log('🌍 [Onboarding] Location detected:', { countryCode, city, potentialVpn });
+        console.log('🌍 [Onboarding] Location detected:', { country, city, country_code, region_code, potentialVpn });
 
         if (potentialVpn) {
           setShowVpnHint(true);
@@ -56,7 +85,7 @@ export function useLanguageAndLocation({ setSnapshot, isOpen }: UseLanguageAndLo
         }
 
         setAvailableLanguages(getAllAvailableLanguages());
-        setDetectedLocation({ country: countryCode, city });
+        setDetectedLocation({ country, city, country_code, region_code });
       } else {
         setAvailableLanguages(getAllAvailableLanguages());
         setDetectedLocation(null);
@@ -95,3 +124,4 @@ export function useLanguageAndLocation({ setSnapshot, isOpen }: UseLanguageAndLo
     setDetectedLocation,
   };
 }
+  

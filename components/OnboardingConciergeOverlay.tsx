@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { getAllAvailableLanguages } from '@/lib/onboarding-concierge/regional-languages';
+import { getAllAvailableLanguages } from '../lib/onboarding-concierge/regional-languages';
 import { setLanguageForAll } from '@/lib/language-detection';
 import useGreeterController from '@/hooks/onboarding/useGreeterController';
 import { useLanguageAndLocation } from '@/hooks/onboarding/useLanguageAndLocation';
@@ -86,16 +86,20 @@ export default function OnboardingConciergeOverlay({
     }
   }, [greeter.snapshot]);
 
+  // Single source of truth: greeter API decides language (cookie → browser → geo). Sync to website so chat and site stay in sync.
   useEffect(() => {
-    const langReady =
-      typeof document !== 'undefined' && document.cookie.includes('drishiq_lang=');
+    if (greeter.threadId && greeter.snapshot?.language) {
+      setLanguageForAll(greeter.snapshot.language);
+      lang.setLanguage(greeter.snapshot.language as Parameters<typeof lang.setLanguage>[0]);
+    }
+  }, [greeter.threadId, greeter.snapshot?.language]);
 
+  useEffect(() => {
     const geoReady =
       !!lang.detectedLocation?.city || !!lang.detectedLocation?.country;
 
     if (
       isOpen &&
-      langReady &&
       geoReady &&
       !greeter.threadId &&
       !greeter.isLoading &&
@@ -119,6 +123,22 @@ export default function OnboardingConciergeOverlay({
     lang.detectedLocation?.city,
     lang.detectedLocation?.country,
   ]);
+
+  // If geo never becomes ready (e.g. detect-location failed), still open conversation after delay so visitor/ensure and geo log run
+  useEffect(() => {
+    if (!isOpen || greeter.threadId || greeter.isLoading || conversationInitializedRef.current) return;
+
+    const t = setTimeout(() => {
+      if (conversationInitializedRef.current || greeter.threadId) return;
+      conversationInitializedRef.current = true;
+      greeter.initializeConversation().catch((err: unknown) => {
+        console.error('Failed to initialize conversation (fallback):', err);
+        conversationInitializedRef.current = false;
+      });
+    }, 4000);
+
+    return () => clearTimeout(t);
+  }, [isOpen, greeter.threadId, greeter.isLoading]);
 
   const voice = useVoiceInput({
     language: lang.getCurrentLanguage(greeter.snapshot),

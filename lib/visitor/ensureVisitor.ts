@@ -1,126 +1,126 @@
 /**
- * Server-only: ensure a visitor row exists (insert or update).
- * TENANT = PERSON ON DEVICE: use temp_user.tenant_id when available; otherwise tenant_id remains null.
+ * Server-only: ensure a visitor row exists.
+ *
+ * If the table has visitor_id: one new row per visit (INSERT only), visit_count = 1,2,3… per user.
+ * If the table has no visitor_id (id = cookie): one row per visitor, update or insert by id, visit_count increments on update.
  */
 
 import { createServiceClient } from '@/lib/supabase';
+import { randomUUID } from 'crypto';
 
 export interface EnsureVisitorParams {
   visitorId: string;
   deviceId: string;
   ip: string;
-  /** From request (x-tenant-id) or temp_user.tenant_id when identity complete; otherwise null. */
   tenantId: string | null | undefined;
+
   country?: string | null;
   countryCode?: string | null;
+  regionName?: string | null;
   regionCode?: string | null;
   city?: string | null;
   timezone?: string | null;
-  /** Primary language from region/country geo. */
+
   language?: string | null;
-  /** Optional secondary language for region (for hint/suggestions). */
-  secondaryLanguage?: string | null;
 }
 
-/**
- * Insert or update visitors row. Idempotent.
- * Throws on unexpected DB errors; callers may catch to avoid breaking the request.
- */
-export async function ensureVisitor(params: EnsureVisitorParams): Promise<void> {
-  const { visitorId, deviceId, ip, tenantId, country, countryCode, regionCode, city, timezone, language, secondaryLanguage } = params;
+const hasValue = (v: string | null | undefined) =>
+  v != null && v !== '';
 
-  if (!visitorId || !deviceId) {
-    return; // no-op if identity missing
-  }
+export async function ensureVisitor(params: EnsureVisitorParams): Promise<void> {
+  const {
+    visitorId,
+    deviceId,
+    ip,
+    country,
+    countryCode,
+    regionCode,
+    city,
+    timezone,
+    language,
+  } = params;
+
+  if (!visitorId || !deviceId) return;
 
   const supabase = createServiceClient();
   const now = new Date().toISOString();
 
-  // -------------------------------------------------------
-  // Check if visitor already exists
-  // -------------------------------------------------------
-  let existing: { id: string; visit_count?: number } | null = null;
-  const { data: existingWithCount, error: selectError } = await supabase
+  // ---- Try new schema: count by visitor_id (one row per visit) ----
+  const { count, error: countError } = await supabase
+    .from('visitors')
+    .select('id', { count: 'exact', head: true })
+    .eq('visitor_id', visitorId);
+
+  if (!countError) {
+    const nextVisitCount = (count ?? 0) + 1;
+    const row: Record<string, unknown> = {
+      id: randomUUID(),
+      visitor_id: visitorId,
+      device_id: deviceId,
+      first_ip: ip,
+      visit_count: nextVisitCount,
+      created_at: now,
+      last_seen_at: now,
+    };
+    if (hasValue(country)) row.country = country;
+    if (hasValue(countryCode)) row.country_code = countryCode;
+    if (hasValue(regionCode)) row.region_code = regionCode;
+    if (hasValue(city)) row.city = city;
+    if (hasValue(timezone)) row.timezone = timezone;
+    if (hasValue(language)) row.language = language;
+
+    const { error } = await supabase.from('visitors').insert(row);
+    if (!error) return;
+    console.error('[ensureVisitor] insert (visitor_id schema) error', { message: error.message, code: error.code });
+    throw error;
+  }
+
+  // ---- Fallback: old schema (id = visitor cookie, one row per visitor) ----
+  const { data: existing } = await supabase
     .from('visitors')
     .select('id, visit_count')
     .eq('id', visitorId)
     .maybeSingle();
-  if (selectError && selectError.message?.includes('column')) {
-    const { data: existingId } = await supabase.from('visitors').select('id').eq('id', visitorId).maybeSingle();
-    if (existingId) existing = { id: existingId.id };
-  } else if (existingWithCount) {
-    existing = existingWithCount as { id: string; visit_count?: number };
-  }
 
   if (existing) {
-    // UPDATE: full payload preferred; if table lacks context columns, retry with base-only
     const nextCount = existing.visit_count != null ? existing.visit_count + 1 : 2;
-    const fullUpdate: Record<string, unknown> = {
-      latest_ip: ip,
+    const updatePayload: Record<string, unknown> = {
       visit_count: nextCount,
       last_seen_at: now,
-      updated_at: now,
     };
-    if (tenantId != null) fullUpdate.tenant_id = tenantId;
-    let updateResult = await supabase.from('visitors').update(fullUpdate).eq('id', visitorId);
+    if (hasValue(country)) updatePayload.country = country;
+    if (hasValue(countryCode)) updatePayload.country_code = countryCode;
+    if (hasValue(regionCode)) updatePayload.region_code = regionCode;
+    if (hasValue(city)) updatePayload.city = city;
+    if (hasValue(timezone)) updatePayload.timezone = timezone;
+    if (hasValue(language)) updatePayload.language = language;
 
-    if (updateResult.error) {
-      const isMissingColumn =
-        updateResult.error.message?.includes('column') && updateResult.error.message?.includes('does not exist');
-      if (isMissingColumn) {
-        const fallback: Record<string, unknown> = { latest_ip: ip, updated_at: now };
-        if (tenantId != null) fallback.tenant_id = tenantId;
-        await supabase.from('visitors').update(fallback).eq('id', visitorId);
-      } else {
-        console.error('[ensureVisitor] update error', updateResult.error.message, updateResult.error);
-        throw updateResult.error;
-      }
+    const { error } = await supabase.from('visitors').update(updatePayload).eq('id', visitorId);
+    if (error) {
+      console.error('[ensureVisitor] update error', { message: error.message, code: error.code });
+      throw error;
     }
     return;
   }
 
-  // -------------------------------------------------------
-  // INSERT: base payload + optional context columns
-  // -------------------------------------------------------
-  const basePayload: Record<string, unknown> = {
+  const visitorPayload: Record<string, unknown> = {
     id: visitorId,
     device_id: deviceId,
     first_ip: ip,
-    latest_ip: ip,
-    created_at: now,
-    updated_at: now,
-  };
-  if (tenantId != null) basePayload.tenant_id = tenantId;
-  const visitorPayload: Record<string, unknown> = {
-    ...basePayload,
     visit_count: 1,
+    created_at: now,
     last_seen_at: now,
   };
-  if (country != null) visitorPayload.country = country;
-  if (countryCode != null) visitorPayload.country_code = countryCode;
-  if (regionCode != null) visitorPayload.region_code = regionCode;
-  if (city != null) visitorPayload.city = city;
-  if (timezone != null) visitorPayload.timezone = timezone;
-  if (language != null) visitorPayload.language = language;
-  if (secondaryLanguage != null) visitorPayload.secondary_language = secondaryLanguage;
+  if (hasValue(country)) visitorPayload.country = country;
+  if (hasValue(countryCode)) visitorPayload.country_code = countryCode;
+  if (hasValue(regionCode)) visitorPayload.region_code = regionCode;
+  if (hasValue(city)) visitorPayload.city = city;
+  if (hasValue(timezone)) visitorPayload.timezone = timezone;
+  if (hasValue(language)) visitorPayload.language = language;
 
-  let result = await supabase.from('visitors').insert(visitorPayload);
-
-  if (result.error) {
-    const isMissingColumn =
-      result.error.message?.includes('column') && result.error.message?.includes('does not exist');
-    if (isMissingColumn) {
-      result = await supabase.from('visitors').insert(basePayload);
-    }
-    if (result.error) {
-      if (result.error.code === '23505') {
-        const conflictUpdate: Record<string, unknown> = { latest_ip: ip, updated_at: now };
-        if (tenantId != null) conflictUpdate.tenant_id = tenantId;
-        await supabase.from('visitors').update(conflictUpdate).eq('id', visitorId);
-        return;
-      }
-      console.error('[ensureVisitor] insert error', result.error.message, result.error);
-      throw result.error;
-    }
+  const { error } = await supabase.from('visitors').insert(visitorPayload);
+  if (error) {
+    console.error('[ensureVisitor] insert (id schema) error', { message: error.message, code: error.code });
+    throw error;
   }
 }

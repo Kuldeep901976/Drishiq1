@@ -10,6 +10,8 @@ const HINT_TEXT: Record<string, string> = {
   es: 'Haz clic en el menú de idioma a la izquierda para cambiar el idioma.',
   zh: '点击左侧语言菜单可切换语言。',
   hi: 'भाषा बदलने के लिए बाएं भाषा मेनू पर क्लिक करें।',
+  ta: 'மொழியை மாற்ற இடது மெனுவைக் கிளிக் செய்யவும்.',
+  bn: 'ভাষা পরিবর্তন করতে বাম মেনুতে ক্লিক করুন।',
   ar: 'انقر على قائمة اللغة على اليسار لتغيير اللغة.',
   pt: 'Clique no menu de idioma à esquerda para mudar o idioma.',
   de: 'Klicken Sie links auf das Sprachmenü, um die Sprache zu ändern.',
@@ -33,6 +35,7 @@ export interface HeaderBarProps {
   snapshot?: {
     language?: string;
     geoLanguage?: string;
+    geoSuggestedLanguage?: string;
     langSource?: string;
   };
 }
@@ -56,20 +59,10 @@ export function HeaderBar({
 }: HeaderBarProps) {
   const dropdownHighlight = languageHelperVisible;
 
-  const chatLang = snapshot?.language ?? 'en';
-  const geoLang = snapshot?.geoLanguage ?? 'en';
-  const langSource = snapshot?.langSource ?? 'fallback';
-
   const showHint = Boolean(showLangHint);
 
-  let hintLang = 'en';
-
-  if (langSource === 'cookie' || langSource === 'browser') {
-    hintLang = chatLang === geoLang ? 'en' : geoLang || 'en';
-  } else {
-    hintLang = 'en';
-  }
-
+  // Use API hint language (geoSuggestedLanguage) so header message matches backend hint decision
+  const hintLang = (snapshot?.geoSuggestedLanguage ?? 'en').toLowerCase().slice(0, 2);
   const hintText =
     HINT_TEXT[hintLang as keyof typeof HINT_TEXT] ?? HINT_TEXT.en;
 

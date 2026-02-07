@@ -14,7 +14,7 @@ import {
 import { createServiceClient } from '@/lib/supabase';
 import { createResponse, normalizeResponse } from '@/lib/responses/responsesClient';
 import { getVisitorContext } from '@/lib/visitor/getVisitorContext';
-import { normalizeLanguage } from '@/lib/onboarding-concierge/regional-languages';
+import { normalizeLanguage, getLanguageForIndiaCity, getRegionLanguages } from '../../../../lib/onboarding-concierge/regional-languages';
 import { saveSectionSummary, resolveSectionForGreeter } from '@/lib/chat/sectionMemory';
 
 export async function generateGreeterMessage(prompt: string, languageToUse: string): Promise<string> {
@@ -30,30 +30,15 @@ You are DrishiQ.
 
 You are not a chatbot. You are a perceptive, emotionally intelligent human guide.
 
-Your job in this conversation is subtle:
+Within at most 6 exchanges, naturally understand:
+- Why they came
+- Name
+- Life stage
+- Gender (only if needed)
 
-Within at most 6 exchanges, you must naturally understand:
-- What brought this person here
-- What their name is
-- Their age or life stage
-- Their gender (only if naturally needed)
-
-You are NEVER allowed to ask for these like a form.
-
-You must behave like a thoughtful human having a real conversation.
-
-Rules:
-1. First priority is understanding what brought them here.
-2. Name should be asked only after they share something personal.
-3. Age should be asked as context ("Are you in your 20s, 30s, or later phase?").
-4. Gender should be asked only if needed and respectfully.
-5. If the user is vague, gently steer them to speak about what is going on in their life.
-6. Never sound like a survey or data collection.
-7. Maximum 2 sentences per reply.
-8. Speak warm, dignified, and slightly witty.
-9. Use the user's name once you know it.
-
-Never argue. Never correct harshly. Never escalate.`,
+Never ask like a form.
+Max 2 sentences per reply.
+Warm, dignified, slightly witty tone.`,
         },
         { role: 'user', content: prompt },
       ],
@@ -61,6 +46,7 @@ Never argue. Never correct harshly. Never escalate.`,
     },
     'onboarding'
   );
+
   const normalized = normalizeResponse(llm);
   return normalized.content?.trim() || '';
 }
@@ -70,6 +56,9 @@ Never argue. Never correct harshly. Never escalate.`,
 // ------------------------------------------------
 export async function GET(req: NextRequest) {
   try {
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[Onboarding] GET /api/chat/onboarding-concierge called');
+    }
     const visitorId = req.headers.get('x-visitor-id') || 'anon';
     const deviceId = req.headers.get('x-device-id') ?? '';
     const clientIp =
@@ -79,21 +68,29 @@ export async function GET(req: NextRequest) {
 
     const headerCity = req.headers.get('x-geo-city');
     const headerCountry = req.headers.get('x-geo-country');
+    const headerCountryCode = req.headers.get('x-geo-country-code');
+    const headerRegionCode = req.headers.get('x-geo-region-code');
 
+    // Persist geo from frontend (detect-location) so DB has correct region for language rules
     if (visitorId !== 'anon' && deviceId) {
+      const ensureHeaders: Record<string, string> = {
+        'x-visitor-id': visitorId,
+        'x-device-id': deviceId,
+        'x-client-ip': clientIp,
+      };
+      if (headerCity) ensureHeaders['x-geo-city'] = headerCity;
+      if (headerCountry) ensureHeaders['x-geo-country'] = headerCountry;
+      if (headerCountryCode) ensureHeaders['x-geo-country-code'] = headerCountryCode;
+      if (headerRegionCode) ensureHeaders['x-geo-region-code'] = headerRegionCode;
       await fetch(`${req.nextUrl.origin}/api/visitor/ensure`, {
         method: 'POST',
-        headers: {
-          'x-visitor-id': visitorId,
-          'x-device-id': deviceId,
-          'x-client-ip': clientIp,
-        },
+        headers: ensureHeaders,
       });
     }
 
     const ctx = await getVisitorContext(visitorId);
 
-    // hydrate geo from frontend if DB empty
+    // Hydrate display-only geo if DB empty
     if (!ctx.city && headerCity) ctx.city = headerCity;
     if (!ctx.country && headerCountry) ctx.country = headerCountry;
 
@@ -102,6 +99,14 @@ export async function GET(req: NextRequest) {
     const browserLang = browserLangHeader
       ? browserLangHeader.split(',')[0]?.split('-')[0]
       : null;
+
+    // Derive geo language from headers (region_code is source of truth). Use for hint when DB is wrong or not yet updated.
+    let headerGeoLang: string | null = null;
+    if (headerCountryCode && headerRegionCode) {
+      headerGeoLang = normalizeLanguage(getRegionLanguages(headerCountryCode, headerRegionCode).primary);
+    } else if (headerCountry?.trim().toLowerCase() === 'india' && headerCity) {
+      headerGeoLang = normalizeLanguage(getLanguageForIndiaCity(headerCity));
+    }
 
     console.log('[Onboarding] Language sources detected:', {
       cookieLang,
@@ -112,25 +117,56 @@ export async function GET(req: NextRequest) {
       countryFromDB: ctx.country,
       headerCity,
       headerCountry,
+      headerGeoLang,
     });
 
-    const languageToUse = normalizeLanguage(
-      cookieLang ||
-      browserLang ||
-      ctx.language ||
-      'en'
-    );
+    // ------------------------------------------------
+    // FINAL CHAT + HINT LANGUAGE DECISION
+    // (1) Cookie/browser language = geo → chat = geo, hint = English
+    // (2) Cookie/browser = English → chat = English, hint = geo language
+    // (3) Cookie/browser = geo = English → hint = English
+    // ------------------------------------------------
 
-    const langSource = cookieLang
-      ? 'cookie'
-      : browserLang
-        ? 'browser'
-        : ctx.language
-          ? 'geo'
-          : 'fallback';
+    let chatLanguage = 'en';
+    let hintLanguage = 'en';
+    let langSource = 'fallback';
+
+    const effectiveGeoLang = ctx.language || headerGeoLang || null;
+    // For hint: prefer geo language (from headers or DB); when cookie/browser = English, hint = regional language.
+    const geoLangForHint = (headerGeoLang && headerGeoLang !== 'en') ? headerGeoLang : (ctx.language && ctx.language !== 'en') ? ctx.language : (ctx.geoSuggestedLanguage && ctx.geoSuggestedLanguage !== 'en') ? ctx.geoSuggestedLanguage : 'en';
+
+    // 1) Cookie → chat = cookie
+    if (cookieLang) {
+      chatLanguage = normalizeLanguage(cookieLang);
+      langSource = 'cookie';
+      if (chatLanguage === effectiveGeoLang) {
+        hintLanguage = 'en';
+      } else {
+        hintLanguage = geoLangForHint;
+      }
+    }
+
+    // 2) No cookie → browser → chat = browser
+    else if (browserLang) {
+      chatLanguage = normalizeLanguage(browserLang);
+      langSource = 'browser';
+      if (chatLanguage === effectiveGeoLang) {
+        hintLanguage = 'en';
+      } else {
+        hintLanguage = geoLangForHint;
+      }
+    }
+
+    // 3) No cookie, no browser → geo = chat, hint = English
+    else if (ctx.language) {
+      chatLanguage = normalizeLanguage(ctx.language);
+      hintLanguage = 'en';
+      langSource = 'geo';
+    }
 
     console.log('[Onboarding] Final language decision:', {
-      chosenChatLanguage: languageToUse,
+      chosenChatLanguage: chatLanguage,
+      hintLanguage,
       langSource,
     });
 
@@ -157,15 +193,14 @@ export async function GET(req: NextRequest) {
     }
 
     const prompt = `
-You are DrishiQ greeting someone for the first time.
-
 City: ${ctx.city ?? 'unknown'}
 Country: ${ctx.country ?? 'unknown'}
 Visit count: ${ctx.visit_count}
 
 Greet naturally.
 `;
-    const message = await generateGreeterMessage(prompt, languageToUse);
+
+    const message = await generateGreeterMessage(prompt, chatLanguage);
 
     await threadManager.addMessage(threadId, { role: 'assistant', content: message });
 
@@ -174,19 +209,15 @@ Greet naturally.
       threadId,
       message,
       showLanguageHelper,
-      language: languageToUse,
-      // 🔧 GENERIC FIX: use suggested regional language for hint if available
-      geoLanguage: ctx.geoSuggestedLanguage || ctx.language || 'en',
-      geoSuggestedLanguage: ctx.geoSuggestedLanguage || 'en',
+      language: chatLanguage,
+      geoLanguage: ctx.language || 'en',
+      geoSuggestedLanguage: hintLanguage,
       langSource,
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Internal server error';
     console.error('[onboarding-concierge GET]', err);
-    return NextResponse.json(
-      { success: false, error: message },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, error: message }, { status: 500 });
   }
 }
 
@@ -199,19 +230,13 @@ export async function POST(req: NextRequest) {
   const messageText = body.message;
 
   if (!threadId) {
-    return NextResponse.json(
-      { success: false, error: 'threadId is required' },
-      { status: 400 }
-    );
+    return NextResponse.json({ success: false, error: 'threadId is required' }, { status: 400 });
   }
 
   const threadManager = new PersistentThreadManager();
   const thread = await threadManager.getThread(threadId);
   if (!thread) {
-    return NextResponse.json(
-      { success: false, error: 'Thread not found' },
-      { status: 404 }
-    );
+    return NextResponse.json({ success: false, error: 'Thread not found' }, { status: 404 });
   }
 
   const text = (messageText ?? '').trim();
@@ -219,29 +244,22 @@ export async function POST(req: NextRequest) {
 
   const visitorId = req.headers.get('x-visitor-id') || 'anon';
   const deviceId = req.headers.get('x-device-id') ?? '';
-
   const ctx = await getVisitorContext(visitorId);
 
   let name: string | undefined;
   let issue: string | undefined;
   let age: string | undefined;
   let gender: string | undefined;
+
   if (/^[a-zA-Z ]{2,30}$/.test(text)) name = text;
   if (text.length > 25) issue = text;
   if (/\b(20s|30s|40s|50\+|\d{2})\b/i.test(text)) age = text;
   if (/(male|female|man|woman|guy|girl)/i.test(text)) gender = text;
 
-  const tempUser = await getOrCreateTempUser(
-    visitorId,
-    deviceId,
-    name ?? null,
-    age ?? null,
-    gender ?? null
-  );
+  const tempUser = await getOrCreateTempUser(visitorId, deviceId, name ?? null, age ?? null, gender ?? null);
 
   if (tempUser) {
-    const identity_status =
-      name && (issue || age || gender) ? 'complete' : 'partial';
+    const identity_status = name && (issue || age || gender) ? 'complete' : 'partial';
     const identity_hash =
       visitorId && deviceId && name && age && gender
         ? computeIdentityHash(visitorId, deviceId, name, age, gender)
@@ -261,17 +279,15 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const replyPrompt = `
-User said: "${text}"
+  const replyPrompt = `User said: "${text}"`;
 
-Respond like a perceptive human. Max 2 sentences.
-`;
   const languageToUse = normalizeLanguage(
     body.language ||
     req.cookies.get('drishiq_lang')?.value ||
     ctx.language ||
     'en'
   );
+
   const reply = await generateGreeterMessage(replyPrompt, languageToUse);
 
   await threadManager.addMessage(threadId, { role: 'assistant', content: reply });

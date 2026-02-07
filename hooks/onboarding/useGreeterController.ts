@@ -18,7 +18,7 @@ export interface UseGreeterControllerParams {
   router: ReturnType<typeof useRouter>;
   onClose: () => void;
   updateActivityRef: React.MutableRefObject<(() => void) | null>;
-  detectedLocation: { country?: string; city?: string } | null;
+  detectedLocation: { country?: string; city?: string; country_code?: string; region_code?: string } | null;
   setInputValue?: (v: string) => void;
 }
 
@@ -82,13 +82,11 @@ export default function useGreeterController({
 
       const headers: Record<string, string> = {};
 
-      // Only send geo headers when we actually have location
-      if (detectedLocation?.city) {
-        headers['x-geo-city'] = detectedLocation.city;
-      }
-      if (detectedLocation?.country) {
-        headers['x-geo-country'] = detectedLocation.country;
-      }
+      // Send geo from detect-location so backend can persist and use for language
+      if (detectedLocation?.city) headers['x-geo-city'] = detectedLocation.city;
+      if (detectedLocation?.country) headers['x-geo-country'] = detectedLocation.country;
+      if (detectedLocation?.country_code) headers['x-geo-country-code'] = detectedLocation.country_code;
+      if (detectedLocation?.region_code) headers['x-geo-region-code'] = detectedLocation.region_code;
 
       const response = await fetch('/api/chat/onboarding-concierge', {
         method: 'GET',

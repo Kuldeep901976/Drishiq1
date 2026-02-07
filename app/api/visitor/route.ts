@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServiceClient } from '@/lib/supabase';
-import { validateLanguageCode } from '@/lib/onboarding-concierge/regional-languages';
+import { validateLanguageCode } from '../../../lib/onboarding-concierge/regional-languages';
 
 /**
  * PATCH /api/visitor
@@ -29,9 +29,29 @@ export async function PATCH(request: NextRequest) {
     const language = validateLanguageCode(rawLang);
     const supabase = createServiceClient();
 
+    // Try visitor_id schema: update latest row for this visitor
+    const { data: latest, error: latestError } = await supabase
+      .from('visitors')
+      .select('id')
+      .eq('visitor_id', visitorId)
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    const rowId = !latestError && latest ? (latest as { id: string }).id : null;
+    const updatePayload = { language, updated_at: new Date().toISOString() };
+
+    if (rowId) {
+      const { error } = await supabase.from('visitors').update(updatePayload).eq('id', rowId);
+      if (!error) return NextResponse.json({ ok: true });
+      console.warn('[visitor PATCH] update error:', error.message);
+      return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
+    }
+
+    // Fallback: id = visitor cookie (one row per visitor)
     const { error } = await supabase
       .from('visitors')
-      .update({ language, updated_at: new Date().toISOString() })
+      .update(updatePayload)
       .eq('id', visitorId);
 
     if (error) {

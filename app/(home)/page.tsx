@@ -353,7 +353,7 @@ function HomePageContent() {
   ]);
 
   // Onboarding Concierge overlay state
-  const [showOnboardingConcierge, setShowOnboardingConcierge] = useState(false);
+  const [showOnboardingConcierge, setShowOnboardingConcierge] = useState(true);
   const [hasSeenOnboarding, setHasSeenOnboarding] = useState(false);
 
   // Debug logging
@@ -365,16 +365,9 @@ function HomePageContent() {
   useEffect(() => {
     const hasSeen = localStorage.getItem('onboarding_concierge_seen');
     setHasSeenOnboarding(!!hasSeen);
-    
-    // Show on first visit (or when feature flag is enabled)
-    // For now, show on first visit only
-    if (!hasSeen && !showOnboardingConcierge) {
-      // Small delay to let page load
-      const timer = setTimeout(() => {
-        setShowOnboardingConcierge(true);
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
+
+    // Always open on load (no delay, no condition)
+    setShowOnboardingConcierge(true);
   }, []);
 
   // Mark as seen when overlay is closed

@@ -87,19 +87,23 @@ export async function middleware(req: NextRequest) {
 
   // =====================================================
   // DEVICE & VISITOR IDENTITY (for all branches that return next())
+  // Same device = same visitor: visitor_id is derived from device_id so we have one stable id per device.
+  // No separate table creates the id; visitors table is the source of truth keyed by this id.
   // =====================================================
   const newHeaders = new Headers(req.headers);
   const hadDeviceCookie = req.cookies.get(DEVICE_ID_COOKIE)?.value;
   const hadVisitorCookie = req.cookies.get(VISITOR_ID_COOKIE)?.value;
   const deviceId = hadDeviceCookie ?? crypto.randomUUID();
-  const visitorId = hadVisitorCookie ?? crypto.randomUUID();
+  // Same device = same visitor: use device_id as visitor_id (one stable id per device; no separate random visitor id)
+  const visitorId = deviceId;
   const clientIp = getClientIP(req);
   newHeaders.set('x-device-id', deviceId);
   newHeaders.set('x-visitor-id', visitorId);
   newHeaders.set('x-client-ip', clientIp);
 
-  // When cookie was missing, ensure visitor row exists (fire-and-forget; do not block response)
-  if (!hadVisitorCookie) {
+  // Ensure visitor row only on document (page) requests, not on every API call — one refresh ≈ one ensure
+  const isDocumentRequest = !pathname.startsWith('/api');
+  if (isDocumentRequest) {
     const ensureUrl = new URL('/api/visitor/ensure', req.url).href;
     fetch(ensureUrl, {
       method: 'POST',
