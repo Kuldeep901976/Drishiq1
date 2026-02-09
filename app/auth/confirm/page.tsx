@@ -35,10 +35,16 @@ function AuthConfirmContent() {
 
         console.log('Auth confirm - Session verified successfully');
 
-        // For first-time users (email signup), go directly to profile
+        // For first-time users (email signup), go to profile (root /profile has redirect-after-save for payment handoff)
         if (type === 'email' || type === 'signup') {
-          console.log('New user signup, redirecting to profile');
-          router.push('/user/profile');
+          const redirect = typeof window !== 'undefined' ? sessionStorage.getItem('post_signup_redirect') : null;
+          if (redirect) {
+            console.log('New user signup, redirecting to profile (then to payment)');
+            router.push('/profile');
+          } else {
+            console.log('New user signup, redirecting to profile');
+            router.push('/user/profile');
+          }
         } else if (type === 'recovery') {
           // Password recovery, go to create-password
           console.log('Password recovery, redirecting to create-password');

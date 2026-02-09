@@ -19,6 +19,12 @@ import { getVisitorContext } from '@/lib/visitor/getVisitorContext';
 import { getTimeOfDay } from '@/lib/visitor/timezone';
 import { normalizeLanguage, getLanguageForIndiaCity, getRegionLanguages } from '../../../../lib/onboarding-concierge/regional-languages';
 import { saveSectionSummary, resolveSectionForGreeter } from '@/lib/chat/sectionMemory';
+import { formatOmnivyraResponseForUser } from '@/lib/omnivyra';
+import {
+  buildBoundedInputFromHandoff,
+  runLocalBounded,
+} from '@/lib/omnivyra/local-bounded';
+import { runAstroCompute } from '@/lib/astro/astro-client';
 
 /** Email: something@something.domain (safe, non-capturing beyond the match). */
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
@@ -32,6 +38,9 @@ function detectEmailFromText(text: string): string | null {
   const m = text.match(EMAIL_REGEX);
   return m ? m[0].trim() : null;
 }
+
+/** Fixed number of UDA clarification rounds before completion. No further questions after this. */
+const UDA_QUESTION_LIMIT = 5;
 
 /** Order for identity collection. */
 const IDENTITY_ORDER = [
@@ -300,6 +309,435 @@ Warm, dignified, slightly witty tone.`;
   return normalized.content?.trim() || '';
 }
 
+/**
+ * Generate a short bridge message (warm, reflective) while pausing to synthesize.
+ * Used when UDA question limit is reached, before sending final understanding.
+ */
+async function generateUdaBridgeMessage(languageToUse: string): Promise<string> {
+  const systemContent = `You MUST respond ONLY in this language: ${languageToUse}.
+Output a single short sentence the assistant says while pausing to put together what they understood.
+Tone: warm, reflective, natural. Not technical.
+Example direction: "Give me a moment, I'm putting together what I've understood from everything you've shared."
+Output ONLY that one sentence, no quotes, no preamble.`;
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: 'Generate the bridge sentence.' },
+      ],
+      temperature: 0.6,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  return normalized.content?.trim() || '';
+}
+
+/**
+ * Heuristic: true if text suggests the issue is emotionally heavy (for conditional invitation).
+ * Keywords inline; case-insensitive.
+ */
+function isEmotionallyHeavy(text: string): boolean {
+  const lower = text.toLowerCase();
+  const keywords = [
+    'stress',
+    'anxiety',
+    'fear',
+    'confused',
+    'lost',
+    'stuck',
+    'overwhelmed',
+    'pressure',
+    'relationship',
+    'alone',
+    'lonely',
+    'burnout',
+    'uncertain',
+    'identity',
+    'pain',
+    'struggling',
+  ];
+  return keywords.some((k) => lower.includes(k));
+}
+
+/**
+ * Generate optional invitation to explore deeper (only when understanding is emotionally heavy).
+ * Tone: reflective, gentle, perceptive, optional. One short natural line via createResponse.
+ */
+async function generateUdaInvitationMessage(languageToUse: string): Promise<string> {
+  const systemContent = `You MUST respond ONLY in this language: ${languageToUse}.
+Output ONE short natural sentence. Tone: reflective, gentle, perceptive, optional.
+Intent: If this resonates with what the user is going through, they can explore it in more depth from here; they can let you know if they'd like to continue.
+Example direction (do not copy verbatim): "If this resonates with what you're going through, we can explore it in more depth from here. Just let me know if you'd like to continue."
+Output ONLY that one sentence, no quotes, no preamble.`;
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: 'Generate the invitation line.' },
+      ],
+      temperature: 0.6,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  return normalized.content?.trim() || '';
+}
+
+/**
+ * Destiny Lens: positive interest intent (yes, continue, explore, etc.). Lightweight, case-insensitive.
+ */
+function isDestinyLensPositiveInterest(text: string): boolean {
+  const lower = text.toLowerCase().trim();
+  const positive = [
+    'yes',
+    'explore',
+    'try',
+    'okay',
+    'continue',
+    'go ahead',
+    'deeper',
+    'help',
+    'what next',
+    'tell me more',
+  ];
+  return positive.some((k) => lower.includes(k));
+}
+
+/**
+ * Destiny Lens: negative intent (no, skip, not now, later). Checked first in choice handling.
+ */
+function isDestinyLensNegative(text: string): boolean {
+  const lower = text.toLowerCase().trim();
+  const negative = ['no', 'skip', 'not now', 'later'];
+  return negative.some((k) => lower.includes(k));
+}
+
+/**
+ * Destiny Lens choice: negative takes precedence. Returns null if unclear.
+ */
+function getDestinyLensChoice(text: string): 'positive' | 'negative' | null {
+  if (isDestinyLensNegative(text)) return 'negative';
+  if (isDestinyLensPositiveInterest(text)) return 'positive';
+  return null;
+}
+
+/**
+ * Destiny Lens introduction. Generated via createResponse. Tone: reflective, suggestive, perceptive, optional.
+ * Content: timing/life phases, offer "Destiny Lens" (patterns through birth details), deeper clarity, user can choose.
+ * End with choice: "Would you like to explore this perspective, or should we continue with what we've understood so far?"
+ */
+async function generateDestinyLensIntroMessage(languageToUse: string): Promise<string> {
+  const systemContent = `You MUST respond ONLY in this language: ${languageToUse}.
+Write a short paragraph. Tone: reflective, suggestive, perceptive, optional.
+Content direction:
+- Sometimes effort alone doesn't shift outcomes; timing and life phases also influence situations.
+- We offer an additional perspective called "Destiny Lens" that looks at patterns through birth details.
+- It may bring deeper clarity. The user can choose.
+End with exactly one choice question (adapt naturally to the language): Would they like to explore this perspective, or continue with what we've understood so far?
+Output the full paragraph plus the choice question. No bullet points. Natural flow.`;
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: 'Generate the Destiny Lens introduction and choice.' },
+      ],
+      temperature: 0.6,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  return normalized.content?.trim() || '';
+}
+
+/**
+ * Ask for birth details in structured format. Generated via prompt.
+ * Must ask for: date (YYYY-MM-DD), time (24h HH:MM or HH:MM:SS), place (City, State, Country).
+ * Include one example: 1995-08-21, 08:00:03, New York, New York, USA.
+ * Mention gently: if time of birth is not known, we can continue without this lens.
+ */
+async function generateBirthDetailsMessage(languageToUse: string): Promise<string> {
+  const systemContent = `You MUST respond ONLY in this language: ${languageToUse}.
+Ask the user for birth details in a warm, clear way. You must request:
+1) Date of birth → format YYYY-MM-DD
+2) Time of birth → 24-hour format HH:MM or HH:MM:SS (if known)
+3) Place of birth → City, State, Country
+Include one example in your message: e.g. 1995-08-21, 08:00:03, New York, New York, USA
+Also mention gently: If time of birth is not known, we can continue without this lens.
+Output one cohesive message. No bullet list. Natural tone.`;
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: 'Generate the birth details request.' },
+      ],
+      temperature: 0.5,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  return normalized.content?.trim() || '';
+}
+
+/** Parsed birth details from user message (comma-separated: date, time, city, state, country). */
+const DOB_DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
+/** 24-hour HH:MM or HH:MM:SS. */
+const DOB_TIME_REGEX = /^([01]?\d|2[0-3]):[0-5]\d(:[0-5]\d)?$/;
+
+export interface ParsedBirthDetails {
+  dob_date: string;
+  dob_time: string;
+  city: string;
+  state: string;
+  country: string;
+}
+
+/**
+ * Parse birth details from message. Expected format: "YYYY-MM-DD, HH:MM or HH:MM:SS, City, State, Country".
+ * Supports extra spaces; trims all parts. Returns null if not exactly 5 parts or validation fails.
+ */
+function parseBirthDetails(text: string): ParsedBirthDetails | null {
+  const parts = text.split(',').map((p) => p.trim()).filter(Boolean);
+  if (parts.length < 5) return null;
+  const dob_date = parts[0] ?? '';
+  const dob_time = parts[1] ?? '';
+  const city = parts[2] ?? '';
+  const state = parts[3] ?? '';
+  const country = parts[4] ?? '';
+  if (!DOB_DATE_REGEX.test(dob_date)) return null;
+  if (!DOB_TIME_REGEX.test(dob_time)) return null;
+  if (!city || !country) return null;
+  return { dob_date, dob_time, city, state, country };
+}
+
+/**
+ * Resolve city, state, country to lat/lng/timezone via existing geocode API.
+ * origin = request origin (e.g. new URL(req.url).origin).
+ */
+async function resolveBirthPlaceGeo(
+  city: string,
+  state: string,
+  country: string,
+  origin: string
+): Promise<{ latitude: number; longitude: number; timezone: string } | null> {
+  const place = [city, state, country].filter(Boolean).join(', ');
+  if (!place.trim()) return null;
+  try {
+    const url = `${origin}/api/geocode?place=${encodeURIComponent(place)}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
+    if (!res.ok) return null;
+    const json = await res.json();
+    const data = json?.data ?? json;
+    if (data?.latitude != null && data?.longitude != null && data?.timezone) {
+      return {
+        latitude: Number(data.latitude),
+        longitude: Number(data.longitude),
+        timezone: String(data.timezone),
+      };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/** Astro result shape stored in thread metadata (from runAstroCompute). */
+interface AstroResultMeta {
+  gain_signal?: string;
+  risk_signal?: string;
+  phase_signal?: string;
+  confidence?: number;
+}
+
+/**
+ * Impact Framing Layer: 2–3 blocks after UDA + Destiny Lens path (skipped or insights shown).
+ * Block 1: Gain frame (relief, clarity, direction, emotional lightness, forward momentum).
+ * Block 2: Loss frame (continued pressure, repeated cycles, missed timing, emotional fatigue, opportunity cost).
+ * Block 3: Short transition line: "To gain complete clarity, continue and complete your session."
+ * Tone: larger than life, personal, perceptive, grounded in their problem; not dramatic, spiritual, or salesy.
+ * No headings; blocks separated by blank lines.
+ */
+async function generateImpactFramingBlocks(
+  problemContext: string,
+  language: string
+): Promise<string> {
+  const systemContent = `You MUST respond ONLY in this language: ${language}.
+
+Generate 2–3 short blocks that frame the emotional decision moment for the user. They have already seen their UDA understanding and/or Destiny Lens insights. Do NOT add headings or labels. Separate each block with a blank line.
+
+Tone: Larger than life, personal, perceptive, grounded in their problem. NOT dramatic, NOT spiritual, NOT salesy.
+
+User's situation (ground the framing in this): ${problemContext || 'Not specified.'}
+
+Block 1 — Gain Frame (what they gain if they address the issue now):
+Weave in: relief, clarity, regained direction, emotional lightness, forward momentum. One short paragraph. Second person ("you") where natural.
+
+Block 2 — Loss Frame (what they risk if they let it continue):
+Weave in: continued pressure, repeated cycles, missed timing, emotional fatigue, opportunity cost. One short paragraph. Second person where natural.
+
+Block 3 — Transition (exactly one short line):
+Write a neutral reinforcement line. The meaning must be: "To gain complete clarity, continue and complete your session." Phrase it naturally in the same tone; do not quote that sentence verbatim unless it fits the language.
+
+Output ONLY the 2–3 blocks with blank lines between. No preamble, no bullets.`;
+
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: 'Generate the impact framing blocks.' },
+      ],
+      temperature: 0.6,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  const text = normalized.content?.trim() ?? '';
+  return (
+    text ||
+    "Addressing this now can bring real relief and clarity—and a sense of direction you can build on. Letting it continue often means more of the same pressure and missed timing. To gain complete clarity, continue and complete your session."
+  );
+}
+
+/**
+ * Generate 2–3 separated Destiny Lens insight blocks from thread metadata astro_result.
+ * Conversational, reflective, connected to the user's problem. No block titles.
+ * Block 1: Gain Potential (relief, clarity, forward movement, regained control).
+ * Block 2: Risk & Timing (risks of delaying, timing sensitivity).
+ * Block 3: Life Phase (how current phase influences the situation); confidence woven in gently.
+ */
+async function generateDestinyLensInsightBlocks(
+  astroResult: AstroResultMeta,
+  problemContext: string,
+  languageToUse: string
+): Promise<string> {
+  const gain = astroResult.gain_signal ?? '';
+  const risk = astroResult.risk_signal ?? '';
+  const phase = astroResult.phase_signal ?? '';
+  const confidence = astroResult.confidence ?? 0;
+
+  const systemContent = `You MUST respond ONLY in this language: ${languageToUse}.
+
+You are rendering Destiny Lens insights for the user. They have already seen a short "processing" message. Now show 2–3 short, separated insight blocks. Be conversational, reflective, and clearly connected to their situation. Do NOT use block titles or labels (no "Gain:", "Risk:", etc.). Write in second person ("you") where natural.
+
+Use these signals from the astro layer (weave them in naturally; do not quote them verbatim):
+- Gain signal: ${gain || '—'}
+- Risk signal: ${risk || '—'}
+- Phase signal: ${phase || '—'}
+- Confidence: ${confidence}
+
+User's problem context (reference this so the insights feel personal): ${problemContext || 'Not specified.'}
+
+Structure your reply as exactly 2–3 paragraphs separated by a blank line each:
+1) Gain Potential — What could shift in their life if the issue gets resolved now. Focus on: relief, clarity, forward movement, regained control.
+2) Risk & Timing — What might be at stake if they delay, or how timing and life phases are influencing the situation.
+3) Life Phase — How their current life phase or timing adds context; you may gently reflect confidence here.
+
+Output ONLY the 2–3 paragraphs with blank lines between. No preamble, no "Here's what I see", no bullet points.`;
+
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: 'Generate the Destiny Lens insight blocks.' },
+      ],
+      temperature: 0.6,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  const text = normalized.content?.trim() ?? '';
+  return text || "Here’s what stands out from the Destiny Lens perspective—relief and clarity are within reach when you address this now, and the phase you’re in adds useful context.";
+}
+
+/**
+ * Session completion bridge: short, perceptive transition after impact framing.
+ * Acknowledges what has surfaced, reinforces partial clarity, suggests full understanding requires completing the session.
+ * Tone: grounded, intelligent, not salesy, not urgent, not pushy.
+ */
+async function generateSessionCompletionBridge(language: string): Promise<string> {
+  const systemContent = `You MUST respond ONLY in this language: ${language}.
+
+Write a short paragraph (2–4 sentences) that:
+- Acknowledges what has surfaced in the conversation so far
+- Reinforces that partial clarity has emerged
+- Suggests that full understanding requires completing the session
+
+Tone: grounded, intelligent, not salesy, not urgent, not pushy. No prices, no payment, no pressure. Output ONLY the paragraph.`;
+
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: 'Generate the session completion bridge.' },
+      ],
+      temperature: 0.5,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  return normalized.content?.trim() ?? '';
+}
+
+/** Fixed 2-option button structure for session completion (no prices/currency). Light = 1 session, Steady Lens = 5 sessions. */
+const PRICING_BUTTON_OPTIONS: Array<{ id: string; label: string; sublabel: string }> = [
+  { id: 'light', label: 'Light', sublabel: '1 Session' },
+  { id: 'steady_lens', label: 'Steady Lens', sublabel: '5 Sessions' },
+];
+
+/** Plan id → session count. Invalid id returns undefined. */
+function mapPlanToSessions(planId: string): number | undefined {
+  if (planId === 'light') return 1;
+  if (planId === 'steady_lens') return 5;
+  return undefined;
+}
+
+/** Map onboarding plan id to payment page plan (for redirect URL). Returns null if unknown. */
+function mapOnboardingPlanToPaymentPlan(planId: string): string | null {
+  if (planId === 'light') return 'first-light';
+  if (planId === 'steady_lens') return 'steady-lens';
+  return null;
+}
+
+/**
+ * Generate final understanding summary from conversation history (core issue, emotional context, direction).
+ * Persisted as temp_users.problem_statement for Destiny Lens, Astro, main chat.
+ */
+async function generateUdaFinalUnderstanding(
+  history: Array<{ role: string; content: string }>,
+  languageToUse: string
+): Promise<string> {
+  const conversationText = history
+    .map((m) => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`)
+    .join('\n');
+  const systemContent = `You MUST respond ONLY in this language: ${languageToUse}.
+Based on the conversation below, write one short paragraph that summarizes:
+1) The core issue or situation
+2) The emotional context
+3) The direction of the problem
+
+Be warm, accurate, and concise. This will become the user's saved problem statement.`;
+  const llm = await createResponse(
+    {
+      model: 'gpt-4-turbo',
+      input: [
+        { role: 'system', content: systemContent },
+        { role: 'user', content: `Conversation:\n${conversationText}` },
+      ],
+      temperature: 0.5,
+    },
+    'onboarding'
+  );
+  const normalized = normalizeResponse(llm);
+  return normalized.content?.trim() || '';
+}
+
 // ------------------------------------------------
 // GET — First greeting
 // ------------------------------------------------
@@ -515,11 +953,99 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, error: 'Thread not found' }, { status: 404 });
   }
 
-  const text = (messageText ?? '').trim();
-  await threadManager.addMessage(threadId, { role: 'user', content: text });
+  let origin = '';
+  try {
+    origin = new URL(req.url).origin;
+  } catch {
+    origin = process.env.NEXT_PUBLIC_APP_URL ?? '';
+  }
 
   const visitorId = req.headers.get('x-visitor-id') || 'anon';
   const deviceId = req.headers.get('x-device-id') ?? '';
+
+  const planSelected = body.plan_selected != null ? String(body.plan_selected).trim() : '';
+  const sessionCount = planSelected ? mapPlanToSessions(planSelected) : undefined;
+  if (planSelected && (planSelected === 'light' || planSelected === 'steady_lens') && sessionCount !== undefined) {
+    const planTempUser = thread.temp_user_id
+      ? await getTempUser(thread.temp_user_id)
+      : await getOrCreateTempUser(visitorId, deviceId);
+    const planLang = body.language != null && String(body.language).trim() !== ''
+      ? normalizeLanguage(String(body.language).trim())
+      : (planTempUser?.locked_language ? normalizeLanguage(planTempUser.locked_language) : 'en');
+    const timestamp = new Date().toISOString();
+    await threadManager.updateMetadata(threadId, {
+      selected_plan_id: planSelected,
+      selected_session_count: sessionCount,
+      plan_selected_at: timestamp,
+    });
+    if (planTempUser) {
+      await updateTempUser(planTempUser.id, {
+        selected_plan_id: planSelected,
+        selected_session_count: sessionCount,
+        purchase_intent_at: timestamp,
+      });
+    }
+    // Direct payment redirect: same geo-based pricing as priceplan; /payment recalculates amount + currency.
+    const mappedPlan = mapOnboardingPlanToPaymentPlan(planSelected);
+    let payment_redirect_url: string | undefined;
+    let signup_redirect_url: string | undefined;
+    if (mappedPlan) {
+      const ctx = await getVisitorContext(visitorId);
+      const rawCountry =
+        ctx.country_code
+        ?? (ctx.country && ctx.country.length === 2 ? ctx.country : null)
+        ?? (planTempUser && 'country' in planTempUser ? (planTempUser as { country?: string }).country : null)
+        ?? 'IN';
+      const country = String(rawCountry).toUpperCase().slice(0, 2) || 'IN';
+      payment_redirect_url = `/payment?plan=${mappedPlan}&category=prelaunch&country=${country}`;
+      signup_redirect_url = `/auth/signup?redirect=${encodeURIComponent(payment_redirect_url)}`;
+    }
+    const confirmLlm = await createResponse(
+      {
+        model: 'gpt-4-turbo',
+        input: [
+          {
+            role: 'system',
+            content: `Respond ONLY in language: ${planLang}. Write a short confirmation (2–3 sentences): acknowledge their plan choice, reinforce that they're moving forward, and prepare them for the next step. Warm, no payment or pricing details.`,
+          },
+          { role: 'user', content: 'Generate plan selection confirmation.' },
+        ],
+        temperature: 0.5,
+      },
+      'onboarding'
+    );
+    const confirmNorm = normalizeResponse(confirmLlm);
+    const confirmMessage =
+      confirmNorm.content?.trim() ||
+      "You're all set. We'll take you to the next step to complete your session.";
+    await threadManager.addMessage(threadId, { role: 'assistant', content: confirmMessage });
+    const json: {
+      success: boolean;
+      threadId: string;
+      message: string;
+      payment_ready: boolean;
+      selected_plan: string;
+      session_count: number;
+      flow_state: string;
+      payment_redirect_url?: string;
+      signup_redirect_url?: string;
+    } = {
+      success: true,
+      threadId,
+      message: confirmMessage,
+      payment_ready: true,
+      selected_plan: planSelected,
+      session_count: sessionCount,
+      flow_state: 'verified_ready_for_omnivyra',
+    };
+    if (payment_redirect_url !== undefined) json.payment_redirect_url = payment_redirect_url;
+    if (signup_redirect_url !== undefined) json.signup_redirect_url = signup_redirect_url;
+    return NextResponse.json(json);
+  }
+
+  const text = (messageText ?? '').trim();
+  await threadManager.addMessage(threadId, { role: 'user', content: text });
+
   const ctx = await getVisitorContext(visitorId);
 
   // Step A — Fetch temp_user early for language lock
@@ -690,16 +1216,388 @@ export async function POST(req: NextRequest) {
 
   const replyPrompt = `User said: "${text}"`;
 
-  const reply = await generateGreeterMessage(
-    replyPrompt,
-    languageToUse,
-    collectionState,
-    identityValuesBlock,
-    effectiveGoal,
-    rapportContext
-  );
+  let reply: string;
+  /** When true, assistant message(s) were already persisted in this request (e.g. completion branch). */
+  let repliesAlreadyPersisted = false;
+  /** When set, response includes pricing_options for frontend to render 2 buttons (Light, Steady Lens). */
+  let pricingOptions: Array<{ id: string; label: string; sublabel: string }> | null = null;
 
-  await threadManager.addMessage(threadId, { role: 'assistant', content: reply });
+  if (flow_state === 'verified_ready_for_omnivyra' && handoff_payload) {
+    const history = await threadManager.getMessages(threadId);
+    const udaBoundedComplete =
+      (thread.metadata?.uda_bounded_complete as boolean) === true;
+    const udaRoundCount =
+      (thread.metadata?.uda_round_count as number) ?? 0;
+
+    if (udaBoundedComplete) {
+      const destinyLensSkipped =
+        (thread.metadata?.destiny_lens_skipped as boolean) === true;
+      const destinyLensInterested =
+        (thread.metadata?.destiny_lens_interested as boolean) === true;
+      const destinyLensIntroShown =
+        (thread.metadata?.destiny_lens_intro_shown as boolean) === true;
+      const udaEmotionalInvitationShown =
+        (thread.metadata?.uda_emotional_invitation_shown as boolean) === true;
+      const impactFramingShown =
+        (thread.metadata?.impact_framing_shown as boolean) === true;
+      const pricingPresented =
+        (thread.metadata?.pricing_presented as boolean) === true;
+      const destinyLensInsightRendered =
+        (thread.metadata?.destiny_lens_insight_rendered as boolean) === true;
+
+      if (impactFramingShown && !pricingPresented) {
+        const bridge = await generateSessionCompletionBridge(languageToUse);
+        reply = bridge || '';
+        pricingOptions = [...PRICING_BUTTON_OPTIONS];
+        await threadManager.updateMetadata(threadId, {
+          pricing_presented: true,
+        });
+      } else if (impactFramingShown && pricingPresented) {
+        const holdLlm = await createResponse(
+          {
+            model: 'gpt-4-turbo',
+            input: [
+              {
+                role: 'system',
+                content: `Respond ONLY in language: ${languageToUse}. One short sentence: we'll move to the next step once they choose how they'd like to continue. Warm, no questions.`,
+              },
+              { role: 'user', content: 'Generate.' },
+            ],
+            temperature: 0.5,
+          },
+          'onboarding'
+        );
+        const holdNorm = normalizeResponse(holdLlm);
+        reply =
+          holdNorm.content?.trim() ||
+          "We'll move to the next step once you choose how you'd like to continue.";
+      } else if (destinyLensSkipped) {
+        const problemContext =
+          tempUser?.problem_statement ?? currentIssue ?? '';
+        reply = await generateImpactFramingBlocks(
+          problemContext,
+          languageToUse
+        );
+        await threadManager.updateMetadata(threadId, {
+          impact_framing_shown: true,
+        });
+      } else if (destinyLensInterested) {
+        const existingAstroResult = thread.metadata?.astro_result;
+        const hasAstroResult =
+          existingAstroResult != null &&
+          typeof existingAstroResult === 'object' &&
+          'gain_signal' in (existingAstroResult as object);
+
+        if (hasAstroResult && destinyLensInsightRendered) {
+          const problemContext =
+            tempUser?.problem_statement ?? currentIssue ?? '';
+          reply = await generateImpactFramingBlocks(
+            problemContext,
+            languageToUse
+          );
+          await threadManager.updateMetadata(threadId, {
+            impact_framing_shown: true,
+          });
+        } else if (hasAstroResult) {
+          const problemContext =
+            tempUser?.problem_statement ?? currentIssue ?? '';
+          reply = await generateDestinyLensInsightBlocks(
+            existingAstroResult as AstroResultMeta,
+            problemContext,
+            languageToUse
+          );
+          await threadManager.updateMetadata(threadId, {
+            destiny_lens_insight_rendered: true,
+          });
+        } else {
+          const parsed = parseBirthDetails(text);
+          if (!parsed) {
+            await threadManager.updateMetadata(threadId, {
+              destiny_lens_skipped: true,
+            });
+            const graceLlm = await createResponse(
+              {
+                model: 'gpt-4-turbo',
+                input: [
+                  {
+                    role: 'system',
+                    content: `Respond ONLY in language: ${languageToUse}. One short sentence: we'll continue with what we've understood so far. Warm, no questions.`,
+                  },
+                  { role: 'user', content: 'Generate.' },
+                ],
+                temperature: 0.5,
+              },
+              'onboarding'
+            );
+            const graceNorm = normalizeResponse(graceLlm);
+            reply =
+              graceNorm.content?.trim() ||
+              "We'll continue with what we've understood so far.";
+          } else {
+            const geo = await resolveBirthPlaceGeo(
+              parsed.city,
+              parsed.state,
+              parsed.country,
+              origin
+            );
+            if (!geo) {
+              await threadManager.updateMetadata(threadId, {
+                destiny_lens_skipped: true,
+              });
+              const fallbackLlm = await createResponse(
+                {
+                  model: 'gpt-4-turbo',
+                  input: [
+                    {
+                      role: 'system',
+                      content: `Respond ONLY in language: ${languageToUse}. One short sentence: we couldn't resolve the place; we'll continue with what we've understood. Warm.`,
+                    },
+                    { role: 'user', content: 'Generate.' },
+                  ],
+                  temperature: 0.5,
+                },
+                'onboarding'
+              );
+              const fallbackNorm = normalizeResponse(fallbackLlm);
+              reply =
+                fallbackNorm.content?.trim() ||
+                "We couldn't resolve that place. We'll continue with what we've understood so far.";
+            } else {
+              const problemStatement =
+                tempUser?.problem_statement ?? currentIssue ?? '';
+              const astroCall = await runAstroCompute({
+                dob_date: parsed.dob_date,
+                dob_time: parsed.dob_time,
+                latitude: geo.latitude,
+                longitude: geo.longitude,
+                timezone: geo.timezone,
+                problem_context: problemStatement,
+                uda_summary: problemStatement,
+              });
+              const astroPayload =
+                astroCall.success && astroCall.data
+                  ? {
+                      gain_signal: astroCall.data.gain_signal,
+                      risk_signal: astroCall.data.risk_signal,
+                      phase_signal: astroCall.data.phase_signal,
+                      confidence: astroCall.data.confidence,
+                    }
+                  : null;
+              await threadManager.updateMetadata(threadId, {
+                astro_result: astroPayload,
+              });
+              reply =
+                "Give me a moment while I look at this through the Destiny Lens.";
+            }
+          }
+        }
+      } else if (destinyLensIntroShown) {
+        const choice = getDestinyLensChoice(text);
+        if (choice === 'positive') {
+          await threadManager.updateMetadata(threadId, {
+            destiny_lens_interested: true,
+          });
+          reply = await generateBirthDetailsMessage(languageToUse);
+          await threadManager.addMessage(threadId, {
+            role: 'assistant',
+            content: reply,
+          });
+          repliesAlreadyPersisted = true;
+        } else if (choice === 'negative') {
+          await threadManager.updateMetadata(threadId, {
+            destiny_lens_skipped: true,
+          });
+          const holdLlm = await createResponse(
+            {
+              model: 'gpt-4-turbo',
+              input: [
+                {
+                  role: 'system',
+                  content: `Respond ONLY in language: ${languageToUse}. One short sentence: acknowledge their choice and say we'll continue with what we've understood. Warm, no questions.`,
+                },
+                { role: 'user', content: 'Generate.' },
+              ],
+              temperature: 0.5,
+            },
+            'onboarding'
+          );
+          const holdNorm = normalizeResponse(holdLlm);
+          reply =
+            holdNorm.content?.trim() ||
+            "No problem. We'll continue with what we've understood so far.";
+        } else {
+          const askLlm = await createResponse(
+            {
+              model: 'gpt-4-turbo',
+              input: [
+                {
+                  role: 'system',
+                  content: `Respond ONLY in language: ${languageToUse}. One short sentence: gently ask whether they'd like to explore the Destiny Lens perspective or continue with what we've understood.`,
+                },
+                { role: 'user', content: 'Generate.' },
+              ],
+              temperature: 0.5,
+            },
+            'onboarding'
+          );
+          const askNorm = normalizeResponse(askLlm);
+          reply =
+            askNorm.content?.trim() ||
+            "Would you like to explore this perspective, or continue with what we've understood so far?";
+        }
+      } else if (udaEmotionalInvitationShown) {
+        if (isDestinyLensPositiveInterest(text)) {
+          const destinyLensIntro = await generateDestinyLensIntroMessage(languageToUse);
+          if (destinyLensIntro) {
+            await threadManager.addMessage(threadId, {
+              role: 'assistant',
+              content: destinyLensIntro,
+            });
+            await threadManager.updateMetadata(threadId, {
+              destiny_lens_intro_shown: true,
+            });
+            reply = destinyLensIntro;
+            repliesAlreadyPersisted = true;
+          } else {
+            reply = "You're all set. We'll look at next steps in a moment.";
+          }
+        } else {
+          const waitLlm = await createResponse(
+            {
+              model: 'gpt-4-turbo',
+              input: [
+                {
+                  role: 'system',
+                  content: `Respond ONLY in language: ${languageToUse}. One short sentence: no pressure, whenever they're ready we can look at next steps. Warm.`,
+                },
+                { role: 'user', content: 'Generate.' },
+              ],
+              temperature: 0.5,
+            },
+            'onboarding'
+          );
+          const waitNorm = normalizeResponse(waitLlm);
+          reply =
+            waitNorm.content?.trim() ||
+            "No problem. Whenever you're ready, we can look at next steps.";
+        }
+      } else {
+        const holdLlm = await createResponse(
+          {
+            model: 'gpt-4-turbo',
+            input: [
+              {
+                role: 'system',
+                content: `Respond ONLY in language: ${languageToUse}. One short sentence: the user has already received their understanding summary; acknowledge and say we'll look at next steps soon. Warm, no questions.`,
+              },
+              { role: 'user', content: 'Generate.' },
+            ],
+            temperature: 0.5,
+          },
+          'onboarding'
+        );
+        const holdNorm = normalizeResponse(holdLlm);
+        reply =
+          holdNorm.content?.trim() ||
+          "You're all set from my side. We'll look at next steps in a moment.";
+      }
+    } else if (udaRoundCount >= UDA_QUESTION_LIMIT) {
+      const bridgeMessage = await generateUdaBridgeMessage(languageToUse);
+      await threadManager.addMessage(threadId, {
+        role: 'assistant',
+        content: bridgeMessage,
+      });
+      await new Promise((r) => setTimeout(r, 1000));
+      const finalUnderstanding = await generateUdaFinalUnderstanding(
+        history,
+        languageToUse
+      );
+      await threadManager.addMessage(threadId, {
+        role: 'assistant',
+        content: finalUnderstanding,
+      });
+      if (tempUser && finalUnderstanding) {
+        await updateTempUser(tempUser.id, {
+          problem_statement: finalUnderstanding,
+        });
+      }
+      await threadManager.updateMetadata(threadId, {
+        uda_bounded_complete: true,
+        uda_round_count: UDA_QUESTION_LIMIT,
+      });
+      const parts: string[] = [bridgeMessage, finalUnderstanding];
+      if (isEmotionallyHeavy(finalUnderstanding)) {
+        const invitationMessage = await generateUdaInvitationMessage(languageToUse);
+        if (invitationMessage) {
+          await threadManager.addMessage(threadId, {
+            role: 'assistant',
+            content: invitationMessage,
+          });
+          parts.push(invitationMessage);
+          await threadManager.updateMetadata(threadId, {
+            uda_emotional_invitation_shown: true,
+          });
+        }
+      } else {
+        const destinyLensIntro = await generateDestinyLensIntroMessage(languageToUse);
+        if (destinyLensIntro) {
+          await threadManager.addMessage(threadId, {
+            role: 'assistant',
+            content: destinyLensIntro,
+          });
+          parts.push(destinyLensIntro);
+          await threadManager.updateMetadata(threadId, {
+            destiny_lens_intro_shown: true,
+          });
+        }
+      }
+      reply = parts.filter(Boolean).join('\n\n');
+      repliesAlreadyPersisted = true;
+    } else {
+      const boundedInput = buildBoundedInputFromHandoff({
+        handoff: handoff_payload,
+        threadId,
+        userId: tempUser?.id ?? visitorId,
+        currentMessage: text,
+        history,
+      });
+      const boundedResult = await runLocalBounded(boundedInput);
+      if (boundedResult.success && boundedResult.data) {
+        const formatted = formatOmnivyraResponseForUser(boundedResult.data);
+        const parts: string[] = [formatted.message?.trim() ?? ''];
+        if (formatted.questions?.length) {
+          parts.push(formatted.questions.map((q) => `• ${q}`).join('\n'));
+        }
+        if (formatted.nextStep?.trim()) parts.push(formatted.nextStep.trim());
+        reply = parts.filter(Boolean).join('\n\n');
+        await threadManager.updateMetadata(threadId, {
+          uda_round_count: udaRoundCount + 1,
+        });
+      } else {
+        reply = await generateGreeterMessage(
+          replyPrompt,
+          languageToUse,
+          collectionState,
+          identityValuesBlock,
+          effectiveGoal,
+          rapportContext
+        );
+      }
+    }
+  } else {
+    reply = await generateGreeterMessage(
+      replyPrompt,
+      languageToUse,
+      collectionState,
+      identityValuesBlock,
+      effectiveGoal,
+      rapportContext
+    );
+  }
+
+  if (!repliesAlreadyPersisted) {
+    await threadManager.addMessage(threadId, { role: 'assistant', content: reply });
+  }
 
   const section = resolveSectionForGreeter(text);
   await saveSectionSummary(threadId, section, '');
@@ -710,5 +1608,6 @@ export async function POST(req: NextRequest) {
     message: reply,
     flow_state,
     ...(handoff_ready && { handoff_ready: true, handoff_payload }),
+    ...(pricingOptions && { pricing_options: pricingOptions }),
   });
 }

@@ -72,9 +72,12 @@ if (process.env.NODE_ENV === 'production' && process.env.NEXT_PHASE === 'phase-p
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Compile local workspace packages so dynamic import('omnivyra-main') resolves
+  transpilePackages: ['omnivyra-main'],
+
   // TEST COMMENT: SIMPLIFIED CONFIG - Should disable static generation
   reactStrictMode: true,
-  
+
   // Standard Next.js build directory
   // NOTE: You MUST exclude .next from Windows Defender to prevent file locking errors
   distDir: process.env.NEXT_DIST_DIR || '.next',

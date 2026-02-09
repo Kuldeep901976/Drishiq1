@@ -13,6 +13,8 @@ import { normalizeLanguage, getRegionLanguages } from '../onboarding-concierge/r
 export interface VisitorContext {
   city: string | null;
   country: string | null;
+  /** 2-letter ISO country code for pricing/geo (e.g. IN, US). */
+  country_code: string | null;
   region_code: string | null;
   timezone: string | null;
   language: string;
@@ -25,6 +27,7 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
   const empty: VisitorContext = {
     city: null,
     country: null,
+    country_code: null,
     region_code: null,
     timezone: null,
     language: 'en',
@@ -182,6 +185,7 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
   return {
     city: row.city ?? null,
     country: row.country ?? null,
+    country_code: countryCode ?? null,
     region_code: row.region_code?.trim() ?? null,
     timezone: row.timezone ?? null,
     language,

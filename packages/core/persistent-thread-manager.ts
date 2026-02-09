@@ -131,6 +131,26 @@ export class PersistentThreadManager {
   }
 
   /**
+   * Update thread metadata (merge patch into existing). Used for UDA bounded state etc.
+   */
+  async updateMetadata(
+    threadId: string,
+    patch: Record<string, unknown>
+  ): Promise<void> {
+    if (!supabase) return;
+    const thread = await this.getThread(threadId);
+    if (!thread) return;
+    const merged = { ...thread.metadata, ...patch };
+    await supabase
+      .from('chat_threads')
+      .update({
+        metadata: merged,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('id', threadId);
+  }
+
+  /**
    * Add a message to a thread. Inserts into chat_messages.
    */
   async addMessage(threadId: string, params: AddMessageParams): Promise<void> {

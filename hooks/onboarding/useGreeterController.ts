@@ -24,8 +24,9 @@ export interface UseGreeterControllerParams {
 
 interface GreeterGetResponse {
   success: boolean;
-  threadId: string;
-  message: string;
+  threadId?: string;
+  message?: string;
+  error?: string;
   showLanguageHelper?: boolean;
   language?: string;
   geoLanguage?: string;
@@ -88,41 +89,52 @@ export default function useGreeterController({
       if (detectedLocation?.country_code) headers['x-geo-country-code'] = detectedLocation.country_code;
       if (detectedLocation?.region_code) headers['x-geo-region-code'] = detectedLocation.region_code;
 
-      const response = await fetch('/api/chat/onboarding-concierge', {
-        method: 'GET',
-        headers,
-      });
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 45000);
+      try {
+        const response = await fetch('/api/chat/onboarding-concierge', {
+          method: 'GET',
+          headers,
+          credentials: 'include',
+          signal: controller.signal,
+        });
+        const data: GreeterGetResponse = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error ?? data.message ?? `Request failed (${response.status})`);
+        }
+        clearTimeout(timeoutId);
 
-      const data: GreeterGetResponse = await response.json();
+        if (!data.success || !data.threadId) {
+          throw new Error(data.error ?? data.message ?? 'Invalid response');
+        }
 
-      if (!data.success || !data.threadId) {
-        throw new Error('Invalid response');
+        sessionStorage.setItem(ONBOARDING_STORAGE_KEY, data.threadId);
+        setThreadId(data.threadId);
+
+        setShowLanguageHelper(data.showLanguageHelper ?? true);
+
+        setSnapshot({
+          language: data.language ?? 'en',
+          geoLanguage: data.geoLanguage ?? 'en',
+          geoSuggestedLanguage: data.geoSuggestedLanguage ?? 'en',
+          langSource: data.langSource ?? 'fallback',
+        });
+
+        setMessages([
+          {
+            role: 'assistant',
+            content: data.message || '',
+            timestamp: new Date(),
+          },
+        ]);
+      } finally {
+        clearTimeout(timeoutId);
       }
-
-      sessionStorage.setItem(ONBOARDING_STORAGE_KEY, data.threadId);
-      setThreadId(data.threadId);
-
-      // Always enable helper initially — UI decides when to hide
-      setShowLanguageHelper(data.showLanguageHelper ?? true);
-
-      // Persist BOTH chat + geo languages reliably
-      setSnapshot({
-        language: data.language ?? 'en',
-        geoLanguage: data.geoLanguage ?? 'en',
-        geoSuggestedLanguage: data.geoSuggestedLanguage ?? 'en',
-        langSource: data.langSource ?? 'fallback',
-      });
-
-      setMessages([
-        {
-          role: 'assistant',
-          content: data.message || '',
-          timestamp: new Date(),
-        },
-      ]);
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : 'Failed to start conversation';
+      const isAbort = err instanceof Error && err.name === 'AbortError';
+      const message = isAbort
+        ? 'Request took too long. Please try again.'
+        : (err instanceof Error ? err.message : 'Failed to start conversation');
       setError(message);
     } finally {
       setIsLoading(false);
@@ -152,31 +164,40 @@ export default function useGreeterController({
     try {
       setIsLoading(true);
 
-      const response = await fetch('/api/chat/onboarding-concierge', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          threadId,
-          message: text.trim(),
-          language: getCurrentLanguage(),
-        }),
-      });
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 45000);
+      try {
+        const response = await fetch('/api/chat/onboarding-concierge', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            threadId,
+            message: text.trim(),
+            language: getCurrentLanguage(),
+          }),
+          credentials: 'include',
+          signal: controller.signal,
+        });
+        const data: GreeterPostResponse = await response.json();
+        clearTimeout(timeoutId);
+        if (!data.success) throw new Error(data.error ?? 'Request failed');
 
-      const data: GreeterPostResponse = await response.json();
-
-      if (!data.success) throw new Error(data.error);
-
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: 'assistant',
-          content: data.message,
-          timestamp: new Date(),
-        },
-      ]);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: data.message,
+            timestamp: new Date(),
+          },
+        ]);
+      } finally {
+        clearTimeout(timeoutId);
+      }
     } catch (err: unknown) {
-      const message =
-        err instanceof Error ? err.message : 'Failed to send message';
+      const isAbort = err instanceof Error && err.name === 'AbortError';
+      const message = isAbort
+        ? 'Reply took too long. Please try again.'
+        : (err instanceof Error ? err.message : 'Failed to send message');
       setError(message);
     } finally {
       setIsLoading(false);

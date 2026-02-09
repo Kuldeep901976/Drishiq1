@@ -94,37 +94,22 @@ export default function OnboardingConciergeOverlay({
     }
   }, [greeter.threadId, greeter.snapshot?.language]);
 
+  // Start conversation as soon as overlay opens — don't wait for geo so greeter doesn't stall
   useEffect(() => {
-    const geoReady =
-      !!lang.detectedLocation?.city || !!lang.detectedLocation?.country;
-
-    if (
-      isOpen &&
-      geoReady &&
-      !greeter.threadId &&
-      !greeter.isLoading &&
-      !conversationInitializedRef.current
-    ) {
-      conversationInitializedRef.current = true;
-
-      greeter.initializeConversation().catch((err: unknown) => {
-        console.error('Failed to initialize conversation:', err);
-        conversationInitializedRef.current = false;
-      });
-    }
-
     if (!isOpen) {
       conversationInitializedRef.current = false;
+      return;
     }
-  }, [
-    isOpen,
-    greeter.threadId,
-    greeter.isLoading,
-    lang.detectedLocation?.city,
-    lang.detectedLocation?.country,
-  ]);
+    if (greeter.threadId || greeter.isLoading || conversationInitializedRef.current) return;
 
-  // If geo never becomes ready (e.g. detect-location failed), still open conversation after delay so visitor/ensure and geo log run
+    conversationInitializedRef.current = true;
+    greeter.initializeConversation().catch((err: unknown) => {
+      console.error('Failed to initialize conversation:', err);
+      conversationInitializedRef.current = false;
+    });
+  }, [isOpen, greeter.threadId, greeter.isLoading]);
+
+  // Fallback: if init didn't run (e.g. loading stuck), retry once after a short delay
   useEffect(() => {
     if (!isOpen || greeter.threadId || greeter.isLoading || conversationInitializedRef.current) return;
 
@@ -135,7 +120,7 @@ export default function OnboardingConciergeOverlay({
         console.error('Failed to initialize conversation (fallback):', err);
         conversationInitializedRef.current = false;
       });
-    }, 4000);
+    }, 2000);
 
     return () => clearTimeout(t);
   }, [isOpen, greeter.threadId, greeter.isLoading]);

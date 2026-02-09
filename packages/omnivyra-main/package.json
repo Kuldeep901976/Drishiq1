@@ -1,0 +1,20 @@
+{
+  "name": "omnivyra-main",
+  "version": "1.0.0",
+  "description": "Local Omnivyra bounded engine (UDA). Single entry: runBounded(request).",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": ["omnivyra", "uda", "bounded"],
+  "author": "DrishiQ Team",
+  "license": "MIT",
+  "dependencies": {
+    "@drishiq/contracts": "file:../contracts"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

@@ -127,17 +127,27 @@ export default function AuthCallback() {
           console.log('👤 Existing user found - authenticated');
           if (isMounted) {
             setLoading(false);
-            router.push('/profile');
+            const redirect = typeof window !== 'undefined' ? sessionStorage.getItem('post_signup_redirect') : null;
+            if (redirect) {
+              sessionStorage.removeItem('post_signup_redirect');
+              router.push(redirect);
+            } else {
+              router.push('/profile');
+            }
           }
           return;
         }
 
-        // NEW USER - Redirect to profile page
-        // DO NOT create any record in users table
-        // Profile page will save to temporary_signups instead
+        // NEW USER - Redirect to profile page (or to payment if post_signup_redirect is set)
+        // Profile page will save to temporary_signups; then redirect param sends user to payment
         console.log('📝 New user detected - skipping users table creation');
-        console.log('🚀 Redirecting to profile for completion');
-        
+        const redirect = typeof window !== 'undefined' ? sessionStorage.getItem('post_signup_redirect') : null;
+        if (redirect) {
+          console.log('🚀 Redirecting to profile (then to payment after completion)');
+          sessionStorage.setItem('post_signup_redirect', redirect); // keep for profile page
+        } else {
+          console.log('🚀 Redirecting to profile for completion');
+        }
         if (isMounted) {
           setLoading(false);
           router.push('/profile');

@@ -34,6 +34,10 @@ export interface TempUserRow {
   contact_status?: string | null;
   /** Set after migration temp_users-add-phone-verified; undefined if column missing */
   phone_verified?: boolean;
+  /** Plan selection capture (data-store only; no DB migration). */
+  selected_plan_id?: string | null;
+  selected_session_count?: number | null;
+  purchase_intent_at?: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -152,6 +156,9 @@ export async function updateTempUser(
     phone?: string | null;
     contact_status?: string | null;
     phone_verified?: boolean;
+    selected_plan_id?: string | null;
+    selected_session_count?: number | null;
+    purchase_intent_at?: string | null;
   }
 ): Promise<void> {
   const supabase = createServiceClient();
@@ -172,6 +179,9 @@ export async function updateTempUser(
   if (fields.phone !== undefined) payload.phone = fields.phone;
   if (fields.contact_status !== undefined) payload.contact_status = fields.contact_status;
   if (fields.phone_verified !== undefined) payload.phone_verified = fields.phone_verified;
+  if (fields.selected_plan_id !== undefined) payload.selected_plan_id = fields.selected_plan_id;
+  if (fields.selected_session_count !== undefined) payload.selected_session_count = fields.selected_session_count;
+  if (fields.purchase_intent_at !== undefined) payload.purchase_intent_at = fields.purchase_intent_at;
 
   const { error } = await supabase
     .from('temp_users')

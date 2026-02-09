@@ -66,7 +66,7 @@ export function useLanguageAndLocation({ setSnapshot, isOpen }: UseLanguageAndLo
       const response = await fetch('/api/detect-location', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        signal: AbortSignal.timeout(5000),
+        signal: AbortSignal.timeout(10000),
       });
 
       if (response.ok) {
@@ -91,7 +91,12 @@ export function useLanguageAndLocation({ setSnapshot, isOpen }: UseLanguageAndLo
         setDetectedLocation(null);
       }
     } catch (error) {
-      console.warn('⚠️ [Onboarding] Detection failed:', error);
+      const isTimeout =
+        error instanceof Error &&
+        ('name' in error ? error.name === 'TimeoutError' : error.message?.includes('timed out'));
+      if (!isTimeout) {
+        console.warn('⚠️ [Onboarding] Detection failed:', error);
+      }
       setAvailableLanguages(getAllAvailableLanguages());
       setDetectedLocation(null);
     } finally {

@@ -101,6 +101,16 @@ export default function SignUpPage() {
     }
   }, [searchParams]);
 
+  // Preserve redirect param for post-signup (e.g. /payment?plan=... from onboarding)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const redirect = searchParams.get('redirect');
+      if (redirect) {
+        sessionStorage.setItem('post_signup_redirect', redirect);
+      }
+    }
+  }, [searchParams]);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       // Store BOTH category and role

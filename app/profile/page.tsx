@@ -509,9 +509,16 @@ export default function ProfilePage() {
         sessionStorage.removeItem('pending_confirm_password');
       }
       
-      setTimeout(() => {
-        router.push('/apps/phone-verification');
-      }, 1500);
+      // If redirect param (e.g. payment URL from onboarding) — go there after save
+      const redirectUrl = typeof window !== 'undefined'
+        ? searchParams.get('redirect') || sessionStorage.getItem('post_signup_redirect')
+        : null;
+      if (redirectUrl) {
+        if (typeof window !== 'undefined') sessionStorage.removeItem('post_signup_redirect');
+        setTimeout(() => router.push(redirectUrl), 1500);
+      } else {
+        setTimeout(() => router.push('/apps/phone-verification'), 1500);
+      }
 
     } catch (err: any) {
       console.error('Save error:', err);

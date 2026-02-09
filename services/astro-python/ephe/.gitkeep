@@ -1,0 +1,2 @@
+# Place Swiss Ephemeris data files here (e.g. from https://www.astro.com/ftp/swisseph/ephe/).
+# Required files for basic Sun/Moon/Houses: sepl_18.se1, semo_18.se1, seas_18.se1, or use the -e path when building.

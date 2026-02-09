@@ -58,7 +58,9 @@ export default function PaymentPage() {
         if (sessionError || !session?.user) {
           console.log('❌ No session - redirecting to sign up');
           setLoading(false);
-          router.push('/auth/signup?redirect=/priceplan&message=Please sign up to purchase credits');
+          const currentPath = typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/payment';
+          const redirectParam = encodeURIComponent(currentPath);
+          router.push(`/auth/signup?redirect=${redirectParam}&message=Please sign up to purchase credits`);
           return;
         }
 
@@ -83,11 +85,13 @@ export default function PaymentPage() {
         const hasUserData = usersCheck.data && (usersCheck.data.first_name || usersCheck.data.phone);
         const hasTempData = tempSignupsCheck.data && (tempSignupsCheck.data.first_name || tempSignupsCheck.data.phone);
 
-        // STEP 3: If no data in either table, redirect to complete profile
+        // STEP 3: If no data in either table, redirect to complete profile (preserve return URL)
         if (!hasUserData && !hasTempData) {
           console.log('❌ No profile data found - redirecting to profile completion');
           setLoading(false);
-          router.push('/profile?message=Please complete your profile before purchasing credits');
+          const currentPath = typeof window !== 'undefined' ? window.location.pathname + window.location.search : '/payment';
+          const redirectParam = encodeURIComponent(currentPath);
+          router.push(`/profile?message=Please complete your profile before purchasing credits&redirect=${redirectParam}`);
           return;
         }
 
