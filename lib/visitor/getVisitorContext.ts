@@ -13,6 +13,7 @@ import { normalizeLanguage, getRegionLanguages } from '../onboarding-concierge/r
 export interface VisitorContext {
   city: string | null;
   country: string | null;
+  region_code: string | null;
   timezone: string | null;
   language: string;
   geoSuggestedLanguage: string | null;
@@ -24,6 +25,7 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
   const empty: VisitorContext = {
     city: null,
     country: null,
+    region_code: null,
     timezone: null,
     language: 'en',
     geoSuggestedLanguage: 'en',
@@ -44,6 +46,7 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
     region_code?: string | null;
     timezone?: string | null;
     language?: string | null;
+    secondary_language?: string | null;
     visit_count?: number | null;
     last_seen_at?: string | null;
   };
@@ -52,7 +55,7 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
   let row: VisitorRow | null = null;
   const byVisitorId = await supabase
     .from('visitors')
-    .select('city, country, country_code, region_code, timezone, language, visit_count, last_seen_at')
+    .select('city, country, country_code, region_code, timezone, language, secondary_language, visit_count, last_seen_at')
     .eq('visitor_id', visitorId)
     .order('created_at', { ascending: false })
     .limit(1)
@@ -65,7 +68,7 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
   if (!row) {
     const byId = await supabase
       .from('visitors')
-      .select('city, country, country_code, region_code, timezone, language, visit_count, last_seen_at')
+      .select('city, country, country_code, region_code, timezone, language, secondary_language, visit_count, last_seen_at')
       .eq('id', visitorId)
       .maybeSingle();
     if (!byId.error && byId.data) row = byId.data as VisitorRow;
@@ -145,11 +148,23 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
 
   // ------------------------------------------------
   // FINAL LANGUAGE RESOLUTION
+  // Chat language stays consistent until changed manually: prefer stored (previous choice) over geo.
   // ------------------------------------------------
   let language = 'en';
   let geoSuggestedLanguage: string | null = 'en';
 
-  if (geoPrimary) {
+  const storedSecondary = row.secondary_language?.trim() || null;
+  if (storedPrimary) {
+    const primary = normalizeLanguage(storedPrimary);
+    language = primary;
+    geoSuggestedLanguage = storedSecondary
+      ? normalizeLanguage(storedSecondary)
+      : geoPrimary
+        ? normalizeLanguage(geoPrimary)
+        : primary !== 'en'
+          ? primary
+          : 'en';
+  } else if (geoPrimary) {
     const primary = normalizeLanguage(geoPrimary);
     const secondary = geoSecondary
       ? normalizeLanguage(geoSecondary)
@@ -157,23 +172,17 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
 
     language = primary;
 
-    // Hint logic:
-    // If cookie/browser later overrides → this becomes hint
     if (secondary && secondary !== primary) {
       geoSuggestedLanguage = secondary;
     } else {
       geoSuggestedLanguage = primary !== 'en' ? primary : 'en';
     }
   }
-  else if (storedPrimary) {
-    const primary = normalizeLanguage(storedPrimary);
-    language = primary;
-    geoSuggestedLanguage = primary !== 'en' ? primary : 'en';
-  }
 
   return {
     city: row.city ?? null,
     country: row.country ?? null,
+    region_code: row.region_code?.trim() ?? null,
     timezone: row.timezone ?? null,
     language,
     geoSuggestedLanguage,

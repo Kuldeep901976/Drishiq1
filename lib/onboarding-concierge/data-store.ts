@@ -6,6 +6,14 @@
 import crypto from 'crypto';
 import { createServiceClient } from '@/lib/supabase';
 
+/** Source of locked language (language_locked = true). */
+export type LanguageSource =
+  | 'manual_override'
+  | 'cookie'
+  | 'browser'
+  | 'geo'
+  | 'first_message';
+
 export interface TempUserRow {
   id: string;
   visitor_id: string;
@@ -16,6 +24,16 @@ export interface TempUserRow {
   gender: string | null;
   problem_statement: string | null;
   identity_status: string;
+  /** Set after migration temp_users-add-language-lock; undefined if column missing */
+  locked_language?: string | null;
+  language_locked?: boolean;
+  language_source?: LanguageSource | string | null;
+  /** Set after migration temp_users-add-contact-fields; undefined if column missing */
+  email?: string | null;
+  phone?: string | null;
+  contact_status?: string | null;
+  /** Set after migration temp_users-add-phone-verified; undefined if column missing */
+  phone_verified?: boolean;
   created_at: string;
   updated_at: string;
 }
@@ -102,6 +120,20 @@ export async function getOrCreateTempUser(
 }
 
 /**
+ * Get temp_user by id (for language lock and identity). Returns null if not found.
+ */
+export async function getTempUser(tempUserId: string): Promise<TempUserRow | null> {
+  const supabase = createServiceClient();
+  const { data, error } = await supabase
+    .from('temp_users')
+    .select('*')
+    .eq('id', tempUserId)
+    .maybeSingle();
+  if (error || !data) return null;
+  return data as TempUserRow;
+}
+
+/**
  * Update temp_user fields.
  */
 export async function updateTempUser(
@@ -113,6 +145,13 @@ export async function updateTempUser(
     problem_statement?: string | null;
     identity_status?: 'partial' | 'complete';
     identity_hash?: string | null;
+    locked_language?: string | null;
+    language_locked?: boolean;
+    language_source?: LanguageSource | string | null;
+    email?: string | null;
+    phone?: string | null;
+    contact_status?: string | null;
+    phone_verified?: boolean;
   }
 ): Promise<void> {
   const supabase = createServiceClient();
@@ -126,12 +165,26 @@ export async function updateTempUser(
     payload.identity_status = fields.identity_status;
   if (fields.identity_hash !== undefined)
     payload.identity_hash = fields.identity_hash;
+  if (fields.locked_language !== undefined) payload.locked_language = fields.locked_language;
+  if (fields.language_locked !== undefined) payload.language_locked = fields.language_locked;
+  if (fields.language_source !== undefined) payload.language_source = fields.language_source;
+  if (fields.email !== undefined) payload.email = fields.email;
+  if (fields.phone !== undefined) payload.phone = fields.phone;
+  if (fields.contact_status !== undefined) payload.contact_status = fields.contact_status;
+  if (fields.phone_verified !== undefined) payload.phone_verified = fields.phone_verified;
 
   const { error } = await supabase
     .from('temp_users')
     .update(payload)
     .eq('id', tempUserId);
   if (error) throw error;
+}
+
+/**
+ * Mark temp_user phone as verified (call from OTP verification endpoint after successful OTP).
+ */
+export async function markPhoneVerified(tempUserId: string): Promise<void> {
+  await updateTempUser(tempUserId, { phone_verified: true });
 }
 
 /**

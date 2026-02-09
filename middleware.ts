@@ -6,15 +6,20 @@ import type { NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
 import { getAffiliateCookieName } from './lib/affiliate-utils';
 
-// Device/visitor identity cookie names and options
+// Device/visitor/session identity cookie names and options
 const DEVICE_ID_COOKIE = 'drishiq_device_id';
 const VISITOR_ID_COOKIE = 'drishiq_visitor_id';
+const SESSION_ID_COOKIE = 'drishiq_session_id';
 const IDENTITY_COOKIE_OPTIONS = {
   httpOnly: true,
   secure: process.env.NODE_ENV === 'production',
   sameSite: 'lax' as const,
   path: '/',
   maxAge: 60 * 60 * 24 * 365, // 1 year
+};
+const SESSION_COOKIE_OPTIONS = {
+  ...IDENTITY_COOKIE_OPTIONS,
+  maxAge: 60 * 60 * 24, // 1 day: one session per day unless new tab/window
 };
 
 function getClientIP(req: NextRequest): string {
@@ -93,27 +98,32 @@ export async function middleware(req: NextRequest) {
   const newHeaders = new Headers(req.headers);
   const hadDeviceCookie = req.cookies.get(DEVICE_ID_COOKIE)?.value;
   const hadVisitorCookie = req.cookies.get(VISITOR_ID_COOKIE)?.value;
+  const hadSessionCookie = req.cookies.get(SESSION_ID_COOKIE)?.value;
   const deviceId = hadDeviceCookie ?? crypto.randomUUID();
   // Same device = same visitor: use device_id as visitor_id (one stable id per device; no separate random visitor id)
   const visitorId = deviceId;
+  const sessionId = hadSessionCookie ?? crypto.randomUUID();
   const clientIp = getClientIP(req);
+  const cookieLang = req.cookies.get('drishiq_lang')?.value ?? '';
   newHeaders.set('x-device-id', deviceId);
   newHeaders.set('x-visitor-id', visitorId);
   newHeaders.set('x-client-ip', clientIp);
+  newHeaders.set('x-session-id', sessionId);
+  if (cookieLang) newHeaders.set('x-cookie-lang', cookieLang);
 
-  // Ensure visitor row only on document (page) requests, not on every API call — one refresh ≈ one ensure
+  // Ensure: first-touch visitor_sessions then visitors (only on document requests)
   const isDocumentRequest = !pathname.startsWith('/api');
   if (isDocumentRequest) {
     const ensureUrl = new URL('/api/visitor/ensure', req.url).href;
-    fetch(ensureUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-device-id': deviceId,
-        'x-visitor-id': visitorId,
-        'x-client-ip': clientIp,
-      },
-    }).catch(() => {});
+    const ensureHeaders: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'x-device-id': deviceId,
+      'x-visitor-id': visitorId,
+      'x-client-ip': clientIp,
+      'x-session-id': sessionId,
+    };
+    if (cookieLang) ensureHeaders['x-cookie-lang'] = cookieLang;
+    fetch(ensureUrl, { method: 'POST', headers: ensureHeaders }).catch(() => {});
   }
 
   function nextWithIdentity(): NextResponse {
@@ -123,6 +133,9 @@ export async function middleware(req: NextRequest) {
     }
     if (!hadVisitorCookie) {
       res.cookies.set(VISITOR_ID_COOKIE, visitorId, IDENTITY_COOKIE_OPTIONS);
+    }
+    if (!hadSessionCookie) {
+      res.cookies.set(SESSION_ID_COOKIE, sessionId, SESSION_COOKIE_OPTIONS);
     }
     return res;
   }
