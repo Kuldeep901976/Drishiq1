@@ -8,6 +8,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { withAdminAuth } from '@/app/api/middleware/admin-auth';
+import { createServiceClient } from '@/lib/supabase';
 import { replayThread } from '@/lib/ddsa/replay-engine';
 import { parseDebugFlags } from '@/lib/ddsa/debug-flags';
 import type { ReplayOptions } from '@/lib/ddsa/replay-types';

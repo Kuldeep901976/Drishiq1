@@ -24,8 +24,12 @@ _EPHE_PATH = _APP_DIR / "ephe"
 try:
     import swisseph as swe
     swe.set_ephe_path(str(_EPHE_PATH))
+    # Planet constants: pyswisseph may expose SUN/MOON or SE_SUN/SE_MOON
+    _SE_SUN = getattr(swe, "SUN", getattr(swe, "SE_SUN", 0))
+    _SE_MOON = getattr(swe, "MOON", getattr(swe, "SE_MOON", 1))
 except Exception:
-    swe = None  # optional: allow app to start without ephe files for health-only
+    swe = None
+    _SE_SUN = _SE_MOON = 0
 
 app = FastAPI(title="Astro Python Service", version="0.1.0")
 
@@ -104,8 +108,8 @@ def _compute_signals(body: AstroComputeInput) -> AstroComputeOutput:
         lat, lon = body.latitude, body.longitude
 
         # 1) Sun and Moon at birth (longitude in degrees 0–360)
-        sun_natal, _ = swe.calc_ut(jd_natal, swe.SUN)
-        moon_natal, _ = swe.calc_ut(jd_natal, swe.MOON)
+        sun_natal, _ = swe.calc_ut(jd_natal, _SE_SUN)
+        moon_natal, _ = swe.calc_ut(jd_natal, _SE_MOON)
         sun_long = sun_natal[0]
         moon_long = moon_natal[0]
 
@@ -119,8 +123,8 @@ def _compute_signals(body: AstroComputeInput) -> AstroComputeOutput:
         # 3) Current time UT for transits
         now_utc = datetime.now(timezone.utc)
         jd_now = _ut_to_julday(now_utc)
-        sun_now, _ = swe.calc_ut(jd_now, swe.SUN)
-        moon_now, _ = swe.calc_ut(jd_now, swe.MOON)
+        sun_now, _ = swe.calc_ut(jd_now, _SE_SUN)
+        moon_now, _ = swe.calc_ut(jd_now, _SE_MOON)
         sun_now_long = sun_now[0]
         moon_now_long = moon_now[0]
 

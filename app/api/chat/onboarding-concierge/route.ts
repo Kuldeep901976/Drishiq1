@@ -545,6 +545,79 @@ async function resolveBirthPlaceGeo(
   }
 }
 
+/**
+ * Pre-processing layer for onboarding only: transforms problem_statement into a structured
+ * problem_context optimized for astrological timing, alignment, and decision-phase evaluation.
+ * Does not change UDA, Greeter, or data collection. Used only immediately before runAstroCompute.
+ * On failure, returns the original problem_statement so the Astro call still succeeds.
+ */
+async function intentStructuringForAstro(problem_statement: string): Promise<string> {
+  const raw = (problem_statement ?? '').trim();
+  if (!raw) return raw;
+
+  const systemContent = `You are an intent expansion layer. Your only job is to convert the user's problem statement into a deeper, timing-aware, alignment-focused analytical context so the Astro engine can evaluate the situation across meaningful life-phase dimensions.
+
+This is NOT a summary. This is NOT advice. This is NOT prediction. This is an intent expansion layer.
+
+OUTPUT REQUIREMENTS:
+3–5 lines only. Analytical. Neutral. No storytelling. No emotional tone. No mystical language. No solutions. No new facts added. No assumptions about outcome. No bullets. No labels.
+
+PRIMARY TASK:
+Infer the underlying nature of the user's concern and expand it into a multi-dimensional evaluation request for the astrology system.
+
+Silently detect intent type from the problem statement (do NOT name the intent in the output). Possible patterns include:
+Action decision uncertainty; timing curiosity; outcome/success curiosity; relationship/person-related concern; career/growth direction; personal struggle/heavy phase; life path confusion; general uncertainty.
+
+Then expand the context so the astrology engine evaluates the situation across relevant dimensions.
+
+CORE EVALUATION DIMENSIONS (invoke when relevant):
+Timing readiness; growth phase strength; resistance factors; recognition potential; direction alignment; role suitability; stability vs volatility; momentum vs delay nature; effort alignment sensitivity; opportunity strength/sensitivity; phase window significance.
+
+INTENT-BASED EMPHASIS (internal guidance only; do not label in output):
+
+If the concern involves success, outcome, research, startup, or idea: focus more on growth, recognition, timing, resistance, role fit, direction alignment, stability, opportunity strength.
+
+If the concern involves a decision to act: focus more on timing readiness, resistance, stability, opportunity sensitivity, momentum nature, effort alignment.
+
+If the concern is about timing: focus more on phase windows, readiness, movement cycles, delay vs momentum, resistance periods.
+
+If another person is involved: include emphasis on compatibility dynamics, effort alignment, emotional timing, stability.
+
+If the concern is career/growth direction: focus on direction alignment, role suitability, growth phase, timing readiness, recognition potential.
+
+If the concern reflects struggle, confusion, or stagnation: focus on life-phase interpretation, resistance cycles, stability shifts, gradual movement phases.
+
+CONSTRAINTS:
+Do NOT simulate timelines (no 3 months / 2 years / 5 years). Do NOT state gain/loss outcomes. Do NOT predict success or failure. Do NOT ask questions. Do NOT address the user directly. Do NOT use their name.
+
+Convert the problem into a structured analytical framing that invites evaluation of timing, alignment, movement, resistance, and potential phase significance around the situation.
+
+Tone example (style guidance only; do not copy): "User is exploring an intellectual pursuit and is uncertain about its long-term potential. Frame evaluation around timing readiness, growth cycles, resistance factors, recognition phases, and alignment with direction and role suitability."`;
+
+  const userContent = `User's problem statement:\n"${raw}"\n\nProduce the analytical problem_context for timing/alignment evaluation.`;
+
+  try {
+    const llm = await createResponse(
+      {
+        model: 'gpt-4o-mini',
+        input: [
+          { role: 'system', content: systemContent },
+          { role: 'user', content: userContent },
+        ],
+        temperature: 0.3,
+        max_tokens: 220,
+      },
+      'onboarding'
+    );
+    const normalized = normalizeResponse(llm);
+    const refined = normalized.content?.trim();
+    if (refined && refined.length > 0) return refined;
+  } catch (err) {
+    console.warn('[onboarding] intentStructuringForAstro failed, using raw problem_statement:', err);
+  }
+  return raw;
+}
+
 /** Astro result shape stored in thread metadata (from runAstroCompute). */
 interface AstroResultMeta {
   gain_signal?: string;
@@ -605,10 +678,8 @@ Output ONLY the 2–3 blocks with blank lines between. No preamble, no bullets.`
 
 /**
  * Generate 2–3 separated Destiny Lens insight blocks from thread metadata astro_result.
- * Conversational, reflective, connected to the user's problem. No block titles.
- * Block 1: Gain Potential (relief, clarity, forward movement, regained control).
- * Block 2: Risk & Timing (risks of delaying, timing sensitivity).
- * Block 3: Life Phase (how current phase influences the situation); confidence woven in gently.
+ * Phase 2 response layer: converts Astro signals into star-anchored interpretation (timing, alignment, phases).
+ * Tone: calm, grounded, slightly cosmic; never salesy or motivational.
  */
 async function generateDestinyLensInsightBlocks(
   astroResult: AstroResultMeta,
@@ -622,22 +693,31 @@ async function generateDestinyLensInsightBlocks(
 
   const systemContent = `You MUST respond ONLY in this language: ${languageToUse}.
 
-You are rendering Destiny Lens insights for the user. They have already seen a short "processing" message. Now show 2–3 short, separated insight blocks. Be conversational, reflective, and clearly connected to their situation. Do NOT use block titles or labels (no "Gain:", "Risk:", etc.). Write in second person ("you") where natural.
+You are interpreting astrological timing and alignment signals for the user. Your response must feel rooted in cosmic timing and life phases, create curiosity, and hint at deeper insight—without sounding like life coaching, motivation, or a sales pitch.
 
-Use these signals from the astro layer (weave them in naturally; do not quote them verbatim):
+Astro signals (interpret these in the new style; do not quote verbatim):
 - Gain signal: ${gain || '—'}
 - Risk signal: ${risk || '—'}
 - Phase signal: ${phase || '—'}
 - Confidence: ${confidence}
 
-User's problem context (reference this so the insights feel personal): ${problemContext || 'Not specified.'}
+User's situation summary (use for personal anchoring): ${problemContext || 'Not specified.'}
 
-Structure your reply as exactly 2–3 paragraphs separated by a blank line each:
-1) Gain Potential — What could shift in their life if the issue gets resolved now. Focus on: relief, clarity, forward movement, regained control.
-2) Risk & Timing — What might be at stake if they delay, or how timing and life phases are influencing the situation.
-3) Life Phase — How their current life phase or timing adds context; you may gently reflect confidence here.
+MANDATORY RESPONSE STRUCTURE — follow this flow in 2–3 short paragraphs:
 
-Output ONLY the 2–3 paragraphs with blank lines between. No preamble, no "Here's what I see", no bullet points.`;
+1) Personal anchoring: Acknowledge the user's area of concern using the situation summary above. If a first name is available in that context, you may use it; otherwise refer to "the area you're focused on" or "your situation." Example tone: "The area you're focused on is entering a phase of movement…"
+
+2) Star/phase interpretation: Speak in terms of alignment, forming movement, resistance, transition, slow build, support phases. USE: "phase," "alignment," "timing," "movement," "cycle," "readiness," "shifts." DO NOT use: hype, dreams, regret, motivational language, or business-coaching tone. Weave in the astro signals above in this language.
+
+3) Timing sensitivity: Introduce that timing matters. Examples: "Such phases don't stay open forever." "Movement begins subtly before it becomes visible." "The strength of this period can shape what unfolds next."
+
+4) Curiosity hook: Hint that more clarity exists around exact timing, deeper alignment, hidden factors, direction, or compatibility (if relationship). Examples: "There is more to understand about when this energy strengthens." "The deeper timing of this shift can change how you move forward."
+
+5) Closing invitation (MANDATORY): End with a gentle path invitation. Use adaptive, non-sales language. Base meaning: "If you wish to understand the timing and direction of this path more clearly, step forward with intent — choose First Light for a single glimpse, or Steady Lens for a deeper journey." Phrase it naturally in the response language. Do NOT say: buy, purchase, subscribe, credits, sign up. This must feel like guidance, not selling.
+
+TONE: Calm, grounded, slightly cosmic, insightful. Never pushy, never threatening, no extreme fear language. Length: 2–3 short paragraphs max. Do NOT promise success, predict outcomes, claim certainty, sound like a coach, or sound like marketing. You are interpreting signals, not guaranteeing results.
+
+Output ONLY the 2–3 paragraphs with blank lines between. No preamble, no bullet points, no labels.`;
 
   const llm = await createResponse(
     {
@@ -652,7 +732,10 @@ Output ONLY the 2–3 paragraphs with blank lines between. No preamble, no "Here
   );
   const normalized = normalizeResponse(llm);
   const text = normalized.content?.trim() ?? '';
-  return text || "Here’s what stands out from the Destiny Lens perspective—relief and clarity are within reach when you address this now, and the phase you’re in adds useful context.";
+  return (
+    text ||
+    "The area you're focused on is in a phase where alignment and timing matter. Such phases don't stay open forever; there is more to understand about when this energy strengthens. If you wish to understand the timing and direction of this path more clearly, step forward with intent — choose First Light for a single glimpse, or Steady Lens for a deeper journey."
+  );
 }
 
 /**
@@ -1365,13 +1448,14 @@ export async function POST(req: NextRequest) {
             } else {
               const problemStatement =
                 tempUser?.problem_statement ?? currentIssue ?? '';
+              const problem_context = await intentStructuringForAstro(problemStatement);
               const astroCall = await runAstroCompute({
                 dob_date: parsed.dob_date,
                 dob_time: parsed.dob_time,
                 latitude: geo.latitude,
                 longitude: geo.longitude,
                 timezone: geo.timezone,
-                problem_context: problemStatement,
+                problem_context,
                 uda_summary: problemStatement,
               });
               const astroPayload =
