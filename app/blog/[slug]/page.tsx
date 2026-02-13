@@ -34,6 +34,13 @@ function stripHtmlToText(html?: string) {
     .trim();
 }
 
+function safeStr(v: unknown, fallback = ''): string {
+  if (v == null) return fallback;
+  if (typeof v === 'string') return v;
+  if (typeof v === 'object' && v !== null && 'message' in v) return String((v as { message: unknown }).message);
+  return fallback;
+}
+
 function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
   // Unwrap params using React.use()
   const { slug } = use(params);
@@ -78,8 +85,10 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
         setPost(json?.data ?? null);
       } catch (err: any) {
         if (!cancelled) {
-          if (err?.message === 'NOT_FOUND') setError(t('blog.not_found') || 'Post not found');
-          else setError(err?.message || 'Failed to fetch post');
+          const msg = err?.message === 'NOT_FOUND'
+            ? (t('blog.not_found') || 'Post not found')
+            : (err?.message || 'Failed to fetch post');
+          setError(typeof msg === 'string' ? msg : (msg?.message != null ? String(msg.message) : 'Failed to fetch post'));
         }
       } finally {
         if (!cancelled) setLoading(false);
@@ -118,7 +127,7 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
         <div className="flex items-center justify-center pt-32">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0B4422] mx-auto mb-4" />
-            <p className="text-gray-600">{t('blog.loading') ?? 'Loading...'}</p>
+            <p className="text-gray-600">{(() => { const v = t('blog.loading') ?? 'Loading...'; return typeof v === 'string' ? v : 'Loading...'; })()}</p>
           </div>
         </div>
       </div>
@@ -137,13 +146,19 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
                 </svg>
               </div>
               <h1 className="text-3xl font-bold text-gray-900 mb-4">
-                {t('blog.not_found_title') ?? 'Article Not Found'}
+                {(() => { const v = t('blog.not_found_title') ?? 'Article Not Found'; return typeof v === 'string' ? v : 'Article Not Found'; })()}
               </h1>
               <p className="text-lg text-gray-600 mb-2">
-                {error ?? t('blog.not_found') ?? 'The article you\'re looking for doesn\'t exist or may have been removed.'}
+                {(() => {
+                  const fallback = t('blog.not_found') ?? 'The article you\'re looking for doesn\'t exist or may have been removed.';
+                  if (error == null) return typeof fallback === 'string' ? fallback : 'Post not found';
+                  if (typeof error === 'string') return error;
+                  if (error && typeof error === 'object' && 'message' in error) return String((error as { message: unknown }).message);
+                  return 'Post not found';
+                })()}
               </p>
               <p className="text-sm text-gray-500 mb-8">
-                {t('blog.not_found_suggestion') ?? 'Try browsing our other articles or check back later.'}
+                {(() => { const v = t('blog.not_found_suggestion') ?? 'Try browsing our other articles or check back later.'; return typeof v === 'string' ? v : 'Try browsing our other articles or check back later.'; })()}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -151,13 +166,13 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
                 href="/blog"
                 className="px-6 py-3 bg-[#1A3D2D] text-white rounded-lg font-medium hover:bg-[#0F2A1E] transition-colors"
               >
-                {t('blog.browse_articles') ?? 'Browse Articles'}
+                {safeStr(t('blog.browse_articles'), 'Browse Articles')}
               </a>
               <a
                 href="/"
                 className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors"
               >
-                {t('blog.go_home') ?? 'Go to Homepage'}
+                {safeStr(t('blog.go_home'), 'Go to Homepage')}
               </a>
             </div>
           </div>
@@ -205,7 +220,7 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
                   <div className="mb-6">
                     <img
                       src={imageErrors['featured'] ? '/assets/banners/images/mistycloud.webp' : post.featured_image}
-                      alt={post.title || 'Featured article image'}
+                      alt={safeStr(post.title, 'Featured article image')}
                       className="w-full h-64 object-cover rounded-xl"
                       onError={() => handleImageError('featured')}
                       loading="lazy"
@@ -215,7 +230,7 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
 
                 {/* Title */}
                 <h1 className="text-4xl font-bold text-[#0B4422] mb-4">
-                  {post.title}
+                  {safeStr(post.title, 'Untitled')}
                 </h1>
 
                 {/* Meta Info */}
@@ -224,7 +239,7 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
                     {post.author && (
                       <span className="flex items-center gap-2">
                         <PenLine size={18} />
-                        {post.author}
+                        {safeStr(post.author)}
                       </span>
                     )}
                     {post.published_at && (
@@ -255,18 +270,18 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
                   <div className="flex items-center gap-6">
                     <button className="flex items-center gap-2 text-gray-600 hover:text-[#1A3D2D] transition-colors">
                       <ThumbsUp size={20} />
-                      <span className="font-medium">{post.likes ?? 0} {t('blog.likes') ?? 'Likes'}</span>
+                      <span className="font-medium">{post.likes ?? 0} {safeStr(t('blog.likes'), 'Likes')}</span>
                     </button>
 
                     <button className="flex items-center gap-2 text-gray-600 hover:text-[#1A3D2D] transition-colors">
                       <MessageCircle size={20} />
-                      <span className="font-medium">{post.comments_count ?? 0} {t('blog.comments') ?? 'Comments'}</span>
+                      <span className="font-medium">{post.comments_count ?? 0} {safeStr(t('blog.comments'), 'Comments')}</span>
                     </button>
                   </div>
 
                   <button className="flex items-center gap-2 bg-[#1A3D2D]/10 text-[#1A3D2D] px-4 py-2 rounded-lg hover:bg-[#1A3D2D]/20 transition-colors">
                     <Share2 size={18} />
-                    <span className="font-medium">{t('blog.share') ?? 'Share'}</span>
+                    <span className="font-medium">{safeStr(t('blog.share'), 'Share')}</span>
                   </button>
                 </div>
 
@@ -279,14 +294,14 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
               {post.author && (
                 <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6 shadow-sm">
                   <h3 className="text-lg font-semibold text-[#0B4422] mb-4">
-                    {t('blog.about_author') ?? 'About the Author'}
+                    {safeStr(t('blog.about_author'), 'About the Author')}
                   </h3>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-12 bg-[#0B4422] rounded-full flex items-center justify-center text-white font-bold text-xl">
-                      {post.author.charAt(0).toUpperCase()}
+                      {safeStr(post.author).charAt(0).toUpperCase() || '?'}
                     </div>
                     <div>
-                      <p className="font-semibold text-gray-900">{post.author}</p>
+                      <p className="font-semibold text-gray-900">{safeStr(post.author)}</p>
                     </div>
                   </div>
                 </div>
@@ -296,7 +311,7 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
               {related.length > 0 && (
                 <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                   <h3 className="text-lg font-semibold text-[#0B4422] mb-4">
-                    {t('blog.related_posts') ?? 'Related Posts'}
+                    {safeStr(t('blog.related_posts'), 'Related Posts')}
                   </h3>
                   <div className="space-y-4">
                     {related.map((relPost) => (
@@ -309,18 +324,18 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
                           {relPost.featured_image && (
                             <img
                               src={relPost.featured_image}
-                              alt={relPost.title || ''}
+                              alt={safeStr(relPost.title)}
                               className="w-20 h-20 object-cover rounded-lg"
                               loading="lazy"
                             />
                           )}
                           <div className="flex-1">
                             <h4 className="font-semibold text-gray-900 group-hover:text-[#0B4422] transition-colors line-clamp-2">
-                              {relPost.title}
+                              {safeStr(relPost.title, 'Untitled')}
                             </h4>
                             {relPost.excerpt && (
                               <p className="text-sm text-gray-600 line-clamp-2 mt-1">
-                                {relPost.excerpt}
+                                {safeStr(relPost.excerpt)}
                               </p>
                             )}
                           </div>
@@ -336,8 +351,8 @@ function BlogPostContent({ params }: { params: Promise<{ slug: string }> }) {
         </main>
       </div>
       <div style={{ fontSize: '10px', opacity: 0.6, marginTop: '10px' }}>
-  Voice powered by <a href="https://responsivevoice.org">ResponsiveVoice</a>
-</div>
+        Listen uses your browser&apos;s built-in speech. No API key required.
+      </div>
       <Footer />
     </>
   );

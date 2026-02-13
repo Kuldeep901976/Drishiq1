@@ -132,17 +132,17 @@ export function useInactivityNudges({
 
         if (response.ok) {
           const data = await response.json();
-          return data.nudgeMessage || "I'm here whenever you're ready to continue.";
+          return data.nudgeMessage || "What should I call you?";
         }
       } catch (error) {
         console.warn('⚠️ [Onboarding] Failed to generate personalized nudge:', error);
       }
 
       return nudgeNumber === 1
-        ? "I'm here whenever you're ready to continue."
+        ? "What should I call you?"
         : nudgeNumber === 2
-          ? "Let's keep going - I'm here to help you find solutions."
-          : "Ready to continue? I'm here to help.";
+          ? "I'm DrishiQ. What should I call you?"
+          : "What should I call you?";
     };
 
     inactivityTimerRef.current = setInterval(async () => {

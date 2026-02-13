@@ -14,33 +14,44 @@ export interface BlogPost {
   category?: string;
 }
 
+function getApiBase(): string {
+  if (process.env.NEXT_PUBLIC_API_BASE) return process.env.NEXT_PUBLIC_API_BASE;
+  // Vercel: use deployment URL so server-side fetch hits this app's API
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  // Local dev: same-origin so fetch hits this app (e.g. Next dev on 3000)
+  const port = process.env.PORT || '3000';
+  return `http://localhost:${port}`;
+}
+
 export async function getPostBySlug(slug: string, locale?: string): Promise<BlogPost | null> {
   try {
-    const base = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:3001';
+    const base = getApiBase();
     const apiUrl = `${base}/api/blog/posts/${encodeURIComponent(slug)}${locale ? `?language=${locale}` : ''}`;
-    
-    const res = await fetch(apiUrl, { 
+    // Use a generous timeout; same-origin fetch in dev can be slow
+    const timeoutMs = 20000;
+    const res = await fetch(apiUrl, {
       cache: 'no-store',
       headers: {
         'Content-Type': 'application/json',
-      }
+      },
+      signal: AbortSignal.timeout(timeoutMs),
     });
-    
+
     if (!res.ok) {
       console.warn(`CMS API error for slug "${slug}": ${res.status} ${res.statusText}`);
       return null;
     }
-    
+
     const json = await res.json().catch(() => ({}));
-    
+
     // Handle different API response formats
     const postData = json?.data || json?.post || json;
-    
+
     if (!postData || !postData.title) {
       console.warn(`No post data found for slug "${slug}"`);
       return null;
     }
-    
+
     // Normalize the post data to our interface
     const post: BlogPost = {
       title: postData.title || '',
@@ -56,10 +67,17 @@ export async function getPostBySlug(slug: string, locale?: string): Promise<Blog
       tags: postData.tags || [],
       category: postData.category || 'Blog'
     };
-    
+
     return post;
-  } catch (error) {
-    console.error(`Error fetching post "${slug}":`, error);
+  } catch (error: unknown) {
+    // Timeout, abort, and network errors: return null so layout/metadata still render
+    const name = error && typeof error === 'object' && 'name' in error ? (error as { name?: string }).name : '';
+    const isAbortOrTimeout = name === 'TimeoutError' || name === 'AbortError';
+    if (isAbortOrTimeout) {
+      console.warn(`CMS fetch timeout/abort for slug "${slug}" – using fallback metadata`);
+    } else {
+      console.error(`Error fetching post "${slug}":`, error);
+    }
     return null;
   }
 }
@@ -72,7 +90,7 @@ export async function getAllPostSlugs(): Promise<string[]> {
       return [];
     }
     
-    const base = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:3001';
+    const base = getApiBase();
     const apiUrl = `${base}/api/blog/posts/slugs`;
     
     const res = await fetch(apiUrl, { 
@@ -106,7 +124,7 @@ export async function getAllPostSlugs(): Promise<string[]> {
 
 export async function getAllBlogSlugs(): Promise<Array<{ slug: string; published_at?: string; updated_at?: string; canonical?: string }>> {
   try {
-    const base = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:3001';
+    const base = getApiBase();
     const apiUrl = `${base}/api/blog/posts?fields=slug,published_at,updated_at,canonical&limit=1000`;
     
     const res = await fetch(apiUrl, { 
@@ -138,7 +156,7 @@ export async function getAllBlogSlugs(): Promise<Array<{ slug: string; published
 
 export async function getPostsByCategory(category: string, limit: number = 10): Promise<BlogPost[]> {
   try {
-    const base = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:3001';
+    const base = getApiBase();
     const apiUrl = `${base}/api/blog/posts?category=${encodeURIComponent(category)}&limit=${limit}`;
     
     const res = await fetch(apiUrl, { 

@@ -11,6 +11,9 @@ import React, {
   useRef,
   ReactNode,
 } from 'react';
+import { translateWithGoogle } from '@/lib/google-translate';
+
+const TRANSLATION_MODE = (typeof process !== 'undefined' && process.env.NEXT_PUBLIC_TRANSLATION_MODE) || 'json';
 
 type Namespace = string;
 type Lang = string;
@@ -147,7 +150,16 @@ export function LanguageProvider({
   const storeRef = useRef(store);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [namespacesLoaded, setNamespacesLoaded] = useState<Set<string>>(new Set());
-  
+  const translationCacheRef = useRef<Record<string, string>>({});
+  const [translationVersion, setTranslationVersion] = useState(0);
+
+  // Dev-only: log translation mode once at startup
+  useEffect(() => {
+    if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+      console.log(TRANSLATION_MODE === 'google' ? 'Translation mode: GOOGLE' : 'Translation mode: JSON');
+    }
+  }, []);
+
   // Keep ref in sync with state
   useEffect(() => {
     storeRef.current = store;
@@ -341,18 +353,50 @@ export function LanguageProvider({
       }
     }
 
-    // Handle interpolation if opts contains variables (excluding returnObjects)
-    if (opts && typeof cur === 'string') {
-      let result = cur;
-      for (const [key, value] of Object.entries(opts)) {
-        if (key !== 'returnObjects' && typeof value === 'string') {
-          result = result.replace(new RegExp(`\\{${key}\\}`, 'g'), value);
-        }
-      }
-      return result;
+    // Non-string: return as-is (e.g. returnObjects)
+    if (typeof cur !== 'string') {
+      return opts?.returnObjects ? cur : cur;
     }
 
-    return opts?.returnObjects ? cur : cur;
+    // Resolve final string (apply interpolation first; do not translate interpolation tokens)
+    let resolvedStr = cur;
+    if (opts) {
+      for (const [k, value] of Object.entries(opts)) {
+        if (k !== 'returnObjects' && typeof value === 'string') {
+          resolvedStr = resolvedStr.replace(new RegExp(`\\{${k}\\}`, 'g'), value);
+        }
+      }
+    }
+
+    // JSON mode or English: return JSON text
+    if (TRANSLATION_MODE !== 'google' || language === 'en') {
+      return resolvedStr;
+    }
+    if (resolvedStr.trim() === '') {
+      return resolvedStr;
+    }
+
+    // Performance: do not call Google for numbers or single word < 3 chars
+    const trimmed = resolvedStr.trim();
+    if (/^\d+$/.test(trimmed)) return resolvedStr;
+    if (trimmed.length < 3 && !trimmed.includes(' ')) return resolvedStr;
+
+    const cacheKey = `${language}|${resolvedStr}`;
+    const cached = translationCacheRef.current[cacheKey];
+    if (cached !== undefined) return cached;
+
+    // Trigger async translation; on completion re-render so t() returns cached value
+    translateWithGoogle(resolvedStr, language)
+      .then((translated) => {
+        translationCacheRef.current[cacheKey] = translated;
+        setTranslationVersion((v) => v + 1);
+      })
+      .catch(() => {
+        translationCacheRef.current[cacheKey] = resolvedStr;
+        setTranslationVersion((v) => v + 1);
+      });
+
+    return resolvedStr;
   };
 
   const value = useMemo<LanguageContextValue>(
@@ -366,7 +410,7 @@ export function LanguageProvider({
       locale: language,
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [language, isLoading, Array.from(namespacesLoaded).join(',')]
+    [language, isLoading, Array.from(namespacesLoaded).join(','), translationVersion]
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;

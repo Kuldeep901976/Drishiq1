@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { createServiceClient } from '@/lib/supabase';
 
 export async function GET(
   request: NextRequest,
@@ -31,15 +26,33 @@ export async function GET(
       );
     }
 
-    // Fetch blog post by slug from Supabase
-    console.log('Fetching blog post with slug:', slug, 'language:', language);
-    
-    const { data: post, error } = await supabase
+    const supabase = createServiceClient();
+
+    // Use same published filter as list API: support both is_published (boolean) and status (string)
+    const { data: sampleCheck } = await supabase
+      .from('blog_posts')
+      .select('id, is_published, status')
+      .limit(1);
+
+    const hasIsPublished =
+      sampleCheck &&
+      sampleCheck.length > 0 &&
+      sampleCheck[0] &&
+      'is_published' in sampleCheck[0] &&
+      (sampleCheck[0].is_published === true || sampleCheck[0].is_published === false);
+
+    let query = supabase
       .from('blog_posts')
       .select('*')
-      .eq('slug', slug)
-      .eq('status', 'published')
-      .single();
+      .eq('slug', slug);
+
+    if (hasIsPublished) {
+      query = query.eq('is_published', true);
+    } else {
+      query = query.eq('status', 'published');
+    }
+
+    const { data: post, error } = await query.single();
 
     if (error) {
       console.error('Error fetching blog post:', error);
@@ -84,7 +97,7 @@ export async function GET(
       likes: post.likes_count || 0,
       comments_count: post.comments_count || 0,
       views_count: (post.views_count || 0) + 1,
-      published_at: post.published_at || post.created_at,
+      published_at: post.published_at || post.publish_date || post.created_at,
       author_name: transformedPost.author,
       featured_image: post.featured_image || '/assets/banners/images/mistycloud.webp'
     };

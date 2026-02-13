@@ -39,6 +39,8 @@ interface GreeterPostResponse {
   threadId: string;
   message: string;
   error?: string;
+  /** Set when backend returns after a language-change-only request */
+  language?: string;
 }
 
 const ONBOARDING_STORAGE_KEY = 'currentThreadId';
@@ -190,6 +192,9 @@ export default function useGreeterController({
             timestamp: new Date(),
           },
         ]);
+        if (data.language) {
+          setSnapshot((prev) => ({ ...prev, language: data.language }));
+        }
       } finally {
         clearTimeout(timeoutId);
       }
@@ -198,6 +203,51 @@ export default function useGreeterController({
       const message = isAbort
         ? 'Reply took too long. Please try again.'
         : (err instanceof Error ? err.message : 'Failed to send message');
+      setError(message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  /** Call when user changes language in the selector. Re-asks the same (next) question in the new language. */
+  const sendLanguageChange = async (newLang: string): Promise<void> => {
+    if (!threadId || !newLang.trim()) return;
+    try {
+      setIsLoading(true);
+      setError('');
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+      try {
+        const response = await fetch('/api/chat/onboarding-concierge', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            threadId,
+            message: '',
+            language: newLang.trim(),
+          }),
+          credentials: 'include',
+          signal: controller.signal,
+        });
+        const data: GreeterPostResponse = await response.json();
+        clearTimeout(timeoutId);
+        if (!data.success) throw new Error(data.error ?? 'Request failed');
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: data.message,
+            timestamp: new Date(),
+          },
+        ]);
+        if (data.language) {
+          setSnapshot((prev) => ({ ...prev, language: data.language }));
+        }
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to switch language';
       setError(message);
     } finally {
       setIsLoading(false);
@@ -222,6 +272,7 @@ export default function useGreeterController({
     setPhoneVerificationState,
     initializeConversation,
     sendMessage,
+    sendLanguageChange,
     sendFormAnswers: async () => {},
     sendSelectedOption: async () => {},
     saveConversationToDatabase: async () => {},

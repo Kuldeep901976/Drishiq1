@@ -2,71 +2,84 @@
 
 import React, { useState } from 'react';
 
-type Tab = 'greeter' | 'main_chat';
+type Mode = 'bounded' | 'main_chat';
 
-const TAB_OPTIONS: { id: Tab; label: string }[] = [
-  { id: 'greeter', label: 'Greeter Chat' },
-  { id: 'main_chat', label: 'Main Chat' },
+// Ensure page is always visible (fallback if Tailwind not loaded)
+const pageStyles: React.CSSProperties = {
+  minHeight: '100vh',
+  padding: '24px',
+  backgroundColor: '#f9fafb',
+};
+const containerStyles: React.CSSProperties = {
+  maxWidth: '42rem',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+};
+
+const LANGUAGES = [
+  { value: 'en', label: 'English' },
+  { value: 'hi', label: 'Hindi' },
+  { value: 'es', label: 'Spanish' },
+  { value: 'fr', label: 'French' },
+  { value: 'de', label: 'German' },
 ];
 
-interface GeocodedResult {
-  latitude: number;
-  longitude: number;
-  timezone: string;
-  formatted?: string;
-}
-
 export default function ProblemResponseTestPage() {
-  const [activeTab, setActiveTab] = useState<Tab>('greeter');
-  const [problem, setProblem] = useState('');
-  const [name, setName] = useState('');
-  const [ageRange, setAgeRange] = useState('');
-  const [gender, setGender] = useState('');
-  const [city, setCity] = useState('');
+  const [problemStatement, setProblemStatement] = useState('');
   const [dobDate, setDobDate] = useState('');
   const [dobTime, setDobTime] = useState('');
   const [placeOfBirth, setPlaceOfBirth] = useState('');
-  const [geocoded, setGeocoded] = useState<GeocodedResult | null>(null);
-  const [geocodeLoading, setGeocodeLoading] = useState(false);
-  const [geocodeError, setGeocodeError] = useState<string | null>(null);
   const [language, setLanguage] = useState('en');
+  const [mode, setMode] = useState<Mode>('bounded');
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<string | null>(null);
-  const [astroSignals, setAstroSignals] = useState<{
-    gain_signal: number | string;
-    risk_signal: number | string;
-    phase_signal: number | string;
+  const [interpretation, setInterpretation] = useState<string | null>(null);
+  const [signals, setSignals] = useState<{
+    phase_signal: string;
+    gain_signal: string;
+    risk_signal: string;
     confidence: number;
   } | null>(null);
-  const [fromAstroLayer, setFromAstroLayer] = useState<boolean | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [geocodeLoading, setGeocodeLoading] = useState(false);
+  const [geocodeError, setGeocodeError] = useState<string | null>(null);
+  const [geocodeResult, setGeocodeResult] = useState<{
+    latitude: number;
+    longitude: number;
+    timezone: string;
+    country?: string;
+    formatted?: string;
+  } | null>(null);
 
-  const handleGeocode = async () => {
+  const handleResolvePlace = async () => {
     const place = placeOfBirth.trim();
     if (!place) {
       setGeocodeError('Enter place of birth first.');
       return;
     }
     setGeocodeError(null);
-    setGeocoded(null);
+    setGeocodeResult(null);
     setGeocodeLoading(true);
     try {
-      const res = await fetch(`/api/geocode?place=${encodeURIComponent(place)}`);
-      const json = await res.json().catch(() => ({}));
+      const res = await fetch('/api/geocode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ place }),
+      });
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setGeocodeError(json?.error || `Geocode failed (${res.status})`);
+        setGeocodeError(data?.error ?? `Geocode failed (${res.status})`);
         return;
       }
-      const data = json?.data ?? json;
-      if (data?.latitude != null && data?.longitude != null && data?.timezone) {
-        setGeocoded({
-          latitude: Number(data.latitude),
-          longitude: Number(data.longitude),
-          timezone: String(data.timezone),
+      if (data.latitude != null && data.longitude != null && data.timezone) {
+        setGeocodeResult({
+          latitude: data.latitude,
+          longitude: data.longitude,
+          timezone: data.timezone,
+          country: data.country,
           formatted: data.formatted,
         });
       } else {
-        setGeocodeError('No coordinates or timezone in response');
+        setGeocodeError('Invalid geocode response');
       }
     } catch (err) {
       setGeocodeError(err instanceof Error ? err.message : 'Geocode failed');
@@ -78,48 +91,39 @@ export default function ProblemResponseTestPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    setResponse(null);
-    setAstroSignals(null);
-    setFromAstroLayer(null);
-    if (!problem.trim()) {
-      setError('Please enter a problem.');
-      return;
-    }
+    setInterpretation(null);
+    setSignals(null);
     setLoading(true);
     try {
-      const details: Record<string, string | number> = {
-        ...(name.trim() && { name: name.trim() }),
-        ...(ageRange.trim() && { age_range: ageRange.trim() }),
-        ...(gender.trim() && { gender: gender.trim() }),
-        ...(city.trim() && { city: city.trim() }),
-        ...(dobDate.trim() && { dob_date: dobDate.trim() }),
-        ...(dobTime.trim() && { dob_time: dobTime.trim() }),
-        ...(placeOfBirth.trim() && { place_of_birth: placeOfBirth.trim() }),
-        ...(language.trim() && { language: language.trim() }),
+      const payload: Record<string, unknown> = {
+        problem_statement: problemStatement.trim(),
+        dob_date: dobDate.trim(),
+        dob_time: dobTime.trim(),
+        place_of_birth: placeOfBirth.trim(),
+        mode,
+        language,
       };
-      if (geocoded) {
-        details.latitude = geocoded.latitude;
-        details.longitude = geocoded.longitude;
-        details.timezone = geocoded.timezone;
+      if (geocodeResult) {
+        payload.latitude = geocodeResult.latitude;
+        payload.longitude = geocodeResult.longitude;
+        payload.timezone = geocodeResult.timezone;
       }
       const res = await fetch('/api/chat/problem-response', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          problem: problem.trim(),
-          source: activeTab,
-          language: language.trim() || 'en',
-          details,
-        }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(data?.error || `Request failed (${res.status})`);
+        setError(data?.error ?? `Request failed (${res.status})`);
         return;
       }
-      setResponse(data?.response ?? '');
-      if (data?.astro_signals) setAstroSignals(data.astro_signals);
-      setFromAstroLayer(data?.from_astro_layer ?? null);
+      if (data.success && data.interpretation !== undefined) {
+        setInterpretation(data.interpretation);
+        setSignals(data.signals ?? null);
+      } else {
+        setError(data?.error ?? 'Invalid response');
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Request failed');
     } finally {
@@ -128,207 +132,211 @@ export default function ProblemResponseTestPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Problem response (test)</h1>
-        <p className="text-sm text-gray-600 mb-6">
-          Details aligned with greeter chat: problem, name, age, gender, DOB, place of birth. Use &quot;Look up place&quot; to get lat/long/timezone for place of birth.
+    <div className="min-h-screen bg-gray-50 p-6" style={pageStyles}>
+      <div className="mx-auto max-w-2xl" style={containerStyles}>
+        <h1 className="mb-2 text-2xl font-semibold text-gray-900" style={{ marginBottom: '8px', fontSize: '1.5rem', color: '#111827' }}>
+          Astro Dev Test (Single Interpreter)
+        </h1>
+        <p className="mb-6 text-sm text-gray-600">
+          DEV ONLY. Bounded = Greeter-style (Destiny Lens). Main Chat = lib/main-chat-astro (advisory Astro pipeline, no onboarding).
         </p>
 
-        {/* Tabs */}
-        <div className="flex border-b border-gray-200 mb-6">
-          {TAB_OPTIONS.map(({ id, label }) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => setActiveTab(id)}
-              className={`py-2 px-4 text-sm font-medium border-b-2 -mb-px ${
-                activeTab === id
-                  ? 'border-emerald-600 text-emerald-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              }`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-4 bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
+        <form onSubmit={handleSubmit} className="space-y-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <div>
-            <label htmlFor="problem" className="block text-sm font-medium text-gray-700 mb-1">
-              Problem <span className="text-red-500">*</span>
+            <label className="mb-1 block text-sm font-medium text-gray-700">
+              Problem Statement <span className="text-red-500">*</span>
             </label>
             <textarea
-              id="problem"
+              value={problemStatement}
+              onChange={(e) => setProblemStatement(e.target.value)}
+              placeholder="e.g. I am unsure whether to launch my app now or wait."
               rows={3}
-              value={problem}
-              onChange={(e) => setProblem(e.target.value)}
-              placeholder="e.g. Work stress and tight deadlines"
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-gray-900 focus:border-green-600 focus:outline-none focus:ring-1 focus:ring-green-600"
+              required
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+              <label className="mb-1 block text-sm font-medium text-gray-700">
+                Date of Birth (YYYY-MM-DD) <span className="text-red-500">*</span>
+              </label>
               <input
-                id="name"
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Optional"
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                value={dobDate}
+                onChange={(e) => setDobDate(e.target.value)}
+                placeholder="1990-05-15"
+                className="w-full rounded border border-gray-300 px-3 py-2 text-gray-900 focus:border-green-600 focus:outline-none focus:ring-1 focus:ring-green-600"
+                required
               />
             </div>
             <div>
-              <label htmlFor="ageRange" className="block text-sm font-medium text-gray-700 mb-1">Age range</label>
+              <label className="mb-1 block text-sm font-medium text-gray-700">
+                Time of Birth (HH:MM) <span className="text-red-500">*</span>
+              </label>
               <input
-                id="ageRange"
                 type="text"
-                value={ageRange}
-                onChange={(e) => setAgeRange(e.target.value)}
-                placeholder="e.g. 25-34"
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                value={dobTime}
+                onChange={(e) => setDobTime(e.target.value)}
+                placeholder="14:30"
+                className="w-full rounded border border-gray-300 px-3 py-2 text-gray-900 focus:border-green-600 focus:outline-none focus:ring-1 focus:ring-green-600"
+                required
               />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="gender" className="block text-sm font-medium text-gray-700 mb-1">Gender</label>
-              <input
-                id="gender"
-                type="text"
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                placeholder="Optional"
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-              />
-            </div>
-            <div>
-              <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-1">City (current)</label>
-              <input
-                id="city"
-                type="text"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                placeholder="Optional"
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-              />
-            </div>
-          </div>
-
-          {/* DOB + Place of birth (aligned with greeter) */}
-          <div className="border-t border-gray-100 pt-4 mt-2">
-            <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-3">Birth details (greeter/astro)</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="dobDate" className="block text-sm font-medium text-gray-700 mb-1">DOB date</label>
-                <input
-                  id="dobDate"
-                  type="text"
-                  value={dobDate}
-                  onChange={(e) => setDobDate(e.target.value)}
-                  placeholder="YYYY-MM-DD"
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-                />
-              </div>
-              <div>
-                <label htmlFor="dobTime" className="block text-sm font-medium text-gray-700 mb-1">DOB time (24h)</label>
-                <input
-                  id="dobTime"
-                  type="text"
-                  value={dobTime}
-                  onChange={(e) => setDobTime(e.target.value)}
-                  placeholder="HH:MM or HH:MM:SS"
-                  className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-                />
-              </div>
-            </div>
-            <div className="mt-4">
-              <label htmlFor="placeOfBirth" className="block text-sm font-medium text-gray-700 mb-1">Place of birth</label>
-              <div className="flex gap-2">
-                <input
-                  id="placeOfBirth"
-                  type="text"
-                  value={placeOfBirth}
-                  onChange={(e) => {
-                    setPlaceOfBirth(e.target.value);
-                    setGeocoded(null);
-                    setGeocodeError(null);
-                  }}
-                  placeholder="e.g. Mumbai, Maharashtra, India"
-                  className="flex-1 rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
-                />
-                <button
-                  type="button"
-                  onClick={handleGeocode}
-                  disabled={geocodeLoading || !placeOfBirth.trim()}
-                  className="px-3 py-2 rounded-md border border-gray-300 bg-gray-50 text-gray-700 text-sm font-medium hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {geocodeLoading ? '…' : 'Look up place'}
-                </button>
-              </div>
-              {geocodeError && <p className="mt-1 text-sm text-red-600">{geocodeError}</p>}
-              {geocoded && (
-                <p className="mt-2 text-sm text-gray-600">
-                  Lat: {geocoded.latitude.toFixed(4)}, Long: {geocoded.longitude.toFixed(4)}, TZ: {geocoded.timezone}
-                  {geocoded.formatted && ` · ${geocoded.formatted}`}
-                </p>
-              )}
             </div>
           </div>
 
           <div>
-            <label htmlFor="language" className="block text-sm font-medium text-gray-700 mb-1">Language</label>
+            <div className="mb-1 flex flex-wrap items-center gap-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Place of Birth (City, State, Country) <span className="text-red-500">*</span>
+              </label>
+              <button
+                type="button"
+                onClick={handleResolvePlace}
+                disabled={geocodeLoading || !placeOfBirth.trim()}
+                className="rounded border border-green-600 bg-green-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-green-700 disabled:opacity-50"
+              >
+                {geocodeLoading ? 'Resolving…' : 'Resolve'}
+              </button>
+            </div>
             <input
-              id="language"
               type="text"
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              placeholder="en"
-              className="w-full max-w-[8rem] rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+              value={placeOfBirth}
+              onChange={(e) => {
+                setPlaceOfBirth(e.target.value);
+                setGeocodeError(null);
+                setGeocodeResult(null);
+              }}
+              placeholder="Delhi, Delhi, India"
+              className="w-full rounded border border-gray-300 px-3 py-2 text-gray-900 focus:border-green-600 focus:outline-none focus:ring-1 focus:ring-green-600"
+              required
             />
+            {geocodeError && (
+              <p className="mt-1 text-xs text-red-600">{geocodeError}</p>
+            )}
+            {geocodeResult && (
+              <div className="mt-2 rounded border border-gray-200 bg-gray-50 p-3 font-mono text-xs text-gray-700">
+                <div><strong>Timezone:</strong> {geocodeResult.timezone}</div>
+                <div><strong>Latitude:</strong> {geocodeResult.latitude}</div>
+                <div><strong>Longitude:</strong> {geocodeResult.longitude}</div>
+                {geocodeResult.country && (
+                  <div><strong>Country:</strong> {geocodeResult.country}</div>
+                )}
+                {geocodeResult.formatted && (
+                  <div className="mt-1 text-gray-600"><strong>Formatted:</strong> {geocodeResult.formatted}</div>
+                )}
+              </div>
+            )}
+            {!geocodeResult && !geocodeError && (
+              <p className="mt-1 text-xs text-gray-500">
+                Enter place and click Resolve. On Submit, timezone/lat/long are sent to the Astro layer (Path 1 → Path 2). Without Resolve, the API will geocode from place text.
+              </p>
+            )}
+            {geocodeResult && (
+              <p className="mt-1 text-xs text-green-700">
+                These values will be sent with your submission to the Astro layer (intentStructuringForAstro → runAstroCompute → generateDestinyLensInsightBlocks).
+              </p>
+            )}
           </div>
 
-          {error && (
-            <div className="rounded-md bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
-              {error}
+          <div>
+            <label className="mb-2 block text-sm font-medium text-gray-700">Language</label>
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              className="w-full rounded border border-gray-300 px-3 py-2 text-gray-900 focus:border-green-600 focus:outline-none focus:ring-1 focus:ring-green-600"
+            >
+              {LANGUAGES.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <span className="mb-2 block text-sm font-medium text-gray-700">Mode</span>
+            <div className="flex gap-6">
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="mode"
+                  value="bounded"
+                  checked={mode === 'bounded'}
+                  onChange={() => setMode('bounded')}
+                  className="text-green-600 focus:ring-green-600"
+                />
+                <span>Bounded</span>
+              </label>
+              <label className="flex items-center gap-2">
+                <input
+                  type="radio"
+                  name="mode"
+                  value="main_chat"
+                  checked={mode === 'main_chat'}
+                  onChange={() => setMode('main_chat')}
+                  className="text-green-600 focus:ring-green-600"
+                />
+                <span>Main Chat</span>
+              </label>
             </div>
-          )}
+            <p className="mt-1 text-xs text-gray-500">
+              Bounded: Destiny Lens insight blocks. Main Chat: Main Chat Astro module (generateAstroAdviceForProblem).
+            </p>
+          </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full sm:w-auto px-4 py-2 bg-emerald-600 text-white font-medium rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full rounded bg-green-700 px-4 py-2 font-medium text-white hover:bg-green-800 disabled:opacity-50"
           >
-            {loading ? 'Sending…' : `Get ${activeTab === 'greeter' ? 'Greeter' : 'Main Chat'} response`}
+            {loading ? 'Sending…' : 'Submit'}
           </button>
         </form>
 
-        {response !== null && (
-          <div className="mt-6 space-y-4">
-            {fromAstroLayer === false && activeTab === 'greeter' && (
-              <div className="bg-amber-50 rounded-lg border border-amber-200 p-4 shadow-sm">
-                <p className="text-sm text-amber-800">
-                  <strong>Greeter fallback</strong> — this is not from the astro layer. Start the astro service (port 5001) and ensure DOB, time, and place of birth with &quot;Look up place&quot; are filled.
-                </p>
-              </div>
-            )}
-            {astroSignals != null && (
-              <div className="bg-emerald-50 rounded-lg border border-emerald-200 p-4 shadow-sm">
-                <h2 className="text-sm font-semibold text-emerald-800 mb-2">Swiss Ephemeris signals (astro layer)</h2>
-                <p className="text-sm text-emerald-900">
-                  gain_signal: {String(astroSignals.gain_signal)} · risk_signal: {String(astroSignals.risk_signal)} · phase_signal: {String(astroSignals.phase_signal)} · confidence: {astroSignals.confidence}
-                </p>
-              </div>
-            )}
-            <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm">
-              <h2 className="text-sm font-semibold text-gray-700 mb-2">
-                {fromAstroLayer === true ? 'Response from astro layer (Greeter)' : `Response (${activeTab === 'greeter' ? 'Greeter' : 'Main Chat'})`}
+        {error && (
+          <div className="mt-6 rounded-lg border border-red-200 bg-red-50 p-4 text-red-800">
+            <strong>Error:</strong> {error}
+          </div>
+        )}
+
+        {(interpretation !== null || signals !== null) && (
+          <div className="mt-6 space-y-6">
+            <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+              <h2 className="mb-3 text-lg font-semibold text-gray-900">
+                Final Astro Interpretation
               </h2>
-              <p className="text-gray-900 whitespace-pre-wrap">{response || '(empty)'}</p>
-            </div>
+              <div className="whitespace-pre-wrap text-gray-800">
+                {interpretation ?? '—'}
+              </div>
+            </section>
+            <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+              <h2 className="mb-3 text-lg font-semibold text-gray-900">Raw Signals (debug)</h2>
+              <dl className="space-y-2 font-mono text-sm">
+                {signals ? (
+                  <>
+                    <div>
+                      <dt className="text-gray-500">phase_signal</dt>
+                      <dd className="text-gray-900">{String(signals.phase_signal)}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-gray-500">gain_signal</dt>
+                      <dd className="text-gray-900">{String(signals.gain_signal)}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-gray-500">risk_signal</dt>
+                      <dd className="text-gray-900">{String(signals.risk_signal)}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-gray-500">confidence</dt>
+                      <dd className="text-gray-900">{signals.confidence}</dd>
+                    </div>
+                  </>
+                ) : (
+                  <dd className="text-gray-500">—</dd>
+                )}
+              </dl>
+            </section>
           </div>
         )}
       </div>

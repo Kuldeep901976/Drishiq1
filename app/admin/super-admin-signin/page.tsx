@@ -567,7 +567,6 @@ function SuperAdminScript({ router, returnTo }: { router: ReturnType<typeof useR
         if (!challengeRes.ok) {
           const err = await challengeRes.json();
           
-          // Check if service is unavailable
           if (challengeRes.status === 503 || err.error === 'Service unavailable') {
             const errorMsg = `❌ Admin-auth service is not running.\n\n` +
               `To start the service:\n` +
@@ -577,8 +576,11 @@ function SuperAdminScript({ router, returnTo }: { router: ReturnType<typeof useR
               `4. Keep that terminal open and refresh this page`;
             throw new Error(errorMsg);
           }
-          
-          throw new Error(err.error || err.message || 'Failed to get registration challenge');
+          const msg = err.error || err.message || 'Failed to get registration challenge';
+          const hint = (challengeRes.status === 401 && err.error === 'Authentication failed')
+            ? '\n\nIf setting up: add this email in Supabase (table super_admins, status = \'active\'). Check the admin-auth terminal for details.'
+            : '';
+          throw new Error(msg + hint);
         }
 
         const { options } = await challengeRes.json();
@@ -645,7 +647,11 @@ function SuperAdminScript({ router, returnTo }: { router: ReturnType<typeof useR
 
         if (!verifyRes.ok) {
           const err = await verifyRes.json();
-          throw new Error(err.error || 'Registration failed');
+          const msg = err.error || 'Registration failed';
+          const hint = (verifyRes.status === 401 && err.error === 'Authentication failed')
+            ? '\n\nIf setting up: add this email in Supabase (table super_admins, status = \'active\'). Check the admin-auth terminal for details.'
+            : '';
+          throw new Error(msg + hint);
         }
 
         showSuccess('✅ Hardware key registered successfully!');
@@ -692,7 +698,6 @@ function SuperAdminScript({ router, returnTo }: { router: ReturnType<typeof useR
         if (!challengeRes.ok) {
           const err = await challengeRes.json();
           
-          // Check if service is unavailable
           if (challengeRes.status === 503 || err.error === 'Service unavailable') {
             const errorMsg = `❌ Admin-auth service is not running.\n\n` +
               `To start the service:\n` +
@@ -702,8 +707,11 @@ function SuperAdminScript({ router, returnTo }: { router: ReturnType<typeof useR
               `4. Keep that terminal open and refresh this page`;
             throw new Error(errorMsg);
           }
-          
-          throw new Error(err.error || err.message || 'Failed to get authentication challenge');
+          const msg = err.error || err.message || 'Failed to get authentication challenge';
+          const hint = (challengeRes.status === 401 && err.error === 'Authentication failed')
+            ? '\n\nRegister your hardware key first (section 1), or add this email in Supabase (super_admins, status = \'active\'). Check the admin-auth terminal for details.'
+            : '';
+          throw new Error(msg + hint);
         }
 
         const { options } = await challengeRes.json();
@@ -769,7 +777,11 @@ function SuperAdminScript({ router, returnTo }: { router: ReturnType<typeof useR
 
         if (!verifyRes.ok) {
           const err = await verifyRes.json();
-          throw new Error(err.error || 'Authentication failed');
+          const msg = err.error || 'Authentication failed';
+          const hint = (verifyRes.status === 401 && err.error === 'Authentication failed')
+            ? '\n\nIf setting up: register your hardware key first (section 1). Or add this email in Supabase (super_admins, status = \'active\'). Check the admin-auth terminal for details.'
+            : '';
+          throw new Error(msg + hint);
         }
 
         const { sessionToken, expiresAt, ttl } = await verifyRes.json();

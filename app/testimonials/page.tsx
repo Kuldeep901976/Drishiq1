@@ -186,62 +186,64 @@ export default function TestimonialsPage() {
   );
 
   const renderTestimonialCard = (testimonial: Testimonial) => (
-    <article key={testimonial.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow" aria-labelledby={`t-title-${testimonial.id}`}>
-      <header className="flex items-start justify-between mb-4">
-        <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 rounded-full overflow-hidden relative flex-shrink-0 bg-emerald-100">
-            { (testimonial.selected_avatar || testimonial.user_image) ? (
-              <img 
-                src={testimonial.selected_avatar || testimonial.user_image} 
-                alt={testimonial.user_name || t('testimonials_main.testimonials_list.user')} 
-                className="w-full h-full object-cover rounded-full" 
-                onError={(e) => { 
-                  const target = e.currentTarget as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'flex';
-                }} 
-              />
-            ) : null}
-            <div 
-              className="w-full h-full flex items-center justify-center bg-emerald-100 text-emerald-600 font-semibold text-lg absolute inset-0"
-              style={{ display: (testimonial.selected_avatar || testimonial.user_image) ? 'none' : 'flex' }}
-            >
-              {testimonial.user_name?.charAt(0) ?? t('testimonials_main.testimonials_list.user').charAt(0)}
+    <Link key={testimonial.id} href={`/testimonials/${testimonial.id}`} className="block cursor-pointer">
+      <article className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow h-full" aria-labelledby={`t-title-${testimonial.id}`}>
+        <header className="flex items-start justify-between mb-4">
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 rounded-full overflow-hidden relative flex-shrink-0 bg-emerald-100">
+              { (testimonial.selected_avatar || testimonial.user_image) ? (
+                <img 
+                  src={testimonial.selected_avatar || testimonial.user_image} 
+                  alt={testimonial.user_name || t('testimonials_main.testimonials_list.user')} 
+                  className="w-full h-full object-cover rounded-full" 
+                  onError={(e) => { 
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) fallback.style.display = 'flex';
+                  }} 
+                />
+              ) : null}
+              <div 
+                className="w-full h-full flex items-center justify-center bg-emerald-100 text-emerald-600 font-semibold text-lg absolute inset-0"
+                style={{ display: (testimonial.selected_avatar || testimonial.user_image) ? 'none' : 'flex' }}
+              >
+                {testimonial.user_name?.charAt(0) ?? t('testimonials_main.testimonials_list.user').charAt(0)}
+              </div>
+            </div>
+
+            <div>
+              <h3 id={`t-title-${testimonial.id}`} className="font-semibold text-gray-900">{testimonial.user_name || t('testimonials_main.testimonials_list.anonymous')}</h3>
+              <p className="text-sm text-gray-600">{testimonial.user_role || ''}</p>
             </div>
           </div>
 
-          <div>
-            <h3 id={`t-title-${testimonial.id}`} className="font-semibold text-gray-900">{testimonial.user_name || t('testimonials_main.testimonials_list.anonymous')}</h3>
-            <p className="text-sm text-gray-600">{testimonial.user_role || ''}</p>
+          {testimonial.is_featured && <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">{t('testimonials_main.testimonials_list.featured_badge')}</span>}
+        </header>
+
+        <div className="mb-3">{renderStars(testimonial.rating)}</div>
+
+        <h4 className="font-semibold text-lg text-gray-900 mb-2">{testimonial.title}</h4>
+
+        <p className="text-gray-700 mb-4 line-clamp-4">{testimonial.content}</p>
+
+        <div className="mb-4">
+          {testimonial.category && <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded-full mr-2 mb-2">{testimonial.category}</span>}
+          {testimonial.tags?.map((tag, idx) => (
+            <span key={idx} className="inline-block bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full mr-2 mb-2">{tag}</span>
+          ))}
+        </div>
+
+        <footer className="flex items-center justify-between text-sm text-gray-500">
+          <div className="flex items-center space-x-4">
+            <span>{new Date(testimonial.published_at || testimonial.created_at || Date.now()).toLocaleDateString()}</span>
+            {testimonial.likes_count ? <span className="flex items-center space-x-1 gap-1"><Heart size={14} /> {testimonial.likes_count}</span> : null}
+            {testimonial.comments_count ? <span className="flex items-center space-x-1 gap-1"><MessageCircle size={14} /> {testimonial.comments_count}</span> : null}
           </div>
-        </div>
-
-        {testimonial.is_featured && <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">{t('testimonials_main.testimonials_list.featured_badge')}</span>}
-      </header>
-
-      <div className="mb-3">{renderStars(testimonial.rating)}</div>
-
-      <h4 className="font-semibold text-lg text-gray-900 mb-2">{testimonial.title}</h4>
-
-      <p className="text-gray-700 mb-4 line-clamp-4">{testimonial.content}</p>
-
-      <div className="mb-4">
-        {testimonial.category && <span className="inline-block bg-emerald-100 text-emerald-800 text-xs font-medium px-2.5 py-0.5 rounded-full mr-2 mb-2">{testimonial.category}</span>}
-        {testimonial.tags?.map((tag, idx) => (
-          <span key={idx} className="inline-block bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full mr-2 mb-2">{tag}</span>
-        ))}
-      </div>
-
-      <footer className="flex items-center justify-between text-sm text-gray-500">
-        <div className="flex items-center space-x-4">
-          <span>{new Date(testimonial.published_at || testimonial.created_at || Date.now()).toLocaleDateString()}</span>
-          {testimonial.likes_count ? <span className="flex items-center space-x-1 gap-1"><Heart size={14} /> {testimonial.likes_count}</span> : null}
-          {testimonial.comments_count ? <span className="flex items-center space-x-1 gap-1"><MessageCircle size={14} /> {testimonial.comments_count}</span> : null}
-        </div>
-        <Link href={`/testimonials/${testimonial.id}`} className="text-emerald-600 hover:text-emerald-700 font-medium">{t('testimonials_main.testimonials_list.read_more')}</Link>
-      </footer>
-    </article>
+          <span className="text-emerald-600 hover:text-emerald-700 font-medium">{t('testimonials_main.testimonials_list.read_more')}</span>
+        </footer>
+      </article>
+    </Link>
   );
 
   // Loading initial state

@@ -2,9 +2,10 @@
 
 import { AdminService } from '@/lib/admin-service';
 import { supabase } from '@/lib/supabase';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Footer from '@/components/Footer';
+import { useSuperAdminAuth } from '@/hooks/useSuperAdminAuth';
 // import BlogTranslationModal from '@/components/admin/BlogTranslationModal';
 
 interface BlogPost {
@@ -53,8 +54,15 @@ const TRANSLATABLE_FIELDS = [
   { key: 'seo_keywords', label: 'SEO Keywords', type: 'text', maxLength: 1000 }
 ];
 
+function getAdminAuthHeaders(): Record<string, string> {
+  if (typeof window === 'undefined') return {};
+  const token = localStorage.getItem('admin_session_token');
+  return token ? { Authorization: `Bearer ${token}` } : {};
+}
+
 export default function BlogManagementPage() {
   const router = useRouter();
+  const { isAuthenticated, isLoading: authLoading } = useSuperAdminAuth();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedStatus, setSelectedStatus] = useState<'all' | 'pending' | 'approved' | 'rejected' | 'published'>('all');
@@ -78,10 +86,50 @@ export default function BlogManagementPage() {
   const [selectedFields, setSelectedFields] = useState<Record<string, boolean>>({});
   const [isTranslating, setIsTranslating] = useState(false);
 
-  useEffect(() => {
-    console.log('🔄 useEffect triggered with selectedStatus:', selectedStatus);
-    fetchPosts();
+  const fetchPosts = useCallback(async () => {
+    try {
+      setLoading(true);
+      const headers = getAdminAuthHeaders();
+      const hasSuperAdminToken = !!headers.Authorization;
+
+      if (hasSuperAdminToken) {
+        const res = await fetch(`/api/admin/blog-posts?status=${selectedStatus}`, { headers });
+        const result = await res.json();
+        if (result.success) {
+          setPosts(result.posts || []);
+          setMessage(null);
+        } else {
+          setMessage(result.error || 'Failed to load posts');
+        }
+        return;
+      }
+
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        throw new Error('Not authenticated');
+      }
+      const adminCheck = await AdminService.checkAdminAccess(session.user.id);
+      if (!adminCheck.isAdmin) {
+        throw new Error('Admin access required');
+      }
+      let query = (supabase as any).from('blog_posts').select('*').order('created_at', { ascending: false });
+      if (selectedStatus !== 'all') query = query.eq('status', selectedStatus);
+      const { data, error } = await query;
+      if (error) throw error;
+      setPosts(data || []);
+      setMessage(null);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      setMessage(`Error loading posts: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setLoading(false);
+    }
   }, [selectedStatus]);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    fetchPosts();
+  }, [isAuthenticated, fetchPosts]);
 
   // Load translation data when language changes
   useEffect(() => {
@@ -90,65 +138,40 @@ export default function BlogManagementPage() {
     }
   }, [selectedLanguage, selectedPostForTranslation]);
 
-  // Add debugging when component mounts
-  useEffect(() => {
-    console.log('🚀 BlogManagementPage component mounted');
-    console.log('🔍 Initial selectedStatus:', selectedStatus);
-  }, []);
-
-  const fetchPosts = async () => {
-    try {
-      setLoading(true);
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      if (!session) {
-        throw new Error('Not authenticated');
-      }
-
-      // Check admin access
-      const adminCheck = await AdminService.checkAdminAccess(session.user.id);
-      if (!adminCheck.isAdmin) {
-        throw new Error('Admin access required');
-      }
-
-      console.log('🔍 Fetching posts with status filter:', selectedStatus);
-      
-      let query = (supabase as any).from('blog_posts').select('*').order('created_at', { ascending: false });
-      if (selectedStatus !== 'all') query = query.eq('status', selectedStatus);
-      
-      console.log('🔍 Query:', query);
-      
-      const { data, error } = await query;
-      if (error) throw error;
-
-      console.log('🔍 Raw data from Supabase:', data);
-      console.log('🔍 Number of posts fetched:', data?.length || 0);
-      console.log('🔍 Posts:', data);
-
-      setPosts(data || []);
-    } catch (error) {
-      console.error('Error fetching posts:', error);
-      setMessage(`Error loading posts: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleAction = async () => {
     if (!selectedPost) return;
 
     try {
       setProcessing(true);
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      if (!session) throw new Error('Not authenticated');
+      const headers = getAdminAuthHeaders();
+      const hasSuperAdminToken = !!headers.Authorization;
 
+      if (hasSuperAdminToken) {
+        const status =
+          action === 'approve' ? 'approved' : action === 'reject' ? 'rejected' : 'published';
+        const res = await fetch(`/api/admin/blog-posts/${selectedPost.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json', ...headers },
+          body: JSON.stringify({ status, admin_notes: adminNotes, updated_by: 'super_admin' })
+        });
+        const result = await res.json();
+        if (!result.success) throw new Error(result.error || 'Update failed');
+        await fetchPosts();
+        setShowModal(false);
+        setSelectedPost(null);
+        setAdminNotes('');
+        const actionText = action === 'publish' ? 'published' : action === 'approve' ? 'approved' : action === 'reject' ? 'rejected' : 'updated';
+        setMessage(`✅ Post ${actionText} successfully!`);
+        return;
+      }
+
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) throw new Error('Not authenticated');
       let updateData: any = {
         admin_notes: adminNotes,
         updated_at: new Date().toISOString(),
         updated_by: session.user.id
       };
-
       switch (action) {
         case 'approve':
           updateData.status = 'approved';
@@ -159,31 +182,19 @@ export default function BlogManagementPage() {
           break;
         case 'publish':
           updateData.status = 'published';
-          updateData.publish_date = new Date().toISOString(); // Use publish_date instead of published_at
+          updateData.publish_date = new Date().toISOString();
           break;
-
       }
-
-      console.log('Updating blog post with data:', updateData);
-      
       const { error } = await (supabase as any)
         .from('blog_posts')
         .update(updateData)
         .eq('id', selectedPost.id);
-
-      if (error) {
-        console.error('Supabase update error:', error);
-        throw new Error(`Database update failed: ${error.message}`);
-      }
-
-      // Refresh posts
+      if (error) throw new Error(`Database update failed: ${error.message}`);
       await fetchPosts();
       setShowModal(false);
       setSelectedPost(null);
       setAdminNotes('');
-      const actionText = action === 'publish' ? 'published' : 
-                        action === 'approve' ? 'approved' : 
-                        action === 'reject' ? 'rejected' : 'updated';
+      const actionText = action === 'publish' ? 'published' : action === 'approve' ? 'approved' : action === 'reject' ? 'rejected' : 'updated';
       setMessage(`✅ Post ${actionText} successfully!`);
     } catch (error) {
       console.error('Error updating post:', error);
@@ -200,67 +211,63 @@ export default function BlogManagementPage() {
   };
 
   const handleDeletePost = async (postId: string) => {
-    if (confirm('Are you sure you want to delete this post? This action cannot be undone.')) {
-      try {
-        setProcessing(true);
-        
-        // First check if user is admin
-        const { data: { session } } = await supabase.auth.getSession();
-        if (!session) {
-          throw new Error('Not authenticated');
-        }
-
-        const adminCheck = await AdminService.checkAdminAccess(session.user.id);
-        if (!adminCheck.isAdmin) {
-          throw new Error('Admin access required');
-        }
-
-        // Try to delete the post
-        const { error } = await (supabase as any)
-          .from('blog_posts')
-          .delete()
-          .eq('id', postId);
-
-        if (error) {
-          console.error('Delete error:', error);
-          throw new Error(`Delete failed: ${error.message}`);
-        }
-        
-        // Refresh the posts list
+    if (!confirm('Are you sure you want to delete this post? This action cannot be undone.')) return;
+    try {
+      setProcessing(true);
+      const headers = getAdminAuthHeaders();
+      if (headers.Authorization) {
+        const res = await fetch(`/api/admin/blog-posts/${postId}`, { method: 'DELETE', headers });
+        const result = await res.json();
+        if (!result.success) throw new Error(result.error || 'Delete failed');
         await fetchPosts();
         setMessage('Post deleted successfully!');
-        
-        // Clear message after 3 seconds
         setTimeout(() => setMessage(null), 3000);
-        
-      } catch (error) {
-        console.error('Error deleting post:', error);
-        setMessage(`Error deleting post: ${error instanceof Error ? error.message : 'Unknown error'}`);
-        
-        // Clear error message after 5 seconds
-        setTimeout(() => setMessage(null), 5000);
-      } finally {
-        setProcessing(false);
+        return;
       }
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) throw new Error('Not authenticated');
+      const adminCheck = await AdminService.checkAdminAccess(session.user.id);
+      if (!adminCheck.isAdmin) throw new Error('Admin access required');
+      const { error } = await (supabase as any).from('blog_posts').delete().eq('id', postId);
+      if (error) throw new Error(`Delete failed: ${error.message}`);
+      await fetchPosts();
+      setMessage('Post deleted successfully!');
+      setTimeout(() => setMessage(null), 3000);
+    } catch (error) {
+      console.error('Error deleting post:', error);
+      setMessage(`Error deleting post: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      setTimeout(() => setMessage(null), 5000);
+    } finally {
+      setProcessing(false);
     }
   };
 
   const handleFeaturePost = async (postId: string) => {
+    const post = posts.find(p => p.id === postId);
+    if (!post) return;
     try {
-      const post = posts.find(p => p.id === postId);
-      if (!post) return;
-
-              const { error } = await (supabase as any)
-          .from('blog_posts')
-          .update({
-            is_featured: !post.is_featured,
-            updated_at: new Date().toISOString()
-          })
-          .eq('id', postId);
-
+      const headers = getAdminAuthHeaders();
+      if (headers.Authorization) {
+        const res = await fetch(`/api/admin/blog-posts/${postId}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json', ...headers },
+          body: JSON.stringify({ is_featured: !post.is_featured })
+        });
+        const result = await res.json();
+        if (!result.success) throw new Error(result.error || 'Update failed');
+        await fetchPosts();
+        setMessage(`Post ${post.is_featured ? 'unfeatured' : 'featured'} successfully!`);
+        return;
+      }
+      const { error } = await (supabase as any)
+        .from('blog_posts')
+        .update({
+          is_featured: !post.is_featured,
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', postId);
       if (error) throw error;
-      
-      fetchPosts();
+      await fetchPosts();
       setMessage(`Post ${post.is_featured ? 'unfeatured' : 'featured'} successfully!`);
     } catch (error) {
       console.error('Error featuring post:', error);
@@ -625,14 +632,14 @@ export default function BlogManagementPage() {
     }
   };
 
-  if (loading) {
+  if (authLoading || loading) {
     return (
       <>
         <div className="min-h-screen bg-gray-50 p-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#0B4422] mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading blog posts...</p>
+              <p className="text-gray-600">{authLoading ? 'Verifying access...' : 'Loading blog posts...'}</p>
             </div>
           </div>
         </div>

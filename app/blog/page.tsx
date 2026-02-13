@@ -245,25 +245,43 @@ export default function BlogPage() {
     return [...list, ...list].map((item, idx) => ({ ...item, id: `${item.id}-${idx}` }));
   }, [articles]);
 
-  const renderArticleCard = (a: BlogArticle) => (
-    <div className="w-80 shrink-0 rounded-2xl overflow-hidden border bg-white">
-      <img 
-        className="h-40 w-full object-cover" 
-        src={a.featured_image || '/assets/banners/images/mistycloud.webp'} 
-        alt={a.title || 'Blog post image'} 
-        onError={(e)=>{ 
-          const i=e.currentTarget as HTMLImageElement; 
-          i.onerror=null; 
-          i.src='/assets/banners/images/mistycloud.webp'; 
-        }} 
-      />
-      <div className="p-4">
-        <div className="text-xs text-neutral-600">{a.category || 'Uncategorized'} • {a.publish_date ? new Date(a.publish_date).toLocaleDateString() : 'No date'}</div>
-        <h3 className="font-semibold leading-snug line-clamp-2 text-gray-900">{a.title || 'Untitled'}</h3>
-        <Link href={`/blog/${a.slug || '#'}`} className="mt-2 inline-block text-sm text-[#0B4422]">{t('blog.read_more') ?? 'Read →'}</Link>
+  const renderArticleCard = (a: BlogArticle) => {
+    const href = a.slug ? `/blog/${encodeURIComponent(a.slug)}` : null;
+    const cardContent = (
+      <>
+        <img 
+          className="h-40 w-full object-cover" 
+          src={a.featured_image || '/assets/banners/images/mistycloud.webp'} 
+          alt={a.title || 'Blog post image'} 
+          onError={(e)=>{ 
+            const i=e.currentTarget as HTMLImageElement; 
+            i.onerror=null; 
+            i.src='/assets/banners/images/mistycloud.webp'; 
+          }} 
+        />
+        <div className="p-4">
+          <div className="text-xs text-neutral-600">{a.category || 'Uncategorized'} • {a.publish_date ? new Date(a.publish_date).toLocaleDateString() : 'No date'}</div>
+          <h3 className="font-semibold leading-snug line-clamp-2 text-gray-900">{a.title || 'Untitled'}</h3>
+          <span className="mt-2 inline-block text-sm text-[#0B4422]">{t('blog.read_more') ?? 'Read →'}</span>
+        </div>
+      </>
+    );
+    return (
+      <div className={`w-80 shrink-0 rounded-2xl overflow-hidden border bg-white ${href ? 'cursor-pointer' : ''}`}>
+        {href ? (
+          <Link 
+            href={href} 
+            className="block w-full h-full hover:shadow-lg hover:border-[#0B4422]/30 transition-all duration-200 rounded-2xl"
+            tabIndex={0}
+          >
+            {cardContent}
+          </Link>
+        ) : (
+          cardContent
+        )}
       </div>
-    </div>
-  );
+    );
+  };
 
   function RowCarousel({ category, items, idx }: { category: string; items: BlogArticle[]; idx: number }) {
     const trackRef = useRef<HTMLDivElement>(null);
@@ -393,39 +411,71 @@ export default function BlogPage() {
         {featured && (
           <section className="bg-white pb-8 mt-2">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <article className="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-200">
-                {loading ? (
-                  <div className="w-full h-[270px] md:h-[315px] bg-gray-200 animate-pulse flex items-center justify-center">
-                    <div className="text-gray-400 text-lg">{t('blog.main_page.loading_featured') ?? 'Loading featured article...'}</div>
+              {featured.slug ? (
+                <Link href={`/blog/${encodeURIComponent(featured.slug)}`} className="block">
+                  <article className="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-200 cursor-pointer hover:shadow-xl hover:border-[#0B4422]/30 transition-all duration-200">
+                    {loading ? (
+                      <div className="w-full h-[270px] md:h-[315px] bg-gray-200 animate-pulse flex items-center justify-center">
+                        <div className="text-gray-400 text-lg">{t('blog.main_page.loading_featured') ?? 'Loading featured article...'}</div>
+                      </div>
+                    ) : (
+                      <img 
+                        className="w-full h-[270px] md:h-[315px] object-cover" 
+                        src={featured.featured_image || 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop'} 
+                        alt={featured.title || 'Featured article cover'} 
+                        onError={(e) => {
+                          const img = e.currentTarget as HTMLImageElement;
+                          img.onerror = null;
+                          img.src = 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop';
+                        }}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 p-6 sm:p-10 text-white max-w-3xl">
+                      <div className="text-xs uppercase tracking-widest text-white/80 mb-2">{t('blog.main_page.featured_label') ?? 'Featured'}</div>
+                      <h2 className="text-2xl sm:text-4xl font-extrabold leading-tight line-clamp-3 text-yellow-400 mb-2">{featured.title || 'Featured Article'}</h2>
+                      <p className="text-white/90 line-clamp-2 mb-3">{featured.excerpt || 'Read this featured article'}</p>
+                      <div className="text-sm text-white/80 mb-4">
+                        By <b className="text-white">{featured.author || 'Team DrishiQ'}</b> • {featured.publish_date ? new Date(featured.publish_date).toLocaleDateString() : 'Recent'} • {featured.read_time || '5 min'}
+                      </div>
+                      <span className="inline-flex items-center rounded-xl bg-white text-[#0B4422] px-4 py-2 text-sm font-medium">
+                        {t('blog.main_page.read_article') ?? 'Read the article'} →
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              ) : (
+                <article className="relative rounded-3xl overflow-hidden shadow-lg border border-neutral-200">
+                  {loading ? (
+                    <div className="w-full h-[270px] md:h-[315px] bg-gray-200 animate-pulse flex items-center justify-center">
+                      <div className="text-gray-400 text-lg">{t('blog.main_page.loading_featured') ?? 'Loading featured article...'}</div>
+                    </div>
+                  ) : (
+                    <img 
+                      className="w-full h-[270px] md:h-[315px] object-cover" 
+                      src={featured.featured_image || 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop'} 
+                      alt={featured.title || 'Featured article cover'} 
+                      onError={(e) => {
+                        const img = e.currentTarget as HTMLImageElement;
+                        img.onerror = null;
+                        img.src = 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop';
+                      }}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 p-6 sm:p-10 text-white max-w-3xl">
+                    <div className="text-xs uppercase tracking-widest text-white/80 mb-2">{t('blog.main_page.featured_label') ?? 'Featured'}</div>
+                    <h2 className="text-2xl sm:text-4xl font-extrabold leading-tight line-clamp-3 text-yellow-400 mb-2">{featured.title || 'Featured Article'}</h2>
+                    <p className="text-white/90 line-clamp-2 mb-3">{featured.excerpt || 'Read this featured article'}</p>
+                    <div className="text-sm text-white/80 mb-4">
+                      By <b className="text-white">{featured.author || 'Team DrishiQ'}</b> • {featured.publish_date ? new Date(featured.publish_date).toLocaleDateString() : 'Recent'} • {featured.read_time || '5 min'}
+                    </div>
+                    <span className="inline-flex items-center rounded-xl bg-white text-[#0B4422] px-4 py-2 text-sm font-medium">
+                      {t('blog.main_page.read_article') ?? 'Read the article'} →
+                    </span>
                   </div>
-                ) : (
-                  <img 
-                    className="w-full h-[270px] md:h-[315px] object-cover" 
-                    src={featured.featured_image || 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop'} 
-                    alt={featured.title || 'Featured article cover'} 
-                    onError={(e) => {
-                      const img = e.currentTarget as HTMLImageElement;
-                      img.onerror = null;
-                      img.src = 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069&auto=format&fit=crop';
-                    }}
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                <div className="absolute bottom-0 p-6 sm:p-10 text-white max-w-3xl">
-                  <div className="text-xs uppercase tracking-widest text-white/80 mb-2">{t('blog.main_page.featured_label') ?? 'Featured'}</div>
-                  <h2 className="text-2xl sm:text-4xl font-extrabold leading-tight line-clamp-3 text-yellow-400 mb-2">{featured.title || 'Featured Article'}</h2>
-                  <p className="text-white/90 line-clamp-2 mb-3">{featured.excerpt || 'Read this featured article'}</p>
-                  <div className="text-sm text-white/80 mb-4">
-                    By <b className="text-white">{featured.author || 'Team DrishiQ'}</b> • {featured.publish_date ? new Date(featured.publish_date).toLocaleDateString() : 'Recent'} • {featured.read_time || '5 min'}
-                  </div>
-                  <Link 
-                    href={`/blog/${featured.slug}`} 
-                    className="inline-flex items-center rounded-xl bg-white text-[#0B4422] px-4 py-2 text-sm font-medium hover:bg-gray-50 transition-colors"
-                  >
-                    {t('blog.main_page.read_article') ?? 'Read the article'} →
-                  </Link>
-                </div>
-              </article>
+                </article>
+              )}
             </div>
           </section>
         )}

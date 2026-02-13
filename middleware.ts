@@ -53,10 +53,13 @@ const PUBLIC_PREFIXES = new Set([
   '/api/transcribe',
   '/api/intent',
   '/api/chat/onboarding-concierge',
+  '/api/chat/problem-response',
+  '/test',
   '/_next',
   '/favicon.ico',
   '/_next/',
-  '/static/'
+  '/static/',
+  '/blog/create' // Allow super admin (and others) to open create form without Supabase session
 ]);
 const STATIC_EXT = /\.(ico|png|jpg|jpeg|svg|css|js|woff|woff2|ttf|eot)$/;
 

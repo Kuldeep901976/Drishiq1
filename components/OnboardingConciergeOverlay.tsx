@@ -147,11 +147,12 @@ export default function OnboardingConciergeOverlay({
   const handleLanguageChange = (newLang: string) => {
     setLanguageForAll(newLang);
     lang.setLanguage(newLang);
-
     greeter.setSnapshot((prev: OnboardingSnapshot) => ({
       ...prev,
       language: newLang,
     }));
+    // Re-ask the same (next) question in the new language
+    greeter.sendLanguageChange(newLang);
   };
 
   const renderAssistantContent = (content: string) => (

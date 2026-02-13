@@ -74,8 +74,10 @@ export async function ensureVisitor(params: EnsureVisitorParams): Promise<void> 
       if (prev?.language?.trim()) languageToWrite = prev.language.trim();
       if (prev?.secondary_language?.trim()) secondaryToWrite = prev.secondary_language.trim();
     }
+    // First visit: use id = visitorId so chat_threads.visitor_id FK (-> visitors.id) is satisfied.
+    // Later visits: use id = randomUUID() for one row per visit.
     const row: Record<string, unknown> = {
-      id: randomUUID(),
+      id: nextVisitCount === 1 ? visitorId : randomUUID(),
       visitor_id: visitorId,
       device_id: deviceId,
       first_ip: ip,
@@ -93,9 +95,36 @@ export async function ensureVisitor(params: EnsureVisitorParams): Promise<void> 
     if (hasValue(secondaryToWrite)) row.secondary_language = secondaryToWrite;
 
     const { error } = await supabase.from('visitors').insert(row);
-    if (!error) return;
-    console.error('[ensureVisitor] insert (visitor_id schema) error', { message: error.message, code: error.code });
-    throw error;
+    if (error) {
+      console.error('[ensureVisitor] insert (visitor_id schema) error', { message: error.message, code: error.code });
+      throw error;
+    }
+    // chat_threads.visitor_id FK -> visitors.id. For nextVisitCount > 1 we inserted id = randomUUID().
+    // Ensure an anchor row with id = visitorId exists (insert once; ignore duplicate).
+    if (nextVisitCount > 1) {
+      const anchorRow: Record<string, unknown> = {
+        id: visitorId,
+        visitor_id: visitorId,
+        device_id: deviceId,
+        first_ip: ip,
+        visit_count: nextVisitCount,
+        created_at: now,
+        last_seen_at: now,
+      };
+      if (hasValue(sessionId)) anchorRow.session_id = sessionId;
+      if (hasValue(country)) anchorRow.country = country;
+      if (hasValue(countryCode)) anchorRow.country_code = countryCode;
+      if (hasValue(regionCode)) anchorRow.region_code = regionCode;
+      if (hasValue(city)) anchorRow.city = city;
+      if (hasValue(timezone)) anchorRow.timezone = timezone;
+      if (hasValue(languageToWrite)) anchorRow.language = languageToWrite;
+      if (hasValue(secondaryToWrite)) anchorRow.secondary_language = secondaryToWrite;
+      const anchorResult = await supabase.from('visitors').insert(anchorRow);
+      if (anchorResult.error && anchorResult.error.code !== '23505') {
+        console.warn('[ensureVisitor] anchor row insert failed (non-fatal):', anchorResult.error.message);
+      }
+    }
+    return;
   }
 
   // ---- Fallback: old schema (id = visitor cookie, one row per visitor) ----

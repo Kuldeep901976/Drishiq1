@@ -39,8 +39,10 @@ export default function AdminPage() {
 
   const loadDashboardData = async () => {
     try {
-      // Fetch all counts from database
-      const countsResponse = await fetch('/api/admin/counts');
+      const token = typeof window !== 'undefined' ? localStorage.getItem('admin_session_token') : null;
+      const headers: HeadersInit = {};
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+      const countsResponse = await fetch('/api/admin/counts', { headers });
       const countsData = await countsResponse.json();
       
       if (countsData.success && countsData.counts) {
@@ -201,42 +203,6 @@ export default function AdminPage() {
       icon: '💬',
       color: 'indigo',
       href: '/admin/chat',
-      count: 0
-    },
-    {
-      id: 'ddsa',
-      title: 'DDSA Management',
-      description: 'Configure and monitor DDSA stages and execution flow',
-      icon: '🔧',
-      color: 'teal',
-      href: '/admin/ddsa',
-      count: 0
-    },
-    {
-      id: 'decision-trail',
-      title: 'Decision Trail Explorer',
-      description: 'Trace decision paths, breadcrumbs, and decision spans across sessions',
-      icon: '🗺️',
-      color: 'purple',
-      href: '/admin/ddsa/trace',
-      count: 0
-    },
-    {
-      id: 'model-config',
-      title: 'Model Configuration',
-      description: 'Configure AI models, API providers, and parameters for DDSA stages',
-      icon: '🤖',
-      color: 'indigo',
-      href: '/admin/ddsa/model-configuration',
-      count: 0
-    },
-    {
-      id: 'token-analytics',
-      title: 'Token Analytics',
-      description: 'Track token consumption per conversation, daily, weekly, monthly, and by stage',
-      icon: '📈',
-      color: 'emerald',
-      href: '/admin/ddsa/token-analytics',
       count: 0
     },
     {

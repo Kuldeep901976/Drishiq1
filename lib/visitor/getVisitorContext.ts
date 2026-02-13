@@ -5,10 +5,16 @@
  * - DB geo is NOT trusted for language (it can be stale)
  * - Language is derived from geo_language_rules via CURRENT geo written by /visitor/ensure
  * - DB is only fallback if geo match fails
+ *
+ * RELIABILITY: All Supabase calls are wrapped with withTimeout(5s). This function
+ * always resolves (never hangs); on timeout or error it returns partial/empty context.
  */
 
 import { createServiceClient } from '@/lib/supabase';
 import { normalizeLanguage, getRegionLanguages } from '../onboarding-concierge/regional-languages';
+import { withTimeout } from '@/lib/utils/withTimeout';
+
+const SUPABASE_QUERY_TIMEOUT_MS = 5000;
 
 export interface VisitorContext {
   city: string | null;
@@ -23,62 +29,74 @@ export interface VisitorContext {
   last_seen_at: string | null;
 }
 
-export async function getVisitorContext(visitorId: string): Promise<VisitorContext> {
-  const empty: VisitorContext = {
-    city: null,
-    country: null,
-    country_code: null,
-    region_code: null,
-    timezone: null,
-    language: 'en',
-    geoSuggestedLanguage: 'en',
-    visit_count: 1,
-    last_seen_at: null,
-  };
+const EMPTY_CONTEXT: VisitorContext = {
+  city: null,
+  country: null,
+  country_code: null,
+  region_code: null,
+  timezone: null,
+  language: 'en',
+  geoSuggestedLanguage: 'en',
+  visit_count: 1,
+  last_seen_at: null,
+};
 
+type VisitorRow = {
+  city?: string | null;
+  country?: string | null;
+  country_code?: string | null;
+  region_code?: string | null;
+  timezone?: string | null;
+  language?: string | null;
+  secondary_language?: string | null;
+  visit_count?: number | null;
+  last_seen_at?: string | null;
+};
+
+export async function getVisitorContext(visitorId: string): Promise<VisitorContext> {
   if (!visitorId || visitorId === 'anon') {
-    return empty;
+    return EMPTY_CONTEXT;
   }
 
   const supabase = createServiceClient();
 
-  type VisitorRow = {
-    city?: string | null;
-    country?: string | null;
-    country_code?: string | null;
-    region_code?: string | null;
-    timezone?: string | null;
-    language?: string | null;
-    secondary_language?: string | null;
-    visit_count?: number | null;
-    last_seen_at?: string | null;
-  };
-
-  // Try visitor_id schema (one row per visit): latest row for this visitor
   let row: VisitorRow | null = null;
-  const byVisitorId = await supabase
-    .from('visitors')
-    .select('city, country, country_code, region_code, timezone, language, secondary_language, visit_count, last_seen_at')
-    .eq('visitor_id', visitorId)
-    .order('created_at', { ascending: false })
-    .limit(1)
-    .maybeSingle();
 
-  if (!byVisitorId.error && byVisitorId.data) {
-    row = byVisitorId.data as VisitorRow;
-  }
-  // Fallback: id = visitor cookie (one row per visitor)
-  if (!row) {
-    const byId = await supabase
-      .from('visitors')
-      .select('city, country, country_code, region_code, timezone, language, secondary_language, visit_count, last_seen_at')
-      .eq('id', visitorId)
-      .maybeSingle();
-    if (!byId.error && byId.data) row = byId.data as VisitorRow;
+  try {
+    // Visitors lookup: by visitor_id then by id (sequential; second only if first misses)
+    const byVisitorId = await withTimeout(
+      supabase
+        .from('visitors')
+        .select('city, country, country_code, region_code, timezone, language, secondary_language, visit_count, last_seen_at')
+        .eq('visitor_id', visitorId)
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle(),
+      SUPABASE_QUERY_TIMEOUT_MS,
+      'supabase visitors by visitor_id'
+    );
+    if (!byVisitorId.error && byVisitorId.data) {
+      row = byVisitorId.data as VisitorRow;
+    }
+    if (!row) {
+      const byId = await withTimeout(
+        supabase
+          .from('visitors')
+          .select('city, country, country_code, region_code, timezone, language, secondary_language, visit_count, last_seen_at')
+          .eq('id', visitorId)
+          .maybeSingle(),
+        SUPABASE_QUERY_TIMEOUT_MS,
+        'supabase visitors by id'
+      );
+      if (!byId.error && byId.data) row = byId.data as VisitorRow;
+    }
+  } catch (err) {
+    console.error('[getVisitorContext] visitors lookup failed:', err);
+    return EMPTY_CONTEXT;
   }
 
   if (!row) {
-    return empty;
+    return EMPTY_CONTEXT;
   }
 
   const countryCode = row.country_code?.toUpperCase() || null;
@@ -88,53 +106,44 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
   let geoPrimary: string | null = null;
   let geoSecondary: string | null = null;
 
-  // ------------------------------------------------
-  // How geoLangFromDB and geoSuggestedLanguage are calculated:
-  // 1. Read visitor row → country_code, region_code, language (storedPrimary).
-  // 2. If country_code + region_code: lookup geo_language_rules; else in-code getRegionLanguages().
-  // 3. If geoPrimary set → language = geoPrimary, geoSuggestedLanguage = secondary or primary.
-  // 4. Else if storedPrimary → language = storedPrimary, geoSuggestedLanguage = primary or 'en'.
-  // 5. Else → both stay 'en'.
-  // So if visitor row has null country_code or region_code, we never get geo and stay 'en'.
-  // ------------------------------------------------
   if (countryCode) {
     try {
-      // 1️⃣ Exact country + region match from geo_language_rules (e.g. CA + QC → French)
-      if (regionCode) {
-        const { data: regionMatch } = await supabase
-          .from('geo_language_rules')
-          .select('language_code')
-          .eq('country_code', countryCode)
-          .eq('region_code', regionCode)
-          .limit(1);
+      // Parallelize geo_language_rules lookups (region match + country default)
+      const regionPromise = regionCode
+        ? supabase
+            .from('geo_language_rules')
+            .select('language_code')
+            .eq('country_code', countryCode)
+            .eq('region_code', regionCode)
+            .limit(1)
+        : Promise.resolve({ data: [] as { language_code: string }[] });
+      const countryDefaultPromise = supabase
+        .from('geo_language_rules')
+        .select('language_code')
+        .eq('country_code', countryCode)
+        .is('region_code', null)
+        .limit(1);
 
-        if (regionMatch?.length) {
-          geoPrimary = regionMatch[0].language_code;
-        }
+      const [regionResult, countryDefaultResult] = await Promise.all([
+        withTimeout(regionPromise, SUPABASE_QUERY_TIMEOUT_MS, 'supabase geo_language_rules region').catch(() => ({ data: [] as { language_code: string }[] })),
+        withTimeout(countryDefaultPromise, SUPABASE_QUERY_TIMEOUT_MS, 'supabase geo_language_rules country'),
+      ]);
 
-        // 2️⃣ No row for this region in geo_language_rules → infer from region_code via in-code rules
-        if (!geoPrimary) {
-          const { primary, secondary } = getRegionLanguages(countryCode, regionCode);
-          geoPrimary = primary;
-          geoSecondary = secondary ?? null;
-        }
+      const regionMatch = regionResult?.data;
+      if (regionMatch?.length) {
+        geoPrimary = regionMatch[0].language_code;
       }
-
-      // 3️⃣ Fallback: region_code IS NULL in geo_language_rules = country language for that country
-      if (!geoPrimary) {
-        const { data: countryDefault } = await supabase
-          .from('geo_language_rules')
-          .select('language_code')
-          .eq('country_code', countryCode)
-          .is('region_code', null)
-          .limit(1);
-
-        if (countryDefault?.length) {
-          geoPrimary = countryDefault[0].language_code;
-        }
+      if (!geoPrimary && regionCode) {
+        const { primary, secondary } = getRegionLanguages(countryCode, regionCode);
+        geoPrimary = primary;
+        geoSecondary = secondary ?? null;
       }
-    } catch {
-      // ignore DB issues
+      if (!geoPrimary && countryDefaultResult?.data?.length) {
+        geoPrimary = countryDefaultResult.data[0].language_code;
+      }
+    } catch (geoErr) {
+      console.warn('[getVisitorContext] geo_language_rules lookup failed:', geoErr);
+      // continue with storedPrimary / 'en'
     }
   }
 
@@ -149,10 +158,6 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
     });
   }
 
-  // ------------------------------------------------
-  // FINAL LANGUAGE RESOLUTION
-  // Chat language stays consistent until changed manually: prefer stored (previous choice) over geo.
-  // ------------------------------------------------
   let language = 'en';
   let geoSuggestedLanguage: string | null = 'en';
 
@@ -172,9 +177,7 @@ export async function getVisitorContext(visitorId: string): Promise<VisitorConte
     const secondary = geoSecondary
       ? normalizeLanguage(geoSecondary)
       : null;
-
     language = primary;
-
     if (secondary && secondary !== primary) {
       geoSuggestedLanguage = secondary;
     } else {

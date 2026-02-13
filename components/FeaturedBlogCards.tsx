@@ -157,87 +157,86 @@ const FeaturedBlogCards: React.FC = () => {
         maxWidth: '100%'
       }}>
         {posts.map((post) => (
-          <article key={post.id} className="card group hover:shadow-lg transition-all duration-300">
-            {/* Featured Image */}
-            <div className="card-image-container relative overflow-hidden" style={{ height: '200px' }}>
-              {post.featured_image ? (
-                <Image
-                  src={post.featured_image}
-                  alt={post.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              ) : (
-                <Image
-                  src="/assets/banners/images/mistycloud.webp"
-                  alt={post.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              )}
-              
-              {/* Category badge */}
-              <div className="absolute top-4 left-4">
-                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800">
-                  {getCategoryIcon(post.category)} {post.category.replace('-', ' ')}
-                </span>
-              </div>
-
-              {/* Engagement overlay */}
-              <div className="absolute bottom-4 right-4 flex space-x-2">
-                {post.likes_count > 0 && (
-                  <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-white/90 text-gray-800">
-                    <Heart size={12} /> {post.likes_count}
-                  </span>
+          <Link key={post.id} href={`/blog/${post.slug}`} className="block cursor-pointer">
+            <article className="card group hover:shadow-lg transition-all duration-300">
+              {/* Featured Image */}
+              <div className="card-image-container relative overflow-hidden" style={{ height: '200px' }}>
+                {post.featured_image ? (
+                  <Image
+                    src={post.featured_image}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <Image
+                    src="/assets/banners/images/mistycloud.webp"
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 )}
-                {post.comments_count > 0 && (
-                  <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-white/90 text-gray-800">
-                    <MessageCircle size={12} /> {post.comments_count}
+
+                {/* Category badge */}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-white/90 text-gray-800">
+                    {getCategoryIcon(post.category)} {post.category.replace('-', ' ')}
                   </span>
-                )}
-              </div>
-            </div>
+                </div>
 
-            {/* Content */}
-            <div className="card-content p-6">
-              {/* Meta info */}
-              <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-                <span>By {post.author}</span>
-                <span>{formatDate(post.publish_date)}</span>
-              </div>
-
-              {/* Title */}
-              <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors">
-                {post.title}
-              </h3>
-
-              {/* Excerpt */}
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                {post.excerpt}
-              </p>
-
-              {/* Footer */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4 text-xs text-gray-500">
-                  <span className="inline-flex items-center gap-1">
-                    <Clock size={12} /> {post.reading_time_minutes} min read
-                  </span>
-                  {post.views_count > 0 && (
-                    <span className="inline-flex items-center gap-1">
-                      <Eye size={12} /> {post.views_count} views
+                {/* Engagement overlay */}
+                <div className="absolute bottom-4 right-4 flex space-x-2">
+                  {post.likes_count > 0 && (
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-white/90 text-gray-800">
+                      <Heart size={12} /> {post.likes_count}
+                    </span>
+                  )}
+                  {post.comments_count > 0 && (
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs bg-white/90 text-gray-800">
+                      <MessageCircle size={12} /> {post.comments_count}
                     </span>
                   )}
                 </div>
-                
-                <Link 
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700 group-hover:underline"
-                >
-                  {t('blog.read_more')} <ArrowRight size={14} />
-                </Link>
               </div>
-            </div>
-          </article>
+
+              {/* Content */}
+              <div className="card-content p-6">
+                {/* Meta info */}
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
+                  <span>By {post.author}</span>
+                  <span>{formatDate(post.publish_date)}</span>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2 group-hover:text-emerald-600 transition-colors">
+                  {post.title}
+                </h3>
+
+                {/* Excerpt */}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+
+                {/* Footer */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4 text-xs text-gray-500">
+                    <span className="inline-flex items-center gap-1">
+                      <Clock size={12} /> {post.reading_time_minutes} min read
+                    </span>
+                    {post.views_count > 0 && (
+                      <span className="inline-flex items-center gap-1">
+                        <Eye size={12} /> {post.views_count} views
+                      </span>
+                    )}
+                  </div>
+
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 group-hover:underline">
+                    {t('blog.read_more')} <ArrowRight size={14} />
+                  </span>
+                </div>
+              </div>
+            </article>
+          </Link>
         ))}
       </div>
     </div>

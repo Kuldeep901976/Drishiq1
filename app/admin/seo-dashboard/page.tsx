@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { useSuperAdminAuth } from '@/hooks/useSuperAdminAuth';
 
 interface DashboardData {
   audit: any;
@@ -16,27 +17,20 @@ interface DashboardData {
 
 export default function SEODashboardPage() {
   const router = useRouter();
+  const { isAuthenticated, isLoading: authLoading } = useSuperAdminAuth();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DashboardData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  useEffect(() => {
-    fetchDashboardData();
-    
-    if (autoRefresh) {
-      const interval = setInterval(() => {
-        fetchDashboardData();
-      }, 60000); // Refresh every minute
-      return () => clearInterval(interval);
-    }
-  }, [autoRefresh]);
-
-  const fetchDashboardData = async () => {
+  const fetchDashboardData = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/seo/dashboard?analytics=true');
+      const token = typeof window !== 'undefined' ? localStorage.getItem('admin_session_token') : null;
+      const headers: HeadersInit = {};
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+      const response = await fetch('/api/seo/dashboard?analytics=true', { headers });
       const result = await response.json();
       
       if (result.success) {
@@ -52,7 +46,18 @@ export default function SEODashboardPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
+    fetchDashboardData();
+  }, [isAuthenticated, fetchDashboardData]);
+
+  useEffect(() => {
+    if (!isAuthenticated || !autoRefresh) return;
+    const interval = setInterval(() => fetchDashboardData(), 60000);
+    return () => clearInterval(interval);
+  }, [isAuthenticated, autoRefresh, fetchDashboardData]);
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
@@ -70,12 +75,12 @@ export default function SEODashboardPage() {
     return 'text-red-600';
   };
 
-  if (loading && !data) {
+  if (authLoading || (loading && !data)) {
     return (
       <div className="min-h-screen bg-gray-50 p-6 flex items-center justify-center">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
-          <p className="text-gray-600">Loading SEO Dashboard...</p>
+          <p className="text-gray-600">{authLoading ? 'Verifying access...' : 'Loading SEO Dashboard...'}</p>
         </div>
       </div>
     );
